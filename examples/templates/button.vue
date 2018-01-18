@@ -144,14 +144,52 @@
         Danger
       </v-button>
     </p>
+    <p>
+      <v-button-group>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="default"
+          prefix-icon="v-icon-loading"
+          suffix-icon="v-icon-loading">
+          Primary
+        </v-button>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="default"
+          prefix-icon="v-icon-loading"
+          suffix-icon="v-icon-loading">
+          Default
+        </v-button>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="default"
+          prefix-icon="v-icon-loading"
+          suffix-icon="v-icon-loading">
+          Warning
+        </v-button>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="default"
+          prefix-icon="v-icon-loading"
+          suffix-icon="v-icon-loading">
+          Danger
+        </v-button>
+      </v-button-group>
+    </p>
   </div>
 </template>
 <script>
   import Button from '@/components/button';
+  import ButtonGroup from '@/components/button-group';
 
   export default {
     components: {
       VButton: Button,
+      VButtonGroup: ButtonGroup,
     },
   };
 </script>
