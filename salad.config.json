@@ -7,11 +7,11 @@
     "bem": {
       "shortcuts": {
         "component": "b",
-        "modifier": "m",
-        "descendent": "e"
+        "descendent": "e",
+        "modifier": "m"
       },
       "separators": {
-        "descendent": "__",
+        "descendent": "-",
         "modifier": "--"
       }
     }

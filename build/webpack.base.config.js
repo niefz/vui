@@ -3,12 +3,14 @@
  */
 const path = require('path');
 const webpack = require('webpack');
+const package = require('../package.json');
 
 const resolve = (dir) => {
   return path.join(__dirname, '..', dir);
 };
 
-const package = require('../package.json');
+const MODULES_PATH = resolve('node_modules');
+const APP_PATH = resolve('src');
 
 module.exports = {
   module: {
@@ -32,8 +34,8 @@ module.exports = {
             loader: 'eslint'
           }
         ],
-        include: /src/,
-        exclude: /node_modules/
+        include: APP_PATH,
+        exclude: MODULES_PATH
       },
       {
         test: /\.js$/,
@@ -45,35 +47,7 @@ module.exports = {
             }
           }
         ],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.tsx?$/,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'tslint'
-          }
-        ],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: 'babel',
-            options: {
-              cacheDirectory: true
-            }
-          },
-          {
-            loader: 'ts',
-            options: {
-              appendTsSuffixTo: [/\.vue$/]
-            }
-          }
-        ],
-        exclude: /node_modules/
+        exclude: MODULES_PATH
       },
       {
         test: /\.s?css$/,
@@ -108,14 +82,7 @@ module.exports = {
         loader: 'vue',
         options: {
           loaders: {
-            js: {
-              fallback: 'babel',
-              use: [
-                {
-                  loader: 'vue-ts'
-                }
-              ]
-            },
+            js: 'babel',
             css: {
               fallback: 'vue-style',
               use: [
@@ -127,14 +94,14 @@ module.exports = {
                 }
               ]
             },
-            sass: {
+            scss: {
               fallback: 'vue-style',
               use: [
                 {
                   loader: 'css'
                 },
                 {
-                  loader: 'sass'
+                  loader: 'scss'
                 },
                 {
                   loader: 'postcss'
@@ -150,10 +117,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', ".tsx", '.js', '.vue'],
+    extensions: ['.js', '.vue'],
     alias: {
-      'vue': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      'vue': 'vue/dist/vue.js',
+      '@': APP_PATH
     }
   },
   resolveLoader: {

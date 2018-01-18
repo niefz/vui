@@ -7,29 +7,30 @@ const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const webpackBaseConfig = require('./webpack.base.config.js');
 
 const resolve = (dir) => {
   return path.join(__dirname, '..', dir);
 };
 
-const webpackBaseConfig = require('./webpack.base.config.js');
 const APP_PATH = resolve('src');
+const EXAMPLES_PATH = resolve('examples');
 
 module.exports = webpackMerge(webpackBaseConfig, {
   entry: {
     vendor: ['vue', 'vue-router'],
-    main: resolve('examples/index')
+    main: './examples/index'
   },
   output: {
-    path: resolve('examples'),
-    publicPath: '/',
+    path: EXAMPLES_PATH,
+    publicPath: '',
     filename: 'assets/js/[name].min.js?v=[hash:8]',
     chunkFilename: 'assets/js/[name].min.js?v=[chunkhash:8]'
   },
   devtool: 'cheap-eval-source-map',
   devServer: {
     compress: true,
-    contentBase: APP_PATH,
+    contentBase: EXAMPLES_PATH,
     historyApiFallback: true,
     host: 'free-ui.io',
     hot: true,
@@ -38,7 +39,7 @@ module.exports = webpackMerge(webpackBaseConfig, {
       warnings: true,
       errors: true
     },
-    port: 3010,
+    port: 3011,
     publicPath: "/",
     stats: {
       assets: true,
@@ -68,6 +69,6 @@ module.exports = webpackMerge(webpackBaseConfig, {
       inject: 'body'
     }),
     new FriendlyErrorsPlugin(),
-    new OpenBrowserPlugin({url: 'http://free-ui.io:3010/'})
+    new OpenBrowserPlugin({url: 'http://free-ui.io:3011/'})
   ]
 });

@@ -1,0 +1,214 @@
+* {
+  outline: none;
+}
+
+.v-btn {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.v-btn__button {
+  padding: 0 15px;
+  border: 1px solid;
+  &:focus:after {
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    content: '';
+    border-width: 0;
+    border-style: solid;
+    filter: alpha(opacify=40);
+    opacity: .4;
+    border-radius: inherit;
+    animation: buttonEffect .4s;
+  }
+  &.v-btn__primary {
+    border-color: #148EF6;
+    background-color: #148EF6;
+    color: #FFFFFF;
+    &:hover {
+      border-color: #3BA5FF;
+      background-color: #3BA5FF;
+    }
+    &:focus:after {
+      border-color: #148EF6;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      border-color: #88C6FA;
+      background-color: #88C6FA;
+      cursor: not-allowed;
+    }
+  }
+  &.v-btn__default {
+    border-color: #E8E8E8;
+    background-color: #FFFFFF;
+    color: #292E42;
+    &:hover {
+      border-color: #3BA6FF;
+      color: #3BA6FF;
+    }
+    &:focus:after {
+      border-color: #148EF6;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      border-color: #EBEEF6;
+      color: #C0C4CC;
+      cursor: not-allowed;
+    }
+  }
+  &.v-btn__warning {
+    border-color: #F29C12;
+    background-color: #F29C12;
+    color: #FFFFFF;
+    &:hover {
+      border-color: #FEB24B;
+      background-color: #FEB24B;
+    }
+    &:focus:after {
+      border-color: #FEB24B;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      border-color: #F8CD88;
+      background-color: #F8CD88;
+      cursor: not-allowed;
+    }
+  }
+  &.v-btn__danger {
+    border-color: #F24812;
+    background-color: #F24812;
+    color: #FFFFFF;
+    &:hover {
+      border-color: #FE694B;
+      background-color: #FE694B;
+    }
+    &:focus:after {
+      border-color: #FE694B;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      border-color: #F8A288;
+      background-color: #F8A288;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.v-btn__text {
+  border: 1px solid transparent;
+  &.v-btn__primary {
+    color: #148EF5;
+    &:hover {
+      color: #3BA6FF;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      color: #88C6FA;
+      cursor: not-allowed;
+    }
+  }
+  &.v-btn__default {
+    color: #292E42;
+    &:hover {
+      color: #3BA6FF;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      color: #C0C4CC;
+      cursor: not-allowed;
+    }
+  }
+  &.v-btn__warning {
+    color: #F29C12;
+    &:hover {
+      color: #FEB24B;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      color: #F8CD88;
+      cursor: not-allowed;
+    }
+  }
+  &.v-btn__danger {
+    color: #F24812;
+    &:hover {
+      color: #FE694B;
+    }
+    &.is-disabled, &.is-disabled:hover {
+      color: #F8A288;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.v-btn__radius {
+  border-radius: 3px;
+  &.v-btn__mini {
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+  }
+  &.v-btn__small {
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  &.v-btn__medium {
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+  }
+  &.v-btn__large {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+  }
+}
+
+.v-btn__circle {
+  padding: 0;
+  border-radius: 50%;
+  &.v-btn__mini {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+  &.v-btn__small {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  &.v-btn__medium {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
+  }
+  &.v-btn__large {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+  }
+}
+
+@keyframes buttonEffect {
+  to {
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+    border-width: 6px;
+    filter: alpha(opacify=0);
+    opacity: 0;
+  }
+}
