@@ -35,13 +35,13 @@
     background-color: #148EF6;
     color: #FFFFFF;
     &:hover {
-      border-color: #3BA5FF;
-      background-color: #3BA5FF;
+      border-color: #3BA6FF;
+      background-color: #3BA6FF;
     }
     &:focus:after {
       border-color: #148EF6;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       border-color: #88C6FA;
       background-color: #88C6FA;
       cursor: not-allowed;
@@ -58,7 +58,7 @@
     &:focus:after {
       border-color: #148EF6;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       border-color: #EBEEF6;
       color: #C0C4CC;
       cursor: not-allowed;
@@ -75,7 +75,7 @@
     &:focus:after {
       border-color: #FEB24B;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       border-color: #F8CD88;
       background-color: #F8CD88;
       cursor: not-allowed;
@@ -92,7 +92,7 @@
     &:focus:after {
       border-color: #FE694B;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       border-color: #F8A288;
       background-color: #F8A288;
       cursor: not-allowed;
@@ -103,11 +103,11 @@
 .v-btn__text {
   border: 1px solid transparent;
   &.v-btn__primary {
-    color: #148EF5;
+    color: #148EF6;
     &:hover {
       color: #3BA6FF;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       color: #88C6FA;
       cursor: not-allowed;
     }
@@ -117,7 +117,7 @@
     &:hover {
       color: #3BA6FF;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       color: #C0C4CC;
       cursor: not-allowed;
     }
@@ -127,7 +127,7 @@
     &:hover {
       color: #FEB24B;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       color: #F8CD88;
       cursor: not-allowed;
     }
@@ -137,7 +137,7 @@
     &:hover {
       color: #FE694B;
     }
-    &.is-disabled, &.is-disabled:hover {
+    &.disabled, &.disabled:hover {
       color: #F8A288;
       cursor: not-allowed;
     }

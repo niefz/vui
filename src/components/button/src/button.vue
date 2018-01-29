@@ -8,8 +8,8 @@
       'v-btn__' + theme,
       'v-btn__' + buttonSize,
       {
-        'is-disabled': disabled,
-        'is-loading': loading,
+        'disabled': disabled,
+        'loading': loading,
       }
      ]"
     :disabled="disabled"

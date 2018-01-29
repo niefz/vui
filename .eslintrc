@@ -17,5 +17,6 @@
     "vue"
   ],
   "rules": {
+    "no-console": 0
   }
 }
