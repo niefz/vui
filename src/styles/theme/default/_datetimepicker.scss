@@ -178,24 +178,3 @@
     }
   }
 }
-
-.slide-up-enter,
-.slide-up-enter-active,
-.slide-up-appear,
-.slide-up-appear-active {
-  animation-name: antSlideUpIn;
-  transition: all 1s;
-}
-
-@keyframes antSlideUpIn {
-  0% {
-    opacity: 0;
-    transform-origin: 0 0;
-    transform: scaleY(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform-origin: 0 0;
-    transform: scaleY(1);
-  }
-}
