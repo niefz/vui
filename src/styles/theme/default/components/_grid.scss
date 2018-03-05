@@ -1,0 +1,130 @@
+/* variable for grid system */
+$grid-columns: 24;
+
+$grid-gutter-width: 0;
+
+/* mixins for grid system */
+@mixin make-row($gutter: $grid-gutter-width) {
+  position: relative;
+  margin-right: ($gutter / -2);
+  margin-left: ($gutter / -2);
+  height: auto;
+  @extend .clearfix;
+}
+
+@mixin make-grid($class) {
+  @for $index from 1 through 24 {
+    .v-col-#{$class}-#{$index} {
+      display: block;
+      position: relative;
+      float: left;
+      padding-right: ($grid-gutter-width / 2);
+      padding-left: ($grid-gutter-width / 2);
+      width: (1 / $grid-columns * $index * 100) * 1%;
+      min-height: 1px;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+    }
+    .v-col-#{$class}-offset-#{$index} {
+      margin-left: (1 / $grid-columns * $index * 100) * 1%;
+    }
+    .v-col-#{$class}-pull-#{$index} {
+      position: relative;
+      right: (1 / $grid-columns * $index * 100) * 1%;
+    }
+    .v-col-#{$class}-push-#{$index} {
+      position: relative;
+      left: (1 / $grid-columns * $index * 100) * 1%;
+    }
+  }
+}
+
+/* Grid system */
+.v-row {
+  display: block;
+  @include make-row();
+  box-sizing: border-box;
+}
+
+.v-row-flex {
+  display: flex;
+  flex-flow: row wrap;
+
+  &:before,
+  &:after {
+    display: flex;
+  }
+}
+
+/* x轴原点 */
+.v-row-flex-start {
+  justify-content: flex-start;
+}
+
+/* x轴居中 */
+.v-row-flex-center {
+  justify-content: center;
+}
+
+/* x轴反方向 */
+.v-row-flex-end {
+  justify-content: flex-end;
+}
+
+/* x轴平分 */
+.v-row-flex-space-between {
+  justify-content: space-between;
+}
+
+/* x轴有间隔地平分 */
+.v-row-flex-space-around {
+  justify-content: space-around;
+}
+
+/* 顶部对齐 */
+.v-row-flex-top {
+  align-items: flex-start;
+}
+
+/* 居中对齐 */
+.v-row-flex-middle {
+  align-items: center;
+}
+
+/* 底部对齐 */
+.v-row-flex-bottom {
+  align-items: flex-end;
+}
+
+.v-col {
+  position: relative;
+  display: block;
+}
+
+/* Extra small grid */
+@include make-grid(xs);
+
+/* Small grid */
+@media (min-width: 576px) {
+  @include make-grid(sm);
+}
+
+/* Medium grid */
+@media (min-width: 768px) {
+  @include make-grid(md);
+}
+
+/* Large grid */
+@media (min-width: 992px) {
+  @include make-grid(lg);
+}
+
+/* Extra Large grid */
+@media (min-width: 1200px) {
+  @include make-grid(xl);
+}
+
+/* Extra Extra Large grid */
+@media (min-width: 1600px) {
+  @include make-grid(xxl);
+}
