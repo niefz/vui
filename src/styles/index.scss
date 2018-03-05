@@ -1,17 +1,9 @@
+/**
+ * reset
+ */
 @import "./reset";
-@import "./theme/default/input";
-@import "./theme/default/button";
-@import "./theme/default/button-group";
-@import "./theme/default/datetimepicker";
-@import "./theme/default/breadcrumb";
 
-
-.clearfix {
-  &:before, &:after {
-    display: table;
-    content: '';
-  }
-  &:after {
-    clear: both;
-  }
-}
+/**
+ * default
+ */
+@import "theme-default/index";

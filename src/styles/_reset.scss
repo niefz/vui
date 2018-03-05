@@ -1,4 +1,4 @@
-html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video {
+html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, button, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video {
   margin: 0;
   padding: 0;
   outline: none;
@@ -67,4 +67,20 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    font-size: 0;
+  }
 }
