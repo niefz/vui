@@ -1,1 +1,91 @@
+/* variable for menu */
 
+/* mixin for menu */
+@mixin v-menu-item-border-normal {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-right: 3px solid #148EF6;
+    opacity: 0;
+    transform: scaleY(.0001);
+    transition: transform .15s cubic-bezier(.215, .61, .355, 1),
+                opacity .15s cubic-bezier(.215, .61, .355, 1),
+                -webkit-transform .15s cubic-bezier(.215, .61, .355, 1);
+  }
+}
+
+@mixin v-menu-item-border-active {
+  &:after {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: transform .15s cubic-bezier(.645, .045, .355, 1),
+                opacity .15s cubic-bezier(.645, .045, .355, 1),
+                -webkit-transform .15s cubic-bezier(.645, .045, .355, 1);
+  }
+}
+
+.v-menu {
+  font-size: 14px;
+  line-height: 40px;
+  transition: background .3s, width .2s;
+  @extend .clearfix;
+  &__item {
+    a {
+      display: block;
+      position: relative;
+      height: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      @extend .text-overflow;
+      @include v-menu-item-border-normal;
+      &:hover {
+        color: #148EF6;
+      }
+      &.active {
+        background-color: #E6F7FF;
+        color: #148EF6;
+        @include v-menu-item-border-active;
+      }
+    }
+  }
+  .v-submenu {
+    &__title {
+      display: block;
+      height: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      @extend .text-overflow;
+    }
+    &-group {
+      &__title {
+        padding-right: 20px;
+        padding-left: 40px;
+        color: rgba(0, 0, 0, .45);
+      }
+      &__menu {
+        .v-group-item {
+          a {
+            display: block;
+            position: relative;
+            height: 40px;
+            padding-right: 20px;
+            padding-left: 60px;
+            @extend .text-overflow;
+            @include v-menu-item-border-normal;
+            &:hover {
+              color: #148EF6;
+            }
+            &.active {
+              background-color: #E6F7FF;
+              color: #148EF6;
+              @include v-menu-item-border-active;
+            }
+          }
+        }
+      }
+    }
+  }
+}

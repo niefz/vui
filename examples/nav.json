@@ -1,0 +1,222 @@
+[
+  {
+    "name": "快速上手",
+    "path": "/zh-CN/getting-started"
+  },
+  {
+    "name": "项目实战",
+    "path": "/zh-CN/practical-projects"
+  },
+  {
+    "name": "定制主题",
+    "path": "/zh-CN/customize-theme"
+  },
+  {
+    "name": "更新日志",
+    "path": "/zh-CN/recommendation"
+  },
+  {
+    "name": "社区精选组件",
+    "path": "/zh-CN/changelog"
+  },
+  {
+    "name": "国际化",
+    "path": "/zh-CN/i18n"
+  },
+  {
+    "name": "贡献指南",
+    "path": "/zh-CN/contributing"
+  },
+  {
+    "name": "Components",
+    "groups": [
+      {
+        "groupName": "Basic",
+        "list": [
+          {
+            "path": "/zh-CN/components/color",
+            "title": "Color 色彩"
+          },
+          {
+            "path": "/zh-CN/components/font",
+            "title": "Font 字体"
+          },
+          {
+            "path": "/zh-CN/components/icon",
+            "title": "Icon 图标"
+          }
+        ]
+      },
+      {
+        "groupName": "Layout",
+        "list": [
+          {
+            "path": "/zh-CN/components/grid",
+            "title": "Grid 栅格"
+          },
+          {
+            "path": "/zh-CN/components/layout",
+            "title": "Layout 布局"
+          }
+        ]
+      },
+      {
+        "groupName": "Navigation",
+        "list": [
+          {
+            "path": "/zh-CN/components/menu",
+            "title": "NavMenu 导航菜单"
+          },
+          {
+            "path": "/zh-CN/components/tabs",
+            "title": "Tabs 标签页"
+          },
+          {
+            "path": "/zh-CN/components/breadcrumb",
+            "title": "Breadcrumb 面包屑"
+          },
+          {
+            "path": "/zh-CN/components/dropdown",
+            "title": "Dropdown 下拉菜单"
+          },
+          {
+            "path": "/zh-CN/components/steps",
+            "title": "Steps 步骤条"
+          }
+        ]
+      },
+      {
+        "groupName": "Form",
+        "list": [
+          {
+            "path": "/zh-CN/components/button",
+            "title": "Button 按钮"
+          },
+          {
+            "path": "/zh-CN/components/input",
+            "title": "Input 输入框"
+          },
+          {
+            "path": "/zh-CN/components/input-number",
+            "title": "InputNumber 数字输入框"
+          },
+          {
+            "path": "/zh-CN/components/radio",
+            "title": "Radio 单选框"
+          },
+          {
+            "path": "/zh-CN/components/checkbox",
+            "title": "Checkbox 多选框"
+          },
+          {
+            "path": "/zh-CN/components/datetime-picker",
+            "title": "DateTimePicker 日期时间选择器"
+          },
+          {
+            "path": "/zh-CN/components/switch",
+            "title": "Switch 开关"
+          },
+          {
+            "path": "/zh-CN/components/select",
+            "title": "Select 选择器"
+          },
+          {
+            "path": "/zh-CN/components/cascader",
+            "title": "Cascader 级联选择器"
+          },
+          {
+            "path": "/zh-CN/components/transfer",
+            "title": "Transfer 穿梭框"
+          },
+          {
+            "path": "/zh-CN/components/upload",
+            "title": "Upload 上传"
+          },
+          {
+            "path": "/zh-CN/components/slider",
+            "title": "Slider 滑块"
+          },
+          {
+            "path": "/zh-CN/components/rate",
+            "title": "Rate 评分"
+          },
+          {
+            "path": "/zh-CN/components/form",
+            "title": "Form 表单"
+          }
+        ]
+      },
+      {
+        "groupName": "Data Display",
+        "list": [
+          {
+            "path": "/zh-CN/components/table",
+            "title": "Table 表格"
+          },
+          {
+            "path": "/zh-CN/components/avatar",
+            "title": "Avatar头像"
+          },
+          {
+            "path": "/zh-CN/components/badge",
+            "title": "Badge 徽标"
+          },
+          {
+            "path": "/zh-CN/components/tag",
+            "title": "Tag 标签"
+          },
+          {
+            "path": "/zh-CN/components/tree",
+            "title": "Tree 树形控件"
+          },
+          {
+            "path": "/zh-CN/components/pagination",
+            "title": "Pagination 分页"
+          }
+        ]
+      },
+      {
+        "groupName": "Feedback",
+        "list": [
+          {
+            "path": "/zh-CN/components/alert",
+            "title": "Alert 警告提示"
+          },
+          {
+            "path": "/zh-CN/components/modal",
+            "title": "Modal 对话框"
+          },
+          {
+            "path": "/zh-CN/components/message",
+            "title": "Message 全局提示"
+          },
+          {
+            "path": "/zh-CN/components/notification",
+            "title": "Notification 通知提醒"
+          },
+          {
+            "path": "/zh-CN/components/progress",
+            "title": "Progress 进度条"
+          }
+        ]
+      },
+      {
+        "groupName": "Others",
+        "list": [
+          {
+            "path": "/zh-CN/components/anchor",
+            "title": "Anchor 锚点"
+          },
+          {
+            "path": "/zh-CN/components/back-top",
+            "title": "BackTop 回到顶部"
+          },
+          {
+            "path": "/zh-CN/components/divider",
+            "title": "Divider 分割线"
+          }
+        ]
+      }
+    ]
+  }
+]
