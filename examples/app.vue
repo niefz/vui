@@ -14,51 +14,70 @@
                 role="menuitem"
                 aria-selected="false"
                 :key="index"
-                v-for="(nav, index) in navigations"
-                v-if="nav.path">
-                <router-link :to="nav.path">{{ nav.name }}</router-link>
-              </li>
-              <li
-                class="v-submenu"
-                role="menuitem"
-                aria-selected="false"
-                :key="index"
-                v-for="(nav, index) in navigations"
-                v-if="nav.groups">
+                v-for="(nav, index) in navigations">
+                <router-link
+                  :to="nav.path"
+                  v-if="nav.path">
+                  {{ nav.name }}
+                </router-link>
                 <div
-                  class="v-submenu__title"
-                  aria-expanded="true"
-                  aria-haspopup="true">
-                  <h4>{{ nav.name }}</h4>
-                  <i class="v-menu__submenu-arrow"></i>
-                </div>
-                <ul
-                  class="v-submenu__menu"
-                  role="menu">
-                  <li
-                    class="v-submenu-group"
-                    :key="index"
-                    v-for="(sub, index) in nav.groups">
+                  class="v-submenu"
+                  v-else>
+                  <template v-if="nav.child">
                     <div
-                      class="v-submenu-group__title"
-                      :title="sub.groupName">
-                      {{ sub.groupName }}
+                      class="v-submenu__title"
+                      aria-expanded="true"
+                      aria-haspopup="true">
+                      <h4>{{ nav.name }}</h4>
+                      <i class="v-submenu__title-arrow"></i>
                     </div>
                     <ul
-                      class="v-submenu-group__menu">
+                      role="menu">
                       <li
-                        class="v-group-item"
+                        class="v-submenu__item"
                         role="menuitem"
                         aria-selected="false"
                         :key="index"
-                        v-for="(child, index) in sub.list">
-                        <router-link :to="child.path">
-                          {{ child.title }}
-                        </router-link>
+                        v-for="(child, index) in nav.child">
+                        <router-link :to="child.path">{{ child.title }}</router-link>
                       </li>
                     </ul>
-                  </li>
-                </ul>
+                  </template>
+                  <template v-if="nav.groups">
+                    <div
+                      class="v-submenu__title"
+                      aria-expanded="true"
+                      aria-haspopup="true">
+                      <h4>{{ nav.name }}</h4>
+                      <i class="v-submenu__title-arrow"></i>
+                    </div>
+                    <ul
+                      role="menu">
+                      <li
+                        class="v-submenu-group"
+                        :key="index"
+                        v-for="(group, index) in nav.groups">
+                        <div
+                          class="v-submenu-group__title">
+                          {{ group.groupName }}
+                        </div>
+                        <ul
+                          class="v-submenu-group__menu">
+                          <li
+                            class="v-group-item"
+                            role="menuitem"
+                            aria-selected="false"
+                            :key="index"
+                            v-for="(child, index) in group.list">
+                            <router-link :to="child.path">
+                              {{ child.title }}
+                            </router-link>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </template>
+                </div>
               </li>
             </ul>
           </div>

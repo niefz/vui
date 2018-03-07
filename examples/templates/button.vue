@@ -193,3 +193,6 @@
     },
   };
 </script>
+<style lang="sass" scoped>
+  p { font-size: 0; }
+</style>

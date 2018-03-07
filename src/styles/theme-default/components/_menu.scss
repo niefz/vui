@@ -1,4 +1,7 @@
 /* variable for menu */
+$menu-indent: 0;
+$menu-item-indent: 20px;
+$menu-item-line-height: 40px;
 
 /* mixin for menu */
 @mixin v-menu-item-border-normal {
@@ -11,9 +14,7 @@
     border-right: 3px solid #148EF6;
     opacity: 0;
     transform: scaleY(.0001);
-    transition: transform .15s cubic-bezier(.215, .61, .355, 1),
-                opacity .15s cubic-bezier(.215, .61, .355, 1),
-                -webkit-transform .15s cubic-bezier(.215, .61, .355, 1);
+    transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
   }
 }
 
@@ -21,69 +22,95 @@
   &:after {
     opacity: 1;
     transform: scaleY(1);
-    transition: transform .15s cubic-bezier(.645, .045, .355, 1),
-                opacity .15s cubic-bezier(.645, .045, .355, 1),
-                -webkit-transform .15s cubic-bezier(.645, .045, .355, 1);
+    transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
   }
+}
+
+@mixin v-menu__item-link {
+  display: block;
+  position: relative;
+  height: ($menu-item-line-height);
+  @extend .text-overflow;
+  @include v-menu-item-border-normal;
+  &:hover {
+    color: #148EF6;
+  }
+  &.active {
+    background-color: #E6F7FF;
+    color: #148EF6;
+    @include v-menu-item-border-active;
+  }
+}
+
+@mixin make-padding($level) {
+  padding-right: $menu-indent + $menu-item-indent;
+  padding-left: ($menu-indent + $menu-item-indent) * $level;
 }
 
 .v-menu {
   width: 100%;
   font-size: 14px;
-  line-height: 40px;
+  line-height: $menu-item-line-height;
   transition: background .3s, width .2s;
   @extend .clearfix;
   &__item {
-    a {
-      display: block;
-      position: relative;
-      height: 40px;
-      padding-right: 20px;
-      padding-left: 20px;
-      @extend .text-overflow;
-      @include v-menu-item-border-normal;
-      &:hover {
-        color: #148EF6;
-      }
-      &.active {
-        background-color: #E6F7FF;
-        color: #148EF6;
-        @include v-menu-item-border-active;
-      }
+    > a {
+      @include make-padding(1);
+      @include v-menu__item-link;
     }
   }
   .v-submenu {
     &__title {
       display: block;
-      height: 40px;
-      padding-right: 20px;
-      padding-left: 20px;
-      @extend .text-overflow;
+      position: relative;
+      height: $menu-item-line-height;
+      @include make-padding(1);
+      cursor: pointer;
+      h4 {
+        max-width: 80%;
+        height: inherit;
+        @extend .text-overflow;
+      }
+      &-arrow {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        width: 10px;
+        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          width: 6px;
+          height: 1.5px;
+          background-image: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+          vertical-align: baseline;
+          border-radius: 2px;
+          transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        &:before {
+          transform: rotate(-45deg) translateX(2px);
+        }
+        &:after {
+          transform: rotate(45deg) translateX(-2px);
+        }
+      }
+    }
+    &__item {
+      > a {
+        @include make-padding(2);
+        @include v-menu__item-link;
+      }
     }
     &-group {
       &__title {
-        padding-right: 20px;
-        padding-left: 40px;
+        @include make-padding(2);
         color: rgba(0, 0, 0, .45);
       }
       &__menu {
         .v-group-item {
-          a {
-            display: block;
-            position: relative;
-            height: 40px;
-            padding-right: 20px;
-            padding-left: 60px;
-            @extend .text-overflow;
-            @include v-menu-item-border-normal;
-            &:hover {
-              color: #148EF6;
-            }
-            &.active {
-              background-color: #E6F7FF;
-              color: #148EF6;
-              @include v-menu-item-border-active;
-            }
+          > a {
+            @include make-padding(3);
+            @include v-menu__item-link;
           }
         }
       }
