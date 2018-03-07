@@ -127,4 +127,17 @@
   .markdown {
     padding: 0 160px 0 60px;
   }
+
+  .markdown h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    color: #0D1A26;
+  }
+
+  .markdown h1 .subtitle {
+    margin-left: 10px
+  }
 </style>
