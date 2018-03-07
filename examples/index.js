@@ -1,5 +1,5 @@
 /**
- * Created by NieFZ on 2017/11/28.
+ * Created by niefz on 2017/11/28.
  */
 import Vue from 'vue';
 /**

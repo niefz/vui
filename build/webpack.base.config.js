@@ -1,5 +1,5 @@
 /**
- * Created by NieFZ on 2017/11/24.
+ * Created by niefz on 2017/11/24.
  */
 const path = require('path');
 const webpack = require('webpack');
@@ -34,8 +34,12 @@ module.exports = {
             loader: 'eslint'
           }
         ],
-        include: APP_PATH,
-        exclude: MODULES_PATH
+        include: [
+          APP_PATH
+        ],
+        exclude: [
+          MODULES_PATH
+        ]
       },
       {
         test: /\.js$/,
@@ -43,11 +47,14 @@ module.exports = {
           {
             loader: 'babel',
             options: {
+              sourceMap: true,
               cacheDirectory: true
             }
           }
         ],
-        exclude: MODULES_PATH
+        exclude: [
+          MODULES_PATH
+        ]
       },
       {
         test: /\.s?css$/,
@@ -56,7 +63,10 @@ module.exports = {
             loader: 'style'
           },
           {
-            loader: 'css'
+            loader: 'css',
+            options: {
+              minimize: true
+            }
           },
           {
             loader: 'sass'
@@ -79,40 +89,48 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue',
-        options: {
-          loaders: {
-            js: 'babel',
-            css: {
-              fallback: 'vue-style',
-              use: [
-                {
-                  loader: 'css',
-                  options: {
-                    minimize: true
-                  }
-                }
-              ]
-            },
-            scss: {
-              fallback: 'vue-style',
-              use: [
-                {
-                  loader: 'css'
+        use: [
+          {
+            loader: 'vue',
+            options: {
+              loaders: {
+                js: 'babel',
+                css: {
+                  fallback: 'vue-style',
+                  use: [
+                    {
+                      loader: 'css',
+                      options: {
+                        minimize: true
+                      }
+                    }
+                  ]
                 },
-                {
-                  loader: 'scss'
-                },
-                {
-                  loader: 'postcss'
+                scss: {
+                  fallback: 'vue-style',
+                  use: [
+                    {
+                      loader: 'css',
+                      options: {
+                        minimize: true
+                      }
+                    },
+                    {
+                      loader: 'sass'
+                    },
+                    {
+                      loader: 'postcss'
+                    }
+                  ]
                 }
-              ]
+              },
+              postLoaders: {
+                html: 'babel'
+              },
+              sourceMap: true
             }
-          },
-          postLoaders: {
-            html: 'babel'
           }
-        }
+        ]
       }
     ]
   },
