@@ -1,3 +1,6 @@
+/* variable for button */
+$border-radius: 3;
+
 .v-btn {
   display: inline-block;
   position: relative;
@@ -23,8 +26,7 @@
     bottom: -1px;
     left: -1px;
     content: '';
-    border-width: 0;
-    border-style: solid;
+    border: 0 solid;
     filter: alpha(opacify=40);
     opacity: .4;
     border-radius: inherit;
@@ -145,7 +147,7 @@
 }
 
 .v-btn__radius {
-  border-radius: 3px;
+  border-radius: $border-radius + px;
   &.v-btn__mini {
     height: 28px;
     font-size: 12px;

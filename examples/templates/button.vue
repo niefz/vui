@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Button<span class="subtitle">按钮</span></h1>
     <p>
       <v-button
         type="button"
@@ -193,6 +194,21 @@
     },
   };
 </script>
-<style lang="sass" scoped>
-  p { font-size: 0; }
+<style rel="stylesheet/scss" lang="sass" scoped>
+  p {
+    font-size: 0;
+  }
+
+  .markdown h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    color: #0D1A26;
+  }
+
+  .markdown h1 .subtitle {
+    margin-left: 10px
+  }
 </style>

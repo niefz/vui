@@ -95,17 +95,6 @@ module.exports = {
             options: {
               loaders: {
                 js: 'babel',
-                css: {
-                  fallback: 'vue-style',
-                  use: [
-                    {
-                      loader: 'css',
-                      options: {
-                        minimize: true
-                      }
-                    }
-                  ]
-                },
                 scss: {
                   fallback: 'vue-style',
                   use: [

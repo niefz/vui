@@ -1,7 +1,7 @@
 /* variable for menu */
 $menu-indent: 0;
-$menu-item-indent: 20px;
-$menu-item-line-height: 40px;
+$menu-item-indent: 20;
+$menu-item-line-height: 40;
 
 /* mixin for menu */
 @mixin v-menu-item-border-normal {
@@ -29,7 +29,7 @@ $menu-item-line-height: 40px;
 @mixin v-menu__item-link {
   display: block;
   position: relative;
-  height: ($menu-item-line-height);
+  height: $menu-item-line-height + px;
   @extend .text-overflow;
   @include v-menu-item-border-normal;
   &:hover {
@@ -43,14 +43,14 @@ $menu-item-line-height: 40px;
 }
 
 @mixin make-padding($level) {
-  padding-right: $menu-indent + $menu-item-indent;
-  padding-left: ($menu-indent + $menu-item-indent) * $level;
+  padding-right: $menu-indent + $menu-item-indent + px;
+  padding-left: ($menu-indent + $menu-item-indent) * $level + px;
 }
 
 .v-menu {
   width: 100%;
   font-size: 14px;
-  line-height: $menu-item-line-height;
+  line-height: $menu-item-line-height + px;
   transition: background .3s, width .2s;
   @extend .clearfix;
   &__item {
@@ -63,7 +63,7 @@ $menu-item-line-height: 40px;
     &__title {
       display: block;
       position: relative;
-      height: $menu-item-line-height;
+      height: $menu-item-line-height + px;
       @include make-padding(1);
       cursor: pointer;
       h4 {

@@ -114,9 +114,17 @@
     },
   };
 </script>
-<style lang="sass">
+<style rel="stylesheet/scss" lang="sass">
   @import "../src/styles/index.scss";
 
-  .side-nav { border-right: 1px solid #E8E8E8; }
-  .side-nav .v-menu { width: calc(100% + 1px); }
+  .side-nav {
+    border-right: 1px solid #E8E8E8;
+    &.v-menu {
+      width: calc(100% + 1px);
+    }
+  }
+
+  .markdown {
+    padding: 0 160px 0 60px;
+  }
 </style>
