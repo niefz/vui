@@ -1,194 +1,151 @@
 <template>
   <div>
     <h1>Button<span class="subtitle">按钮</span></h1>
-    <p>
+    <div class="v-row">
+      <v-button-group>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="primary">
+          Primary
+        </v-button>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="default">
+          Default
+        </v-button>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="warning">
+          Warning
+        </v-button>
+        <v-button
+          type="button"
+          shape="radius"
+          theme="danger">
+          Danger
+        </v-button>
+      </v-button-group>
+    </div>
+    <div class="v-row">
       <v-button-group>
         <v-button
           type="button"
           shape="radius"
           theme="primary"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Primary
         </v-button>
         <v-button
           type="button"
           shape="radius"
           theme="default"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Default
         </v-button>
         <v-button
           type="button"
           shape="radius"
           theme="warning"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Warning
         </v-button>
         <v-button
           type="button"
           shape="radius"
           theme="danger"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Danger
         </v-button>
       </v-button-group>
-    </p>
-    <p>
+    </div>
+    <div class="v-row">
       <v-button-group>
         <v-button
-          type="button"
+          type="text"
           shape="radius"
-          theme="primary"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          theme="primary">
           Primary
         </v-button>
         <v-button
-          type="button"
+          type="text"
           shape="radius"
-          theme="default"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          theme="default">
           Default
         </v-button>
         <v-button
-          type="button"
+          type="text"
           shape="radius"
-          theme="warning"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          theme="warning">
           Warning
         </v-button>
         <v-button
-          type="button"
+          type="text"
           shape="radius"
-          theme="danger"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          theme="danger">
           Danger
         </v-button>
       </v-button-group>
-    </p>
-    <p>
+    </div>
+    <div class="v-row">
       <v-button-group>
         <v-button
           type="text"
           shape="radius"
           theme="primary"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Primary
         </v-button>
         <v-button
           type="text"
           shape="radius"
           theme="default"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Default
         </v-button>
         <v-button
           type="text"
           shape="radius"
           theme="warning"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Warning
         </v-button>
         <v-button
           type="text"
           shape="radius"
           theme="danger"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
+          disabled>
           Danger
         </v-button>
       </v-button-group>
-    </p>
-    <p>
-      <v-button-group>
-        <v-button
-          type="text"
-          shape="radius"
-          theme="primary"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Primary
-        </v-button>
-        <v-button
-          type="text"
-          shape="radius"
-          theme="default"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Default
-        </v-button>
-        <v-button
-          type="text"
-          shape="radius"
-          theme="warning"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Warning
-        </v-button>
-        <v-button
-          type="text"
-          shape="radius"
-          theme="danger"
-          disabled
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Danger
-        </v-button>
-      </v-button-group>
-    </p>
-    <p>
+    </div>
+    <div class="v-row">
       <v-button-group>
         <v-button
           type="button"
-          shape="radius"
-          theme="default"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Primary
+          shape="circle"
+          theme="primary">
+          <i class="v-icon v-icon-message"></i>
         </v-button>
         <v-button
           type="button"
-          shape="radius"
-          theme="default"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Default
+          shape="circle"
+          theme="default">
         </v-button>
         <v-button
           type="button"
-          shape="radius"
-          theme="default"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Warning
+          shape="circle"
+          theme="warning">
         </v-button>
         <v-button
           type="button"
-          shape="radius"
-          theme="default"
-          prefix-icon="v-icon-loading"
-          suffix-icon="v-icon-loading">
-          Danger
+          shape="circle"
+          theme="danger">
         </v-button>
       </v-button-group>
-    </p>
+    </div>
   </div>
 </template>
 <script>
@@ -203,8 +160,7 @@
   };
 </script>
 <style rel="stylesheet/scss" lang="sass" scoped>
-  p {
-    font-size: 0;
+  .v-row {
     margin-bottom: 10px;
   }
 </style>

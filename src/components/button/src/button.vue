@@ -8,11 +8,10 @@
       'v-btn__' + theme,
       'v-btn__' + buttonSize,
       {
-        'disabled': disabled,
-        'loading': loading,
+        'disabled': buttonDisabled,
       }
      ]"
-    :disabled="disabled"
+    :disabled="buttonDisabled"
     @click="handleClick">
     <span v-if="loading">
       <i class="v-icon-loading" v-if="loading"></i>
@@ -63,6 +62,9 @@
     computed: {
       buttonSize() {
         return this.size || (this.$VUI || {}).size;
+      },
+      buttonDisabled() {
+        return this.disabled || this.loading;
       },
     },
     methods: {
