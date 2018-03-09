@@ -83,9 +83,7 @@
           </div>
         </div>
         <div class="v-col-xs-24 v-col-sm-24 v-col-md-24 v-col-lg-18 v-col-xl-19 v-col-xxl-20">
-          <article ref="article" class="markdown">
-            <router-view></router-view>
-          </article>
+          <router-view></router-view>
         </div>
       </div>
     </section>
@@ -126,18 +124,34 @@
 
   .markdown {
     padding: 0 160px 0 60px;
-  }
-
-  .markdown h1 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 38px;
-    color: #0D1A26;
-  }
-
-  .markdown h1 .subtitle {
-    margin-left: 10px
+    h1 {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 28px;
+      line-height: 38px;
+      .subtitle {
+        margin-left: 10px
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.5em;
+      color: #5E6D82;
+    }
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      line-height: 38px;
+    }
+    .example {
+      margin-bottom: 20px;
+      border: 1px solid #E8E8E8;
+      border-radius: 3px;
+      transition: all .2s ease-in-out;
+      &-demo, &-code {
+        padding: 20px;
+      }
+    }
   }
 </style>

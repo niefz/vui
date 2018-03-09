@@ -1,18 +1,21 @@
 /* variable for button */
 $border-radius: 3;
+$button-margin: 10;
 
 .v-btn {
   display: inline-block;
   position: relative;
   margin: 0;
-  padding: 0;
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   touch-action: manipulation;
   user-select: none;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  & + .v-btn {
+    margin-left: $button-margin + px;
+  }
 }
 
 .v-btn__button {
@@ -36,7 +39,7 @@ $border-radius: 3;
     border-color: #148EF6;
     background-color: #148EF6;
     color: #FFFFFF;
-    &:hover {
+    &:hover, &:focus {
       border-color: #3BA6FF;
       background-color: #3BA6FF;
     }
@@ -53,7 +56,7 @@ $border-radius: 3;
     border-color: #E8E8E8;
     background-color: #FFFFFF;
     color: #292E42;
-    &:hover {
+    &:hover, &:focus {
       border-color: #3BA6FF;
       color: #3BA6FF;
     }
@@ -70,7 +73,7 @@ $border-radius: 3;
     border-color: #F29C12;
     background-color: #F29C12;
     color: #FFFFFF;
-    &:hover {
+    &:hover, &:focus {
       border-color: #FEB24B;
       background-color: #FEB24B;
     }
@@ -87,7 +90,7 @@ $border-radius: 3;
     border-color: #F24812;
     background-color: #F24812;
     color: #FFFFFF;
-    &:hover {
+    &:hover, &:focus {
       border-color: #FE694B;
       background-color: #FE694B;
     }
@@ -106,7 +109,7 @@ $border-radius: 3;
   border: 1px solid transparent;
   &.v-btn__primary {
     color: #148EF6;
-    &:hover {
+    &:hover, &:focus {
       color: #3BA6FF;
     }
     &.disabled, &.disabled:hover {
@@ -116,7 +119,7 @@ $border-radius: 3;
   }
   &.v-btn__default {
     color: #292E42;
-    &:hover {
+    &:hover, &:focus {
       color: #3BA6FF;
     }
     &.disabled, &.disabled:hover {
@@ -126,7 +129,7 @@ $border-radius: 3;
   }
   &.v-btn__warning {
     color: #F29C12;
-    &:hover {
+    &:hover, &:focus {
       color: #FEB24B;
     }
     &.disabled, &.disabled:hover {
@@ -136,7 +139,7 @@ $border-radius: 3;
   }
   &.v-btn__danger {
     color: #F24812;
-    &:hover {
+    &:hover, &:focus {
       color: #FE694B;
     }
     &.disabled, &.disabled:hover {

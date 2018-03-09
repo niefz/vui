@@ -82,10 +82,10 @@ $menu-item-line-height: 40;
           position: absolute;
           width: 6px;
           height: 1.5px;
-          background-image: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+          background-image: linear-gradient(to right, rgba(0, 0, 0, .65), rgba(0, 0, 0, .65));
           vertical-align: baseline;
           border-radius: 2px;
-          transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+          transition: background .3s cubic-bezier(.645, .045, .355, 1), transform .3s cubic-bezier(.645, .045, .355, 1);
         }
         &:before {
           transform: rotate(-45deg) translateX(2px);

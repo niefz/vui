@@ -49,6 +49,10 @@
           {
             "title": "Icon 图标",
             "path": "/zh-CN/components/icon"
+          },
+          {
+            "title": "Button 按钮",
+            "path": "/zh-CN/components/button"
           }
         ]
       },
@@ -97,10 +101,6 @@
       {
         "groupName": "Form",
         "list": [
-          {
-            "title": "Button 按钮",
-            "path": "/zh-CN/components/button"
-          },
           {
             "title": "Input 输入框",
             "path": "/zh-CN/components/input"

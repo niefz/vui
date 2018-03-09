@@ -48,8 +48,6 @@
         type: String,
         default: 'small',
       },
-      disabled: Boolean,
-      loading: Boolean,
       prefixIcon: {
         type: String,
         default: '',
@@ -58,6 +56,8 @@
         type: String,
         default: '',
       },
+      disabled: Boolean,
+      loading: Boolean,
     },
     computed: {
       buttonSize() {

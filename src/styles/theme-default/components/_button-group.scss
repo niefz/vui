@@ -1,6 +1,5 @@
 /* variable for button */
 $border-radius: 3;
-$button-margin: 10;
 
 .v-btn-group {
   display: inline-block;
@@ -8,27 +7,20 @@ $button-margin: 10;
   font-size: 0;
   z-index: 1;
   .v-btn {
-    @if $button-margin > 0 {
-      &:not(:first-child) {
-        margin-left: $button-margin + px;
-      }
+    border-radius: 0;
+    &:first-child {
+      border-top-left-radius: $border-radius + px;
+      border-bottom-left-radius: $border-radius + px;
     }
-    @else {
-      border-radius: 0;
-      &:first-child {
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
-      }
-      &:last-child {
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-      }
-      &:not(:first-child) {
-        margin-left: -1px;
-      }
+    &:last-child {
+      border-top-right-radius: $border-radius + px;
+      border-bottom-right-radius: $border-radius + px;
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
     }
     &:hover {
-      z-index: 3;
+      z-index: 2;
     }
     &:focus {
       z-index: 2;

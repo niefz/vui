@@ -1,11 +1,10 @@
-html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, button, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video {
+html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, button, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video, pre, code {
   margin: 0;
   padding: 0;
   outline: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
   font-weight: normal;
 }
 
@@ -51,13 +50,20 @@ mark {
   background: none;
 }
 
-input::-ms-clear {
-  display: none;
-}
-
 body {
   font: 12px/1.5 "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+input::-ms-clear {
+  display: none;
 }
 
 a {
