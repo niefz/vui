@@ -57,18 +57,18 @@
       <div class="example-demo v-col-xl-12">
         <div class="v-row">
           <v-button-group>
-            <v-button type="button" shape="radius" theme="default">Primary</v-button>
+            <v-button type="button" shape="radius" theme="primary">Primary</v-button>
             <v-button type="button" shape="radius" theme="default">Default</v-button>
-            <v-button type="button" shape="radius" theme="default">Warning</v-button>
-            <v-button type="button" shape="radius" theme="default">Danger</v-button>
+            <v-button type="button" shape="radius" theme="warning">Warning</v-button>
+            <v-button type="button" shape="radius" theme="danger">Danger</v-button>
           </v-button-group>
         </div>
         <div class="v-row">
           <v-button-group>
-            <v-button type="button" shape="radius" theme="default" disabled>Primary</v-button>
+            <v-button type="button" shape="radius" theme="primary" disabled>Primary</v-button>
             <v-button type="button" shape="radius" theme="default" disabled>Default</v-button>
-            <v-button type="button" shape="radius" theme="default" disabled>Warning</v-button>
-            <v-button type="button" shape="radius" theme="default" disabled>Danger</v-button>
+            <v-button type="button" shape="radius" theme="warning" disabled>Warning</v-button>
+            <v-button type="button" shape="radius" theme="danger" disabled>Danger</v-button>
           </v-button-group>
         </div>
         <div class="v-row">
@@ -78,6 +78,13 @@
             <v-button type="button" shape="radius" theme="default">Warning</v-button>
             <v-button type="button" shape="radius" theme="default">Danger</v-button>
           </v-button-group>
+        </div>
+      </div>
+    </div>
+    <div class="example v-row">
+      <div class="example-demo v-col-xl-12">
+        <div class="v-row">
+          <v-button type="button" theme="primary" loading>primary</v-button>
         </div>
       </div>
     </div>
