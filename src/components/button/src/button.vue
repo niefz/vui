@@ -13,15 +13,15 @@
      ]"
     :disabled="buttonDisabled"
     @click="handleClick">
-    <span v-if="loading">
+    <template v-if="loading">
       <i class="v-icon-loading" v-if="loading"></i>
       <slot></slot>
-    </span>
-    <span v-else>
+    </template>
+    <template v-else>
       <i class="v-icon" :class="prefixIcon" v-if="prefixIcon"></i>
       <slot></slot>
       <i class="v-icon" :class="suffixIcon" v-if="suffixIcon"></i>
-    </span>
+    </template>
   </button>
 </template>
 <script>

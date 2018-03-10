@@ -30,6 +30,10 @@ $border-radius: 3;
         margin-left: -1px;
       }
     }
+    .v-btn__primary + .v-btn__primary {
+      margin-left: 0;
+      border-left-color: #0084D8;
+    }
   }
   &__vertical {
     .v-btn {
