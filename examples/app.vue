@@ -129,9 +129,6 @@
       margin-bottom: 20px;
       font-size: 28px;
       line-height: 38px;
-      .subtitle {
-        margin-left: 10px
-      }
     }
     p {
       font-size: 14px;

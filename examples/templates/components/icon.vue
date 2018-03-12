@@ -1,12 +1,13 @@
 <template>
   <article ref="article" class="markdown">
-    <h1>Icon<span class="subtitle">图标</span></h1>
+    <h1>Icon 图标</h1>
     <p>基础组件，提供了一套常用的图标集合。</p>
     <h2>代码示例</h2>
     <div class="example v-row">
       <div class="example-demo v-col-xl-12">
         <div class="v-row">
           <v-icon icon="v-icon-delete"></v-icon>
+          <v-icon icon="v-icon-loading"></v-icon>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <article ref="article" class="markdown">
-    <h1>Button<span class="subtitle">按钮</span></h1>
+    <h1>Button 按钮</h1>
     <p>基础组件，用于常用的按钮操作。</p>
     <h2>代码示例</h2>
     <div class="example v-row">
