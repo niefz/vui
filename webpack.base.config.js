@@ -3,10 +3,10 @@
  */
 const path = require('path');
 const webpack = require('webpack');
-const package = require('../package.json');
+const package = require('./package.json');
 
 const resolve = (dir) => {
-  return path.join(__dirname, '..', dir);
+  return path.join(__dirname, '.', dir);
 };
 
 const MODULES_PATH = resolve('node_modules');

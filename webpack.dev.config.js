@@ -10,7 +10,7 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
 
 const resolve = (dir) => {
-  return path.join(__dirname, '..', dir);
+  return path.join(__dirname, '.', dir);
 };
 
 const APP_PATH = resolve('src');
