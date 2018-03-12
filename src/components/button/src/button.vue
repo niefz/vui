@@ -8,25 +8,31 @@
       'v-btn__' + theme,
       'v-btn__' + buttonSize,
       {
+        'plain': plain,
         'disabled': buttonDisabled,
       }
      ]"
     :disabled="buttonDisabled"
     @click="handleClick">
     <template v-if="loading">
-      <i class="v-icon-loading" v-if="loading"></i>
+      <v-icon icon="v-icon-loading" v-if="loading"></v-icon>
       <slot></slot>
     </template>
     <template v-else>
-      <i class="v-icon" :class="prefixIcon" v-if="prefixIcon"></i>
+      <v-icon :icon="prefixIcon" v-if="prefixIcon"></v-icon>
       <slot></slot>
-      <i class="v-icon" :class="suffixIcon" v-if="suffixIcon"></i>
+      <v-icon :icon="suffixIcon" v-if="suffixIcon"></v-icon>
     </template>
   </button>
 </template>
 <script>
+  import Icon from '@/components/icon';
+
   export default {
     name: 'Button',
+    components: {
+      VIcon: Icon,
+    },
     props: {
       nativeType: {
         type: String,
@@ -56,8 +62,18 @@
         type: String,
         default: '',
       },
-      disabled: Boolean,
-      loading: Boolean,
+      plain: {
+        type: Boolean,
+        default: false,
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
+      loading: {
+        type: Boolean,
+        default: false,
+      },
     },
     computed: {
       buttonSize() {

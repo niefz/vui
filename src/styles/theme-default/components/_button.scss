@@ -2,10 +2,25 @@
 $border-radius: 3;
 $button-margin: 10;
 
+/* mixin for grid system */
+@mixin make-color($border-color, $background-color, $color) {
+  border-color: $border-color;
+  background-color: $background-color;
+  color: $color;
+}
+
+@mixin make-size($width, $height, $font-size) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+  line-height: $height;
+}
+
 .v-btn {
   display: inline-block;
   position: relative;
   margin: 0;
+  background: none;
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
@@ -35,115 +50,123 @@ $button-margin: 10;
     border-radius: inherit;
     animation: buttonEffect .4s;
   }
-  &.v-btn__primary {
-    border-color: #148EF6;
-    background-color: #148EF6;
-    color: #FFFFFF;
+  &.v-btn__default {
+    @include make-color(#E8E8E8, transparent, #292E42);
+    &.plain {
+      @include make-color(#FFFFFF, transparent, #FFFFFF);
+    }
     &:hover, &:focus {
-      border-color: #3BA6FF;
-      background-color: #3BA6FF;
+      @include make-color(#3BA6FF, transparent, #3BA6FF);
     }
     &:focus:after {
       border-color: #148EF6;
     }
     &.disabled, &.disabled:hover {
-      border-color: #88C6FA;
-      background-color: #88C6FA;
+      @include make-color(#EBEEF6, transparent, #EBEEF6);
       cursor: not-allowed;
     }
   }
-  &.v-btn__default {
-    border-color: #E8E8E8;
-    background-color: #FFFFFF;
-    color: #292E42;
+  &.v-btn__primary {
+    @include make-color(#148EF6, #148EF6, #FFFFFF);
     &:hover, &:focus {
-      border-color: #3BA6FF;
-      color: #3BA6FF;
+      @include make-color(#3BA6FF, #3BA6FF, #FFFFFF);
     }
     &:focus:after {
       border-color: #148EF6;
     }
     &.disabled, &.disabled:hover {
-      border-color: #EBEEF6;
-      color: #C0C4CC;
+      @include make-color(#88C6FA, #88C6FA, #FFFFFF);
       cursor: not-allowed;
+    }
+    &.plain {
+      @include make-color(#148EF6, transparent, #148EF6);
+      &.disabled, &.disabled:hover {
+        @include make-color(#88C6FA, transparent, #88C6FA);
+        cursor: not-allowed;
+      }
     }
   }
   &.v-btn__warning {
-    border-color: #F29C12;
-    background-color: #F29C12;
-    color: #FFFFFF;
+    @include make-color(#F29C12, #F29C12, #FFFFFF);
     &:hover, &:focus {
-      border-color: #FEB24B;
-      background-color: #FEB24B;
+      @include make-color(#FEB24B, #FEB24B, #FFFFFF);
     }
     &:focus:after {
       border-color: #FEB24B;
     }
     &.disabled, &.disabled:hover {
-      border-color: #F8CD88;
-      background-color: #F8CD88;
+      @include make-color(#F8CD88, #F8CD88, #FFFFFF);
       cursor: not-allowed;
+    }
+    &.plain {
+      @include make-color(#F29C12, transparent, #F29C12);
+      &.disabled, &.disabled:hover {
+        @include make-color(#F8CD88, transparent, #F8CD88);
+        cursor: not-allowed;
+      }
     }
   }
   &.v-btn__danger {
-    border-color: #F24812;
-    background-color: #F24812;
-    color: #FFFFFF;
+    @include make-color(#F24812, #F24812, #FFFFFF);
     &:hover, &:focus {
-      border-color: #FE694B;
-      background-color: #FE694B;
+      @include make-color(#FE694B, #FE694B, #FFFFFF);
     }
     &:focus:after {
       border-color: #FE694B;
     }
     &.disabled, &.disabled:hover {
-      border-color: #F8A288;
-      background-color: #F8A288;
+      @include make-color(#F8A288, #F8A288, #FFFFFF);
       cursor: not-allowed;
+    }
+    &.plain {
+      @include make-color(#F24812, transparent, #F24812);
+      &.disabled, &.disabled:hover {
+        @include make-color(#F8A288, transparent, #F8A288);
+        cursor: not-allowed;
+      }
     }
   }
 }
 
 .v-btn__text {
   border: 1px solid transparent;
-  &.v-btn__primary {
-    color: #148EF6;
+  &.v-btn__default {
+    @include make-color(transparent, transparent, #292E42);
     &:hover, &:focus {
-      color: #3BA6FF;
+      @include make-color(transparent, transparent, #3BA6FF);
     }
     &.disabled, &.disabled:hover {
-      color: #88C6FA;
+      @include make-color(transparent, transparent, #C0C4CC);
       cursor: not-allowed;
     }
   }
-  &.v-btn__default {
-    color: #292E42;
+  &.v-btn__primary {
+    @include make-color(transparent, transparent, #148EF6);
     &:hover, &:focus {
-      color: #3BA6FF;
+      @include make-color(transparent, transparent, #3BA6FF);
     }
     &.disabled, &.disabled:hover {
-      color: #C0C4CC;
+      @include make-color(transparent, transparent, #88C6FA);
       cursor: not-allowed;
     }
   }
   &.v-btn__warning {
-    color: #F29C12;
+    @include make-color(transparent, transparent, #F29C12);
     &:hover, &:focus {
-      color: #FEB24B;
+      @include make-color(transparent, transparent, #FEB24B);
     }
     &.disabled, &.disabled:hover {
-      color: #F8CD88;
+      @include make-color(transparent, transparent, #F8CD88);
       cursor: not-allowed;
     }
   }
   &.v-btn__danger {
-    color: #F24812;
+    @include make-color(transparent, transparent, #F24812);
     &:hover, &:focus {
-      color: #FE694B;
+      @include make-color(transparent, transparent, #FE694B);
     }
     &.disabled, &.disabled:hover {
-      color: #F8A288;
+      @include make-color(transparent, transparent, #F8A288);
       cursor: not-allowed;
     }
   }
@@ -152,24 +175,16 @@ $button-margin: 10;
 .v-btn__radius {
   border-radius: $border-radius + px;
   &.v-btn__mini {
-    height: 28px;
-    font-size: 12px;
-    line-height: 28px;
+    @include make-size(auto, 28px, 12px);
   }
   &.v-btn__small {
-    height: 32px;
-    font-size: 12px;
-    line-height: 32px;
+    @include make-size(auto, 32px, 12px);
   }
   &.v-btn__medium {
-    height: 36px;
-    font-size: 14px;
-    line-height: 36px;
+    @include make-size(auto, 36px, 14px);
   }
   &.v-btn__large {
-    height: 40px;
-    font-size: 16px;
-    line-height: 40px;
+    @include make-size(auto, 40px, 16px);
   }
 }
 
@@ -177,28 +192,16 @@ $button-margin: 10;
   padding: 0;
   border-radius: 50%;
   &.v-btn__mini {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-    line-height: 28px;
+    @include make-size(28px, 28px, 14px);
   }
   &.v-btn__small {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-    line-height: 32px;
+    @include make-size(32px, 32px, 14px);
   }
   &.v-btn__medium {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-    line-height: 36px;
+    @include make-size(36px, 36px, 16px);
   }
   &.v-btn__large {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    line-height: 40px;
+    @include make-size(40px, 40px, 18px);
   }
 }
 

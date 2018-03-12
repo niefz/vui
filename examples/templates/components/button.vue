@@ -6,16 +6,28 @@
     <div class="example v-row">
       <div class="example-demo v-col-xl-12">
         <div class="v-row">
-          <v-button type="button" shape="radius" theme="primary">Primary</v-button>
           <v-button type="button" shape="radius" theme="default">Default</v-button>
+          <v-button type="button" shape="radius" theme="primary">Primary</v-button>
           <v-button type="button" shape="radius" theme="warning">Warning</v-button>
           <v-button type="button" shape="radius" theme="danger">Danger</v-button>
         </div>
         <div class="v-row">
-          <v-button type="button" shape="radius" theme="primary" disabled>Primary</v-button>
           <v-button type="button" shape="radius" theme="default" disabled>Default</v-button>
+          <v-button type="button" shape="radius" theme="primary" disabled>Primary</v-button>
           <v-button type="button" shape="radius" theme="warning" disabled>Warning</v-button>
           <v-button type="button" shape="radius" theme="danger" disabled>Danger</v-button>
+        </div>
+        <div class="v-row">
+          <v-button type="button" shape="radius" theme="default" plain>Default</v-button>
+          <v-button type="button" shape="radius" theme="primary" plain>Primary</v-button>
+          <v-button type="button" shape="radius" theme="warning" plain>Warning</v-button>
+          <v-button type="button" shape="radius" theme="danger" plain>Danger</v-button>
+        </div>
+        <div class="v-row">
+          <v-button type="button" shape="radius" theme="default" plain disabled>Default</v-button>
+          <v-button type="button" shape="radius" theme="primary" plain disabled>Primary</v-button>
+          <v-button type="button" shape="radius" theme="warning" plain disabled>Warning</v-button>
+          <v-button type="button" shape="radius" theme="danger" plain disabled>Danger</v-button>
         </div>
       </div>
       <div class="v-divide"></div>
@@ -25,14 +37,14 @@
     <div class="example v-row">
       <div class="example-demo v-col-xl-12">
         <div class="v-row">
-          <v-button type="text" shape="radius" theme="primary">Primary</v-button>
           <v-button type="text" shape="radius" theme="default">Default</v-button>
+          <v-button type="text" shape="radius" theme="primary">Primary</v-button>
           <v-button type="text" shape="radius" theme="warning">Warning</v-button>
           <v-button type="text" shape="radius" theme="danger">Danger</v-button>
         </div>
         <div class="v-row">
-          <v-button type="text" shape="radius" theme="primary" disabled>Primary</v-button>
           <v-button type="text" shape="radius" theme="default" disabled>Default</v-button>
+          <v-button type="text" shape="radius" theme="primary" disabled>Primary</v-button>
           <v-button type="text" shape="radius" theme="warning" disabled>Warning</v-button>
           <v-button type="text" shape="radius" theme="danger" disabled>Danger</v-button>
         </div>
@@ -69,8 +81,8 @@
       <div class="example-demo v-col-xl-12">
         <div class="v-row">
           <v-button-group>
-            <v-button type="button" shape="radius" theme="default">Primary</v-button>
             <v-button type="button" shape="radius" theme="default">Default</v-button>
+            <v-button type="button" shape="radius" theme="default">Primary</v-button>
             <v-button type="button" shape="radius" theme="default">Warning</v-button>
             <v-button type="button" shape="radius" theme="default">Danger</v-button>
             <v-button type="button" shape="radius" theme="default" prefix-icon="v-icon-more"></v-button>
@@ -78,8 +90,8 @@
         </div>
         <div class="v-row">
           <v-button-group>
-            <v-button type="button" shape="radius" theme="default" disabled>Primary</v-button>
             <v-button type="button" shape="radius" theme="default" disabled>Default</v-button>
+            <v-button type="button" shape="radius" theme="default" disabled>Primary</v-button>
             <v-button type="button" shape="radius" theme="default" disabled>Warning</v-button>
             <v-button type="button" shape="radius" theme="default" disabled>Danger</v-button>
             <v-button type="button" shape="radius" theme="default" prefix-icon="v-icon-more" disabled></v-button>
@@ -87,8 +99,8 @@
         </div>
         <div class="v-row">
           <v-button-group mode="vertical">
-            <v-button type="button" shape="radius" theme="default">Primary</v-button>
             <v-button type="button" shape="radius" theme="default">Default</v-button>
+            <v-button type="button" shape="radius" theme="default">Primary</v-button>
             <v-button type="button" shape="radius" theme="default">Warning</v-button>
             <v-button type="button" shape="radius" theme="default">Danger</v-button>
             <v-button type="button" shape="radius" theme="default" prefix-icon="v-icon-more"></v-button>
@@ -96,7 +108,7 @@
         </div>
       </div>
     </div>
-    <h2>属性值</span></h2>
+    <h2>属性值</h2>
     <p>Button props</p>
   </article>
 </template>
@@ -111,8 +123,3 @@
     },
   };
 </script>
-<style rel="stylesheet/scss" lang="sass" scoped>
-  .v-row + .v-row {
-    margin-top: 10px;
-  }
-</style>

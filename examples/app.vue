@@ -153,5 +153,8 @@
         padding: 20px;
       }
     }
+    .v-row + .v-row {
+      margin-top: 10px;
+    }
   }
 </style>
