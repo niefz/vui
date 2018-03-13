@@ -30,8 +30,10 @@
     computed: {
       classList() {
         let classList = [];
+
         if (this.flex) {
           classList.push('v-row__flex');
+
           ['align', 'justify'].forEach(prop => {
             if (this[prop]) {
               classList.push(`v-row__flex-${prop}-${this[prop]}`);
@@ -40,6 +42,7 @@
 				} else {
           classList.push('v-row');
 				}
+
         return classList;
       },
       style() {
