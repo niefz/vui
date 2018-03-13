@@ -18,11 +18,11 @@ $border-radius: 3;
   }
   &__horizontal {
     .v-btn {
-      &:first-child {
+      &:first-child:not(:last-child) {
         border-top-left-radius: $border-radius + px;
         border-bottom-left-radius: $border-radius + px;
       }
-      &:last-child {
+      &:last-child:not(:first-child) {
         border-top-right-radius: $border-radius + px;
         border-bottom-right-radius: $border-radius + px;
       }
@@ -39,11 +39,11 @@ $border-radius: 3;
     .v-btn {
       display: block;
       width: 100%;
-      &:first-child {
+      &:first-child:not(:last-child) {
         border-top-left-radius: $border-radius + px;
         border-top-right-radius: $border-radius + px;
       }
-      &:last-child {
+      &:last-child:not(:first-child) {
         border-bottom-left-radius: $border-radius + px;
         border-bottom-right-radius: $border-radius + px;
       }

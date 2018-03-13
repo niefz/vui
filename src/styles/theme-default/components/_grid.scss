@@ -11,9 +11,9 @@ $grid-gutter-width: 0;
   @extend .clearfix;
 }
 
-@mixin make-grid($class) {
+@mixin make-grid($class: '') {
   @for $index from 1 through 24 {
-    .v-col-#{$class}-#{$index} {
+    .v-col#{$class}-#{$index} {
       display: block;
       position: relative;
       float: left;
@@ -24,14 +24,14 @@ $grid-gutter-width: 0;
       box-sizing: border-box;
       flex: 0 0 auto;
     }
-    .v-col-#{$class}-offset-#{$index} {
+    .v-col#{$class}-offset-#{$index} {
       margin-left: (1 / $grid-columns * $index * 100) * 1%;
     }
-    .v-col-#{$class}-pull-#{$index} {
+    .v-col#{$class}-pull-#{$index} {
       position: relative;
       right: (1 / $grid-columns * $index * 100) * 1%;
     }
-    .v-col-#{$class}-push-#{$index} {
+    .v-col#{$class}-push-#{$index} {
       position: relative;
       left: (1 / $grid-columns * $index * 100) * 1%;
     }
@@ -45,7 +45,7 @@ $grid-gutter-width: 0;
   box-sizing: border-box;
 }
 
-.v-row-flex {
+.v-row__flex {
   display: flex;
   flex-flow: row wrap;
   &:before,
@@ -54,75 +54,91 @@ $grid-gutter-width: 0;
   }
 }
 
-/* x轴原点 */
-.v-row-flex-start {
+/*
+ * flex 水平排列
+ * x轴原点
+ */
+.v-row__flex-justify-start {
   justify-content: flex-start;
 }
 
-/* x轴居中 */
-.v-row-flex-center {
+/*
+ * flex 水平排列
+ * x轴居中
+ */
+.v-row__flex-justify-center {
   justify-content: center;
 }
 
-/* x轴反方向 */
-.v-row-flex-end {
+/*
+ * flex 水平排列
+ * x轴反方向
+ */
+.v-row__flex-justify-end {
   justify-content: flex-end;
 }
 
-/* x轴平分 */
-.v-row-flex-space-between {
+/*
+ * flex 水平排列
+ * x轴平分
+ */
+.v-row__flex-justify-space-between {
   justify-content: space-between;
 }
 
-/* x轴有间隔地平分 */
-.v-row-flex-space-around {
+/*
+ * flex 水平排列
+ * x轴有间隔地平分
+ */
+.v-row__flex-justify-space-around {
   justify-content: space-around;
 }
 
-/* 顶部对齐 */
-.v-row-flex-top {
+/*
+ * flex 垂直对齐
+ * 顶部对齐
+ */
+.v-row__flex-align-start {
   align-items: flex-start;
 }
 
-/* 居中对齐 */
-.v-row-flex-middle {
+/*
+ * flex 垂直对齐
+ * 居中对齐
+ */
+.v-row__flex-align-center {
   align-items: center;
 }
 
-/* 底部对齐 */
-.v-row-flex-bottom {
+/*
+ * flex 垂直对齐
+ * 底部对齐
+ */
+.v-row__flex-align-end {
   align-items: flex-end;
 }
 
-.v-col {
-  position: relative;
-  display: block;
-}
+@include make-grid();
 
 /* Extra small grid */
-@include make-grid(xs);
+@include make-grid(-xs);
 
 /* Small grid */
-@media (min-width: 576px) {
-  @include make-grid(sm);
+@media (min-width: 768px) {
+  @include make-grid(-sm);
 }
 
 /* Medium grid */
-@media (min-width: 768px) {
-  @include make-grid(md);
+@media (min-width: 992px) {
+  @include make-grid(-md);
 }
 
 /* Large grid */
-@media (min-width: 992px) {
-  @include make-grid(lg);
+@media (min-width: 1200px) {
+  @include make-grid(-lg);
 }
 
 /* Extra Large grid */
-@media (min-width: 1200px) {
-  @include make-grid(xl);
-}
-
-/* Extra Extra Large grid */
 @media (min-width: 1600px) {
-  @include make-grid(xxl);
+  @include make-grid(-xl);
 }

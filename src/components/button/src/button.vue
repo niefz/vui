@@ -30,6 +30,7 @@
 
   export default {
     name: 'Button',
+    componentName: 'Button',
     components: {
       VIcon: Icon,
     },

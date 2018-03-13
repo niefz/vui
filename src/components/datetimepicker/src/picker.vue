@@ -36,6 +36,7 @@
 
   export default {
     name: 'DateTimePicker',
+    componentName: 'DateTimePicker',
     components: {
       VPickerDate: PickerDate,
       VPickerTime: PickerTime,

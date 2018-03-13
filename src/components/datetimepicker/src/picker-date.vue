@@ -248,7 +248,8 @@
   import Button from '../../button';
 
   export default {
-    name: 'PickerDate',
+    name: 'DatePicker',
+    componentName: 'DatePicker',
     components: {
       VButton: Button,
     },

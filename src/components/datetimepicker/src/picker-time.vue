@@ -57,7 +57,8 @@
 </template>
 <script>
   export default {
-    name: 'PickerTime',
+    name: 'TimePicker',
+    componentName: 'TimePicker',
     data() {
       return {
         moveY: 0,

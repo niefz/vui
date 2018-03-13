@@ -6,7 +6,9 @@
     <div class="example v-row">
       <div class="example-demo v-col-xl-12">
         <div class="v-row">
+          <v-icon icon="v-icon-calendar"></v-icon>
           <v-icon icon="v-icon-delete"></v-icon>
+          <v-icon icon="v-icon-message"></v-icon>
           <v-icon icon="v-icon-loading"></v-icon>
         </div>
       </div>

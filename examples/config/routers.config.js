@@ -34,6 +34,13 @@ export default {
       }, 'button'),
     },
     {
+      path: '/zh-CN/components/grid',
+      name: 'grid',
+      component: grid => require.ensure([], (require) => {
+        grid(require('../templates/components/grid.vue'));
+      }, 'grid'),
+    },
+    {
       path: '/zh-CN/components/breadcrumb',
       name: 'breadcrumb',
       component: breadcrumb => require.ensure([], (require) => {
