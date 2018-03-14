@@ -3,11 +3,11 @@
   display: inline-block;
   &__content {
     margin: 5px 0;
-    border: 1px solid #E8E8E8;
+    border: 1px solid #D9D9D9;
     background: #FFFFFF;
-    color: #606266;
+    color: #595959;
     border-radius: 3px;
-    box-shadow: 0 0 10px #E8E8E8;
+    box-shadow: 0 0 10px #D9D9D9;
   }
 }
 
@@ -16,7 +16,7 @@
   font-size: 0;
   &__hd {
     padding: 5px 10px;
-    border-bottom: 1px solid #EBEEF6;
+    border-bottom: 1px solid #D9D9D9;
     text-align: center;
     &-label {
       padding: 0 5px;
@@ -25,7 +25,7 @@
       line-height: 32px;
       cursor: pointer;
       &:hover {
-        color: #3BA6FF;
+        color: #43A5F8;
       }
     }
   }
@@ -51,7 +51,7 @@
         display: block;
         width: 24px;
         height: 24px;
-        font-weight: 100;
+        font-weight: 400;
         line-height: 24px;
         text-align: center;
         border-radius: 3px;
@@ -59,13 +59,13 @@
     }
     &-header {
       &-inner {
-        color: #999999;
+        color: #8C8C8C;
       }
     }
     &-cell {
       cursor: pointer;
       &.in-range {
-        background-color: #F2F8FD;
+        background-color: #E6F7FF;
       }
       &.start-date, &.end-date {
         .v-picker-date__table-cell-inner {
@@ -84,13 +84,7 @@
       &-inner {
         border: 1px solid transparent;
         &.last-month-cell {
-          color: #C0C4CC;
-        }
-        &.disabled, &.disabled:hover {
-          border-color: transparent;
-          background-color: transparent;
-          color: #C0C4CC;
-          cursor: not-allowed;
+          color: #8C8C8C;
         }
         &.today {
           border-color: #148EF6;
@@ -98,12 +92,18 @@
           color: #148EF6;
         }
         &.next-month-cell {
-          color: #C0C4CC;
+          color: #8C8C8C;
         }
         &:hover {
           border-color: #148EF6;
           background-color: #E6F6FF;
           color: #148EF6;
+        }
+        &.disabled {
+          border-color: transparent;
+          background-color: transparent;
+          color: #BFBFBF;
+          cursor: not-allowed;
         }
       }
     }
@@ -162,7 +162,7 @@
           margin: 5px 0;
           font-size: 12px;
           line-height: 30px;
-          color: #C0C4CC;
+          color: #BFBFBF;
           text-align: center;
           cursor: pointer;
           &:hover {
@@ -171,7 +171,7 @@
           }
           &.selected {
             font-weight: 600;
-            color: #606266;
+            color: #595959;
           }
         }
       }

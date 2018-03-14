@@ -4,8 +4,7 @@
       <v-date-time-picker
         v-model="date"
         type="date"
-        prefix-icon="v-icon-loading"
-        suffix-icon="v-icon-loading">
+        suffix-icon="v-icon-calendar">
       </v-date-time-picker>
     </p>
   </div>

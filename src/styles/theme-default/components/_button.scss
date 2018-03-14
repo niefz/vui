@@ -51,77 +51,77 @@ $button-margin: 10;
     animation: buttonEffect .4s;
   }
   &.v-btn__default {
-    @include make-color(#E8E8E8, transparent, #292E42);
+    @include make-color(#D9D9D9, transparent, #595959);
     &.plain {
       @include make-color(#FFFFFF, transparent, #FFFFFF);
     }
     &:hover, &:focus {
-      @include make-color(#3BA6FF, transparent, #3BA6FF);
+      @include make-color(#43A5F8, transparent, #43A5F8);
     }
     &:focus:after {
       border-color: #148EF6;
     }
     &.disabled, &.disabled:hover {
-      @include make-color(#EBEEF6, transparent, #EBEEF6);
+      @include make-color(#EDEDED, transparent, #BFBFBF);
       cursor: not-allowed;
     }
   }
   &.v-btn__primary {
     @include make-color(#148EF6, #148EF6, #FFFFFF);
     &:hover, &:focus {
-      @include make-color(#3BA6FF, #3BA6FF, #FFFFFF);
+      @include make-color(#43A5F8, #43A5F8, #FFFFFF);
     }
     &:focus:after {
       border-color: #148EF6;
     }
     &.disabled, &.disabled:hover {
-      @include make-color(#88C6FA, #88C6FA, #FFFFFF);
+      @include make-color(#89C6FA, #89C6FA, #FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
       @include make-color(#148EF6, transparent, #148EF6);
       &.disabled, &.disabled:hover {
-        @include make-color(#88C6FA, transparent, #88C6FA);
+        @include make-color(#89C6FA, transparent, #89C6FA);
         cursor: not-allowed;
       }
     }
   }
   &.v-btn__warning {
-    @include make-color(#F29C12, #F29C12, #FFFFFF);
+    @include make-color(#FAAD14, #FAAD14, #FFFFFF);
     &:hover, &:focus {
-      @include make-color(#FEB24B, #FEB24B, #FFFFFF);
+      @include make-color(#FBBD43, #FBBD43, #FFFFFF);
     }
     &:focus:after {
-      border-color: #FEB24B;
+      border-color: #FAAD14;
     }
     &.disabled, &.disabled:hover {
-      @include make-color(#F8CD88, #F8CD88, #FFFFFF);
+      @include make-color(#FCD689, #FCD689, #FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
-      @include make-color(#F29C12, transparent, #F29C12);
+      @include make-color(#FAAD14, transparent, #FAAD14);
       &.disabled, &.disabled:hover {
-        @include make-color(#F8CD88, transparent, #F8CD88);
+        @include make-color(#FCD689, transparent, #FCD689);
         cursor: not-allowed;
       }
     }
   }
   &.v-btn__danger {
-    @include make-color(#F24812, #F24812, #FFFFFF);
+    @include make-color(#F5222D, #F5222D, #FFFFFF);
     &:hover, &:focus {
-      @include make-color(#FE694B, #FE694B, #FFFFFF);
+      @include make-color(#F74E57, #F74E57, #FFFFFF);
     }
     &:focus:after {
-      border-color: #FE694B;
+      border-color: #F5222D;
     }
     &.disabled, &.disabled:hover {
-      @include make-color(#F8A288, #F8A288, #FFFFFF);
+      @include make-color(#FA9096, #FA9096, #FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
-      @include make-color(#F24812, transparent, #F24812);
+      @include make-color(#F5222D, transparent, #F5222D);
       &.disabled, &.disabled:hover {
-        @include make-color(#F8A288, transparent, #F8A288);
+        @include make-color(#FA9096, transparent, #FA9096);
         cursor: not-allowed;
       }
     }
@@ -131,42 +131,42 @@ $button-margin: 10;
 .v-btn__text {
   border: 1px solid transparent;
   &.v-btn__default {
-    @include make-color(transparent, transparent, #292E42);
+    @include make-color(transparent, transparent, #595959);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, #3BA6FF);
+      @include make-color(transparent, transparent, #43A5F8);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, #C0C4CC);
+      @include make-color(transparent, transparent, #BFBFBF);
       cursor: not-allowed;
     }
   }
   &.v-btn__primary {
     @include make-color(transparent, transparent, #148EF6);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, #3BA6FF);
+      @include make-color(transparent, transparent, #43A5F8);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, #88C6FA);
+      @include make-color(transparent, transparent, #89C6FA);
       cursor: not-allowed;
     }
   }
   &.v-btn__warning {
-    @include make-color(transparent, transparent, #F29C12);
+    @include make-color(transparent, transparent, #FAAD14);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, #FEB24B);
+      @include make-color(transparent, transparent, #FBBD43);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, #F8CD88);
+      @include make-color(transparent, transparent, #FCD689);
       cursor: not-allowed;
     }
   }
   &.v-btn__danger {
-    @include make-color(transparent, transparent, #F24812);
+    @include make-color(transparent, transparent, #F5222D);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, #FE694B);
+      @include make-color(transparent, transparent, #F74E57);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, #F8A288);
+      @include make-color(transparent, transparent, #FA9096);
       cursor: not-allowed;
     }
   }

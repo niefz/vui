@@ -133,7 +133,7 @@
     p {
       font-size: 14px;
       line-height: 1.5em;
-      color: #5E6D82;
+      color: #595959;
     }
     h2 {
       margin-top: 20px;
@@ -143,7 +143,7 @@
     }
     .example {
       margin-bottom: 20px;
-      border: 1px solid #E8E8E8;
+      border: 1px solid #D9D9D9;
       border-radius: 3px;
       transition: all .2s ease-in-out;
       &-demo, &-code {

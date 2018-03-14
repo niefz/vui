@@ -21,8 +21,8 @@
         type="text"
         name="datetime"
         :placeholder="placeholders">
-      <i class="v-input__prefix-icon" :class="prefixIcon" v-if="prefixIcon"></i>
-      <i class="v-input__suffix-icon" :class="suffixIcon" v-if="suffixIcon"></i>
+      <v-icon class="v-input__prefix-icon" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
+      <v-icon class="v-input__suffix-icon" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
     </div>
     <div class="v-datetimepicker__content">
       <v-picker-date></v-picker-date>
@@ -31,6 +31,7 @@
   </div>
 </template>
 <script>
+  import Icon from '@/components/icon';
   import PickerDate from './picker-date.vue';
   import PickerTime from './picker-time.vue';
 
@@ -38,6 +39,7 @@
     name: 'DateTimePicker',
     componentName: 'DateTimePicker',
     components: {
+      VIcon: Icon,
       VPickerDate: PickerDate,
       VPickerTime: PickerTime,
     },
