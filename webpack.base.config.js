@@ -60,16 +60,23 @@ module.exports = {
         test: /\.s?css$/,
         use: [
           {
-            loader: 'style'
+            loader: 'style',
+            options: {
+              sourceMap: true
+            }
           },
           {
             loader: 'css',
             options: {
+              sourceMap: true,
               minimize: true
             }
           },
           {
-            loader: 'sass'
+            loader: 'sass',
+            options: {
+              sourceMap: true
+            }
           },
           {
             loader: 'postcss'
@@ -101,11 +108,15 @@ module.exports = {
                     {
                       loader: 'css',
                       options: {
+                        sourceMap: true,
                         minimize: true
                       }
                     },
                     {
-                      loader: 'sass'
+                      loader: 'sass',
+                      options: {
+                        sourceMap: true
+                      }
                     },
                     {
                       loader: 'postcss'
@@ -114,7 +125,10 @@ module.exports = {
                 }
               },
               postLoaders: {
-                html: 'babel'
+                html: 'babel',
+                options: {
+                  sourceMap: true
+                }
               },
               sourceMap: true
             }

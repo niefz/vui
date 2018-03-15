@@ -2,6 +2,8 @@
  * Created by niefz on 2017/11/28.
  */
 import Vue from 'vue';
+
+import VUI from '../dist/vui.min.js';
 /**
  * import plugins
  */
@@ -13,6 +15,8 @@ import Router from './config/routers.config';
  * 路由
  */
 Vue.use(VueRouter);
+
+Vue.use(VUI);
 
 import App from './app.vue';
 

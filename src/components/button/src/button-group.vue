@@ -9,8 +9,8 @@
 </template>
 <script>
   export default {
-    name: 'ButtonGroup',
-    componentName: 'ButtonGroup',
+    name: 'VButtonGroup',
+    componentName: 'VButtonGroup',
     props: {
       mode: {
         type: String,

@@ -19,7 +19,7 @@ const EXAMPLES_PATH = resolve('examples');
 module.exports = webpackMerge(webpackBaseConfig, {
   entry: {
     vendor: ['vue', 'vue-router'],
-    main: './examples/index'
+    index: './examples/index'
   },
   output: {
     path: EXAMPLES_PATH,

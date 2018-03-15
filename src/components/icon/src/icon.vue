@@ -3,8 +3,8 @@
 </template>
 <script>
   export default {
-    name: 'Icon',
-    componentName: 'Icon',
+    name: 'VIcon',
+    componentName: 'VIcon',
     props: {
       icon: {
         type: String,

@@ -29,8 +29,8 @@
   import Icon from '@/components/icon';
 
   export default {
-    name: 'Button',
-    componentName: 'Button',
+    name: 'VButton',
+    componentName: 'VButton',
     components: {
       VIcon: Icon,
     },
