@@ -110,7 +110,7 @@
       &.is-fixed {
         position: fixed;
         bottom: 0;
-        width: 792px;
+        width: 810px;
       }
       i {
         font-size: 14px;

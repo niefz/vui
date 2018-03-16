@@ -43,7 +43,7 @@ Button props
 |----------    |--------         |----------   |-------------                           |-------- |
 | native-type  | 原生 type 属性   | string      | button / submit / reset                | button |  
 | type         | 类型            | string      | button  / text                         | button |
-| shape        | 按钮形状         | string      | radius  / circle                       | radius |
+| shape        | 形状         | string      | radius  / circle                       | radius |
 | theme        | 主题            | string      | default / primary / warning / danger   | default |
 | size         | 尺寸            | string      | large / medium / small / mini          | small |
 | prefix-icon  | 头部图标类名     | string      |  —                                     |  —  |
