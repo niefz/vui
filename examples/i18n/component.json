@@ -1,0 +1,23 @@
+[
+  {
+    "lang": "zh-CN",
+    "demo": {
+      "hide-text": "隐藏代码",
+      "show-text": "显示代码"
+    }
+  },
+  {
+    "lang": "en-US",
+    "demo": {
+      "hide-text": "Hide",
+      "show-text": "Expand"
+    }
+  },
+  {
+    "lang": "es",
+    "demo": {
+      "hide-text": "Ocultar",
+      "show-text": "Mostrar"
+    }
+  }
+]

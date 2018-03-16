@@ -10,10 +10,14 @@ import VueRouter from 'vue-router';
 
 import Router from './config/routers.config';
 
+import Demo from './components/demo.vue';
+
 /**
  * 路由
  */
 Vue.use(VueRouter);
+
+Vue.component('Demo', Demo);
 
 import App from './app.vue';
 

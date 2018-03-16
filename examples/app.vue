@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
     <header></header>
-    <section class="section">
-      <div class="v-row">
-        <div class="side-nav v-col-xs-24 v-col-sm-24 v-col-md-24 v-col-lg-6 v-col-xl-5 v-col-xxl-4">
+    <div class="v-scrollbar">
+      <div class="v-scrollbar__wrap">
+        <div class="side-nav">
           <div class="side-nav__container">
             <ul
               class="v-menu"
@@ -82,15 +82,16 @@
             </ul>
           </div>
         </div>
-        <div class="v-col-xs-24 v-col-sm-24 v-col-md-24 v-col-lg-18 v-col-xl-19 v-col-xxl-20">
+        <div class="container">
           <router-view></router-view>
         </div>
       </div>
-    </section>
+    </div>
     <footer></footer>
   </div>
 </template>
 <script>
+  import 'highlight.js/styles/color-brewer.css';
   import navigations from './nav.json';
 
   export default {
@@ -115,39 +116,113 @@
 <style rel="stylesheet/scss" lang="sass">
   @import "../src/styles/index.scss";
 
-  .side-nav {
-    border-right: 1px solid #E8E8E8;
-    .v-menu {
-      width: calc(100% + 1px);
+  html, body, .wrapper {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .v-scrollbar {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    &__wrap {
+      height: 100%;
+      overflow-y: scroll;
     }
   }
 
-  .markdown {
+  .side-nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    transition: padding-top .3s;
+    &__container {
+      height: 100%;
+      border-right: 1px solid #E8E8E8;
+      .v-menu {
+        width: calc(100% + 1px);
+        height: 100%;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .container {
+    padding-left: 320px;
+  }
+
+  .article {
     padding: 0 160px 0 60px;
+    h1, h2, h3, h4, h5, h6 {
+      a {
+        float: left;
+        margin-left: -20px;
+        opacity: 0;
+        color: #148EF6;
+        cursor: pointer;
+      }
+      &:hover {
+        a {
+          opacity: .4;
+        }
+      }
+    }
     h1 {
       margin-top: 10px;
       margin-bottom: 20px;
       font-size: 28px;
       line-height: 38px;
     }
-    p {
-      font-size: 14px;
-      line-height: 1.5em;
-      color: #595959;
-    }
-    h2 {
+    h3 {
       margin-top: 20px;
       margin-bottom: 10px;
       font-size: 20px;
       line-height: 38px;
     }
-    .example {
-      margin-bottom: 20px;
-      border: 1px solid #D9D9D9;
-      border-radius: 3px;
-      transition: all .2s ease-in-out;
-      &-demo, &-code {
-        padding: 20px;
+    p {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size: 14px;
+      line-height: 1.5em;
+      color: #595959;
+    }
+    hr {
+      margin: 1.2em 0;
+      border: 0;
+      border-bottom: 1px solid #D9D9D9;
+    }
+    img {
+      vertical-align: middle;
+    }
+    ul {
+      margin: 16px 0;
+      padding-left: 24px;
+      list-style: disc;
+      li {
+        line-height: 1.8;
+      }
+    }
+    .table {
+      width: 100%;
+      margin-bottom: 50px;
+      font-size: 14px;
+      color: #595959;
+      border-collapse: collapse;
+      overflow: auto;
+      th {
+        padding: 10px;
+        border: 1px solid #D9D9D9;
+        background-color: #FAFAFA;
+        text-align: left;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #D9D9D9;
+        text-align: left;
       }
     }
     .v-row + .v-row {

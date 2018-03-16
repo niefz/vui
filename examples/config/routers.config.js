@@ -9,7 +9,7 @@ export default {
       path: '/zh-CN/themes/font',
       name: 'font',
       component: font => require.ensure([], (require) => {
-        font(require('../templates/themes/font.vue'));
+        font(require('../docs/zh-CN/font.md'));
       }, 'font'),
     },
     {
@@ -30,7 +30,7 @@ export default {
       path: '/zh-CN/components/button',
       name: 'button',
       component: button => require.ensure([], (require) => {
-        button(require('../templates/components/button.vue'));
+        button(require('../docs/zh-CN/button.md'));
       }, 'button'),
     },
     {
