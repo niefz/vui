@@ -16,14 +16,14 @@ export default {
       path: '/zh-CN/themes/color',
       name: 'color',
       component: color => require.ensure([], (require) => {
-        color(require('../templates/themes/color.vue'));
+        color(require('../docs/zh-CN/color.md'));
       }, 'color'),
     },
     {
       path: '/zh-CN/components/icon',
       name: 'icon',
       component: icon => require.ensure([], (require) => {
-        icon(require('../templates/components/icon.vue'));
+        icon(require('../docs/zh-CN/icon.md'));
       }, 'icon'),
     },
     {
@@ -37,22 +37,8 @@ export default {
       path: '/zh-CN/components/grid',
       name: 'grid',
       component: grid => require.ensure([], (require) => {
-        grid(require('../templates/components/grid.vue'));
+        grid(require('../docs/zh-CN/grid.md'));
       }, 'grid'),
-    },
-    {
-      path: '/zh-CN/components/breadcrumb',
-      name: 'breadcrumb',
-      component: breadcrumb => require.ensure([], (require) => {
-        breadcrumb(require('../templates/components/breadcrumb.vue'));
-      }, 'breadcrumb'),
-    },
-    {
-      path: '/zh-CN/components/datetime-picker',
-      name: 'dateTimePicker',
-      component: dateTimePicker => require.ensure([], (require) => {
-        dateTimePicker(require('../templates/components/datetimepicker.vue'));
-      }, 'dateTimePicker'),
     },
   ]
 };

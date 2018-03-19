@@ -1,8 +1,10 @@
 # Button 按钮
-  基础组件，用于常用的按钮操作。
+
+基础组件，用于常用的按钮操作。
   
-### 代码示例
-  基础的按钮用法。
+## 代码示例
+
+基础的按钮用法。
   
 :::demo 使用`type`、`shape`、`theme`、`size`和`plain`属性来定义 Button 的样式。
 
@@ -37,8 +39,10 @@
 ```
 :::
 
-### 属性值
+## 属性值
+
 Button props
+
 | 参数          | 说明            | 类型         | 可选值                                  | 默认值   |
 |----------    |--------         |----------   |-------------                           |-------- |
 | native-type  | 原生 type 属性   | string      | button / submit / reset                | button |  
@@ -53,6 +57,7 @@ Button props
 | suffix-icon  | 尾部图标        | string      |  —                                     |  —  |
 
 ButtonGroup props
+
 | 参数       | 说明     | 类型        | 可选值                            | 默认值   |
 |---------- |--------  |----------   |-------------                    |-------- |
 | mode      | 模式     | string      |   horizontal / vertical             |    vertical     |

@@ -163,7 +163,7 @@
       font-size: 28px;
       line-height: 38px;
     }
-    h3 {
+    h2 {
       margin-top: 20px;
       margin-bottom: 10px;
       font-size: 20px;
