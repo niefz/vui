@@ -43,14 +43,14 @@ Button props
 |----------    |--------         |----------   |-------------                           |-------- |
 | native-type  | 原生 type 属性   | string      | button / submit / reset                | button |  
 | type         | 类型            | string      | button  / text                         | button |
-| shape        | 形状         | string      | radius  / circle                       | radius |
+| shape        | 形状            | string      | radius  / circle                       | radius |
 | theme        | 主题            | string      | default / primary / warning / danger   | default |
 | size         | 尺寸            | string      | large / medium / small / mini          | small |
-| prefix-icon  | 头部图标类名     | string      |  —                                     |  —  |
-| suffix-icon  | 尾部图标类名     | string      |  —                                     |  —  |
 | plain        | 是否朴素按钮     | boolean     | —                                      | false |
 | disabled     | 是否禁用状态     | boolean     | —                                      | false |
-| loading      | 是否加载中状态   | boolean      | —                                     | false |
+| loading      | 是否加载中       | boolean      | —                                     | false |
+| prefix-icon  | 头部图标        | string      |  —                                     |  —  |
+| suffix-icon  | 尾部图标        | string      |  —                                     |  —  |
 
 ButtonGroup props
 | 参数       | 说明     | 类型        | 可选值                            | 默认值   |

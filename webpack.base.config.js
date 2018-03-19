@@ -4,9 +4,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const stripTags = require('./strip-tags');
-const slugify = require('transliteration').slugify;
 const md = require('markdown-it')();
-const MarkdownItAnchor = require('markdown-it-anchor');
 const MarkdownItContainer = require('markdown-it-container');
 const package = require('./package.json');
 
@@ -168,12 +166,6 @@ module.exports = {
         options: {
           wrapper: 'article class="article"',
           use: [
-            [MarkdownItAnchor, {
-              level: 2,
-              slugify: slugify,
-              permalink: false,
-              permalinkBefore: true
-            }],
             [MarkdownItContainer, 'demo', {
               validate: (params) => {
                 return params.trim().match(/^demo\s*(.*)$/);

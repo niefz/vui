@@ -157,20 +157,6 @@
 
   .article {
     padding: 0 160px 0 60px;
-    h1, h2, h3, h4, h5, h6 {
-      a {
-        float: left;
-        margin-left: -20px;
-        opacity: 0;
-        color: #148EF6;
-        cursor: pointer;
-      }
-      &:hover {
-        a {
-          opacity: .4;
-        }
-      }
-    }
     h1 {
       margin-top: 10px;
       margin-bottom: 20px;
@@ -187,13 +173,7 @@
       margin-top: 1em;
       margin-bottom: 1em;
       font-size: 14px;
-      line-height: 1.5em;
       color: #595959;
-    }
-    hr {
-      margin: 1.2em 0;
-      border: 0;
-      border-bottom: 1px solid #D9D9D9;
     }
     img {
       vertical-align: middle;
@@ -205,6 +185,16 @@
       li {
         line-height: 1.8;
       }
+    }
+    .hljs {
+      padding: 20px;
+      border: 1px solid #D9D9D9;
+      background-color: #FAFAFA;
+      font-family: Menlo, Monaco, Consolas, Courier, monospace;
+      font-size: 12px;
+      line-height: 1.8;
+      border-radius: 3px;
+      -webkit-font-smoothing: none;
     }
     .table {
       width: 100%;
