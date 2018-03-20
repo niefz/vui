@@ -1,10 +1,12 @@
 <template>
-  
+  <aside class="v-aside">
+    <slot></slot>
+  </aside>
 </template>
 <script>
   export default {
-    name: 'Aside',
-    componentName: 'Aside',
+    name: 'VAside',
+    componentName: 'VAside',
     props: {
     },
     computed: {

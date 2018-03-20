@@ -1,10 +1,12 @@
 <template>
-  
+  <section class="v-content">
+    <slot></slot>
+  </section>
 </template>
 <script>
   export default {
-    name: 'Content',
-    componentName: 'Content',
+    name: 'VContent',
+    componentName: 'VContent',
     props: {
     },
     computed: {
