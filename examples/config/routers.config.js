@@ -40,5 +40,12 @@ export default {
         grid(require('../docs/zh-CN/grid.md'));
       }, 'grid'),
     },
+    {
+      path: '/zh-CN/components/breadcrumb',
+      name: 'breadcrumb',
+      component: grid => require.ensure([], (require) => {
+        grid(require('../docs/zh-CN/breadcrumb.md'));
+      }, 'grid'),
+    },
   ]
 };

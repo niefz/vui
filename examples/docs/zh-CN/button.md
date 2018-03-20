@@ -41,7 +41,7 @@
 
 ## 属性值
 
-Button props
+Button Attributes
 
 | 参数          | 说明            | 类型         | 可选值                                  | 默认值   |
 |----------    |--------         |----------   |-------------                           |-------- |
@@ -56,7 +56,7 @@ Button props
 | prefix-icon  | 头部图标        | string      |  —                                     |  —  |
 | suffix-icon  | 尾部图标        | string      |  —                                     |  —  |
 
-ButtonGroup props
+ButtonGroup Attributes
 
 | 参数       | 说明     | 类型        | 可选值                            | 默认值   |
 |---------- |--------  |----------   |-------------                    |-------- |
