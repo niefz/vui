@@ -13,6 +13,7 @@
 
   export default {
     name: 'VBreadcrumbItem',
+    componentName: 'VBreadcrumbItem',
     components: {
       VIcon: Icon,
     },
@@ -23,7 +24,7 @@
     data() {
       return {
         separator: '',
-        separatorIcon: ''
+        separatorIcon: '',
       };
     },
     inject: ['VBreadcrumb'],

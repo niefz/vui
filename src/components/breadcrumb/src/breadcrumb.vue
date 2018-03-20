@@ -13,16 +13,16 @@
     props: {
       separator: {
         type: String,
-        default: '/'
+        default: '/',
       },
       separatorIcon: {
         type: String,
-        default: ''
-      }
+        default: '',
+      },
     },
     provide() {
       return {
-        VBreadcrumb: this
+        VBreadcrumb: this,
       };
     },
   };
