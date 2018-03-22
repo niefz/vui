@@ -1,1 +1,138 @@
+.v-progress {
+  position: relative;
+  line-height: 1;
+  &__line {
+    .v-progress-bar {
+      display: inline-block;
+      width: 100%;
+      margin-right: -58px;
+      padding-right: 58px;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+    .v-progress-text {
+      display: inline-block;
+      width: 44px;
+      margin-left: 10px;
+      line-height: 1;
+      color: #595959;
+      vertical-align: middle;
+      i {
+        display: block;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__circle, &__dashboard {
+    display: inline-block;
+    .v-progress-text {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      transform: translate(0, -50%);
+      i {
+        display: block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
 
+.v-progress-bar__outer {
+  position: relative;
+  background-color: #F5F5F5;
+  border-radius: 100px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.v-progress-bar__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #148EF6;
+  border-radius: 100px;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+  transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+}
+
+.v-progress__hide-info {
+  .v-progress-bar {
+    display: block;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .v-progress-text {
+    display: none;
+  }
+}
+
+.v-progress__text-inside {
+  .v-progress-bar {
+    margin-right: 0;
+    padding-right: 0;
+    .v-progress-bar__inner-text {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin: 0 5px;
+      text-align: center;
+      transform: translate(0%, -50%);
+      color: #FFFFFF;
+    }
+  }
+}
+
+.v-progress__active {
+  .v-progress-bar__inner:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: #FFFFFF;
+    opacity: 0;
+    border-radius: 10px;
+    animation: v-progress-active 2s ease-in-out infinite;
+  }
+}
+
+.v-progress__success {
+  .v-progress-bar__inner {
+    background-color: #52C41A;
+  }
+  .v-progress-text {
+    color: #52C41A;
+  }
+}
+
+.v-progress__exception {
+  .v-progress-bar__inner {
+    background-color: #F5222D;
+  }
+  .v-progress-text {
+    color: #F5222D;
+  }
+}
+
+@keyframes v-progress-active {
+  0% {
+    opacity: .1;
+    width: 0;
+  }
+  20% {
+    opacity: .5;
+    width: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}

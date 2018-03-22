@@ -43,9 +43,16 @@ export default {
     {
       path: '/zh-CN/components/breadcrumb',
       name: 'breadcrumb',
-      component: grid => require.ensure([], (require) => {
-        grid(require('../docs/zh-CN/breadcrumb.md'));
-      }, 'grid'),
+      component: breadcrumb => require.ensure([], (require) => {
+        breadcrumb(require('../docs/zh-CN/breadcrumb.md'));
+      }, 'breadcrumb'),
+    },
+    {
+      path: '/zh-CN/components/progress',
+      name: 'progress',
+      component: progress => require.ensure([], (require) => {
+        progress(require('../docs/zh-CN/progress.md'));
+      }, 'progress'),
     },
   ]
 };
