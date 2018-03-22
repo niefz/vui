@@ -1,10 +1,12 @@
 <template>
-  
+  <header class="v-header">
+    <slot></slot>
+  </header>
 </template>
 <script>
   export default {
-    name: 'Header',
-    componentName: 'Header',
+    name: 'VHeader',
+    componentName: 'VHeader',
     props: {
     },
     computed: {

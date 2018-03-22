@@ -1,10 +1,12 @@
 <template>
-  
+  <footer class="v-footer">
+    <slot></slot>
+  </footer>
 </template>
 <script>
   export default {
-    name: 'Footer',
-    componentName: 'Footer',
+    name: 'VFooter',
+    componentName: 'VFooter',
     props: {
     },
     computed: {
