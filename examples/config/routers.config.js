@@ -54,5 +54,12 @@ export default {
         progress(require('../docs/zh-CN/progress.md'));
       }, 'progress'),
     },
+    {
+      path: '/zh-CN/components/divider',
+      name: 'divider',
+      component: divider => require.ensure([], (require) => {
+        divider(require('../docs/zh-CN/divider.md'));
+      }, 'divider'),
+    },
   ]
 };
