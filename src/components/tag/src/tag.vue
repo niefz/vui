@@ -6,7 +6,7 @@
         'v-tag__' + theme,
         'v-tag__' + tagSize,
         {
-          ['hit']: hit,
+          ['v-tag__custom']: color,
         },
       ]"
       :style="{ backgroundColor: color }">
@@ -41,17 +41,13 @@
         type: String,
         default: 'small',
       },
-      closable: {
-        type: Boolean,
-        default: false,
-      },
-      hit: {
-        type: Boolean,
-        default: false,
-      },
       color: {
         type: String,
         default: '',
+      },
+      closable: {
+        type: Boolean,
+        default: false,
       },
     },
     computed: {

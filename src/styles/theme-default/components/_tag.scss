@@ -84,6 +84,15 @@ $color-F5222D: #F5222D;
   }
 }
 
+.v-tag__custom {
+  border-color: transparent;
+  color: $color-FFFFFF;
+  .v-tag__close:hover {
+    font-weight: 600;
+    background-color: transparent;
+  }
+}
+
 .v-tag__mini {
   @include make-size(28px, 12px);
 }

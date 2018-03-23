@@ -13,6 +13,7 @@
   <v-tag theme="info">标签三</v-tag>
   <v-tag theme="warning">标签四</v-tag>
   <v-tag theme="danger">标签五</v-tag>
+  <v-tag theme="danger" color="#f50" closable>标签五</v-tag>
 </v-row>
 <v-row>
   <v-tag
