@@ -4,8 +4,8 @@
       class="v-input"
       :class="[
         {
-          'v-input__prefix': prefixIcon,
-          'v-input__suffix': suffixIcon,
+          ['v-input__prefix']: prefixIcon,
+          ['v-input__suffix']: suffixIcon,
          }
       ]">
       <input
@@ -14,8 +14,8 @@
         :class="[
           'v-input__' + inputSize,
           {
-            'readonly': readonly,
-            'disabled': disabled,
+            ['readonly']: readonly,
+            ['disabled']: disabled,
           }
          ]"
         type="text"
@@ -43,11 +43,6 @@
       VPickerDate: PickerDate,
       VPickerTime: PickerTime,
     },
-    data() {
-      return {
-        datetime: null,
-      };
-    },
     props: {
       type: {
         type: String,
@@ -71,6 +66,11 @@
         type: String,
         default: '',
       },
+    },
+    data() {
+      return {
+        datetime: null,
+      };
     },
     computed: {
       inputSize() {

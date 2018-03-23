@@ -14,6 +14,7 @@
   export default {
     name: 'VBreadcrumbItem',
     componentName: 'VBreadcrumbItem',
+    inject: ['VBreadcrumb'],
     components: {
       VIcon: Icon,
     },
@@ -27,7 +28,6 @@
         separatorIcon: '',
       };
     },
-    inject: ['VBreadcrumb'],
     mounted() {
       this.separator = this.VBreadcrumb.separator;
       this.separatorIcon = this.VBreadcrumb.separatorIcon;

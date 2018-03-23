@@ -61,5 +61,12 @@ export default {
         divider(require('../docs/zh-CN/divider.md'));
       }, 'divider'),
     },
+    {
+      path: '/zh-CN/components/tag',
+      name: 'tag',
+      component: tag => require.ensure([], (require) => {
+        tag(require('../docs/zh-CN/tag.md'));
+      }, 'tag'),
+    },
   ]
 };

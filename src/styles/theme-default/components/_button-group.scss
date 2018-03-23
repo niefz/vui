@@ -1,5 +1,6 @@
 /* variable for button */
 $border-radius: 3;
+$color-066ACF: #066ACF;
 
 .v-btn-group {
   display: inline-block;
@@ -32,7 +33,7 @@ $border-radius: 3;
     }
     .v-btn__primary + .v-btn__primary {
       margin-left: 0;
-      border-left-color: #066ACF;
+      border-left-color: $color-066ACF;
     }
   }
   &__vertical {

@@ -1,1 +1,105 @@
+/* variable */
+$border-radius: 3;
+$color-595959: #595959;
+$color-148EF6: #148EF6;
+$color-FFFFFF: #FFFFFF;
+$color-52C41A: #52C41A;
+$color-FAAD14: #FAAD14;
+$color-F5222D: #F5222D;
 
+/* mixin */
+@mixin make-color($border-color, $background-color, $color) {
+  border: 1px solid $border-color;
+  background-color: $background-color;
+  color: $color;
+}
+
+@mixin make-size($height, $font-size) {
+  height: $height;
+  font-size: $font-size;
+  line-height: $height - 2;
+}
+
+.v-tag {
+  display: inline-block;
+  padding: 0 10px;
+  white-space: nowrap;
+  border-radius: $border-radius + px;
+  box-sizing: border-box;
+  .v-tag__close {
+    position: relative;
+    right: -5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      color: $color-FFFFFF;
+    }
+  }
+}
+
+.v-tag__text {
+  @include make-color(transparent, transparent, $color-595959);
+  .v-tag__close:hover {
+    background-color: $color-595959;
+  }
+}
+
+.v-tag__default {
+  @include make-color(rgba(217, 217, 217, 1), transparent, $color-595959);
+  .v-tag__close:hover {
+    background-color: $color-595959;
+  }
+}
+
+.v-tag__info {
+  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-148EF6);
+  .v-tag__close:hover {
+    background-color: $color-148EF6;
+  }
+}
+
+.v-tag__success {
+  @include make-color(rgba(82, 196, 26, .2), rgba(82, 196, 26, .1), $color-52C41A);
+  .v-tag__close:hover {
+    background-color: $color-52C41A;
+  }
+}
+
+.v-tag__warning {
+  @include make-color(rgba(250, 173, 20, .2), rgba(250, 173, 20, .1), $color-FAAD14);
+  .v-tag__close:hover {
+    background-color: $color-FAAD14;
+  }
+}
+
+.v-tag__danger {
+  @include make-color(rgba(245, 34, 45, .2), rgba(245, 34, 45, .1), $color-F5222D);
+  .v-tag__close:hover {
+    background-color: $color-F5222D;
+  }
+}
+
+.v-tag__mini {
+  @include make-size(28px, 12px);
+}
+
+.v-tag__small {
+  @include make-size(32px, 12px);
+}
+
+.v-tag__medium {
+  @include make-size(36px, 14px);
+}
+
+.v-tag__large {
+  @include make-size(40px, 14px);
+}
+
+.v-tag + .v-tag {
+  margin-left: 10px;
+}

@@ -59,16 +59,16 @@
   export default {
     name: 'TimePicker',
     componentName: 'TimePicker',
-    data() {
-      return {
-        moveY: 0,
-      };
-    },
     props: {
       date: {
         type: Date,
         default: () => new Date(),
       },
+    },
+    data() {
+      return {
+        moveY: 0,
+      };
     },
     computed: {
       hours() {

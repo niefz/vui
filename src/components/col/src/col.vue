@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="classList"
+    :class="classes"
     :style="style">
     <slot></slot>
   </div>
@@ -33,12 +33,12 @@
       xl: [Number, Object],
     },
     computed: {
-      classList() {
-        let classList = [];
+      classes() {
+        let classes = [];
 
         ['span', 'offset', 'pull', 'push'].forEach(prop => {
           if (this[prop]) {
-            classList.push(
+            classes.push(
               prop === 'span' ? `v-col-${this[prop]}` : `v-col-${prop}-${this[prop]}`
             );
           }
@@ -46,18 +46,18 @@
 
         ['xs', 'sm', 'md', 'lg', 'xl'].forEach(size => {
           if (typeof this[size] === 'number') {
-            classList.push(`v-col-${size}-${this[size]}`);
+            classes.push(`v-col-${size}-${this[size]}`);
           } else if (typeof this[size] === 'object') {
             let props = this[size];
             Object.keys(props).forEach(prop => {
-              classList.push(
+              classes.push(
                 prop === 'span' ? `v-col-${size}-${props[prop]}` : `v-col-${size}-${prop}-${props[prop]}`
               );
             });
           }
         });
 
-        return classList;
+        return classes;
       },
       gutter() {
         let parent = this.$parent;

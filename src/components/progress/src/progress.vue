@@ -5,8 +5,8 @@
       'v-progress__' + shape,
       'v-progress__' + status,
       {
-        'v-progress__hide-info': hideInfo,
-        'v-progress__text-inside': textInside,
+        ['v-progress__hide-info']: hideInfo,
+        ['v-progress__text-inside']: textInside,
       }
     ]"
     role="progressbar"

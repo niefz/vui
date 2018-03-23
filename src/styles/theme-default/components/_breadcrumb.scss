@@ -1,3 +1,8 @@
+/* variable */
+$color-8C8C8C: #8C8C8C;
+$color-43A5F8: #43A5F8;
+$color-D9D9D9: #D9D9D9;
+
 .v-breadcrumb {
   @extend .clearfix;
   &__item {
@@ -7,7 +12,7 @@
         font-weight: 400;
         cursor: text;
         &, &:hover {
-          color: #8C8C8C;
+          color: $color-8C8C8C;
         }
       }
       .v-breadcrumb__separator {
@@ -18,12 +23,12 @@
   &__inner {
     font-weight: 600;
     &:hover {
-      color: #43A5F8;
+      color: $color-43A5F8;
     }
   }
   &__separator {
     margin: 0 5px;
     font-weight: 600;
-    color: #D9D9D9;
+    color: $color-D9D9D9;
   }
 }

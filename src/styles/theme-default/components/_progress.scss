@@ -1,3 +1,12 @@
+/* variable */
+$color-148EF6: #148EF6;
+$color-595959: #595959;
+$color-F5F5F5: #F5F5F5;
+$color-F5222D: #F5222D;
+$color-FFFFFF: #FFFFFF;
+$color-52C41A: #52C41A;
+
+
 .v-progress {
   position: relative;
   line-height: 1;
@@ -15,7 +24,7 @@
       width: 44px;
       margin-left: 10px;
       line-height: 1;
-      color: #595959;
+      color: $color-595959;
       vertical-align: middle;
       i {
         display: block;
@@ -43,7 +52,7 @@
 
 .v-progress-bar__outer {
   position: relative;
-  background-color: #F5F5F5;
+  background-color: $color-F5F5F5;
   border-radius: 100px;
   overflow: hidden;
   vertical-align: middle;
@@ -54,7 +63,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #148EF6;
+  background-color: $color-148EF6;
   border-radius: 100px;
   line-height: 1;
   text-align: right;
@@ -84,7 +93,7 @@
       margin: 0 5px;
       text-align: center;
       transform: translate(0%, -50%);
-      color: #FFFFFF;
+      color: $color-FFFFFF;
     }
   }
 }
@@ -97,7 +106,7 @@
     bottom: 0;
     left: 0;
     content: "";
-    background: #FFFFFF;
+    background: $color-FFFFFF;
     opacity: 0;
     border-radius: 10px;
     animation: v-progress-active 2s ease-in-out infinite;
@@ -106,19 +115,19 @@
 
 .v-progress__success {
   .v-progress-bar__inner {
-    background-color: #52C41A;
+    background-color: $color-52C41A;
   }
   .v-progress-text {
-    color: #52C41A;
+    color: $color-52C41A;
   }
 }
 
 .v-progress__exception {
   .v-progress-bar__inner {
-    background-color: #F5222D;
+    background-color: $color-F5222D;
   }
   .v-progress-text {
-    color: #F5222D;
+    color: $color-F5222D;
   }
 }
 

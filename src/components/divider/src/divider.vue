@@ -1,6 +1,13 @@
 <template>
   <div
-    :class="classNames">
+    :class="[
+      'v-divider__' + mode,
+      {
+        ['v-divider__width-text']: $slots.default,
+        ['v-divider__dashed']: dashed,
+      },
+      align,
+    ]">
     <span class="v-divider__inner-text" v-if="$slots.default"><slot></slot></span>
   </div>
 </template>
@@ -20,18 +27,6 @@
       align: {
         type: String,
         default: 'center',
-      },
-    },
-    computed: {
-      classNames() {
-        return [
-          `v-divider__${this.mode}`,
-          {
-            ['v-divider__width-text']: this.$slots.default,
-            ['v-divider__dashed']: this.dashed,
-          },
-          `${this.align}`,
-        ];
       },
     },
   };

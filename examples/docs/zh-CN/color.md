@@ -30,7 +30,7 @@
     <div class="color-box warning">Warning<div class="value">#FAAD14</div></div>
   </v-col>
   <v-col :span="8">
-    <div class="color-box danger">Error<div class="value">#F5222D</div></div>
+    <div class="color-box danger">Danger<div class="value">#F5222D</div></div>
   </v-col>
 </v-row>
 

@@ -1,13 +1,26 @@
+/* variable */
+$border-radius: 3;
+$color-D9D9D9: #D9D9D9;
+$color-E8E8E8: #E8E8E8;
+$color-43A5F8: #43A5F8;
+$color-E6F7FF: #E6F7FF;
+$color-8C8C8C: #8C8C8C;
+$color-E6F6FF: #E6F6FF;
+$color-FFFFFF: #FFFFFF;
+$color-595959: #595959;
+$color-148EF6: #148EF6;
+$color-BFBFBF: #BFBFBF;
+
 .v-datetimepicker {
   position: relative;
   display: inline-block;
   &__content {
     margin: 5px 0;
-    border: 1px solid #D9D9D9;
-    background: #FFFFFF;
-    color: #595959;
-    border-radius: 3px;
-    box-shadow: 0 0 10px #D9D9D9;
+    border: 1px solid $color-D9D9D9;
+    background: $color-FFFFFF;
+    color: $color-595959;
+    border-radius: $border-radius + px;
+    box-shadow: 0 0 10px $color-D9D9D9;
   }
 }
 
@@ -16,7 +29,7 @@
   font-size: 0;
   &__hd {
     padding: 5px 10px;
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid $color-E8E8E8;
     text-align: center;
     &-label {
       padding: 0 5px;
@@ -25,7 +38,7 @@
       line-height: 32px;
       cursor: pointer;
       &:hover {
-        color: #43A5F8;
+        color: $color-43A5F8;
       }
     }
   }
@@ -54,55 +67,55 @@
         font-weight: 400;
         line-height: 24px;
         text-align: center;
-        border-radius: 3px;
+        border-radius: $border-radius + px;
       }
     }
     &-header {
       &-inner {
-        color: #8C8C8C;
+        color: $color-8C8C8C;
       }
     }
     &-cell {
       cursor: pointer;
       &.in-range {
-        background-color: #E6F7FF;
+        background-color: $color-E6F7FF;
       }
       &.start-date, &.end-date {
         .v-picker-date__table-cell-inner {
-          background-color: #148EF6;
-          color: #FFFFFF;
+          background-color: $color-148EF6;
+          color: $color-FFFFFF;
         }
       }
       &.start-date {
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
+        border-top-left-radius: $border-radius + px;
+        border-bottom-left-radius: $border-radius + px;
       }
       &.end-date {
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
+        border-top-right-radius: $border-radius + px;
+        border-bottom-right-radius: $border-radius + px;
       }
       &-inner {
         border: 1px solid transparent;
         &.last-month-cell {
-          color: #8C8C8C;
+          color: $color-8C8C8C;
         }
         &.today {
-          border-color: #148EF6;
+          border-color: $color-148EF6;
           font-weight: 600;
-          color: #148EF6;
+          color: $color-148EF6;
         }
         &.next-month-cell {
-          color: #8C8C8C;
+          color: $color-8C8C8C;
         }
         &:hover {
-          border-color: #148EF6;
-          background-color: #E6F6FF;
-          color: #148EF6;
+          border-color: $color-148EF6;
+          background-color: $color-E6F6FF;
+          color: $color-148EF6;
         }
         &.disabled {
           border-color: transparent;
           background-color: transparent;
-          color: #BFBFBF;
+          color: $color-BFBFBF;
           cursor: not-allowed;
         }
       }
@@ -115,7 +128,7 @@
   float: right;
   height: 280px;
   padding: 30px 20px;
-  border-left: 1px solid #E8E8E8;
+  border-left: 1px solid $color-E8E8E8;
   font-size: 0;
   .select-panel {
     position: absolute;
@@ -123,8 +136,8 @@
     right: 20px;
     left: 20px;
     height: 40px;
-    border-top: 1px solid #E8E8E8;
-    border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid $color-E8E8E8;
+    border-bottom: 1px solid $color-E8E8E8;
     transform: translateY(-50%);
     &__inner {
       display: inline-block;
@@ -162,16 +175,16 @@
           margin: 5px 0;
           font-size: 12px;
           line-height: 30px;
-          color: #BFBFBF;
+          color: $color-BFBFBF;
           text-align: center;
           cursor: pointer;
           &:hover {
             font-weight: 600;
-            color: #148EF6;
+            color: $color-148EF6;
           }
           &.selected {
             font-weight: 600;
-            color: #595959;
+            color: $color-595959;
           }
         }
       }

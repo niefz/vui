@@ -1,9 +1,10 @@
-/* variable for menu */
+/* variable */
 $menu-indent: 0;
 $menu-item-indent: 20;
 $menu-item-line-height: 40;
+$border-radius: 3;
 
-/* mixin for menu */
+/* mixin */
 @mixin v-menu-item-border-normal {
   &:after {
     content: "";
@@ -84,7 +85,7 @@ $menu-item-line-height: 40;
           height: 1.5px;
           background-image: linear-gradient(to right, rgba(0, 0, 0, .65), rgba(0, 0, 0, .65));
           vertical-align: baseline;
-          border-radius: 2px;
+          border-radius: $border-radius + px;
           transition: background .3s cubic-bezier(.645, .045, .355, 1), transform .3s cubic-bezier(.645, .045, .355, 1);
         }
         &:before {

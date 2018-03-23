@@ -10,6 +10,11 @@
   export default {
     name: 'VBreadcrumb',
     componentName: 'VBreadcrumb',
+    provide() {
+      return {
+        VBreadcrumb: this,
+      };
+    },
     props: {
       separator: {
         type: String,
@@ -19,11 +24,6 @@
         type: String,
         default: '',
       },
-    },
-    provide() {
-      return {
-        VBreadcrumb: this,
-      };
     },
   };
 </script>

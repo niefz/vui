@@ -1,6 +1,6 @@
 <template>
  	<div
-		:class="classList"
+		:class="classes"
 		:style="style">
 		<slot></slot>
 	</div>
@@ -28,22 +28,22 @@
       },
     },
     computed: {
-      classList() {
-        let classList = [];
+      classes() {
+        let classes = [];
 
         if (this.flex) {
-          classList.push('v-row__flex');
+          classes.push('v-row__flex');
 
           ['align', 'justify'].forEach(prop => {
             if (this[prop]) {
-              classList.push(`v-row__flex-${prop}-${this[prop]}`);
+            classes.push(`v-row__flex-${prop}-${this[prop]}`);
             }
           });
 				} else {
-          classList.push('v-row');
+          classes.push('v-row');
 				}
 
-        return classList;
+        return classes;
       },
       style() {
         const style = {};

@@ -1,8 +1,8 @@
-/* variable for grid system */
+/* variable */
 $grid-columns: 24;
 $grid-gutter-width: 0;
 
-/* mixin for grid system */
+/* mixin */
 @mixin make-row($gutter: $grid-gutter-width) {
   position: relative;
   margin-right: ($gutter / -2);

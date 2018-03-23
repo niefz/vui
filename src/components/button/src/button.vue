@@ -8,8 +8,8 @@
       'v-btn__' + theme,
       'v-btn__' + buttonSize,
       {
-        'plain': plain,
-        'disabled': buttonDisabled,
+        ['plain']: plain,
+        ['disabled']: buttonDisabled,
       }
      ]"
     :disabled="buttonDisabled"
