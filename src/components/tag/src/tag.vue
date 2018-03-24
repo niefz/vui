@@ -23,12 +23,13 @@
   import Icon from '@/components/icon';
 
   export default {
-    name: 'VTag',
-    componentName: 'VTag',
+    name: 'Tag',
+    componentName: 'Tag',
     components: {
       VIcon: Icon,
     },
     props: {
+      value: [String, Array],
       transitionName: {
         type: String,
         default: 'v-zoom-in-center',
@@ -54,11 +55,23 @@
       tagSize() {
         return this.size || (this.$VUI || {}).size;
       },
+      model() {
+        let parent = this.$parent;
+
+        if (parent && parent.$options.componentName !== 'TagGroup') {
+          parent = parent.$parent;
+        }
+
+        return parent && parent.value;
+      },
     },
     methods: {
       handleClose(event) {
         this.$emit('close', event);
       }
+    },
+    created() {
+      console.log(this.model);
     },
   };
 </script>

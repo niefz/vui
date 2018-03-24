@@ -3,7 +3,7 @@
  */
 import VDivider from './src/divider';
 
-VDivider.install = function(Vue) {
+VDivider.install = (Vue) => {
   Vue.component(VDivider.name, VDivider);
 };
 

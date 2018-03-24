@@ -3,7 +3,7 @@
  */
 import VTag from './src/tag';
 
-VTag.install = function(Vue) {
+VTag.install = (Vue) => {
   Vue.component(VTag.name, VTag);
 };
 

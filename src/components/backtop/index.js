@@ -3,7 +3,7 @@
  */
 import VBacktop from './src/backtop';
 
-VBacktop.install = function(Vue) {
+VBacktop.install = (Vue) => {
   Vue.component(VBacktop.name, VBacktop);
 };
 

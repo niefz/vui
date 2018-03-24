@@ -3,7 +3,7 @@
  */
 import VRow from './src/row';
 
-VRow.install = function(Vue) {
+VRow.install = (Vue) => {
   Vue.component(VRow.name, VRow);
 };
 

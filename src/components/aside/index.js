@@ -3,7 +3,7 @@
  */
 import VAside from './src/aside';
 
-VAside.install = function(Vue) {
+VAside.install = (Vue) => {
   Vue.component(VAside.name, VAside);
 };
 

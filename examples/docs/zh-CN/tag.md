@@ -35,20 +35,35 @@
     {{tag}}
   </v-tag>
 </v-row>
+<v-row>
+  <v-tag-group v-model="model">
+    <v-tag
+      theme="text"
+      closable
+      @close="handleClose(tag)"
+      :key="tag"
+      v-for="tag in dynamicTags">
+      {{tag}}
+    </v-tag>
+  </v-tag-group>
+</v-row>
 ```
 :::
 
 <script>
   import Row from '@/components/row';
+  import TagGroup from '@/components/tag-group';
   import Tag from '@/components/tag';
 
   export default {
     components: {
-      VTag: Tag,
       VRow: Row,
+      VTag: Tag,
+      VTagGroup: TagGroup,
     },
     data() {
       return {
+        model: '标签一',
         dynamicTags: ['标签一', '标签二', '标签三', '标签四', '标签五'],
       };
     },

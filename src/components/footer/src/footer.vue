@@ -5,8 +5,8 @@
 </template>
 <script>
   export default {
-    name: 'VFooter',
-    componentName: 'VFooter',
+    name: 'Footer',
+    componentName: 'Footer',
     props: {
     },
     computed: {

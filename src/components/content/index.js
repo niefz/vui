@@ -3,7 +3,7 @@
  */
 import VContent from './src/content';
 
-VContent.install = function(Vue) {
+VContent.install = (Vue) => {
   Vue.component(VContent.name, VContent);
 };
 

@@ -3,7 +3,7 @@
  */
 import VButtonGroup from '../button/src/button-group';
 
-VButtonGroup.install = function(Vue) {
+VButtonGroup.install = (Vue) => {
   Vue.component(VButtonGroup.name, VButtonGroup);
 };
 

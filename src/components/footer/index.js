@@ -3,7 +3,7 @@
  */
 import VFooter from './src/footer';
 
-VFooter.install = function(Vue) {
+VFooter.install = (Vue) => {
   Vue.component(VFooter.name, VFooter);
 };
 

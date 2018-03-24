@@ -9,8 +9,8 @@ const ctx = '@@clickoutsideContext';
 let startClick;
 let seed = 0;
 
-function createDocumentHandler (el, binding, vnode) {
-  return function (mouseup = {}, mousedown = {}) {
+const createDocumentHandler = (el, binding, vnode) => {
+  return (mouseup = {}, mousedown = {}) => {
     if (!vnode ||
       !vnode.context ||
       !mouseup.target ||

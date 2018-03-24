@@ -3,7 +3,7 @@
  */
 import VBreadcrumb from './src/breadcrumb';
 
-VBreadcrumb.install = function(Vue) {
+VBreadcrumb.install = (Vue) => {
   Vue.component(VBreadcrumb.name, VBreadcrumb);
 };
 

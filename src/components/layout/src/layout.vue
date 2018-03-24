@@ -5,8 +5,8 @@
 </template>
 <script>
   export default {
-    name: 'VLayout',
-    componentName: 'VLayout',
+    name: 'Layout',
+    componentName: 'Layout',
     props: {
       direction: String
     },

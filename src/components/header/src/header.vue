@@ -5,8 +5,8 @@
 </template>
 <script>
   export default {
-    name: 'VHeader',
-    componentName: 'VHeader',
+    name: 'Header',
+    componentName: 'Header',
     props: {
     },
     computed: {

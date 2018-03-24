@@ -3,7 +3,7 @@
  */
 import VHeader from './src/header';
 
-VHeader.install = function(Vue) {
+VHeader.install = (Vue) => {
   Vue.component(VHeader.name, VHeader);
 };
 

@@ -3,7 +3,7 @@
  */
 import VLayout from './src/layout';
 
-VLayout.install = function(Vue) {
+VLayout.install = (Vue) => {
   Vue.component(VLayout.name, VLayout);
 };
 

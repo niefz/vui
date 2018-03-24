@@ -3,7 +3,7 @@
  */
 import VIcon from './src/icon';
 
-VIcon.install = function(Vue) {
+VIcon.install = (Vue) => {
   Vue.component(VIcon.name, VIcon);
 };
 

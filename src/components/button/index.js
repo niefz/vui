@@ -3,7 +3,7 @@
  */
 import VButton from './src/button';
 
-VButton.install = function(Vue) {
+VButton.install = (Vue) => {
   Vue.component(VButton.name, VButton);
 };
 

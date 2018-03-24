@@ -3,7 +3,7 @@
  */
 import VCol from './src/col';
 
-VCol.install = function(Vue) {
+VCol.install = (Vue) => {
   Vue.component(VCol.name, VCol);
 };
 

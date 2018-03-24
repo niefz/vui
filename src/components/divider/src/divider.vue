@@ -13,8 +13,8 @@
 </template>
 <script>
   export default {
-    name: 'VDivider',
-    componentName: 'VDivider',
+    name: 'Divider',
+    componentName: 'Divider',
     props: {
       mode: {
         type: String,

@@ -58,8 +58,8 @@
   import Icon from '@/components/icon';
 
   export default {
-    name: 'VProgress',
-    componentName: 'VProgress',
+    name: 'Progress',
+    componentName: 'Progress',
     components: {
       VIcon: Icon,
     },

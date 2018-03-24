@@ -12,9 +12,9 @@
   import Icon from '@/components/icon';
 
   export default {
-    name: 'VBreadcrumbItem',
-    componentName: 'VBreadcrumbItem',
-    inject: ['VBreadcrumb'],
+    name: 'BreadcrumbItem',
+    componentName: 'BreadcrumbItem',
+    inject: ['Breadcrumb'],
     components: {
       VIcon: Icon,
     },

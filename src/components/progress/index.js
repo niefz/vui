@@ -3,7 +3,7 @@
  */
 import VProgress from './src/progress';
 
-VProgress.install = function(Vue) {
+VProgress.install = (Vue) => {
   Vue.component(VProgress.name, VProgress);
 };
 

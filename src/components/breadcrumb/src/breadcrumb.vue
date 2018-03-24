@@ -8,8 +8,8 @@
 </template>
 <script>
   export default {
-    name: 'VBreadcrumb',
-    componentName: 'VBreadcrumb',
+    name: 'Breadcrumb',
+    componentName: 'Breadcrumb',
     provide() {
       return {
         VBreadcrumb: this,
