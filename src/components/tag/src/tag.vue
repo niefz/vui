@@ -7,7 +7,7 @@
         'v-tag__' + tagSize,
         {
           ['v-tag__custom']: color,
-          ['checked']: value === model || model.includes(value),
+          ['checked']: isChecked,
         },
       ]"
       :style="{ backgroundColor: color }"
@@ -72,6 +72,12 @@
       },
       multiple() {
         return this.parent && this.parent.multiple;
+      },
+      isChecked() {
+        if (this.multiple) {
+          return this.model.includes(this.value);
+        }
+        return this.value === this.model;
       },
     },
     methods: {
