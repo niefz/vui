@@ -38,12 +38,24 @@
 <v-row>
   <v-tag-group v-model="model">
     <v-tag
+      :value="tag"
       theme="text"
-      closable
       @close="handleClose(tag)"
+      @change="handleChange"
       :key="tag"
       v-for="tag in dynamicTags">
-      {{tag}}
+    </v-tag>
+  </v-tag-group>
+</v-row>
+<v-row>
+  <v-tag-group v-model="multiple" multiple>
+    <v-tag
+      :value="tag"
+      theme="text"
+      @close="handleClose(tag)"
+      @change="handleMultipleChange"
+      :key="tag"
+      v-for="tag in dynamicTags">
     </v-tag>
   </v-tag-group>
 </v-row>
@@ -64,12 +76,19 @@
     data() {
       return {
         model: '标签一',
+        multiple: ['标签一'],
         dynamicTags: ['标签一', '标签二', '标签三', '标签四', '标签五'],
       };
     },
     methods: {
       handleClose(tag) {
         this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      },
+      handleChange(val) {
+        this.model = val;
+      },
+      handleMultipleChange(val) {
+        this.multiple = val;
       },
     },
   };

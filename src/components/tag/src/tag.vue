@@ -7,10 +7,13 @@
         'v-tag__' + tagSize,
         {
           ['v-tag__custom']: color,
+          ['checked']: value === model || model.includes(value),
         },
       ]"
-      :style="{ backgroundColor: color }">
-      <slot></slot>
+      :style="{ backgroundColor: color }"
+      @click.stop="handleChange(value)">
+      <template v-if="$slots.default"><slot></slot></template>
+      <template v-else>{{value}}</template>
       <v-icon
         class="v-tag__close"
         icon="v-icon-close"
@@ -29,11 +32,11 @@
       VIcon: Icon,
     },
     props: {
-      value: [String, Array],
       transitionName: {
         type: String,
         default: 'v-zoom-in-center',
       },
+      value: [String, Object],
       theme: {
         type: String,
         default: 'default',
@@ -55,23 +58,40 @@
       tagSize() {
         return this.size || (this.$VUI || {}).size;
       },
-      model() {
+      parent() {
         let parent = this.$parent;
 
         if (parent && parent.$options.componentName !== 'TagGroup') {
           parent = parent.$parent;
         }
 
-        return parent && parent.value;
+        return parent;
+      },
+      model() {
+        return this.parent && this.parent.value;
+      },
+      multiple() {
+        return this.parent && this.parent.multiple;
       },
     },
     methods: {
       handleClose(event) {
         this.$emit('close', event);
-      }
-    },
-    created() {
-      console.log(this.model);
+      },
+      handleChange(val) {
+        if (this.multiple) {
+          const model = this.model;
+          const index = model.findIndex(item => item === val);
+          if (index > -1) {
+            model.splice(index, 1);
+          } else {
+            model.push(val);
+          }
+          this.$emit('change', model);
+        } else {
+          this.$emit('change', val);
+        }
+      },
     },
   };
 </script>

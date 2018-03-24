@@ -1,20 +1,20 @@
 /* variable */
 $border-radius: 3;
 $button-margin: 10;
-$color-D9D9D9: #D9D9D9;
 $color-595959: #595959;
-$color-FFFFFF: #FFFFFF;
-$color-43A5F8: #43A5F8;
-$color-148EF6: #148EF6;
-$color-EDEDED: #EDEDED;
 $color-BFBFBF: #BFBFBF;
+$color-D9D9D9: #D9D9D9;
+$color-EDEDED: #EDEDED;
+$color-FFFFFF: #FFFFFF;
+$color-148EF6: #148EF6;
+$color-43A5F8: #43A5F8;
 $color-89C6FA: #89C6FA;
 $color-F5222D: #F5222D;
 $color-F74E57: #F74E57;
 $color-FA9096: #FA9096;
+$color-FAAD14: #FAAD14;
 $color-FBBD43: #FBBD43;
 $color-FCD689: #FCD689;
-$color-FAAD14: #FAAD14;
 
 /* mixin */
 @mixin make-color($border-color, $background-color, $color) {

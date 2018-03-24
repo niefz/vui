@@ -59,14 +59,17 @@
 
         return classes;
       },
-      gutter() {
+      parent() {
         let parent = this.$parent;
 
         if (parent && parent.$options.componentName !== 'Row') {
           parent = parent.$parent;
         }
 
-        return parent ? parent.gutter : 0;
+        return parent;
+      },
+      gutter() {
+        return this.parent ? this.parent.gutter : 0;
       },
       style() {
         const style = {};

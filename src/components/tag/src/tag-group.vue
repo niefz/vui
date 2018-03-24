@@ -12,6 +12,10 @@
     },
     props: {
       value: [String, Array],
+      multiple: {
+        type: Boolean,
+        default: false,
+      },
     },
   };
 </script>
