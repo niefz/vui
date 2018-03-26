@@ -2,7 +2,7 @@
   <div
     class="v-btn-group"
     :class="[
-      'v-btn-group__' + mode
+      'v-btn-group__' + mode,
     ]">
     <slot></slot>
   </div>

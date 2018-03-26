@@ -4,7 +4,7 @@
       'v-backtop',
       {
         ['show']: backTop,
-      },
+      }
     ]"
     @click="backTop">
     <slot>

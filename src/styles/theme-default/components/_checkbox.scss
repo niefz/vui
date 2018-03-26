@@ -1,1 +1,15 @@
+.v-checkbox {
+  display: inline-block;
+  &__input {
 
+  }
+  &__label {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none;
+  }
+}

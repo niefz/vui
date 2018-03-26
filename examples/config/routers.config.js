@@ -68,5 +68,12 @@ export default {
         tag(require('../docs/zh-CN/tag.md'));
       }, 'tag'),
     },
+    {
+      path: '/zh-CN/components/checkbox',
+      name: 'tag',
+      component: checkbox => require.ensure([], (require) => {
+        checkbox(require('../docs/zh-CN/checkbox.md'));
+      }, 'checkbox'),
+    },
   ]
 };

@@ -8,7 +8,7 @@
         {
           ['v-tag__custom']: color,
           ['checked']: isChecked,
-        },
+        }
       ]"
       :style="{ backgroundColor: color }"
       @click.stop="handleChange(value)">
