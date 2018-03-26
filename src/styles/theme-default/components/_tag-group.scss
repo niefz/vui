@@ -6,8 +6,11 @@ $color-FFFFFF: #FFFFFF;
   display: inline-block;
   position: relative;
   z-index: 1;
-  .checked {
-    background-color: $color-148EF6;
-    color: $color-FFFFFF;
+  .v-tag {
+    cursor: pointer;
+    &.checked {
+      background-color: $color-148EF6;
+      color: $color-FFFFFF;
+    }
   }
 }
