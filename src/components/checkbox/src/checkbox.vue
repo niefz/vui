@@ -27,7 +27,7 @@
         class="v-checkbox__original"
         type="checkbox"
         :name="name"
-        :value="label"
+        :value="value"
         :disabled="isDisabled"
         @change="handleChange">
     </span>
@@ -38,10 +38,17 @@
   </div>
 </template>
 <script>
+  import Emitter from '@/mixins/emitter';
+
   export default {
     name: 'Checkbox',
     componentName: 'Checkbox',
+    mixins: [Emitter],
     props: {
+      size: {
+        type: String,
+        default: 'small',
+      },
       label: {
         type: String,
         default: '',
@@ -70,26 +77,85 @@
         type: Boolean,
         default: false,
       },
-      size: {
-        type: String,
-        default: 'small',
-      },
+    },
+    data() {
+      return {
+        selfModel: false,
+        isLimitExceeded: false,
+      };
     },
     computed: {
       checkboxSize() {
         return this.size || (this.$VUI || {}).size;
       },
-      isDisabled() {
-        return this.disabled;
+      isGroup() {
+        let parent = this.$parent;
+        if (parent) {
+          if (parent.$options.componentName !== 'VCheckboxGroup') {
+            parent = parent.$parent;
+          } else {
+            this._checkboxGroup = parent;
+            return true;
+          }
+        }
+        return false;
+      },
+      store() {
+        return this._checkboxGroup ? this._checkboxGroup.value : this.value;
+      },
+      model: {
+        get() {
+          return this.isGroup ? this.store : this.value ? this.value : this.selfModel;
+        },
+        set(val) {
+          if (this.isGroup) {
+            this.isLimitExceeded = false;
+            (this._checkboxGroup.min && val.length < this._checkboxGroup.min && (this.isLimitExceeded = true));
+            (this._checkboxGroup.max && val.length > this._checkboxGroup.max && (this.isLimitExceeded = true));
+            this.isLimitExceeded === false && this.dispatch('VCheckboxGroup', 'input', [val]);
+          } else {
+            this.$emit('input', val);
+            this.selfModel = val;
+          }
+        }
       },
       isChecked() {
-        return this.checked;
+        console.log(this.model);
+        console.log(this.value);
+        if ({}.toString.call(this.model) === '[object Boolean]') {
+          return this.model;
+        } else if (Array.isArray(this.model)) {
+          return this.model.indexOf(this.value) > -1;
+        } else if (this.model) {
+          return this.model === this.value;
+        }
+      },
+      isDisabled() {
+        return this.isGroup ? this._checkboxGroup.disabled || this.disabled : this.disabled;
       },
     },
     methods: {
-      handleChange(event) {
-        console.log(event);
+      addToStore() {
+        if (Array.isArray(this.model) && this.model.indexOf(this.value) === -1) {
+          this.model.push(this.value);
+        } else {
+          this.model = this.value || true;
+        }
       },
+      handleChange(event) {
+        console.log(this.event);
+        if (this.isLimitExceeded) return;
+        const value = event.target.checked ? this.value : '';
+        this.$emit('change', value, event);
+        if (this.isGroup) {
+          this.$nextTick(() => {
+            this.dispatch('VCheckboxGroup', 'change', [this._checkboxGroup.value]);
+          });
+        }
+      }
+    },
+    created() {
+      this.checked && this.addToStore();
     },
   };
 </script>

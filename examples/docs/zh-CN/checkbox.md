@@ -8,37 +8,28 @@
 
 ```html
 <v-row>
-  <v-checkbox>标签一</v-checkbox>
+  <v-checkbox v-model="checked">复选框 A</v-checkbox>
 </v-row>
 ```
 :::
 
 <script>
   import Row from '@/components/row';
-  //import CheckboxGroup from '@/components/checkbox-group';
+  import CheckboxGroup from '@/components/checkbox-group';
   import Checkbox from '@/components/checkbox';
 
   export default {
     components: {
       VRow: Row,
+      VCheckboxGroup: CheckboxGroup,
       VCheckbox: Checkbox,
-      //VCheckboxGroup: CheckboxGroup,
     },
     data() {
       return {
-        checked: true,
+        checked: '复选框 A',
       };
     },
     methods: {
-      handleClose(tag) {
-        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
-      },
-      handleChange(val) {
-        this.model = val;
-      },
-      handleMultipleChange(val) {
-        this.multiple = val;
-      },
     },
   };
 </script>
