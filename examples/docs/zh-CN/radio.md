@@ -8,23 +8,23 @@
 
 ```html
 <v-row>
-  <v-radio v-model="checked">单选框 A</v-radio>
+  <v-radio v-model="checked" value="单选框 small">单选框 small</v-radio>
 </v-row>
 <v-row>
   <v-radio-group v-model="checkedCity">
-    <v-radio v-for="city in cities" :label="city" :value="city" :key="city">{{city}}</v-radio>
+    <v-radio v-for="city in cities" :label="city" :value="city" :key="city"></v-radio>
   </v-radio-group>
 </v-row>
 <v-row>
-  <v-radio-group mode="vertical" disabled>
-    <v-radio v-for="city in cities" :label="city" :value="city" :key="city">{{city}}</v-radio>
+  <v-radio-group v-model="checkedCity" mode="vertical" disabled>
+    <v-radio v-for="city in cities" :label="city" :value="city" :key="city"></v-radio>
   </v-radio-group>
 </v-row>
 <v-row>
-  <v-radio size="mini" border disabled>单选框 mini</v-radio>
-  <v-radio v-model="checked" size="small" border>单选框 small</v-radio>
-  <v-radio v-model="checked" size="medium" border>单选框 medium</v-radio>
-  <v-radio v-model="checked" size="large" border>单选框 large</v-radio>
+  <v-radio v-model="checked" value="单选框 mini" size="mini" border disabled>单选框 mini</v-radio>
+  <v-radio v-model="checked" value="单选框 small" size="small" border disabled>单选框 small</v-radio>
+  <v-radio v-model="checked" value="单选框 medium" size="medium" border>单选框 medium</v-radio>
+  <v-radio v-model="checked" value="单选框 large" size="large" border>单选框 large</v-radio>
 </v-row>
 ```
 :::
@@ -42,7 +42,7 @@
     },
     data() {
       return {
-        checked: true,
+        checked: '单选框 small',
         cities: ['上海', '北京', '广州', '深圳'],
         checkedCity: '上海',
       };

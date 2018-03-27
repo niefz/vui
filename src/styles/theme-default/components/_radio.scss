@@ -96,6 +96,15 @@ $color-FFFFFF: #FFFFFF;
       cursor: not-allowed;
     }
   }
+  &.checked {
+    &.disabled {
+      .v-radio__input-inner {
+        &:after {
+          background-color: $color-BFBFBF;
+        }
+      }
+    }
+  }
 }
 
 .v-radio__mini {

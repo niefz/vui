@@ -40,6 +40,9 @@
     name: 'Radio',
     componentName: 'Radio',
     mixins: [Emitter],
+    model: {
+      prop: 'checked',
+    },
     props: {
       size: {
         type: String,
@@ -54,6 +57,7 @@
         default: '',
       },
       value: {},
+      checked: {},
       disabled: {
         type: Boolean,
         default: false,
@@ -82,13 +86,13 @@
       },
       model: {
         get() {
-          return this.isGroup ? this._radioGroup.value : this.value;
+          return this.isGroup ? this._radioGroup.value : this.checked;
         },
-        set(val) {
+        set(value) {
           if (this.isGroup) {
-            this.dispatch('RadioGroup', 'input', [val]);
+            this.dispatch('RadioGroup', 'input', value);
           } else {
-            this.$emit('input', val);
+            this.$emit('input', value);
           }
         }
       },
@@ -101,11 +105,11 @@
     },
     methods: {
       handleChange(event) {
-        const value = this.model;
+        const value = this.value;
         this.$nextTick(() => {
           this.$emit('change', value, event);
           if (this.isGroup) {
-            this.dispatch('RadioGroup', 'handleChange', value);
+            this.dispatch('RadioGroup', 'change', value);
           }
         });
       }
