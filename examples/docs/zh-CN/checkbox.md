@@ -4,11 +4,11 @@
 
 ## 基础用法
 
-:::demo 在v-checkbox元素中定义v-model绑定变量，单一的checkbox中，默认绑定变量的值会是Boolean，选中为true。
+:::demo 在v-checkbox元素中定义v-model绑定变量。
 
 ```html
 <v-row>
-  <v-checkbox v-model="checked">复选框 A</v-checkbox>
+  <v-checkbox label="复选框 A" v-model="checked"></v-checkbox>
 </v-row>
 ```
 :::
@@ -26,7 +26,7 @@
     },
     data() {
       return {
-        checked: '复选框 A',
+        checked: true,
       };
     },
     methods: {

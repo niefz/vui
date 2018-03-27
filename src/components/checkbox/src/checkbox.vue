@@ -1,5 +1,5 @@
 <template>
-  <div
+  <label
     class="v-checkbox"
     :class="[
       'v-checkbox__' + checkboxSize,
@@ -24,6 +24,7 @@
       aria-checked="mixed">
       <em class="v-checkbox__inner"></em>
       <input
+        v-model="model"
         class="v-checkbox__original"
         type="checkbox"
         :name="name"
@@ -31,11 +32,11 @@
         :disabled="isDisabled"
         @change="handleChange">
     </span>
-    <label class="v-checkbox__label"  v-if="$slots.default || label">
+    <span class="v-checkbox__label"  v-if="$slots.default || label">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{label}}</template>
-    </label>
-  </div>
+    </span>
+  </label>
 </template>
 <script>
   import Emitter from '@/mixins/emitter';
@@ -57,10 +58,7 @@
         type: String,
         default: '',
       },
-      value: {
-        type: String,
-        default: '',
-      },
+      value: {},
       indeterminate: {
         type: Boolean,
         default: false,
@@ -80,7 +78,6 @@
     },
     data() {
       return {
-        selfModel: false,
         isLimitExceeded: false,
       };
     },
@@ -105,7 +102,7 @@
       },
       model: {
         get() {
-          return this.isGroup ? this.store : this.value ? this.value : this.selfModel;
+          return this.isGroup ? this.store : this.value ? this.value : false;
         },
         set(val) {
           if (this.isGroup) {
@@ -115,13 +112,10 @@
             this.isLimitExceeded === false && this.dispatch('VCheckboxGroup', 'input', [val]);
           } else {
             this.$emit('input', val);
-            this.selfModel = val;
           }
         }
       },
       isChecked() {
-        console.log(this.model);
-        console.log(this.value);
         if ({}.toString.call(this.model) === '[object Boolean]') {
           return this.model;
         } else if (Array.isArray(this.model)) {
@@ -143,7 +137,6 @@
         }
       },
       handleChange(event) {
-        console.log(this.event);
         if (this.isLimitExceeded) return;
         const value = event.target.checked ? this.value : '';
         this.$emit('change', value, event);
