@@ -1,1 +1,131 @@
+/* variable */
+$border-radius: 3;
+$color-148EF6: #148EF6;
+$color-BFBFBF: #BFBFBF;
+$color-D9D9D9: #D9D9D9;
+$color-EDEDED: #EDEDED;
+$color-FAFAFA: #FAFAFA;
+$color-FFFFFF: #FFFFFF;
 
+.v-radio {
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  &__input {
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    line-height: inherit;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    &-inner {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $color-D9D9D9;
+      background-color: $color-FFFFFF;
+      border-radius: 100%;
+      box-sizing: border-box;
+      z-index: 1;
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: $color-FFFFFF;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform .15s cubic-bezier(.71, -.46, .88, .6);
+      }
+    }
+    &-original {
+      position: absolute;
+      width: 0;
+      height: 0;
+      margin: 0;
+      opacity: 0;
+      outline: none;
+      z-index: -1;
+    }
+  }
+  &__label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2px;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none;
+  }
+  &.bordered {
+    border: 1px solid $color-D9D9D9;
+    box-sizing: border-box;
+    border-radius: $border-radius + px;
+  }
+  &.checked {
+    border-color: $color-148EF6;
+    .v-radio__input-inner {
+      border-color: $color-148EF6;
+      background-color: $color-148EF6;
+      &:after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    .v-radio__label {
+      color: $color-148EF6;
+    }
+  }
+  &.disabled {
+    border-color: $color-EDEDED;
+    .v-radio__input-inner {
+      border-color: $color-EDEDED;
+      background-color: $color-FAFAFA;
+      cursor: not-allowed;
+    }
+    .v-radio__label {
+      color: $color-BFBFBF;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.v-radio__mini {
+  &.bordered {
+    height: 28px;
+    padding: 3px 15px 3px 10px;
+    font-size: 12px;
+  }
+}
+
+.v-radio__small {
+  &.bordered {
+    height: 32px;
+    padding: 5px 15px 5px 10px;
+    font-size: 12px;
+  }
+}
+
+.v-radio__medium {
+  &.bordered {
+    height: 36px;
+    padding: 7px 20px 7px 10px;
+    font-size: 14px;
+  }
+}
+
+.v-radio__large {
+  &.bordered {
+    height: 40px;
+    padding: 9px 20px 9px 10px;
+    font-size: 14px;
+  }
+}

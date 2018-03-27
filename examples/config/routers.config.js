@@ -70,10 +70,17 @@ export default {
     },
     {
       path: '/zh-CN/components/checkbox',
-      name: 'tag',
+      name: 'checkbox',
       component: checkbox => require.ensure([], (require) => {
         checkbox(require('../docs/zh-CN/checkbox.md'));
       }, 'checkbox'),
+    },
+    {
+      path: '/zh-CN/components/radio',
+      name: 'radio',
+      component: radio => require.ensure([], (require) => {
+        radio(require('../docs/zh-CN/radio.md'));
+      }, 'radio'),
     },
   ]
 };

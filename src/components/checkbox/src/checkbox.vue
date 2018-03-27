@@ -134,12 +134,12 @@
       handleChange(event) {
         if (this.isLimitExceeded) return;
         const value = event.target.checked ? this.value : '';
-        this.$emit('change', value, event);
-        if (this.isGroup) {
-          this.$nextTick(() => {
+        this.$nextTick(() => {
+          this.$emit('change', value, event);
+          if (this.isGroup) {
             this.dispatch('CheckboxGroup', 'change', [this._checkboxGroup.value]);
-          });
-        }
+          }
+        });
       }
     },
     created() {
