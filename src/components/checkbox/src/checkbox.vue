@@ -88,7 +88,7 @@
       isGroup() {
         let parent = this.$parent;
         if (parent) {
-          if (parent.$options.componentName !== 'VCheckboxGroup') {
+          if (parent.$options.componentName !== 'CheckboxGroup') {
             parent = parent.$parent;
           } else {
             this._checkboxGroup = parent;
@@ -109,7 +109,7 @@
             this.isLimitExceeded = false;
             (this._checkboxGroup.min && val.length < this._checkboxGroup.min && (this.isLimitExceeded = true));
             (this._checkboxGroup.max && val.length > this._checkboxGroup.max && (this.isLimitExceeded = true));
-            this.isLimitExceeded === false && this.dispatch('VCheckboxGroup', 'input', [val]);
+            this.isLimitExceeded === false && this.dispatch('CheckboxGroup', 'input', [val]);
           } else {
             this.$emit('input', val);
           }
@@ -142,7 +142,7 @@
         this.$emit('change', value, event);
         if (this.isGroup) {
           this.$nextTick(() => {
-            this.dispatch('VCheckboxGroup', 'change', [this._checkboxGroup.value]);
+            this.dispatch('CheckboxGroup', 'change', [this._checkboxGroup.value]);
           });
         }
       }
