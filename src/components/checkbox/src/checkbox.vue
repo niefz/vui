@@ -4,9 +4,10 @@
     :class="[
       'v-checkbox__' + checkboxSize,
       {
-        'disabled': isDisabled,
-        'bordered': border,
+        'indeterminate': indeterminate,
         'checked': isChecked,
+        'bordered': border,
+        'disabled': isDisabled,
       }
     ]"
     role="checkbox"
@@ -14,18 +15,11 @@
     :aria-disabled="isDisabled">
     <span
       class="v-checkbox__input"
-      :class="[
-        {
-          'checked': isChecked,
-          'disabled': isDisabled,
-          'indeterminate': indeterminate,
-        }
-      ]"
       aria-checked="mixed">
-      <em class="v-checkbox__inner"></em>
+      <em class="v-checkbox__input-inner"></em>
       <input
         v-model="model"
-        class="v-checkbox__original"
+        class="v-checkbox__input-original"
         type="checkbox"
         :name="name"
         :value="value"
@@ -82,9 +76,6 @@
       };
     },
     computed: {
-      checkboxSize() {
-        return this.size || (this.$VUI || {}).size;
-      },
       isGroup() {
         let parent = this.$parent;
         if (parent) {
@@ -99,6 +90,10 @@
       },
       store() {
         return this._checkboxGroup ? this._checkboxGroup.value : this.value;
+      },
+      checkboxSize() {
+        const checkboxSize = this.size || (this.$VUI || {}).size;
+        return this.isGroup ? this._checkboxGroup.checkboxGroupSize || checkboxSize : checkboxSize;
       },
       model: {
         get() {

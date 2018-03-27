@@ -17,7 +17,10 @@
     componentName: 'CheckboxGroup',
     mixins: [Emitter],
     props: {
-      value: {},
+      value: {
+        type: Array,
+        default: () => [],
+      },
       min: Number,
       max: Number,
       mode: {
