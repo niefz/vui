@@ -14,7 +14,7 @@
   export default {
     name: 'BreadcrumbItem',
     componentName: 'BreadcrumbItem',
-    inject: ['Breadcrumb'],
+    inject: ['breadcrumb'],
     components: {
       VIcon: Icon,
     },
@@ -29,8 +29,8 @@
       };
     },
     mounted() {
-      this.separator = this.Breadcrumb.separator;
-      this.separatorIcon = this.Breadcrumb.separatorIcon;
+      this.separator = this.breadcrumb.separator;
+      this.separatorIcon = this.breadcrumb.separatorIcon;
 
       const self = this;
       const to = self.to;
