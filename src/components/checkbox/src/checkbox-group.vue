@@ -31,7 +31,10 @@
         type: String,
         default: 'small',
       },
-      disabled: Boolean,
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
     computed: {
       checkboxGroupSize() {

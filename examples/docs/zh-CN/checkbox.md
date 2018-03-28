@@ -8,26 +8,26 @@
 
 ```html
 <v-row>
-  <v-checkbox v-model="checked">复选框 A</v-checkbox>
+  <v-checkbox v-model="checked" @change="handleChange">复选框 A</v-checkbox>
 </v-row>
 <v-row>
-  <v-checkbox indeterminate>全选</v-checkbox>
+  <v-checkbox value="全选" indeterminate>全选</v-checkbox>
 </v-row>
 <v-row>
-  <v-checkbox-group v-model="checkedCities">
-    <v-checkbox v-for="city in cities" :label="city" :value="city" :key="city">{{city}}</v-checkbox>
+  <v-checkbox-group v-model="checkedCities" :min="1" :max="3" @change="handleChange">
+    <v-checkbox v-for="city in cities" :label="city" :value="city" :key="city"></v-checkbox>
   </v-checkbox-group>
 </v-row>
 <v-row>
-  <v-checkbox-group mode="vertical" :min="1" :max="3" disabled>
-    <v-checkbox v-for="city in cities" :label="city" :value="city" :key="city">{{city}}</v-checkbox>
+  <v-checkbox-group mode="vertical" disabled>
+    <v-checkbox v-for="city in cities" :label="city" :value="city" :key="city"></v-checkbox>
   </v-checkbox-group>
 </v-row>
 <v-row>
   <v-checkbox size="mini" border disabled>复选框 mini</v-checkbox>
   <v-checkbox v-model="checked" size="small" border>复选框 small</v-checkbox>
   <v-checkbox v-model="checked" size="medium" border>复选框 medium</v-checkbox>
-  <v-checkbox v-model="checked" size="large" border>复选框 large</v-checkbox>
+  <v-checkbox v-model="checked" value="复选框 large" size="large" border @change="handleChange">复选框 large</v-checkbox>
 </v-row>
 ```
 :::
@@ -51,6 +51,9 @@
       };
     },
     methods: {
+      handleChange(val) {
+        console.log(val);
+      },
     },
   };
 </script>

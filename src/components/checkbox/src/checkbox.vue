@@ -14,8 +14,7 @@
     :aria-checked="indeterminate ? 'mixed': isChecked"
     :aria-disabled="isDisabled">
     <span
-      class="v-checkbox__input"
-      aria-checked="mixed">
+      class="v-checkbox__input">
       <em class="v-checkbox__input-inner"></em>
       <input
         v-model="model"
@@ -26,7 +25,7 @@
         :disabled="isDisabled"
         @change="handleChange">
     </span>
-    <span class="v-checkbox__label"  v-if="$slots.default || label">
+    <span class="v-checkbox__label" v-if="$slots.default || label">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{label}}</template>
     </span>
@@ -39,33 +38,36 @@
     name: 'Checkbox',
     componentName: 'Checkbox',
     mixins: [Emitter],
+    model: {
+      prop: 'checked',
+    },
     props: {
       size: {
         type: String,
         default: 'small',
       },
-      label: {
-        type: String,
-        default: '',
-      },
       name: {
         type: String,
         default: '',
       },
-      value: {},
-      indeterminate: {
-        type: Boolean,
-        default: false,
+      label: {
+        type: String,
+        default: '',
       },
+      value: {},
       checked: {
         type: Boolean,
         default: false,
       },
-      disabled: {
+      indeterminate: {
         type: Boolean,
         default: false,
       },
       border: {
+        type: Boolean,
+        default: false,
+      },
+      disabled: {
         type: Boolean,
         default: false,
       },
@@ -89,7 +91,7 @@
         return false;
       },
       store() {
-        return this._checkboxGroup ? this._checkboxGroup.value : this.value;
+        return this._checkboxGroup ? this._checkboxGroup.value : this.checked;
       },
       checkboxSize() {
         const checkboxSize = this.size || (this.$VUI || {}).size;
@@ -97,16 +99,16 @@
       },
       model: {
         get() {
-          return this.isGroup ? this.store : this.value ? this.value : false;
+          return this.isGroup ? this.store : this.checked;
         },
-        set(val) {
+        set(value) {
           if (this.isGroup) {
             this.isLimitExceeded = false;
-            (this._checkboxGroup.min && val.length < this._checkboxGroup.min && (this.isLimitExceeded = true));
-            (this._checkboxGroup.max && val.length > this._checkboxGroup.max && (this.isLimitExceeded = true));
-            this.isLimitExceeded === false && this.dispatch('CheckboxGroup', 'input', [val]);
+            (this._checkboxGroup.min && value.length < this._checkboxGroup.min && (this.isLimitExceeded = true));
+            (this._checkboxGroup.max && value.length > this._checkboxGroup.max && (this.isLimitExceeded = true));
+            this.isLimitExceeded === false && this.dispatch('CheckboxGroup', 'input', [value]);
           } else {
-            this.$emit('input', val);
+            this.$emit('input', value);
           }
         }
       },
@@ -124,16 +126,9 @@
       },
     },
     methods: {
-      addToStore() {
-        if (Array.isArray(this.model) && this.model.indexOf(this.value) === -1) {
-          this.model.push(this.value);
-        } else {
-          this.model = this.value || true;
-        }
-      },
       handleChange(event) {
         if (this.isLimitExceeded) return;
-        const value = event.target.checked ? this.value : '';
+        const value = event.target.checked ? this.value ? this.value : event.target.checked : false;
         this.$nextTick(() => {
           this.$emit('change', value, event);
           if (this.isGroup) {
@@ -141,9 +136,6 @@
           }
         });
       }
-    },
-    created() {
-      this.checked && this.addToStore();
     },
   };
 </script>
