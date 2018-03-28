@@ -29,8 +29,8 @@
       };
     },
     mounted() {
-      this.separator = this.VBreadcrumb.separator;
-      this.separatorIcon = this.VBreadcrumb.separatorIcon;
+      this.separator = this.Breadcrumb.separator;
+      this.separatorIcon = this.Breadcrumb.separatorIcon;
 
       const self = this;
       const to = self.to;

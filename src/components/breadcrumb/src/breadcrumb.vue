@@ -12,7 +12,7 @@
     componentName: 'Breadcrumb',
     provide() {
       return {
-        VBreadcrumb: this,
+        Breadcrumb: this,
       };
     },
     props: {
