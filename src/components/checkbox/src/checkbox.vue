@@ -117,8 +117,6 @@
           return this.model;
         } else if (Array.isArray(this.model)) {
           return this.model.indexOf(this.value) > -1;
-        } else if (this.model) {
-          return this.model === this.value;
         }
       },
       isDisabled() {
