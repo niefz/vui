@@ -3,8 +3,9 @@
   position: relative;
   z-index: 1;
   &__horizontal {
-    .v-checkbox + .v-checkbox {
-      margin-left: 10px;
+    .v-checkbox {
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
   }
   &__vertical {
