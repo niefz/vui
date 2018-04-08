@@ -41,7 +41,7 @@
     componentName: 'Radio',
     mixins: [Emitter],
     model: {
-      prop: 'checked',
+      prop: 'vmodel',
     },
     props: {
       size: {
@@ -57,7 +57,7 @@
         default: '',
       },
       value: {},
-      checked: {},
+      vmodel: {},
       disabled: {
         type: Boolean,
         default: false,
@@ -86,7 +86,7 @@
       },
       model: {
         get() {
-          return this.isGroup ? this._radioGroup.value : this.checked;
+          return this.isGroup ? this._radioGroup.value : this.vmodel;
         },
         set(value) {
           if (this.isGroup) {
