@@ -8,7 +8,7 @@
 
 ```html
 <v-row>
-  <v-checkbox v-model="checked" @change="handleChange">复选框 A</v-checkbox>
+  <v-checkbox v-model="checked" label="复选框 A" @change="handleChange"></v-checkbox>
 </v-row>
 <v-row>
   <v-checkbox value="全选" indeterminate>全选</v-checkbox>
@@ -24,10 +24,10 @@
   </v-checkbox-group>
 </v-row>
 <v-row>
-  <v-checkbox size="mini" border disabled>复选框 mini</v-checkbox>
-  <v-checkbox v-model="checked" size="small" border>复选框 small</v-checkbox>
-  <v-checkbox v-model="checked" size="medium" border>复选框 medium</v-checkbox>
-  <v-checkbox v-model="checked" value="复选框 large" size="large" border @change="handleChange">复选框 large</v-checkbox>
+  <v-checkbox size="mini" label="复选框 mini" border disabled></v-checkbox>
+  <v-checkbox v-model="checkes" value="复选框 small" size="small" border @change="handleChange">复选框 small</v-checkbox>
+  <v-checkbox v-model="checkes" value="复选框 medium" size="medium" border @change="handleChange">复选框 medium</v-checkbox>
+  <v-checkbox v-model="checkes" value="复选框 large" size="large" border @change="handleChange">复选框 large</v-checkbox>
 </v-row>
 ```
 :::
@@ -46,6 +46,7 @@
     data() {
       return {
         checked: true,
+        checkes: ['复选框 small'],
         cities: ['上海', '北京', '广州', '深圳'],
         checkedCities: ['上海'],
       };

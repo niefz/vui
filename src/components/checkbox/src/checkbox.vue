@@ -39,7 +39,7 @@
     componentName: 'Checkbox',
     mixins: [Emitter],
     model: {
-      prop: 'checked',
+      prop: 'vmodel',
     },
     props: {
       size: {
@@ -55,10 +55,7 @@
         default: '',
       },
       value: {},
-      checked: {
-        type: Boolean,
-        default: false,
-      },
+      vmodel: {},
       indeterminate: {
         type: Boolean,
         default: false,
@@ -91,7 +88,7 @@
         return false;
       },
       store() {
-        return this._checkboxGroup ? this._checkboxGroup.value : this.checked;
+        return this._checkboxGroup ? this._checkboxGroup.value : this.vmodel;
       },
       checkboxSize() {
         const checkboxSize = this.size || (this.$VUI || {}).size;
@@ -99,7 +96,7 @@
       },
       model: {
         get() {
-          return this.isGroup ? this.store : this.checked;
+          return this.isGroup ? this.store : this.vmodel;
         },
         set(value) {
           if (this.isGroup) {
