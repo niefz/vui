@@ -145,7 +145,8 @@ $color-F5F5F5: #F5F5F5;
   }
   .v-btn {
     position: relative;
-    width: 100%;
+    width: calc(100% + 1px);
+    min-width: 100%;
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
