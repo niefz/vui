@@ -4,13 +4,13 @@
     :class="[
       'v-radio__' + radioSize,
       {
-        'checked': model === value,
+        'checked': isChecked,
         'bordered': border,
         'disabled': isDisabled,
       }
     ]"
     role="radio"
-    :aria-checked="model === value"
+    :aria-checked="isChecked"
     :aria-disabled="isDisabled"
     @keydown.space.stop.prevent="model = label"
     :tabindex="tabIndex">
@@ -95,6 +95,9 @@
             this.$emit('input', value);
           }
         }
+      },
+      isChecked() {
+        return this.model === this.value;
       },
       isDisabled() {
         return this.isGroup ? this._radioGroup.disabled || this.disabled : this.disabled;
