@@ -11,6 +11,7 @@ $color-FFFFFF: #FFFFFF;
   display: inline-block;
   height: 18px;
   line-height: 18px;
+  cursor: pointer;
   &__input {
     display: inline-block;
     position: relative;
@@ -19,7 +20,6 @@ $color-FFFFFF: #FFFFFF;
     line-height: inherit;
     vertical-align: middle;
     white-space: nowrap;
-    cursor: pointer;
     outline: none;
     &-inner {
       display: inline-block;
@@ -63,7 +63,6 @@ $color-FFFFFF: #FFFFFF;
     line-height: inherit;
     white-space: nowrap;
     vertical-align: middle;
-    cursor: pointer;
     outline: none;
   }
   &.bordered {
@@ -86,14 +85,13 @@ $color-FFFFFF: #FFFFFF;
   }
   &.disabled {
     border-color: $color-EDEDED;
+    cursor: not-allowed;
     .v-radio__input-inner {
       border-color: $color-EDEDED;
       background-color: $color-FAFAFA;
-      cursor: not-allowed;
     }
     .v-radio__label {
       color: $color-BFBFBF;
-      cursor: not-allowed;
     }
   }
   &.checked {
