@@ -4,15 +4,15 @@
       class="v-input"
       :class="[
         {
-          ['v-input__prefix']: prefixIcon,
-          ['v-input__suffix']: suffixIcon,
+          ['v-input--prefix']: prefixIcon,
+          ['v-input--suffix']: suffixIcon,
          }
       ]">
       <input
         v-model="datetime"
-        class="v-input__inner"
+        class="v-input--inner"
         :class="[
-          'v-input__' + inputSize,
+          'v-input--' + inputSize,
           {
             ['readonly']: readonly,
             ['disabled']: disabled,
@@ -21,10 +21,10 @@
         type="text"
         name="datetime"
         :placeholder="placeholders">
-      <v-icon class="v-input__prefix-icon" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
-      <v-icon class="v-input__suffix-icon" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
+      <v-icon class="v-input--prefix-icon" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
+      <v-icon class="v-input--suffix-icon" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
     </div>
-    <div class="v-datetimepicker__content">
+    <div class="v-datetimepicker--content">
       <v-picker-date></v-picker-date>
       <v-picker-time></v-picker-time>
     </div>

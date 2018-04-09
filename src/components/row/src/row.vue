@@ -32,11 +32,11 @@
         let classes = [];
 
         if (this.flex) {
-          classes.push('v-row__flex');
+          classes.push('v-row--flex');
 
           ['align', 'justify'].forEach(prop => {
             if (this[prop]) {
-            classes.push(`v-row__flex-${prop}-${this[prop]}`);
+            classes.push(`v-row--flex-${prop}-${this[prop]}`);
             }
           });
 				} else {

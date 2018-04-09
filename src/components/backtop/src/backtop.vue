@@ -8,7 +8,7 @@
     ]"
     @click="backTop">
     <slot>
-      <div class="v-backtop__inner">
+      <div class="v-backtop--inner">
         <v-icon icon="v-icon-chevron-up"></v-icon>
       </div>
     </slot>

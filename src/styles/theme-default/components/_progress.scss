@@ -10,7 +10,7 @@ $color-52C41A: #52C41A;
 .v-progress {
   position: relative;
   line-height: 1;
-  &__line {
+  &--line {
     .v-progress-bar {
       display: inline-block;
       width: 100%;
@@ -32,7 +32,7 @@ $color-52C41A: #52C41A;
       }
     }
   }
-  &__circle, &__dashboard {
+  &--circle, &--dashboard {
     display: inline-block;
     .v-progress-text {
       position: absolute;
@@ -50,7 +50,7 @@ $color-52C41A: #52C41A;
   }
 }
 
-.v-progress-bar__outer {
+.v-progress-bar--outer {
   position: relative;
   background-color: $color-F5F5F5;
   border-radius: 100px;
@@ -58,7 +58,7 @@ $color-52C41A: #52C41A;
   vertical-align: middle;
 }
 
-.v-progress-bar__inner {
+.v-progress-bar--inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,7 +71,7 @@ $color-52C41A: #52C41A;
   transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
 }
 
-.v-progress__hide-info {
+.v-progress--hide-info {
   .v-progress-bar {
     display: block;
     margin-right: 0;
@@ -82,11 +82,11 @@ $color-52C41A: #52C41A;
   }
 }
 
-.v-progress__text-inside {
+.v-progress--text-inside {
   .v-progress-bar {
     margin-right: 0;
     padding-right: 0;
-    .v-progress-bar__inner-text {
+    .v-progress-bar--inner-text {
       position: absolute;
       top: 50%;
       right: 0;
@@ -98,8 +98,8 @@ $color-52C41A: #52C41A;
   }
 }
 
-.v-progress__active {
-  .v-progress-bar__inner:before {
+.v-progress--active {
+  .v-progress-bar--inner:before {
     position: absolute;
     top: 0;
     right: 0;
@@ -113,8 +113,8 @@ $color-52C41A: #52C41A;
   }
 }
 
-.v-progress__success {
-  .v-progress-bar__inner {
+.v-progress--success {
+  .v-progress-bar--inner {
     background-color: $color-52C41A;
   }
   .v-progress-text {
@@ -122,8 +122,8 @@ $color-52C41A: #52C41A;
   }
 }
 
-.v-progress__exception {
-  .v-progress-bar__inner {
+.v-progress--exception {
+  .v-progress-bar--inner {
     background-color: $color-F5222D;
   }
   .v-progress-text {

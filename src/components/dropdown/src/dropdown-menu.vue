@@ -3,7 +3,7 @@
     <ul
       class="v-dropdown-menu"
       :class="[
-        'v-dropdown-menu__' + size
+        'v-dropdown-menu--' + size
       ]"
       v-show="showPopper">
       <slot></slot>

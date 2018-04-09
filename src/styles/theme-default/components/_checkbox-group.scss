@@ -2,13 +2,13 @@
   display: inline-block;
   position: relative;
   z-index: 1;
-  &__horizontal {
+  &--horizontal {
     .v-checkbox {
       margin-right: 10px;
       margin-bottom: 10px;
     }
   }
-  &__vertical {
+  &--vertical {
     .v-checkbox {
       display: block;
       width: 100%;

@@ -47,7 +47,7 @@ $color-FCD689: #FCD689;
   }
 }
 
-.v-btn__button {
+.v-btn--button {
   padding: 0 15px;
   border: 1px solid;
   &:focus:after {
@@ -64,7 +64,7 @@ $color-FCD689: #FCD689;
     border-radius: inherit;
     animation: buttonEffect .4s;
   }
-  &.v-btn__default {
+  &.v-btn--default {
     @include make-color($color-D9D9D9, transparent, $color-595959);
     &.plain {
       @include make-color($color-FFFFFF, transparent, $color-FFFFFF);
@@ -80,7 +80,7 @@ $color-FCD689: #FCD689;
       cursor: not-allowed;
     }
   }
-  &.v-btn__primary {
+  &.v-btn--primary {
     @include make-color($color-148EF6, $color-148EF6, $color-FFFFFF);
     &:hover, &:focus {
       @include make-color($color-43A5F8, $color-43A5F8, $color-FFFFFF);
@@ -100,7 +100,7 @@ $color-FCD689: #FCD689;
       }
     }
   }
-  &.v-btn__warning {
+  &.v-btn--warning {
     @include make-color($color-FAAD14, $color-FAAD14, $color-FFFFFF);
     &:hover, &:focus {
       @include make-color($color-FBBD43, $color-FBBD43, $color-FFFFFF);
@@ -120,7 +120,7 @@ $color-FCD689: #FCD689;
       }
     }
   }
-  &.v-btn__danger {
+  &.v-btn--danger {
     @include make-color($color-F5222D, $color-F5222D, $color-FFFFFF);
     &:hover, &:focus {
       @include make-color($color-F74E57, $color-F74E57, $color-FFFFFF);
@@ -142,9 +142,9 @@ $color-FCD689: #FCD689;
   }
 }
 
-.v-btn__text {
+.v-btn--text {
   border: 1px solid transparent;
-  &.v-btn__default {
+  &.v-btn--default {
     @include make-color(transparent, transparent, $color-595959);
     &:hover, &:focus {
       @include make-color(transparent, transparent, $color-43A5F8);
@@ -154,7 +154,7 @@ $color-FCD689: #FCD689;
       cursor: not-allowed;
     }
   }
-  &.v-btn__primary {
+  &.v-btn--primary {
     @include make-color(transparent, transparent, $color-148EF6);
     &:hover, &:focus {
       @include make-color(transparent, transparent, $color-43A5F8);
@@ -164,7 +164,7 @@ $color-FCD689: #FCD689;
       cursor: not-allowed;
     }
   }
-  &.v-btn__warning {
+  &.v-btn--warning {
     @include make-color(transparent, transparent, $color-FAAD14);
     &:hover, &:focus {
       @include make-color(transparent, transparent, $color-FBBD43);
@@ -174,7 +174,7 @@ $color-FCD689: #FCD689;
       cursor: not-allowed;
     }
   }
-  &.v-btn__danger {
+  &.v-btn--danger {
     @include make-color(transparent, transparent, $color-F5222D);
     &:hover, &:focus {
       @include make-color(transparent, transparent, $color-F74E57);
@@ -186,35 +186,35 @@ $color-FCD689: #FCD689;
   }
 }
 
-.v-btn__radius {
+.v-btn--radius {
   border-radius: $border-radius + px;
-  &.v-btn__mini {
+  &.v-btn--mini {
     @include make-size(auto, 28px, 12px);
   }
-  &.v-btn__small {
+  &.v-btn--small {
     @include make-size(auto, 32px, 12px);
   }
-  &.v-btn__medium {
+  &.v-btn--medium {
     @include make-size(auto, 36px, 14px);
   }
-  &.v-btn__large {
+  &.v-btn--large {
     @include make-size(auto, 40px, 16px);
   }
 }
 
-.v-btn__circle {
+.v-btn--circle {
   padding: 0;
   border-radius: 50%;
-  &.v-btn__mini {
+  &.v-btn--mini {
     @include make-size(28px, 28px, 14px);
   }
-  &.v-btn__small {
+  &.v-btn--small {
     @include make-size(32px, 32px, 14px);
   }
-  &.v-btn__medium {
+  &.v-btn--medium {
     @include make-size(36px, 36px, 16px);
   }
-  &.v-btn__large {
+  &.v-btn--large {
     @include make-size(40px, 40px, 18px);
   }
 }

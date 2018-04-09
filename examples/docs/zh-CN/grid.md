@@ -35,7 +35,7 @@
   };
 </script>
 <style rel="stylesheet/scss" lang="sass" scoped>
-.v-row, .v-row__flex {
+.v-row, .v-row--flex {
   > div {
     min-height: 30px;
     margin-top: 8px;

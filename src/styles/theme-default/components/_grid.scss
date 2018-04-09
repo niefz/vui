@@ -45,7 +45,7 @@ $grid-gutter-width: 0;
   box-sizing: border-box;
 }
 
-.v-row__flex {
+.v-row--flex {
   display: flex;
   flex-flow: row wrap;
   &:before,
@@ -58,7 +58,7 @@ $grid-gutter-width: 0;
  * flex 水平排列
  * x轴原点
  */
-.v-row__flex-justify-start {
+.v-row--flex-justify-start {
   justify-content: flex-start;
 }
 
@@ -66,7 +66,7 @@ $grid-gutter-width: 0;
  * flex 水平排列
  * x轴居中
  */
-.v-row__flex-justify-center {
+.v-row--flex-justify-center {
   justify-content: center;
 }
 
@@ -74,7 +74,7 @@ $grid-gutter-width: 0;
  * flex 水平排列
  * x轴反方向
  */
-.v-row__flex-justify-end {
+.v-row--flex-justify-end {
   justify-content: flex-end;
 }
 
@@ -82,7 +82,7 @@ $grid-gutter-width: 0;
  * flex 水平排列
  * x轴平分
  */
-.v-row__flex-justify-space-between {
+.v-row--flex-justify-space-between {
   justify-content: space-between;
 }
 
@@ -90,7 +90,7 @@ $grid-gutter-width: 0;
  * flex 水平排列
  * x轴有间隔地平分
  */
-.v-row__flex-justify-space-around {
+.v-row--flex-justify-space-around {
   justify-content: space-around;
 }
 
@@ -98,7 +98,7 @@ $grid-gutter-width: 0;
  * flex 垂直对齐
  * 顶部对齐
  */
-.v-row__flex-align-start {
+.v-row--flex-align-start {
   align-items: flex-start;
 }
 
@@ -106,7 +106,7 @@ $grid-gutter-width: 0;
  * flex 垂直对齐
  * 居中对齐
  */
-.v-row__flex-align-center {
+.v-row--flex-align-center {
   align-items: center;
 }
 
@@ -114,7 +114,7 @@ $grid-gutter-width: 0;
  * flex 垂直对齐
  * 底部对齐
  */
-.v-row__flex-align-end {
+.v-row--flex-align-end {
   align-items: flex-end;
 }
 

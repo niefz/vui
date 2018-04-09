@@ -3,13 +3,13 @@
     :type="nativeType"
     class="v-btn"
     :class="[
-      'v-btn__' + type,
-      'v-btn__' + shape,
-      'v-btn__' + theme,
-      'v-btn__' + buttonSize,
+      'v-btn--' + type,
+      'v-btn--' + shape,
+      'v-btn--' + theme,
+      'v-btn--' + buttonSize,
       {
         ['plain']: plain,
-        ['disabled']: buttonDisabled,
+        ['disabled']: isDisabled,
       }
      ]"
     :disabled="buttonDisabled"
@@ -80,7 +80,7 @@
       buttonSize() {
         return this.size || (this.$VUI || {}).size;
       },
-      buttonDisabled() {
+      isDisabled() {
         return this.disabled || this.loading;
       },
     },

@@ -14,7 +14,7 @@ $color-BFBFBF: #BFBFBF;
 .v-datetimepicker {
   position: relative;
   display: inline-block;
-  &__content {
+  &--content {
     margin: 5px 0;
     border: 1px solid $color-D9D9D9;
     background: $color-FFFFFF;
@@ -27,7 +27,7 @@ $color-BFBFBF: #BFBFBF;
 .v-picker-date {
   display: inline-block;
   font-size: 0;
-  &__hd {
+  &--hd {
     padding: 5px 10px;
     border-bottom: 1px solid $color-E8E8E8;
     text-align: center;
@@ -42,16 +42,16 @@ $color-BFBFBF: #BFBFBF;
       }
     }
   }
-  &__prev-btn {
+  &--prev-btn {
     float: left;
   }
-  &__next-btn {
+  &--next-btn {
     float: right;
   }
-  &__bd {
+  &--bd {
     padding: 10px 15px;
   }
-  &__table {
+  &--table {
     width: 100%;
     font-size: 12px;
     &-header, &-cell {
@@ -81,7 +81,7 @@ $color-BFBFBF: #BFBFBF;
         background-color: $color-E6F7FF;
       }
       &.start-date, &.end-date {
-        .v-picker-date__table-cell-inner {
+        .v-picker-date--table-cell-inner {
           background-color: $color-148EF6;
           color: $color-FFFFFF;
         }
@@ -139,7 +139,7 @@ $color-BFBFBF: #BFBFBF;
     border-top: 1px solid $color-E8E8E8;
     border-bottom: 1px solid $color-E8E8E8;
     transform: translateY(-50%);
-    &__inner {
+    &--inner {
       display: inline-block;
       width: 75px;
       height: 40px;

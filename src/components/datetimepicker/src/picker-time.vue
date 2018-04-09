@@ -49,9 +49,9 @@
       </transition-group>
     </div>
     <div class="select-panel">
-      <em class="select-panel__inner">时</em>
-      <em class="select-panel__inner">分</em>
-      <em class="select-panel__inner">秒</em>
+      <em class="select-panel--inner">时</em>
+      <em class="select-panel--inner">分</em>
+      <em class="select-panel--inner">秒</em>
     </div>
   </div>
 </template>

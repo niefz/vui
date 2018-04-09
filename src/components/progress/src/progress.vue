@@ -2,11 +2,11 @@
   <div
     class="v-progress"
     :class="[
-      'v-progress__' + shape,
-      'v-progress__' + status,
+      'v-progress--' + shape,
+      'v-progress--' + status,
       {
-        ['v-progress__hide-info']: hideInfo,
-        ['v-progress__text-inside']: textInside,
+        ['v-progress--hide-info']: hideInfo,
+        ['v-progress--text-inside']: textInside,
       }
     ]"
     role="progressbar"
@@ -14,9 +14,9 @@
     aria-valuemin="0"
     aria-valuemax="100">
     <div class="v-progress-bar" v-if="shape === 'line'">
-      <div class="v-progress-bar__outer" :style="{ height: strokeWidth + 'px' }">
-        <div class="v-progress-bar__inner" :style="{ width: percentage + '%' }">
-          <div class="v-progress-bar__inner-text" v-if="!hideInfo && textInside">
+      <div class="v-progress-bar--outer" :style="{ height: strokeWidth + 'px' }">
+        <div class="v-progress-bar--inner" :style="{ width: percentage + '%' }">
+          <div class="v-progress-bar--inner-text" v-if="!hideInfo && textInside">
             <template v-if="$slots.default"><slot></slot></template>
             <template v-else>{{percentage}}%</template>
           </div>
@@ -26,14 +26,14 @@
     <div class="v-progress-circle" :style="{ width: width + 'px', height: width + 'px' }" v-else>
       <svg viewBox="0 0 100 100">
         <path
-          class="v-progress-circle__track"
+          class="v-progress-circle--track"
           :d="trackPath"
           stroke="#F5F5F5"
           :stroke-width="strokeWidth"
           fill="none"
           :style="trailPathStyle"></path>
         <path
-          class="v-progress-circle__path"
+          class="v-progress-circle--path"
           :d="trackPath"
           stroke-linecap="round"
           :stroke="strokeColor"

@@ -26,7 +26,7 @@ $color-F5222D: #F5222D;
   white-space: nowrap;
   border-radius: $border-radius + px;
   box-sizing: border-box;
-  .v-tag__close {
+  .v-tag--close {
     position: relative;
     right: -5px;
     width: 16px;
@@ -42,70 +42,70 @@ $color-F5222D: #F5222D;
   }
 }
 
-.v-tag__text {
+.v-tag--text {
   @include make-color(transparent, transparent, $color-595959);
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     background-color: $color-595959;
   }
 }
 
-.v-tag__default {
+.v-tag--default {
   @include make-color(rgba(217, 217, 217, 1), transparent, $color-595959);
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     background-color: $color-595959;
   }
 }
 
-.v-tag__info {
+.v-tag--info {
   @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-148EF6);
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     background-color: $color-148EF6;
   }
 }
 
-.v-tag__success {
+.v-tag--success {
   @include make-color(rgba(82, 196, 26, .2), rgba(82, 196, 26, .1), $color-52C41A);
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     background-color: $color-52C41A;
   }
 }
 
-.v-tag__warning {
+.v-tag--warning {
   @include make-color(rgba(250, 173, 20, .2), rgba(250, 173, 20, .1), $color-FAAD14);
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     background-color: $color-FAAD14;
   }
 }
 
-.v-tag__danger {
+.v-tag--danger {
   @include make-color(rgba(245, 34, 45, .2), rgba(245, 34, 45, .1), $color-F5222D);
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     background-color: $color-F5222D;
   }
 }
 
-.v-tag__custom {
+.v-tag--custom {
   border-color: transparent;
   color: $color-FFFFFF;
-  .v-tag__close:hover {
+  .v-tag--close:hover {
     font-weight: 600;
     background-color: transparent;
   }
 }
 
-.v-tag__mini {
+.v-tag--mini {
   @include make-size(28px, 12px);
 }
 
-.v-tag__small {
+.v-tag--small {
   @include make-size(32px, 12px);
 }
 
-.v-tag__medium {
+.v-tag--medium {
   @include make-size(36px, 14px);
 }
 
-.v-tag__large {
+.v-tag--large {
   @include make-size(40px, 14px);
 }
 

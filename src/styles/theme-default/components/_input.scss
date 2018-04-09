@@ -1,61 +1,66 @@
 /* variable */
+$color-148EF6: #148EF6;
+$color-BFBFBF: #BFBFBF;
 $color-D9D9D9: #D9D9D9;
-$color-43A5F8: #43A5F8;
 
 .v-input {
   position: relative;
   display: inline-block;
   transition: all .3s cubic-bezier(.645, .045, .355, 1);
-  &__mini {
+  &--mini {
     height: 28px;
     font-size: 12px;
-    line-height: 28px;
+    line-height: 16px;
   }
-  &__small {
+  &--small {
     height: 32px;
     font-size: 12px;
-    line-height: 32px;
+    line-height: 20px;
   }
-  &__medium {
+  &--medium {
     height: 36px;
     font-size: 14px;
-    line-height: 36px;
+    line-height: 24px;
   }
-  &__large {
+  &--large {
     height: 40px;
     font-size: 16px;
-    line-height: 40px;
+    line-height: 28px;
   }
-  > i {
+  > em {
     position: absolute;
     top: 6px;
     bottom: 6px;
-    width: 20px;
+    width: 34px;
+    font-size: 14px;
+    color: $color-BFBFBF;
+    text-align: center;
+    cursor: pointer;
   }
-  &__inner {
+  &--inner {
     padding: 5px 10px;
     border: 1px solid $color-D9D9D9;
     border-radius: 3px;
     box-sizing: border-box;
     &:focus {
-      border-color: $color-43A5F8;
-      box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
+      border-color: $color-148EF6;
+      box-shadow: 0 0 0 2px rgba(20, 142, 246, .2);
     }
   }
-  &__prefix {
-    .v-input__inner {
-      padding-left: 40px;
+  &--prefix {
+    .v-input--inner {
+      padding-left: 34px;
     }
-    &-icon {
-      left: 10px;
+    &-inner {
+      left: 0;
     }
   }
-  &__suffix {
-    .v-input__inner {
-      padding-right: 40px;
+  &--suffix {
+    .v-input--inner {
+      padding-right: 34px;
     }
-    &-icon {
-      right: 10px;
+    &-inner {
+      right: 0;
     }
   }
 }

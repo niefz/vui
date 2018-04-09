@@ -2,11 +2,11 @@
   <label
     class="v-radio"
     :class="[
-      'v-radio__' + radioSize,
+      'v-radio--' + radioSize,
       {
-        'checked': isChecked,
-        'bordered': border,
-        'disabled': isDisabled,
+        ['checked']: isChecked,
+        ['bordered']: border,
+        ['disabled']: isDisabled,
       }
     ]"
     role="radio"
@@ -15,11 +15,11 @@
     @keydown.space.stop.prevent="model = label"
     :tabindex="tabIndex">
     <span
-      class="v-radio__input">
-      <em class="v-radio__input-inner"></em>
+      class="v-radio--input">
+      <em class="v-radio--input-inner"></em>
       <input
         v-model="model"
-        class="v-radio__input-original"
+        class="v-radio--input-original"
         type="radio"
         :name="name"
         :value="value"
@@ -27,7 +27,7 @@
         @change="handleChange"
         tabindex="-1">
     </span>
-    <span class="v-radio__label"  v-if="$slots.default || label">
+    <span class="v-radio--label"  v-if="$slots.default || label">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{label}}</template>
     </span>

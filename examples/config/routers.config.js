@@ -48,25 +48,11 @@ export default {
       }, 'breadcrumb'),
     },
     {
-      path: '/zh-CN/components/progress',
-      name: 'progress',
-      component: progress => require.ensure([], (require) => {
-        progress(require('../docs/zh-CN/progress.md'));
-      }, 'progress'),
-    },
-    {
-      path: '/zh-CN/components/divider',
-      name: 'divider',
-      component: divider => require.ensure([], (require) => {
-        divider(require('../docs/zh-CN/divider.md'));
-      }, 'divider'),
-    },
-    {
-      path: '/zh-CN/components/tag',
-      name: 'tag',
-      component: tag => require.ensure([], (require) => {
-        tag(require('../docs/zh-CN/tag.md'));
-      }, 'tag'),
+      path: '/zh-CN/components/input',
+      name: 'input',
+      component: input => require.ensure([], (require) => {
+        input(require('../docs/zh-CN/input.md'));
+      }, 'input'),
     },
     {
       path: '/zh-CN/components/checkbox',
@@ -81,6 +67,27 @@ export default {
       component: radio => require.ensure([], (require) => {
         radio(require('../docs/zh-CN/radio.md'));
       }, 'radio'),
+    },
+    {
+      path: '/zh-CN/components/tag',
+      name: 'tag',
+      component: tag => require.ensure([], (require) => {
+        tag(require('../docs/zh-CN/tag.md'));
+      }, 'tag'),
+    },
+    {
+      path: '/zh-CN/components/progress',
+      name: 'progress',
+      component: progress => require.ensure([], (require) => {
+        progress(require('../docs/zh-CN/progress.md'));
+      }, 'progress'),
+    },
+    {
+      path: '/zh-CN/components/divider',
+      name: 'divider',
+      component: divider => require.ensure([], (require) => {
+        divider(require('../docs/zh-CN/divider.md'));
+      }, 'divider'),
     },
   ]
 };

@@ -2,7 +2,7 @@
   <label
     class="v-checkbox"
     :class="[
-      'v-checkbox__' + checkboxSize,
+      'v-checkbox--' + checkboxSize,
       {
         'indeterminate': indeterminate,
         'checked': isChecked,
@@ -14,18 +14,18 @@
     :aria-checked="indeterminate ? 'mixed': isChecked"
     :aria-disabled="isDisabled">
     <span
-      class="v-checkbox__input">
-      <em class="v-checkbox__input-inner"></em>
+      class="v-checkbox--input">
+      <em class="v-checkbox--input-inner"></em>
       <input
         v-model="model"
-        class="v-checkbox__input-original"
+        class="v-checkbox--input-original"
         type="checkbox"
         :name="name"
         :value="value"
         :disabled="isDisabled"
         @change="handleChange">
     </span>
-    <span class="v-checkbox__label" v-if="$slots.default || label">
+    <span class="v-checkbox--label" v-if="$slots.default || label">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{label}}</template>
     </span>

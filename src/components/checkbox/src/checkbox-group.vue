@@ -2,7 +2,7 @@
   <div
     class="v-checkbox-group"
     :class="[
-      'v-checkbox-group__' + mode,
+      'v-checkbox-group--' + mode,
     ]"
     role="group"
     aria-label="checkbox-group">

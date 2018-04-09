@@ -2,12 +2,12 @@
   display: inline-block;
   position: relative;
   z-index: 1;
-  &__horizontal {
+  &--horizontal {
     .v-radio + .v-radio {
       margin-left: 10px;
     }
   }
-  &__vertical {
+  &--vertical {
     .v-radio {
       display: block;
       width: 100%;

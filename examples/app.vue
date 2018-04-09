@@ -2,15 +2,15 @@
   <div class="wrapper">
     <header></header>
     <div class="v-scrollbar">
-      <div class="v-scrollbar__wrap">
+      <div class="v-scrollbar--wrap">
         <div class="side-nav">
-          <div class="side-nav__container">
+          <div class="side-nav--container">
             <ul
               class="v-menu"
               :class="`v-menu-${mode}`"
               role="menu">
               <li
-                class="v-menu__item"
+                class="v-menu--item"
                 role="menuitem"
                 aria-selected="false"
                 :key="index"
@@ -25,16 +25,16 @@
                   v-else>
                   <template v-if="nav.child">
                     <div
-                      class="v-submenu__title"
+                      class="v-submenu--title"
                       aria-expanded="true"
                       aria-haspopup="true">
                       <h4>{{ nav.name }}</h4>
-                      <i class="v-submenu__title-arrow"></i>
+                      <i class="v-submenu--title-arrow"></i>
                     </div>
                     <ul
                       role="menu">
                       <li
-                        class="v-submenu__item"
+                        class="v-submenu--item"
                         role="menuitem"
                         aria-selected="false"
                         :key="index"
@@ -45,11 +45,11 @@
                   </template>
                   <template v-if="nav.groups">
                     <div
-                      class="v-submenu__title"
+                      class="v-submenu--title"
                       aria-expanded="true"
                       aria-haspopup="true">
                       <h4>{{ nav.name }}</h4>
-                      <i class="v-submenu__title-arrow"></i>
+                      <i class="v-submenu--title-arrow"></i>
                     </div>
                     <ul
                       role="menu">
@@ -58,11 +58,11 @@
                         :key="index"
                         v-for="(group, index) in nav.groups">
                         <div
-                          class="v-submenu-group__title">
+                          class="v-submenu-group--title">
                           {{ group.groupName }}
                         </div>
                         <ul
-                          class="v-submenu-group__menu">
+                          class="v-submenu-group--menu">
                           <li
                             class="v-group-item"
                             role="menuitem"
@@ -118,14 +118,13 @@
 
   html, body, .wrapper {
     height: 100%;
-    overflow: hidden;
   }
 
   .v-scrollbar {
     position: relative;
     height: 100%;
     overflow: hidden;
-    &__wrap {
+    &--wrap {
       height: 100%;
       overflow-y: scroll;
     }
@@ -137,7 +136,7 @@
     bottom: 0;
     width: 320px;
     transition: padding-top .3s;
-    &__container {
+    &--container {
       height: 100%;
       border-right: 1px solid #E8E8E8;
       .v-menu {

@@ -2,7 +2,7 @@
   <div
     class="v-radio-group"
     :class="[
-      'v-radio-group__' + mode,
+      'v-radio-group--' + mode,
     ]"
     role="radiogroup">
     <slot></slot>

@@ -3,10 +3,10 @@
     <span
       :class="[
         'v-tag',
-        'v-tag__' + theme,
-        'v-tag__' + tagSize,
+        'v-tag--' + theme,
+        'v-tag--' + tagSize,
         {
-          ['v-tag__custom']: color,
+          ['v-tag--custom']: color,
           ['checked']: isChecked,
         }
       ]"
@@ -15,7 +15,7 @@
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{value}}</template>
       <v-icon
-        class="v-tag__close"
+        class="v-tag--close"
         icon="v-icon-close"
         @click.stop="handleClose"
         v-if="closable"></v-icon>

@@ -1,8 +1,8 @@
 <template>
-  <span class="v-breadcrumb__item">
-    <a class="v-breadcrumb__inner" ref="link" role="link">
+  <span class="v-breadcrumb--item">
+    <a class="v-breadcrumb--inner" ref="link" role="link">
       <slot></slot>
-    </a><em class="v-breadcrumb__separator">
+    </a><em class="v-breadcrumb--separator">
       <v-icon :icon="separatorIcon" v-if="separatorIcon"></v-icon>
       <i role="presentation" v-else>{{ separator }}</i>
     </em>

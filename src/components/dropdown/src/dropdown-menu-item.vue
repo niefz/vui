@@ -1,6 +1,6 @@
 <template>
   <li
-    class="v-dropdown-menu__item"
+    class="v-dropdown-menu--item"
     :class="{
       'divided': divided,
       'disabled': disabled,

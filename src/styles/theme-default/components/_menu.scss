@@ -27,7 +27,7 @@ $border-radius: 3;
   }
 }
 
-@mixin v-menu__item-link {
+@mixin v-menu--item-link {
   display: block;
   position: relative;
   height: $menu-item-line-height + px;
@@ -54,14 +54,14 @@ $border-radius: 3;
   line-height: $menu-item-line-height + px;
   transition: background .3s, width .2s;
   @extend .clearfix;
-  &__item {
+  &--item {
     > a {
       @include make-padding(1);
-      @include v-menu__item-link;
+      @include v-menu--item-link;
     }
   }
   .v-submenu {
-    &__title {
+    &--title {
       display: block;
       position: relative;
       height: $menu-item-line-height + px;
@@ -96,22 +96,22 @@ $border-radius: 3;
         }
       }
     }
-    &__item {
+    &--item {
       > a {
         @include make-padding(2);
-        @include v-menu__item-link;
+        @include v-menu--item-link;
       }
     }
     &-group {
-      &__title {
+      &--title {
         @include make-padding(2);
         color: rgba(0, 0, 0, .45);
       }
-      &__menu {
+      &--menu {
         .v-group-item {
           > a {
             @include make-padding(3);
-            @include v-menu__item-link;
+            @include v-menu--item-link;
           }
         }
       }
