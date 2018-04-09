@@ -110,6 +110,9 @@ $color-FFFFFF: #FFFFFF;
       border-color: $color-EDEDED;
       background-color: $color-FAFAFA;
       cursor: not-allowed;
+      &:after {
+        border-color: transparent $color-D9D9D9 $color-D9D9D9 transparent;
+      }
     }
     .v-checkbox__label {
       color: $color-BFBFBF;

@@ -19,7 +19,7 @@
   </v-checkbox-group>
 </v-row>
 <v-row>
-  <v-checkbox-group mode="vertical" disabled>
+  <v-checkbox-group v-model="checkedCities" mode="vertical" disabled>
     <v-checkbox v-for="city in cities" :label="city" :value="city" :key="city"></v-checkbox>
   </v-checkbox-group>
 </v-row>
