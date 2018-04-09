@@ -9,6 +9,7 @@ $color-F5F5F5: #F5F5F5;
   position: relative;
   display: inline-block;
   width: 100%;
+  border-radius: $border-radius + px;
   vertical-align: bottom;
   &--inner {
     position: relative;
@@ -20,6 +21,7 @@ $color-F5F5F5: #F5F5F5;
     border-radius: $border-radius + px;
     box-sizing: border-box;
     transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    resize: none;
     &:focus {
       border-color: $color-148EF6;
       box-shadow: 0 0 0 2px rgba(20, 142, 246, .2);

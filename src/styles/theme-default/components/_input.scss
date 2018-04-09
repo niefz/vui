@@ -9,6 +9,7 @@ $color-F5F5F5: #F5F5F5;
   position: relative;
   display: inline-block;
   width: 100%;
+  border-radius: $border-radius + px;
   &--mini {
     height: 28px;
     font-size: 12px;
@@ -35,6 +36,7 @@ $color-F5F5F5: #F5F5F5;
     width: 100%;
     height: 100%;
     input {
+      position: relative;
       width: 100%;
       height: 100%;
       padding: 5px 10px;
@@ -45,6 +47,7 @@ $color-F5F5F5: #F5F5F5;
       &:focus {
         border-color: $color-148EF6;
         box-shadow: 0 0 0 2px rgba(20, 142, 246, .2);
+        z-index: 2;
       }
       &:disabled {
         background-color: $color-F5F5F5;
@@ -54,10 +57,7 @@ $color-F5F5F5: #F5F5F5;
   &.disabled {
     background-color: $color-F5F5F5;
     cursor: not-allowed;
-    input {
-      cursor: not-allowed;
-    }
-    em {
+    input, em {
       cursor: not-allowed;
     }
   }
@@ -73,6 +73,7 @@ $color-F5F5F5: #F5F5F5;
     color: $color-BFBFBF;
     text-align: center;
     cursor: pointer;
+    z-index: 3;
   }
   &-prefix {
     left: 0;
@@ -96,36 +97,37 @@ $color-F5F5F5: #F5F5F5;
 
 .v-input--slot {
   display: inline-table;
-  border-collapse: separate;
-  .v-input--prepend {
+  .v-input--prepend, .v-input--append {
     position: relative;
     display: table-cell;
-    width: 1px;
-    padding: 0 20px;
-    border: {
-      top: 1px solid $color-D9D9D9;
-      bottom: 1px solid $color-D9D9D9;
-      left: 1px solid $color-D9D9D9;
+    vertical-align: middle;
+    &-inner {
+      width: 1px;
+      padding: 0 20px;
+      white-space: nowrap;
+      border: {
+        top: 1px solid $color-D9D9D9;
+        bottom: 1px solid $color-D9D9D9;
+      }
     }
+  }
+  .v-input--prepend {
     border-top-left-radius: $border-radius + px;
     border-bottom-left-radius: $border-radius + px;
-    vertical-align: middle;
-    white-space: nowrap;
+    &-inner {
+      border: {
+        left: 1px solid $color-D9D9D9;
+      }
+    }
   }
   .v-input--append {
-    position: relative;
-    display: table-cell;
-    width: 1px;
-    padding: 0 20px;
-    border: {
-      top: 1px solid $color-D9D9D9;
-      right: 1px solid $color-D9D9D9;
-      bottom: 1px solid $color-D9D9D9;
-    }
     border-top-right-radius: $border-radius + px;
     border-bottom-right-radius: $border-radius + px;
-    vertical-align: middle;
-    white-space: nowrap;
+    &-inner {
+      border: {
+        right: 1px solid $color-D9D9D9;
+      }
+    }
   }
 }
 
@@ -140,5 +142,13 @@ $color-F5F5F5: #F5F5F5;
   input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+  .v-btn {
+    position: relative;
+    width: 100%;
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 1;
   }
 }

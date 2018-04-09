@@ -15,13 +15,21 @@
 </v-row>
 <v-row :gutter="10">
   <v-col :span="12">
-    <v-input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
-      <template slot="prepend">Http://</template>
+    <v-input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix"></v-input>
+  </v-col>
+  <v-col :span="12">
+    <v-input v-model="keywords" suffix-icon="v-icon-calendar" append=".com" disabled></v-input>
+  </v-col>
+</v-row>
+<v-row :gutter="10">
+  <v-col :span="12">
+    <v-input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+      <template slot="append"><v-button theme="primary" @click="handleSuffix">查询</v-button></template>
     </v-input>
   </v-col>
   <v-col :span="12">
-    <v-input v-model="keywords" suffix-icon="v-icon-calendar" disabled>
-      <template slot="append">Http://</template>
+    <v-input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+      <template slot="append"><v-button>查询</v-button></template>
     </v-input>
   </v-col>
 </v-row>
