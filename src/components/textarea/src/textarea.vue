@@ -14,6 +14,9 @@
       :readonly="readonly"
       :disabled="disabled"
       @input="handleInput"></textarea>
+      <template v-if="maxlength">
+        <em class="v-textarea--count">{{value.length}}/{{maxlength}}</em>
+      </template>
   </div>
 </template>
 <script>
@@ -25,14 +28,25 @@
     components: {
       VIcon: Icon,
     },
+    model: {
+      prop: 'value',
+    },
     props: {
       size: {
         type: String,
         default: 'small',
       },
+      value: {
+        type: String,
+        default: '',
+      },
       rows: {
         type: Number,
         default: 2,
+      },
+      maxlength: {
+        type: Number,
+        default: 0,
       },
       placeholder: {
         type: String,

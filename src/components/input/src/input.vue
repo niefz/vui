@@ -31,7 +31,8 @@
         :autocomplete="autocomplete"
         :readonly="readonly"
         :disabled="disabled"
-        @input="handleInput">
+        @input="handleInput"
+        @keyup="handleKeyup">
       <em class="v-input--inner-suffix" v-if="suffixIcon">
         <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
       </em>
@@ -105,6 +106,9 @@
       handleInput(event) {
         const value = event.target.value;
         this.$emit('input', value);
+      },
+      handleKeyup(event) {
+        this.$emit('keyup', event);
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');

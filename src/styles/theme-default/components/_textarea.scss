@@ -31,4 +31,10 @@ $color-F5F5F5: #F5F5F5;
       cursor: not-allowed;
     }
   }
+  &--count {
+    position: relative;
+    display: block;
+    padding: 5px 0;
+    text-align: right;
+  }
 }

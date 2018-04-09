@@ -2,12 +2,12 @@
 
 基础用法。
 
-:::demo 使用 row 和 col 组件，并通过 col 组件的 span 属性我们就可以自由地组合布局。
+:::demo 
 
 ```html
 <v-row :gutter="10">
   <v-col :span="12">
-    <v-input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix"></v-input>
+    <v-input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix" @keyup.enter="handleSuffix"></v-input>
   </v-col>
   <v-col :span="12">
     <v-input prefix-icon="v-icon-calendar" disabled></v-input>
@@ -23,7 +23,7 @@
 </v-row>
 <v-row :gutter="10">
   <v-col :span="12">
-    <v-input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+    <v-input v-model="keywords" prepend="Http://" @suffix-click="handleSuffix">
       <template slot="append"><v-button theme="primary" @click="handleSuffix">查询</v-button></template>
     </v-input>
   </v-col>
