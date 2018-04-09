@@ -5,12 +5,32 @@
 :::demo 使用 row 和 col 组件，并通过 col 组件的 span 属性我们就可以自由地组合布局。
 
 ```html
-<v-row>
+<v-row :gutter="10">
   <v-col :span="12">
-    <v-input suffix-icon="v-icon-calendar" @suffix-click="handleSuffix"></v-input>
+    <v-input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix"></v-input>
   </v-col>
   <v-col :span="12">
-    <v-input prefix-icon="v-icon-calendar"></v-input>
+    <v-input prefix-icon="v-icon-calendar" disabled></v-input>
+  </v-col>
+</v-row>
+<v-row :gutter="10">
+  <v-col :span="12">
+    <v-input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+      <template slot="prepend">Http://</template>
+    </v-input>
+  </v-col>
+  <v-col :span="12">
+    <v-input v-model="keywords" suffix-icon="v-icon-calendar" disabled>
+      <template slot="append">Http://</template>
+    </v-input>
+  </v-col>
+</v-row>
+<v-row :gutter="10">
+  <v-col :span="12">
+    <v-textarea v-model="keywords"></v-textarea>
+  </v-col>
+  <v-col :span="12">
+    <v-textarea v-model="keywords" disabled></v-textarea>
   </v-col>
 </v-row>
 ```
@@ -20,16 +40,25 @@
   import Row from '@/components/row';
   import Col from '@/components/col';
   import Input from '@/components/input';
+  import Textarea from '@/components/textarea';
+  import Button from '@/components/button';
 
   export default {
     components: {
       VRow: Row,
       VCol: Col,
       VInput: Input,
+      VTextarea: Textarea,
+      VButton: Button,
+    },
+    data() {
+      return {
+        keywords: '',
+      };
     },
     methods: {
       handleSuffix() {
-        console.log(1);
+        console.log(this.keywords);
       },
     },
   };

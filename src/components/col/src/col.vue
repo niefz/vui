@@ -75,8 +75,8 @@
         const style = {};
 
         if (this.gutter) {
-          style.marginLeft = `-${this.gutter / 2}px`;
-          style.marginRight = style.marginLeft;
+          style.paddingLeft = `${this.gutter / 2}px`;
+          style.paddingRight = style.paddingLeft;
         }
 
         return style;

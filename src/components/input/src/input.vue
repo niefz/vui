@@ -1,22 +1,43 @@
 <template>
   <div
+    class="v-input"
     :class="[
+      'v-input--' + inputSize,
       {
-        ['v-input v-input--' + inputSize]: type === 'text',
-        ['v-textarea v-textarea--' + inputSize]: type === 'textarea',
-        ['v-input--prefix']: prefixIcon,
-        ['v-input--suffix']: suffixIcon,
-        ['disabled']: isDisabled,
+        ['v-input--slot']: $slots.prepend || $slots.append,
+        ['v-input--slot-prepend']: $slots.prepend,
+        ['v-input--slot-append']: $slots.append,
+        ['disabled']: disabled,
       }
     ]">
-    <template v-if="type === 'textarea'">
-      <textarea :row="row"></textarea>
-    </template>
-    <template v-else>
-      <em class="v-input--prefix-inner" v-if="prefixIcon"><v-icon :icon="prefixIcon" @click="handlePrefixIcon"></v-icon></em>
-      <input class="v-input--inner" type="text">
-      <em class="v-input--suffix-inner" v-if="suffixIcon"><v-icon :icon="suffixIcon" @click="handleSuffixIcon"></v-icon></em>
-    </template>
+    <div class="v-input--prepend" v-if="$slots.prepend">
+      <slot name="prepend"></slot>
+    </div>
+    <div
+      class="v-input--inner"
+      :class="[
+        {
+          ['v-input--prefix']: prefixIcon,
+          ['v-input--suffix']: suffixIcon,
+        }
+      ]">
+      <em class="v-input--inner-prefix" v-if="prefixIcon">
+        <v-icon :icon="prefixIcon" @click.stop="handlePrefixIcon"></v-icon>
+      </em>
+      <input
+        type="text"
+        :placeholder="placeholder"
+        :autocomplete="autocomplete"
+        :readonly="readonly"
+        :disabled="disabled"
+        @input="handleInput">
+      <em class="v-input--inner-suffix" v-if="suffixIcon">
+        <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
+      </em>
+    </div>
+    <div class="v-input--append" v-if="$slots.append">
+      <slot name="append"></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -33,21 +54,13 @@
         type: String,
         default: 'small',
       },
-      type: {
-        type: String,
-        default: 'text',
-      },
       placeholder: {
         type: String,
-        default: 'text',
+        default: '',
       },
       autocomplete: {
         type: String,
         default: 'off',
-      },
-      rows: {
-        type: Number,
-        default: 2,
       },
       prefixIcon: {
         type: String,
@@ -57,25 +70,32 @@
         type: String,
         default: '',
       },
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
       clearable: {
         type: Boolean,
         default: false
       },
     },
     data() {
-      return {
-
-      };
+      return {};
     },
     computed: {
       inputSize() {
         return this.size || (this.$VUI || {}).size;
       },
-      isDisabled() {
-        return this.disabled;
-      },
     },
     methods: {
+      handleInput(event) {
+        const value = event.target.value;
+        this.$emit('input', value);
+      },
       handlePrefixIcon() {
         this.$emit('prefix-click');
       },
