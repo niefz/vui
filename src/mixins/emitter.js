@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-const broadcast = (componentName, eventName, params) => {
+const broadcast = function (componentName, eventName, params) {
   this.$children.forEach(child => {
     const name = child.$options.name;
 
@@ -32,6 +32,6 @@ export default {
     },
     broadcast(componentName, eventName, params) {
       broadcast.call(this, componentName, eventName, params);
-    }
-  }
+    },
+  },
 };

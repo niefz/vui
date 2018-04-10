@@ -177,14 +177,6 @@
     img {
       vertical-align: middle;
     }
-    ul {
-      margin: 16px 0;
-      padding-left: 24px;
-      list-style: disc;
-      li {
-        line-height: 1.8;
-      }
-    }
     .hljs {
       padding: 20px;
       border: 1px solid #D9D9D9;

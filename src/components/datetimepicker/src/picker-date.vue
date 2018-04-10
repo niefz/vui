@@ -245,7 +245,7 @@
   </div>
 </template>
 <script>
-  import Button from '../../button';
+  import Button from '@/components/button';
 
   export default {
     name: 'DatePicker',

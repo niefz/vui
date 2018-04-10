@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 586584 */
-  src: url('//at.alicdn.com/t/font_586584_pkrvxu9oh7s3jtt9.eot');
-  src: url('//at.alicdn.com/t/font_586584_pkrvxu9oh7s3jtt9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_586584_pkrvxu9oh7s3jtt9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_586584_pkrvxu9oh7s3jtt9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_586584_pkrvxu9oh7s3jtt9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_586584_in6b5p9gc6a5g66r.eot');
+  src: url('//at.alicdn.com/t/font_586584_in6b5p9gc6a5g66r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_586584_in6b5p9gc6a5g66r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_586584_in6b5p9gc6a5g66r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_586584_in6b5p9gc6a5g66r.svg#iconfont') format('svg');
 }
 
 .v-icon {
@@ -22,6 +22,10 @@
 
 .v-icon-arrow-right:before {
   content: '\e6e7';
+}
+
+.v-icon-arrow-down:before {
+  content: '\e678';
 }
 
 .v-icon-search:before {

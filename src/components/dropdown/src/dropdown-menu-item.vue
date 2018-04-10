@@ -6,8 +6,8 @@
       'disabled': disabled,
     }"
     @click="handleClick"
-    :aria-disabled="disabled"
-    :tabindex="disabled ? 0 : -1">
+    :tabindex="disabled ? 0 : -1"
+    :aria-disabled="disabled">
     <slot></slot>
   </li>
 </template>
@@ -19,7 +19,7 @@
     componentName: 'DropdownMenuItem',
     mixins: [Emitter],
     props: {
-      command: {},
+      value: {},
       divided: {
         type: Boolean,
         default: false,
@@ -31,7 +31,7 @@
     },
     methods: {
       handleClick() {
-        this.dispatch('Dropdown', 'menu-item-click', [this.command, this]);
+        this.dispatch('Dropdown', 'menu-item-click', this.value);
       },
     },
   };

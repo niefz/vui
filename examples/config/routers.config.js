@@ -48,6 +48,13 @@ export default {
       }, 'breadcrumb'),
     },
     {
+      path: '/zh-CN/components/dropdown',
+      name: 'dropdown',
+      component: dropdown => require.ensure([], (require) => {
+        dropdown(require('../docs/zh-CN/dropdown.md'));
+      }, 'dropdown'),
+    },
+    {
       path: '/zh-CN/components/input',
       name: 'input',
       component: input => require.ensure([], (require) => {
