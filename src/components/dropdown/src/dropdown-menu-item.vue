@@ -30,8 +30,8 @@
       },
     },
     methods: {
-      handleClick() {
-        this.dispatch('Dropdown', 'menu-item-click', this.value);
+      handleClick(event) {
+        this.dispatch('Dropdown', 'menu-item-click', [this.value, event]);
       },
     },
   };

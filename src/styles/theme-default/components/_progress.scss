@@ -6,7 +6,6 @@ $color-F5222D: #F5222D;
 $color-FFFFFF: #FFFFFF;
 $color-52C41A: #52C41A;
 
-
 .v-progress {
   position: relative;
   line-height: 1;
@@ -68,7 +67,7 @@ $color-52C41A: #52C41A;
   line-height: 1;
   text-align: right;
   white-space: nowrap;
-  transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+  transition: all .4s cubic-bezier(.08, .82, .17, 1) 0s;
 }
 
 .v-progress--hide-info {
