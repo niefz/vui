@@ -82,8 +82,9 @@
         if (this.trigger !== 'hover') return;
         this.hide();
       },
-      handleClick() {
+      handleClick(event) {
         if (this.trigger !== 'click') return;
+        event.stopPropagation();
         this.visible ? !this.showAfterClick && this.hide() : this.show();
       },
     },

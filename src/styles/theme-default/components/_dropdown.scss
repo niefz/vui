@@ -48,10 +48,15 @@ $color-FFFFFF: #FFFFFF;
         background-color: $color-E6F7FF;
         color: $color-43A5F8;
       }
-      .v-dropdown-menu {
-        top: -10px;
-        left: 100%;
-        margin-left: 25px;
+      .v-dropdown {
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 0 20px;
+        &-menu {
+          top: -11px;
+          left: 100%;
+          margin-left: 5px;
+        }
       }
     }
   }

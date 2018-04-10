@@ -32,7 +32,7 @@
     </v-dropdown>
   </v-col>
   <v-col :span="12">
-    <v-dropdown trigger="click" @change="handleChange" show-after-click>
+    <v-dropdown trigger="click" @change="handleChange">
       <v-button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</v-button>
       <v-dropdown-menu slot="dropdown">
         <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
@@ -40,7 +40,7 @@
         <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
         <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
         <v-dropdown-menu-item value="蚵仔煎" divided>
-          <v-dropdown trigger="hover" @change="handleChange">
+          <v-dropdown trigger="click" @change="handleChange">
             蚵仔煎
             <v-dropdown-menu slot="dropdown">
               <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
