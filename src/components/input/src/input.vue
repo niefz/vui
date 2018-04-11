@@ -27,6 +27,7 @@
       </em>
       <input
         type="text"
+        :value="value"
         :placeholder="placeholder"
         :autocomplete="autocomplete"
         :readonly="readonly"
@@ -57,6 +58,7 @@
         type: String,
         default: 'small',
       },
+      value: [String, Number],
       placeholder: {
         type: String,
         default: '',

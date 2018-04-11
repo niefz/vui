@@ -9,19 +9,19 @@
 :::demo 使用`type`、`shape`、`theme`、`size`和`plain`属性来定义 Button 的样式。
 
 ```html
-<div class="v-row">
+<v-row>
   <v-button type="button" shape="radius" theme="default">Default</v-button>
   <v-button type="button" shape="radius" theme="primary">Primary</v-button>
   <v-button type="button" shape="radius" theme="warning">Warning</v-button>
   <v-button type="button" shape="radius" theme="danger">Danger</v-button>
-</div>
+</v-row>
 
-<div class="v-row">
+<v-row>
   <v-button type="button" shape="radius" theme="default" disabled>Default</v-button>
   <v-button type="button" shape="radius" theme="primary" disabled>Primary</v-button>
   <v-button type="button" shape="radius" theme="warning" disabled>Warning</v-button>
   <v-button type="button" shape="radius" theme="danger" disabled>Danger</v-button>
-</div>
+</v-row>
 
 <div class="v-row">
   <v-button type="button" shape="radius" theme="default" plain>Default</v-button>
@@ -30,12 +30,12 @@
   <v-button type="button" shape="radius" theme="danger" plain>Danger</v-button>
 </div>
 
-<div class="v-row">
+<v-row>
   <v-button type="button" shape="radius" theme="default" plain disabled>Default</v-button>
   <v-button type="button" shape="radius" theme="primary" plain disabled>Primary</v-button>
   <v-button type="button" shape="radius" theme="warning" plain disabled>Warning</v-button>
   <v-button type="button" shape="radius" theme="danger" plain disabled>Danger</v-button>
-</div>
+</v-row>
 ```
 :::
 
@@ -64,11 +64,15 @@ ButtonGroup Attributes
 
 
 <script>
+  import Row from '@/components/row';
+  import Col from '@/components/col';
   import Button from '@/components/button';
   import ButtonGroup from '@/components/button-group';
 
   export default {
     components: {
+      VRow: Row,
+      VCol: Col,
       VButton: Button,
       VButtonGroup: ButtonGroup,
     },

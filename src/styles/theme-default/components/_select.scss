@@ -1,1 +1,54 @@
+$border-radius: 3;
+$color-43A5F8: #43A5F8;
+$color-595959: #595959;
+$color-BFBFBF: #BFBFBF;
+$color-D9D9D9: #D9D9D9;
+$color-E6F7FF: #E6F7FF;
+$color-FFFFFF: #FFFFFF;
 
+.v-select {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  &--menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    margin: 5px 0;
+    padding: 5px 0;
+    border: 1px solid $color-D9D9D9;
+    background-color: $color-FFFFFF;
+    border-radius: $border-radius + px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    &--item {
+      position: relative;
+      padding: 0 20px;
+      font-size: 12px;
+      line-height: 36px;
+      color: $color-595959;
+      white-space: nowrap;
+      cursor: pointer;
+      &.divided {
+        margin-top: 6px;
+        border-top: 1px solid $color-D9D9D9;
+        &:before {
+          display: block;
+          content: "";
+          height: 5px;
+          margin: 0 -20px;
+          background-color: $color-FFFFFF;
+        }
+      }
+      &.disabled {
+        color: $color-BFBFBF;
+        pointer-events: none;
+      }
+      &:not(.disabled):hover {
+        background-color: $color-E6F7FF;
+        color: $color-43A5F8;
+      }
+    }
+  }
+}

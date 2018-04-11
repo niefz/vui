@@ -76,6 +76,13 @@ export default {
       }, 'radio'),
     },
     {
+      path: '/zh-CN/components/select',
+      name: 'select',
+      component: select => require.ensure([], (require) => {
+        select(require('../docs/zh-CN/select.md'));
+      }, 'select'),
+    },
+    {
       path: '/zh-CN/components/tag',
       name: 'tag',
       component: tag => require.ensure([], (require) => {

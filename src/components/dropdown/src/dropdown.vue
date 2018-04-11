@@ -54,14 +54,6 @@
       },
     },
     methods: {
-      handleMenuItemClick(value, event) {
-        this.$emit('change', value);
-        if (event.target.children.length) {
-          this.broadcast('DropdownMenu', 'visible', this.visible);
-        }
-        if (this.showAfterClick) return;
-        this.hide();
-      },
       show() {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
@@ -86,6 +78,14 @@
         if (this.trigger !== 'click') return;
         event.stopPropagation();
         this.visible ? !this.showAfterClick && this.hide() : this.show();
+      },
+      handleMenuItemClick(value, event) {
+        this.$emit('change', value);
+        if (event.target.children.length) {
+          this.broadcast('DropdownMenu', 'visible', this.visible);
+        }
+        if (this.showAfterClick) return;
+        this.hide();
       },
     },
     mounted() {

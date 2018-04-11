@@ -7,12 +7,12 @@
 :::demo 通过设置类名 icon 来使用即可。
 
 ```html
-<div class="v-row">
+<v-row>
   <v-icon icon="v-icon-calendar"></v-icon>
   <v-icon icon="v-icon-delete"></v-icon>
   <v-icon icon="v-icon-message"></v-icon>
   <v-icon icon="v-icon-loading"></v-icon>
-</div>
+</v-row>
 ```
 :::
 
@@ -38,15 +38,15 @@
 </v-row>
 
 <script>
-  import Icon from '@/components/icon';
   import Row from '@/components/row';
   import Col from '@/components/col';
+  import Icon from '@/components/icon';
 
   export default {
     components: {
-      VIcon: Icon,
       VRow: Row,
       VCol: Col,
+      VIcon: Icon,
     },
   };
 </script>
