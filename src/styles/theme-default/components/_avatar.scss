@@ -1,0 +1,53 @@
+$border-radius: 3;
+$color-D9D9D9: #D9D9D9;
+$color-FFFFFF: #FFFFFF;
+
+.v-avatar {
+  position: relative;
+  display: inline-block;
+  background-color: $color-D9D9D9;
+  color: $color-FFFFFF;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  &--mini {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+  }
+  &--small {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+  &--medium {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+  &--large {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  &--radius {
+    border-radius: $border-radius + px;
+  }
+  &--circle {
+    border-radius: 100%;
+  }
+  &--inner {
+    display: block;
+    margin: 3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .v-icon {
+    font-size: 20px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

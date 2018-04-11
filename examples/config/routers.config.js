@@ -83,6 +83,13 @@ export default {
       }, 'select'),
     },
     {
+      path: '/zh-CN/components/avatar',
+      name: 'avatar',
+      component: avatar => require.ensure([], (require) => {
+        avatar(require('../docs/zh-CN/avatar.md'));
+      }, 'avatar'),
+    },
+    {
       path: '/zh-CN/components/badge',
       name: 'badge',
       component: badge => require.ensure([], (require) => {
