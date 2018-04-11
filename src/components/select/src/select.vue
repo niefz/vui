@@ -39,7 +39,7 @@
     data() {
       return {
         visible: false,
-        selected: '',
+        selected: this.value || '',
       };
     },
     watch: {

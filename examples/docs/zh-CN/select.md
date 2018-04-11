@@ -11,7 +11,7 @@
 ```html
 <v-row>
   <v-col :span="6">
-    <v-select>
+    <v-select v-model="select">
       <v-select-menu>
         <v-select-menu-option :label="item" :value="item" v-for="item in options"></v-select-menu-option>
       </v-select-menu>
@@ -39,6 +39,7 @@
     },
     data() {
       return {
+        select: '上海',
         options: ['上海', '北京', '广州', '深圳'],
       };
     },
