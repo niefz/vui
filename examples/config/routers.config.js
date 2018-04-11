@@ -83,6 +83,13 @@ export default {
       }, 'select'),
     },
     {
+      path: '/zh-CN/components/badge',
+      name: 'badge',
+      component: badge => require.ensure([], (require) => {
+        badge(require('../docs/zh-CN/badge.md'));
+      }, 'badge'),
+    },
+    {
       path: '/zh-CN/components/tag',
       name: 'tag',
       component: tag => require.ensure([], (require) => {

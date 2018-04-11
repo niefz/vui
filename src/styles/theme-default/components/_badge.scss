@@ -1,0 +1,33 @@
+$color-F5222D: #F5222D;
+$color-FFFFFF: #FFFFFF;
+
+.v-badge {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  &--content {
+    display: block;
+    height: 18px;
+    padding: 0 6px;
+    background-color: $color-F5222D;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    &.fixed {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 10;
+      transform: translate(-50%, -50%);
+    }
+    &.dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border-radius: 50%;
+    }
+  }
+}
