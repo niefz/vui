@@ -3,7 +3,7 @@
     class="v-select"
     @click="handleClick">
     <v-input
-      v-model="selectedLabel"
+      v-model="selected"
       :placeholder="placeholder || '请选择'"
       suffix-icon="v-icon-arrow-down"
       readonly></v-input>
@@ -38,7 +38,7 @@
     data() {
       return {
         visible: false,
-        selectedLabel: '',
+        selected: '',
       };
     },
     watch: {
@@ -64,8 +64,7 @@
         this.visible ? this.hide() : this.show();
       },
       handleSelectOptionClick(value) {
-        console.log(value);
-        this.selectedLabel = value;
+        this.selected = value;
         this.$emit('change', value);
         this.hide();
       },

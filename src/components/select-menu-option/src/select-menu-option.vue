@@ -9,7 +9,7 @@
     ]"
     @click.stop="handleClick">
     <slot>
-      <span>{{ currentLabel }}</span>
+      <span>{{ label }}</span>
     </slot>
   </li>
 </template>
@@ -38,9 +38,6 @@
     computed: {
       isObject() {
         return Object.prototype.toString.call(this.value).toLowerCase() === '[object object]';
-      },
-      currentLabel() {
-        return this.label || (this.isObject ? '' : this.value);
       },
     },
     methods: {
