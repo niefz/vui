@@ -1,7 +1,8 @@
 <template>
   <div
     class="v-select"
-    @click="handleClick">
+    @click="handleClick"
+    v-clickoutside="hide">
     <v-input
       v-model="selected"
       :placeholder="placeholder || '请选择'"
