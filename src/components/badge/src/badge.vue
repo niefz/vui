@@ -6,8 +6,8 @@
         class="v-badge--content"
         :class="[
           {
-          'fixed': $slots.default,
-          'dot': dot,
+            ['fixed']: $slots.default,
+            ['dot']: dot,
           }
         ]"
         v-text="content">

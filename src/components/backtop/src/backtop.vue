@@ -18,6 +18,8 @@
   import Icon from '@/components/icon';
 
   export default {
+    name: 'Backtop',
+    componentName: 'Backtop',
     components: {
       VIcon: Icon,
     },

@@ -1,10 +1,12 @@
 <template>
   <li
     class="v-dropdown-menu--item"
-    :class="{
-      'divided': divided,
-      'disabled': disabled,
-    }"
+    :class="[
+      {
+        ['divided']: divided,
+        ['disabled']: disabled,
+      }
+    ]"
     @click="handleClick"
     :tabindex="disabled ? 0 : -1"
     :aria-disabled="disabled">

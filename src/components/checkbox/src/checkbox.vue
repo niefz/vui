@@ -4,10 +4,10 @@
     :class="[
       'v-checkbox--' + checkboxSize,
       {
-        'indeterminate': indeterminate,
-        'checked': isChecked,
-        'bordered': border,
-        'disabled': isDisabled,
+        ['indeterminate']: indeterminate,
+        ['checked']: isChecked,
+        ['bordered']: border,
+        ['disabled']: isDisabled,
       }
     ]"
     role="checkbox"

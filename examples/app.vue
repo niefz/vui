@@ -156,25 +156,25 @@
 
   .article {
     padding: 0 160px 0 60px;
-    h1 {
+    > h1 {
       margin-top: 10px;
       margin-bottom: 20px;
       font-size: 28px;
       line-height: 38px;
     }
-    h2 {
+    > h2 {
       margin-top: 20px;
       margin-bottom: 10px;
       font-size: 20px;
       line-height: 38px;
     }
-    p {
+    > p {
       margin-top: 1em;
       margin-bottom: 1em;
       font-size: 14px;
       color: #595959;
     }
-    img {
+    > img {
       vertical-align: middle;
     }
     .hljs {

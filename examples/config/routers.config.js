@@ -111,6 +111,13 @@ export default {
       }, 'progress'),
     },
     {
+      path: '/zh-CN/components/alert',
+      name: 'alert',
+      component: alert => require.ensure([], (require) => {
+        alert(require('../docs/zh-CN/alert.md'));
+      }, 'alert'),
+    },
+    {
       path: '/zh-CN/components/divider',
       name: 'divider',
       component: divider => require.ensure([], (require) => {
