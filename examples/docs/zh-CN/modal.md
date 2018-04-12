@@ -57,6 +57,7 @@
         this.loading = true;
         setTimeout(() => {
           this.loading = false;
+          this.visible = false;
         }, 2000);
       },
     },
