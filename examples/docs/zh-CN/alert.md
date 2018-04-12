@@ -9,7 +9,7 @@
 ```html
 <v-row>
   <v-col :span="24">
-    <v-alert message="默认消息提示" description="Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting." closable></v-avatar>
+    <v-alert message="默认消息提示" description="Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting." show-icon closable></v-avatar>
   </v-col>
 </v-row>
 <v-row>
@@ -29,7 +29,7 @@
 </v-row>
 <v-row>
   <v-col :span="24">
-    <v-alert theme="danger" message="错误消息提示" show-icon close-text="知道了" closable></v-avatar>
+    <v-alert theme="danger" message="错误消息提示" close-text="知道了" closable></v-avatar>
   </v-col>
 </v-row>
 ```

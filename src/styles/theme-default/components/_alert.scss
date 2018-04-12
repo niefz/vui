@@ -6,9 +6,9 @@ $color-F5222D: #F5222D;
 
 .v-alert {
   position: relative;
-  display: flex;
+  display: block;
   width: 100%;
-  padding: 8px 16px;
+  padding: 8px 10px;
   border: 1px solid;
   box-sizing: border-box;
   border-radius: $border-radius + px;
@@ -44,13 +44,24 @@ $color-F5222D: #F5222D;
     background-color: rgba(245, 34, 45, .1);
     color: $color-F5222D;
   }
-  .v-icon {
-    font-size: 14px;
+  &--with-icon {
+    padding-left: 30px;
   }
   &--message {
-    display: table-cell;
     &-title {
-      font-size: 14px;
+      .v-icon {
+        position: absolute;
+        left: 10px;
+        height: 18px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      &.extra {
+        font-size: 14px;
+        .v-icon {
+          top: 9px;
+        }
+      }
     }
     &-description {
       margin-top: 5px;
@@ -63,4 +74,9 @@ $color-F5222D: #F5222D;
     right: 10px;
     cursor: pointer;
   }
+}
+
+.v-alert-fade-enter,
+.v-alert-fade-leave-active {
+  opacity: 0;
 }

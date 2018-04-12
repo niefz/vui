@@ -5,20 +5,27 @@
       :class="[
         'v-alert--' + theme,
         'v-alert--align-' + align,
+        {
+          ['v-alert--with-icon']: showIcon,
+        }
       ]"
       v-show="visible">
-      <v-icon :icon="`v-icon-${theme}`" v-if="showIcon"></v-icon>
       <div class="v-alert--message">
-        <template v-if="message">
-          <span :class="{'v-alert--message-title': $slots.default || description}">{{message}}</span>
+        <span class="v-alert--message-title" :class="{'extra': $slots.desc || description}">
+          <v-icon :icon="`v-icon-${theme}`" v-if="showIcon"></v-icon>
+          <slot>{{message}}</slot>
+        </span>
+        <template v-if="description">
+          <p class="v-alert--message-description">
+            <slot name="desc">{{description}}</slot>
+          </p>
         </template>
-        <slot>
-          <p class="v-alert--message-description" v-if="description">{{description}}</p>
-        </slot>
       </div>
       <em class="v-alert--close" v-if="closable">
         <template v-if="closeText"><i @click="handleClose">{{closeText}}</i></template>
-        <template v-else><v-icon icon="v-icon-close" @click="handleClose"></v-icon></template>
+        <template v-else>
+          <v-icon icon="v-icon-close" @click="handleClose"></v-icon>
+        </template>
       </em>
     </div>
   </transition>
