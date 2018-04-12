@@ -20,7 +20,7 @@
               <slot name="title">
                 <span class="v-modal--header-title">{{title}}</span>
               </slot>
-              <em class="v-modal--header-close" v-show="showClose" @click="handleClose">
+              <em class="v-modal--header-close" v-show="closable" @click="handleClose">
                 <slot name="close">
                   <v-icon icon="v-icon-close"></v-icon>
                 </slot>
@@ -89,7 +89,7 @@
         type: Boolean,
         default: true,
       },
-      showClose: {
+      closable: {
         type: Boolean,
         default: true,
       },
