@@ -7,7 +7,6 @@
     v-clickoutside="hide">
     <slot></slot>
     <template v-if="$slots.dropdown">
-      <v-icon icon="v-icon-arrow-right" v-if="$parent.$options.name === 'DropdownMenuItem'"></v-icon>
       <slot name="dropdown"></slot>
     </template>
   </div>
@@ -15,16 +14,12 @@
 <script>
   import Clickoutside from '@/directives/clickoutside';
   import Emitter from '@/mixins/emitter';
-  import Icon from '@/components/icon';
 
   export default {
     name: 'Dropdown',
     componentName: 'Dropdown',
     directives: { Clickoutside },
     mixins: [Emitter],
-    components: {
-      VIcon: Icon,
-    },
     props: {
       trigger: {
         type: String,

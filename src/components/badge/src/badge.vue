@@ -1,7 +1,7 @@
 <template>
   <div class="v-badge">
     <slot></slot>
-    <transition name="v-zoom-in-center">
+    <transition name="zoom-in-center">
       <sup
         class="v-badge--content"
         :class="[

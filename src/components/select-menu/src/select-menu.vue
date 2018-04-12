@@ -1,5 +1,5 @@
 <template>
-  <transition name="v-zoom-in-top">
+  <transition name="zoom-in-top">
     <ul class="v-select--menu" v-show="showPopper">
       <slot></slot>
     </ul>

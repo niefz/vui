@@ -1,5 +1,5 @@
 <template>
-  <transition name="v-alert-fade">
+  <transition name="alert-fade">
     <div
       class="v-alert"
       :class="[

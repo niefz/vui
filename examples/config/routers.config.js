@@ -118,6 +118,27 @@ export default {
       }, 'alert'),
     },
     {
+      path: '/zh-CN/components/modal',
+      name: 'modal',
+      component: modal => require.ensure([], (require) => {
+        modal(require('../docs/zh-CN/modal.md'));
+      }, 'modal'),
+    },
+    {
+      path: '/zh-CN/components/message',
+      name: 'message',
+      component: message => require.ensure([], (require) => {
+        message(require('../docs/zh-CN/message.md'));
+      }, 'message'),
+    },
+    {
+      path: '/zh-CN/components/notification',
+      name: 'notification',
+      component: notification => require.ensure([], (require) => {
+        notification(require('../docs/zh-CN/notification.md'));
+      }, 'notification'),
+    },
+    {
       path: '/zh-CN/components/divider',
       name: 'divider',
       component: divider => require.ensure([], (require) => {

@@ -34,7 +34,7 @@
     props: {
       transitionName: {
         type: String,
-        default: 'v-zoom-in-center',
+        default: 'zoom-in-center',
       },
       value: [String, Object],
       theme: {
