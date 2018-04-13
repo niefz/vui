@@ -48,24 +48,24 @@ $color-F5222D: #F5222D;
     padding-left: 30px;
   }
   &--message {
-    &-title {
-      .v-icon {
-        position: absolute;
-        left: 10px;
-        height: 18px;
-        font-size: 14px;
-        line-height: 18px;
-      }
-      &.extra {
-        font-size: 14px;
-        .v-icon {
-          top: 9px;
-        }
-      }
+    .v-icon {
+      position: absolute;
+      left: 10px;
+      height: 18px;
+      font-size: 14px;
+      line-height: 18px;
     }
     &-description {
       margin-top: 5px;
       line-height: 20px;
+    }
+    &.with-desc {
+      .v-icon {
+        top: 9px;
+      }
+      .v-alert--message-title {
+        font-size: 14px;
+      }
     }
   }
   &--close {

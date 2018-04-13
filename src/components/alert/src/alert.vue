@@ -10,9 +10,9 @@
         }
       ]"
       v-show="visible">
-      <div class="v-alert--message">
-        <span class="v-alert--message-title" :class="{'extra': $slots.desc || description}">
-          <v-icon :icon="`v-icon-${theme}`" v-if="showIcon"></v-icon>
+      <div class="v-alert--message" :class="{'with-desc': $slots.desc || description}">
+        <v-icon :icon="`v-icon-${theme}`" v-if="showIcon"></v-icon>
+        <span class="v-alert--message-title">
           <slot>{{message}}</slot>
         </span>
         <template v-if="description">
@@ -21,10 +21,10 @@
           </p>
         </template>
       </div>
-      <em class="v-alert--close" v-if="closable">
-        <template v-if="closeText"><i @click="handleClose">{{closeText}}</i></template>
+      <em class="v-alert--close" @click.stop="handleClose" v-if="closable">
+        <template v-if="closeText"><i>{{closeText}}</i></template>
         <template v-else>
-          <v-icon icon="v-icon-close" @click="handleClose"></v-icon>
+          <v-icon icon="v-icon-close"></v-icon>
         </template>
       </em>
     </div>

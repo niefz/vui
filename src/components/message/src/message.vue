@@ -9,16 +9,11 @@
           ['v-message--with-icon']: showIcon,
         }
       ]"
-      v-show="visible"
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
-      role="alert">
-      <v-icon :icon="iconClass" v-show="showIcon"></v-icon>
-      <div class="v-message--content">
-        <slot>
-          {{message}}
-        </slot>
-      </div>
+      v-show="visible">
+      <v-icon :icon="iconClass" v-if="showIcon"></v-icon>
+      <div class="v-message--content" v-html="message"></div>
     </div>
   </transition>
 </template>
@@ -39,7 +34,7 @@
         message: '',
         align: 'left',
         duration: 3000,
-        showIcon: Boolean,
+        showIcon: true,
       };
     },
     computed: {
