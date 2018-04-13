@@ -13,7 +13,7 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
       role="alert">
-      <v-icon :icon="iconClass"></v-icon>
+      <v-icon :icon="iconClass" v-show="showIcon"></v-icon>
       <div class="v-message--content">
         <slot>
           {{message}}
