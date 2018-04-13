@@ -145,5 +145,12 @@ export default {
         divider(require('../docs/zh-CN/divider.md'));
       }, 'divider'),
     },
+    {
+      path: '/zh-CN/components/anchor',
+      name: 'anchor',
+      component: anchor => require.ensure([], (require) => {
+        anchor(require('../docs/zh-CN/anchor.md'));
+      }, 'anchor'),
+    },
   ]
 };
