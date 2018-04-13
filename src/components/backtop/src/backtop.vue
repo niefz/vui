@@ -6,10 +6,10 @@
         ['show']: backTop,
       }
     ]"
-    @click="backTop">
+    @click.stop="handleBack">
     <slot>
       <div class="v-backtop--inner">
-        <v-icon icon="v-icon-chevron-up"></v-icon>
+        <v-icon icon="v-icon-arrow-up"></v-icon>
       </div>
     </slot>
   </div>
@@ -28,10 +28,6 @@
         type: Number,
         default: 400,
       },
-      duration: {
-        type: Number,
-        default: 1000,
-      },
     },
     data () {
       return {
@@ -40,10 +36,10 @@
     },
     methods: {
       handleScroll () {
-        this.backTop = window.pageYOffset >= this.height;
+        this.backTop = window.pageYOffset >= this.visibilityHeight;
       },
-      backTop () {
-        window.scrollTop(0, this.duration);
+      handleBack () {
+        window.scrollTop = 0;
         this.$emit('on-click');
       }
     },

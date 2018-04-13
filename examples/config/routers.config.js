@@ -139,6 +139,13 @@ export default {
       }, 'notification'),
     },
     {
+      path: '/zh-CN/components/anchor',
+      name: 'anchor',
+      component: anchor => require.ensure([], (require) => {
+        anchor(require('../docs/zh-CN/anchor.md'));
+      }, 'anchor'),
+    },
+    {
       path: '/zh-CN/components/divider',
       name: 'divider',
       component: divider => require.ensure([], (require) => {
@@ -146,11 +153,11 @@ export default {
       }, 'divider'),
     },
     {
-      path: '/zh-CN/components/anchor',
-      name: 'anchor',
-      component: anchor => require.ensure([], (require) => {
-        anchor(require('../docs/zh-CN/anchor.md'));
-      }, 'anchor'),
+      path: '/zh-CN/components/back-top',
+      name: 'back-top',
+      component: backTop => require.ensure([], (require) => {
+        backTop(require('../docs/zh-CN/back-top.md'));
+      }, 'back-top'),
     },
   ]
 };

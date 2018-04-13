@@ -1,0 +1,27 @@
+$border-radius: 3;
+$color-148EF6: #148EF6;
+$color-FFFFFF: #FFFFFF;
+
+.v-backtop {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  right: 100px;
+  bottom: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  &.show {
+    display: block;
+  }
+  &--inner {
+    height: 100%;
+    width: 100%;
+    background-color: $color-148EF6;
+    border-radius: $border-radius + px;
+    text-align: center;
+    color: $color-FFFFFF;
+    overflow: hidden;
+  }
+}
