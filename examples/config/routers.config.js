@@ -83,6 +83,13 @@ export default {
       }, 'select'),
     },
     {
+      path: '/zh-CN/components/table',
+      name: 'table',
+      component: table => require.ensure([], (require) => {
+        table(require('../docs/zh-CN/table.md'));
+      }, 'table'),
+    },
+    {
       path: '/zh-CN/components/avatar',
       name: 'avatar',
       component: avatar => require.ensure([], (require) => {
@@ -104,11 +111,11 @@ export default {
       }, 'tag'),
     },
     {
-      path: '/zh-CN/components/progress',
-      name: 'progress',
-      component: progress => require.ensure([], (require) => {
-        progress(require('../docs/zh-CN/progress.md'));
-      }, 'progress'),
+      path: '/zh-CN/components/tree',
+      name: 'tree',
+      component: tree => require.ensure([], (require) => {
+        tree(require('../docs/zh-CN/tree.md'));
+      }, 'tree'),
     },
     {
       path: '/zh-CN/components/alert',
@@ -137,6 +144,13 @@ export default {
       component: notification => require.ensure([], (require) => {
         notification(require('../docs/zh-CN/notification.md'));
       }, 'notification'),
+    },
+    {
+      path: '/zh-CN/components/progress',
+      name: 'progress',
+      component: progress => require.ensure([], (require) => {
+        progress(require('../docs/zh-CN/progress.md'));
+      }, 'progress'),
     },
     {
       path: '/zh-CN/components/anchor',

@@ -213,12 +213,12 @@
             "path": "/zh-CN/components/anchor"
           },
           {
-            "title": "BackTop 回到顶部",
-            "path": "/zh-CN/components/back-top"
-          },
-          {
             "title": "Divider 分割线",
             "path": "/zh-CN/components/divider"
+          },
+          {
+            "title": "BackTop 回到顶部",
+            "path": "/zh-CN/components/back-top"
           }
         ]
       }
