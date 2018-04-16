@@ -27,15 +27,15 @@
     "name": "主题",
     "child": [
       {
-        "title": "Font 字体",
+        "name": "Font 字体",
         "path": "/zh-CN/themes/font"
       },
       {
-        "title": "Color 色彩",
+        "name": "Color 色彩",
         "path": "/zh-CN/themes/color"
       },
       {
-        "title": "Theme 定制主题",
+        "name": "Theme 定制主题",
         "path": "/zh-CN/themes/customize-theme"
       }
     ]
@@ -44,180 +44,180 @@
     "name": "Components",
     "groups": [
       {
-        "groupName": "Basic",
-        "list": [
+        "name": "Basic",
+        "child": [
           {
-            "title": "Icon 图标",
+            "name": "Icon 图标",
             "path": "/zh-CN/components/icon"
           },
           {
-            "title": "Button 按钮",
+            "name": "Button 按钮",
             "path": "/zh-CN/components/button"
           }
         ]
       },
       {
-        "groupName": "Layout",
-        "list": [
+        "name": "Layout",
+        "child": [
           {
-            "title": "Grid 栅格",
+            "name": "Grid 栅格",
             "path": "/zh-CN/components/grid"
           },
           {
-            "title": "Layout 页面布局",
+            "name": "Layout 页面布局",
             "path": "/zh-CN/components/layout"
           }
         ]
       },
       {
-        "groupName": "Navigation",
-        "list": [
+        "name": "Navigation",
+        "child": [
           {
-            "title": "Menu 菜单",
+            "name": "Menu 菜单",
             "path": "/zh-CN/components/menu"
           },
           {
-            "title": "Breadcrumb 面包屑",
+            "name": "Breadcrumb 面包屑",
             "path": "/zh-CN/components/breadcrumb"
           },
           {
-            "title": "Tabs 标签页",
+            "name": "Tabs 标签页",
             "path": "/zh-CN/components/tabs"
           },
           {
-            "title": "Steps 步骤条",
+            "name": "Steps 步骤条",
             "path": "/zh-CN/components/steps"
           },
           {
-            "title": "Dropdown 下拉菜单",
+            "name": "Dropdown 下拉菜单",
             "path": "/zh-CN/components/dropdown"
           },
           {
-            "title": "Pagination 分页",
+            "name": "Pagination 分页",
             "path": "/zh-CN/components/pagination"
           }
         ]
       },
       {
-        "groupName": "Form",
-        "list": [
+        "name": "Form",
+        "child": [
           {
-            "title": "Input 输入框",
+            "name": "Input 输入框",
             "path": "/zh-CN/components/input"
           },
           {
-            "title": "InputNumber 数字输入框",
+            "name": "InputNumber 数字输入框",
             "path": "/zh-CN/components/input-number"
           },
           {
-            "title": "Radio 单选框",
+            "name": "Radio 单选框",
             "path": "/zh-CN/components/radio"
           },
           {
-            "title": "Checkbox 多选框",
+            "name": "Checkbox 多选框",
             "path": "/zh-CN/components/checkbox"
           },
           {
-            "title": "DateTimePicker 日期时间选择器",
+            "name": "DateTimePicker 日期时间选择器",
             "path": "/zh-CN/components/datetime-picker"
           },
           {
-            "title": "Switch 开关",
+            "name": "Switch 开关",
             "path": "/zh-CN/components/switch"
           },
           {
-            "title": "Select 选择器",
+            "name": "Select 选择器",
             "path": "/zh-CN/components/select"
           },
           {
-            "title": "Cascader 级联选择器",
+            "name": "Cascader 级联选择器",
             "path": "/zh-CN/components/cascader"
           },
           {
-            "title": "Transfer 穿梭框",
+            "name": "Transfer 穿梭框",
             "path": "/zh-CN/components/transfer"
           },
           {
-            "title": "Upload 上传",
+            "name": "Upload 上传",
             "path": "/zh-CN/components/upload"
           },
           {
-            "title": "Slider 滑块",
+            "name": "Slider 滑块",
             "path": "/zh-CN/components/slider"
           },
           {
-            "title": "Rate 评分",
+            "name": "Rate 评分",
             "path": "/zh-CN/components/rate"
           },
           {
-            "title": "Form 表单",
+            "name": "Form 表单",
             "path": "/zh-CN/components/form"
           }
         ]
       },
       {
-        "groupName": "Data Display",
-        "list": [
+        "name": "Data Display",
+        "child": [
           {
-            "title": "Table 表格",
+            "name": "Table 表格",
             "path": "/zh-CN/components/table"
           },
           {
-            "title": "Avatar 头像",
+            "name": "Avatar 头像",
             "path": "/zh-CN/components/avatar"
           },
           {
-            "title": "Badge 徽标",
+            "name": "Badge 徽标",
             "path": "/zh-CN/components/badge"
           },
           {
-            "title": "Tag 标签",
+            "name": "Tag 标签",
             "path": "/zh-CN/components/tag"
           },
           {
-            "title": "Tree 树形控件",
+            "name": "Tree 树形控件",
             "path": "/zh-CN/components/tree"
           }
         ]
       },
       {
-        "groupName": "Feedback",
-        "list": [
+        "name": "Feedback",
+        "child": [
           {
-            "title": "Alert 警告提示",
+            "name": "Alert 警告提示",
             "path": "/zh-CN/components/alert"
           },
           {
-            "title": "Modal 对话框",
+            "name": "Modal 对话框",
             "path": "/zh-CN/components/modal"
           },
           {
-            "title": "Message 全局提示",
+            "name": "Message 全局提示",
             "path": "/zh-CN/components/message"
           },
           {
-            "title": "Notification 通知提醒",
+            "name": "Notification 通知提醒",
             "path": "/zh-CN/components/notification"
           },
           {
-            "title": "Progress 进度条",
+            "name": "Progress 进度条",
             "path": "/zh-CN/components/progress"
           }
         ]
       },
       {
-        "groupName": "Others",
-        "list": [
+        "name": "Others",
+        "child": [
           {
-            "title": "Anchor 锚点",
+            "name": "Anchor 锚点",
             "path": "/zh-CN/components/anchor"
           },
           {
-            "title": "Divider 分割线",
+            "name": "Divider 分割线",
             "path": "/zh-CN/components/divider"
           },
           {
-            "title": "BackTop 回到顶部",
+            "name": "BackTop 回到顶部",
             "path": "/zh-CN/components/back-top"
           }
         ]

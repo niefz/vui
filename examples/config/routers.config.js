@@ -41,6 +41,13 @@ export default {
       }, 'grid'),
     },
     {
+      path: '/zh-CN/components/menu',
+      name: 'menu',
+      component: menu => require.ensure([], (require) => {
+        menu(require('../docs/zh-CN/menu.md'));
+      }, 'menu'),
+    },
+    {
       path: '/zh-CN/components/breadcrumb',
       name: 'breadcrumb',
       component: breadcrumb => require.ensure([], (require) => {

@@ -5,81 +5,44 @@
       <div class="v-scrollbar--wrap">
         <div class="side-nav">
           <div class="side-nav--container">
-            <ul
-              class="v-menu"
-              :class="`v-menu-${mode}`"
-              role="menu">
-              <li
-                class="v-menu--item"
-                role="menuitem"
-                aria-selected="false"
-                :key="index"
-                v-for="(nav, index) in navigations">
-                <router-link
-                  :to="nav.path"
-                  v-if="nav.path">
-                  {{ nav.name }}
-                </router-link>
-                <div
-                  class="v-submenu"
-                  v-else>
+            <v-menu>
+              <template v-for="(nav, index) in navigations">
+                <v-menu-item :index="nav.name" v-if="nav.path">
+                  <router-link :to="nav.path">{{ nav.name }}</router-link>
+                </v-menu-item>
+                <v-menu-sub :index="nav.name" v-else>
+                  <template slot="title">
+                    <h4>{{ nav.name }}</h4>
+                    <i class="v-menu--sub-title-arrow"></i>
+                  </template>
                   <template v-if="nav.child">
-                    <div
-                      class="v-submenu--title"
-                      aria-expanded="true"
-                      aria-haspopup="true">
-                      <h4>{{ nav.name }}</h4>
-                      <i class="v-submenu--title-arrow"></i>
-                    </div>
-                    <ul
-                      role="menu">
-                      <li
-                        class="v-submenu--item"
-                        role="menuitem"
-                        aria-selected="false"
-                        :key="index"
-                        v-for="(child, index) in nav.child">
-                        <router-link :to="child.path">{{ child.title }}</router-link>
-                      </li>
-                    </ul>
+                    <v-menu-item
+                      :index="child.name"
+                      :key="index"
+                      v-for="(child, index) in nav.child">
+                      <router-link :to="child.path">{{ child.name }}</router-link>
+                    </v-menu-item>
                   </template>
                   <template v-if="nav.groups">
-                    <div
-                      class="v-submenu--title"
-                      aria-expanded="true"
-                      aria-haspopup="true">
-                      <h4>{{ nav.name }}</h4>
-                      <i class="v-submenu--title-arrow"></i>
-                    </div>
-                    <ul
-                      role="menu">
-                      <li
-                        class="v-submenu-group"
+                    <v-menu-item-group
+                      :index="group.name"
+                      :key="index"
+                      v-for="(group, index) in nav.groups">
+                      <template slot="title">
+                        <h4>{{ group.name }}</h4>
+                        <i class="v-submenu--title-arrow"></i>
+                      </template>
+                      <v-menu-item
+                        :index="child.name"
                         :key="index"
-                        v-for="(group, index) in nav.groups">
-                        <div
-                          class="v-submenu-group--title">
-                          {{ group.groupName }}
-                        </div>
-                        <ul
-                          class="v-submenu-group--menu">
-                          <li
-                            class="v-group-item"
-                            role="menuitem"
-                            aria-selected="false"
-                            :key="index"
-                            v-for="(child, index) in group.list">
-                            <router-link :to="child.path">
-                              {{ child.title }}
-                            </router-link>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                        v-for="(child, index) in group.child">
+                        <router-link :to="child.path">{{ child.name }}</router-link>
+                      </v-menu-item>
+                    </v-menu-item-group>
                   </template>
-                </div>
-              </li>
-            </ul>
+                </v-menu-sub>
+              </template>
+            </v-menu>
           </div>
         </div>
         <div class="container">
@@ -93,8 +56,18 @@
 <script>
   import 'highlight.js/styles/color-brewer.css';
   import navigations from './nav.json';
+  import Menu from '@/components/menu';
+  import MenuSub from '@/components/menu-sub';
+  import MenuItem from '@/components/menu-item';
+  import MenuItemGroup from '@/components/menu-item-group';
 
   export default {
+    components: {
+      VMenu: Menu,
+      VMenuSub: MenuSub,
+      VMenuItem: MenuItem,
+      VMenuItemGroup: MenuItemGroup,
+    },
     data() {
       return {
         navigations,

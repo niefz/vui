@@ -1,18 +1,23 @@
 <template>
   <li
-    class="v-menu--item"
+    class="v-menu--sub"
     :class="[
       {
         ['active']: active,
         ['disabled']: disabled,
       }
     ]"
-    :style="{paddingLeft: paddingLeft + 'px'}"
+    aria-haspopup="true"
+    aria-expanded="true"
     role="menuitem"
-    aria-selected="false"
     @click="handleClick">
     <template>
-      <slot></slot>
+      <div class="v-menu--sub-title" :style="{paddingLeft: paddingLeft + 'px'}">
+        <slot name="title"></slot>
+      </div>
+      <ul class="v-menu--sub-menu">
+        <slot></slot>
+      </ul>
     </template>
   </li>
 </template>
@@ -20,25 +25,20 @@
   import Emitter from '@/mixins/emitter';
 
   export default {
-    name: 'MenuItem',
-    componentName: 'MenuItem',
+    name: 'MenuSub',
+    componentName: 'MenuSub',
     mixins: [Emitter],
     inject: ['menu'],
     props: {
-      index: String,
+      active: Boolean,
       disabled: Boolean,
     },
     computed: {
-      active() {
-        return this.index === this.menu.active;
-      },
       paddingLeft() {
         let indent = this.menu.indent;
         let parent = this.$parent;
         while (parent && parent.$options.componentName !== 'Menu') {
           if (parent.$options.componentName === 'MenuSub') {
-            indent += 20;
-          } else if (parent.$options.componentName === 'MenuItemGroup') {
             indent += 20;
           }
           parent = parent.$parent;
@@ -48,9 +48,6 @@
     },
     methods: {
       handleClick() {
-        if (this.disabled)  return;
-        this.dispatch('Menu', 'menu-item-click', [this]);
-        this.$emit('click', this);
       },
     },
   };
