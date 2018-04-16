@@ -33,10 +33,6 @@
         type: String,
         default: ''
       },
-      router: {
-        type: Boolean,
-        default: false,
-      },
     },
     data() {
       return {
