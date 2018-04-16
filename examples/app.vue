@@ -5,7 +5,7 @@
       <div class="v-scrollbar--wrap">
         <div class="side-nav">
           <div class="side-nav--container">
-            <v-menu>
+            <v-menu :default-active="defaultActive">
               <template v-for="(nav, index) in navigations">
                 <v-menu-item :index="nav.name" v-if="nav.path">
                   <router-link :to="nav.path">{{ nav.name }}</router-link>
@@ -71,16 +71,12 @@
     data() {
       return {
         navigations,
+        defaultActive: '',
       };
     },
-    props: {
-      mode: {
-        type: String,
-        default: 'vertical',
-      },
-    },
     watch: {
-      $route() {
+      $route(val) {
+        this.defaultActive = val.path;
         document.documentElement.scrollTop = 0;
       },
     },

@@ -40,7 +40,7 @@
       };
     },
     methods: {
-      updateActiveIndex() {
+      updateActive() {
         const item = this.items[this.defaultActive];
         if (item) {
           this.active = item.index;
