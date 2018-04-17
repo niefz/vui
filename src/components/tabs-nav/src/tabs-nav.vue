@@ -1,6 +1,5 @@
 <template>
   <div
-    ref="tabs"
     class="v-tabs--nav-item"
     :class="[
       {

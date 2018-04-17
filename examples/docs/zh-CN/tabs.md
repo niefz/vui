@@ -15,7 +15,10 @@
         <v-tabs-nav label="我的工作台" value="我的工作台"></v-tabs-nav>
       </template>
       <template slot="content">
-        {{active}}
+        <v-tabs-panel name="用户管理">{{active}}</v-tabs-panel>
+        <v-tabs-panel name="配置管理">{{active}}</v-tabs-panel>
+        <v-tabs-panel name="角色管理">{{active}}</v-tabs-panel>
+        <v-tabs-panel name="我的工作台">{{active}}</v-tabs-panel>
       </template>
     </v-tabs>
   </v-col>
@@ -28,6 +31,7 @@
   import Col from '@/components/col';
   import Tabs from '@/components/tabs';
   import TabsNav from '@/components/tabs-nav';
+  import TabsPanel from '@/components/tabs-panel';
 
   export default {
     components: {
@@ -35,6 +39,7 @@
       VCol: Col,
       VTabs: Tabs,
       VTabsNav: TabsNav,
+      VTabsPanel: TabsPanel,
     },
     data() {
       return {

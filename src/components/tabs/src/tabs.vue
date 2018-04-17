@@ -43,6 +43,7 @@
     data() {
       return {
         nav: [],
+        panels: [],
       };
     },
     methods: {
@@ -57,6 +58,19 @@
         const index = nav.indexOf(item);
         if (index > -1) {
           nav.splice(index, 1);
+        }
+      },
+      addPanels(item) {
+        const index = this.$slots.content.filter(item => {
+          return item.elm.nodeType === 1 && /\bv-tabs-panel\b/.test(item.elm.className);
+        }).indexOf(item.$vnode);
+        this.panels.splice(index, 0, item);
+      },
+      removePanels(item) {
+        const panels = this.panels;
+        const index = panels.indexOf(item);
+        if (index > -1) {
+          panels.splice(index, 1);
         }
       },
       handleClick(item) {

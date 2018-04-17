@@ -17,10 +17,10 @@
           const sizeName = ['top', 'bottom'].includes(this.tabs.placement) ? 'width' : 'height';
           const sizeDir = sizeName === 'width' ? 'x' : 'y';
           const offsetDir = sizeName === 'width' ? 'left' : 'top';
-          const tab = this.nav.filter(tab => tab.value === this.tabs.value)[0];
-          const firstUpperCase = str => {
+          const firstUpperCase = (str) => {
             return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
           };
+          const tab = this.nav.filter(tab => tab.value === this.tabs.value)[0];
           if (!tab) return;
           const el = tab.$el;
           const tabSize = el[`client${firstUpperCase(sizeName)}`];
