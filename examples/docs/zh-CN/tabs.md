@@ -7,7 +7,7 @@
 ```html
 <v-row>
   <v-col :span="24">
-    <v-tabs v-model="active" placement="top" @tab-click="handleClick">
+    <v-tabs placement="top" @tab-click="handleClick">
       <template slot="nav">
         <v-tabs-nav label="用户管理" value="用户管理"></v-tabs-nav>
         <v-tabs-nav label="配置管理" value="配置管理"></v-tabs-nav>

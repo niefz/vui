@@ -3,7 +3,7 @@
     class="v-tabs--nav-item"
     :class="[
       {
-        ['active']: value === tabs.value,
+        ['active']: value === tabs.active,
         ['disabled']: disabled,
       }
     ]"
@@ -21,17 +21,13 @@
     mixins: [Emitter],
     inject: ['tabs'],
     props: {
-      label: {
-        type: String,
-        default: '',
-      },
+      label: String,
       value: [Object, String, Number],
       disabled: Boolean,
     },
     methods: {
       handleClick() {
         if (this.disabled)  return;
-        this.$emit('update:value', this.value);
         this.dispatch('Tabs', 'tabs-item-click', [this]);
       },
     },

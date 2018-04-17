@@ -30,7 +30,6 @@
       };
     },
     props: {
-      value: {},
       placement: {
         type: String,
         default: 'top',
@@ -44,7 +43,13 @@
       return {
         nav: [],
         panels: [],
+        active: this.defaultActive,
       };
+    },
+    watch: {
+      defaultActive() {
+        this.updateActive();
+      },
     },
     methods: {
       addTabs(item) {
@@ -73,13 +78,23 @@
           panels.splice(index, 1);
         }
       },
+      updateActive() {
+        const nav = this.nav.filter(item => item.value === this.defaultActive)[0];
+        if (nav) {
+          this.active = nav.value;
+        } else {
+          this.active = this.nav[0].value;
+        }
+      },
       handleClick(item) {
         const value = item.value || item.label;
+        this.active = value;
         this.$emit('tab-click', value);
       },
     },
     mounted() {
       this.$on('tabs-item-click', this.handleClick);
+      this.$watch('nav', this.updateActive);
     },
   };
 </script>

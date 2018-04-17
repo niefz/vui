@@ -11,23 +11,27 @@ $color-FFFFFF: #FFFFFF;
     width: 1px;
     height: 100%;
     background-color: $color-D9D9D9;
-    &:before {
+    &-ball {
       display: block;
       z-index: 2;
       position: absolute;
-      top: 13px;
       left: 0;
       content: '';
       width: 4px;
       height: 4px;
+      margin-top: 13px;
+      margin-bottom: 13px;
       border-radius: 100%;
       border: 2px solid $color-148EF6;
       background-color: $color-FFFFFF;
-      transform: translateX(-50%);
+      transform-origin: 0 0;
+      transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1), -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
     }
   }
   &--inner {
-    position: relative;
     padding: 8px 10px;
+    &.active {
+      color: $color-148EF6;
+    }
   }
 }

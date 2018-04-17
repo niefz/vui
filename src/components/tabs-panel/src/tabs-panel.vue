@@ -20,7 +20,7 @@
     },
     computed: {
       active() {
-        return this.tabs.value === this.name;
+        return this.tabs.active === this.name;
       },
     },
     mounted() {

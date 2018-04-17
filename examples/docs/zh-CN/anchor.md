@@ -40,6 +40,11 @@
       VAnchor: Anchor,
       VAnchorLink: AnchorLink,
     },
+    data() {
+      return {
+        active: 'API',
+      };
+    },
     methods: {
     },
   };
