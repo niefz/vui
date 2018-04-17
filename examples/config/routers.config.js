@@ -62,6 +62,13 @@ export default {
       }, 'tabs'),
     },
     {
+      path: '/zh-CN/components/steps',
+      name: 'Steps 步骤条',
+      component: steps => require.ensure([], (require) => {
+        steps(require('../docs/zh-CN/steps.md'));
+      }, 'steps'),
+    },
+    {
       path: '/zh-CN/components/dropdown',
       name: 'Dropdown 下拉菜单',
       component: dropdown => require.ensure([], (require) => {
