@@ -6,3 +6,5 @@ import VTable from './src/table';
 VTable.install = (Vue) => {
   Vue.component(VTable.name, VTable);
 };
+
+export default VTable;

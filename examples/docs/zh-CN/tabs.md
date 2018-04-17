@@ -1,4 +1,4 @@
-# Menu 菜单
+# Tabs 标签页
 
 ## 基础用法
 
@@ -6,45 +6,18 @@
 
 ```html
 <v-row>
-  <v-col :span="12">
-    <v-menu>
-      <template v-for="(nav, index) in navigations">
-        <v-menu-item :index="nav.name" v-if="nav.path">
-          {{ nav.name }}
-        </v-menu-item>
-        <v-menu-sub :index="nav.name" v-else>
-          <template slot="title">
-            <h4>{{ nav.name }}</h4>
-            <i class="v-menu--sub-title-arrow"></i>
-          </template>
-          <template v-if="nav.child">
-            <v-menu-item
-              :index="child.name"
-              :key="index"
-              v-for="(child, index) in nav.child">
-              {{ child.name }}
-            </v-menu-item>
-          </template>
-          <template v-if="nav.groups">
-            <v-menu-item-group
-              :index="group.name"
-              :key="index"
-              v-for="(group, index) in nav.groups">
-              <template slot="title">
-                <h4>{{ group.name }}</h4>
-                <i class="v-submenu--title-arrow"></i>
-              </template>
-              <v-menu-item
-                :index="child.name"
-                :key="index"
-                v-for="(child, index) in group.child">
-                {{ child.name }}
-              </v-menu-item>
-            </v-menu-item-group>
-          </template>
-        </v-menu-sub>
+  <v-col :span="24">
+    <v-tabs v-model="active" placement="top" @tab-click="handleClick">
+      <template slot="nav">
+        <v-tabs-nav label="用户管理" value="用户管理"></v-tabs-nav>
+        <v-tabs-nav label="配置管理" value="配置管理"></v-tabs-nav>
+        <v-tabs-nav label="角色管理" value="角色管理"></v-tabs-nav>
+        <v-tabs-nav label="我的工作台" value="我的工作台"></v-tabs-nav>
       </template>
-    </v-menu>
+      <template slot="content">
+        {{active}}
+      </template>
+    </v-tabs>
   </v-col>
 </v-row>
 ```
@@ -53,27 +26,25 @@
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Menu from '@/components/menu';
-  import MenuSub from '@/components/menu-sub';
-  import MenuItem from '@/components/menu-item';
-  import MenuItemGroup from '@/components/menu-item-group';
-  import navigations from '../../nav.json';
+  import Tabs from '@/components/tabs';
+  import TabsNav from '@/components/tabs-nav';
 
   export default {
     components: {
       VRow: Row,
       VCol: Col,
-      VMenu: Menu,
-      VMenuSub: MenuSub,
-      VMenuItem: MenuItem,
-      VMenuItemGroup: MenuItemGroup,
+      VTabs: Tabs,
+      VTabsNav: TabsNav,
     },
     data() {
       return {
-        navigations,
+        active: '配置管理',
       };
     },
     methods: {
+      handleClick(val) {
+        this.active = val;
+      },
     },
   };
 </script>

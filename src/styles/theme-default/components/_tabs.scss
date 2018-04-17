@@ -1,1 +1,115 @@
+$color-148EF6: #148EF6;
+$color-43A5F8: #43A5F8;
+$color-D9D9D9: #D9D9D9;
 
+.v-tabs {
+  position: relative;
+  display: block;
+  @extend .clearfix;
+  &--header {
+    position: relative;
+  }
+  &.top {
+    .v-tabs--header {
+      border-bottom: 1px solid $color-D9D9D9;
+      .v-tabs--nav-wrapper {
+        margin-bottom: -1px;
+      }
+      .v-tabs--nav-bar {
+        bottom: 0;
+        height: 2px;
+      }
+      .v-tabs--nav-item {
+        display: inline-block;
+        padding: 10px 16px;
+      }
+    }
+    .v-tabs--content {
+      padding: 16px;
+    }
+  }
+  &.right {
+    .v-tabs--header {
+      float: right;
+      border-left: 1px solid $color-D9D9D9;
+      .v-tabs--nav-wrapper {
+        margin-left: -1px;
+      }
+      .v-tabs--nav-bar {
+        left: 0;
+        width: 2px;
+      }
+      .v-tabs--nav-item {
+        display: block;
+        padding: 10px 16px;
+        text-align: left;
+      }
+    }
+    .v-tabs--content {
+      padding: 0 16px;
+    }
+  }
+  &.left {
+    .v-tabs--header {
+      float: left;
+      border-right: 1px solid $color-D9D9D9;
+      .v-tabs--nav-wrapper {
+        margin-right: -1px;
+      }
+      .v-tabs--nav-bar {
+        right: 0;
+        width: 2px;
+      }
+      .v-tabs--nav-item {
+        display: block;
+        padding: 10px 16px;
+        text-align: right;
+      }
+    }
+    .v-tabs--content {
+      padding: 0 16px;
+    }
+  }
+}
+
+.v-tabs--nav-wrapper {
+  overflow: hidden;
+}
+
+.v-tabs--nav-scroll {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.v-tabs--nav {
+  position: relative;
+  display: inline-block;
+  transition: transform .3s;
+  z-index: 2;
+  &-bar {
+    position: absolute;
+    background-color: $color-148EF6;
+    box-sizing: border-box;
+    z-index: 1;
+    transform-origin: 0 0;
+    transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1), -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
+  }
+  &-item {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    transition: color .3s cubic-bezier(.645, .045, .355, 1);
+    &.active {
+      font-weight: 500;
+      color: $color-148EF6;
+    }
+    &:hover {
+      color: $color-43A5F8;
+      cursor: pointer;
+    }
+  }
+}
+
+.v-tabs--content {
+  overflow: hidden;
+}

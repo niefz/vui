@@ -55,6 +55,13 @@ export default {
       }, 'breadcrumb'),
     },
     {
+      path: '/zh-CN/components/tabs',
+      name: 'tabs',
+      component: tabs => require.ensure([], (require) => {
+        tabs(require('../docs/zh-CN/tabs.md'));
+      }, 'tabs'),
+    },
+    {
       path: '/zh-CN/components/dropdown',
       name: 'dropdown',
       component: dropdown => require.ensure([], (require) => {
