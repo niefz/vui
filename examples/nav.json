@@ -1,7 +1,7 @@
 [
   {
     "name": "更新日志",
-    "path": "/zh-CN/recommendation"
+    "path": "/zh-CN/changelog"
   },
   {
     "name": "快速上手",
@@ -13,7 +13,7 @@
   },
   {
     "name": "社区精选组件",
-    "path": "/zh-CN/changelog"
+    "path": "/zh-CN/recommendation"
   },
   {
     "name": "国际化",

@@ -76,7 +76,7 @@
     },
     watch: {
       $route(val) {
-        this.defaultActive = val.path;
+        this.defaultActive = val.name;
         document.documentElement.scrollTop = 0;
       },
     },

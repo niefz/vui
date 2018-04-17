@@ -53,5 +53,11 @@
         this.$emit('click', this);
       },
     },
+    created() {
+      this.menu.addMenuItem(this);
+    },
+    beforeDestroy() {
+      this.menu.removeMenuItem(this);
+    }
   };
 </script>

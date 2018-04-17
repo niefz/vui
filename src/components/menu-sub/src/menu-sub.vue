@@ -50,5 +50,11 @@
       handleClick() {
       },
     },
+    created() {
+      this.menu.addMenuSub(this);
+    },
+    beforeDestroy() {
+      this.menu.removeMenuSub(this);
+    },
   };
 </script>
