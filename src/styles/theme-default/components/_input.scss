@@ -33,7 +33,6 @@ $color-F5F5F5: #F5F5F5;
   &--inner {
     position: relative;
     display: block;
-    width: calc(100% + 1px);
     height: 100%;
     input {
       position: relative;
@@ -97,6 +96,9 @@ $color-F5F5F5: #F5F5F5;
 
 .v-input--slot {
   display: inline-table;
+  .v-input--inner {
+    width: calc(100% + 1px);
+  }
   .v-input--prepend, .v-input--append {
     position: relative;
     display: table-cell;
