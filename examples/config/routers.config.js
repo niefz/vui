@@ -90,6 +90,13 @@ export default {
       }, 'input'),
     },
     {
+      path: '/zh-CN/components/input-number',
+      name: 'Input 数字输入框',
+      component: inputNumber => require.ensure([], (require) => {
+        inputNumber(require('../docs/zh-CN/input-number.md'));
+      }, 'input-number'),
+    },
+    {
       path: '/zh-CN/components/radio',
       name: 'Radio 单选框',
       component: radio => require.ensure([], (require) => {

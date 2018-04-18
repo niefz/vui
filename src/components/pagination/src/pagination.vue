@@ -36,7 +36,7 @@
       </div>
       / {{pageCount}}
     </template>
-    <template v-else>
+    <template v-else-if="!minimal">
       <ul class="v-pager" @click="handlePager">
         <li
           class="v-pager--number"
@@ -172,6 +172,7 @@
       showSizeChanger: Boolean,
       showJumper: Boolean,
       simple: Boolean,
+      minimal: Boolean,
       disabled: Boolean,
     },
     data() {
