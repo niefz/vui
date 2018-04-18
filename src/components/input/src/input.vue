@@ -5,12 +5,14 @@
       'v-input--' + inputSize,
       {
         ['v-input--slot']: $slots.prepend || $slots.append || prepend || append,
-        ['v-input--slot-prepend']: $slots.prepend || prepend,
-        ['v-input--slot-append']: $slots.append || append,
+        ['prepend']: prepend,
+        ['slot-prepend']: $slots.prepend,
+        ['append']: append,
+        ['slot-append']: $slots.append,
         ['disabled']: disabled,
       }
     ]">
-    <div class="v-input--prepend" :class="{'v-input--prepend-inner': prepend}" v-if="$slots.prepend || prepend">
+    <div class="v-input--prepend" v-if="$slots.prepend || prepend">
       <template v-if="prepend">{{prepend}}</template>
       <template v-else><slot name="prepend"></slot></template>
     </div>
@@ -38,7 +40,7 @@
         <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
       </em>
     </div>
-    <div class="v-input--append" :class="{'v-input--append-inner': append}" v-if="$slots.append || append">
+    <div class="v-input--append" v-if="$slots.append || append">
       <template v-if="append">{{append}}</template>
       <template v-else><slot name="append"></slot></template>
     </div>
