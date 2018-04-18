@@ -1,4 +1,4 @@
-# Input 输入框
+# Input 数字输入框
 
 基础用法。
 
@@ -57,14 +57,6 @@
     </v-input>
   </v-col>
 </v-row>
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-textarea v-model="keywords"></v-textarea>
-  </v-col>
-  <v-col :span="12">
-    <v-textarea v-model="keywords" disabled></v-textarea>
-  </v-col>
-</v-row>
 ```
 :::
     
@@ -72,7 +64,6 @@
   import Row from '@/components/row';
   import Col from '@/components/col';
   import Input from '@/components/input';
-  import Textarea from '@/components/textarea';
   import Button from '@/components/button';
   import Select from '@/components/select';
   import SelectMenu from '@/components/select-menu';
@@ -83,7 +74,6 @@
       VRow: Row,
       VCol: Col,
       VInput: Input,
-      VTextarea: Textarea,
       VButton: Button,
       VSelect: Select,
       VSelectMenu: SelectMenu,
