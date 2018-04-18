@@ -3,9 +3,9 @@ $color-148EF6: #148EF6;
 $color-FFFFFF: #FFFFFF;
 
 .v-backtop {
-  display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
+  display: none;
   right: 100px;
   bottom: 50px;
   width: 40px;

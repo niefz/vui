@@ -4,7 +4,7 @@
       <div class="v-tabs--nav-wrapper">
         <div class="v-tabs--nav-scroll">
           <div class="v-tabs--nav">
-            <tabs-bar :nav="nav"></tabs-bar>
+            <tabs-bar :nav="tabs"></tabs-bar>
             <slot name="nav"></slot>
           </div>
         </div>
@@ -36,40 +36,29 @@
       },
       defaultActive: {
         type: String,
-        default: ''
+        default: '',
       },
     },
     data() {
       return {
-        nav: [],
+        tabs: [],
         panels: [],
         active: this.defaultActive,
       };
     },
-    watch: {
-      defaultActive() {
-        this.updateActive();
-      },
-    },
     methods: {
       addTabs(item) {
-        const index = this.$slots.nav.filter(item => {
-          return item.elm.nodeType === 1 && /\bv-tabs-nav\b/.test(item.elm.className);
-        }).indexOf(item.$vnode);
-        this.nav.splice(index, 0, item);
+        this.tabs.push(item);
       },
       removeTabs(item) {
-        const nav = this.nav;
-        const index = nav.indexOf(item);
+        const tabs = this.tabs;
+        const index = tabs.indexOf(item);
         if (index > -1) {
-          nav.splice(index, 1);
+          tabs.splice(index, 1);
         }
       },
       addPanels(item) {
-        const index = this.$slots.content.filter(item => {
-          return item.elm.nodeType === 1 && /\bv-tabs-panel\b/.test(item.elm.className);
-        }).indexOf(item.$vnode);
-        this.panels.splice(index, 0, item);
+        this.panels.push(item);
       },
       removePanels(item) {
         const panels = this.panels;
@@ -79,22 +68,23 @@
         }
       },
       updateActive() {
-        const nav = this.nav.filter(item => item.value === this.defaultActive)[0];
-        if (nav) {
-          this.active = nav.value;
+        const tabs = this.tabs;
+        const tab = tabs.find(tab => tab.value === this.defaultActive);
+        if (tab) {
+          this.active = tab.value;
         } else {
-          this.active = this.nav[0].value;
+          this.active = tabs[0].value;
         }
       },
-      handleClick(item) {
-        const value = item.value || item.label;
+      handleItemClick(item, event) {
+        const value = item.value;
         this.active = value;
-        this.$emit('tab-click', value);
+        this.$emit('tab-click', value, event);
       },
     },
     mounted() {
-      this.$on('tabs-item-click', this.handleClick);
-      this.$watch('nav', this.updateActive);
+      this.$on('tabs-item-click', this.handleItemClick);
+      this.$watch('tabs', this.updateActive());
     },
   };
 </script>

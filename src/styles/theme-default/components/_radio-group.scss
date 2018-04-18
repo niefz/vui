@@ -1,7 +1,7 @@
 .v-radio-group {
-  display: inline-block;
   position: relative;
   z-index: 1;
+  display: inline-block;
   &--horizontal {
     .v-radio + .v-radio {
       margin-left: 10px;

@@ -1,9 +1,11 @@
 $color-148EF6: #148EF6;
+$color-43A5F8: #43A5F8;
+$color-BFBFBF: #BFBFBF;
 $color-D9D9D9: #D9D9D9;
 $color-FFFFFF: #FFFFFF;
 
 .v-anchor {
-  z-index: 10001;
+  z-index: 100;
   &--ink {
     position: absolute;
     top: 0;
@@ -12,26 +14,37 @@ $color-FFFFFF: #FFFFFF;
     height: 100%;
     background-color: $color-D9D9D9;
     &-ball {
-      display: block;
-      z-index: 2;
       position: absolute;
+      z-index: 2;
+      display: block;
       left: 0;
       content: '';
       width: 4px;
       height: 4px;
       margin-top: 13px;
       margin-bottom: 13px;
-      border-radius: 100%;
+      margin-left: -4px;
       border: 2px solid $color-148EF6;
       background-color: $color-FFFFFF;
+      border-radius: 100%;
       transform-origin: 0 0;
       transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1), -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
     }
   }
-  &--inner {
+  &--item {
     padding: 8px 10px;
-    &.active {
-      color: $color-148EF6;
+    &-inner {
+      &.active {
+        color: $color-148EF6;
+      }
+      &:hover {
+        color: $color-43A5F8;
+      }
+      &.disabled {
+        color: $color-BFBFBF;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
     }
   }
 }

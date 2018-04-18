@@ -151,11 +151,11 @@ $color-BFBFBF: #BFBFBF;
   }
   .hours, .minutes, .seconds {
     position: relative;
+    z-index: 1;
     display: inline-block;
     width: 75px;
     height: 100%;
     overflow: hidden;
-    z-index: 1;
     ul {
       display: inline-block;
       width: 92px;

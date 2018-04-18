@@ -3,9 +3,9 @@ $color-148EF6: #148EF6;
 $color-FFFFFF: #FFFFFF;
 
 .v-tag-group {
-  display: inline-block;
   position: relative;
   z-index: 1;
+  display: inline-block;
   .v-tag {
     cursor: pointer;
     &.checked {

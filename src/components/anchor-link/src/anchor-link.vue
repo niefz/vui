@@ -1,13 +1,15 @@
 <template>
-  <div 
-    class="v-anchor--inner"
-    :class="[
-      {
-        ['active']: title === anchor.active,
-        ['disabled']: disabled,
-      }
-    ]">
-    <a :href="href" @click="handleClick">{{title}}</a>
+  <div class="v-anchor--item">
+    <div
+      class="v-anchor--item-inner"
+      :class="[
+        {
+          ['active']: active,
+          ['disabled']: disabled,
+        }
+      ]">
+      <a :href="href" @click="handleClick">{{title}}</a>
+    </div>
     <slot></slot>
   </div>
 </template>
@@ -24,10 +26,15 @@
       title: String,
       disabled: Boolean,
     },
+    computed: {
+      active() {
+        return this.anchor.active === this.href;
+      },
+    },
     methods: {
-      handleClick() {
+      handleClick(event) {
         if (this.disabled)  return;
-        this.dispatch('Anchor', 'anchor-link-click', [this]);
+        this.dispatch('Anchor', 'anchor-item-click', [this, event]);
       },
     },
     mounted() {

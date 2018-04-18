@@ -20,6 +20,7 @@
           <template v-if="nav.child">
             <v-menu-item
               :index="child.name"
+              disabled
               :key="index"
               v-for="(child, index) in nav.child">
               {{ child.name }}

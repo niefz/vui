@@ -4,6 +4,7 @@ $menu-item-indent: 20;
 $menu-item-line-height: 40;
 $border-radius: 3;
 $color-148EF6: #148EF6;
+$color-BFBFBF: #BFBFBF;
 $color-E6F7FF: #E6F7FF;
 
 /* mixin */
@@ -67,6 +68,10 @@ $color-E6F7FF: #E6F7FF;
       }
       &-menu {
       }
+    }
+    &.disabled {
+      color: $color-BFBFBF;
+      cursor: not-allowed;
     }
   }
   &--sub {

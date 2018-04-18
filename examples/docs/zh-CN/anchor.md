@@ -13,7 +13,7 @@
       <v-anchor-link href="#Basic demo" title="Basic demo"></v-anchor-link>
       <v-anchor-link href="#Fixed demo" title="Fixed demo"></v-anchor-link>
       <v-anchor-link href="#API" title="API">
-        <v-anchor-link href="#Anchor Props" title="Anchor Props"></v-anchor-link>
+        <v-anchor-link href="#Anchor Props" title="Anchor Props" disabled></v-anchor-link>
         <v-anchor-link href="#Link Props" title="Link Props"></v-anchor-link>
       </v-anchor-link>
     </v-anchor>
@@ -42,7 +42,7 @@
     },
     data() {
       return {
-        active: 'API',
+        active: '#API',
       };
     },
     methods: {

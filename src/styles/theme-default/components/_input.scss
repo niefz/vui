@@ -45,9 +45,9 @@ $color-F5F5F5: #F5F5F5;
       box-sizing: border-box;
       transition: all .3s cubic-bezier(.645, .045, .355, 1);
       &:focus {
+        z-index: 2;
         border-color: $color-148EF6;
         box-shadow: 0 0 0 2px rgba(20, 142, 246, .2);
-        z-index: 2;
       }
       &:disabled {
         background-color: $color-F5F5F5;
@@ -66,6 +66,7 @@ $color-F5F5F5: #F5F5F5;
 .v-input--inner {
   > em {
     position: absolute;
+    z-index: 3;
     top: 6px;
     bottom: 6px;
     width: 34px;
@@ -73,7 +74,6 @@ $color-F5F5F5: #F5F5F5;
     color: $color-BFBFBF;
     text-align: center;
     cursor: pointer;
-    z-index: 3;
   }
   &-prefix {
     left: 0;
@@ -145,11 +145,11 @@ $color-F5F5F5: #F5F5F5;
   }
   .v-btn {
     position: relative;
+    z-index: 1;
     width: calc(100% + 1px);
     min-width: 100%;
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    z-index: 1;
   }
 }

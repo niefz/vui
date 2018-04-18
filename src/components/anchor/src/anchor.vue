@@ -31,6 +31,10 @@
         type: Boolean,
         default: false,
       },
+      defaultActive: {
+        type: String,
+        default: '',
+      },
       top: Number,
       right: Number,
       bottom: Number,
@@ -53,17 +57,9 @@
         };
       },
     },
-    watch: {
-      defaultActive() {
-        this.updateActive();
-      },
-    },
     methods: {
       addLinks(item) {
-        const index = this.$slots.default.filter(item => {
-          return item.elm.nodeType === 1 && /\bv-anchor-link\b/.test(item.elm.className);
-        }).indexOf(item.$vnode);
-        this.links.splice(index, 0, item);
+        this.links.push(item);
       },
       removeLinks(item) {
         const links = this.links;
@@ -73,20 +69,18 @@
         }
       },
       updateActive() {
-        const link = this.links.filter(item => item.title === this.defaultActive)[0];
+        const link = this.links.find(link => link.href === this.defaultActive);
         if (link) {
-          this.active = link.title;
-        } else {
-          this.active = this.links[0].title;
+          this.active = link.href;
         }
       },
-      handleLinkClick(item) {
-        this.active = item.title;
+      handleItemClick(item) {
+        this.active = item.href;
       },
     },
     mounted() {
-      this.$on('anchor-link-click', this.handleLinkClick);
-      this.$watch('links', this.updateActive);
+      this.$on('anchor-item-click', this.handleItemClick);
+      this.$watch('links', this.updateActive());
     },
   };
 </script>

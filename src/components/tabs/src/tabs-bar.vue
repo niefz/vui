@@ -20,7 +20,7 @@
           const firstUpperCase = (str) => {
             return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
           };
-          const tab = this.nav.filter(tab => tab.value === this.tabs.active)[0];
+          const tab = this.nav.find(tab => tab.value === this.tabs.active);
           if (!tab) return;
           const el = tab.$el;
           const tabSize = el[`client${firstUpperCase(sizeName)}`];

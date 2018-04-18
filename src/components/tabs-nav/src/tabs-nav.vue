@@ -3,7 +3,7 @@
     class="v-tabs--nav-item"
     :class="[
       {
-        ['active']: value === tabs.active,
+        ['active']: active,
         ['disabled']: disabled,
       }
     ]"
@@ -25,10 +25,15 @@
       value: [Object, String, Number],
       disabled: Boolean,
     },
+    computed: {
+      active() {
+        return this.tabs.active === this.value;
+      },
+    },
     methods: {
-      handleClick() {
+      handleClick(event) {
         if (this.disabled)  return;
-        this.dispatch('Tabs', 'tabs-item-click', [this]);
+        this.dispatch('Tabs', 'tabs-item-click', [this, event]);
       },
     },
     mounted() {
