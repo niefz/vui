@@ -76,6 +76,13 @@ export default {
       }, 'dropdown'),
     },
     {
+      path: '/zh-CN/components/pagination',
+      name: 'Pagination 分页',
+      component: pagination => require.ensure([], (require) => {
+        pagination(require('../docs/zh-CN/pagination.md'));
+      }, 'pagination'),
+    },
+    {
       path: '/zh-CN/components/input',
       name: 'Input 输入框',
       component: input => require.ensure([], (require) => {

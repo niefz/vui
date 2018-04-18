@@ -1,1 +1,89 @@
+$color-148EF6: #148EF6;
+$color-43A5F8: #43A5F8;
+$color-BFBFBF: #BFBFBF;
 
+.v-pagination {
+  @extend .clearfix;
+  &--mini {
+    height: 28px;
+    line-height: 28px;
+    .v-pager--number {
+      font-size: 12px;
+    }
+  }
+  &--small {
+    height: 32px;
+    line-height: 32px;
+    .v-pager--number {
+      font-size: 12px;
+    }
+  }
+  &--medium {
+    height: 36px;
+    line-height: 36px;
+    .v-pager--number {
+      font-size: 13px;
+    }
+  }
+  &--large {
+    height: 40px;
+    line-height: 40px;
+    .v-pager--number {
+      font-size: 14px;
+    }
+  }
+  &--text-left {
+    text-align: left;
+  }
+  &--text-center {
+    text-align: center;
+  }
+  &--text-right {
+    text-align: right;
+  }
+  &--total, &--sizes, &--jumper {
+    display: inline-block;
+  }
+  &--total, &--sizes {
+    margin-right: 10px;
+  }
+  &--jumper {
+    margin-left: 10px;
+  }
+  &--sizes {
+    .v-input {
+      width: 100px;
+    }
+  }
+  &--jumper {
+    .v-input {
+      width: 50px;
+    }
+  }
+}
+
+.v-pager {
+  display: inline-block;
+  vertical-align: top;
+  &--number, &--quick-prev, &--quick-next {
+    display: inline-block;
+    min-width: 24px;
+    padding: 0 4px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    &.active {
+      font-weight: 600;
+      color: $color-148EF6;
+    }
+    &:hover {
+      color: $color-43A5F8;
+      cursor: pointer;
+    }
+    &.disabled {
+      color: $color-BFBFBF;
+      cursor: not-allowed;
+    }
+  }
+}
