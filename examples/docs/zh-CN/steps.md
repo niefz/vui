@@ -7,19 +7,41 @@
 ```html
 <v-row>
   <v-col :span="24">
-    <v-steps v-model="active" placement="top" @tab-click="handleClick">
-      <template slot="nav">
-        <v-tabs-nav label="用户管理" value="用户管理"></v-tabs-nav>
-        <v-tabs-nav label="配置管理" value="配置管理"></v-tabs-nav>
-        <v-tabs-nav label="角色管理" value="角色管理"></v-tabs-nav>
-        <v-tabs-nav label="我的工作台" value="我的工作台"></v-tabs-nav>
-      </template>
-      <template slot="content">
-        <v-tabs-panel name="用户管理">{{active}}</v-tabs-panel>
-        <v-tabs-panel name="配置管理">{{active}}</v-tabs-panel>
-        <v-tabs-panel name="角色管理">{{active}}</v-tabs-panel>
-        <v-tabs-panel name="我的工作台">{{active}}</v-tabs-panel>
-      </template>
+    <v-steps :current="current">
+      <v-steps-item title="已完成" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="进行中" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="待进行" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="待进行" description="这里是该步骤的描述信息"></v-steps-item>
+    </v-steps>
+  </v-col>
+</v-row>
+<v-row>
+  <v-col :span="24">
+    <v-button theme="primary" @click="current += 1">下一步</v-button>
+    <v-button v-if="current > 1" @click="current -= 1">上一步</v-button>
+  </v-col>
+</v-row>
+<v-row></v-row>
+<v-row></v-row>
+<v-row>
+  <v-col :span="24">
+    <v-steps :current="1" status="error">
+      <v-steps-item title="已完成" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="进行中" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="待进行" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="待进行" description="这里是该步骤的描述信息"></v-steps-item>
+    </v-steps>
+  </v-col>
+</v-row>
+<v-row></v-row>
+<v-row></v-row>
+<v-row>
+  <v-col :span="24">
+    <v-steps mode="vertical" :current="2" status="error">
+      <v-steps-item title="已完成" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="进行中" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="待进行" description="这里是该步骤的描述信息"></v-steps-item>
+      <v-steps-item title="待进行" description="这里是该步骤的描述信息"></v-steps-item>
     </v-steps>
   </v-col>
 </v-row>
@@ -29,21 +51,21 @@
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
+  import Button from '@/components/button';
   import Steps from '@/components/steps';
-  import TabsNav from '@/components/tabs-nav';
-  import TabsPanel from '@/components/tabs-panel';
+  import StepsItem from '@/components/steps-item';
 
   export default {
     components: {
       VRow: Row,
       VCol: Col,
+      VButton: Button,
       VSteps: Steps,
-      VTabsNav: TabsNav,
-      VTabsPanel: TabsPanel,
+      VStepsItem: StepsItem,
     },
     data() {
       return {
-        active: '配置管理',
+        current: 1,
       };
     },
     methods: {
