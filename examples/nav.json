@@ -12,10 +12,6 @@
     "path": "/zh-CN/practical-projects"
   },
   {
-    "name": "社区精选组件",
-    "path": "/zh-CN/recommendation"
-  },
-  {
     "name": "国际化",
     "path": "/zh-CN/i18n"
   },
@@ -81,26 +77,30 @@
             "path": "/zh-CN/components/breadcrumb"
           },
           {
-            "name": "Tabs 标签页",
-            "path": "/zh-CN/components/tabs"
-          },
-          {
             "name": "Steps 步骤条",
             "path": "/zh-CN/components/steps"
           },
           {
-            "name": "Dropdown 下拉菜单",
-            "path": "/zh-CN/components/dropdown"
+            "name": "Tabs 标签页",
+            "path": "/zh-CN/components/tabs"
           },
           {
             "name": "Pagination 分页",
             "path": "/zh-CN/components/pagination"
+          },
+          {
+            "name": "Dropdown 下拉菜单",
+            "path": "/zh-CN/components/dropdown"
           }
         ]
       },
       {
         "name": "Form",
         "child": [
+          {
+            "name": "DateTimePicker 日期时间选择器",
+            "path": "/zh-CN/components/datetime-picker"
+          },
           {
             "name": "Input 输入框",
             "path": "/zh-CN/components/input"
@@ -116,10 +116,6 @@
           {
             "name": "Checkbox 多选框",
             "path": "/zh-CN/components/checkbox"
-          },
-          {
-            "name": "DateTimePicker 日期时间选择器",
-            "path": "/zh-CN/components/datetime-picker"
           },
           {
             "name": "Switch 开关",
@@ -159,10 +155,6 @@
         "name": "Data Display",
         "child": [
           {
-            "name": "Table 表格",
-            "path": "/zh-CN/components/table"
-          },
-          {
             "name": "Avatar 头像",
             "path": "/zh-CN/components/avatar"
           },
@@ -173,6 +165,10 @@
           {
             "name": "Tag 标签",
             "path": "/zh-CN/components/tag"
+          },
+          {
+            "name": "Table 表格",
+            "path": "/zh-CN/components/table"
           },
           {
             "name": "Tree 树形控件",
