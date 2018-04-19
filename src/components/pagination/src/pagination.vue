@@ -192,7 +192,7 @@
         return Number(Math.ceil(this.total / this.pageSize));
       },
       pagers() {
-        const pagerCount = this.pagerCount;
+        const pagerCount = this.pagerCount > 5 ? this.pagerCount : 5;
         const current = Number(this.current);
         const pageCount = Number(this.pageCount);
         let showPrevMore = false;
