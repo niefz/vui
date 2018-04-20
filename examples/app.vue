@@ -9,11 +9,12 @@
         </v-col>
         <v-col :xs="0" :sm="0" :md="18" :lg="19" :xl="20">
           <div class="versions">
-            <v-select value="1.0.1">
-              <v-select-menu>
-                <v-select-menu-option value="1.0.1">1.0.1</v-select-menu-option>
-              </v-select-menu>
-            </v-select>
+            <v-dropdown trigger="click">
+              <v-button suffix-icon="v-icon-arrow-down">1.0.1</v-button>
+              <v-dropdown-menu slot="dropdown">
+                <v-dropdown-menu-item value="1.0.1">1.0.1</v-dropdown-menu-item>
+              </v-dropdown-menu>
+            </v-dropdown>
           </div>
           <div class="menu">
             <v-menu :height="64" mode="horizontal">
@@ -87,9 +88,10 @@
   import MenuItem from '@/components/menu-item';
   import MenuItemGroup from '@/components/menu-item-group';
   import Badge from '@/components/badge';
-  import Select from '@/components/select';
-  import SelectMenu from '@/components/select-menu';
-  import SelectMenuOption from '@/components/select-menu-option';
+  import Button from '@/components/button';
+  import Dropdown from '@/components/dropdown';
+  import DropdownMenu from '@/components/dropdown-menu';
+  import DropdownMenuItem from '@/components/dropdown-menu-item';
 
   export default {
     components: {
@@ -100,9 +102,10 @@
       VMenuItem: MenuItem,
       VMenuItemGroup: MenuItemGroup,
       VBadge: Badge,
-      VSelect: Select,
-      VSelectMenu: SelectMenu,
-      VSelectMenuOption: SelectMenuOption,
+      VButton: Button,
+      VDropdown: Dropdown,
+      VDropdownMenu: DropdownMenu,
+      VDropdownMenuItem: DropdownMenuItem,
     },
     data() {
       return {
@@ -126,11 +129,13 @@
   }
 
   .header {
-    position: fixed;
+    position: relative;
     z-index: 10;
     width: 100%;
-    background: $color-FFFFFF;
+    border-bottom: 1px solid #E8E8E8;
+    background-color: $color-FFFFFF;
     box-shadow: 0 2px 8px $color-E8E8E8;
+    box-sizing: border-box;
     transition: all .3s;
     &-logo {
       float: left;
@@ -149,8 +154,7 @@
       float: right;
     }
     .versions {
-      width: 80px;
-      margin: 16px 20px;
+      margin: 16px 40px 16px 0;
     }
   }
 
@@ -165,10 +169,9 @@
   }
 
   .main {
-    padding-top: 64px;
+    padding-top: 40px;
     .side-nav {
       height: 100%;
-      padding: 20px 0;
       border-right: 1px solid #E8E8E8;
       box-sizing: border-box;
       .v-menu {

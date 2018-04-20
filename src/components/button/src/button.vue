@@ -19,9 +19,9 @@
       <slot></slot>
     </template>
     <template v-else>
-      <v-icon :icon="prefixIcon" v-if="prefixIcon"></v-icon>
+      <v-icon class="prefix-icon" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
       <slot></slot>
-      <v-icon :icon="suffixIcon" v-if="suffixIcon"></v-icon>
+      <v-icon class="suffix-icon" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
     </template>
   </button>
 </template>

@@ -40,6 +40,7 @@ $color-F5F5F5: #F5F5F5;
       height: 100%;
       padding: 5px 10px;
       border: 1px solid $color-D9D9D9;
+      background-color: transparent;
       border-radius: $border-radius + px;
       box-sizing: border-box;
       transition: all .3s cubic-bezier(.645, .045, .355, 1);
