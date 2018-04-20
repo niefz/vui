@@ -1,14 +1,15 @@
 /* variable */
-$menu-indent: 0;
-$menu-item-indent: 20;
-$menu-item-line-height: 40;
 $border-radius: 3;
 $color-148EF6: #148EF6;
 $color-BFBFBF: #BFBFBF;
 $color-E6F7FF: #E6F7FF;
 
 /* mixin */
-@mixin v-menu-item-border-normal {
+@mixin v-menu--item {
+  display: block;
+  position: relative;
+  padding-right: 20px;
+  @extend .text-overflow;
   &:after {
     position: absolute;
     top: 0;
@@ -20,65 +21,62 @@ $color-E6F7FF: #E6F7FF;
     transform: scaleY(.0001);
     transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
   }
-}
-
-@mixin v-menu-item-border-active {
-  &:after {
-    opacity: 1;
-    transform: scaleY(1);
-    transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
-  }
-}
-
-@mixin v-menu--item {
-  display: block;
-  position: relative;
-  height: $menu-item-line-height + px;
-  @extend .text-overflow;
-  @include v-menu-item-border-normal;
   &:hover {
     color: $color-148EF6;
+    cursor: pointer;
   }
   &.active {
     background-color: $color-E6F7FF;
     color: $color-148EF6;
-    @include v-menu-item-border-active;
+    &:after {
+      opacity: 1;
+      transform: scaleY(1);
+      transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
+    }
+  }
+  &.disabled {
+    color: $color-BFBFBF;
+    cursor: not-allowed;
+
   }
 }
 
 @mixin make-padding($position) {
-  padding-#{$position}: $menu-indent + $menu-item-indent + px;
+  padding-#{$position}: 20px;
 }
 
 .v-menu {
   width: 100%;
   font-size: 14px;
-  line-height: $menu-item-line-height + px;
   transition: background .3s, width .2s;
   @extend .clearfix;
-  &--item {
+}
+
+.v-menu--vertical {
+  .v-menu--item {
     @include v-menu--item;
-    > a {
+    &-inner {
       display: block;
+      @extend .text-overflow;
     }
     &-group {
       &-title {
+        display: block;
+        position: relative;
         @include make-padding(right);
         color: rgba(0, 0, 0, .45);
+        h4 {
+          max-width: 80%;
+          height: inherit;
+          @extend .text-overflow;
+        }
       }
-      &-menu {
-      }
-    }
-    &.disabled {
-      color: $color-BFBFBF;
-      cursor: not-allowed;
     }
   }
-  &--sub {
+  .v-menu--sub {
     &-title {
       display: block;
       position: relative;
-      height: $menu-item-line-height + px;
       @include make-padding(right);
       cursor: pointer;
       h4 {
@@ -86,31 +84,41 @@ $color-E6F7FF: #E6F7FF;
         height: inherit;
         @extend .text-overflow;
       }
-      &-arrow {
-        position: absolute;
-        top: 50%;
-        right: 18px;
-        width: 10px;
-        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
-        &:before, &:after {
-          position: absolute;
-          width: 6px;
-          height: 1.5px;
-          content: '';
-          background-image: linear-gradient(to right, rgba(0, 0, 0, .65), rgba(0, 0, 0, .65));
-          vertical-align: baseline;
-          border-radius: $border-radius + px;
-          transition: background .3s cubic-bezier(.645, .045, .355, 1), transform .3s cubic-bezier(.645, .045, .355, 1);
-        }
-        &:before {
-          transform: rotate(-45deg) translateX(2px);
-        }
-        &:after {
-          transform: rotate(45deg) translateX(-2px);
-        }
+    }
+  }
+}
+
+.v-menu--horizontal {
+  .v-menu--item {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    &:after {
+      position: absolute;
+      right: 20px;
+      left: 20px;
+      bottom: 0;
+      content: "";
+      border-bottom: 3px solid $color-148EF6;
+      opacity: 0;
+      transform: scaleX(.0001);
+      transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
+    }
+    &:hover {
+      color: $color-148EF6;
+      cursor: pointer;
+    }
+    &.active {
+      color: $color-148EF6;
+      &:after {
+        opacity: 1;
+        transform: scaleX(1);
+        transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
       }
     }
-    &-menu {
+    &.disabled {
+      color: $color-BFBFBF;
+      cursor: not-allowed;
     }
   }
 }

@@ -42,7 +42,7 @@ $color-FFFFFF: #FFFFFF;
       }
       &.disabled {
         color: $color-BFBFBF;
-        pointer-events: none;
+        cursor: not-allowed;
       }
       &:not(.disabled):hover {
         background-color: $color-E6F7FF;

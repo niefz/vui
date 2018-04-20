@@ -43,7 +43,6 @@ $color-FFFFFF: #FFFFFF;
       &.disabled {
         color: $color-BFBFBF;
         cursor: not-allowed;
-        pointer-events: none;
       }
     }
   }

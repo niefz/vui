@@ -1,4 +1,21 @@
 <template>
+  <router-link
+    class="v-menu--item"
+    :class="[
+      {
+        ['disabled']: disabled,
+      }
+    ]"
+    :to="to"
+    :style="style"
+    role="menuitem"
+    aria-selected="false"
+    tag="li"
+    v-if="to">
+    <span class="v-menu--item-inner">
+      <slot></slot>
+    </span>
+  </router-link>
   <li
     class="v-menu--item"
     :class="[
@@ -7,13 +24,14 @@
         ['disabled']: disabled,
       }
     ]"
-    :style="{paddingLeft: paddingLeft + 'px'}"
+    :style="style"
     role="menuitem"
     aria-selected="false"
-    @click="handleClick">
-    <template>
+    @click="handleClick"
+    v-else>
+    <span class="v-menu--item-inner">
       <slot></slot>
-    </template>
+    </span>
   </li>
 </template>
 <script>
@@ -26,13 +44,16 @@
     inject: ['menu'],
     props: {
       index: String,
+      to: String,
       disabled: Boolean,
     },
     computed: {
       active() {
         return this.index === this.menu.active;
       },
-      paddingLeft() {
+      style() {
+        const height = this.menu.height;
+        let style = {};
         let indent = this.menu.indent;
         let parent = this.$parent;
         while (parent && parent.$options.componentName !== 'Menu') {
@@ -43,7 +64,9 @@
           }
           parent = parent.$parent;
         }
-        return indent;
+        style.paddingLeft = `${indent}px`;
+        style.lineHeight = `${height}px`;
+        return style;
       },
     },
     methods: {

@@ -1,26 +1,50 @@
 <template>
   <div class="wrapper">
-    <header></header>
-    <div class="v-scrollbar">
-      <div class="v-scrollbar--wrap">
-        <div class="side-nav">
-          <div class="side-nav--container">
-            <v-menu :default-active="defaultActive">
-              <template v-for="(nav, index) in navigations">
-                <v-menu-item :index="nav.name" v-if="nav.path">
-                  <router-link :to="nav.path">{{ nav.name }}</router-link>
-                </v-menu-item>
+    <header class="header clearfix">
+      <v-row>
+        <v-col :xs="24" :sm="24" :md="6" :lg="5" :xl="5">
+          <a class="header-logo">
+            Free Vui
+          </a>
+        </v-col>
+        <v-col :xs="0" :sm="0" :md="18" :lg="19" :xl="20">
+          <div class="versions">
+            <v-select value="1.0.1">
+              <v-select-menu>
+                <v-select-menu-option value="1.0.1">1.0.1</v-select-menu-option>
+              </v-select-menu>
+            </v-select>
+          </div>
+          <div class="menu">
+            <v-menu :height="64" mode="horizontal">
+              <v-menu-item to="/#/zh-CN/introduce">首页</v-menu-item>
+              <v-menu-item to="/#/zh-CN/design">设计</v-menu-item>
+              <v-menu-item to="/#/zh-CN/changelog">组件</v-menu-item>
+            </v-menu>
+          </div>
+        </v-col>
+      </v-row>
+    </header>
+    <div class="main">
+      <v-row>
+        <v-col :xs="24" :sm="24" :md="24" :lg="5" :xl="4">
+          <div class="side-nav">
+            <v-menu :default-active="defaultActive" :indent="40">
+              <template v-for="(nav, index) in nav">
+                <template v-if="nav.path">
+                  <v-menu-item :to="nav.path">{{ nav.name }}</v-menu-item>
+                </template>
                 <v-menu-sub :index="nav.name" v-else>
                   <template slot="title">
-                    <h4>{{ nav.name }}</h4>
+                    {{ nav.name }}
                     <i class="v-menu--sub-title-arrow"></i>
                   </template>
                   <template v-if="nav.child">
                     <v-menu-item
-                      :index="child.name"
+                      :to="child.path"
                       :key="index"
                       v-for="(child, index) in nav.child">
-                      <router-link :to="child.path">{{ child.name }}</router-link>
+                      {{ child.name }}
                     </v-menu-item>
                   </template>
                   <template v-if="nav.groups">
@@ -29,14 +53,14 @@
                       :key="index"
                       v-for="(group, index) in nav.groups">
                       <template slot="title">
-                        <h4>{{ group.name }}</h4>
+                        {{ group.name }}
                         <i class="v-submenu--title-arrow"></i>
                       </template>
                       <v-menu-item
-                        :index="child.name"
+                        :to="child.path"
                         :key="index"
                         v-for="(child, index) in group.child">
-                        <router-link :to="child.path">{{ child.name }}</router-link>
+                        {{ child.name }}
                       </v-menu-item>
                     </v-menu-item-group>
                   </template>
@@ -44,33 +68,45 @@
               </template>
             </v-menu>
           </div>
-        </div>
-        <div class="container">
+        </v-col>
+        <v-col :xs="24" :sm="24" :md="24" :lg="19" :xl="20">
           <router-view></router-view>
-        </div>
-      </div>
+        </v-col>
+      </v-row>
     </div>
-    <footer></footer>
+    <footer class="clearfix"></footer>
   </div>
 </template>
 <script>
   import 'highlight.js/styles/color-brewer.css';
-  import navigations from './nav.json';
+  import nav from './nav.json';
+  import Row from '@/components/row';
+  import Col from '@/components/col';
   import Menu from '@/components/menu';
   import MenuSub from '@/components/menu-sub';
   import MenuItem from '@/components/menu-item';
   import MenuItemGroup from '@/components/menu-item-group';
+  import Badge from '@/components/badge';
+  import Select from '@/components/select';
+  import SelectMenu from '@/components/select-menu';
+  import SelectMenuOption from '@/components/select-menu-option';
 
   export default {
     components: {
+      VRow: Row,
+      VCol: Col,
       VMenu: Menu,
       VMenuSub: MenuSub,
       VMenuItem: MenuItem,
       VMenuItemGroup: MenuItemGroup,
+      VBadge: Badge,
+      VSelect: Select,
+      VSelectMenu: SelectMenu,
+      VSelectMenuOption: SelectMenuOption,
     },
     data() {
       return {
-        navigations,
+        nav,
         defaultActive: '',
       };
     },
@@ -89,6 +125,35 @@
     height: 100%;
   }
 
+  .header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background: $color-FFFFFF;
+    box-shadow: 0 2px 8px $color-E8E8E8;
+    transition: all .3s;
+    &-logo {
+      float: left;
+      height: 64px;
+      padding-left: 40px;
+      font-size: 18px;
+      line-height: 64px;
+      white-space: nowrap;
+      overflow: hidden;
+      img {
+        height: 32px;
+        margin-right: 16px;
+      }
+    }
+    .menu, .versions {
+      float: right;
+    }
+    .versions {
+      width: 80px;
+      margin: 16px 20px;
+    }
+  }
+
   .v-scrollbar {
     position: relative;
     height: 100%;
@@ -99,15 +164,13 @@
     }
   }
 
-  .side-nav {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 320px;
-    transition: padding-top .3s;
-    &--container {
+  .main {
+    padding-top: 64px;
+    .side-nav {
       height: 100%;
+      padding: 20px 0;
       border-right: 1px solid #E8E8E8;
+      box-sizing: border-box;
       .v-menu {
         width: calc(100% + 1px);
         height: 100%;
@@ -119,12 +182,8 @@
     }
   }
 
-  .container {
-    padding-left: 320px;
-  }
-
   .article {
-    padding: 0 160px 0 60px;
+    padding: 40px 160px 0 60px;
     > h1 {
       margin-top: 10px;
       margin-bottom: 20px;

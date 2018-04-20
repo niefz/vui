@@ -2,7 +2,7 @@
   <ul
     class="v-menu"
     :class="[
-      'v-menu-' + mode,
+      'v-menu--' + mode,
     ]"
     role="menu">
     <slot></slot>
@@ -24,6 +24,10 @@
       mode: {
         type: String,
         default: 'vertical',
+      },
+      height: {
+        type: Number,
+        default: 40,
       },
       indent: {
         type: Number,

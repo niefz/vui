@@ -1,7 +1,9 @@
 <template>
   <li class="v-menu--item-group">
-    <div class="v-menu--item-group-title" :style="{paddingLeft: paddingLeft + 'px'}">
-      <slot name="title"></slot>
+    <div class="v-menu--item-group-title" :style="style">
+      <h4>
+        <slot name="title"></slot>
+      </h4>
     </div>
     <ul class="v-menu--item-group-menu">
       <slot></slot>
@@ -14,7 +16,9 @@
     componentName: 'MenuItemGroup',
     inject: ['menu'],
     computed: {
-      paddingLeft() {
+      style() {
+        const height = this.menu.height;
+        let style = {};
         let indent = this.menu.indent;
         let parent = this.$parent;
         while (parent && parent.$options.componentName !== 'Menu') {
@@ -23,7 +27,9 @@
           }
           parent = parent.$parent;
         }
-        return indent;
+        style.paddingLeft = `${indent}px`;
+        style.lineHeight = `${height}px`;
+        return style;
       },
     },
     methods: {},
