@@ -111,6 +111,13 @@ export default {
       }, 'checkbox'),
     },
     {
+      path: '/zh-CN/components/switch',
+      name: 'Switch 开关',
+      component: switcher => require.ensure([], (require) => {
+        switcher(require('../docs/zh-CN/switch.md'));
+      }, 'switch'),
+    },
+    {
       path: '/zh-CN/components/select',
       name: 'Select 选择器',
       component: select => require.ensure([], (require) => {
