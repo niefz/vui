@@ -8,7 +8,10 @@
           ['disabled']: disabled,
         }
       ]">
-      <a :href="href" @click="handleClick">{{title}}</a>
+      <template v-if="disabled">{{title}}</template>
+      <template v-else>
+        <a :href="href" @click="handleClick">{{title}}</a>
+      </template>
     </div>
     <slot></slot>
   </div>
