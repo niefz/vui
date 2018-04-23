@@ -155,10 +155,10 @@
             strokeColor = '#52C41A';
             break;
           case 'exception':
-            strokeColor = '#F5222D';
+            strokeColor = '#FAAD14';
             break;
           default:
-            strokeColor = '#148EF6';
+            strokeColor = '#1890FF';
             break;
         }
         return strokeColor;

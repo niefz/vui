@@ -94,7 +94,7 @@
       @include make-color($color-FFC53D, $color-FFC53D, $color-FFFFFF);
     }
     &:focus:after {
-      border-color: #FAAD14;
+      border-color: $color-FAAD14;
     }
     &.disabled, &.disabled:hover {
       @include make-color($color-FDE8C7, $color-FDE8C7, $color-FFFFFF);
