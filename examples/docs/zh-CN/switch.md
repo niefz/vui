@@ -10,6 +10,9 @@
 <v-row>
   <v-switch v-model="checked"></v-switch>
 </v-row>
+<v-row>
+  <v-switch v-model="checkDisabled" disabled></v-switch>
+</v-row>
 ```
 :::
 
@@ -24,7 +27,8 @@
     },
     data() {
       return {
-        checked: false
+        checked: false,
+        checkDisabled: true,
       };
     },
     methods: {
