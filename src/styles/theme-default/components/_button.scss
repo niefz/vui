@@ -1,21 +1,3 @@
-/* variable */
-$border-radius: 3;
-$button-margin: 10;
-$color-595959: #595959;
-$color-BFBFBF: #BFBFBF;
-$color-D9D9D9: #D9D9D9;
-$color-EDEDED: #EDEDED;
-$color-FFFFFF: #FFFFFF;
-$color-148EF6: #148EF6;
-$color-43A5F8: #43A5F8;
-$color-89C6FA: #89C6FA;
-$color-F5222D: #F5222D;
-$color-F74E57: #F74E57;
-$color-FA9096: #FA9096;
-$color-FAAD14: #FAAD14;
-$color-FBBD43: #FBBD43;
-$color-FCD689: #FCD689;
-
 /* mixin */
 @mixin make-color($border-color, $background-color, $color) {
   border-color: $border-color;
@@ -54,7 +36,7 @@ $color-FCD689: #FCD689;
 }
 
 .v-btn--button {
-  padding: 0 15px;
+  padding: 0 10px;
   border: 1px solid;
   &:focus:after {
     display: block;
@@ -79,7 +61,7 @@ $color-FCD689: #FCD689;
       @include make-color($color-43A5F8, transparent, $color-43A5F8);
     }
     &:focus:after {
-      border-color: $color-148EF6;
+      border-color: $color-1E88E5;
     }
     &.disabled, &.disabled:hover {
       @include make-color($color-EDEDED, transparent, $color-BFBFBF);
@@ -87,19 +69,19 @@ $color-FCD689: #FCD689;
     }
   }
   &.v-btn--primary {
-    @include make-color($color-148EF6, $color-148EF6, $color-FFFFFF);
+    @include make-color($color-1E88E5, $color-1E88E5, $color-FFFFFF);
     &:hover, &:focus {
       @include make-color($color-43A5F8, $color-43A5F8, $color-FFFFFF);
     }
     &:focus:after {
-      border-color: $color-148EF6;
+      border-color: $color-1E88E5;
     }
     &.disabled, &.disabled:hover {
       @include make-color($color-89C6FA, $color-89C6FA, $color-FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
-      @include make-color($color-148EF6, transparent, $color-148EF6);
+      @include make-color($color-1E88E5, transparent, $color-1E88E5);
       &.disabled, &.disabled:hover {
         @include make-color($color-89C6FA, transparent, $color-89C6FA);
         cursor: not-allowed;
@@ -161,7 +143,7 @@ $color-FCD689: #FCD689;
     }
   }
   &.v-btn--primary {
-    @include make-color(transparent, transparent, $color-148EF6);
+    @include make-color(transparent, transparent, $color-1E88E5);
     &:hover, &:focus {
       @include make-color(transparent, transparent, $color-43A5F8);
     }

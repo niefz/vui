@@ -1,12 +1,3 @@
-/* variable */
-$border-radius: 3;
-$color-595959: #595959;
-$color-148EF6: #148EF6;
-$color-FFFFFF: #FFFFFF;
-$color-52C41A: #52C41A;
-$color-FAAD14: #FAAD14;
-$color-F5222D: #F5222D;
-
 /* mixin */
 @mixin make-color($border-color, $background-color, $color) {
   border: 1px solid $border-color;
@@ -57,9 +48,9 @@ $color-F5222D: #F5222D;
 }
 
 .v-tag--info {
-  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-148EF6);
+  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-1E88E5);
   .v-tag--close:hover {
-    background-color: $color-148EF6;
+    background-color: $color-1E88E5;
   }
 }
 

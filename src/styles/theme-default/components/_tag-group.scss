@@ -1,7 +1,3 @@
-/* variable for button */
-$color-148EF6: #148EF6;
-$color-FFFFFF: #FFFFFF;
-
 .v-tag-group {
   position: relative;
   z-index: 1;
@@ -9,7 +5,7 @@ $color-FFFFFF: #FFFFFF;
   .v-tag {
     cursor: pointer;
     &.checked {
-      background-color: $color-148EF6;
+      background-color: $color-1E88E5;
       color: $color-FFFFFF;
     }
   }
