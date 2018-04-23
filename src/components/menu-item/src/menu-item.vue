@@ -1,5 +1,6 @@
 <template>
   <router-link
+    tag="li"
     class="v-menu--item"
     :class="[
       {
@@ -10,8 +11,7 @@
     :style="style"
     role="menuitem"
     aria-selected="false"
-    tag="li"
-    v-if="to">
+    v-if="to && !disabled">
     <span class="v-menu--item-inner">
       <slot></slot>
     </span>
