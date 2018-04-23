@@ -44,16 +44,16 @@
     }
     &.finish {
       .v-steps--item-tail {
-        background-color: $color-1E88E5;
+        background-color: $color-1890FF;
       }
       .v-steps--icon-inner {
-        border-color: $color-1E88E5;
-        color: $color-1E88E5;
+        border-color: $color-1890FF;
+        color: $color-1890FF;
       }
       .v-steps--item-title {
-        color: $color-1E88E5;
+        color: $color-1890FF;
         &:after {
-          background-color: $color-1E88E5;
+          background-color: $color-1890FF;
         }
       }
       .v-steps--item-description {
@@ -65,8 +65,8 @@
         background-color: $color-D9D9D9;
       }
       .v-steps--icon-inner {
-        border-color: $color-1E88E5;
-        background-color: $color-1E88E5;
+        border-color: $color-1890FF;
+        background-color: $color-1890FF;
         color: $color-FFFFFF;
       }
       .v-steps--item-title {

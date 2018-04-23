@@ -10,18 +10,18 @@
     right: 0;
     bottom: 0;
     content: "";
-    border-right: 3px solid $color-1E88E5;
+    border-right: 3px solid $color-1890FF;
     opacity: 0;
     transform: scaleY(.0001);
     transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
   }
   &:hover {
-    color: $color-1E88E5;
+    color: $color-1890FF;
     cursor: pointer;
   }
   &.active {
     background-color: $color-E6F7FF;
-    color: $color-1E88E5;
+    color: $color-1890FF;
     &:after {
       opacity: 1;
       transform: scaleY(1);
@@ -93,17 +93,17 @@
       left: 20px;
       bottom: 0;
       content: "";
-      border-bottom: 3px solid $color-1E88E5;
+      border-bottom: 3px solid $color-1890FF;
       opacity: 0;
       transform: scaleX(.0001);
       transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
     }
     &:hover {
-      color: $color-1E88E5;
+      color: $color-1890FF;
       cursor: pointer;
     }
     &.active {
-      color: $color-1E88E5;
+      color: $color-1890FF;
       &:after {
         opacity: 1;
         transform: scaleX(1);

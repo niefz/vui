@@ -48,9 +48,9 @@
 }
 
 .v-tag--info {
-  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-1E88E5);
+  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-1890FF);
   .v-tag--close:hover {
-    background-color: $color-1E88E5;
+    background-color: $color-1890FF;
   }
 }
 

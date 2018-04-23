@@ -9,7 +9,7 @@
   width: $width;
   height: $height;
   font-size: $font-size;
-  line-height: $height;
+  line-height: $height - 2;
 }
 
 .v-btn {
@@ -58,10 +58,10 @@
       @include make-color($color-FFFFFF, transparent, $color-FFFFFF);
     }
     &:hover, &:focus {
-      @include make-color($color-43A5F8, transparent, $color-43A5F8);
+      @include make-color($color-40A9FF, transparent, $color-40A9FF);
     }
     &:focus:after {
-      border-color: $color-1E88E5;
+      border-color: $color-1890FF;
     }
     &.disabled, &.disabled:hover {
       @include make-color($color-EDEDED, transparent, $color-BFBFBF);
@@ -69,21 +69,21 @@
     }
   }
   &.v-btn--primary {
-    @include make-color($color-1E88E5, $color-1E88E5, $color-FFFFFF);
+    @include make-color($color-1890FF, $color-1890FF, $color-FFFFFF);
     &:hover, &:focus {
-      @include make-color($color-43A5F8, $color-43A5F8, $color-FFFFFF);
+      @include make-color($color-40A9FF, $color-40A9FF, $color-FFFFFF);
     }
     &:focus:after {
-      border-color: $color-1E88E5;
+      border-color: $color-1890FF;
     }
     &.disabled, &.disabled:hover {
-      @include make-color($color-89C6FA, $color-89C6FA, $color-FFFFFF);
+      @include make-color($color-C5E3FF, $color-C5E3FF, $color-FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
-      @include make-color($color-1E88E5, transparent, $color-1E88E5);
+      @include make-color($color-1890FF, transparent, $color-1890FF);
       &.disabled, &.disabled:hover {
-        @include make-color($color-89C6FA, transparent, $color-89C6FA);
+        @include make-color($color-C5E3FF, transparent, $color-C5E3FF);
         cursor: not-allowed;
       }
     }
@@ -91,19 +91,19 @@
   &.v-btn--warning {
     @include make-color($color-FAAD14, $color-FAAD14, $color-FFFFFF);
     &:hover, &:focus {
-      @include make-color($color-FBBD43, $color-FBBD43, $color-FFFFFF);
+      @include make-color($color-FFC53D, $color-FFC53D, $color-FFFFFF);
     }
     &:focus:after {
       border-color: #FAAD14;
     }
     &.disabled, &.disabled:hover {
-      @include make-color($color-FCD689, $color-FCD689, $color-FFFFFF);
+      @include make-color($color-FDE8C7, $color-FDE8C7, $color-FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
       @include make-color($color-FAAD14, transparent, $color-FAAD14);
       &.disabled, &.disabled:hover {
-        @include make-color($color-FCD689, transparent, $color-FCD689);
+        @include make-color($color-FDE8C7, transparent, $color-FDE8C7);
         cursor: not-allowed;
       }
     }
@@ -111,19 +111,19 @@
   &.v-btn--danger {
     @include make-color($color-F5222D, $color-F5222D, $color-FFFFFF);
     &:hover, &:focus {
-      @include make-color($color-F74E57, $color-F74E57, $color-FFFFFF);
+      @include make-color($color-FF4D4F, $color-FF4D4F, $color-FFFFFF);
     }
     &:focus:after {
       border-color: $color-F5222D;
     }
     &.disabled, &.disabled:hover {
-      @include make-color($color-FA9096, $color-FA9096, $color-FFFFFF);
+      @include make-color($color-FCC7CA, $color-FCC7CA, $color-FFFFFF);
       cursor: not-allowed;
     }
     &.plain {
       @include make-color($color-F5222D, transparent, $color-F5222D);
       &.disabled, &.disabled:hover {
-        @include make-color($color-FA9096, transparent, $color-FA9096);
+        @include make-color($color-FCC7CA, transparent, $color-FCC7CA);
         cursor: not-allowed;
       }
     }
@@ -135,7 +135,7 @@
   &.v-btn--default {
     @include make-color(transparent, transparent, $color-595959);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, $color-43A5F8);
+      @include make-color(transparent, transparent, $color-40A9FF);
     }
     &.disabled, &.disabled:hover {
       @include make-color(transparent, transparent, $color-BFBFBF);
@@ -143,32 +143,32 @@
     }
   }
   &.v-btn--primary {
-    @include make-color(transparent, transparent, $color-1E88E5);
+    @include make-color(transparent, transparent, $color-1890FF);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, $color-43A5F8);
+      @include make-color(transparent, transparent, $color-40A9FF);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, $color-89C6FA);
+      @include make-color(transparent, transparent, $color-C5E3FF);
       cursor: not-allowed;
     }
   }
   &.v-btn--warning {
     @include make-color(transparent, transparent, $color-FAAD14);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, $color-FBBD43);
+      @include make-color(transparent, transparent, $color-FFC53D);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, $color-FCD689);
+      @include make-color(transparent, transparent, $color-FDE8C7);
       cursor: not-allowed;
     }
   }
   &.v-btn--danger {
     @include make-color(transparent, transparent, $color-F5222D);
     &:hover, &:focus {
-      @include make-color(transparent, transparent, $color-F74E57);
+      @include make-color(transparent, transparent, $color-FF4D4F);
     }
     &.disabled, &.disabled:hover {
-      @include make-color(transparent, transparent, $color-FA9096);
+      @include make-color(transparent, transparent, $color-FCC7CA);
       cursor: not-allowed;
     }
   }

@@ -41,11 +41,11 @@
     margin-top: 8px;
     margin-bottom: 8px;
     padding: 16px 0;
-    background-color: #43A5F8;
+    background-color: #40A9FF;
     color: #FFFFFF;
     text-align: center;
     &:nth-child(odd) {
-      background-color: #148EF6;
+      background-color: #1890FF;
     }
   }
 }

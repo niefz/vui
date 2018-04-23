@@ -19,23 +19,23 @@
     text-align: right;
   }
   &--info {
-    border-color: rgba(20, 142, 246, .1);
-    background-color: rgba(20, 142, 246, .1);
-    color: $color-1E88E5;
+    border-color: $color-C5E3FF;
+    background-color: $color-E6F7FF;
+    color: $color-1890FF;
   }
   &--success {
-    border-color: rgba(82, 196, 26, .1);
-    background-color: rgba(82, 196, 26, .1);
+    border-color: $color-D3F0C5;
+    background-color: $color-F6FFED;
     color: $color-52C41A;
   }
   &--warning {
-    border-color: rgba(250, 173, 20, .1);
-    background-color: rgba(250, 173, 20, .1);
+    border-color: $color-FDE8C7;
+    background-color: $color-FFFBE6;
     color: $color-FAAD14;
   }
   &--danger {
-    border-color: rgba(245, 34, 45, .1);
-    background-color: rgba(245, 34, 45, .1);
+    border-color: $color-FCC7CA;
+    background-color: $color-FFF1F0;
     color: $color-F5222D;
   }
   &--with-icon {

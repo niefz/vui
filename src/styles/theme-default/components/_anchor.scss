@@ -18,7 +18,7 @@
       margin-top: 13px;
       margin-bottom: 13px;
       margin-left: -4px;
-      border: 2px solid $color-1E88E5;
+      border: 2px solid $color-1890FF;
       background-color: $color-FFFFFF;
       border-radius: 100%;
       transform-origin: 0 0;
@@ -29,10 +29,10 @@
     padding: 8px 10px;
     &-inner {
       &.active {
-        color: $color-1E88E5;
+        color: $color-1890FF;
       }
       &:hover {
-        color: $color-43A5F8;
+        color: $color-40A9FF;
       }
       &.disabled {
         color: $color-BFBFBF;

@@ -25,7 +25,7 @@
       line-height: 32px;
       cursor: pointer;
       &:hover {
-        color: $color-43A5F8;
+        color: $color-40A9FF;
       }
     }
   }
@@ -69,7 +69,7 @@
       }
       &.start-date, &.end-date {
         .v-picker-date--table-cell-inner {
-          background-color: $color-1E88E5;
+          background-color: $color-1890FF;
           color: $color-FFFFFF;
         }
       }
@@ -87,17 +87,17 @@
           color: $color-8C8C8C;
         }
         &.today {
-          border-color: $color-1E88E5;
+          border-color: $color-1890FF;
           font-weight: 600;
-          color: $color-1E88E5;
+          color: $color-1890FF;
         }
         &.next-month-cell {
           color: $color-8C8C8C;
         }
         &:hover {
-          border-color: $color-1E88E5;
-          background-color: $color-E6F6FF;
-          color: $color-1E88E5;
+          border-color: $color-1890FF;
+          background-color: $color-E6F7FF;
+          color: $color-1890FF;
         }
         &.disabled {
           border-color: transparent;
@@ -167,7 +167,7 @@
           cursor: pointer;
           &:hover {
             font-weight: 600;
-            color: $color-1E88E5;
+            color: $color-1890FF;
           }
           &.selected {
             font-weight: 600;

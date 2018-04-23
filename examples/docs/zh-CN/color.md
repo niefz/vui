@@ -8,13 +8,13 @@
 
 <v-row>
   <v-col :span="8">
-    <div class="color-box primary">Normal<div class="value">#148EF6</div></div>
+    <div class="color-box primary">Normal<div class="value">#1890FF</div></div>
   </v-col>
   <v-col :span="8">
-    <div class="color-box light-primary">Hover<div class="value">#43A5F8</div></div>
+    <div class="color-box light-primary">Hover<div class="value">#40A9FF</div></div>
   </v-col>
   <v-col :span="8">
-    <div class="color-box dark-primary">Active<div class="value">#066ACF</div></div>
+    <div class="color-box dark-primary">Active<div class="value">#096DD9</div></div>
   </v-col>
 </v-row>
 
@@ -40,7 +40,7 @@
 
 <v-row>
   <v-col :span="6">
-    <div class="color-box text-link">链接 Link<div class="value">#148EF6</div></div>
+    <div class="color-box text-link">链接 Link<div class="value">#1890FF</div></div>
   </v-col>
   <v-col :span="6">
     <div class="color-box text-primary">标题 Title<div class="value">#262626</div></div>
@@ -91,13 +91,13 @@
     box-sizing: border-box;
   }
   .primary {
-    background-color: #148EF6;
+    background-color: #1890FF;
   }
   .light-primary {
-    background-color: #43A5F8;
+    background-color: #40A9FF;
   }
   .dark-primary {
-    background-color: #066ACF;
+    background-color: #096DD9;
   }
   .success {
     background-color: #52C41A;
@@ -118,7 +118,7 @@
     background-color: #8C8C8C;
   }
   .text-link {
-    background-color: #148EF6;
+    background-color: #1890FF;
   }
   .text-disabled {
     background-color: #BFBFBF;

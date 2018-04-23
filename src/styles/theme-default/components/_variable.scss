@@ -1,27 +1,65 @@
-/* variable */
+/* border radius */
 $border-radius: 3;
+
+/** button margin **/
 $button-margin: 10;
-$color-066ACF: #066ACF;
-$color-89C6FA: #bed1fa;
-$color-1E88E5: #568bfc;
+
+/** title **/
 $color-262626: #262626;
-$color-333333: #333333;
-$color-52C41A: #52C41A;
+/** primary text **/
 $color-595959: #595959;
+/** secondary text **/
 $color-8C8C8C: #8C8C8C;
+/** disabled text **/
 $color-BFBFBF: #BFBFBF;
+
+/** border **/
 $color-D9D9D9: #D9D9D9;
-$color-E6F6FF: #E6F6FF;
-$color-E6F7FF: #E6F7FF;
-$color-E8E8E8: #E8E8E8;
+/** disabled border **/
 $color-EDEDED: #EDEDED;
+
+/** divider **/
+$color-E8E8E8: #E8E8E8;
+
+/** primary **/
+$color-1890FF: #1890FF;
+/** primary hover **/
+$color-40A9FF: #40A9FF;
+/** primary disabled **/
+$color-C5E3FF: #C5E3FF;
+/** primary alert **/
+$color-E6F7FF: #E6F7FF;
+
+/** warning **/
+$color-FAAD14: #FAA51F;
+/** warning hover **/
+$color-FFC53D: #FFC53D;
+/** warning disabled **/
+$color-FDE8C7: #FDE8C7;
+/** warning alert **/
+$color-FFFBE6: #FFFBE6;
+
+/** danger **/
+$color-F5222D: #F5222D;
+/** danger hover **/
+$color-FF4D4F: #FF4D4F;
+/** danger disabled **/
+$color-FCC7CA: #FCC7CA;
+/** danger alert **/
+$color-FFF1F0: #FFF1F0;
+
+/** success **/
+$color-52C41A: #52C41A;
+/** success hover **/
+$color-73D13D: #73D13D;
+/** success disabled **/
+$color-D3F0C5: #D3F0C5;
+/** success alert **/
+$color-F6FFED: #F6FFED;
+
+/** background **/
 $color-F5F5F5: #F5F5F5;
-$color-FFFFFF: #FFFFFF;
-$color-43A5F8: #43A5F8;
-$color-F5222D: #f45b63;
-$color-F74E57: #F74E57;
-$color-FA9096: #FA9096;
-$color-FAAD14: #FAAD14;
+/** thead background **/
 $color-FAFAFA: #FAFAFA;
-$color-FBBD43: #FBBD43;
-$color-FCD689: #FCD689;
+
+$color-FFFFFF: #FFFFFF;

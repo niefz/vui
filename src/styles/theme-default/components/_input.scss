@@ -39,7 +39,7 @@
       transition: all .3s cubic-bezier(.645, .045, .355, 1);
       &:focus {
         z-index: 2;
-        border-color: $color-1E88E5;
+        border-color: $color-1890FF;
         box-shadow: 0 0 0 2px rgba(20, 142, 246, .2);
       }
       &:disabled {

@@ -62,16 +62,16 @@
     border-radius: $border-radius + px;
   }
   &.checked {
-    border-color: $color-1E88E5;
+    border-color: $color-1890FF;
     .v-radio--input-inner {
-      border-color: $color-1E88E5;
-      background-color: $color-1E88E5;
+      border-color: $color-1890FF;
+      background-color: $color-1890FF;
       &:after {
         transform: translate(-50%, -50%) scale(1);
       }
     }
     .v-radio--label {
-      color: $color-1E88E5;
+      color: $color-1890FF;
     }
   }
   &.disabled {
