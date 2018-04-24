@@ -4,7 +4,7 @@
       <v-row>
         <v-col :xs="24" :sm="24" :md="6" :lg="5" :xl="5">
           <a class="header-logo">
-            Free Vui
+            Free-ui
           </a>
         </v-col>
         <v-col :xs="0" :sm="0" :md="18" :lg="19" :xl="20">
@@ -131,11 +131,13 @@
   }
 
   .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     z-index: 10;
-    width: 100%;
     background-color: $color-primary;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 5px $color-background;
     box-sizing: border-box;
     color: $color-white;
     transition: all .3s;
@@ -169,20 +171,15 @@
     }
   }
 
-  .v-scrollbar {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    &--wrap {
-      height: 100%;
-      overflow-y: scroll;
-    }
-  }
-
   .main {
+    padding-top: 64px;
     .side-nav {
+      position: fixed;
+      top: 64px;
+      bottom: 0;
+      left: 0;
       padding-top: 20px;
-      height: 100%;
+      padding-bottom: 20px;
       border-right: 1px solid $color-divider;
       box-sizing: border-box;
       .v-menu {
@@ -218,7 +215,7 @@
       margin-top: 30px;
       margin-bottom: 20px;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 16px;
     }
     ol > li {
       margin-left: 20px;
