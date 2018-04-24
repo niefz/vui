@@ -88,7 +88,7 @@
     background-color: $color-primary;
     box-sizing: border-box;
     transform-origin: 0 0;
-    transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1), -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
+    transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1);
   }
   &-item {
     position: relative;

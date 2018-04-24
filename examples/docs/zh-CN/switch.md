@@ -8,7 +8,7 @@
 
 ```html
 <v-row>
-  <v-switch v-model="checked"></v-switch>
+  <v-switch v-model="checked" :before-switch="beforeSwitch"></v-switch>
 </v-row>
 <v-row>
   <v-switch v-model="checkDisabled" disabled></v-switch>
@@ -32,6 +32,10 @@
       };
     },
     methods: {
+      beforeSwitch(callback) {
+        console.log(this.checked);
+        callback();
+      },
     },
   };
 </script>

@@ -32,7 +32,7 @@
         border-radius: 100%;
         background-color: $color-white;
         transform: translate(-50%, -50%) scale(0);
-        transition: transform .15s cubic-bezier(.71, -.46, .88, .6);
+        transition: transform .3s cubic-bezier(.71, -.46, .88, .6);
       }
     }
     &-original {

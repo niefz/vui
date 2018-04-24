@@ -1,19 +1,21 @@
 <template>
   <div
     class="v-switch"
-    :class="{ 
-      'is-disabled': switchDisabled,
-      'is-checked': checked }"
-  >
-    <label class="v-switch__ground">
+    :class="[
+      {
+        ['disabled']: isDisabled,
+        ['checked']: checked
+      }
+    ]"
+    :style="style">
+    <label class="v-switch--inner">
       <input
-        class="v-switch__input"
-        type="checkbox"
-        @change="handleChange"
         ref="input"
+        class="v-switch--inner-input"
+        type="checkbox"
         :name="name"
-        :disabled="switchDisabled"
-      >
+        :disabled="isDisabled"
+        @change="handleChange">
     </label>
   </div>
 </template>
@@ -21,8 +23,12 @@
   export default {
     name: 'Switch',
     props: {
+      width: {
+        type: Number,
+        default: 40
+      },
       value: {
-        type: Boolean,
+        type: [Boolean, String, Number],
         default: false
       },
       disabled: {
@@ -33,33 +39,44 @@
         type: String,
         default: ''
       },
+      beforeSwitch: Function,
     },
     data() {
-      return {
-      };
-    },
-    created() {
-    },
-    mounted() {
+      return {};
     },
     computed: {
+      style() {
+        let style = {};
+        style.width = `${this.width}px`;
+        return style;
+      },
       checked () {
         return this.value;
       },
-      switchDisabled () {
+      isDisabled () {
         return this.disabled;
       },
     },
     watch: {
-      value() {
-        this.$emit('change', this.$refs['input'].checked);
+      value(val) {
+        this.$emit('change', val);
       }
     },
     methods: {
-      handleChange(event) {
-        console.log(event);
-        this.$emit('input', this.$refs['input'].checked);
+      change() {
+        this.$emit('input', this.$refs.input.checked);
       },
+      handleChange() {
+        if (typeof this.beforeSwitch === 'function') {
+          this.beforeSwitch(this.change);
+        } else {
+          this.change();
+        }
+      },
+    },
+    created() {
+    },
+    mounted() {
     },
   };
 </script>

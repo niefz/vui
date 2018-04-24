@@ -1,10 +1,10 @@
 /* variable */
 $all-transition: all .3s cubic-bezier(.645, .045, .355, 1) !default;
 $fade-linear-transition: opacity .3s cubic-bezier(.23, 1, .32, 1) !default;
-$fade-linear-transition: opacity .2s linear !default;
-$md-fade-transition: transform .3s cubic-bezier(.23, 1, .32, 1), opacity 300ms cubic-bezier(.23, 1, .32, 1) !default;
-$border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
-$color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
+$fade-linear-transition: opacity .3s linear !default;
+$md-fade-transition: transform .3s cubic-bezier(.23, 1, .32, 1), opacity .3s cubic-bezier(.23, 1, .32, 1) !default;
+$border-transition-base: border-color .3s cubic-bezier(.645, .045, .355, 1) !default;
+$color-transition-base: color .3s cubic-bezier(.645, .045, .355, 1) !default;
 
 .fade-in-enter-active,
 .fade-in-leave-active {
@@ -92,11 +92,11 @@ $color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
 }
 
 .vertical-collapse-transition {
-  transition: .3s height ease-in-out, .3s padding-top ease-in-out, .3s padding-bottom ease-in-out;
+  transition: height .3s ease-in-out, padding-top .3s ease-in-out, padding-bottom .3s ease-in-out;
 }
 
 .horizontal-collapse-transition {
-  transition: .3s width ease-in-out, .3s padding-left ease-in-out, .3s padding-right ease-in-out;
+  transition: width .3s ease-in-out, padding-left .3s ease-in-out, padding-right .3s ease-in-out;
 }
 
 .opacity-transition {

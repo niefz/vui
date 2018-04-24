@@ -13,7 +13,7 @@
     border-right: 3px solid $color-primary;
     opacity: 0;
     transform: scaleY(.0001);
-    transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
+    transition: transform .3s cubic-bezier(.215, .61, .355, 1), opacity .3s cubic-bezier(.215, .61, .355, 1);
   }
   &:hover {
     color: $color-primary;
@@ -25,7 +25,7 @@
     &:after {
       opacity: 1;
       transform: scaleY(1);
-      transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
+      transition: transform .3s cubic-bezier(.645, .045, .355, 1), opacity .3s cubic-bezier(.645, .045, .355, 1);
     }
   }
   &.disabled {
@@ -42,7 +42,7 @@
 .v-menu {
   width: 100%;
   font-size: 14px;
-  transition: background .3s, width .2s;
+  transition: background .3s, width .3s;
   @extend .clearfix;
 }
 
@@ -96,7 +96,7 @@
       border-bottom: 3px solid $color-primary;
       opacity: 0;
       transform: scaleX(.0001);
-      transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
+      transition: transform .3s cubic-bezier(.215, .61, .355, 1), opacity .3s cubic-bezier(.215, .61, .355, 1);
     }
     &:hover {
       color: $color-primary;
@@ -107,7 +107,7 @@
       &:after {
         opacity: 1;
         transform: scaleX(1);
-        transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .3s cubic-bezier(.645, .045, .355, 1), opacity .3s cubic-bezier(.645, .045, .355, 1);
       }
     }
     &.disabled {

@@ -7,7 +7,7 @@
   box-sizing: border-box;
   border-radius: $border-radius;
   overflow: hidden;
-  transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
+  transition: opacity .3s, transform .3s, left .3s, right .3s, top .3s, bottom .3s;
   &.right {
     right: 16px;
   }
