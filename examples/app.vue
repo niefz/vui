@@ -134,10 +134,10 @@
     position: relative;
     z-index: 10;
     width: 100%;
-    border-bottom: 1px solid $color-divider;
-    background-color: $color-white;
-    box-shadow: 0 2px 8px $color-divider;
+    background-color: $color-primary;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
     box-sizing: border-box;
+    color: $color-white;
     transition: all .3s;
     &-logo {
       float: left;
@@ -155,8 +155,17 @@
     .menu, .versions {
       float: right;
     }
+    .menu .v-menu--item {
+      &.active, &:hover {
+        opacity: .8;
+        color: $color-white;
+      }
+    }
     .versions {
       margin: 16px 40px 16px 20px;
+      .v-btn {
+        border-color: $color-white;
+      }
     }
   }
 
@@ -171,8 +180,8 @@
   }
 
   .main {
-    padding-top: 40px;
     .side-nav {
+      padding-top: 20px;
       height: 100%;
       border-right: 1px solid $color-divider;
       box-sizing: border-box;
@@ -188,36 +197,53 @@
   }
 
   .article {
-    padding: 40px 160px 0 60px;
+    padding: 20px 248px 0 48px;
     > h1 {
+      display: inline-block;
       margin-top: 10px;
-      margin-bottom: 20px;
-      font-size: 28px;
-      line-height: 38px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 24px;
+      &:after {
+        display: block;
+        content: "";
+        width: 50%;
+        height: 1px;
+        margin: 20px 0 10px;
+        background-color: $color-divider;
+        clear: both;
+      }
     }
     > h2 {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-size: 20px;
-      line-height: 38px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    ol > li {
+      margin-left: 20px;
+      padding-left: 4px;
+      list-style-type: decimal;
+      font-size: 14px;
+      line-height: 28px;
     }
     > p {
       margin-top: 1em;
       margin-bottom: 1em;
       font-size: 14px;
+      line-height: 28px;
     }
-    > img {
-      vertical-align: middle;
+    img {
+      max-width: calc(100% - 32px);
     }
     .hljs {
       padding: 20px;
       border: 1px solid $color-border;
-      background-color: $color-thead-background;
-      font-family: Menlo, Monaco, Consolas, Courier, monospace;
+      background-color: $color-background;
+      border-radius: $border-radius;
+      font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
       font-size: 12px;
-      line-height: 1.8;
-      border-radius: 3px;
-      -webkit-font-smoothing: none;
+      line-height: 2;
     }
     .table {
       width: 100%;

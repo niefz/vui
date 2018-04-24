@@ -53,7 +53,7 @@
     animation: buttonEffect .4s;
   }
   &.v-btn--default {
-    @include make-color($color-border, transparent, $color-text-primary);
+    @include make-color($color-border, transparent, inherit);
     &.plain {
       @include make-color($color-white, transparent, $color-white);
     }

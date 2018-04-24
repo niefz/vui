@@ -15,10 +15,6 @@
     transform: scaleY(.0001);
     transition: transform .3s cubic-bezier(.215, .61, .355, 1), opacity .3s cubic-bezier(.215, .61, .355, 1);
   }
-  &:hover {
-    color: $color-primary;
-    cursor: pointer;
-  }
   &.active {
     background-color: $color-primary-alert;
     color: $color-primary;
@@ -27,6 +23,10 @@
       transform: scaleY(1);
       transition: transform .3s cubic-bezier(.645, .045, .355, 1), opacity .3s cubic-bezier(.645, .045, .355, 1);
     }
+  }
+  &:hover {
+    color: $color-primary-hover;
+    cursor: pointer;
   }
   &.disabled {
     color: $color-text-disabled;
@@ -98,10 +98,6 @@
       transform: scaleX(.0001);
       transition: transform .3s cubic-bezier(.215, .61, .355, 1), opacity .3s cubic-bezier(.215, .61, .355, 1);
     }
-    &:hover {
-      color: $color-primary;
-      cursor: pointer;
-    }
     &.active {
       color: $color-primary;
       &:after {
@@ -109,6 +105,10 @@
         transform: scaleX(1);
         transition: transform .3s cubic-bezier(.645, .045, .355, 1), opacity .3s cubic-bezier(.645, .045, .355, 1);
       }
+    }
+    &:hover {
+      color: $color-primary-hover;
+      cursor: pointer;
     }
     &.disabled {
       color: $color-text-disabled;

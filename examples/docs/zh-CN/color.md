@@ -1,10 +1,10 @@
 # Color 色彩
 
-为了避免视觉传达差异，VUI 使用一套特定的调色板作为设计和开发规范，为你所搭建的产品提供一致的外观视觉感受。</p>
+为了避免视觉传达差异，Free-ui Design 使用一套特定的调色板作为设计和开发规范，为你所搭建的产品提供一致的视觉感受。
 
 ## 主色
 
-主要品牌颜色是鲜艳、友好的蓝色。
+主要颜色是鲜艳、友好的蓝色，代表技术的专业能力，沉稳、内涵、低调简约，且包容万物。
 
 <v-row>
   <v-col :span="8">
@@ -38,35 +38,87 @@
 
 中性色常用于文本、背景、边框、阴影等，通过运用不同的中性色，来表现层次结构。
 
-<v-row>
-  <v-col :span="6">
-    <div class="color-box text-link">链接 Link<div class="value">#1890FF</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box text-primary">标题 Title<div class="value">#262626</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box text-regular">正文 Content<div class="value">#595959</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box text-secondary">辅文 Sub Title<div class="value">#8C8C8C</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box text-disabled">失效 Disabled<div class="value">#BFBFBF</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box border">边框 Border<div class="value">#D9D9D9</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box divider">分割线 Divider<div class="value">#E8E8E8</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box background">背景 Background<div class="value">#F5F5F5</div></div>
-  </v-col>
-  <v-col :span="6">
-    <div class="color-box thead">表头 Table Header<div class="value">#FAFAFA</div></div>
-  </v-col>
-</v-row>
+<table class="font-color">
+  <thead>
+    <tr>
+      <td>类型</td>
+      <td>浅色背景下</td>
+      <td class="text-regular dark">深色背景下</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="title">Title</td> 
+      <td class="title light">#262626</td>
+      <td class="title dark">#FFFFFF</td>
+    </tr>
+    <tr>
+      <td class="text-regular">Primary Text</td> 
+      <td class="text-regular light">#595959</td>
+      <td class="text-regular dark">#D9D9D9</td>
+    </tr>
+    <tr>
+      <td class="text-sub">Secondary Text</td> 
+      <td class="text-sub light">#8C8C8C</td>
+      <td class="text-sub dark">#A6A6A6</td>
+    </tr>
+    <tr>
+      <td class="text-disabled">Disabled</td>
+      <td class="text-disabled light">#BFBFBF</td>
+      <td class="text-disabled dark">#737373</td>
+    </tr>
+    <tr>
+      <td class="text-link">Link</td>
+      <td class="text-link light">#1890FF</td>
+      <td class="text-link dark">#737373</td>
+    </tr>
+    <tr>
+      <td class="border">Border</td>
+      <td class="border light">#D9D9D9</td>
+      <td class="border dark">#404040</td>
+    </tr>
+    <tr>
+      <td class="divider">Dividers</td>
+      <td class="divider light">#E8E8E8</td>
+      <td class="divider dark">#262626</td>
+    </tr>
+    <tr>
+      <td class="background">Background</td>
+      <td class="background light">#F5F5F5</td>
+      <td class="background dark">#171717</td>
+    </tr>
+    <tr>
+      <td class="thead">Table Header</td>
+      <td class="thead light">#FAFAFA</td>
+      <td class="thead dark">#0A0A0A</td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  .font-color { width: 100%; }
+  .font-color th, .font-color td { padding: 15px; border-bottom: 1px solid #D9D9D9; }
+  .dark { background-color: #000000; }
+  .title.light { color: #262626; }
+  .title.dark { color: #FFFFFF; }
+  .text-regular { font-size: 12px; }
+  .text-regular.light { color: #595959; }
+  .text-regular.dark { color: #D9D9D9; }
+  .text-sub.light { color: #8C8C8C; }
+  .text-sub.dark { color: #A6A6A6; }
+  .text-disabled.light { color: #BFBFBF; }
+  .text-disabled.dark { color: #737373; }
+  .text-link.light { color: #1890FF; }
+  .text-link.dark { color: #737373; }
+  .border.light { color: #D9D9D9; }
+  .border.dark { color: #404040; }
+  .divider.light { color: #E8E8E8; }
+  .divider.dark { color: #262626; }
+  .background.light { color: #F5F5F5; }
+  .background.dark { color: #171717; }
+  .thead.light { color: #FAFAFA; }
+  .thead.dark { color: #0A0A0A; }
+</style>
 
 <script>
   import Row from '@/components/row';
@@ -107,32 +159,5 @@
   }
   .danger {
     background-color: #F5222D;
-  }
-  .text-primary {
-    background-color: #262626;
-  }
-  .text-regular {
-    background-color: #595959;
-  }
-  .text-secondary {
-    background-color: #8C8C8C;
-  }
-  .text-link {
-    background-color: #1890FF;
-  }
-  .text-disabled {
-    background-color: #BFBFBF;
-  }
-  .border {
-    background-color: #D9D9D9;
-  }
-  .divider {
-    background-color: #E8E8E8;
-  }
-  .background {
-    background-color: #F5F5F5;
-  }
-  .thead {
-    background-color: #FAFAFA;
   }
 </style>
