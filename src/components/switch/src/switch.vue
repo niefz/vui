@@ -22,6 +22,7 @@
 <script>
   export default {
     name: 'Switch',
+    componentName: 'Switch',
     props: {
       width: {
         type: Number,
