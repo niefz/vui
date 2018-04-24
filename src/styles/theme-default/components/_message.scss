@@ -7,7 +7,7 @@
   padding: 10px 20px;
   border: 1px solid;
   box-sizing: border-box;
-  border-radius: $border-radius + px;
+  border-radius: $border-radius;
   transform: translateX(-50%);
   overflow: hidden;
   opacity: 1;
@@ -22,24 +22,24 @@
     text-align: right;
   }
   &--info {
-    border-color: $color-C5E3FF;
-    background-color: $color-E6F7FF;
-    color: $color-1890FF;
+    border-color: $color-primary-disabled;
+    background-color: $color-primary-alert;
+    color: $color-primary;
   }
   &--success {
-    border-color: $color-D3F0C5;
-    background-color: $color-F6FFED;
-    color: $color-52C41A;
+    border-color: $color-success-disabled;
+    background-color: $color-success-alert;
+    color: $color-success;
   }
   &--warning {
-    border-color: $color-FDE8C7;
-    background-color: $color-FFFBE6;
-    color: $color-FAAD14;
+    border-color: $color-warning-disabled;
+    background-color: $color-warning-alert;
+    color: $color-warning;
   }
   &--danger {
-    border-color: $color-FCC7CA;
-    background-color: $color-FFF1F0;
-    color: $color-F5222D;
+    border-color: $color-danger-disabled;
+    background-color: $color-danger-alert;
+    color: $color-danger;
   }
   &--with-icon {
     padding-left: 30px;

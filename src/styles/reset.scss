@@ -77,23 +77,3 @@ a {
 a:hover {
   text-decoration: none;
 }
-
-.clearfix {
-  zoom: 1;
-  &:before, &:after {
-    display: table;
-    content: " ";
-  }
-  &:after {
-    visibility: hidden;
-    clear: both;
-    height: 0;
-    font-size: 0;
-  }
-}
-
-.text-overflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}

@@ -14,10 +14,10 @@
   &--inner {
     height: 100%;
     width: 100%;
-    background-color: $color-1890FF;
-    border-radius: $border-radius + px;
+    background-color: $color-primary;
+    border-radius: $border-radius;
     text-align: center;
-    color: $color-FFFFFF;
+    color: $color-white;
     overflow: hidden;
   }
 }

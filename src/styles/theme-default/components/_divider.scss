@@ -10,7 +10,7 @@
     position: relative;
     top: 50%;
     content: '';
-    border-top: 1px solid $color-E8E8E8;
+    border-top: 1px solid $color-divider;
     transform: translateY(50%);
   }
   .v-divider--inner-text {
@@ -28,7 +28,7 @@
   margin-right: 10px;
   margin-left: 10px;
   vertical-align: middle;
-  border-left: 1px solid $color-E8E8E8;
+  border-left: 1px solid $color-divider;
   .v-divider--inner-text {
     display: block;
     margin: 20px 0;
@@ -37,7 +37,7 @@
     letter-spacing: 4px;
     writing-mode: vertical-rl;
     transform: translateX(-50%);
-    background-color: $color-FFFFFF;
+    background-color: $color-white;
   }
   &.v-divider--dashed {
     border-left-style: dashed;
@@ -51,7 +51,7 @@
   background: transparent;
   font-weight: 400;
   font-size: 12px;
-  color: $color-595959;
+  color: $color-text-primary;
   text-align: center;
   white-space: nowrap;
   &.left {

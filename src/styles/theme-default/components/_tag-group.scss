@@ -5,8 +5,8 @@
   .v-tag {
     cursor: pointer;
     &.checked {
-      background-color: $color-1890FF;
-      color: $color-FFFFFF;
+      background-color: $color-primary;
+      color: $color-white;
     }
   }
 }

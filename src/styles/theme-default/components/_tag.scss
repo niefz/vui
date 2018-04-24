@@ -15,7 +15,7 @@
   display: inline-block;
   padding: 0 10px;
   white-space: nowrap;
-  border-radius: $border-radius + px;
+  border-radius: $border-radius;
   box-sizing: border-box;
   .v-tag--close {
     position: relative;
@@ -28,56 +28,56 @@
     text-align: center;
     cursor: pointer;
     &:hover {
-      color: $color-FFFFFF;
+      color: $color-white;
     }
   }
 }
 
 .v-tag--text {
-  @include make-color(transparent, transparent, $color-595959);
+  @include make-color(transparent, transparent, $color-text-primary);
   .v-tag--close:hover {
-    background-color: $color-595959;
+    background-color: $color-text-primary;
   }
 }
 
 .v-tag--default {
-  @include make-color(rgba(217, 217, 217, 1), transparent, $color-595959);
+  @include make-color(rgba(217, 217, 217, 1), transparent, $color-text-primary);
   .v-tag--close:hover {
-    background-color: $color-595959;
+    background-color: $color-text-primary;
   }
 }
 
 .v-tag--info {
-  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-1890FF);
+  @include make-color(rgba(20, 142, 246, .2), rgba(20, 142, 246, .1), $color-primary);
   .v-tag--close:hover {
-    background-color: $color-1890FF;
+    background-color: $color-primary;
   }
 }
 
 .v-tag--success {
-  @include make-color(rgba(82, 196, 26, .2), rgba(82, 196, 26, .1), $color-52C41A);
+  @include make-color(rgba(82, 196, 26, .2), rgba(82, 196, 26, .1), $color-success);
   .v-tag--close:hover {
-    background-color: $color-52C41A;
+    background-color: $color-success;
   }
 }
 
 .v-tag--warning {
-  @include make-color(rgba(250, 173, 20, .2), rgba(250, 173, 20, .1), $color-FAAD14);
+  @include make-color(rgba(250, 173, 20, .2), rgba(250, 173, 20, .1), $color-warning);
   .v-tag--close:hover {
-    background-color: $color-FAAD14;
+    background-color: $color-warning;
   }
 }
 
 .v-tag--danger {
-  @include make-color(rgba(245, 34, 45, .2), rgba(245, 34, 45, .1), $color-F5222D);
+  @include make-color(rgba(245, 34, 45, .2), rgba(245, 34, 45, .1), $color-danger);
   .v-tag--close:hover {
-    background-color: $color-F5222D;
+    background-color: $color-danger;
   }
 }
 
 .v-tag--custom {
   border-color: transparent;
-  color: $color-FFFFFF;
+  color: $color-white;
   .v-tag--close:hover {
     font-weight: 600;
     background-color: transparent;

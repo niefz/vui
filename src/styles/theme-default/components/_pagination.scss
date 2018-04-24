@@ -71,14 +71,14 @@
     box-sizing: border-box;
     &.active {
       font-weight: 600;
-      color: $color-1890FF;
+      color: $color-primary;
     }
     &:hover {
-      color: $color-40A9FF;
+      color: $color-primary-hover;
       cursor: pointer;
     }
     &.disabled {
-      color: $color-BFBFBF;
+      color: $color-text-disabled;
       cursor: not-allowed;
     }
   }

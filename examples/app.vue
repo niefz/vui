@@ -10,9 +10,9 @@
         <v-col :xs="0" :sm="0" :md="18" :lg="19" :xl="20">
           <div class="versions">
             <v-dropdown trigger="click">
-              <v-button suffix-icon="v-icon-arrow-down">1.0.1</v-button>
+              <v-button suffix-icon="v-icon-arrow-down">1.0.0</v-button>
               <v-dropdown-menu slot="dropdown">
-                <v-dropdown-menu-item value="1.0.1">1.0.1</v-dropdown-menu-item>
+                <v-dropdown-menu-item value="1.0.0">1.0.0</v-dropdown-menu-item>
               </v-dropdown-menu>
             </v-dropdown>
           </div>
@@ -21,6 +21,8 @@
               <v-menu-item to="/#/zh-CN/introduce">首页</v-menu-item>
               <v-menu-item to="/#/zh-CN/design">设计</v-menu-item>
               <v-menu-item to="/#/zh-CN/changelog">组件</v-menu-item>
+              <v-menu-item href="https://pro.free-ui.design/">PRO</v-menu-item>
+              <v-menu-item href="https://github.com/niefz/vui">GitHub</v-menu-item>
             </v-menu>
           </div>
         </v-col>
@@ -132,9 +134,9 @@
     position: relative;
     z-index: 10;
     width: 100%;
-    border-bottom: 1px solid $color-E8E8E8;
-    background-color: $color-FFFFFF;
-    box-shadow: 0 2px 8px $color-E8E8E8;
+    border-bottom: 1px solid $color-divider;
+    background-color: $color-white;
+    box-shadow: 0 2px 8px $color-divider;
     box-sizing: border-box;
     transition: all .3s;
     &-logo {
@@ -154,7 +156,7 @@
       float: right;
     }
     .versions {
-      margin: 16px 40px 16px 0;
+      margin: 16px 40px 16px 20px;
     }
   }
 
@@ -172,7 +174,7 @@
     padding-top: 40px;
     .side-nav {
       height: 100%;
-      border-right: 1px solid $color-E8E8E8;
+      border-right: 1px solid $color-divider;
       box-sizing: border-box;
       .v-menu {
         width: calc(100% + 1px);
@@ -209,8 +211,8 @@
     }
     .hljs {
       padding: 20px;
-      border: 1px solid $color-D9D9D9;
-      background-color: $color-FAFAFA;
+      border: 1px solid $color-border;
+      background-color: $color-thead-background;
       font-family: Menlo, Monaco, Consolas, Courier, monospace;
       font-size: 12px;
       line-height: 1.8;
@@ -225,13 +227,13 @@
       overflow: auto;
       th {
         padding: 10px;
-        border: 1px solid $color-D9D9D9;
-        background-color: $color-FAFAFA;
+        border: 1px solid $color-border;
+        background-color: $color-thead-background;
         text-align: left;
       }
       td {
         padding: 10px;
-        border: 1px solid $color-D9D9D9;
+        border: 1px solid $color-border;
         text-align: left;
       }
     }

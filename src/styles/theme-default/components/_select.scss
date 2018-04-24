@@ -10,36 +10,36 @@
     z-index: 100;
     margin: 5px 0;
     padding: 5px 0;
-    border: 1px solid $color-D9D9D9;
-    background-color: $color-FFFFFF;
-    border-radius: $border-radius + px;
+    border: 1px solid $color-border;
+    background-color: $color-white;
+    border-radius: $border-radius;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
     &--item {
       position: relative;
       padding: 0 20px;
       font-size: 12px;
       line-height: 36px;
-      color: $color-595959;
+      color: $color-text-primary;
       white-space: nowrap;
       cursor: pointer;
       &.divided {
         margin-top: 6px;
-        border-top: 1px solid $color-D9D9D9;
+        border-top: 1px solid $color-border;
         &:before {
           display: block;
           content: "";
           height: 5px;
           margin: 0 -20px;
-          background-color: $color-FFFFFF;
+          background-color: $color-white;
         }
       }
       &.disabled {
-        color: $color-BFBFBF;
+        color: $color-text-disabled;
         cursor: not-allowed;
       }
       &:not(.disabled):hover {
-        background-color: $color-E6F7FF;
-        color: $color-40A9FF;
+        background-color: $color-primary-alert;
+        color: $color-primary-hover;
       }
     }
   }

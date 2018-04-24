@@ -30,7 +30,10 @@
     @click="handleClick"
     v-else>
     <span class="v-menu--item-inner">
-      <slot></slot>
+      <template v-if="href && !disabled">
+        <a :href="href" :target="target"><slot></slot></a>
+      </template>
+      <template v-else><slot></slot></template>
     </span>
   </li>
 </template>
@@ -45,6 +48,11 @@
     props: {
       index: String,
       to: String,
+      href: String,
+      target: {
+        type: String,
+        default: '_blank',
+      },
       disabled: Boolean,
     },
     computed: {
@@ -64,14 +72,14 @@
           }
           parent = parent.$parent;
         }
-        style.paddingLeft = `${indent}px`;
+        this.menu.mode === 'vertical' && (style.paddingLeft = `${indent}px`);
         style.lineHeight = `${height}px`;
         return style;
       },
     },
     methods: {
       handleClick() {
-        if (this.disabled)  return;
+        if (this.href || this.disabled)  return;
         this.dispatch('Menu', 'menu-item-click', [this]);
         this.$emit('click', this);
       },

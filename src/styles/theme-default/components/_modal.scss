@@ -21,8 +21,8 @@
 
 .v-modal {
   position: absolute;
-  background: $color-FFFFFF;
-  border-radius: $border-radius + px;
+  background: $color-white;
+  border-radius: $border-radius;
   box-shadow: 0 0 3px rgba(0, 0, 0, .3);
   box-sizing: border-box;
   &--middle {
@@ -47,15 +47,15 @@
   &--header {
     position: relative;
     padding: 14px 16px;
-    border-bottom: 1px solid $color-D9D9D9;
-    border-top-left-radius: $border-radius + px;
-    border-top-right-radius: $border-radius + px;
+    border-bottom: 1px solid $color-border;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
     .v-modal--header-close {
       position: absolute;
       right: 16px;
       cursor: pointer;
       &:hover {
-        color: $color-1890FF;
+        color: $color-primary;
       }
     }
   }
@@ -63,7 +63,7 @@
     padding: 16px;
   }
   &--footer {
-    border-top: 1px solid $color-E8E8E8;
+    border-top: 1px solid $color-divider;
     padding: 10px 16px;
     text-align: right;
   }

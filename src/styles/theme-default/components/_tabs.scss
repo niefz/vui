@@ -7,7 +7,7 @@
   }
   &.top {
     .v-tabs--header {
-      border-bottom: 1px solid $color-D9D9D9;
+      border-bottom: 1px solid $color-border;
       .v-tabs--nav-wrapper {
         margin-bottom: -1px;
       }
@@ -27,7 +27,7 @@
   &.right {
     .v-tabs--header {
       float: right;
-      border-left: 1px solid $color-D9D9D9;
+      border-left: 1px solid $color-border;
       .v-tabs--nav-wrapper {
         margin-left: -1px;
       }
@@ -48,7 +48,7 @@
   &.left {
     .v-tabs--header {
       float: left;
-      border-right: 1px solid $color-D9D9D9;
+      border-right: 1px solid $color-border;
       .v-tabs--nav-wrapper {
         margin-right: -1px;
       }
@@ -85,7 +85,7 @@
   &-bar {
     position: absolute;
     z-index: 1;
-    background-color: $color-1890FF;
+    background-color: $color-primary;
     box-sizing: border-box;
     transform-origin: 0 0;
     transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1), -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
@@ -97,14 +97,14 @@
     transition: color .3s cubic-bezier(.645, .045, .355, 1);
     &.active {
       font-weight: 500;
-      color: $color-1890FF;
+      color: $color-primary;
     }
     &:hover {
-      color: $color-40A9FF;
+      color: $color-primary-hover;
       cursor: pointer;
     }
     &.disabled {
-      color: $color-BFBFBF;
+      color: $color-text-disabled;
       cursor: not-allowed;
     }
   }

@@ -1,65 +1,66 @@
 /* border radius */
-$border-radius: 3;
+$border-radius: 3px;
 
 /** button margin **/
-$button-margin: 10;
+$button-margin: 10px;
+
+$color-black: #000000;
+$color-white: #FFFFFF;
 
 /** title **/
-$color-262626: #262626;
+$color-title: #262626;
 /** primary text **/
-$color-595959: #595959;
+$color-text-primary: #595959;
 /** secondary text **/
-$color-8C8C8C: #8C8C8C;
+$color-text-secondary: #8C8C8C;
 /** disabled text **/
-$color-BFBFBF: #BFBFBF;
+$color-text-disabled: #BFBFBF;
 
 /** border **/
-$color-D9D9D9: #D9D9D9;
+$color-border: #D9D9D9;
 /** disabled border **/
-$color-EDEDED: #EDEDED;
+$color-disabled-border: #EDEDED;
 
 /** divider **/
-$color-E8E8E8: #E8E8E8;
+$color-divider: #E8E8E8;
 
 /** primary **/
-$color-1890FF: #1890FF;
+$color-primary: #1890FF;
 /** primary hover **/
-$color-40A9FF: #40A9FF;
+$color-primary-hover: #40A9FF;
 /** primary disabled **/
-$color-C5E3FF: #C5E3FF;
+$color-primary-disabled: #C5E3FF;
 /** primary alert **/
-$color-E6F7FF: #E6F7FF;
+$color-primary-alert: #E6F7FF;
 
 /** warning **/
-$color-FAAD14: #FAA51F;
+$color-warning: #FAAD14;
 /** warning hover **/
-$color-FFC53D: #FFC53D;
+$color-warning-hover: #FFC53D;
 /** warning disabled **/
-$color-FDE8C7: #FDE8C7;
+$color-warning-disabled: #FDE8C7;
 /** warning alert **/
-$color-FFFBE6: #FFFBE6;
+$color-warning-alert: #FFFBE6;
 
 /** danger **/
-$color-F5222D: #F5222D;
+$color-danger: #F5222D;
 /** danger hover **/
-$color-FF4D4F: #FF4D4F;
+$color-danger-hover: #FF4D4F;
 /** danger disabled **/
-$color-FCC7CA: #FCC7CA;
+$color-danger-disabled: #FCC7CA;
 /** danger alert **/
-$color-FFF1F0: #FFF1F0;
+$color-danger-alert: #FFF1F0;
 
 /** success **/
-$color-52C41A: #52C41A;
+$color-success: #52C41A;
 /** success hover **/
-$color-73D13D: #73D13D;
+$color-success-hover: #73D13D;
 /** success disabled **/
-$color-D3F0C5: #D3F0C5;
+$color-success-disabled: #D3F0C5;
 /** success alert **/
-$color-F6FFED: #F6FFED;
+$color-success-alert: #F6FFED;
 
 /** background **/
-$color-F5F5F5: #F5F5F5;
+$color-background: #F5F5F5;
 /** thead background **/
-$color-FAFAFA: #FAFAFA;
-
-$color-FFFFFF: #FFFFFF;
+$color-thead-background: #FAFAFA;

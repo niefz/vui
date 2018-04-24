@@ -3,11 +3,11 @@
   display: inline-block;
   &--content {
     margin: 5px 0;
-    border: 1px solid $color-D9D9D9;
-    background: $color-FFFFFF;
-    color: $color-595959;
-    border-radius: $border-radius + px;
-    box-shadow: 0 0 10px $color-D9D9D9;
+    border: 1px solid $color-border;
+    background: $color-white;
+    color: $color-text-primary;
+    border-radius: $border-radius;
+    box-shadow: 0 0 10px $color-border;
   }
 }
 
@@ -16,7 +16,7 @@
   font-size: 0;
   &--hd {
     padding: 5px 10px;
-    border-bottom: 1px solid $color-E8E8E8;
+    border-bottom: 1px solid $color-divider;
     text-align: center;
     &-label {
       padding: 0 5px;
@@ -25,7 +25,7 @@
       line-height: 32px;
       cursor: pointer;
       &:hover {
-        color: $color-40A9FF;
+        color: $color-primary-hover;
       }
     }
   }
@@ -54,55 +54,55 @@
         font-weight: 400;
         line-height: 24px;
         text-align: center;
-        border-radius: $border-radius + px;
+        border-radius: $border-radius;
       }
     }
     &-header {
       &-inner {
-        color: $color-8C8C8C;
+        color: $color-text-secondary;
       }
     }
     &-cell {
       cursor: pointer;
       &.in-range {
-        background-color: $color-E6F7FF;
+        background-color: $color-primary-alert;
       }
       &.start-date, &.end-date {
         .v-picker-date--table-cell-inner {
-          background-color: $color-1890FF;
-          color: $color-FFFFFF;
+          background-color: $color-primary;
+          color: $color-white;
         }
       }
       &.start-date {
-        border-top-left-radius: $border-radius + px;
-        border-bottom-left-radius: $border-radius + px;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
       }
       &.end-date {
-        border-top-right-radius: $border-radius + px;
-        border-bottom-right-radius: $border-radius + px;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
       }
       &-inner {
         border: 1px solid transparent;
         &.last-month-cell {
-          color: $color-8C8C8C;
+          color: $color-text-secondary;
         }
         &.today {
-          border-color: $color-1890FF;
+          border-color: $color-primary;
           font-weight: 600;
-          color: $color-1890FF;
+          color: $color-primary;
         }
         &.next-month-cell {
-          color: $color-8C8C8C;
+          color: $color-text-secondary;
         }
         &:hover {
-          border-color: $color-1890FF;
-          background-color: $color-E6F7FF;
-          color: $color-1890FF;
+          border-color: $color-primary;
+          background-color: $color-primary-alert;
+          color: $color-primary;
         }
         &.disabled {
           border-color: transparent;
           background-color: transparent;
-          color: $color-BFBFBF;
+          color: $color-text-disabled;
           cursor: not-allowed;
         }
       }
@@ -115,7 +115,7 @@
   float: right;
   height: 280px;
   padding: 30px 20px;
-  border-left: 1px solid $color-E8E8E8;
+  border-left: 1px solid $color-divider;
   font-size: 0;
   .select-panel {
     position: absolute;
@@ -123,8 +123,8 @@
     right: 20px;
     left: 20px;
     height: 40px;
-    border-top: 1px solid $color-E8E8E8;
-    border-bottom: 1px solid $color-E8E8E8;
+    border-top: 1px solid $color-divider;
+    border-bottom: 1px solid $color-divider;
     transform: translateY(-50%);
     &--inner {
       display: inline-block;
@@ -162,16 +162,16 @@
           margin: 5px 0;
           font-size: 12px;
           line-height: 30px;
-          color: $color-BFBFBF;
+          color: $color-text-disabled;
           text-align: center;
           cursor: pointer;
           &:hover {
             font-weight: 600;
-            color: $color-1890FF;
+            color: $color-primary;
           }
           &.selected {
             font-weight: 600;
-            color: $color-595959;
+            color: $color-text-primary;
           }
         }
       }
