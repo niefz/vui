@@ -22,7 +22,6 @@
               <v-menu-item to="/#/zh-CN/design">设计</v-menu-item>
               <v-menu-item to="/#/zh-CN/changelog">组件</v-menu-item>
               <v-menu-item href="https://pro.free-ui.design/">PRO</v-menu-item>
-              <v-menu-item href="https://github.com/niefz/vui">GitHub</v-menu-item>
             </v-menu>
           </div>
         </v-col>
@@ -77,7 +76,38 @@
         </v-col>
       </v-row>
     </div>
-    <footer class="clearfix"></footer>
+    <!--<footer class="footer clearfix">-->
+      <!--<div class="footer-wrapper">-->
+        <!--<v-row>-->
+          <!--<v-col :xs="24" :sm="24" :md="6">-->
+            <!--<div class="footer-wrapper&#45;&#45;inner">-->
+              <!--<h2>链接</h2>-->
+              <!--<a href="https://github.com/FreeUI/vui" target="_blank">GitHub</a>-->
+              <!--<a href="https://github.com/FreeUI/vui/releases" target="_blank">更新日志</a>-->
+              <!--<a href="https://github.com/FreeUI/vui/FAQ.md" target="_blank">常见问题</a>-->
+              <!--<a href="https://github.com/FreeUI/vui-cli" target="_blank">脚手架</a>-->
+            <!--</div>-->
+          <!--</v-col>-->
+          <!--<v-col :xs="24" :sm="24" :md="6">-->
+            <!--<div class="footer-wrapper&#45;&#45;inner">-->
+              <!--<h2>社区</h2>-->
+              <!--<a href="https://gitter.im/FreeUI/vui" target="_blank">在线讨论</a>-->
+              <!--<a href="https://github.com/FreeUI/vui/issues" target="_blank">反馈意见</a>-->
+              <!--<a href="https://github.com/FreeUI/vui/CONTRIBUTING.zh-CN.md" target="_blank">贡献指南</a>-->
+              <!--<a href="https://stackoverflow.com/questions/tagged/FreeUI/vui" target="_blank">StackOverflow</a>-->
+              <!--<a href="https://segmentfault.com/t/FreeUI/vui" target="_blank">SegmentFault</a>-->
+            <!--</div>-->
+          <!--</v-col>-->
+          <!--<v-col :xs="24" :sm="24" :md="6">-->
+            <!--<div class="footer-wrapper&#45;&#45;inner">-->
+              <!--<h2>多语言</h2>-->
+              <!--<a href="http://free-ui.cn" target="_blank">中文版</a>-->
+              <!--<a href="http://free-ui.io" target="_blank">English Version</a>-->
+            <!--</div>-->
+          <!--</v-col>-->
+        <!--</v-row>-->
+      <!--</div>-->
+    <!--</footer>-->
   </div>
 </template>
 <script>
@@ -172,14 +202,13 @@
   }
 
   .main {
-    padding-top: 64px;
+    padding-top: 84px;
+    padding-bottom: 20px;
     .side-nav {
       position: fixed;
-      top: 64px;
-      bottom: 0;
+      top: 84px;
+      bottom: 20px;
       left: 0;
-      padding-top: 20px;
-      padding-bottom: 20px;
       border-right: 1px solid $color-divider;
       box-sizing: border-box;
       .v-menu {
@@ -191,77 +220,104 @@
         }
       }
     }
+    .article {
+      padding: 20px 248px 0 48px;
+      > h1 {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 24px;
+        &:after {
+          display: block;
+          content: "";
+          width: 50%;
+          height: 1px;
+          margin: 20px 0 10px;
+          background-color: $color-divider;
+          clear: both;
+        }
+      }
+      > h2 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+      ol > li {
+        margin-left: 20px;
+        padding-left: 4px;
+        list-style-type: decimal;
+        font-size: 14px;
+        line-height: 28px;
+      }
+      > p {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 14px;
+        line-height: 28px;
+      }
+      img {
+        max-width: calc(100% - 32px);
+      }
+      .hljs {
+        padding: 20px;
+        border: 1px solid $color-border;
+        background-color: $color-background;
+        border-radius: $border-radius;
+        font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+        font-size: 12px;
+        line-height: 2;
+      }
+      .table {
+        width: 100%;
+        margin-bottom: 50px;
+        font-size: 14px;
+        border-collapse: collapse;
+        overflow: auto;
+        th {
+          padding: 10px;
+          border: 1px solid $color-border;
+          background-color: $color-thead-background;
+          text-align: left;
+        }
+        td {
+          padding: 10px;
+          border: 1px solid $color-border;
+          text-align: left;
+        }
+      }
+      .v-row + .v-row {
+        margin-top: 10px;
+      }
+    }
   }
 
-  .article {
-    padding: 20px 248px 0 48px;
-    > h1 {
-      display: inline-block;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      font-weight: 500;
-      font-size: 24px;
-      &:after {
-        display: block;
-        content: "";
-        width: 50%;
-        height: 1px;
-        margin: 20px 0 10px;
-        background-color: $color-divider;
-        clear: both;
-      }
-    }
-    > h2 {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-weight: 500;
-      font-size: 16px;
-    }
-    ol > li {
-      margin-left: 20px;
-      padding-left: 4px;
-      list-style-type: decimal;
-      font-size: 14px;
-      line-height: 28px;
-    }
-    > p {
-      margin-top: 1em;
-      margin-bottom: 1em;
-      font-size: 14px;
-      line-height: 28px;
-    }
-    img {
-      max-width: calc(100% - 32px);
-    }
-    .hljs {
-      padding: 20px;
-      border: 1px solid $color-border;
-      background-color: $color-background;
-      border-radius: $border-radius;
-      font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-      font-size: 12px;
-      line-height: 2;
-    }
-    .table {
-      width: 100%;
-      margin-bottom: 50px;
-      font-size: 14px;
-      border-collapse: collapse;
-      overflow: auto;
-      th {
-        padding: 10px;
-        border: 1px solid $color-border;
-        background-color: $color-thead-background;
+  .footer {
+    position: relative;
+    background-color: $color-black;
+    &-wrapper {
+      padding: 86px 144px;
+      &--inner {
+        display: inline-block;
         text-align: left;
+        h2 {
+          position: relative;
+          margin-bottom: 24px;
+          font-weight: 500;
+          font-size: 16px;
+          color: $color-white;
+        }
+        a {
+          display: block;
+          margin: 12px 0;
+          font-size: 14px;
+          color: hsla(0, 0%, 100%, .9);
+          &:hover {
+            color: $color-primary-hover;
+          }
+        }
       }
-      td {
-        padding: 10px;
-        border: 1px solid $color-border;
-        text-align: left;
-      }
-    }
-    .v-row + .v-row {
-      margin-top: 10px;
     }
   }
 </style>

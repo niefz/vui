@@ -2,7 +2,7 @@
 
 字体是体系化界面设计中最基本的构成之一。
 
-我们的用户通过文本来理解内容和完成工作，科学的字体系统将大大提升用户的阅读体验及工作效率。Free-ui Design 字体方案，是基于『动态秩序』的设计原则，结合了自然对数以及音律的规则得出的，再经过了大量的中后台产品验证之后，推荐给大家。
+我们的用户通过文本来理解内容和完成工作，科学的字体系统将大大提升用户的阅读体验及工作效率。Free-ui 字体方案，是基于『动态秩序』的设计原则，结合了自然对数以及音律的规则得出的，再经过了大量的中后台产品验证之后，推荐给大家。
 在中后台视觉体系中定义字体系统，我们建议从下面五个方面出发：
 
 1. 字体家族
@@ -13,7 +13,7 @@
 
 ## 字体家族
 
-Free-ui Design 的字体家族中优先使用系统默认的界面字体，同时提供了一套利于屏显的备用字体库，来维护在不同平台以及浏览器的显示下，字体始终保持良好的易读性和可读性，体现了友好、稳定和专业的特性。
+Free-ui 的字体家族中优先使用系统默认的界面字体，同时提供了一套利于屏显的备用字体库，来维护在不同平台以及浏览器的显示下，字体始终保持良好的易读性和可读性，体现了友好、稳定和专业的特性。
 
 ```css
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -25,13 +25,13 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 
 ## 主字体
 
-在 Free-ui Design 的视觉体系中，我们建议的主要字体为 12，以保证在多数常用显示器上的用户阅读效率最佳。
+在 Free-ui 的视觉体系中，我们建议的主要字体为 12，以保证在多数常用显示器上的用户阅读效率最佳。
 
 ## 字阶与行高
 
 字阶和行高决定着一套字体系统的动态与秩序之美。字阶是指一系列有规律的不同尺寸的字体。行高可以理解为一个包裹在字体外面的无形的盒子。
 
-Free-ui Design 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的字体以及与之相对应的行高。
+Free-ui 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的字体以及与之相对应的行高。
 
 <table class="font-size">
   <tbody>
@@ -162,7 +162,8 @@ Free-ui Design 受到 5 音阶以及自然律的启发定义了 10 个不同尺�
 <style>
   .font-color { width: 100%; }
   .font-color th, .font-color td { padding: 15px; border-bottom: 1px solid #D9D9D9; }
-  .dark { background-color: #000000; }
+  .font-color th.dark, .font-color td.dark { border-color: #002140; }
+  .dark { background-color: #002140; }
   .title { font-size: 18px; }
   .title.light { color: #262626; }
   .title.dark { color: #FFFFFF; }

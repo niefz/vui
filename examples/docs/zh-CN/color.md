@@ -1,6 +1,6 @@
 # Color 色彩
 
-为了避免视觉传达差异，Free-ui Design 使用一套特定的调色板作为设计和开发规范，为你所搭建的产品提供一致的视觉感受。
+为了避免视觉传达差异，Free-ui 使用一套特定的调色板作为设计和开发规范，为你所搭建的产品提供一致的视觉感受。
 
 ## 主色
 
@@ -98,7 +98,8 @@
 <style>
   .font-color { width: 100%; }
   .font-color th, .font-color td { padding: 15px; border-bottom: 1px solid #D9D9D9; }
-  .dark { background-color: #000000; }
+  .font-color th.dark, .font-color td.dark { border-color: #002140; }
+  .dark { background-color: #002140; }
   .title.light { color: #262626; }
   .title.dark { color: #FFFFFF; }
   .text-regular { font-size: 12px; }
