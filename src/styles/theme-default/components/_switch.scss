@@ -1,23 +1,50 @@
-$activedColor: #333;
-$deactivedColor: #999;
+$activedColor: #F5222D;
+$deactivedColor: #52C41A;
+$sliderColor: #fff;
+$switchHeight: 20px;
+$swithcWidth: 40px;
+
 
 .v-switch {
 	position: relative;
-	width: 40px;
-	height: 20px;
+	width: $swithcWidth;
+	height: $switchHeight;
 	.v-switch__input {
 		visibility: hidden;
 		position: absolute;
 	}
 	.v-switch__ground {
 		display: inline-block;
+		position: relative;
 		width: 100%;
 		height: 100%;
+		border-radius: $switchHeight;
 		background: $activedColor;
+		transition: all 0.2s ease;
+		&:before {
+			content: "";
+			display: block;
+			margin-left: 1px;
+			margin-top: 1px;
+			width: $switchHeight - 2;
+			height: $switchHeight - 2;
+			border-radius: $switchHeight;
+			background: $sliderColor;
+			transition: all 0.2s ease;
+		}
 	}
 	&.is-checked {
 		.v-switch__ground {
 			background: $deactivedColor;
+			&:before {
+				margin-left: $swithcWidth - $switchHeight
+			}
+		}
+	}
+	&.is-disabled {
+		.v-switch__ground {
+			cursor: not-allowed;
+			opacity: 0.5;
 		}
 	}
 }

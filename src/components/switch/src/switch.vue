@@ -44,18 +44,21 @@
     },
     computed: {
       checked () {
-        return this.value
+        return this.value;
       },
       switchDisabled () {
-        return this.disabled
+        return this.disabled;
       },
     },
     watch: {
+      value() {
+        this.$emit('change', this.$refs['input'].checked);
+      }
     },
     methods: {
       handleChange(event) {
-        console.log(event, this.$refs['input'].checked)
-        this.$emit('input', this.$refs['input'].checked)
+        console.log(event);
+        this.$emit('input', this.$refs['input'].checked);
       },
     },
   };
