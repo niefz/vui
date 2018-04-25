@@ -10,7 +10,7 @@
     <v-input-number v-model="keywords" :min="1" :max="10"></v-input>
   </v-col>
   <v-col :span="12">
-    <v-input-number :min="1" :max="10" set-max></v-input>
+    <v-input-number :min="1" :max="10"></v-input>
   </v-col>
 </v-row>
 ```
