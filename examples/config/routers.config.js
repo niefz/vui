@@ -195,6 +195,13 @@ export default {
       }, 'progress'),
     },
     {
+      path: '/zh-CN/components/spin',
+      name: 'Spin 加载中',
+      component: spin => require.ensure([], (require) => {
+        spin(require('../docs/zh-CN/spin.md'));
+      }, 'spin'),
+    },
+    {
       path: '/zh-CN/components/anchor',
       name: 'Anchor 锚点',
       component: anchor => require.ensure([], (require) => {
