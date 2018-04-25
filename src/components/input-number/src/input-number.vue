@@ -1,6 +1,6 @@
 <template>
   <div
-    class="v-input"
+    class="v-input--number"
     :class="[
       'v-input--' + inputSize,
       {
@@ -14,7 +14,9 @@
     ]">
     <div class="v-input--prepend" v-if="$slots.prepend || prepend">
       <template v-if="prepend">{{prepend}}</template>
-      <template v-else><slot name="prepend"></slot></template>
+      <template v-else>
+        <slot name="prepend"></slot>
+      </template>
     </div>
     <div
       class="v-input--inner"
@@ -29,7 +31,7 @@
       </em>
       <input
         type="text"
-        :value="value"
+        :value="currentValue"
         :placeholder="placeholder"
         :autocomplete="autocomplete"
         :readonly="readonly"
@@ -40,9 +42,19 @@
         <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
       </em>
     </div>
+    <div class="v-input--number-handler">
+      <em class="v-input--number-handler-up" :class="{'disabled': increaseDisabled}" @click.stop="handleIncrease">
+        <v-icon icon="v-icon-arrow-up"></v-icon>
+      </em>
+      <em class="v-input--number-handler-down" :class="{'disabled': minusDisabled}" @click.stop="handleMinus">
+        <v-icon icon="v-icon-arrow-down"></v-icon>
+      </em>
+    </div>
     <div class="v-input--append" v-if="$slots.append || append">
       <template v-if="append">{{append}}</template>
-      <template v-else><slot name="append"></slot></template>
+      <template v-else>
+        <slot name="append"></slot>
+      </template>
     </div>
   </div>
 </template>
@@ -60,7 +72,7 @@
         type: String,
         default: 'small',
       },
-      value: [String, Number],
+      value: {},
       placeholder: {
         type: String,
         default: '',
@@ -97,25 +109,64 @@
         type: Boolean,
         default: false
       },
+      step: {
+        type: Number,
+        default: 1,
+      },
+      max: Number,
+      min: Number,
     },
     data() {
-      return {};
+      return {
+        currentValue: 0,
+      };
+    },
+    watch: {
+      value: {
+        immediate: true,
+        handler(value) {
+          this.setCurrentValue(value);
+        }
+      }
     },
     computed: {
       inputSize() {
         return this.size || (this.$VUI || {}).size;
       },
+      increaseDisabled() {
+        return Number(this.currentValue) === this.max;
+      },
+      minusDisabled() {
+        return Number(this.currentValue) === this.min;
+      },
     },
     methods: {
+      setCurrentValue(value, event) {
+        let val = value === undefined ? value : Number(value);
+        if (val >= this.max) val = this.max;
+        if (val <= this.min) val = this.min;
+        this.currentValue = val;
+        if (event) event.target.value = val;
+      },
       handleInput(event) {
         const value = event.target.value;
-        this.$emit('input', value);
+        const val = Number(value.replace(/[^\d]/g, ''));
+        this.setCurrentValue(val, event);
+        this.$emit('input', val);
       },
       handleKeyup(event) {
         this.$emit('keyup', event);
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');
+      },
+      handleIncrease() {
+        if (this.increaseDisabled) return;
+        this.$emit('input', this.currentValue += this.step);
+      },
+      handleMinus() {
+        if (this.minusDisabled) return;
+        this.$emit('input', this.currentValue -= this.step);
       },
       handleSuffixIcon() {
         this.$emit('suffix-click');

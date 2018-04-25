@@ -38,8 +38,9 @@
         :autocomplete="autocomplete"
         :readonly="readonly"
         :disabled="disabled"
+        @keyup="handleKeyup"
         @input="handleInput"
-        @keyup="handleKeyup">
+        @change="handleChange">
       <em class="v-input--inner-suffix" v-if="suffixIcon">
         <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
       </em>
@@ -115,12 +116,16 @@
       },
     },
     methods: {
+      handleKeyup(event) {
+        this.$emit('keyup', event);
+      },
       handleInput(event) {
         const value = event.target.value;
         this.$emit('input', value);
       },
-      handleKeyup(event) {
-        this.$emit('keyup', event);
+      handleChange(event) {
+        const value = event.target.value;
+        this.$emit('change', value);
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');

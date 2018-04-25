@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  border-radius: $border-radius + px;
+  border-radius: $border-radius;
   &--mini {
     height: 28px;
     font-size: 12px;
@@ -31,16 +31,15 @@
       position: relative;
       width: 100%;
       height: 100%;
-      padding: 5px 10px;
       border: 1px solid $color-border;
       background-color: transparent;
-      border-radius: $border-radius + px;
+      border-radius: $border-radius;
       box-sizing: border-box;
       transition: all .3s cubic-bezier(.645, .045, .355, 1);
       &:focus {
         z-index: 2;
         border-color: $color-primary;
-        box-shadow: 0 0 0 2px rgba(20, 142, 246, .2);
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
       }
       &:disabled {
         background-color: $color-background;
@@ -55,6 +54,13 @@
     }
   }
 }
+
+.v-input {
+  input {
+    padding: 5px 10px;
+  }
+}
+
 
 .v-input--inner {
   > em {
@@ -102,8 +108,8 @@
     .v-input--group-prepend {
       width: 1px;
       padding: 0 10px;
-      border-top-left-radius: $border-radius + px;
-      border-bottom-left-radius: $border-radius + px;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
       white-space: nowrap;
       border: {
         top: 1px solid $color-border;
@@ -116,8 +122,8 @@
     .v-input--group-append {
       width: 1px;
       padding: 0 20px;
-      border-top-right-radius: $border-radius + px;
-      border-bottom-right-radius: $border-radius + px;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
       white-space: nowrap;
       border: {
         top: 1px solid $color-border;
