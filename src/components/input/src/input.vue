@@ -9,6 +9,7 @@
         ['slot-prepend']: $slots.prepend,
         ['append']: append,
         ['slot-append']: $slots.append,
+        ['error']: error,
         ['disabled']: disabled,
       }
     ]">
@@ -97,6 +98,14 @@
         type: Boolean,
         default: false
       },
+      isError: {
+        type: Boolean,
+        default: false
+      },
+      error: {
+        type: Boolean,
+        default: false
+      },
       disabled: {
         type: Boolean,
         default: false
@@ -119,8 +128,7 @@
         this.$emit('keyup', event);
       },
       handleInput(event) {
-        const value = event.target.value;
-        this.$emit('input', value);
+        this.$emit('input', event);
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');

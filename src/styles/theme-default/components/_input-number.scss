@@ -6,12 +6,6 @@
   input {
     padding: 5px 33px 5px 10px;
   }
-  &.error {
-    input {
-      border-color: $color-danger;
-      box-shadow: 0 0 0 2px rgba(245, 34, 45, 0.2);
-    }
-  }
   .v-input--number-handler {
     position: absolute;
     top: 1px;

@@ -46,6 +46,12 @@
       }
     }
   }
+  &.error {
+    input {
+      border-color: $color-danger;
+      box-shadow: 0 0 0 2px rgba(245, 34, 45, 0.2);
+    }
+  }
   &.disabled {
     background-color: $color-background;
     cursor: not-allowed;

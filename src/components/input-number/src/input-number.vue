@@ -1,48 +1,26 @@
 <template>
-  <div
-    class="v-input--number"
-    :class="[
-      'v-input--' + inputSize,
-      {
-        ['v-input--slot']: $slots.prepend || $slots.append || prepend || append,
-        ['prepend']: prepend,
-        ['slot-prepend']: $slots.prepend,
-        ['append']: append,
-        ['slot-append']: $slots.append,
-        ['error']: isError,
-        ['disabled']: disabled,
-      }
-    ]">
-    <div class="v-input--prepend" v-if="$slots.prepend || prepend">
-      <template v-if="prepend">{{prepend}}</template>
-      <template v-else>
+  <div class="v-input--number">
+    <v-input
+      :size="size"
+      :value="currentValue"
+      :placeholder="placeholder"
+      :autocomplete="autocomplete"
+      :prepend="prepend"
+      :prefix-icon="prefixIcon"
+      :suffix-icon="suffixIcon"
+      :append="append"
+      :readonly="readonly"
+      :error="isError"
+      :disabled="disabled"
+      @keyup="handleKeyup"
+      @input="handleInput">
+      <template slot="prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
       </template>
-    </div>
-    <div
-      class="v-input--inner"
-      :class="[
-        {
-          ['v-input--prefix']: prefixIcon,
-          ['v-input--suffix']: suffixIcon,
-        }
-      ]">
-      <em class="v-input--inner-prefix" v-if="prefixIcon">
-        <v-icon :icon="prefixIcon" @click.stop="handlePrefixIcon"></v-icon>
-      </em>
-      <input
-        type="text"
-        :value="currentValue"
-        :placeholder="placeholder"
-        :autocomplete="autocomplete"
-        :readonly="readonly"
-        :disabled="disabled"
-        @keyup="handleKeyup"
-        @input="handleInput">
-      <em class="v-input--inner-suffix" v-if="suffixIcon">
-        <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
-      </em>
-    </div>
+      <template slot="append" v-if="$slots.append">
+        <slot name="append"></slot>
+      </template>
+    </v-input>
     <div class="v-input--number-handler">
       <em class="v-input--number-handler-up" :class="{'disabled': increaseDisabled}" @click.stop="handleIncrease">
         <v-icon icon="v-icon-arrow-up"></v-icon>
@@ -51,21 +29,17 @@
         <v-icon icon="v-icon-arrow-down"></v-icon>
       </em>
     </div>
-    <div class="v-input--append" v-if="$slots.append || append">
-      <template v-if="append">{{append}}</template>
-      <template v-else>
-        <slot name="append"></slot>
-      </template>
-    </div>
   </div>
 </template>
 <script>
+  import Input from '@/components/input';
   import Icon from '@/components/icon';
 
   export default {
     name: 'Input',
     componentName: 'Input',
     components: {
+      VInput: Input,
       VIcon: Icon,
     },
     props: {
@@ -106,23 +80,22 @@
         type: Boolean,
         default: false
       },
-      clearable: {
-        type: Boolean,
-        default: false
-      },
       step: {
         type: Number,
         default: 1,
       },
       max: Number,
       min: Number,
-      setMax: Boolean,
-      setMin: Boolean,
     },
     data() {
       return {
         currentValue: this.value,
       };
+    },
+    watch: {
+      value (val) {
+        this.currentValue = val;
+      },
     },
     computed: {
       inputSize() {
@@ -135,39 +108,40 @@
         return Number(this.currentValue) <= this.min;
       },
       isError() {
-        return (this.max && !this.setMax && this.currentValue > this.max) || (this.min && !this.setMin && this.currentValue < this.min);
+        return (this.max && this.currentValue > this.max) || (this.min && this.currentValue < this.min);
       },
     },
     methods: {
       setCurrentValue(val) {
-        const old = this.currentValue;
-        let value = Number(val);
-        console.log(old);
-        if (isNaN(value)) value = old === undefined ? '' : old;
-        if (this.setMax && value > this.max) value = this.max;
-        if (this.setMin && value < this.min) value = this.min;
-        this.currentValue = value;
-        this.$emit('input', value);
-        this.$emit('change', value);
-        if (event) event.target.value = value;
+        this.currentValue = val;
+        this.$emit('input', val);
+        this.$emit('change', val);
       },
       handleKeyup(event) {
         this.$emit('keyup', event);
       },
       handleInput(event) {
-        const value = event.target.value;
-        this.setCurrentValue(value, event);
+        let val = event.target.value.trim();
+        if (event.type == 'input' && val.match(/^[-]?\.?$|\.$/)) return;
+        let value = Number(val);
+        if (!isNaN(value)) {
+          this.currentValue = value;
+        } else {
+          event.target.value = this.currentValue || '';
+        }
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');
       },
       handleIncrease() {
         if (this.increaseDisabled) return;
-        this.$emit('input', this.currentValue += this.step);
+        this.currentValue += this.step;
+        this.setCurrentValue(this.currentValue);
       },
       handleMinus() {
         if (this.minusDisabled) return;
-        this.$emit('input', this.currentValue -= this.step);
+        this.currentValue -= this.step;
+        this.setCurrentValue(this.currentValue);
       },
       handleSuffixIcon() {
         this.$emit('suffix-click');
