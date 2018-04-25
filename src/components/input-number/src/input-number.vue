@@ -9,6 +9,7 @@
         ['slot-prepend']: $slots.prepend,
         ['append']: append,
         ['slot-append']: $slots.append,
+        ['error']: isError,
         ['disabled']: disabled,
       }
     ]">
@@ -36,8 +37,8 @@
         :autocomplete="autocomplete"
         :readonly="readonly"
         :disabled="disabled"
-        @input="handleInput"
-        @keyup="handleKeyup">
+        @keyup="handleKeyup"
+        @input="handleInput">
       <em class="v-input--inner-suffix" v-if="suffixIcon">
         <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
       </em>
@@ -115,47 +116,47 @@
       },
       max: Number,
       min: Number,
+      setMax: Boolean,
+      setMin: Boolean,
     },
     data() {
       return {
-        currentValue: 0,
+        currentValue: this.value,
       };
-    },
-    watch: {
-      value: {
-        immediate: true,
-        handler(value) {
-          this.setCurrentValue(value);
-        }
-      }
     },
     computed: {
       inputSize() {
         return this.size || (this.$VUI || {}).size;
       },
       increaseDisabled() {
-        return Number(this.currentValue) === this.max;
+        return Number(this.currentValue) >= this.max;
       },
       minusDisabled() {
-        return Number(this.currentValue) === this.min;
+        return Number(this.currentValue) <= this.min;
+      },
+      isError() {
+        return (this.max && !this.setMax && this.currentValue > this.max) || (this.min && !this.setMin && this.currentValue < this.min);
       },
     },
     methods: {
-      setCurrentValue(value, event) {
-        let val = value === undefined ? value : Number(value);
-        if (val >= this.max) val = this.max;
-        if (val <= this.min) val = this.min;
-        this.currentValue = val;
-        if (event) event.target.value = val;
-      },
-      handleInput(event) {
-        const value = event.target.value;
-        const val = Number(value.replace(/[^\d]/g, ''));
-        this.setCurrentValue(val, event);
-        this.$emit('input', val);
+      setCurrentValue(val) {
+        const old = this.currentValue;
+        let value = Number(val);
+        console.log(old);
+        if (isNaN(value)) value = old === undefined ? '' : old;
+        if (this.setMax && value > this.max) value = this.max;
+        if (this.setMin && value < this.min) value = this.min;
+        this.currentValue = value;
+        this.$emit('input', value);
+        this.$emit('change', value);
+        if (event) event.target.value = value;
       },
       handleKeyup(event) {
         this.$emit('keyup', event);
+      },
+      handleInput(event) {
+        const value = event.target.value;
+        this.setCurrentValue(value, event);
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');

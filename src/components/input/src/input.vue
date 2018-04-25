@@ -39,8 +39,7 @@
         :readonly="readonly"
         :disabled="disabled"
         @keyup="handleKeyup"
-        @input="handleInput"
-        @change="handleChange">
+        @input="handleInput">
       <em class="v-input--inner-suffix" v-if="suffixIcon">
         <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
       </em>
@@ -122,10 +121,6 @@
       handleInput(event) {
         const value = event.target.value;
         this.$emit('input', value);
-      },
-      handleChange(event) {
-        const value = event.target.value;
-        this.$emit('change', value);
       },
       handlePrefixIcon() {
         this.$emit('prefix-click');
