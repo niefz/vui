@@ -135,13 +135,13 @@
       },
       handleIncrease() {
         if (this.increaseDisabled) return;
-        this.currentValue += this.step;
-        this.setCurrentValue(this.currentValue);
+        const value = (this.currentValue || 0) + this.step;
+        this.setCurrentValue(value);
       },
       handleMinus() {
         if (this.minusDisabled) return;
-        this.currentValue -= this.step;
-        this.setCurrentValue(this.currentValue);
+        const value = (this.currentValue || 0) - this.step;
+        this.setCurrentValue(value);
       },
       handleSuffixIcon() {
         this.$emit('suffix-click');
