@@ -3,15 +3,13 @@
     class="v-menu--sub"
     :class="[
       {
-        ['active']: active,
         ['disabled']: disabled,
         ['expand']: expand,
       }
     ]"
     aria-haspopup="true"
     aria-expanded="true"
-    role="menuitem"
-    @click="handleClick">
+    role="menuitem">
     <template>
       <div class="v-menu--sub-title" :style="style" @click="handleToggle">
         <h4>
@@ -40,7 +38,7 @@
       VCollapseTransition: CollapseTransition,
     },
     props: {
-      active: Boolean,
+      index: String,
       disabled: Boolean,
     },
     data() {
@@ -66,8 +64,6 @@
       },
     },
     methods: {
-      handleClick() {
-      },
       handleToggle() {
         this.expand = !this.expand;
       },
