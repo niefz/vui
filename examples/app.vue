@@ -2,111 +2,103 @@
   <div class="wrapper">
     <header class="header clearfix">
       <v-row>
-        <v-col :xs="24" :sm="24" :md="6" :lg="5" :xl="5">
-          <a class="header-logo">
-            Free-ui
-          </a>
-        </v-col>
-        <v-col :xs="0" :sm="0" :md="18" :lg="19" :xl="20">
-          <div class="versions">
-            <v-dropdown trigger="click">
-              <v-button suffix-icon="v-icon-arrow-down">1.0.0</v-button>
-              <v-dropdown-menu slot="dropdown">
-                <v-dropdown-menu-item value="1.0.0">1.0.0</v-dropdown-menu-item>
-              </v-dropdown-menu>
-            </v-dropdown>
-          </div>
-          <div class="menu">
-            <v-menu :height="64" mode="horizontal">
-              <v-menu-item to="/#/zh-CN/introduce">首页</v-menu-item>
-              <v-menu-item to="/#/zh-CN/design">设计</v-menu-item>
-              <v-menu-item to="/#/zh-CN/changelog">组件</v-menu-item>
-              <v-menu-item href="https://pro.free-ui.design/">PRO</v-menu-item>
-            </v-menu>
-          </div>
-        </v-col>
+        <a class="header-logo">
+          Free-ui
+        </a>
+        <div class="versions">
+          <v-dropdown trigger="click">
+            <v-button suffix-icon="v-icon-arrow-down">1.0.0</v-button>
+            <v-dropdown-menu slot="dropdown">
+              <v-dropdown-menu-item value="1.0.0">1.0.0</v-dropdown-menu-item>
+            </v-dropdown-menu>
+          </v-dropdown>
+        </div>
+        <div class="menu">
+          <v-menu :height="64" mode="horizontal">
+            <v-menu-item to="/#/zh-CN/introduce">首页</v-menu-item>
+            <v-menu-item to="/#/zh-CN/design">设计</v-menu-item>
+            <v-menu-item to="/#/zh-CN/changelog">组件</v-menu-item>
+            <v-menu-item href="https://pro.free-ui.design/">PRO</v-menu-item>
+          </v-menu>
+        </div>
       </v-row>
     </header>
     <div class="main">
       <v-row>
-        <v-col :xs="24" :sm="24" :md="24" :lg="5" :xl="4">
-          <div class="side-nav">
-            <v-menu :default-active="defaultActive" :indent="40">
-              <template v-for="(nav, index) in nav">
-                <template v-if="nav.path">
-                  <v-menu-item :to="nav.path">{{ nav.name }}</v-menu-item>
+        <div class="side-nav">
+          <v-menu :default-active="defaultActive" :indent="40">
+            <template v-for="(nav, index) in nav">
+              <template v-if="nav.path">
+                <v-menu-item :to="nav.path">{{ nav.name }}</v-menu-item>
+              </template>
+              <v-menu-sub :index="nav.name" v-else>
+                <template slot="title">
+                  {{ nav.name }}
                 </template>
-                <v-menu-sub :index="nav.name" v-else>
-                  <template slot="title">
-                    {{ nav.name }}
-                    <i class="v-menu--sub-title-arrow"></i>
-                  </template>
-                  <template v-if="nav.child">
+                <template v-if="nav.child">
+                  <v-menu-item
+                    :to="child.path"
+                    :key="index"
+                    v-for="(child, index) in nav.child">
+                    {{ child.name }}
+                  </v-menu-item>
+                </template>
+                <template v-if="nav.groups">
+                  <v-menu-item-group
+                    :index="group.name"
+                    :key="index"
+                    v-for="(group, index) in nav.groups">
+                    <template slot="title">
+                      {{ group.name }}
+                    </template>
                     <v-menu-item
                       :to="child.path"
                       :key="index"
-                      v-for="(child, index) in nav.child">
+                      v-for="(child, index) in group.child">
                       {{ child.name }}
                     </v-menu-item>
-                  </template>
-                  <template v-if="nav.groups">
-                    <v-menu-item-group
-                      :index="group.name"
-                      :key="index"
-                      v-for="(group, index) in nav.groups">
-                      <template slot="title">
-                        {{ group.name }}
-                        <i class="v-submenu--title-arrow"></i>
-                      </template>
-                      <v-menu-item
-                        :to="child.path"
-                        :key="index"
-                        v-for="(child, index) in group.child">
-                        {{ child.name }}
-                      </v-menu-item>
-                    </v-menu-item-group>
-                  </template>
-                </v-menu-sub>
-              </template>
-            </v-menu>
-          </div>
-        </v-col>
-        <v-col :xs="24" :sm="24" :md="24" :lg="19" :xl="20">
+                  </v-menu-item-group>
+                </template>
+              </v-menu-sub>
+            </template>
+          </v-menu>
+        </div>
+        <div class="container">
           <router-view></router-view>
-        </v-col>
+        </div>
       </v-row>
     </div>
     <!--<footer class="footer clearfix">-->
-      <!--<div class="footer-wrapper">-->
-        <!--<v-row>-->
-          <!--<v-col :xs="24" :sm="24" :md="6">-->
-            <!--<div class="footer-wrapper&#45;&#45;inner">-->
-              <!--<h2>链接</h2>-->
-              <!--<a href="https://github.com/FreeUI/vui" target="_blank">GitHub</a>-->
-              <!--<a href="https://github.com/FreeUI/vui/releases" target="_blank">更新日志</a>-->
-              <!--<a href="https://github.com/FreeUI/vui/FAQ.md" target="_blank">常见问题</a>-->
-              <!--<a href="https://github.com/FreeUI/vui-cli" target="_blank">脚手架</a>-->
-            <!--</div>-->
-          <!--</v-col>-->
-          <!--<v-col :xs="24" :sm="24" :md="6">-->
-            <!--<div class="footer-wrapper&#45;&#45;inner">-->
-              <!--<h2>社区</h2>-->
-              <!--<a href="https://gitter.im/FreeUI/vui" target="_blank">在线讨论</a>-->
-              <!--<a href="https://github.com/FreeUI/vui/issues" target="_blank">反馈意见</a>-->
-              <!--<a href="https://github.com/FreeUI/vui/CONTRIBUTING.zh-CN.md" target="_blank">贡献指南</a>-->
-              <!--<a href="https://stackoverflow.com/questions/tagged/FreeUI/vui" target="_blank">StackOverflow</a>-->
-              <!--<a href="https://segmentfault.com/t/FreeUI/vui" target="_blank">SegmentFault</a>-->
-            <!--</div>-->
-          <!--</v-col>-->
-          <!--<v-col :xs="24" :sm="24" :md="6">-->
-            <!--<div class="footer-wrapper&#45;&#45;inner">-->
-              <!--<h2>多语言</h2>-->
-              <!--<a href="http://free-ui.cn" target="_blank">中文版</a>-->
-              <!--<a href="http://free-ui.io" target="_blank">English Version</a>-->
-            <!--</div>-->
-          <!--</v-col>-->
-        <!--</v-row>-->
-      <!--</div>-->
+    <!--<div class="footer-wrapper">-->
+    <!--<v-row>-->
+    <!--<v-col :xs="24" :sm="24" :md="6">-->
+    <!--<div class="footer-wrapper&#45;&#45;inner">-->
+    <!--<h2>链接</h2>-->
+    <!--<a href="https://github.com/FreeUI/vui" target="_blank">GitHub</a>-->
+    <!--<a href="https://github.com/FreeUI/vui/releases" target="_blank">更新日志</a>-->
+    <!--<a href="https://github.com/FreeUI/vui/FAQ.md" target="_blank">常见问题</a>-->
+    <!--<a href="https://github.com/FreeUI/vui-cli" target="_blank">脚手架</a>-->
+    <!--</div>-->
+    <!--</v-col>-->
+    <!--<v-col :xs="24" :sm="24" :md="6">-->
+    <!--<div class="footer-wrapper&#45;&#45;inner">-->
+    <!--<h2>社区</h2>-->
+    <!--<a href="https://gitter.im/FreeUI/vui" target="_blank">在线讨论</a>-->
+    <!--<a href="https://github.com/FreeUI/vui/issues" target="_blank">反馈意见</a>-->
+    <!--<a href="https://github.com/FreeUI/vui/CONTRIBUTING.zh-CN.md" target="_blank">贡献指南</a>-->
+    <!--<a href="https://stackoverflow.com/questions/tagged/FreeUI/vui" target="_blank">StackOverflow</a>-->
+    <!--<a href="https://segmentfault.com/t/FreeUI/vui" target="_blank">SegmentFault</a>-->
+    <!--</div>-->
+    <!--</v-col>-->
+    <!--<v-col :xs="24" :sm="24" :md="6">-->
+    <!--<div class="footer-wrapper&#45;&#45;inner">-->
+    <!--<h2>多语言</h2>-->
+    <!--<a href="http://free-ui.cn" target="_blank">中文版</a>-->
+    <!--<a href="http://free-ui.io" target="_blank">English Version</a>-->
+    <!--</div>-->
+    <!--</v-col>-->
+    <!--</v-row>-->
+    <!--</div>-->
     <!--</footer>-->
   </div>
 </template>
@@ -209,6 +201,7 @@
       top: 84px;
       bottom: 20px;
       left: 0;
+      width: 280px;
       border-right: 1px solid $color-divider;
       box-sizing: border-box;
       .v-menu {
@@ -219,6 +212,9 @@
           display: none;
         }
       }
+    }
+    .container {
+      padding-left: 280px;
     }
     .article {
       padding: 20px 248px 0 48px;

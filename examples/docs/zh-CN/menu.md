@@ -15,7 +15,6 @@
         <v-menu-sub :index="nav.name" v-else>
           <template slot="title">
             <h4>{{ nav.name }}</h4>
-            <i class="v-menu--sub-title-arrow"></i>
           </template>
           <template v-if="nav.child">
             <v-menu-item

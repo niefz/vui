@@ -5,6 +5,7 @@
       {
         ['active']: active,
         ['disabled']: disabled,
+        ['expand']: expand,
       }
     ]"
     aria-haspopup="true"
@@ -12,18 +13,22 @@
     role="menuitem"
     @click="handleClick">
     <template>
-      <div class="v-menu--sub-title" :style="style">
+      <div class="v-menu--sub-title" :style="style" @click="handleToggle">
         <h4>
           <slot name="title"></slot>
         </h4>
+        <i class="v-menu--sub-arrow"></i>
       </div>
-      <ul class="v-menu--sub-menu">
-        <slot></slot>
-      </ul>
+      <v-collapse-transition>
+        <ul class="v-menu--sub-menu" v-show="expand">
+          <slot></slot>
+        </ul>
+      </v-collapse-transition>
     </template>
   </li>
 </template>
 <script>
+  import CollapseTransition from '@/components/collapse-transition';
   import Emitter from '@/mixins/emitter';
 
   export default {
@@ -31,9 +36,17 @@
     componentName: 'MenuSub',
     mixins: [Emitter],
     inject: ['menu'],
+    components: {
+      VCollapseTransition: CollapseTransition,
+    },
     props: {
       active: Boolean,
       disabled: Boolean,
+    },
+    data() {
+      return {
+        expand: false,
+      };
     },
     computed: {
       style() {
@@ -54,6 +67,9 @@
     },
     methods: {
       handleClick() {
+      },
+      handleToggle() {
+        this.expand = !this.expand;
       },
     },
     created() {
