@@ -20,18 +20,18 @@ export default {
       }, 'color'),
     },
     {
-      path: '/zh-CN/components/icon',
-      name: 'Icon 图标',
-      component: icon => require.ensure([], (require) => {
-        icon(require('../docs/zh-CN/icon.md'));
-      }, 'icon'),
-    },
-    {
       path: '/zh-CN/components/button',
       name: 'Button 按钮',
       component: button => require.ensure([], (require) => {
         button(require('../docs/zh-CN/button.md'));
       }, 'button'),
+    },
+    {
+      path: '/zh-CN/components/icon',
+      name: 'Icon 图标',
+      component: icon => require.ensure([], (require) => {
+        icon(require('../docs/zh-CN/icon.md'));
+      }, 'icon'),
     },
     {
       path: '/zh-CN/components/grid',
@@ -41,11 +41,18 @@ export default {
       }, 'grid'),
     },
     {
-      path: '/zh-CN/components/menu',
-      name: 'Menu 菜单',
-      component: menu => require.ensure([], (require) => {
-        menu(require('../docs/zh-CN/menu.md'));
-      }, 'menu'),
+      path: '/zh-CN/components/anchor',
+      name: 'Anchor 锚点',
+      component: anchor => require.ensure([], (require) => {
+        anchor(require('../docs/zh-CN/anchor.md'));
+      }, 'anchor'),
+    },
+    {
+      path: '/zh-CN/components/affix',
+      name: 'Affix 固钉',
+      component: affix => require.ensure([], (require) => {
+        affix(require('../docs/zh-CN/affix.md'));
+      }, 'affix'),
     },
     {
       path: '/zh-CN/components/breadcrumb',
@@ -55,11 +62,25 @@ export default {
       }, 'breadcrumb'),
     },
     {
-      path: '/zh-CN/components/tabs',
-      name: 'Tabs 标签页',
-      component: tabs => require.ensure([], (require) => {
-        tabs(require('../docs/zh-CN/tabs.md'));
-      }, 'tabs'),
+      path: '/zh-CN/components/dropdown',
+      name: 'Dropdown 下拉菜单',
+      component: dropdown => require.ensure([], (require) => {
+        dropdown(require('../docs/zh-CN/dropdown.md'));
+      }, 'dropdown'),
+    },
+    {
+      path: '/zh-CN/components/menu',
+      name: 'Menu 菜单',
+      component: menu => require.ensure([], (require) => {
+        menu(require('../docs/zh-CN/menu.md'));
+      }, 'menu'),
+    },
+    {
+      path: '/zh-CN/components/pagination',
+      name: 'Pagination 分页',
+      component: pagination => require.ensure([], (require) => {
+        pagination(require('../docs/zh-CN/pagination.md'));
+      }, 'pagination'),
     },
     {
       path: '/zh-CN/components/steps',
@@ -69,18 +90,18 @@ export default {
       }, 'steps'),
     },
     {
-      path: '/zh-CN/components/dropdown',
-      name: 'Dropdown 下拉菜单',
-      component: dropdown => require.ensure([], (require) => {
-        dropdown(require('../docs/zh-CN/dropdown.md'));
-      }, 'dropdown'),
+      path: '/zh-CN/components/tabs',
+      name: 'Tabs 标签页',
+      component: tabs => require.ensure([], (require) => {
+        tabs(require('../docs/zh-CN/tabs.md'));
+      }, 'tabs'),
     },
     {
-      path: '/zh-CN/components/pagination',
-      name: 'Pagination 分页',
-      component: pagination => require.ensure([], (require) => {
-        pagination(require('../docs/zh-CN/pagination.md'));
-      }, 'pagination'),
+      path: '/zh-CN/components/checkbox',
+      name: 'Checkbox 复选框',
+      component: checkbox => require.ensure([], (require) => {
+        checkbox(require('../docs/zh-CN/checkbox.md'));
+      }, 'checkbox'),
     },
     {
       path: '/zh-CN/components/input',
@@ -104,20 +125,6 @@ export default {
       }, 'radio'),
     },
     {
-      path: '/zh-CN/components/checkbox',
-      name: 'Checkbox 复选框',
-      component: checkbox => require.ensure([], (require) => {
-        checkbox(require('../docs/zh-CN/checkbox.md'));
-      }, 'checkbox'),
-    },
-    {
-      path: '/zh-CN/components/switch',
-      name: 'Switch 开关',
-      component: switcher => require.ensure([], (require) => {
-        switcher(require('../docs/zh-CN/switch.md'));
-      }, 'switch'),
-    },
-    {
       path: '/zh-CN/components/select',
       name: 'Select 选择器',
       component: select => require.ensure([], (require) => {
@@ -125,11 +132,11 @@ export default {
       }, 'select'),
     },
     {
-      path: '/zh-CN/components/table',
-      name: 'Table 表格',
-      component: table => require.ensure([], (require) => {
-        table(require('../docs/zh-CN/table.md'));
-      }, 'table'),
+      path: '/zh-CN/components/switch',
+      name: 'Switch 开关',
+      component: switcher => require.ensure([], (require) => {
+        switcher(require('../docs/zh-CN/switch.md'));
+      }, 'switch'),
     },
     {
       path: '/zh-CN/components/avatar',
@@ -167,6 +174,13 @@ export default {
       }, 'exception'),
     },
     {
+      path: '/zh-CN/components/table',
+      name: 'Table 表格',
+      component: table => require.ensure([], (require) => {
+        table(require('../docs/zh-CN/table.md'));
+      }, 'table'),
+    },
+    {
       path: '/zh-CN/components/tag',
       name: 'Tag 标签',
       component: tag => require.ensure([], (require) => {
@@ -188,18 +202,18 @@ export default {
       }, 'Alert 警告'),
     },
     {
-      path: '/zh-CN/components/modal',
-      name: 'Modal 对话框',
-      component: modal => require.ensure([], (require) => {
-        modal(require('../docs/zh-CN/modal.md'));
-      }, 'modal'),
-    },
-    {
       path: '/zh-CN/components/message',
       name: 'Message 全局提示',
       component: message => require.ensure([], (require) => {
         message(require('../docs/zh-CN/message.md'));
       }, 'message'),
+    },
+    {
+      path: '/zh-CN/components/modal',
+      name: 'Modal 对话框',
+      component: modal => require.ensure([], (require) => {
+        modal(require('../docs/zh-CN/modal.md'));
+      }, 'modal'),
     },
     {
       path: '/zh-CN/components/notification',
@@ -223,11 +237,11 @@ export default {
       }, 'spin'),
     },
     {
-      path: '/zh-CN/components/anchor',
-      name: 'Anchor 锚点',
-      component: anchor => require.ensure([], (require) => {
-        anchor(require('../docs/zh-CN/anchor.md'));
-      }, 'anchor'),
+      path: '/zh-CN/components/back-top',
+      name: 'BackTop 回到顶部',
+      component: backTop => require.ensure([], (require) => {
+        backTop(require('../docs/zh-CN/back-top.md'));
+      }, 'back-top'),
     },
     {
       path: '/zh-CN/components/divider',
@@ -235,13 +249,6 @@ export default {
       component: divider => require.ensure([], (require) => {
         divider(require('../docs/zh-CN/divider.md'));
       }, 'divider'),
-    },
-    {
-      path: '/zh-CN/components/back-top',
-      name: 'BackTop 回到顶部',
-      component: backTop => require.ensure([], (require) => {
-        backTop(require('../docs/zh-CN/back-top.md'));
-      }, 'back-top'),
     },
   ]
 };
