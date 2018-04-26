@@ -26,12 +26,12 @@
     <div class="main">
       <v-row>
         <div class="side-nav">
-          <v-menu :default-active="defaultActive" :indent="40">
+          <v-menu :default-opens="defaultOpens" :default-active="defaultActive" :indent="40">
             <template v-for="(nav, index) in nav">
               <template v-if="nav.path">
                 <v-menu-item :to="nav.path">{{ nav.name }}</v-menu-item>
               </template>
-              <v-menu-sub :index="nav.name" v-else>
+              <v-menu-sub :index="nav.index" v-else>
                 <template slot="title">
                   {{ nav.name }}
                 </template>
@@ -45,7 +45,6 @@
                 </template>
                 <template v-if="nav.groups">
                   <v-menu-item-group
-                    :index="group.name"
                     :key="index"
                     v-for="(group, index) in nav.groups">
                     <template slot="title">
@@ -134,13 +133,16 @@
     data() {
       return {
         nav,
+        defaultOpens: '',
         defaultActive: '',
       };
     },
     watch: {
-      $route(val) {
-        this.defaultActive = val.name;
+      $route(val, old) {
+        this.defaultActive = val.path;
         document.documentElement.scrollTop = 0;
+        if (old.path !== '/') return;
+        this.defaultOpens = val.path;
       },
     },
   };

@@ -12,6 +12,8 @@
       :readonly="readonly"
       :error="isError"
       :disabled="disabled"
+      @prefix-click="handlePrefixIcon"
+      @suffix-click="handleSuffixIcon"
       @keyup="handleKeyup"
       @input="handleInput">
       <template slot="prepend" v-if="$slots.prepend">

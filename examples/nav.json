@@ -21,6 +21,7 @@
   },
   {
     "name": "主题",
+    "index": "/zh-CN/themes",
     "child": [
       {
         "name": "Font 字体",
@@ -38,6 +39,7 @@
   },
   {
     "name": "Components",
+    "index": "/zh-CN/components",
     "groups": [
       {
         "name": "Basic",

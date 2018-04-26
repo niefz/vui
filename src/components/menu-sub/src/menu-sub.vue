@@ -63,6 +63,11 @@
         return style;
       },
     },
+    watch: {
+      'menu.defaultOpens'(val) {
+        this.expand = val.indexOf(this.index) > -1;
+      },
+    },
     methods: {
       handleToggle() {
         this.expand = !this.expand;
