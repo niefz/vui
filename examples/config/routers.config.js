@@ -125,6 +125,13 @@ export default {
       }, 'radio'),
     },
     {
+      path: '/zh-CN/components/rate',
+      name: 'Rate 评分',
+      component: rate => require.ensure([], (require) => {
+        rate(require('../docs/zh-CN/rate.md'));
+      }, 'rate'),
+    },
+    {
       path: '/zh-CN/components/select',
       name: 'Select 选择器',
       component: select => require.ensure([], (require) => {

@@ -10,6 +10,9 @@
 <v-row>
   <v-rate v-model="value1"></v-rate>
 </v-row>
+<v-row>
+  <v-rate v-model="value2" disabled></v-rate>
+</v-row>
 ```
 :::
 
@@ -25,6 +28,7 @@
     data() {
       return {
         value1: 1,
+        value2: 2,
       };
     },
     methods: {

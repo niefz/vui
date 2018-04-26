@@ -1,5 +1,15 @@
 .v-rate{
 	.v-rate__item{
-		
-	}	
+		display: inline-block;
+		margin-left: 5px;
+		cursor: pointer;
+		&.v-rate__item:first-child{
+			margin-left: 0;
+		}
+	}
+	&.disabled{
+		.v-rate__item{
+			cursor: default;
+		}
+	}
 }
