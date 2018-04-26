@@ -9,12 +9,12 @@
 ```html
 <v-row>
   <v-col>
-    <v-empty tip="抱歉，暂无数据！"></v-empty>
+    <v-empty description="抱歉，暂无数据！"></v-empty>
   </v-col>
 </v-row>
 <v-row>
   <v-col>
-    <v-empty tip="抱歉，暂无数据！" src="http://icon.qiantucdn.com/img/searchnew/nores.png"></v-empty>
+    <v-empty description="抱歉，暂无数据！" src="http://icon.qiantucdn.com/img/searchnew/nores.png"></v-empty>
   </v-col>
 </v-row>
 <v-row>

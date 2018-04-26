@@ -9,7 +9,29 @@
 ```html
 <v-row>
   <v-col>
-    <v-spin tip="拼命加载中"></v-spin>
+    <v-exception exception="403">
+      <template>
+        <v-button theme="primary">返回首页</v-button>
+      </template>
+    </v-exception>
+  </v-col>
+</v-row>
+<v-row>
+  <v-col>
+    <v-exception>
+      <template>
+        <v-button theme="primary">返回首页</v-button>
+      </template>
+    </v-exception>
+  </v-col>
+</v-row>
+<v-row>
+  <v-col>
+    <v-exception exception="500">
+      <template>
+        <v-button theme="primary">返回首页</v-button>
+      </template>
+    </v-exception>
   </v-col>
 </v-row>
 ```
@@ -18,21 +40,17 @@
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Spin from '@/components/spin';
+  import Exception from '@/components/exception';
+  import Button from '@/components/button';
 
   export default {
     components: {
       VRow: Row,
       VCol: Col,
-      VSpin: Spin,
+      VException: Exception,
+      VButton: Button,
     },
     methods: {
     },
   };
 </script>
-
-<style rel="stylesheet/scss" lang="sass" scoped>
-  .v-col-24 {
-    height: 100px; 
-  }
-</style>

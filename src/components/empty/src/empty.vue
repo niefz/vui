@@ -13,9 +13,9 @@
       <template v-else-if="icon">
         <v-icon class="v-empty--inner-icon" :icon="icon"></v-icon>
       </template>
-      <template v-if="tip || $slots.default">
-        <p class="v-empty--inner-tip">
-          <slot>{{tip}}</slot>
+      <template v-if="description || $slots.default">
+        <p class="v-empty--inner-desc">
+          <slot>{{description}}</slot>
         </p>
       </template>
     </div>
@@ -33,7 +33,7 @@
     props: {
       icon: String,
       src: String,
-      tip: String,
+      description: String,
       fill: Boolean,
     },
   };

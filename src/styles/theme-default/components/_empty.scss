@@ -1,6 +1,7 @@
 .v-empty {
   display: block;
   text-align: center;
+  @extend .clearfix;
 }
 
 .v-empty--inner {
@@ -15,7 +16,7 @@
   &-icon {
     font-size: 100px;
   }
-  &-tip {
+  &-desc {
     display: block;
     width: 100%;
   }
