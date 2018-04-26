@@ -86,8 +86,8 @@
               this.style = {};
             }
           }
+          this.$emit('change', this.isAffix);
         }
-        this.$emit('change', this.isAffix);
       },
     },
     mounted () {
