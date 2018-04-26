@@ -255,9 +255,6 @@
         font-size: 14px;
         line-height: 28px;
       }
-      img {
-        max-width: calc(100% - 32px);
-      }
       .hljs {
         padding: 20px;
         border: 1px solid $color-border;
