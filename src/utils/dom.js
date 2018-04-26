@@ -41,6 +41,30 @@ export const off = (() => {
   }
 })();
 
+export const getScroll = (target, top) => {
+  const prop = top ? 'pageYOffset' : 'pageXOffset';
+  const method = top ? 'scrollTop' : 'scrollLeft';
+  let ret = target[prop];
+  if (typeof ret !== 'number') {
+    ret = window.document.documentElement[method];
+  }
+  return ret;
+};
+
+export const getOffset = (element) => {
+  const rect = element.getBoundingClientRect();
+  const scrollTop = getScroll(window, true);
+  const scrollLeft = getScroll(window);
+  const docEl = window.document.body;
+  const clientTop = docEl.clientTop || 0;
+  const clientLeft = docEl.clientLeft || 0;
+  return {
+    top: rect.top + scrollTop - clientTop,
+    left: rect.left + scrollLeft - clientLeft,
+  };
+};
+
+
 export const hasClass = (el, cls) => {
   if (!el || !cls) return false;
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');

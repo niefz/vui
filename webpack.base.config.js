@@ -155,6 +155,7 @@ module.exports = {
                   sourceMap: true
                 }
               },
+              preserveWhitespace: false,
               sourceMap: true
             }
           }
