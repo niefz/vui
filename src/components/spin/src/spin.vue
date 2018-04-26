@@ -1,6 +1,6 @@
 <template>
   <div class="v-spin">
-    <span class="v-spin--inner">
+    <div class="v-spin--inner">
       <em class="v-spin--inner-dot">
         <i></i>
         <i></i>
@@ -10,7 +10,7 @@
       <em class="v-spin--inner-tip">
         {{tip}}
       </em>
-    </span>
+    </div>
   </div>
 </template>
 <script>

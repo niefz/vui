@@ -146,6 +146,27 @@ export default {
       }, 'badge'),
     },
     {
+      path: '/zh-CN/components/card',
+      name: 'Card 卡片',
+      component: card => require.ensure([], (require) => {
+        card(require('../docs/zh-CN/card.md'));
+      }, 'card'),
+    },
+    {
+      path: '/zh-CN/components/empty',
+      name: 'Empty 空提示',
+      component: empty => require.ensure([], (require) => {
+        empty(require('../docs/zh-CN/empty.md'));
+      }, 'empty'),
+    },
+    {
+      path: '/zh-CN/components/exception',
+      name: 'Exception 异常页',
+      component: exception => require.ensure([], (require) => {
+        exception(require('../docs/zh-CN/exception.md'));
+      }, 'exception'),
+    },
+    {
       path: '/zh-CN/components/tag',
       name: 'Tag 标签',
       component: tag => require.ensure([], (require) => {
