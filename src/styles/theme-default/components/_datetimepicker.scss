@@ -13,7 +13,6 @@
 
 .v-picker-date {
   display: inline-block;
-  font-size: 0;
   &--hd {
     padding: 5px 10px;
     border-bottom: 1px solid $color-divider;
@@ -116,7 +115,6 @@
   height: 280px;
   padding: 30px 20px;
   border-left: 1px solid $color-divider;
-  font-size: 0;
   .select-panel {
     position: absolute;
     top: 50%;
