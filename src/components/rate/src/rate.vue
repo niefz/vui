@@ -4,7 +4,9 @@
       v-for="item in points"
       class="v-rate__item"
     >
-      <slot></slot>
+      <slot>
+         <v-icon icon="v-icon-delete"></v-icon>
+      </slot>
     </span>
   </div>
 </template>
@@ -13,15 +15,30 @@
     name: 'Rate',
     componentName: 'Rate',
     props: {
+      value: {
+        type: Number,
+        default: 0,
+      },
       points: {
         type: Number,
         default: 5,
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
+      allowHalfPoints: {
+        type: Boolean,
+        default: false,
       },
     },
     data() {
       return {};
     },
     computed: {
+      isDisabled() {
+        return this.disabled;
+      },
     },
     watch: {
     },
