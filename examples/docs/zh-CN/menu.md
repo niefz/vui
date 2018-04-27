@@ -47,6 +47,16 @@
     </v-menu>
   </v-col>
 </v-row>
+<v-row>
+  <v-col :span="24">
+    <v-menu mode="horizontal" theme="dark" :height="64">
+      <v-menu-item index="index">首页</v-menu-item>
+      <v-menu-item index="design">设计</v-menu-item>
+      <v-menu-item index="changelog">组件</v-menu-item>
+      <v-menu-item index="PRO">PRO</v-menu-item>
+    </v-menu>
+  </v-col>
+</v-row>
 ```
 :::
 
