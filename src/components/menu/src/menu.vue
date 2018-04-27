@@ -3,6 +3,7 @@
     class="v-menu"
     :class="[
       'v-menu--' + mode,
+      'v-menu--' + theme,
     ]"
     role="menu">
     <slot></slot>
@@ -24,6 +25,10 @@
       mode: {
         type: String,
         default: 'vertical',
+      },
+      theme: {
+        type: String,
+        default: 'light',
       },
       height: {
         type: Number,
