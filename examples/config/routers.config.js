@@ -139,6 +139,13 @@ export default {
       }, 'select'),
     },
     {
+      path: '/zh-CN/components/slider',
+      name: 'Slider 滑块',
+      component: slider => require.ensure([], (require) => {
+        slider(require('../docs/zh-CN/slider.md'));
+      }, 'slider'),
+    },
+    {
       path: '/zh-CN/components/switch',
       name: 'Switch 开关',
       component: switcher => require.ensure([], (require) => {
