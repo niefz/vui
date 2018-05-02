@@ -40,14 +40,3 @@
     },
   };
 </script>
-<<<<<<< HEAD
-<style lang="scss" scoped>
-  .v-col-24 {
-    height: 100px; 
-  }
-=======
-
-<style rel="stylesheet/scss" lang="sass" scoped>
-  
->>>>>>> b6675ee72b36519fad5d727100f3acc57bd496a4
-</style>
