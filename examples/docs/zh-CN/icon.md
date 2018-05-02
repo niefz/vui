@@ -50,8 +50,7 @@
     },
   };
 </script>
-
-<style rel="stylesheet/scss" lang="sass" scoped>
+<style lang="scss" scoped>
 .icons {
   .v-icon {
     font-size: 30px;

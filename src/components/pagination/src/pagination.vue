@@ -15,6 +15,7 @@
           <v-select-menu-option
             :label="item + ' 条/页'"
             :value="item"
+            :key="item"
             v-for="item in pageSizeOptions">
           </v-select-menu-option>
         </v-select-menu>

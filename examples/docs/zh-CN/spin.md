@@ -35,8 +35,7 @@
     },
   };
 </script>
-
-<style rel="stylesheet/scss" lang="sass" scoped>
+<style lang="scss" scoped>
   .v-col-24 {
     height: 100px; 
   }

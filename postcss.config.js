@@ -3,9 +3,9 @@
  */
 module.exports = {
   plugins: [
-    require('precss'),
     require('autoprefixer')({
       browsers: ['last 20 versions']
-    })
+    }),
+    require('cssnano')()
   ]
 };

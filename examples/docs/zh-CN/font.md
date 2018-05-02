@@ -158,8 +158,7 @@ Free-ui 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的�
     </tr>
   </tbody>
 </table>
-
-<style>
+<style lang="scss" scoped>
   .font-color { width: 100%; }
   .font-color th, .font-color td { padding: 15px; border-bottom: 1px solid #D9D9D9; }
   .font-color th.dark, .font-color td.dark { border-color: #002140; }

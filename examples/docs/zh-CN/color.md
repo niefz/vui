@@ -132,7 +132,7 @@
     },
   };
 </script>
-<style rel="stylesheet/scss" lang="sass" scoped>
+<style lang="scss" scoped>
   .color-box {
     height: 74px;
     margin-top: 10px;

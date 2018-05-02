@@ -49,8 +49,7 @@
     },
   };
 </script>
-
-<style rel="stylesheet/scss" lang="sass" scoped>
+<style lang="scss" scoped>
   .article {
     height: 2000px; 
   }

@@ -1,24 +1,21 @@
 /**
  * Created by niefz on 2017/11/24.
  */
-const path = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
 
-const resolve = (dir) => {
-  return path.join(__dirname, '.', dir);
-};
-
-const APP_PATH = resolve('src');
-const EXAMPLES_PATH = resolve('examples');
+const APP_PATH = resolve(__dirname, 'src');
+const EXAMPLES_PATH = resolve(__dirname, 'examples');
 
 module.exports = webpackMerge(webpackBaseConfig, {
+  mode: 'development',
   entry: {
-    vendor: ['vue', 'vue-router'],
+    vendors: ['vue', 'vue-router'],
     index: './examples/index'
   },
   output: {
@@ -27,48 +24,56 @@ module.exports = webpackMerge(webpackBaseConfig, {
     filename: 'assets/js/[name].min.js?v=[hash:8]',
     chunkFilename: 'assets/js/[name].min.js?v=[chunkhash:8]'
   },
-  devtool: 'cheap-eval-source-map',
-  devServer: {
-    compress: true,
-    contentBase: EXAMPLES_PATH,
-    historyApiFallback: true,
-    host: 'free-ui.io',
-    hot: true,
-    inline: true,
-    overlay: {
-      warnings: true,
-      errors: true
-    },
-    port: 3011,
-    publicPath: "/",
-    stats: {
-      assets: true,
-      colors: true,
-      errors: true,
-      errorDetails: true,
-      performance: true,
-      timings: true,
-      version: true,
-      warnings: true,
-    }
-  },
   resolve: {
     alias: {
       vui: `${APP_PATH}/index`
     }
   },
+  devtool: 'cheap-eval-source-map',
+  devServer: {
+    contentBase: EXAMPLES_PATH,
+    compress: true,
+    historyApiFallback: true,
+    host: 'free-ui.io',
+    hot: true,
+    inline: true,
+    open: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    port: 3011,
+    publicPath: "/"
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /node_modules/,
+          chunks: 'initial',
+          name: 'vendors',
+          priority: 10
+        },
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 2
+        }
+      }
+    }
+  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.min.js'
-    }),
     new HtmlWebpackPlugin({
       filename: resolve('examples/index.html'),
       template: resolve('examples/index.html'),
       inject: 'body'
     }),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].min.css?v=[hash:8]',
+      allChunks: true
+    }),
     new FriendlyErrorsPlugin(),
-    new OpenBrowserPlugin({url: 'http://free-ui.io:3011/'})
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 });

@@ -44,7 +44,6 @@
     },
   };
 </script>
-
-<style>
+<style lang="scss" scoped>
 .empty { height: 300px; }
 </style>

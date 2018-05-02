@@ -34,7 +34,7 @@
     },
   };
 </script>
-<style rel="stylesheet/scss" lang="sass" scoped>
+<style lang="scss" scoped>
 .v-row, .v-row--flex {
   > div {
     min-height: 30px;

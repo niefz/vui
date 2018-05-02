@@ -1,17 +1,13 @@
 /**
  * Created by niefz on 2017/11/24.
  */
-const path = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CompressionPlugin = require('compression-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config.js');
 
-const resolve = (dir) => {
-  return path.join(__dirname, '.', dir);
-};
-
-const BUILD_PATH = resolve('dist');
+const BUILD_PATH = resolve(__dirname, 'dist');
 
 module.exports = webpackMerge(webpackBaseConfig, {
   entry: {
