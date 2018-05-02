@@ -25,7 +25,7 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   .demo {
     border: solid 1px #D9D9D9;
     border-radius: 3px;

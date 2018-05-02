@@ -17,12 +17,10 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: 'htmllint',
-            options: {}
+            loader: 'htmllint'
           },
           {
-            loader: 'html',
-            options: {}
+            loader: 'html'
           }
         ]
       },
@@ -50,19 +48,13 @@ module.exports = {
             }
           },
           {
-            loader: 'css',
-            options: {
-              sourceMap: true
-            }
+            loader: 'css'
           },
           {
             loader: 'postcss'
           },
           {
-            loader: 'sass',
-            options: {
-              sourceMap: true
-            }
+            loader: 'sass'
           }
         ]
       },
@@ -76,19 +68,13 @@ module.exports = {
             }
           },
           {
-            loader: 'css',
-            options: {
-              sourceMap: true
-            }
+            loader: 'css'
           },
           {
             loader: 'postcss'
           },
           {
-            loader: 'less',
-            options: {
-              sourceMap: true
-            }
+            loader: 'less'
           }
         ]
       },
@@ -107,8 +93,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: 'file',
-            options: {}
+            loader: 'file'
           }
         ]
       },

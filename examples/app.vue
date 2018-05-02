@@ -147,7 +147,7 @@
     },
   };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../src/styles/index.scss";
 
   html, body, .wrapper {

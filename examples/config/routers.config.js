@@ -213,7 +213,7 @@ export default {
       name: 'Alert 警告提示',
       component: alert => require.ensure([], (require) => {
         alert(require('../docs/zh-CN/alert.md'));
-      }, 'Alert 警告'),
+      }, 'alert'),
     },
     {
       path: '/zh-CN/components/message',

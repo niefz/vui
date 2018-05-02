@@ -18,19 +18,13 @@ module.exports = {
         }
       },
       {
-        loader: 'css',
-        options: {
-          sourceMap: true
-        }
+        loader: 'css'
       },
       {
         loader: 'postcss'
       },
       {
-        loader: 'sass',
-        options: {
-          sourceMap: true
-        }
+        loader: 'sass'
       }
     ],
     less: [
@@ -41,19 +35,13 @@ module.exports = {
         }
       },
       {
-        loader: 'css',
-        options: {
-          sourceMap: true
-        }
+        loader: 'css'
       },
       {
         loader: 'postcss'
       },
       {
-        loader: 'less',
-        options: {
-          sourceMap: true
-        }
+        loader: 'less'
       }
     ]
   },
