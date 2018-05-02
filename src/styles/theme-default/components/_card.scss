@@ -1,1 +1,22 @@
-
+.v-card{
+	border-radius: 4px;
+	border: 1px solid $color-border;
+	background-color: $color-white;
+	overflow: hidden;
+	color: #303133;
+	transition: .3s;
+	box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+	.v-card__header, .v-card__footer{
+		padding: 18px 20px;
+		box-sizing: border-box;
+	}
+	.v-card__header{
+		border-bottom: 1px solid $color-border;
+	}
+	.v-card__footer{
+		border-top: 1px solid $color-border;
+	}
+	.v-card__body{
+		padding: 20px;
+	}
+}
