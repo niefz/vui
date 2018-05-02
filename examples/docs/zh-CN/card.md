@@ -9,7 +9,17 @@
 ```html
 <v-row>
   <v-col>
-    <v-spin tip="拼命加载中"></v-spin>
+    <v-Card>
+      <header slot="header">
+        This is header
+      </header>
+      <div>
+        This is content
+      </div>
+      <footer slot="footer">
+        This is footer
+      </footer>
+    </v-Card>
   </v-col>
 </v-row>
 ```
@@ -18,13 +28,13 @@
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Spin from '@/components/spin';
+  import Card from '@/components/card';
 
   export default {
     components: {
       VRow: Row,
       VCol: Col,
-      VSpin: Spin,
+      VCard: Card,
     },
     methods: {
     },
@@ -32,7 +42,5 @@
 </script>
 
 <style rel="stylesheet/scss" lang="sass" scoped>
-  .v-col-24 {
-    height: 100px; 
-  }
+  
 </style>
