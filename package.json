@@ -9,7 +9,7 @@
   "typings": "types/index.ts",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.config.js --progress --colors",
-    "pro": "webpack --config webpack.pro.config.js --progress --colors",
+    "dist": "webpack --config webpack.dist.config.js --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
