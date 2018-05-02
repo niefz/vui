@@ -39,7 +39,7 @@
       <template slot="append">
         <v-select v-model="select">
           <v-select-menu>
-            <v-select-menu-option :label="item" :value="item" v-for="item in options"></v-select-menu-option>
+            <v-select-menu-option :label="item" :value="item" :key="item" v-for="item in options"></v-select-menu-option>
           </v-select-menu>
         </v-select>
       </template>
@@ -50,7 +50,7 @@
       <template slot="prepend">
         <v-select v-model="select">
           <v-select-menu>
-            <v-select-menu-option :label="item" :value="item" v-for="item in options"></v-select-menu-option>
+            <v-select-menu-option :label="item" :value="item" :key="item" v-for="item in options"></v-select-menu-option>
           </v-select-menu>
         </v-select>
       </template>

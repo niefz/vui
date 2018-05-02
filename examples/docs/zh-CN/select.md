@@ -13,7 +13,7 @@
   <v-col :span="6">
     <v-select v-model="select">
       <v-select-menu>
-        <v-select-menu-option :label="item" :value="item" v-for="item in options"></v-select-menu-option>
+        <v-select-menu-option :label="item" :value="item" :key="item" v-for="item in options"></v-select-menu-option>
       </v-select-menu>
     </v-select>
   </v-col>
