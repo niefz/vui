@@ -1,6 +1,6 @@
 {
   "name": "free-vui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Free UI Components Library for Vue.js.",
   "keywords": [
     "free-vui",
@@ -27,7 +27,7 @@
     "dist",
     "src"
   ],
-  "main": "dist/vui.min.js",
+  "main": "dist/free-vui.min.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:niefz/vui.git"
@@ -58,6 +58,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cheerio": "^1.0.0-rc.2",
     "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
     "eslint": "^4.19.1",
@@ -80,7 +81,7 @@
     "markdown-it-container": "^2.0.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
-    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
     "postcss-loader": "^2.1.4",
     "sass-loader": "^7.0.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
