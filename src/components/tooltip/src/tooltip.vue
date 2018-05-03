@@ -41,7 +41,7 @@
     props: {
       placement: {
         type: String,
-        default: 'bottom'
+        default: 'bottom',
       },
       theme: {
         type: String,
@@ -86,7 +86,7 @@
     watch: {
       content () {
         this.updatePopper();
-      }
+      },
     },
     methods: {
       handleShowPopper() {
@@ -105,7 +105,7 @@
             }, this.hideDelay);
           }
         }
-      }
+      },
     },
   };
 </script>

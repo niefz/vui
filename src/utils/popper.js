@@ -11,7 +11,7 @@ export default {
   props: {
     transformOrigin: {
       type: [Boolean, String],
-      default: true
+      default: true,
     },
     placement: {
       type: String,
@@ -21,11 +21,13 @@ export default {
       type: Number,
       default: 5,
     },
-    reference: Object,
-    popper: Object,
     offset: {
       type: Number,
       default: 0,
+    },
+    arrowOffset: {
+      type: Number,
+      default: 35,
     },
     value: {
       type: Boolean,
@@ -35,15 +37,13 @@ export default {
       type: Boolean,
       default: true,
     },
-    arrowOffset: {
-      type: Number,
-      default: 35
-    },
-    transition: String,
     appendToBody: {
       type: Boolean,
       default: true,
     },
+    reference: Object,
+    popper: Object,
+    transition: String,
     popperOptions: {
       type: Object,
       default() {
@@ -87,6 +87,7 @@ export default {
       options.placement = this.placement;
       options.offset = this.offset;
       options.arrowOffset = this.arrowOffset;
+
       this.popperJS = new Popper(reference, popper, options);
       this.popperJS.onCreate = () => {
         this.$emit('created', this);
@@ -122,8 +123,7 @@ export default {
       let placement = this.popperJS.popper.getAttribute('x-placement').split('-')[0];
       let origin = placementMap[placement];
       this.popperJS.popper.style.transformOrigin = typeof this.transformOrigin === 'string'
-        ? this.transformOrigin
-        : ['top', 'bottom'].indexOf(placement) > -1 ? `center ${ origin }` : `${ origin } center`;
+        ? this.transformOrigin : ['top', 'bottom'].indexOf(placement) > -1 ? `center ${ origin }` : `${ origin } center`;
     },
   },
   beforeDestroy() {
