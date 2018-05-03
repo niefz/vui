@@ -13,6 +13,7 @@ const webpackBaseConfig = require('./webpack.base.config.js');
 const BUILD_PATH = resolve(__dirname, 'dist');
 
 module.exports = webpackMerge(webpackBaseConfig, {
+  mode: 'production',
   output: {
     path: BUILD_PATH,
     publicPath: '/dist/',
