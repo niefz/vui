@@ -1,5 +1,5 @@
 /**
- * Created by niefz on 2017/11/24.
+ * Created by niefz on 2018/1/8.
  */
 const {resolve} = require('path');
 const webpack = require('webpack');

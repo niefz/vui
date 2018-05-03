@@ -1,5 +1,5 @@
 /**
- * Created by niefz on 2018/1/17.
+ * Created by niefz on 2018/1/8.
  */
 export default {
   mode: 'hash',
