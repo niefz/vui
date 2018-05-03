@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VDropdownMenuItem from './src/dropdown-menu-item';
+import VDropdownMenuItem from './src/dropdown-menu-item.vue';
 
 VDropdownMenuItem.install = (Vue) => {
   Vue.component(VDropdownMenuItem.name, VDropdownMenuItem);

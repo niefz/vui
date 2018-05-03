@@ -12,8 +12,8 @@
   </div>
 </template>
 <script>
-  import Clickoutside from '@/directives/clickoutside';
-  import Emitter from '@/mixins/emitter';
+  import Clickoutside from 'free-vui/src/directives/clickoutside';
+  import Emitter from 'free-vui/src/mixins/emitter';
 
   export default {
     name: 'Dropdown',

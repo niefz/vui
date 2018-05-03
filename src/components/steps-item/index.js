@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VStepsItem from './src/steps-item';
+import VStepsItem from './src/steps-item.vue';
 
 VStepsItem.install = (Vue) => {
   Vue.component(VStepsItem.name, VStepsItem);

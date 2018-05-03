@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-  import Icon from '@/components/icon';
+  import Icon from 'free-vui/src/components/icon';
   import PickerDate from './picker-date.vue';
   import PickerTime from './picker-time.vue';
 

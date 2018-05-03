@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import Vtree from './src/tree';
+import Vtree from './src/tree.vue';
 
 Vtree.install = (Vue) => {
   Vue.component(Vtree.name, Vtree);

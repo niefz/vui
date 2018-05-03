@@ -10,7 +10,7 @@
   </transition>
 </template>
 <script>
-  import { addClass, removeClass } from '@/utils/dom';
+  import { addClass, removeClass } from 'free-vui/src/utils/dom';
 
   export default {
     name: 'CollapseTransition',

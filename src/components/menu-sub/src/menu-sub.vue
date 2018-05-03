@@ -26,8 +26,8 @@
   </li>
 </template>
 <script>
-  import CollapseTransition from '@/components/collapse-transition';
-  import Emitter from '@/mixins/emitter';
+  import CollapseTransition from 'free-vui/src/components/collapse-transition';
+  import Emitter from 'free-vui/src/mixins/emitter';
 
   export default {
     name: 'MenuSub',

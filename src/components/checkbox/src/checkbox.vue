@@ -32,7 +32,7 @@
   </label>
 </template>
 <script>
-  import Emitter from '@/mixins/emitter';
+  import Emitter from 'free-vui/src/mixins/emitter';
 
   export default {
     name: 'Checkbox',

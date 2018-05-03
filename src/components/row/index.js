@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VRow from './src/row';
+import VRow from './src/row.vue';
 
 VRow.install = (Vue) => {
   Vue.component(VRow.name, VRow);

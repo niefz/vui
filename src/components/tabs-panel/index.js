@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTabsPanel from './src/tabs-panel';
+import VTabsPanel from './src/tabs-panel.vue';
 
 VTabsPanel.install = (Vue) => {
   Vue.component(VTabsPanel.name, VTabsPanel);

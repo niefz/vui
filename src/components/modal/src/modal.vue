@@ -42,8 +42,8 @@
   </div>
 </template>
 <script>
-  import Icon from '@/components/icon';
-  import Button from '@/components/button';
+  import Icon from 'free-vui/src/components/icon';
+  import Button from 'free-vui/src/components/button';
 
   export default {
     name: 'Modal',

@@ -65,8 +65,7 @@ Free-ui 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的�
     </tr>
   </tbody>
 </table>
-
-<style>
+<style scoped>
 .font-size { width: 100%; border: 1px solid #D9D9D9; }
 .font-size td { padding: 15px 20px; border-bottom: 1px solid #D9D9D9; }
 .font-size td.thead { border-right: 1px solid #D9D9D9; background-color: #FAFAFA; }
@@ -92,8 +91,7 @@ Free-ui 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的�
     <div class="name semibold">Semibold 600</div>
   </div>
 </div>
-
-<style>
+<style scoped>
   .font-weight { display: flex; }
   .font-weight--inner {
     position: relative;
@@ -158,7 +156,7 @@ Free-ui 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的�
     </tr>
   </tbody>
 </table>
-<style lang="scss" scoped>
+<style scoped>
   .font-color { width: 100%; }
   .font-color th, .font-color td { padding: 15px; border-bottom: 1px solid #D9D9D9; }
   .font-color th.dark, .font-color td.dark { border-color: #002140; }

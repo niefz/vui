@@ -8,7 +8,13 @@ module.exports = {
         options: {
           sourceMap: true
         }
-      }
+      },
+      // {
+      //   loader: 'eslint',
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter')
+      //   }
+      // }
     ],
     scss: [
       {

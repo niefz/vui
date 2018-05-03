@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import { t } from '@/locale';
+import { t } from 'free-vui/src/locale';
 
 export default {
   methods: {

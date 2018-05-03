@@ -26,7 +26,7 @@
   </button>
 </template>
 <script>
-  import Icon from '@/components/icon';
+  import Icon from 'free-vui/src/components/icon';
 
   export default {
     name: 'Button',

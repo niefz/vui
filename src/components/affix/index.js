@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAffix from './src/affix';
+import VAffix from './src/affix.vue';
 
 VAffix.install = (Vue) => {
   Vue.component(VAffix.name, VAffix);

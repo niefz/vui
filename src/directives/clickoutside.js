@@ -2,7 +2,7 @@
  * Created by niefz on 2018/1/8.
  */
 import Vue from 'vue';
-import { on } from '@/utils/dom';
+import { on } from 'free-vui/src/utils/dom';
 
 const nodeList = [];
 const ctx = '@@clickoutsideContext';

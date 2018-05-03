@@ -21,7 +21,7 @@ const Notification = (options) => {
     };
   }
 
-  const id = 'message-' + index++;
+  const id = 'notify-' + index++;
   const userOnClose = options.onClose;
   const placement = options.placement || 'top-right';
   let offset = options.offset || 0;

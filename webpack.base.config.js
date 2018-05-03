@@ -5,7 +5,7 @@ const {resolve} = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const vueLoaderConfig = require('./vue-loader.config.js');
-const markdownConfig = resolve('./markdown.config.js');
+const markdownConfig = require('./markdown.config.js');
 const package = require('./package.json');
 
 const APP_PATH = resolve(__dirname, 'src');
@@ -24,6 +24,20 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: /\.(js|vue)$/,
+      //   include: /src/,
+      //   exclude: /node_modules/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       loader: 'eslint',
+      //       options: {
+      //         formatter: require('eslint-friendly-formatter')
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.js$/,
         include: /src/,
@@ -117,6 +131,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       'vue': 'vue/dist/vue.js',
+      'free-vui': resolve(__dirname, './'),
       '@': APP_PATH
     }
   },

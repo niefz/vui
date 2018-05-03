@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VBreadcrumb from './src/breadcrumb';
+import VBreadcrumb from './src/breadcrumb.vue';
 
 VBreadcrumb.install = (Vue) => {
   Vue.component(VBreadcrumb.name, VBreadcrumb);

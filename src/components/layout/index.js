@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VLayout from './src/layout';
+import VLayout from './src/layout.vue';
 
 VLayout.install = (Vue) => {
   Vue.component(VLayout.name, VLayout);

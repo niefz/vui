@@ -1,7 +1,7 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTabsNav from './src/tabs-nav';
+import VTabsNav from './src/tabs-nav.vue';
 
 VTabsNav.install = (Vue) => {
   Vue.component(VTabsNav.name, VTabsNav);

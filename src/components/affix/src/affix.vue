@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import { on, off, getScroll, getOffset } from '@/utils/dom';
+  import { on, off, getScroll, getOffset } from 'free-vui/src/utils/dom';
 
   export default {
     name: 'Affix',

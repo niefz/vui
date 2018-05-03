@@ -245,7 +245,7 @@
   </div>
 </template>
 <script>
-  import Button from '@/components/button';
+  import Button from 'free-vui/src/components/button';
 
   export default {
     name: 'DatePicker',

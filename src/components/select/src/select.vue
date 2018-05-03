@@ -12,9 +12,9 @@
   </div>
 </template>
 <script>
-  import Clickoutside from '@/directives/clickoutside';
-  import Emitter from '@/mixins/emitter';
-  import Input from '@/components/input';
+  import Clickoutside from 'free-vui/src/directives/clickoutside';
+  import Emitter from 'free-vui/src/mixins/emitter';
+  import Input from 'free-vui/src/components/input';
 
   export default {
     name: 'Select',

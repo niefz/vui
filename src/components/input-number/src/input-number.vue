@@ -34,8 +34,8 @@
   </div>
 </template>
 <script>
-  import Input from '@/components/input';
-  import Icon from '@/components/icon';
+  import Input from 'free-vui/src/components/input';
+  import Icon from 'free-vui/src/components/icon';
 
   export default {
     name: 'Input',

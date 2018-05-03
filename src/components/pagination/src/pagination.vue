@@ -117,12 +117,12 @@
   </div>
 </template>
 <script>
-  import Button from '@/components/button';
-  import Input from '@/components/input';
-  import Select from '@/components/select';
-  import SelectMenu from '@/components/select-menu';
-  import SelectMenuOption from '@/components/select-menu-option';
-  import Icon from '@/components/icon';
+  import Button from 'free-vui/src/components/button';
+  import Input from 'free-vui/src/components/input';
+  import Select from 'free-vui/src/components/select';
+  import SelectMenu from 'free-vui/src/components/select-menu';
+  import SelectMenuOption from 'free-vui/src/components/select-menu-option';
+  import Icon from 'free-vui/src/components/icon';
 
   export default {
     name: 'Pagination',
