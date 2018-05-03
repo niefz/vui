@@ -181,6 +181,13 @@ export default {
       }, 'empty'),
     },
     {
+      path: '/zh-CN/components/tooltip',
+      name: 'Tooltip 文字提示',
+      component: tooltip => require.ensure([], (require) => {
+        tooltip(require('../docs/zh-CN/tooltip.md'));
+      }, 'tooltip'),
+    },
+    {
       path: '/zh-CN/components/exception',
       name: 'Exception 异常页',
       component: exception => require.ensure([], (require) => {

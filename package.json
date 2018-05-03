@@ -40,6 +40,7 @@
   "dependencies": {
     "async-validator": "^1.8.1",
     "deepmerge": "^2.0.1",
+    "popper.js": "^1.14.3",
     "throttle-debounce": "^1.0.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"

@@ -1,1 +1,134 @@
+.v-tooltip {
+  display: inline-block;
+  &--arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: {
+      style: solid;
+      color: transparent;
+    }
+  }
+  &--inner {
+    min-height: 32px;
+    padding: 6px 8px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    text-align: left;
+    text-decoration: none;
+  }
+}
 
+.v-tooltip--placement-top,
+.v-tooltip--placement-top-start,
+.v-tooltip--placement-top-end {
+  padding-bottom: 8px;
+  .v-tooltip--arrow {
+    bottom: 3px;
+    border-width: 5px 5px 0;
+    border-top-color: $color-menu-dark;
+  }
+}
+
+.v-tooltip--placement-right,
+.v-tooltip--placement-right-start,
+.v-tooltip--placement-right-end {
+  padding-left: 8px;
+  .v-tooltip--arrow {
+    left: 3px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: $color-menu-dark;
+  }
+}
+
+.v-tooltip--placement-bottom,
+.v-tooltip--placement-bottom-start,
+.v-tooltip--placement-bottom-end {
+  padding-top: 8px;
+  .v-tooltip--arrow {
+    top: 3px;
+    border-width: 0 5px 5px;
+    border-bottom-color: $color-menu-dark;
+  }
+}
+
+.v-tooltip--placement-left,
+.v-tooltip--placement-left-start,
+.v-tooltip--placement-left-end {
+  padding-right: 8px;
+  .v-tooltip--arrow {
+    right: 3px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: $color-menu-dark;
+  }
+}
+
+.v-tooltip--placement-top .v-tooltip--arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+
+.v-tooltip--placement-top-start .v-tooltip--arrow {
+  left: 16px;
+}
+
+.v-tooltip--placement-top-end .v-tooltip--arrow {
+  right: 16px;
+}
+
+.v-tooltip--placement-right .v-tooltip--arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+
+.v-tooltip--placement-right-start .v-tooltip--arrow {
+  top: 8px;
+}
+
+.v-tooltip--placement-right-end .v-tooltip--arrow {
+  bottom: 8px;
+}
+
+.v-tooltip--placement-bottom .v-tooltip--arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+
+.v-tooltip--placement-bottom-start .v-tooltip--arrow {
+  left: 16px;
+}
+
+.v-tooltip--placement-bottom-end .v-tooltip--arrow {
+  right: 16px;
+}
+
+.v-tooltip--placement-left .v-tooltip--arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+
+.v-tooltip--placement-left-start .v-tooltip--arrow {
+  top: 8px;
+}
+
+.v-tooltip--placement-left-end .v-tooltip--arrow {
+  bottom: 8px;
+}
+
+.dark {
+  .v-tooltip--inner {
+    border-color: $color-menu-dark;
+    background-color: $color-menu-dark;
+    color: $color-white;
+  }
+}
+
+.light {
+  .v-tooltip--inner {
+    border-color: $color-border;
+    background-color: $color-white;
+    color: $color-text-primary;
+  }
+}
