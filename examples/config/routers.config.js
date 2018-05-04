@@ -181,6 +181,13 @@ export default {
       }, 'popover'),
     },
     {
+      path: '/zh-CN/components/collapse',
+      name: 'Collapse 折叠面板',
+      component: collapse => require.ensure([], (require) => {
+        collapse(require('../docs/zh-CN/collapse.md'));
+      }, 'collapse'),
+    },
+    {
       path: '/zh-CN/components/empty',
       name: 'Empty 空提示',
       component: empty => require.ensure([], (require) => {

@@ -1,1 +1,39 @@
-
+.v-collapse--item {
+  &-header {
+    height: 40px;
+    border-bottom: 1px solid $color-divider;
+    background-color: $color-white;
+    font-weight: 500;
+    line-height: 40px;
+    color: $color-title;
+    cursor: pointer;
+    outline: none;
+    transition: border-bottom-color .3s;
+    &-icon {
+      float: right;
+      margin-right: 8px;
+      line-height: inherit;
+      color: $color-text-primary;
+      transition: transform .3s;
+    }
+  }
+  &-content {
+    border-bottom: 1px solid $color-divider;
+    background-color: $color-white;
+    &-inner {
+      padding-bottom: 20px;
+    }
+  }
+  &.active {
+    .v-collapse--item {
+      &-header {
+        border-bottom-color: transparent;
+        &-icon {
+          transform: rotate(90deg);
+        }
+      }
+      &-content {
+      }
+    }
+  }
+}
