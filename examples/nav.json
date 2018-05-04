@@ -95,6 +95,10 @@
             "path": "/zh-CN/components/pagination"
           },
           {
+            "name": "SideNav 侧导航",
+            "path": "/zh-CN/components/side-nav"
+          },
+          {
             "name": "Steps 步骤条",
             "path": "/zh-CN/components/steps"
           },
@@ -228,6 +232,10 @@
           {
             "name": "Alert 警告提示",
             "path": "/zh-CN/components/alert"
+          },
+          {
+            "name": "Drawer 抽屉",
+            "path": "/zh-CN/components/drawer"
           },
           {
             "name": "Message 全局提示",

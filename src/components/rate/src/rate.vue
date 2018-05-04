@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="v-rate"
     :class="[
       {
@@ -17,7 +17,7 @@
       @click="setValue(item)"
     >
       <slot>
-         <v-icon icon="v-icon-delete"></v-icon>
+         <v-icon :icon="icon"></v-icon>
       </slot>
     </span>
   </div>
@@ -36,6 +36,10 @@
         type: Number,
         default: 0,
       },
+      icon: {
+        type: String,
+        default: 'v-icon-heart',
+      },
       points: {
         type: Number,
         default: 5,
@@ -52,8 +56,8 @@
         type: Array,
         default () {
           return ['#999', '#666', '#1890ff']
-        }
-      }
+        },
+      },
     },
     data() {
       return {
@@ -67,18 +71,15 @@
     },
     watch: {
       value(val) {
-        console.log(val)
-        this.currentValue = val
-      }
+        this.currentValue = val;
+      },
     },
     methods: {
       setValue(val) {
-        if (this.isDisabled) {
-          return;
-        }
+        if (this.isDisabled) return;
         this.$emit('input', val);
         this.$emit('change', val);
-      }
+      },
     },
     created() {
     },

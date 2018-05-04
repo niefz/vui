@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 586584 */
-  src: url('//at.alicdn.com/t/font_586584_n0bl6898023gnwmi.eot');
-  src: url('//at.alicdn.com/t/font_586584_n0bl6898023gnwmi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_586584_n0bl6898023gnwmi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_586584_n0bl6898023gnwmi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_586584_n0bl6898023gnwmi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_586584_a4z0fgivdxvo0f6r.eot');
+  src: url('//at.alicdn.com/t/font_586584_a4z0fgivdxvo0f6r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_586584_a4z0fgivdxvo0f6r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_586584_a4z0fgivdxvo0f6r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_586584_a4z0fgivdxvo0f6r.svg#iconfont') format('svg');
 }
 
 .v-icon {
@@ -94,6 +94,10 @@
 
 .v-icon-user:before {
   content: '\e605';
+}
+
+.v-icon-heart:before {
+  content: '\e69d';
 }
 
 .v-icon-loading:before {
