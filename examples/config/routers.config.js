@@ -174,18 +174,18 @@ export default {
       }, 'card'),
     },
     {
-      path: '/zh-CN/components/popover',
-      name: 'Popover 气泡框',
-      component: popover => require.ensure([], (require) => {
-        popover(require('../docs/zh-CN/popover.md'));
-      }, 'popover'),
-    },
-    {
       path: '/zh-CN/components/collapse',
       name: 'Collapse 折叠面板',
       component: collapse => require.ensure([], (require) => {
         collapse(require('../docs/zh-CN/collapse.md'));
       }, 'collapse'),
+    },
+    {
+      path: '/zh-CN/components/popover',
+      name: 'Popover 气泡框',
+      component: popover => require.ensure([], (require) => {
+        popover(require('../docs/zh-CN/popover.md'));
+      }, 'popover'),
     },
     {
       path: '/zh-CN/components/empty',

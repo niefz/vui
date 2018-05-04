@@ -28,13 +28,11 @@
       },
     },
     data() {
+      return {};
     },
-    computed: {
-    },
-    watch: {
-    },
-    methods: {
-    },
+    computed: {},
+    watch: {},
+    methods: {},
     created() {
     },
     mounted() {
