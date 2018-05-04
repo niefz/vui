@@ -52,7 +52,7 @@
         default: 'fade-in-linear',
       },
       content: {
-        type: [String, Number],
+        type: String,
         default: '',
       },
       openDelay: {
@@ -79,9 +79,6 @@
           };
         },
       },
-    },
-    data () {
-      return {};
     },
     watch: {
       content () {

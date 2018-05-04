@@ -174,6 +174,13 @@ export default {
       }, 'card'),
     },
     {
+      path: '/zh-CN/components/popover',
+      name: 'Popover 气泡框',
+      component: popover => require.ensure([], (require) => {
+        popover(require('../docs/zh-CN/popover.md'));
+      }, 'popover'),
+    },
+    {
       path: '/zh-CN/components/empty',
       name: 'Empty 空提示',
       component: empty => require.ensure([], (require) => {

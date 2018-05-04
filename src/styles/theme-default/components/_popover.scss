@@ -1,1 +1,142 @@
+.v-popover {
+  display: inline-block;
+  &--popper {
 
+  }
+  &--arrow {
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border: {
+      style: solid;
+      color: transparent;
+    }
+    background: $color-white;
+  }
+  &--inner {
+    background-color: $color-white;
+    background-clip: padding-box;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+  }
+}
+
+.v-popover--title {
+  padding: 8px 16px;
+  border-bottom: 1px solid $color-divider;
+  font-weight: 500;
+  color: $color-title;
+  box-sizing: border-box;
+}
+
+.v-popover--content {
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+.v-popover--footer {
+  padding: 0 16px 10px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.v-popover--placement-top,
+.v-popover--placement-top-start,
+.v-popover--placement-top-end {
+  padding-bottom: 10px;
+  .v-popover--arrow {
+    bottom: 6px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
+  }
+}
+
+.v-popover--placement-right,
+.v-popover--placement-right-start,
+.v-popover--placement-right-end {
+  padding-left: 10px;
+  .v-popover--arrow {
+    left: 6px;
+    box-shadow: -3px 3px 7px rgba(0, 0, 0, .07);
+  }
+}
+
+.v-popover--placement-bottom,
+.v-popover--placement-bottom-start,
+.v-popover--placement-bottom-end {
+  padding-top: 10px;
+  .v-popover--arrow {
+    top: 6px;
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, .07);
+  }
+}
+
+.v-popover--placement-left,
+.v-popover--placement-left-start,
+.v-popover--placement-left-end {
+  padding-right: 10px;
+  .v-popover--arrow {
+    right: 6px;
+    box-shadow: 3px -3px 7px rgba(0, 0, 0, .07);
+  }
+}
+
+.v-popover--placement-top .v-popover--arrow {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.v-popover--placement-top-start .v-popover--arrow {
+  left: 16px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-top-end .v-popover--arrow {
+  right: 16px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-right .v-popover--arrow {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.v-popover--placement-right-start .v-popover--arrow {
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-right-end .v-popover--arrow {
+  bottom: 8px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-bottom .v-popover--arrow {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.v-popover--placement-bottom-start .v-popover--arrow {
+  left: 16px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-bottom-end .v-popover--arrow {
+  right: 16px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-left .v-popover--arrow {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.v-popover--placement-left-start .v-popover--arrow {
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+.v-popover--placement-left-end .v-popover--arrow {
+  bottom: 8px;
+  transform: rotate(45deg);
+}

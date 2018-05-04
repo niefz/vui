@@ -77,8 +77,12 @@ export default {
       if (!/^(top|bottom|left|right)(-start|-end)?$/g.test(this.placement)) return;
 
       const options = this.popperOptions;
-      const popper = this.popperElm = this.popper || this.$refs.popper;
-      const reference = this.reference || this.$refs.reference;
+      const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper;
+      let reference = this.referenceElm = this.referenceElm || this.reference || this.$refs.reference;
+
+      if (!reference && this.$slots.reference && this.$slots.reference[0]) {
+        reference = this.referenceElm = this.$slots.reference[0].elm;
+      }
 
       if (!popper || !reference) return;
       if (this.appendToBody) document.body.appendChild(this.popperElm);
