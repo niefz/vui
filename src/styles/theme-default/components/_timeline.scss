@@ -1,1 +1,30 @@
-
+.v-timeline{
+  box-sizing: border-box;
+  padding: 0;
+  font-size: 14px;
+  .v-timeline-item{
+    list-style: none;
+    position: relative;
+    padding: 0 0 20px;
+    .v-timeline-item__head{
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: $color-white;
+      border-radius: 100px;
+      border: 2px solid $color-primary;
+    }
+    .v-timeline-item__foot{
+      position: absolute;
+      left: 6px;
+      top: 1em;
+      height: 100%;
+      border-left: 2px solid $color-divider;
+    }
+    .v-timeline-item__content{
+      padding: 0 0 0 18px;
+      position: relative;
+      top: -6px;
+    }
+  }
+}

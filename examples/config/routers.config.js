@@ -202,6 +202,13 @@ export default {
       }, 'tooltip'),
     },
     {
+      path: '/zh-CN/components/timeline',
+      name: 'Timeline 时间轴',
+      component: timeline => require.ensure([], (require) => {
+        timeline(require('../docs/zh-CN/timeline.md'));
+      }, 'timeline'),
+    },
+    {
       path: '/zh-CN/components/exception',
       name: 'Exception 异常页',
       component: exception => require.ensure([], (require) => {
