@@ -53,7 +53,7 @@
       VButton: Button,
     },
     props: {
-      transitionName: {
+      transition: {
         type: String,
         default: '',
       },
@@ -156,7 +156,7 @@
             name = 'modal-fade';
             break;
         }
-        return this.transitionName || name;
+        return this.transition || name;
       },
     },
     watch: {
@@ -176,8 +176,21 @@
       }
     },
     methods: {
-      handleWrapperClick() {
-        if (this.closeOnClickMask) this.handleClose();
+      /**
+       * ok
+       */
+      handleOk() {
+        this.$emit('ok');
+      },
+      /**
+       * close
+       */
+      handleClose() {
+        if (typeof this.beforeClose === 'function') {
+          this.beforeClose(this.hide);
+        } else {
+          this.hide();
+        }
       },
       /**
        * hide
@@ -188,16 +201,6 @@
           this.$emit('update:visible', false);
           this.$emit('close');
           this.closed = true;
-        }
-      },
-      /**
-       * close
-       */
-      handleClose() {
-        if (typeof this.beforeClose === 'function') {
-          this.beforeClose(this.hide);
-        } else {
-          this.hide();
         }
       },
       /**
@@ -214,11 +217,8 @@
           }
         }
       },
-      /**
-       * ok
-       */
-      handleOk() {
-        this.$emit('ok');
+      handleWrapperClick() {
+        if (this.closeOnClickMask) this.handleClose();
       },
     },
     mounted() {

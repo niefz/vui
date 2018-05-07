@@ -104,6 +104,13 @@ export default {
       }, 'checkbox'),
     },
     {
+      path: '/zh-CN/components/date-time-picker',
+      name: 'DateTimePicker 日期时间选择器',
+      component: dateTimePicker => require.ensure([], (require) => {
+        dateTimePicker(require('../docs/zh-CN/date-time-picker.md'));
+      }, 'date-time-picker'),
+    },
+    {
       path: '/zh-CN/components/input',
       name: 'Input 输入框',
       component: input => require.ensure([], (require) => {
@@ -235,6 +242,13 @@ export default {
       component: alert => require.ensure([], (require) => {
         alert(require('../docs/zh-CN/alert.md'));
       }, 'alert'),
+    },
+    {
+      path: '/zh-CN/components/drawer',
+      name: 'Drawer 抽屉',
+      component: drawer => require.ensure([], (require) => {
+        drawer(require('../docs/zh-CN/drawer.md'));
+      }, 'drawer'),
     },
     {
       path: '/zh-CN/components/message',

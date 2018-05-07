@@ -121,7 +121,7 @@
           },
           {
             "name": "DateTimePicker 日期时间选择器",
-            "path": "/zh-CN/components/datetime-picker"
+            "path": "/zh-CN/components/date-time-picker"
           },
           {
             "name": "Form 表单",

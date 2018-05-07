@@ -1,6 +1,9 @@
 .v-datetimepicker {
   position: relative;
   display: inline-block;
+  .v-input {
+    width: auto;
+  }
   &--content {
     margin: 5px 0;
     border: 1px solid $color-border;

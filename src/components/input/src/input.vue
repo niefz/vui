@@ -98,10 +98,6 @@
         type: Boolean,
         default: false
       },
-      isError: {
-        type: Boolean,
-        default: false
-      },
       error: {
         type: Boolean,
         default: false

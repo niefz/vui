@@ -1,36 +1,35 @@
 <template>
-  <div class="modal">
+  <div class="drawer">
     <transition name="fade-in-linear">
-      <div class="v-modal--mask" v-show="visible" @click.self="handleWrapperClick"></div>
+      <div class="v-drawer--mask" v-show="visible" @click.self="handleWrapperClick"></div>
     </transition>
     <transition :name="name">
-      <div class="v-modal--wrapper" v-show="visible" @click.self="handleWrapperClick">
+      <div class="v-drawer--wrapper" v-show="visible" @click.self="handleWrapperClick">
         <div
           ref="modal"
-          class="v-modal"
+          class="v-drawer"
           :class="[
-            'v-modal--' + placement,
+            'v-drawer--' + placement,
             {
               ['fullscreen']: fullscreen,
             }
-          ]"
-          :style="style">
-          <div class="v-modal--header">
+          ]">
+          <div class="v-drawer--header">
             <slot name="header">
               <slot name="title">
-                <span class="v-modal--header-title">{{title}}</span>
+                <span class="v-drawer--header-title">{{title}}</span>
               </slot>
-              <em class="v-modal--header-close" v-show="closable" @click="handleClose">
+              <em class="v-drawer--header-close" v-show="closable" @click="handleClose">
                 <slot name="close">
                   <v-icon icon="v-icon-close"></v-icon>
                 </slot>
               </em>
             </slot>
           </div>
-          <div class="v-modal--body">
+          <div class="v-drawer--body">
             <slot name="body"></slot>
           </div>
-          <div class="v-modal--footer" v-if="footer">
+          <div class="v-drawer--footer" v-if="footer">
             <slot name="footer">
               <v-button :loading="loading" theme="primary" @click="handleOk">{{okText}}</v-button>
               <v-button @click="handleClose">{{cancelText}}</v-button>
@@ -46,20 +45,20 @@
   import Button from 'free-vui/src/components/button';
 
   export default {
-    name: 'Modal',
-    componentName: 'Modal',
+    name: 'Drawer',
+    componentName: 'Drawer',
     components: {
       VIcon: Icon,
       VButton: Button,
     },
     props: {
-      transitionName: {
+      transition: {
         type: String,
         default: '',
       },
       placement: {
         type: String,
-        default: 'middle',
+        default: 'right',
       },
       title: {
         type: String,
@@ -69,15 +68,7 @@
         type: Boolean,
         default: true,
       },
-      modalAppendToBody: {
-        type: Boolean,
-        default: true,
-      },
       mask: {
-        type: Boolean,
-        default: true,
-      },
-      maskAppendToBody: {
         type: Boolean,
         default: true,
       },
@@ -111,8 +102,6 @@
         type: String,
         default: '取消',
       },
-      top: String,
-      width: String,
       beforeClose: Function,
     },
     data() {
@@ -121,42 +110,25 @@
       };
     },
     computed: {
-      style() {
-        let style = {};
-        style.width = this.width || '50%';
-        if (!this.fullscreen) {
-          if (this.placement === 'middle') {
-            if (this.top) {
-              style.top = this.top;
-              style.transform = 'translate(-50%, 0)';
-            } else {
-              style.top = '50%';
-              style.transform = 'translate(-50%, -50%)';
-            }
-          }
-        }
-        return style;
-      },
       name() {
         let name;
         switch (this.placement) {
-          case 'top-left':
-            name = 'modal-zoom-top-left';
+          case 'top':
+            name = 'drawer-zoom-top';
             break;
-          case 'top-right':
-            name = 'modal-zoom-top-right';
+          case 'right':
+            name = 'drawer-zoom-right';
             break;
-          case 'bottom-left':
-            name = 'modal-zoom-bottom-left';
+          case 'bottom':
+            name = 'drawer-zoom-bottom';
             break;
-          case 'bottom-right':
-            name = 'modal-zoom-bottom-right';
+          case 'left':
+            name = 'drawer-zoom-left';
             break;
           default:
-            name = 'modal-fade';
             break;
         }
-        return this.transitionName || name;
+        return this.transition || name;
       },
     },
     watch: {
@@ -167,17 +139,28 @@
           this.$nextTick(() => {
             this.$refs.modal.scrollTop = 0;
           });
-          if (this.modalAppendToBody) {
-            document.body.appendChild(this.$el);
-          }
+          document.body.appendChild(this.$el);
         } else {
           if (!this.closed) this.$emit('close');
         }
       }
     },
     methods: {
-      handleWrapperClick() {
-        if (this.closeOnClickMask) this.handleClose();
+      /**
+       * ok
+       */
+      handleOk() {
+        this.$emit('ok');
+      },
+      /**
+       * close
+       */
+      handleClose() {
+        if (typeof this.beforeClose === 'function') {
+          this.beforeClose(this.hide);
+        } else {
+          this.hide();
+        }
       },
       /**
        * hide
@@ -188,16 +171,6 @@
           this.$emit('update:visible', false);
           this.$emit('close');
           this.closed = true;
-        }
-      },
-      /**
-       * close
-       */
-      handleClose() {
-        if (typeof this.beforeClose === 'function') {
-          this.beforeClose(this.hide);
-        } else {
-          this.hide();
         }
       },
       /**
@@ -214,19 +187,14 @@
           }
         }
       },
-      /**
-       * ok
-       */
-      handleOk() {
-        this.$emit('ok');
+      handleWrapperClick() {
+        if (this.closeOnClickMask) this.handleClose();
       },
     },
     mounted() {
       if (this.visible) {
         this.open();
-        if (this.modalAppendToBody) {
-          document.body.appendChild(this.$el);
-        }
+        document.body.appendChild(this.$el);
       }
       document.addEventListener('keydown', this.handleEsc);
     },
@@ -234,7 +202,7 @@
       document.removeEventListener('keydown', this.handleEsc);
     },
     destroyed() {
-      if (this.modalAppendToBody && this.$el && this.$el.parentNode) {
+      if (this.$el && this.$el.parentNode) {
         this.$el.parentNode.removeChild(this.$el);
       }
     },
