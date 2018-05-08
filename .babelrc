@@ -1,11 +1,11 @@
 {
   "presets": [
-    "es2015",
+    "env",
     "stage-0"
   ],
   "plugins": [
     "transform-vue-jsx",
     "transform-runtime"
   ],
-  "comments": true
+  "comments": false
 }
