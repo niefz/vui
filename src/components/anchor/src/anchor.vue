@@ -50,9 +50,9 @@
       style() {
         return {
           position: this.affix ? 'fixed' : 'relative',
-          top: this.top ? `${this.top}px` : !this.bottom && '16px',
+          top: this.top && `${this.top}px`,
           right: this.right ? `${this.right}px` : !this.left && '16px',
-          bottom: this.bottom && `${this.bottom}px`,
+          bottom: this.bottom ? `${this.bottom}px` : !this.top && '16px',
           left: this.left && `${this.left}px`,
         };
       },

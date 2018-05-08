@@ -17,9 +17,6 @@
         <v-anchor-link href="#Link Props" title="Link Props"></v-anchor-link>
       </v-anchor-link>
     </v-anchor>
-    <v-anchor :top="200">
-      <v-button>固定</v-button>
-    </v-anchor>
   </v-col>
 </v-row>
 ```
