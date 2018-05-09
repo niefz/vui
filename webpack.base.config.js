@@ -93,7 +93,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|jpe?g|gif|svg)$/,
         use: [
           {
             loader: 'url',
@@ -104,7 +104,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff2?|eot|ttf|otf)$/,
         use: [
           {
             loader: 'file'
@@ -130,7 +130,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      'vue': 'vue/dist/vue.js',
       'free-vui': resolve(__dirname, './'),
       '@': APP_PATH
     }
