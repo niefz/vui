@@ -219,7 +219,7 @@
       padding-left: 280px;
     }
     .article {
-      padding: 20px 248px 0 48px;
+      padding: 20px 48px 0;
       > h1 {
         display: inline-block;
         margin-top: 10px;

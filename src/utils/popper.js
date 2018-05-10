@@ -21,29 +21,23 @@ export default {
       type: Number,
       default: 5,
     },
+    reference: {},
+    popper: {},
     offset: {
       type: Number,
       default: 0,
     },
+    value: Boolean,
+    visibleArrow: Boolean,
     arrowOffset: {
       type: Number,
       default: 35,
     },
-    value: {
-      type: Boolean,
-      default: false,
-    },
-    visibleArrow: {
-      type: Boolean,
-      default: true,
-    },
+    transition: String,
     appendToBody: {
       type: Boolean,
       default: true,
     },
-    reference: Object,
-    popper: Object,
-    transition: String,
     popperOptions: {
       type: Object,
       default() {
