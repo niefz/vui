@@ -4,7 +4,7 @@
 import VCarousel from './src/carousel.vue';
 
 VCarousel.install = (Vue) => {
-  Vue.component(VCarousel.name, VCard);
+  Vue.component(VCarousel.name, VCarousel);
 };
 
 export default VCarousel;

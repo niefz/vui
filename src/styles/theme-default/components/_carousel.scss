@@ -1,1 +1,50 @@
+.v-carousel{
+	position: relative;
+	overflow: hidden;
+	.v-carousel__box{
+		position: relative;
+		.v-carousel__arrow{
+			border: none;
+			outline: none;
+			padding: 0;
+			margin: 0;
+			height: 36px;
+			width: 36px;
+			cursor: pointer;
+			transition: .3s;
+			border-radius: 50%;
+			color: $color-white;
+			position: absolute;
+			top: 50%;
+			z-index: 10;
+			transform: translateY(-50%);
+			text-align: center;
+			font-size: 12px;
+		}
+		.v-carousel__arrow--left{
+			left: 14px;
+		}
+		.v-carousel__arrow--right{
+			right: 14px;
+		}
+	}
+	.v-carousel__item--box{
 
+	}
+	.v-carousel__indicators{
+		position: absolute;
+		list-style: none;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 0;
+		padding: 0;
+		z-index: 2;
+		.v-carousel__indicators__item{
+			display: inline-block;
+			background-color: transparent;
+			padding: 12px 4px;
+			cursor: pointer;
+		}
+	}
+}

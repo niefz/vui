@@ -181,6 +181,13 @@ export default {
       }, 'card'),
     },
     {
+      path: '/zh-CN/components/carousel',
+      name: 'Carousel 走马灯',
+      component: carousel => require.ensure([], (require) => {
+        carousel(require('../docs/zh-CN/carousel.md'));
+      }, 'carousel'),
+    },
+    {
       path: '/zh-CN/components/collapse',
       name: 'Collapse 折叠面板',
       component: collapse => require.ensure([], (require) => {
