@@ -23,13 +23,21 @@
     props: {
       appendToBody: {
         type: Boolean,
-        default: false,
+        default: true,
       },
     },
     data() {
       return {
         size: this.dropdown.dropdownSize,
       };
+    },
+    watch: {
+      'dropdown.placement': {
+        immediate: true,
+        handler(val) {
+          this.currentPlacement = val;
+        },
+      },
     },
     created() {
       this.$on('updatePopper', () => {
@@ -42,14 +50,6 @@
     mounted() {
       this.$parent.popperElm = this.popperElm = this.$el;
       this.referenceElm = this.$parent.$el;
-    },
-    watch: {
-      'dropdown.placement': {
-        immediate: true,
-        handler(val) {
-          this.currentPlacement = val;
-        },
-      },
     },
   };
 </script>

@@ -3,9 +3,7 @@
     class="v-dropdown"
     v-clickoutside="hide">
     <slot></slot>
-    <template v-if="$slots.dropdown">
-      <slot name="dropdown"></slot>
-    </template>
+    <slot name="dropdown"></slot>
   </div>
 </template>
 <script>
@@ -61,6 +59,7 @@
     watch: {
       visible(val) {
         this.broadcast('DropdownMenu', 'visible', val);
+        this.$emit('visible-change', val);
       },
     },
     methods: {
