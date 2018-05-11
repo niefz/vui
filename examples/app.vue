@@ -147,7 +147,7 @@
     },
   };
 </script>
-<style lang="scss">
+<style rel="stylesheet/scss" lang="scss">
   @import "../src/styles/index.scss";
 
   html, body, .wrapper {
@@ -254,15 +254,6 @@
         margin-bottom: 1em;
         font-size: 14px;
         line-height: 28px;
-      }
-      .hljs {
-        padding: 20px;
-        border: 1px solid $color-border;
-        background-color: $color-background;
-        border-radius: $border-radius;
-        font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-        font-size: 12px;
-        line-height: 2;
       }
       .table {
         width: 100%;
