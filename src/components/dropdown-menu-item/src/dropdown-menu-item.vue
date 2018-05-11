@@ -8,7 +8,7 @@
       }
     ]"
     @click="handleClick"
-    :tabindex="disabled ? 0 : -1"
+    :tabindex="disabled ? null : -1"
     :aria-disabled="disabled">
     <slot></slot>
   </li>
@@ -22,18 +22,12 @@
     mixins: [Emitter],
     props: {
       value: {},
-      divided: {
-        type: Boolean,
-        default: false,
-      },
-      disabled: {
-        type: Boolean,
-        default: false,
-      },
+      disabled: Boolean,
+      divided: Boolean
     },
     methods: {
-      handleClick(event) {
-        this.dispatch('Dropdown', 'menu-item-click', [this.value, event]);
+      handleClick() {
+        this.dispatch('Dropdown', 'menu-item-click', [this.value, this]);
       },
     },
   };

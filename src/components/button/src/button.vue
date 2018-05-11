@@ -1,7 +1,6 @@
 <template>
   <button
     :type="nativeType"
-    class="v-btn"
     :class="[
       'v-btn--' + type,
       'v-btn--' + shape,

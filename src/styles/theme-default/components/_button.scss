@@ -12,10 +12,9 @@
   line-height: $height - 2;
 }
 
-.v-btn {
+@mixin v-btn {
   display: inline-block;
   position: relative;
-  margin: 0;
   background: none;
   font-weight: 400;
   text-align: center;
@@ -30,12 +29,10 @@
   .suffix-icon {
     margin-left: 4px;
   }
-  & + .v-btn {
-    margin-left: $button-margin;
-  }
 }
 
 .v-btn--button {
+  @include v-btn;
   border: 1px solid;
   &:focus:after {
     display: block;
@@ -127,9 +124,16 @@
       }
     }
   }
+  &.v-btn--radius {
+    padding: 0 15px;
+  }
+  & + .v-btn--button {
+    margin-left: $button-margin;
+  }
 }
 
 .v-btn--text {
+  @include v-btn;
   border: 1px solid transparent;
   &.v-btn--default {
     @include make-color(transparent, transparent, $color-text-primary);
@@ -171,10 +175,12 @@
       cursor: not-allowed;
     }
   }
+  & + .v-btn--text {
+    margin-left: $button-margin;
+  }
 }
 
 .v-btn--radius {
-  padding: 0 10px;
   border-radius: $border-radius;
   &.v-btn--mini {
     @include make-size(auto, 28px, 12px);
@@ -191,7 +197,6 @@
 }
 
 .v-btn--circle {
-  padding: 0;
   border-radius: 50%;
   &.v-btn--mini {
     @include make-size(28px, 28px, 12px);

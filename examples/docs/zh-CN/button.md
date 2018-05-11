@@ -4,28 +4,15 @@
   
 ## 基础按钮
 
-基础按钮分三种：主按钮（实心） 、 次按钮（空心）、 文字按钮
+基础按钮分三种：主按钮（实心） 、 次按钮（空心）、 文字按钮。
   
 :::demo 使用 `type` 属性来定义 Button 的表现形式。
 
 ```html
 <v-row>
-  <v-button type="button" shape="radius" theme="primary">主要按钮</v-button>
-  <v-button type="button" shape="radius">次要按钮</v-button>
+  <v-button type="button" theme="primary">主要按钮</v-button>
+  <v-button type="button">次要按钮</v-button>
   <v-button type="text">文字按钮</v-button>
-</v-row>
-```
-:::
-  
-## 禁用按钮
-
-:::demo 通过添加 `disabled` 属性来达到禁用状态。
-
-```html
-<v-row>
-  <v-button type="button" shape="radius" theme="primary" disabled>主要按钮</v-button>
-  <v-button type="button" shape="radius" disabled>次要按钮</v-button>
-  <v-button type="text" disabled>文字按钮</v-button>
 </v-row>
 ```
 :::
@@ -78,8 +65,8 @@
 <v-row>
   <v-button type="button" shape="radius" theme="default" prefix-icon="icon-loading" loading>加载中</v-button>
   <v-button type="button" shape="radius" theme="primary" prefix-icon="icon-loading" loading>加载中</v-button>
-  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-loading"></v-button>
-  <v-button type="button" shape="circle" theme="default" suffix-icon="icon-loading"></v-button>
+  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-loading" loading></v-button>
+  <v-button type="button" shape="circle" theme="default" suffix-icon="icon-loading" loading></v-button>
 </v-row>
 ```
 :::
@@ -93,16 +80,27 @@
 ```html
 <v-row>
   <v-button-group>
-    <v-button type="button" shape="radius" theme="primary">主要操作</v-button>
-    <v-button type="button" shape="radius" theme="default">次要操作</v-button>
+    <v-button type="button" shape="radius" theme="primary">操作</v-button>
+    <v-button type="button" shape="radius" theme="default">操作</v-button>
     <v-button type="button" shape="radius" theme="default" suffix-icon="icon-more"></v-button>
   </v-button-group>
-</v-row>
-<v-row>
   <v-button-group>
-    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left" disabled>上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
     <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
   </v-button-group>
+</v-row>
+```
+:::
+  
+## 禁用按钮
+
+:::demo 通过添加 `disabled` 属性来达到禁用状态。
+
+```html
+<v-row>
+  <v-button type="button" shape="radius" theme="primary" disabled>主要按钮</v-button>
+  <v-button type="button" shape="radius" disabled>次要按钮</v-button>
+  <v-button type="text" disabled>文字按钮</v-button>
   <v-button-group disabled>
     <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
     <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>

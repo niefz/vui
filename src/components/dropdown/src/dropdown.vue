@@ -1,9 +1,6 @@
 <template>
   <div
     class="v-dropdown"
-    @mouseenter="mouseenter"
-    @mouseleave="mouseleave"
-    @click="handleClick"
     v-clickoutside="hide">
     <slot></slot>
     <template v-if="$slots.dropdown">
@@ -20,10 +17,23 @@
     componentName: 'Dropdown',
     directives: { Clickoutside },
     mixins: [Emitter],
+    provide() {
+      return {
+        dropdown: this,
+      };
+    },
     props: {
       trigger: {
         type: String,
         default: 'hover',
+      },
+      size: {
+        type: String,
+        default: 'small',
+      },
+      placement: {
+        type: String,
+        default: 'bottom-start',
       },
       showTimeout: {
         type: Number,
@@ -43,6 +53,11 @@
         visible: false,
       };
     },
+    computed: {
+      dropdownSize() {
+        return this.size || (this.$VUI || {}).size;
+      },
+    },
     watch: {
       visible(val) {
         this.broadcast('DropdownMenu', 'visible', val);
@@ -50,41 +65,48 @@
     },
     methods: {
       show() {
+        if (this.triggerElm.disabled) return;
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.visible = true;
-        }, this.trigger === 'click' ? 0 : this.hideTimeout);
+        }, this.trigger === 'click' ? 0 : this.showTimeout);
       },
       hide() {
+        if (this.triggerElm.disabled) return;
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.visible = false;
         }, this.trigger === 'click' ? 0 : this.hideTimeout);
       },
-      mouseenter() {
-        if (this.trigger !== 'hover') return;
-        this.show();
-      },
-      mouseleave() {
-        if (this.trigger !== 'hover') return;
-        this.hide();
-      },
-      handleClick(event) {
-        if (this.trigger !== 'click') return;
-        event.stopPropagation();
-        this.visible ? !this.showAfterClick && this.hide() : this.show();
-      },
-      handleMenuItemClick(value, event) {
-        this.$emit('change', value);
-        if (event.target.children.length) {
-          this.broadcast('DropdownMenu', 'visible', this.visible);
+      handleClick() {
+        if (this.triggerElm.disabled) return;
+        if (this.visible) {
+          this.hide();
+        } else {
+          this.show();
         }
-        if (this.showAfterClick) return;
-        this.hide();
+      },
+      initEvent() {
+        const { trigger, show, hide, handleClick } = this;
+        this.triggerElm = this.$slots.default[0].elm;
+        this.dropdownElm = this.$slots.dropdown[0].elm;
+        if (trigger === 'hover') {
+          this.triggerElm.addEventListener('mouseenter', show);
+          this.triggerElm.addEventListener('mouseleave', hide);
+          this.dropdownElm.addEventListener('mouseenter', show);
+          this.dropdownElm.addEventListener('mouseleave', hide);
+        } else if (trigger === 'click') {
+          this.triggerElm.addEventListener('click', handleClick);
+        }
+      },
+      handleMenuItemClick(value, instance) {
+        if (!this.showAfterClick) this.visible = false;
+        this.$emit('change', value, instance);
       },
     },
     mounted() {
       this.$on('menu-item-click', this.handleMenuItemClick);
+      this.initEvent();
     },
   };
 </script>

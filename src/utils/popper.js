@@ -50,6 +50,7 @@ export default {
   data() {
     return {
       showPopper: false,
+      currentPlacement: '',
     };
   },
   watch: {
@@ -68,7 +69,8 @@ export default {
   methods: {
     createPopper() {
       if (this.$isServer) return;
-      if (!/^(top|bottom|left|right)(-start|-end)?$/g.test(this.placement)) return;
+      this.currentPlacement = this.currentPlacement || this.placement;
+      if (!/^(top|bottom|left|right)(-start|-end)?$/g.test(this.currentPlacement)) return;
 
       const options = this.popperOptions;
       const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper;
@@ -82,7 +84,7 @@ export default {
       if (this.appendToBody) document.body.appendChild(this.popperElm);
       if (this.popperJS && this.popperJS.hasOwnProperty('destroy')) this.popperJS.destroy();
 
-      options.placement = this.placement;
+      options.placement = this.currentPlacement;
       options.offset = this.offset;
       options.arrowOffset = this.arrowOffset;
 

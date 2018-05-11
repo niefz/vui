@@ -17,8 +17,8 @@
         <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
         <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
         <v-dropdown-menu-item value="蚵仔煎" divided>
-          <v-dropdown trigger="hover" @change="handleChange">
-            下拉菜单
+          <v-dropdown placement="right-start" @change="handleChange">
+            <v-button type="text" suffix-icon="icon-arrow-right">下拉菜单</v-button>
             <v-dropdown-menu slot="dropdown">
               <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
               <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
@@ -40,8 +40,8 @@
         <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
         <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
         <v-dropdown-menu-item value="蚵仔煎" divided>
-          <v-dropdown trigger="click" @change="handleChange">
-            蚵仔煎
+          <v-dropdown placement="right-start" @change="handleChange">
+            <v-button type="text" suffix-icon="icon-arrow-right">蚵仔煎</v-button>
             <v-dropdown-menu slot="dropdown">
               <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
               <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
