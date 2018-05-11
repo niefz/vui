@@ -54,16 +54,99 @@
   
 ## 图标、文字按钮
 
-带有 Icon 的按钮，视觉上能首当其冲的体现其功能意向。
+带有 Icon 的按钮，能在视觉上简洁有效的指引用户操作。特殊情况下，使用图标能够代替文本。
 
 :::demo 可设置 `prefix-icon` 、`suffix-icon` 属性，或者在 Button 中内联 icon。
 
 ```html
 <v-row>
-  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-download">默认按钮</v-button>
-  <v-button type="button" shape="radius" theme="primary">主要按钮</v-button>
-  <v-button type="button" shape="radius" theme="warning">告警按钮</v-button>
-  <v-button type="button" shape="radius" theme="danger">危险按钮</v-button>
+  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-user-plus">添加用户</v-button>
+  <v-button type="button" shape="radius" theme="primary" suffix-icon="icon-search">查询</v-button>
+  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-user-plus"></v-button>
+  <v-button type="button" shape="radius" theme="primary" suffix-icon="icon-search"></v-button>
+  <v-button type="button" shape="circle" theme="default" prefix-icon="icon-user-plus"></v-button>
+  <v-button type="button" shape="circle" theme="primary" suffix-icon="icon-search"></v-button>
+</v-row>
+```
+:::
+  
+## 加载状态按钮
+
+:::demo 可通过添加 `loading` 属性，使按钮处于加载中状态。
+
+```html
+<v-row>
+  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-loading" loading>加载中</v-button>
+  <v-button type="button" shape="radius" theme="primary" prefix-icon="icon-loading" loading>加载中</v-button>
+  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-loading"></v-button>
+  <v-button type="button" shape="circle" theme="default" suffix-icon="icon-loading"></v-button>
+</v-row>
+```
+:::
+  
+## 组合按钮
+
+可以将多个按钮放进 ButtonGroup 中形成一个组合按钮。
+
+:::demo 
+
+```html
+<v-row>
+  <v-button-group>
+    <v-button type="button" shape="radius" theme="primary">主要操作</v-button>
+    <v-button type="button" shape="radius" theme="default">次要操作</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-more"></v-button>
+  </v-button-group>
+</v-row>
+<v-row>
+  <v-button-group>
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left" disabled>上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
+  </v-button-group>
+  <v-button-group disabled>
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
+  </v-button-group>
+</v-row>
+```
+:::
+  
+## 按钮尺寸
+
+提供四种尺寸：large、medium、small、mini。
+
+:::demo 可通过 `size` 属性配置，默认为 small。
+
+```html
+<v-row>
+  <v-button type="button" size="large" shape="radius" theme="primary">操作按钮</v-button>
+  <v-button type="button" size="medium" shape="radius" theme="primary">操作按钮</v-button>
+  <v-button type="button" size="small" shape="radius" theme="primary">操作按钮</v-button>
+  <v-button type="button" size="mini" shape="radius" theme="primary">操作按钮</v-button>
+</v-row>
+<v-row>
+  <v-button type="button" size="large" shape="circle" theme="primary" suffix-icon="icon-search"></v-button>
+  <v-button type="button" size="medium" shape="circle" theme="primary" suffix-icon="icon-search"></v-button>
+  <v-button type="button" size="small" shape="circle" theme="primary" suffix-icon="icon-search"></v-button>
+  <v-button type="button" size="mini" shape="circle" theme="primary" suffix-icon="icon-search"></v-button>
+</v-row>
+<v-row>
+  <v-button-group size="large">
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
+  </v-button-group>
+  <v-button-group size="medium">
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
+  </v-button-group>
+  <v-button-group size="small">
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
+  </v-button-group>
+  <v-button-group size="mini">
+    <v-button type="button" shape="radius" theme="default" prefix-icon="icon-arrow-left">上一页</v-button>
+    <v-button type="button" shape="radius" theme="default" suffix-icon="icon-arrow-right">下一页</v-button>
+  </v-button-group>
 </v-row>
 ```
 :::
@@ -87,9 +170,11 @@ Button Attributes
 
 ButtonGroup Attributes
 
-| 参数       | 说明     | 类型        | 可选值                            | 默认值   |
-|---------- |--------  |----------   |-------------                    |-------- |
-| mode      | 模式     | string      |   horizontal / vertical             |    vertical     |
+| 参数          | 说明            | 类型         | 可选值                                  | 默认值   |
+|----------    |--------         |----------   |-------------                           |-------- |
+| mode         | 模式            | string      |   horizontal / vertical                | vertical |
+| size         | 尺寸            | string      | large / medium / small / mini          | small   |
+| disabled     | 是否禁用状态     | boolean     | —                                      | false   |
 
 
 <script>

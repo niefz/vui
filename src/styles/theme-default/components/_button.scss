@@ -25,10 +25,10 @@
   user-select: none;
   transition: all .3s cubic-bezier(.645, .045, .355, 1);
   .prefix-icon {
-    margin-left: 8px;
+    margin-right: 4px;
   }
   .suffix-icon {
-    margin-left: 8px;
+    margin-left: 4px;
   }
   & + .v-btn {
     margin-left: $button-margin;
@@ -36,7 +36,6 @@
 }
 
 .v-btn--button {
-  padding: 0 10px;
   border: 1px solid;
   &:focus:after {
     display: block;
@@ -175,6 +174,7 @@
 }
 
 .v-btn--radius {
+  padding: 0 10px;
   border-radius: $border-radius;
   &.v-btn--mini {
     @include make-size(auto, 28px, 12px);
@@ -194,16 +194,16 @@
   padding: 0;
   border-radius: 50%;
   &.v-btn--mini {
-    @include make-size(28px, 28px, 14px);
+    @include make-size(28px, 28px, 12px);
   }
   &.v-btn--small {
-    @include make-size(32px, 32px, 14px);
+    @include make-size(32px, 32px, 12px);
   }
   &.v-btn--medium {
-    @include make-size(36px, 36px, 16px);
+    @include make-size(36px, 36px, 14px);
   }
   &.v-btn--large {
-    @include make-size(40px, 40px, 18px);
+    @include make-size(40px, 40px, 16px);
   }
 }
 

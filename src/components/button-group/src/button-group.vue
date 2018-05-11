@@ -16,6 +16,14 @@
         type: String,
         default: 'horizontal',
       },
+      size: {
+        type: String,
+        default: 'small',
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
   };
 </script>

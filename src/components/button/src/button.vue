@@ -15,13 +15,13 @@
     :disabled="isDisabled"
     @click="handleClick">
     <template v-if="loading">
-      <v-icon icon="icon-loading" v-if="loading"></v-icon>
+      <v-icon :class="{'prefix-icon': $slots.default}" icon="icon-loading" v-if="loading"></v-icon>
       <slot></slot>
     </template>
     <template v-else>
-      <v-icon class="prefix-icon" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
+      <v-icon :class="{'prefix-icon': $slots.default}" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
       <slot></slot>
-      <v-icon class="suffix-icon" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
+      <v-icon :class="{'suffix-icon': $slots.default}" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
     </template>
   </button>
 </template>
@@ -77,11 +77,25 @@
       },
     },
     computed: {
+      isGroup() {
+        let parent = this.$parent;
+        if (parent) {
+          if (parent.$options.componentName !== 'ButtonGroup') {
+            parent = parent.$parent;
+          } else {
+            this._buttonGroup = parent;
+            return true;
+          }
+        }
+        return false;
+      },
       buttonSize() {
-        return this.size || (this.$VUI || {}).size;
+        const buttonSize = this.size || (this.$VUI || {}).size;
+        return this.isGroup ? this._buttonGroup.size || this.buttonSize : buttonSize;
       },
       isDisabled() {
-        return this.disabled || this.loading;
+        const buttonDisabled = this.disabled || this.loading;
+        return this.isGroup ? this._buttonGroup.disabled || buttonDisabled : buttonDisabled;
       },
     },
     methods: {
