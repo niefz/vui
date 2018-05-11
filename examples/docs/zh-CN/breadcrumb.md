@@ -23,7 +23,7 @@
 :::demo 通过设置 `separator-icon` 可使用相应的 `iconfont` 作为分隔符，注意这将使 `separator` 设置失效
 
 ```html
-<v-breadcrumb separator-icon="v-icon-arrow-right">
+<v-breadcrumb separator-icon="icon-arrow-right">
   <v-breadcrumb-item>首页</v-breadcrumb-item>
   <v-breadcrumb-item>Icon 图标</v-breadcrumb-item>
   <v-breadcrumb-item :to="{ path: '/zh-CN/components/button' }">Button 按钮</v-breadcrumb-item>

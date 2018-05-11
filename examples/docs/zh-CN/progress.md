@@ -12,8 +12,8 @@
 <v-progress :percentage="50" status="active"></v-progress>
 <v-progress :percentage="100" status="success"></v-progress>
 <v-progress :percentage="50" status="exception"></v-progress>
-<v-progress :stroke-width="10" :percentage="70" icon="v-icon-delete" text-inside></v-progress>
-<v-progress shape="circle" :percentage="0" status="success" icon="v-icon-delete"></v-progress>
+<v-progress :stroke-width="10" :percentage="70" icon="icon-delete" text-inside></v-progress>
+<v-progress shape="circle" :percentage="0" status="success" icon="icon-delete"></v-progress>
 <v-progress shape="circle" :percentage="50"></v-progress>
 <v-progress shape="circle" :percentage="75">50 Day</v-progress>
 <v-progress shape="dashboard" :percentage="75"></v-progress>

@@ -17,11 +17,11 @@
       <template v-else>
         <span class="v-steps--icon-inner">
           <template v-if="steps.current > index">
-            <v-icon icon="v-icon-check"></v-icon>
+            <v-icon icon="icon-check"></v-icon>
           </template>
           <template v-else>
             <template v-if="steps.current === index && steps.status === 'error'">
-              <v-icon icon="v-icon-close"></v-icon>
+              <v-icon icon="icon-close"></v-icon>
             </template>
             <template v-else>{{index}}</template>
           </template>

@@ -1,64 +1,72 @@
 <template>
-  <div class="v-datetimepicker">
-    <div
-      ref="reference"
-      class="v-input"
-      :class="[
-        'v-input--' + inputSize,
-        {
-          ['error']: error,
-          ['disabled']: disabled,
-        }
-      ]">
-      <div
-        class="v-input--inner"
-        :class="[
-          {
-            ['v-input--prefix']: prefixIcon,
-            ['v-input--suffix']: suffixIcon,
-          }
-        ]">
-        <em class="v-input--inner-prefix" v-if="prefixIcon">
-          <v-icon :icon="prefixIcon" @click.stop="handlePrefixIcon"></v-icon>
-        </em>
-        <input
-          type="text"
-          name="datetime"
-          :value="value"
-          :placeholder="datePlaceholder"
-          :autocomplete="autocomplete"
-          :readonly="readonly"
-          :disabled="disabled"
-          @focus="handleFocus"
-          @blur="handleBlur">
-        <em class="v-input--inner-suffix" v-if="suffixIcon">
-          <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
-        </em>
-      </div>
-    </div>
-    <transition :name="transition">
-      <div
-        ref="popper"
-        class="v-datetimepicker--content" 
-        v-show="!disabled && showPopper">
-        <v-picker-date></v-picker-date>
-        <v-picker-time></v-picker-time>
-      </div>
-    </transition>
+  <v-input
+    ref="reference"
+    class="v-picker"
+    :class="[
+      'v-picker--' + pickerSize
+    ]"
+    :value="displayValue"
+    :placeholder="placeholder"
+    :readonly="readonly"
+    :disabled="pickerDisabled"
+    @focus="handleFocus"
+    @input="value => userInput = value"
+    @change="handleChange"
+    @keydown.native="handleKeydown"
+    @mouseenter.native="handleMouseEnter"
+    @mouseleave.native="showClose = false"
+    v-clickoutside="handleClose"
+    v-if="!ranged">
+  </v-input>
+  <div
+    ref="reference"
+    class="v-range-picker"
+    :class="[
+      'v-picker--' + pickerSize,
+      {
+        'disabled': pickerDisabled,
+        'active': pickerVisible
+      }
+    ]"
+    @click="handleRangeClick"
+    @keydown="handleKeydown"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="showClose = false"
+    v-clickoutside="handleClose"
+    v-else>
   </div>
 </template>
 <script>
+  import Clickoutside from 'free-vui/src/directives/clickoutside';
+  import Emitter from 'free-vui/src/mixins/emitter';
   import Popper from 'free-vui/src/utils/popper';
+  import Input from 'free-vui/src/components/input';
   import Icon from 'free-vui/src/components/icon';
   import PickerDate from './picker-date.vue';
   import PickerTime from './picker-time.vue';
 
+  const NewPopper = {
+    props: {
+      boundariesPadding: Popper.props.boundariesPadding,
+      offset: Popper.props.offset,
+      arrowOffset: Popper.props.arrowOffset,
+      appendToBody: Popper.props.appendToBody,
+    },
+    methods: Popper.methods,
+    data() {
+      return Popper.data;
+    },
+    beforeDestroy: Popper.beforeDestroy,
+  };
+
   export default {
     name: 'DateTimePicker',
     componentName: 'DateTimePicker',
-    mixins: [Popper],
+    directives: { Clickoutside },
+    mixins: [Emitter, NewPopper],
     components: {
       VIcon: Icon,
+      VInput: Input,
       VPickerDate: PickerDate,
       VPickerTime: PickerTime,
     },
@@ -94,7 +102,7 @@
       },
       suffixIcon: {
         type: String,
-        default: 'v-icon-calendar',
+        default: 'icon-calendar',
       },
       readonly: {
         type: Boolean,
@@ -108,19 +116,45 @@
         type: Boolean,
         default: false
       },
+      ranged: Boolean,
+      pickerOptions: {},
     },
     data() {
       return {
         datetime: null,
-        showPopper: false,
+        pickerVisible: false,
       };
     },
     computed: {
-      inputSize() {
+      pickerSize() {
         return this.size || (this.$VUI || {}).size;
+      },
+      pickerDisabled() {
+        return this.disabled;
+      },
+      reference() {
+        const reference = this.$refs.reference;
+        return reference.$el || reference;
       },
       datePlaceholder() {
         return this.placeholder || '选择日期';
+      },
+      displayValue() {
+        return '';
+      },
+    },
+    watch: {
+      pickerVisible(val) {
+        if (this.readonly || this.pickerDisabled) return;
+        if (val) {
+          this.showPicker();
+        } else {
+          this.hidePicker();
+          this.emitChange(this.value);
+          this.dispatch('ElFormItem', 'el.form.blur');
+          this.$emit('blur', this);
+          this.blur();
+        }
       },
     },
     methods: {
@@ -129,6 +163,25 @@
       },
       handleBlur() {
         this.showPopper = false;
+      },
+      change() {
+      },
+      handleChange() {
+      },
+      showPicker() {
+        if (this.$isServer) return;
+        if (!this.picker) {
+          this.mountPicker();
+        }
+        this.pickerVisible = this.picker.visible = true;
+        this.updatePopper();
+        this.picker.value = this.parsedValue;
+        this.picker.resetView && this.picker.resetView();
+        this.$nextTick(() => {
+          this.picker.adjustSpinners && this.picker.adjustSpinners();
+        });
+      },
+      handleClose() {
       },
     },
   };

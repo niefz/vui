@@ -83,32 +83,106 @@
   }
 }
 
-.drawer-fade-enter-active {
-  animation: drawer-fade-in .3s;
+.drawer-zoom-top-enter-active {
+  animation: drawer-zoom-top-in .3s;
 }
 
-.drawer-fade-leave-active {
-  animation: drawer-fade-out .3s;
+.drawer-zoom-top-leave-active {
+  animation: drawer-zoom-top-out .3s;
 }
 
-@keyframes drawer-fade-in {
-  0% {
-    transform: translate3d(0, -20px, 0);
-    opacity: 0;
+.drawer-zoom-right-enter-active {
+  animation: drawer-zoom-right-in .3s;
+}
+
+.drawer-zoom-right-leave-active {
+  animation: drawer-zoom-right-out .3s;
+}
+
+.drawer-zoom-bottom-enter-active {
+  animation: drawer-zoom-bottom-in .3s;
+}
+
+.drawer-zoom-bottom-leave-active {
+  animation: drawer-zoom-bottom-out .3s;
+}
+
+.drawer-zoom-left-enter-active {
+  animation: drawer-zoom-left-in .3s;
+}
+
+.drawer-zoom-left-leave-active {
+  animation: drawer-zoom-left-out .3s;
+}
+
+@keyframes drawer-zoom-top-in {
+  from {
+    transform: translate3d(0, -100%, 0);
   }
-  100% {
+  to {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
-@keyframes drawer-fade-out {
-  0% {
+@keyframes drawer-zoom-top-out {
+  from {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
-  100% {
-    transform: translate3d(0, -20px, 0);
-    opacity: 0;
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes drawer-zoom-right-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes drawer-zoom-right-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes drawer-zoom-bottom-in {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes drawer-zoom-bottom-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes drawer-zoom-left-in {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes drawer-zoom-left-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
   }
 }

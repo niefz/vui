@@ -38,7 +38,7 @@
       },
       icon: {
         type: String,
-        default: 'v-icon-heart',
+        default: 'icon-heart',
       },
       points: {
         type: Number,

@@ -77,6 +77,38 @@
   animation: modal-fade-out .3s;
 }
 
+.modal-zoom-top-right-enter-active {
+  animation: modal-zoom-top-right-in .3s;
+}
+
+.modal-zoom-top-right-leave-active {
+  animation: modal-zoom-top-right-out .3s;
+}
+
+.modal-zoom-top-left-enter-active {
+  animation: modal-zoom-top-left-in .3s;
+}
+
+.modal-zoom-top-left-leave-active {
+  animation: modal-zoom-top-left-out .3s;
+}
+
+.modal-zoom-bottom-right-enter-active {
+  animation: modal-zoom-bottom-right-in .3s;
+}
+
+.modal-zoom-bottom-right-leave-active {
+  animation: modal-zoom-bottom-right-out .3s;
+}
+
+.modal-zoom-bottom-left-enter-active {
+  animation: modal-zoom-bottom-left-in .3s;
+}
+
+.modal-zoom-bottom-left-leave-active {
+  animation: modal-zoom-bottom-left-out .3s;
+}
+
 @keyframes modal-fade-in {
   0% {
     transform: translate3d(0, -20px, 0);
@@ -96,5 +128,77 @@
   100% {
     transform: translate3d(0, -20px, 0);
     opacity: 0;
+  }
+}
+
+@keyframes modal-zoom-top-right-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-top-right-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-top-left-in {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-top-left-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-bottom-right-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-bottom-right-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-bottom-left-in {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes modal-zoom-bottom-left-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
   }
 }

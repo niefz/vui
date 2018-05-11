@@ -15,7 +15,7 @@
     :disabled="isDisabled"
     @click="handleClick">
     <template v-if="loading">
-      <v-icon icon="v-icon-loading" v-if="loading"></v-icon>
+      <v-icon icon="icon-loading" v-if="loading"></v-icon>
       <slot></slot>
     </template>
     <template v-else>

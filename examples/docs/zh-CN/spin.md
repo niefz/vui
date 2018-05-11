@@ -14,7 +14,7 @@
 </v-row>
 <v-row>
   <v-col>
-    <v-spin icon="v-icon-loading" tip="拼命加载中"></v-spin>
+    <v-spin icon="icon-loading" tip="拼命加载中"></v-spin>
   </v-col>
 </v-row>
 ```

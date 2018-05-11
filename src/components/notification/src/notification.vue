@@ -15,7 +15,7 @@
       @mouseleave="startTimer"
       v-show="visible">
       <div class="v-notify--message" :class="{'with-content': content}">
-        <v-icon :icon="`v-icon-${theme}`" v-if="showIcon"></v-icon>
+        <v-icon :icon="`icon-${theme}`" v-if="showIcon"></v-icon>
         <span class="v-notify--message-title" v-html="title"></span>
         <template v-if="content">
           <div class="v-alert--message-content" v-html="content"></div>
@@ -24,7 +24,7 @@
       <em class="v-notify--close" @click.stop="close" v-if="closable">
         <template v-if="closeText"><i>{{closeText}}</i></template>
         <template v-else>
-          <v-icon icon="v-icon-close"></v-icon>
+          <v-icon icon="icon-close"></v-icon>
         </template>
       </em>
     </div>
@@ -57,7 +57,7 @@
     },
     computed: {
       iconClass() {
-        return this.customIcon || `v-icon-${this.theme}`;
+        return this.customIcon || `icon-${this.theme}`;
       },
       horizontalProperty() {
         return /-right$/.test(this.placement) ? 'right' : 'left';

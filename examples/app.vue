@@ -7,7 +7,7 @@
         </a>
         <div class="versions">
           <v-dropdown trigger="click">
-            <v-button suffix-icon="v-icon-arrow-down">1.0.0</v-button>
+            <v-button suffix-icon="icon-arrow-down">1.0.0</v-button>
             <v-dropdown-menu slot="dropdown">
               <v-dropdown-menu-item value="1.0.0">1.0.0</v-dropdown-menu-item>
             </v-dropdown-menu>

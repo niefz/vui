@@ -28,7 +28,7 @@
       @click="handlePrev">
       <template v-if="prevText">{{prevText}}</template>
       <template v-else>
-        <v-icon icon="v-icon-arrow-left"></v-icon>
+        <v-icon icon="icon-arrow-left"></v-icon>
       </template>
     </v-button>
     <template v-if="simple">
@@ -58,7 +58,7 @@
             }
           ]"
           @mouseenter="mouseenter('left')"
-          @mouseleave="quickPrevIconClass = 'v-icon-more'"
+          @mouseleave="quickPrevIconClass = 'icon-more'"
           v-if="showPrevMore">
           <v-icon :icon="quickPrevIconClass"></v-icon>
         </li>
@@ -82,7 +82,7 @@
             }
           ]"
           @mouseenter="mouseenter('right')"
-          @mouseleave="quickNextIconClass = 'v-icon-more'"
+          @mouseleave="quickNextIconClass = 'icon-more'"
           v-if="showNextMore">
           <v-icon :icon="quickNextIconClass"></v-icon>
         </li>
@@ -106,7 +106,7 @@
       @click="handleNext">
       <template v-if="nextText">{{nextText}}</template>
       <template v-else>
-        <v-icon icon="v-icon-arrow-right"></v-icon>
+        <v-icon icon="icon-arrow-right"></v-icon>
       </template>
     </v-button>
     <div class="v-pagination--jumper" v-if="showJumper">
@@ -180,8 +180,8 @@
       return {
         showPrevMore: false,
         showNextMore: false,
-        quickNextIconClass: 'v-icon-more',
-        quickPrevIconClass: 'v-icon-more',
+        quickNextIconClass: 'icon-more',
+        quickPrevIconClass: 'icon-more',
         current: this.currentPage,
       };
     },
@@ -233,19 +233,19 @@
     },
     watch: {
       showPrevMore(val) {
-        if (!val) this.quickPrevIconClass = 'v-icon-more';
+        if (!val) this.quickPrevIconClass = 'icon-more';
       },
       showNextMore(val) {
-        if (!val) this.quickNextIconClass = 'v-icon-more';
+        if (!val) this.quickNextIconClass = 'icon-more';
       },
     },
     methods: {
       mouseenter(direction) {
         if (this.disabled) return;
         if (direction === 'left') {
-          this.quickPrevIconClass = 'v-icon-arrow-d-left';
+          this.quickPrevIconClass = 'icon-arrow-d-left';
         } else {
-          this.quickNextIconClass = 'v-icon-arrow-d-right';
+          this.quickNextIconClass = 'icon-arrow-d-right';
         }
       },
       handlePageSize(val) {
@@ -286,9 +286,9 @@
         const pagerCount = this.pagerCount;
         const current = this.current;
         let newPage = Number(event.target.textContent);
-        if (target.className.indexOf('v-icon-arrow-d-left') > -1) {
+        if (target.className.indexOf('icon-arrow-d-left') > -1) {
           newPage = current - (pagerCount - 2);
-        } else if (target.className.indexOf('v-icon-arrow-d-right') > -1) {
+        } else if (target.className.indexOf('icon-arrow-d-right') > -1) {
           newPage = current + (pagerCount - 2);
         }
         if (!isNaN(newPage)) {

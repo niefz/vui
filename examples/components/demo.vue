@@ -160,7 +160,7 @@
         return Language.filter(config => config.lang === this.lang)[0]['demo'];
       },
       iconClass() {
-        return this.isExpanded ? 'v-icon-caret-top' : 'v-icon-caret-bottom';
+        return this.isExpanded ? 'icon-caret-top' : 'icon-caret-bottom';
       },
       controlText() {
         return this.isExpanded ? this.langConfig['hide-text'] : this.langConfig['show-text'];

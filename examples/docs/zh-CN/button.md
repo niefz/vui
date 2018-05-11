@@ -1,45 +1,69 @@
 # Button 按钮
 
-基础组件，用于常用的按钮操作。
+基础组件，通常用于表单、对话框、菜单上传递用户触发的操作。
   
-## 代码示例
+## 基础按钮
 
-基础的按钮用法。
+基础按钮分三种：主按钮（实心） 、 次按钮（空心）、 文字按钮
   
-:::demo 使用`type`、`shape`、`theme`、`size`和`plain`属性来定义 Button 的样式。
+:::demo 使用 `type` 属性来定义 Button 的表现形式。
 
 ```html
 <v-row>
-  <v-button type="button" shape="radius" theme="default">Default</v-button>
-  <v-button type="button" shape="radius" theme="primary">Primary</v-button>
-  <v-button type="button" shape="radius" theme="warning">Warning</v-button>
-  <v-button type="button" shape="radius" theme="danger">Danger</v-button>
+  <v-button type="button" shape="radius" theme="primary">主要按钮</v-button>
+  <v-button type="button" shape="radius">次要按钮</v-button>
+  <v-button type="text">文字按钮</v-button>
+</v-row>
+```
+:::
+  
+## 禁用按钮
+
+:::demo 通过添加 `disabled` 属性来达到禁用状态。
+
+```html
+<v-row>
+  <v-button type="button" shape="radius" theme="primary" disabled>主要按钮</v-button>
+  <v-button type="button" shape="radius" disabled>次要按钮</v-button>
+  <v-button type="text" disabled>文字按钮</v-button>
+</v-row>
+```
+:::
+  
+## 主题按钮
+
+按钮的颜色赋予其感情色彩，能给用户带来操作提示。
+
+:::demo 使用 `theme` 属性来定义 Button 的主题。
+
+```html
+<v-row>
+  <v-button type="button" shape="radius" theme="primary">主要按钮</v-button>
+  <v-button type="button" shape="radius" theme="warning">告警按钮</v-button>
+  <v-button type="button" shape="radius" theme="danger">危险按钮</v-button>
+  <v-button type="button" shape="radius" theme="default">默认按钮</v-button>
 </v-row>
 <v-row>
-  <v-button type="button" shape="radius" theme="default" disabled>Default</v-button>
-  <v-button type="button" shape="radius" theme="primary" disabled>Primary</v-button>
-  <v-button type="button" shape="radius" theme="warning" disabled>Warning</v-button>
-  <v-button type="button" shape="radius" theme="danger" disabled>Danger</v-button>
+  <v-button type="button" shape="radius" theme="primary" plain>主要按钮</v-button>
+  <v-button type="button" shape="radius" theme="warning" plain>告警按钮</v-button>
+  <v-button type="button" shape="radius" theme="danger" plain>危险按钮</v-button>
+  <v-button type="button" shape="radius" theme="default" plain>危险按钮</v-button>
 </v-row>
-<div class="v-row">
-  <v-button type="button" shape="radius" theme="default" plain>Default</v-button>
-  <v-button type="button" shape="radius" theme="primary" plain>Primary</v-button>
-  <v-button type="button" shape="radius" theme="warning" plain>Warning</v-button>
-  <v-button type="button" shape="radius" theme="danger" plain>Danger</v-button>
-</div>
+```
+:::
+  
+## 图标、文字按钮
+
+带有 Icon 的按钮，视觉上能首当其冲的体现其功能意向。
+
+:::demo 可设置 `prefix-icon` 、`suffix-icon` 属性，或者在 Button 中内联 icon。
+
+```html
 <v-row>
-  <v-button type="button" shape="radius" theme="default" plain disabled>Default</v-button>
-  <v-button type="button" shape="radius" theme="primary" plain disabled>Primary</v-button>
-  <v-button type="button" shape="radius" theme="warning" plain disabled>Warning</v-button>
-  <v-button type="button" shape="radius" theme="danger" plain disabled>Danger</v-button>
-</v-row>
-<v-row>
-  <v-button-group>
-    <v-button type="button" shape="radius" theme="default" plain disabled>Default</v-button>
-    <v-button type="button" shape="radius" theme="primary" plain disabled>Primary</v-button>
-    <v-button type="button" shape="radius" theme="warning" plain disabled>Warning</v-button>
-    <v-button type="button" shape="radius" theme="danger" plain disabled>Danger</v-button>
-  </v-button-group>
+  <v-button type="button" shape="radius" theme="default" prefix-icon="icon-download">默认按钮</v-button>
+  <v-button type="button" shape="radius" theme="primary">主要按钮</v-button>
+  <v-button type="button" shape="radius" theme="warning">告警按钮</v-button>
+  <v-button type="button" shape="radius" theme="danger">危险按钮</v-button>
 </v-row>
 ```
 :::

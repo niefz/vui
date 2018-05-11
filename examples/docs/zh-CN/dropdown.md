@@ -10,7 +10,7 @@
 <v-row>
   <v-col :span="12">
     <v-dropdown trigger="hover" @change="handleChange">
-      <v-button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</v-button>
+      <v-button type="text" suffix-icon="icon-arrow-down">下拉菜单</v-button>
       <v-dropdown-menu slot="dropdown">
         <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
         <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
@@ -33,7 +33,7 @@
   </v-col>
   <v-col :span="12">
     <v-dropdown trigger="click" @change="handleChange">
-      <v-button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</v-button>
+      <v-button type="text" suffix-icon="icon-arrow-down">下拉菜单</v-button>
       <v-dropdown-menu slot="dropdown">
         <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
         <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>

@@ -16,7 +16,7 @@
       <template v-else>{{value}}</template>
       <v-icon
         class="v-tag--close"
-        icon="v-icon-close"
+        icon="icon-close"
         @click.stop="handleClose"
         v-if="closable"></v-icon>
     </span>

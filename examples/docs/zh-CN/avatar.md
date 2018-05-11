@@ -9,20 +9,20 @@
 ```html
 <v-row>
   <v-col :span="3">
-    <v-avatar icon="v-icon-user"></v-avatar>
+    <v-avatar icon="icon-user"></v-avatar>
   </v-col>
   <v-col :span="3">
     <v-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"></v-avatar>
   </v-col>
   <v-col :span="3">
-    <v-avatar icon="v-icon-user" shape="circle"></v-avatar>
+    <v-avatar icon="icon-user" shape="circle"></v-avatar>
   </v-col>
   <v-col :span="3">
     <v-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" shape="circle"></v-avatar>
   </v-col>
   <v-col :span="3">
     <v-badge value="1">
-      <v-avatar icon="v-icon-user"></v-avatar>
+      <v-avatar icon="icon-user"></v-avatar>
     </v-badge>
   </v-col>
   <v-col :span="3">

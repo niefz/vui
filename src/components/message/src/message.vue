@@ -39,7 +39,7 @@
     },
     computed: {
       iconClass() {
-        return this.customIcon || `v-icon-${this.theme}`;
+        return this.customIcon || `icon-${this.theme}`;
       },
     },
     watch: {

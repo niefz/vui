@@ -9,10 +9,15 @@
 ```html
 <v-row>
   <v-col :span="24">
-    <v-button @click="openModal">open modal</v-button>
+    <v-button @click="openModal('middle')">open middle</v-button>
+    <v-button @click="openModal('top-right')">open top-right</v-button>
+    <v-button @click="openModal('top-left')">open top-left</v-button>
+    <v-button @click="openModal('bottom-right')">open bottom-right</v-button>
+    <v-button @click="openModal('bottom-left')">open bottom-left</v-button>
     <v-modal
       :visible.sync="visible"
       :loading="loading"
+      :placement="placement"
       :before-close="beforeClose"
       @ok="handleOk">
       <template slot="title">提示</template>
@@ -42,6 +47,7 @@
       return {
         visible: false,
         loading: false,
+        placement: '',
       };
     },
     methods: {
@@ -49,8 +55,9 @@
         console.log('before-close');
         callback();
       },
-      openModal() {
+      openModal(placement) {
         this.visible = true;
+        this.placement = placement;
       },
       handleOk() {
         console.log('handle-ok');

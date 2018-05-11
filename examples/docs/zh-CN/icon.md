@@ -8,10 +8,10 @@
 
 ```html
 <v-row>
-  <v-icon icon="v-icon-calendar"></v-icon>
-  <v-icon icon="v-icon-delete"></v-icon>
-  <v-icon icon="v-icon-message"></v-icon>
-  <v-icon icon="v-icon-loading"></v-icon>
+  <v-icon icon="icon-calendar"></v-icon>
+  <v-icon icon="icon-delete"></v-icon>
+  <v-icon icon="icon-message"></v-icon>
+  <v-icon icon="icon-loading"></v-icon>
 </v-row>
 ```
 :::
@@ -20,20 +20,20 @@
 
 <v-row class="icons">
   <v-col :span="4">
-    <v-icon icon="v-icon-calendar"></v-icon>
-    <p>v-icon-calendar</p>
+    <v-icon icon="icon-calendar"></v-icon>
+    <p>icon-calendar</p>
   </v-col>
   <v-col :span="4">
-    <v-icon icon="v-icon-delete"></v-icon>
-    <p>v-icon-delete</p>
+    <v-icon icon="icon-delete"></v-icon>
+    <p>icon-delete</p>
   </v-col>
   <v-col :span="4">
-    <v-icon icon="v-icon-message"></v-icon>
-    <p>v-icon-message</p>
+    <v-icon icon="icon-message"></v-icon>
+    <p>icon-message</p>
   </v-col>
   <v-col :span="4">
-    <v-icon icon="v-icon-loading"></v-icon>
-    <p>v-icon-loading</p>
+    <v-icon icon="icon-loading"></v-icon>
+    <p>icon-loading</p>
   </v-col>
 </v-row>
 

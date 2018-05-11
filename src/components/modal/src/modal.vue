@@ -22,7 +22,7 @@
               </slot>
               <em class="v-modal--header-close" v-show="closable" @click="handleClose">
                 <slot name="close">
-                  <v-icon icon="v-icon-close"></v-icon>
+                  <v-icon icon="icon-close"></v-icon>
                 </slot>
               </em>
             </slot>
@@ -140,17 +140,17 @@
       name() {
         let name;
         switch (this.placement) {
-          case 'top-left':
-            name = 'modal-zoom-top-left';
-            break;
           case 'top-right':
             name = 'modal-zoom-top-right';
             break;
-          case 'bottom-left':
-            name = 'modal-zoom-bottom-left';
+          case 'top-left':
+            name = 'modal-zoom-top-left';
             break;
           case 'bottom-right':
             name = 'modal-zoom-bottom-right';
+            break;
+          case 'bottom-left':
+            name = 'modal-zoom-bottom-left';
             break;
           default:
             name = 'modal-fade';
