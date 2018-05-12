@@ -34,7 +34,7 @@
   <v-button type="button" shape="radius" theme="primary" plain>主要按钮</v-button>
   <v-button type="button" shape="radius" theme="warning" plain>告警按钮</v-button>
   <v-button type="button" shape="radius" theme="danger" plain>危险按钮</v-button>
-  <v-button type="button" shape="radius" theme="default" plain>危险按钮</v-button>
+  <v-button type="button" shape="radius" theme="default" plain>默认按钮</v-button>
 </v-row>
 ```
 :::

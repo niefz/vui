@@ -102,7 +102,6 @@
   </div>
 </template>
 <script>
-  import 'highlight.js/styles/color-brewer.css';
   import nav from './nav.json';
   import Row from '@/components/row';
   import Col from '@/components/col';

@@ -3,7 +3,7 @@
   position: relative;
   z-index: 1;
   font-size: 0;
-  .v-btn {
+  [class^=v-btn-] {
     border-radius: 0;
     &:hover {
       z-index: 2;
@@ -13,7 +13,7 @@
     }
   }
   &--horizontal {
-    .v-btn {
+    [class^=v-btn-] {
       &:first-child:not(:last-child) {
         border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
@@ -32,7 +32,7 @@
     }
   }
   &--vertical {
-    .v-btn {
+    [class^=v-btn-] {
       display: block;
       width: 100%;
       &:first-child:not(:last-child) {

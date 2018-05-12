@@ -5,7 +5,9 @@
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
   >
-    <slot name="source"></slot>
+    <div class="source">
+      <slot name="source"></slot>
+    </div>
     <div class="description">
       <slot></slot>
       <div
@@ -16,7 +18,9 @@
       </div>
     </div>
     <div ref="code" class="code">
-      <slot name="highlight"></slot>
+      <div class="highlight">
+        <slot name="highlight"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -65,24 +69,25 @@
     position: relative;
     border: dashed 1px #E8E8E8;
     border-radius: 3px;
-    transition: .2s;
+    transition: .3s;
     &.hover {
       border-color: #1890FF;
     }
     .source {
+      position: relative;
       padding: 20px;
     }
     .description {
       position: relative;
+      min-height: 67px;
       padding: 20px;
       border-top: dashed 1px #E8E8E8;
+      background-color: #FFFFFF;
       border-radius: 3px;
       box-sizing: border-box;
       font-size: 12px;
       line-height: 22px;
-      color: #595959;
       word-break: break-all;
-      background-color: #FFFFFF;
       p {
         code {
           display: inline-block;
@@ -93,21 +98,21 @@
           border-radius: 3px;
           font-size: 12px;
           line-height: 26px;
-          color: #595959;
         }
       }
     }
     .code {
       height: 0;
       overflow: hidden;
-      transition: height .2s;
+      transition: height .3s;
       .highlight {
         padding: 20px;
         border-top: dashed 1px #E8E8E8;
         background-color: #FAFAFA;
         .hljs {
-          padding: 1.2em 1.4em;
+          display: block;
           line-height: 2em;
+          overflow: auto;
           .hljs-name {
             color: #2973b7;
           }
