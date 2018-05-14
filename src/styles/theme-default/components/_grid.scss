@@ -16,7 +16,6 @@ $grid-columns: 24;
       float: left;
       width: (1 / $grid-columns * $index * 100) * 1%;
       min-height: 1px;
-      box-sizing: border-box;
       flex: 0 0 auto;
     }
     .v-col#{$class}-offset-#{$index} {
@@ -40,7 +39,6 @@ $grid-columns: 24;
 .v-row {
   display: block;
   @include make-row();
-  box-sizing: border-box;
 }
 
 .v-row--flex {

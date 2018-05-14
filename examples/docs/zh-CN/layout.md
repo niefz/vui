@@ -10,8 +10,8 @@
 
 - 顶部导航（大部分系统）：一级导航高度 `64px`，二级导航 `48px`。
 - 顶部导航（展示类页面）：一级导航高度 `80px`，二级导航 `56px`。
-- 顶部导航高度的范围计算公式为：`48+8n`。
-- 侧边导航宽度的范围计算公式：`200+8n`。
+- 顶部导航高度的范围计算公式为：`(48+8n)px`。
+- 侧边导航宽度的范围计算公式：`(200+8n)px`。
 
 ### 交互
 
@@ -42,11 +42,13 @@
 
 ## 组件概述
 
-- `Layout`：布局容器，其下可嵌套 `Header` `Sider` `Content` `Footer` 或 `Layout` 本身，可以放在任何父容器中。
+- `Layout`：布局容器，其下可嵌套 `Header` `Aside` `Content` `Footer` 或 `Layout` 本身，可以放在任何父容器中。
 - `Header`：顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
-- `Sider`：侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 `Layout` 中。
+- `Aside`：侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 `Layout` 中。
 - `Content`：内容部分，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
 - `Footer`：底部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
+
+> 注意：采用 flex 布局实现，请注意 [浏览器兼容性](http://caniuse.com/#search=flex) 问题。
 
 ## 常见布局
 
@@ -95,7 +97,7 @@ Header
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| height | 页头高度 | string | - | 60px |
+| height | 顶部高度 | string | - | 64px |
 
 Aside
 
@@ -107,7 +109,7 @@ Footer
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| height | 页脚高度 | string | - | 60px |
+| height | 底部高度 | string | - | 64px |
 
 <script>
   import Row from '@/components/row';
@@ -128,3 +130,29 @@ Footer
     },
   };
 </script>
+<style>
+  .v-header {
+    background-color: #1890FF;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .v-aside {
+    min-height: 120px;
+    background-color: #40A9FF;
+    line-height: 120px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .v-content {
+    min-height: 120px;
+    background-color: #096DD9;
+    line-height: 120px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .v-footer {
+    background-color: #1890FF;
+    color: #FFFFFF;
+    text-align: center;
+  }
+</style>

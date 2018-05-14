@@ -1,17 +1,14 @@
 <template>
-  <section class="v-content">
+  <main class="v-content">
     <slot></slot>
-  </section>
+  </main>
 </template>
 <script>
   export default {
     name: 'Content',
     componentName: 'Content',
-    props: {
-    },
-    computed: {
-    },
-    methods: {
-    },
+    props: {},
+    computed: {},
+    methods: {},
   };
 </script>

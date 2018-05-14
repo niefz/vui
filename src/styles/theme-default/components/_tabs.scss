@@ -86,14 +86,12 @@
     position: absolute;
     z-index: 1;
     background-color: $color-primary;
-    box-sizing: border-box;
     transform-origin: 0 0;
     transition: transform .3s cubic-bezier(.645, .045, .355, 1), width .3s cubic-bezier(.645, .045, .355, 1);
   }
   &-item {
     position: relative;
     height: 100%;
-    box-sizing: border-box;
     transition: color .3s cubic-bezier(.645, .045, .355, 1);
     &.active {
       font-weight: 500;

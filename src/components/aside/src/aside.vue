@@ -1,5 +1,5 @@
 <template>
-  <aside class="v-aside">
+  <aside class="v-aside" :style="style">
     <slot></slot>
   </aside>
 </template>
@@ -8,10 +8,18 @@
     name: 'Aside',
     componentName: 'Aside',
     props: {
+      width: {
+        type: Number,
+        default: 200,
+      },
     },
     computed: {
+      style() {
+        const style = {};
+        style.width = `${this.width}px`;
+        return style;
+      },
     },
-    methods: {
-    },
+    methods: {},
   };
 </script>

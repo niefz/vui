@@ -27,18 +27,15 @@
   border-bottom: 1px solid $color-divider;
   font-weight: 500;
   color: $color-title;
-  box-sizing: border-box;
 }
 
 .v-popover--content {
   padding: 12px 16px;
-  box-sizing: border-box;
 }
 
 .v-popover--footer {
   padding: 0 16px 10px;
   text-align: right;
-  box-sizing: border-box;
 }
 
 .v-popover--placement-top,

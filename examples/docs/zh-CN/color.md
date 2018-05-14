@@ -127,8 +127,8 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
+      Row,
+      Col,
     },
   };
 </script>

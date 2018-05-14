@@ -266,7 +266,11 @@
       blockquote {
         margin: 1em 0;
         padding-left: .8em;
-        border-left: 4px solid #ebedf0;
+        border-left: 4px solid #D9D9D9;
+        font-size: 14px;
+        a {
+          color: #1890FF;
+        }
       }
       code {
         display: inline-block;
