@@ -83,7 +83,6 @@
       padding: 20px;
       border-top: dashed 1px #E8E8E8;
       background-color: #FFFFFF;
-      border-radius: 3px;
       box-sizing: border-box;
       font-size: 12px;
       line-height: 22px;
@@ -112,6 +111,7 @@
         .hljs {
           display: block;
           line-height: 2em;
+          color: #2973b7;
           overflow: auto;
           .hljs-name {
             color: #2973b7;

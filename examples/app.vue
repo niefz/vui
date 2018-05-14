@@ -221,8 +221,8 @@
       padding: 20px 48px 0;
       > h1 {
         display: inline-block;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 8px;
+        margin-bottom: 8px;
         font-weight: 500;
         font-size: 24px;
         &:after {
@@ -230,16 +230,16 @@
           content: "";
           width: 50%;
           height: 1px;
-          margin: 20px 0 10px;
+          margin: 24px 0 10px;
           background-color: $color-divider;
           clear: both;
         }
       }
       > h2 {
-        margin-top: 30px;
-        margin-bottom: 20px;
+        margin-top: 32px;
+        margin-bottom: 24px;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 20px;
       }
       ol > li {
         margin-left: 20px;
@@ -252,7 +252,8 @@
         margin-top: 1em;
         margin-bottom: 1em;
         font-size: 14px;
-        line-height: 28px;
+        letter-spacing: .3px;
+        line-height: 24px;
       }
       .table {
         width: 100%;
