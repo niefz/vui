@@ -28,8 +28,14 @@
 			right: 14px;
 		}
 	}
-	.v-carousel__item--box{
-
+	.v-carousel__item{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		overflow: hidden;
 	}
 	.v-carousel__indicators{
 		position: absolute;
@@ -42,9 +48,25 @@
 		z-index: 2;
 		.v-carousel__indicators__item{
 			display: inline-block;
+			position: relative;
 			background-color: transparent;
-			padding: 12px 4px;
 			cursor: pointer;
+			&:before{
+				content: "";
+				display: inline-block;
+				width: 25px;
+				height: 3px;
+				background-color: $color-white;
+				opacity: .45;
+				border: none;
+				outline: none;
+				padding: 0;
+				margin: 0;
+				transition: .4s;
+			}
+			&.actived:before{
+				opacity: 1;
+			}
 		}
 	}
 }
