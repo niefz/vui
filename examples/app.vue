@@ -233,11 +233,16 @@
           clear: both;
         }
       }
-      > h2 {
+      > h2, > h3 {
         margin-top: 32px;
         margin-bottom: 24px;
         font-weight: 500;
-        font-size: 18px;
+      }
+      > h2 {
+        font-size: 20px;
+      }
+      > h3 {
+        font-size: 16px;
       }
       ul > li, ol > li {
         margin-left: 20px;
