@@ -1,5 +1,5 @@
 <template>
-  <i class="v-icon" :class="icon" @click="handleClick"></i>
+  <i :class="icon" @click="handleClick"></i>
 </template>
 <script>
   export default {

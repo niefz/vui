@@ -6,14 +6,14 @@
 
 适用广泛的基础用法。
 
-:::demo 在`v-breadcrumb`中使用`v-breadcrumb-item`标签表示从首页开始的每一级。VUI 提供了一个`separator`属性，在`v-breadcrumb`标签中设置它来决定分隔符，它只能是字符串，默认为斜杠`/`。
+:::demo 在`Breadcrumb`中使用`BreadcrumbItem`标签表示从首页开始的每一级。VUI 提供了一个`separator`属性，在`Breadcrumb`标签中设置它来决定分隔符，它只能是字符串，默认为斜杠`/`。
 
 ```html
-<v-breadcrumb separator="/">
-  <v-breadcrumb-item>首页</v-breadcrumb-item>
-  <v-breadcrumb-item :to="{ path: '/zh-CN/components/icon' }">Icon 图标</v-breadcrumb-item>
-  <v-breadcrumb-item>Button 按钮</v-breadcrumb-item>
-  <v-breadcrumb-item>Grid 栅格</v-breadcrumb-item>
+<Breadcrumb separator="/">
+  <BreadcrumbItem>首页</BreadcrumbItem>
+  <BreadcrumbItem :to="{ path: '/zh-CN/components/icon' }">Icon 图标</BreadcrumbItem>
+  <BreadcrumbItem>Button 按钮</BreadcrumbItem>
+  <BreadcrumbItem>Grid 栅格</BreadcrumbItem>
 </el-breadcrumb>
 ```
 :::
@@ -23,12 +23,12 @@
 :::demo 通过设置 `separator-icon` 可使用相应的 `iconfont` 作为分隔符，注意这将使 `separator` 设置失效
 
 ```html
-<v-breadcrumb separator-icon="icon-arrow-right">
-  <v-breadcrumb-item>首页</v-breadcrumb-item>
-  <v-breadcrumb-item>Icon 图标</v-breadcrumb-item>
-  <v-breadcrumb-item :to="{ path: '/zh-CN/components/button' }">Button 按钮</v-breadcrumb-item>
-  <v-breadcrumb-item>Grid 栅格</v-breadcrumb-item>
-</v-breadcrumb>
+<Breadcrumb separator-icon="v-icon-arrow-right">
+  <BreadcrumbItem>首页</BreadcrumbItem>
+  <BreadcrumbItem>Icon 图标</BreadcrumbItem>
+  <BreadcrumbItem :to="{ path: '/zh-CN/components/button' }">Button 按钮</BreadcrumbItem>
+  <BreadcrumbItem>Grid 栅格</BreadcrumbItem>
+</Breadcrumb>
 ```
 :::
 
@@ -54,8 +54,8 @@ BreadcrumbItem Attributes
 
   export default {
     components: {
-      VBreadcrumb: Breadcrumb,
-      VBreadcrumbItem: BreadcrumbItem,
+      Breadcrumb,
+      BreadcrumbItem,
     },
   };
 </script>

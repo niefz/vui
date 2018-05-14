@@ -48,7 +48,7 @@
       v-if="!hideInfo && !textInside">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>
-        <v-icon v-if="icon" :icon="icon"></v-icon>
+        <Icon v-if="icon" :icon="icon"></Icon>
         <template v-else>{{percentage}}%</template>
       </template>
     </div>
@@ -61,7 +61,7 @@
     name: 'Progress',
     componentName: 'Progress',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       shape: {

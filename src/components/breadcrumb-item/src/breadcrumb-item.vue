@@ -3,7 +3,7 @@
     <a class="v-breadcrumb--inner" ref="link" role="link">
       <slot></slot>
     </a><em class="v-breadcrumb--separator">
-      <v-icon :icon="separatorIcon" v-if="separatorIcon"></v-icon>
+      <Icon :icon="separatorIcon" v-if="separatorIcon"></Icon>
       <i role="presentation" v-else>{{ separator }}</i>
     </em>
   </span>
@@ -16,7 +16,7 @@
     componentName: 'BreadcrumbItem',
     inject: ['breadcrumb'],
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       to: {},

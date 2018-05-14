@@ -9,12 +9,12 @@
       <button
         type="button"
         class="v-carousel__arrow v-carousel__arrow--left">
-        <v-icon icon="v-icon-left"></v-icon>
+        <Icon icon="v-icon-left"></Icon>
       </button>
       <button
         type="button"
         class="v-carousel__arrow v-carousel__arrow--right">
-        <v-icon icon="v-icon-right"></v-icon>
+        <Icon icon="v-icon-right"></Icon>
       </button>
       <div class="v-carousel__item--box"></div>
     </div>
@@ -30,7 +30,7 @@
     name: 'Carousel',
     componentName: 'Carousel',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       value: {

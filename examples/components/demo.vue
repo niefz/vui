@@ -14,7 +14,7 @@
         ref="control"
         class="code-control"
         @click="isExpanded = !isExpanded">
-        <i class="v-icon icon-code"></i>
+        <i class="v-icon-code"></i>
       </div>
     </div>
     <div ref="code" class="code">
@@ -87,17 +87,13 @@
       font-size: 12px;
       line-height: 22px;
       word-break: break-all;
-      p {
-        code {
-          display: inline-block;
-          height: 26px;
-          margin: 0 5px;
-          padding: 0 5px;
-          background-color: #F5F5F5;
-          border-radius: 3px;
-          font-size: 12px;
-          line-height: 26px;
-        }
+      code {
+        display: inline-block;
+        padding: 0 5px;
+        background-color: #F5F5F5;
+        border-radius: 3px;
+        font-size: 12px;
+        line-height: 26px;
       }
     }
     .code {

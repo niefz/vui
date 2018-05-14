@@ -7,58 +7,58 @@
 :::demo 由 theme 属性来设置 tag 的类型，也可以通过color属性来自定义背景色。
 
 ```html
-<v-row>
-  <v-tag>标签一</v-tag>
-  <v-tag theme="success">标签二</v-tag>
-  <v-tag theme="info">标签三</v-tag>
-  <v-tag theme="warning">标签四</v-tag>
-  <v-tag theme="danger">标签五</v-tag>
-  <v-tag theme="danger" color="#f50" closable>标签五</v-tag>
-</v-row>
-<v-row>
-  <v-tag
+<Row>
+  <Tag>标签一</Tag>
+  <Tag theme="success">标签二</Tag>
+  <Tag theme="info">标签三</Tag>
+  <Tag theme="warning">标签四</Tag>
+  <Tag theme="danger">标签五</Tag>
+  <Tag theme="danger" color="#f50" closable>标签五</Tag>
+</Row>
+<Row>
+  <Tag
     theme="info"
     closable
     @close="handleClose(tag)"
     :key="tag"
     v-for="tag in dynamicTags">
     {{tag}}
-  </v-tag>
-</v-row>
-<v-row>
-  <v-tag
+  </Tag>
+</Row>
+<Row>
+  <Tag
     theme="text"
     closable
     @close="handleClose(tag)"
     :key="tag"
     v-for="tag in dynamicTags">
     {{tag}}
-  </v-tag>
-</v-row>
-<v-row>
-  <v-tag-group v-model="model">
-    <v-tag
+  </Tag>
+</Row>
+<Row>
+  <TagGroup v-model="model">
+    <Tag
       :value="tag"
       theme="text"
       @close="handleClose(tag)"
       @change="handleChange"
       :key="tag"
       v-for="tag in dynamicTags">
-    </v-tag>
-  </v-tag-group>
-</v-row>
-<v-row>
-  <v-tag-group v-model="multiple" multiple>
-    <v-tag
+    </Tag>
+  </TagGroup>
+</Row>
+<Row>
+  <TagGroup v-model="multiple" multiple>
+    <Tag
       :value="tag"
       theme="text"
       @close="handleClose(tag)"
       @change="handleMultipleChange"
       :key="tag"
       v-for="tag in dynamicTags">
-    </v-tag>
-  </v-tag-group>
-</v-row>
+    </Tag>
+  </TagGroup>
+</Row>
 ```
 :::
 
@@ -69,9 +69,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VTag: Tag,
-      VTagGroup: TagGroup,
+      Row,
+      Tag,
+      TagGroup,
     },
     data() {
       return {

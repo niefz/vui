@@ -11,7 +11,7 @@
       ]"
       v-show="visible">
       <div class="v-alert--message" :class="{'with-desc': $slots.desc || description}">
-        <v-icon :icon="`icon-${theme}`" v-if="showIcon"></v-icon>
+        <Icon :icon="`v-icon-${theme}`" v-if="showIcon"></Icon>
         <span class="v-alert--message-title">
           <slot>{{message}}</slot>
         </span>
@@ -24,7 +24,7 @@
       <em class="v-alert--close" @click.stop="handleClose" v-if="closable">
         <template v-if="closeText"><i>{{closeText}}</i></template>
         <template v-else>
-          <v-icon icon="icon-close"></v-icon>
+          <Icon icon="v-icon-close"></Icon>
         </template>
       </em>
     </div>
@@ -37,7 +37,7 @@
     name: 'Alert',
     componentName: 'Alert',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       theme: {

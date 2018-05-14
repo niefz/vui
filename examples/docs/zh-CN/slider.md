@@ -4,15 +4,15 @@
 
 ## 基础用法
 
-:::demo 在 v-slider 元素中定义 v-model 绑定变量
+:::demo 在 Slider 元素中定义 v-model 绑定变量
 
 ```html
-<v-row>
-  <v-slider v-model="value1"></v-slider>
-</v-row>
-<v-row>
-  <v-slider v-model="value2" disabled></v-slider>
-</v-row>
+<Row>
+  <Slider v-model="value1"></Slider>
+</Row>
+<Row>
+  <Slider v-model="value2" disabled></Slider>
+</Row>
 ```
 :::
 
@@ -22,8 +22,8 @@
 
   export default {
     components: {
-      VRow: Row,
-      VSlider: Slider,
+      Row,
+      Slider,
     },
     data() {
       return {

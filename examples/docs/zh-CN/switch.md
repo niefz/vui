@@ -4,15 +4,15 @@
 
 ## 基础用法
 
-:::demo 在 v-switch 元素中定义 v-model 绑定变量
+:::demo 在 Switch 元素中定义 v-model 绑定变量
 
 ```html
-<v-row>
-  <v-switch v-model="checked" :before-switch="beforeSwitch"></v-switch>
-</v-row>
-<v-row>
-  <v-switch v-model="checkDisabled" disabled></v-switch>
-</v-row>
+<Row>
+  <Switch v-model="checked" :before-switch="beforeSwitch"></Switch>
+</Row>
+<Row>
+  <Switch v-model="checkDisabled" disabled></Switch>
+</Row>
 ```
 :::
 
@@ -22,8 +22,8 @@
 
   export default {
     components: {
-      VRow: Row,
-      VSwitch: Switch,
+      Row,
+      Switch,
     },
     data() {
       return {

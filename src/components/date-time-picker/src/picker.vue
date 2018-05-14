@@ -1,5 +1,5 @@
 <template>
-  <v-input
+  <Input
     ref="reference"
     class="v-picker"
     :class="[
@@ -17,7 +17,7 @@
     @mouseleave.native="showClose = false"
     v-clickoutside="handleClose"
     v-if="!ranged">
-  </v-input>
+  </Input>
   <div
     ref="reference"
     class="v-range-picker"
@@ -65,10 +65,10 @@
     directives: { Clickoutside },
     mixins: [Emitter, NewPopper],
     components: {
-      VIcon: Icon,
-      VInput: Input,
-      VPickerDate: PickerDate,
-      VPickerTime: PickerTime,
+      Icon,
+      Input,
+      PickerDate,
+      PickerTime,
     },
     props: {
       placement: {
@@ -102,7 +102,7 @@
       },
       suffixIcon: {
         type: String,
-        default: 'icon-calendar',
+        default: 'v-icon-calendar',
       },
       readonly: {
         type: Boolean,

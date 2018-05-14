@@ -7,16 +7,16 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col>
-    <v-spin tip="拼命加载中"></v-spin>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col>
-    <v-spin icon="icon-loading" tip="拼命加载中"></v-spin>
-  </v-col>
-</v-row>
+<Row>
+  <Col>
+    <Spin tip="拼命加载中"></Spin>
+  </Col>
+</Row>
+<Row>
+  <Col>
+    <Spin icon="v-icon-loading" tip="拼命加载中"></Spin>
+  </Col>
+</Row>
 ```
 :::
 
@@ -27,9 +27,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VSpin: Spin,
+      Row,
+      Col,
+      Spin,
     },
     methods: {
     },

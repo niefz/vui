@@ -5,11 +5,11 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-table></v-table>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="24">
+    <Table></Table>
+  </Col>
+</Row>
 ```
 :::
 
@@ -20,9 +20,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VTable: Table,
+      Row,
+      Col,
+      Table,
     },
     methods: {
     },

@@ -5,21 +5,21 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-timeline>
-      <v-timeline-item>
+<Row>
+  <Col :span="24">
+    <Timeline>
+      <TimelineItem>
         first floor
-      </v-timeline-item>
-      <v-timeline-item>
+      </TimelineItem>
+      <TimelineItem>
         second floor
-      </v-timeline-item>
-      <v-timeline-item>
+      </TimelineItem>
+      <TimelineItem>
         third floor
-      </v-timeline-item>
-    </v-timeline>
-  </v-col>
-</v-row>
+      </TimelineItem>
+    </Timeline>
+  </Col>
+</Row>
 ```
 :::
 
@@ -31,10 +31,10 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VTimeline: Timeline,
-      VTimelineItem: TimelineItem,
+      Row,
+      Col,
+      Timeline,
+      TimelineItem,
     },
     data() {
       return {

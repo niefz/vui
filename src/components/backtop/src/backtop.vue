@@ -9,7 +9,7 @@
     @click.stop="handleBack">
     <slot>
       <div class="v-backtop--inner">
-        <v-icon icon="icon-arrow-up"></v-icon>
+        <Icon icon="v-icon-arrow-up"></Icon>
       </div>
     </slot>
   </div>
@@ -21,7 +21,7 @@
     name: 'Backtop',
     componentName: 'Backtop',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       visibilityHeight: {

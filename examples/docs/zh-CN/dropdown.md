@@ -7,54 +7,54 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="12">
-    <v-dropdown trigger="hover" @change="handleChange">
-      <v-button type="text" suffix-icon="icon-arrow-down">下拉菜单</v-button>
-      <v-dropdown-menu slot="dropdown">
-        <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="蚵仔煎" divided>
-          <v-dropdown placement="right-start" @change="handleChange">
-            <v-button type="text" suffix-icon="icon-arrow-right">下拉菜单</v-button>
-            <v-dropdown-menu slot="dropdown">
-              <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="蚵仔煎" divided>蚵仔煎</v-dropdown-menu-item>
-            </v-dropdown-menu>
-          </v-dropdown>
-        </v-dropdown-menu-item>
-      </v-dropdown-menu>
-    </v-dropdown>
-  </v-col>
-  <v-col :span="12">
-    <v-dropdown trigger="click" @change="handleChange">
-      <v-button type="text" suffix-icon="icon-arrow-down">下拉菜单</v-button>
-      <v-dropdown-menu slot="dropdown">
-        <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
-        <v-dropdown-menu-item value="蚵仔煎" divided>
-          <v-dropdown placement="right-start" @change="handleChange">
-            <v-button type="text" suffix-icon="icon-arrow-right">蚵仔煎</v-button>
-            <v-dropdown-menu slot="dropdown">
-              <v-dropdown-menu-item value="黄金糕">黄金糕</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="狮子头">狮子头</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="螺蛳粉">螺蛳粉</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="双皮奶" disabled>双皮奶</v-dropdown-menu-item>
-              <v-dropdown-menu-item value="蚵仔煎" divided>蚵仔煎</v-dropdown-menu-item>
-            </v-dropdown-menu>
-          </v-dropdown>
-        </v-dropdown-menu-item>
-      </v-dropdown-menu>
-    </v-dropdown>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="12">
+    <Dropdown trigger="hover" @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</Button>
+      <DropdownMenu slot="dropdown">
+        <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+        <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+        <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+        <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+        <DropdownMenuItem value="蚵仔煎" divided>
+          <Dropdown placement="right-start" @change="handleChange">
+            <Button type="text" suffix-icon="v-icon-arrow-right">下拉菜单</Button>
+            <DropdownMenu slot="dropdown">
+              <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+              <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+              <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+              <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+              <DropdownMenuItem value="蚵仔煎" divided>蚵仔煎</DropdownMenuItem>
+            </DropdownMenu>
+          </Dropdown>
+        </DropdownMenuItem>
+      </DropdownMenu>
+    </Dropdown>
+  </Col>
+  <Col :span="12">
+    <Dropdown trigger="click" @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</Button>
+      <DropdownMenu slot="dropdown">
+        <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+        <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+        <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+        <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+        <DropdownMenuItem value="蚵仔煎" divided>
+          <Dropdown placement="right-start" @change="handleChange">
+            <Button type="text" suffix-icon="v-icon-arrow-right">蚵仔煎</Button>
+            <DropdownMenu slot="dropdown">
+              <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+              <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+              <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+              <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+              <DropdownMenuItem value="蚵仔煎" divided>蚵仔煎</DropdownMenuItem>
+            </DropdownMenu>
+          </Dropdown>
+        </DropdownMenuItem>
+      </DropdownMenu>
+    </Dropdown>
+  </Col>
+</Row>
 ```
 :::
 
@@ -68,12 +68,12 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
-      VDropdown: Dropdown,
-      VDropdownMenu: DropdownMenu,
-      VDropdownMenuItem: DropdownMenuItem,
+      Row,
+      Col,
+      Button,
+      Dropdown,
+      DropdownMenu,
+      DropdownMenuItem,
     },
     data() {
       return {

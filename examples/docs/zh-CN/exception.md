@@ -7,48 +7,48 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col>
-    <v-exception exception="403">
+<Row>
+  <Col>
+    <Exception exception="403">
       <template>
-        <v-button theme="primary">返回首页</v-button>
+        <Button theme="primary">返回首页</Button>
       </template>
-    </v-exception>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col>
-    <v-exception>
+    </Exception>
+  </Col>
+</Row>
+<Row>
+  <Col>
+    <Exception>
       <template>
-        <v-button theme="primary">返回首页</v-button>
+        <Button theme="primary">返回首页</Button>
       </template>
-    </v-exception>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col>
-    <v-exception exception="500">
+    </Exception>
+  </Col>
+</Row>
+<Row>
+  <Col>
+    <Exception exception="500">
       <template>
-        <v-button theme="primary">返回首页</v-button>
+        <Button theme="primary">返回首页</Button>
       </template>
-    </v-exception>
-  </v-col>
-</v-row>
+    </Exception>
+  </Col>
+</Row>
 ```
 :::
 
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Exception from '@/components/exception';
   import Button from '@/components/button';
+  import Exception from '@/components/exception';
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VException: Exception,
-      VButton: Button,
+      Row,
+      Col,
+      Exception,
+      Button,
     },
     methods: {
     },

@@ -30,7 +30,7 @@
         }
       ]">
       <em class="v-input--inner-prefix" v-if="prefixIcon">
-        <v-icon :icon="prefixIcon" @click.stop="handlePrefixIcon"></v-icon>
+        <Icon :icon="prefixIcon" @click.stop="handlePrefixIcon"></Icon>
       </em>
       <input
         type="text"
@@ -42,7 +42,7 @@
         @keyup="handleKeyup"
         @input="handleInput">
       <em class="v-input--inner-suffix" v-if="suffixIcon">
-        <v-icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></v-icon>
+        <Icon :icon="suffixIcon" @click.stop="handleSuffixIcon"></Icon>
       </em>
     </div>
     <div class="v-input--group-append" v-if="$slots.append || append">
@@ -62,7 +62,7 @@
     name: 'Input',
     componentName: 'Input',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       size: {

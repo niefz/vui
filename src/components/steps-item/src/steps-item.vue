@@ -12,16 +12,16 @@
     <div class="v-steps--item-tail" v-if="steps.mode === 'vertical'"></div>
     <div class="v-steps--icon">
       <template v-if="icon">
-        <v-icon :icon="icon"></v-icon>
+        <Icon :icon="icon"></Icon>
       </template>
       <template v-else>
         <span class="v-steps--icon-inner">
           <template v-if="steps.current > index">
-            <v-icon icon="icon-check"></v-icon>
+            <Icon icon="v-icon-check"></Icon>
           </template>
           <template v-else>
             <template v-if="steps.current === index && steps.status === 'error'">
-              <v-icon icon="icon-close"></v-icon>
+              <Icon icon="v-icon-close"></Icon>
             </template>
             <template v-else>{{index}}</template>
           </template>
@@ -43,7 +43,7 @@
     name: 'StepsItem',
     componentName: 'StepsItem',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     inject: ['steps'],
     props: {

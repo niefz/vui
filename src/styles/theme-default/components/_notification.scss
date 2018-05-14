@@ -47,7 +47,7 @@
     padding-left: 30px;
   }
   &--message {
-    .v-icon {
+    [class^=v-icon-] {
       position: absolute;
       left: 10px;
       height: 18px;
@@ -59,7 +59,7 @@
       line-height: 20px;
     }
     &.with-content {
-      .v-icon {
+      [class^=v-icon-] {
         top: 9px;
       }
       .v-notify--message-title {

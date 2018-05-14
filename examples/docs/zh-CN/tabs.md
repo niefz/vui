@@ -5,24 +5,24 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-tabs placement="top" @tab-click="handleClick">
+<Row>
+  <Col :span="24">
+    <Tabs placement="top" @tab-click="handleClick">
       <template slot="nav">
-        <v-tabs-nav label="用户管理" value="用户管理"></v-tabs-nav>
-        <v-tabs-nav label="配置管理" value="配置管理" disabled></v-tabs-nav>
-        <v-tabs-nav label="角色管理" value="角色管理"></v-tabs-nav>
-        <v-tabs-nav label="我的工作台" value="我的工作台"></v-tabs-nav>
+        <TabsNav label="用户管理" value="用户管理"></TabsNav>
+        <TabsNav label="配置管理" value="配置管理" disabled></TabsNav>
+        <TabsNav label="角色管理" value="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" value="我的工作台"></TabsNav>
       </template>
       <template slot="content">
-        <v-tabs-panel name="用户管理">用户管理</v-tabs-panel>
-        <v-tabs-panel name="配置管理">配置管理</v-tabs-panel>
-        <v-tabs-panel name="角色管理">角色管理</v-tabs-panel>
-        <v-tabs-panel name="我的工作台">我的工作台</v-tabs-panel>
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
       </template>
-    </v-tabs>
-  </v-col>
-</v-row>
+    </Tabs>
+  </Col>
+</Row>
 ```
 :::
 
@@ -35,11 +35,11 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VTabs: Tabs,
-      VTabsNav: TabsNav,
-      VTabsPanel: TabsPanel,
+      Row,
+      Col,
+      Tabs,
+      TabsNav,
+      TabsPanel,
     },
     data() {
       return {

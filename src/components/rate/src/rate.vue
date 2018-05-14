@@ -17,7 +17,7 @@
       @click="setValue(item)"
     >
       <slot>
-         <v-icon :icon="icon"></v-icon>
+         <Icon :icon="icon"></Icon>
       </slot>
     </span>
   </div>
@@ -29,7 +29,7 @@
     name: 'Rate',
     componentName: 'Rate',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       value: {
@@ -38,7 +38,7 @@
       },
       icon: {
         type: String,
-        default: 'icon-heart',
+        default: 'v-icon-heart',
       },
       points: {
         type: Number,

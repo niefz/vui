@@ -11,7 +11,7 @@
         <img class="v-empty--inner-img" :src="src" alt="">
       </template>
       <template v-else-if="icon">
-        <v-icon class="v-empty--inner-icon" :icon="icon"></v-icon>
+        <Icon class="v-empty--inner-icon" :icon="icon"></Icon>
       </template>
       <template v-if="description || $slots.default">
         <p class="v-empty--inner-desc">
@@ -28,7 +28,7 @@
     name: 'Empty',
     componentName: 'Empty',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       icon: String,

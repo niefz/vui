@@ -7,9 +7,9 @@
 :::demo 在 v-rate 元素中定义 v-model 绑定变量
 
 ```html
-<v-row>
-  <v-date-time-picker v-model="value1"></v-date-time-picker>
-</v-row>
+<Row>
+  <DateTimePicker v-model="value1"></DateTimePicker>
+</Row>
 ```
 :::
 
@@ -19,8 +19,8 @@
 
   export default {
     components: {
-      VRow: Row,
-      VDateTimePicker: DateTimePicker,
+      Row,
+      DateTimePicker,
     },
     data() {
       return {

@@ -12,7 +12,7 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
       v-show="visible">
-      <v-icon :icon="iconClass" v-if="showIcon"></v-icon>
+      <Icon :icon="iconClass" v-if="showIcon"></Icon>
       <div class="v-message--content" v-html="message"></div>
     </div>
   </transition>
@@ -24,7 +24,7 @@
     name: 'Message',
     componentName: 'Message',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     data() {
       return {
@@ -39,7 +39,7 @@
     },
     computed: {
       iconClass() {
-        return this.customIcon || `icon-${this.theme}`;
+        return this.customIcon || `v-icon-${this.theme}`;
       },
     },
     watch: {

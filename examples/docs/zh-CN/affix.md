@@ -7,27 +7,27 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-affix :top="80" :right="100" affix>
-      <v-button>固定</v-button>
-    </v-affix>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-affix :top="80" :left="200">
-      <v-button>固定</v-button>
-    </v-affix>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-affix :bottom="10" affix>
-      <v-button>固定</v-button>
-    </v-affix>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="24">
+    <Affix :top="80" :right="100" affix>
+      <Button>固定</Button>
+    </Affix>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Affix :top="80" :left="200">
+      <Button>固定</Button>
+    </Affix>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Affix :bottom="10" affix>
+      <Button>固定</Button>
+    </Affix>
+  </Col>
+</Row>
 ```
 :::
 
@@ -39,10 +39,10 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
-      VAffix: Affix,
+      Row,
+      Col,
+      Button,
+      Affix,
     },
   };
 </script>

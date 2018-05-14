@@ -5,14 +5,14 @@
 :::demo 
 
 ```html
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-input-number v-model="keywords" :min="1" :max="10"></v-input>
-  </v-col>
-  <v-col :span="12">
-    <v-input-number :min="1" :max="10"></v-input>
-  </v-col>
-</v-row>
+<Row :gutter="10">
+  <Col :span="12">
+    <InputNumber v-model="keywords" :min="1" :max="10"></InputNumber>
+  </Col>
+  <Col :span="12">
+    <InputNumber :min="1" :max="10"></InputNumber>
+  </Col>
+</Row>
 ```
 :::
     
@@ -20,20 +20,12 @@
   import Row from '@/components/row';
   import Col from '@/components/col';
   import InputNumber from '@/components/input-number';
-  import Button from '@/components/button';
-  import Select from '@/components/select';
-  import SelectMenu from '@/components/select-menu';
-  import SelectMenuOption from '@/components/select-menu-option';
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VInputNumber: InputNumber,
-      VButton: Button,
-      VSelect: Select,
-      VSelectMenu: SelectMenu,
-      VSelectMenuOption: SelectMenuOption,
+      Row,
+      Col,
+      InputNumber,
     },
     data() {
       return {

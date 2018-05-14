@@ -4,7 +4,7 @@
       <div class="v-tabs--nav-wrapper">
         <div class="v-tabs--nav-scroll">
           <div class="v-tabs--nav">
-            <v-tabs-bar :nav="tabs"></v-tabs-bar>
+            <TabsBar :nav="tabs"></TabsBar>
             <slot name="nav"></slot>
           </div>
         </div>
@@ -22,7 +22,7 @@
     name: 'Tabs',
     componentName: 'Tabs',
     components: {
-      VTabsBar: TabsBar,
+      TabsBar,
     },
     provide() {
       return {

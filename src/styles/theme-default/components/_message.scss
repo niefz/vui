@@ -44,7 +44,7 @@
   &--with-icon {
     padding-left: 30px;
   }
-  .v-icon {
+  [class^=v-icon-] {
     position: absolute;
     left: 10px;
     height: 18px;

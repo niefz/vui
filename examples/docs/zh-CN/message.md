@@ -7,11 +7,11 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-button @click="openMessage">open message</v-button>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="24">
+    <Button @click="openMessage">open message</Button>
+  </Col>
+</Row>
 ```
 :::
 
@@ -23,9 +23,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
+      Row,
+      Col,
+      Button,
     },
     methods: {
       openMessage() {

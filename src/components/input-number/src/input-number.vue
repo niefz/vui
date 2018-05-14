@@ -1,6 +1,6 @@
 <template>
   <div class="v-input--number">
-    <v-input
+    <Input
       :size="size"
       :value="currentValue"
       :placeholder="placeholder"
@@ -22,13 +22,13 @@
       <template slot="append" v-if="$slots.append">
         <slot name="append"></slot>
       </template>
-    </v-input>
+    </Input>
     <div class="v-input--number-handler">
       <em class="v-input--number-handler-up" :class="{'disabled': increaseDisabled}" @click.stop="handleIncrease">
-        <v-icon icon="icon-arrow-up"></v-icon>
+        <Icon icon="v-icon-arrow-up"></Icon>
       </em>
       <em class="v-input--number-handler-down" :class="{'disabled': minusDisabled}" @click.stop="handleMinus">
-        <v-icon icon="icon-arrow-down"></v-icon>
+        <Icon icon="v-icon-arrow-down"></Icon>
       </em>
     </div>
   </div>
@@ -38,11 +38,11 @@
   import Icon from 'free-vui/src/components/icon';
 
   export default {
-    name: 'Input',
-    componentName: 'Input',
+    name: 'InputNumber',
+    componentName: 'InputNumber',
     components: {
-      VInput: Input,
-      VIcon: Icon,
+      Input,
+      Icon,
     },
     props: {
       size: {

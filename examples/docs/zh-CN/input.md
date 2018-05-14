@@ -5,66 +5,66 @@
 :::demo 
 
 ```html
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-input v-model="keywords" suffix-icon="icon-calendar" @suffix-click="handleSuffix" @keyup.enter="handleSuffix"></v-input>
-  </v-col>
-  <v-col :span="12">
-    <v-input prefix-icon="icon-calendar" disabled></v-input>
-  </v-col>
-</v-row>
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-input v-model="keywords" prepend="Http://" suffix-icon="icon-calendar" @suffix-click="handleSuffix"></v-input>
-  </v-col>
-  <v-col :span="12">
-    <v-input v-model="keywords" suffix-icon="icon-calendar" append=".com" disabled></v-input>
-  </v-col>
-</v-row>
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-input v-model="keywords" prepend="Http://" @suffix-click="handleSuffix">
-      <template slot="append"><v-button theme="primary" @click="handleSuffix">查询</v-button></template>
-    </v-input>
-  </v-col>
-  <v-col :span="12">
-    <v-input v-model="keywords" prepend="Http://" suffix-icon="icon-calendar" @suffix-click="handleSuffix">
-      <template slot="append"><v-button>查询</v-button></template>
-    </v-input>
-  </v-col>
-</v-row>
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-input v-model="keywords" prepend="Http://" @suffix-click="handleSuffix">
+<Row :gutter="10">
+  <Col :span="12">
+    <Input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix" @keyup.enter="handleSuffix"></Input>
+  </Col>
+  <Col :span="12">
+    <Input prefix-icon="v-icon-calendar" disabled></Input>
+  </Col>
+</Row>
+<Row :gutter="10">
+  <Col :span="12">
+    <Input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix"></Input>
+  </Col>
+  <Col :span="12">
+    <Input v-model="keywords" suffix-icon="v-icon-calendar" append=".com" disabled></Input>
+  </Col>
+</Row>
+<Row :gutter="10">
+  <Col :span="12">
+    <Input v-model="keywords" prepend="Http://" @suffix-click="handleSuffix">
+      <template slot="append"><Button theme="primary" @click="handleSuffix">查询</Button></template>
+    </Input>
+  </Col>
+  <Col :span="12">
+    <Input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+      <template slot="append"><Button>查询</Button></template>
+    </Input>
+  </Col>
+</Row>
+<Row :gutter="10">
+  <Col :span="12">
+    <Input v-model="keywords" prepend="Http://" @suffix-click="handleSuffix">
       <template slot="append">
-        <v-select v-model="select">
-          <v-select-menu>
-            <v-select-menu-option :label="item" :value="item" :key="item" v-for="item in options"></v-select-menu-option>
-          </v-select-menu>
-        </v-select>
+        <Select v-model="select">
+          <SelectMenu>
+            <SelectMenuOption :label="item" :value="item" :key="item" v-for="item in options"></SelectMenuOption>
+          </SelectMenu>
+        </Select>
       </template>
-    </v-input>
-  </v-col>
-  <v-col :span="12">
-    <v-input v-model="keywords" suffix-icon="icon-calendar" @suffix-click="handleSuffix">
+    </Input>
+  </Col>
+  <Col :span="12">
+    <Input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
       <template slot="prepend">
-        <v-select v-model="select">
-          <v-select-menu>
-            <v-select-menu-option :label="item" :value="item" :key="item" v-for="item in options"></v-select-menu-option>
-          </v-select-menu>
-        </v-select>
+        <Select v-model="select">
+          <SelectMenu>
+            <SelectMenuOption :label="item" :value="item" :key="item" v-for="item in options"></SelectMenuOption>
+          </SelectMenu>
+        </Select>
       </template>
-    </v-input>
-  </v-col>
-</v-row>
-<v-row :gutter="10">
-  <v-col :span="12">
-    <v-textarea v-model="keywords"></v-textarea>
-  </v-col>
-  <v-col :span="12">
-    <v-textarea v-model="keywords" disabled></v-textarea>
-  </v-col>
-</v-row>
+    </Input>
+  </Col>
+</Row>
+<Row :gutter="10">
+  <Col :span="12">
+    <Textarea v-model="keywords"></Textarea>
+  </Col>
+  <Col :span="12">
+    <Textarea v-model="keywords" disabled></Textarea>
+  </Col>
+</Row>
 ```
 :::
     
@@ -80,14 +80,14 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VInput: Input,
-      VTextarea: Textarea,
-      VButton: Button,
-      VSelect: Select,
-      VSelectMenu: SelectMenu,
-      VSelectMenuOption: SelectMenuOption,
+      Row,
+      Col,
+      Input,
+      Textarea,
+      Button,
+      Select,
+      SelectMenu,
+      SelectMenuOption,
     },
     data() {
       return {

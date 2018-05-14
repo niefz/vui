@@ -3,11 +3,11 @@
     class="v-select"
     @click="handleClick"
     v-clickoutside="hide">
-    <v-input
+    <Input
       v-model="selected"
       :placeholder="placeholder || '请选择'"
-      suffix-icon="icon-arrow-down"
-      readonly></v-input>
+      suffix-icon="v-icon-arrow-down"
+      readonly></Input>
       <slot></slot>
   </div>
 </template>
@@ -22,7 +22,7 @@
     directives: { Clickoutside },
     mixins: [Emitter],
     components: {
-      VInput: Input,
+      Input,
     },
     provide() {
       return {

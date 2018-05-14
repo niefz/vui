@@ -3,7 +3,7 @@
     class="v-anchor"
     :style="style">
     <div class="v-anchor--ink" v-if="showInk">
-      <v-anchor-bar :links="links"></v-anchor-bar>
+      <AnchorBar :links="links"></AnchorBar>
     </div>
     <slot></slot>
   </div>
@@ -15,7 +15,7 @@
     name: 'Anchor',
     componentName: 'Anchor',
     components: {
-      VAnchorBar: AnchorBar,
+      AnchorBar,
     },
     provide() {
       return {

@@ -1,41 +1,47 @@
 # Icon 图标
 
-基础组件，提供了一套常用的图标集合。
+语义化的矢量图形。
 
-## 代码示例
+## 图标的命名规范
 
-:::demo 通过设置类名 icon 来使用即可。
+我们为每个图标赋予了语义化的命名，命名规则如下:
+
+- 实心和描线图标保持同名，用 `-o` 来区分，比如 `question-circle`（实心） 和 `question-circle-o`（描线）；
+- 命名顺序：`[图标名]-[形状?]-[描线?]-[方向?]`。
+
+> `?` 为可选。
+
+## 如何使用
+
+:::demo 使用 `<Icon />` 标签声明组件，指定图标对应的 `icon` 属性。
 
 ```html
-<v-row>
-  <v-icon icon="icon-calendar"></v-icon>
-  <v-icon icon="icon-delete"></v-icon>
-  <v-icon icon="icon-message"></v-icon>
-  <v-icon icon="icon-loading"></v-icon>
-</v-row>
+<Row>
+  <Icon icon="v-icon-calendar"></Icon>
+</Row>
 ```
 :::
 
 ## 图标集合
 
-<v-row class="icons">
-  <v-col :span="4">
-    <v-icon icon="icon-calendar"></v-icon>
-    <p>icon-calendar</p>
-  </v-col>
-  <v-col :span="4">
-    <v-icon icon="icon-delete"></v-icon>
-    <p>icon-delete</p>
-  </v-col>
-  <v-col :span="4">
-    <v-icon icon="icon-message"></v-icon>
-    <p>icon-message</p>
-  </v-col>
-  <v-col :span="4">
-    <v-icon icon="icon-loading"></v-icon>
-    <p>icon-loading</p>
-  </v-col>
-</v-row>
+<Row class="icons">
+  <Col :span="4">
+    <Icon icon="v-icon-calendar"></Icon>
+    <p>v-icon-calendar</p>
+  </Col>
+  <Col :span="4">
+    <Icon icon="v-icon-delete"></Icon>
+    <p>v-icon-delete</p>
+  </Col>
+  <Col :span="4">
+    <Icon icon="v-icon-message"></Icon>
+    <p>v-icon-message</p>
+  </Col>
+  <Col :span="4">
+    <Icon icon="v-icon-loading"></Icon>
+    <p>v-icon-loading</p>
+  </Col>
+</Row>
 
 <script>
   import Row from '@/components/row';
@@ -44,15 +50,15 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VIcon: Icon,
+      Row,
+      Col,
+      Icon,
     },
   };
 </script>
 <style lang="scss" scoped>
 .icons {
-  .v-icon {
+  [class^=v-icon-] {
     font-size: 30px;
     text-align: center;
     width: 100%

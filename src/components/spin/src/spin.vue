@@ -2,7 +2,7 @@
   <div class="v-spin">
     <div class="v-spin--inner">
       <template v-if="icon">
-        <v-icon class="v-spin--inner-icon" :icon="icon"></v-icon>
+        <Icon class="v-spin--inner-icon" :icon="icon"></Icon>
       </template>
       <template v-else>
         <em class="v-spin--inner-dot">
@@ -25,7 +25,7 @@
     name: 'Spin',
     componentName: 'Spin',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       tip: String,

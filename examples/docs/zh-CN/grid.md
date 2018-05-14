@@ -5,21 +5,21 @@
 :::demo 使用 row 和 col 组件，并通过 col 组件的 span 属性我们就可以自由地组合布局。
 
 ```html
-<v-row>
-  <v-col :span="12">col-12</v-col>
-  <v-col :span="12">col-12</v-col>
-</v-row>
-<v-row>
-  <v-col :span="8">col-8</v-col>
-  <v-col :span="8">col-8</v-col>
-  <v-col :span="8">col-8</v-col>
-</v-row>
-<v-row>
-  <v-col :span="6">col-6</v-col>
-  <v-col :span="6">col-6</v-col>
-  <v-col :span="6">col-6</v-col>
-  <v-col :span="6">col-6</v-col>
-</v-row>
+<Row>
+  <Col :span="12">col-12</Col>
+  <Col :span="12">col-12</Col>
+</Row>
+<Row>
+  <Col :span="8">col-8</Col>
+  <Col :span="8">col-8</Col>
+  <Col :span="8">col-8</Col>
+</Row>
+<Row>
+  <Col :span="6">col-6</Col>
+  <Col :span="6">col-6</Col>
+  <Col :span="6">col-6</Col>
+  <Col :span="6">col-6</Col>
+</Row>
 ```
 :::
     
@@ -29,8 +29,8 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
+      Row,
+      Col,
     },
   };
 </script>

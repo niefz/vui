@@ -7,14 +7,14 @@
 :::demo Alert 组件提供四种主题，由 theme 属性指定，默认值为info。
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-button @click="openModal('middle')">open middle</v-button>
-    <v-button @click="openModal('top-right')">open top-right</v-button>
-    <v-button @click="openModal('top-left')">open top-left</v-button>
-    <v-button @click="openModal('bottom-right')">open bottom-right</v-button>
-    <v-button @click="openModal('bottom-left')">open bottom-left</v-button>
-    <v-modal
+<Row>
+  <Col :span="24">
+    <Button @click="openModal('middle')">open middle</Button>
+    <Button @click="openModal('top-right')">open top-right</Button>
+    <Button @click="openModal('top-left')">open top-left</Button>
+    <Button @click="openModal('bottom-right')">open bottom-right</Button>
+    <Button @click="openModal('bottom-left')">open bottom-left</Button>
+    <Modal
       :visible.sync="visible"
       :loading="loading"
       :placement="placement"
@@ -24,9 +24,9 @@
       <template slot="body">
         <p>The modal dialog will be closed after two seconds</p>
       </template>
-    </v-modal>
-  </v-col>
-</v-row>
+    </Modal>
+  </Col>
+</Row>
 ```
 :::
 
@@ -38,10 +38,10 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
-      VModal: Modal,
+      Row,
+      Col,
+      Button,
+      Modal,
     },
     data() {
       return {

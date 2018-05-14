@@ -7,7 +7,8 @@
   url('//at.alicdn.com/t/font_586584_loc3ejoha06swcdi.svg#iconfont') format('svg');
 }
 
-.v-icon {
+[class*=" v-icon-"],
+[class^=v-icon-] {
   display: inline-block;
   font-family: "iconfont";
   font-variant: normal;
@@ -16,103 +17,103 @@
   speak: none;
 }
 
-.icon-code:before {
+.v-icon-code:before {
   content: '\e69f';
 }
 
-.icon-user-plus:before {
+.v-icon-user-plus:before {
   content: '\e739';
 }
 
-.icon-arrow-left:before {
+.v-icon-arrow-left:before {
   content: '\e6af';
 }
 
-.icon-arrow-d-left:before {
+.v-icon-arrow-d-left:before {
   content: '\e724';
 }
 
-.icon-arrow-right:before {
+.v-icon-arrow-right:before {
   content: '\e6e7';
 }
 
-.icon-arrow-d-right:before {
+.v-icon-arrow-d-right:before {
   content: '\e726';
 }
 
-.icon-arrow-up:before {
+.v-icon-arrow-up:before {
   content: '\e713';
 }
 
-.icon-arrow-down:before {
+.v-icon-arrow-down:before {
   content: '\e678';
 }
 
-.icon-search:before {
+.v-icon-search:before {
   content: '\e6ed';
 }
 
-.icon-check:before {
+.v-icon-check:before {
   content: '\e642';
 }
 
-.icon-message:before {
+.v-icon-message:before {
   content: '\e706';
 }
 
-.icon-delete:before {
+.v-icon-delete:before {
   content: '\e669';
 }
 
-.icon-calendar:before {
+.v-icon-calendar:before {
   content: '\e647';
 }
 
-.icon-more:before {
+.v-icon-more:before {
   content: '\e67c';
 }
 
-.icon-caret-top:before {
+.v-icon-caret-top:before {
   content: '\e64d';
 }
 
-.icon-caret-bottom:before {
+.v-icon-caret-bottom:before {
   content: '\e64a';
 }
 
-.icon-info:before {
+.v-icon-info:before {
   content: '\e6a7';
 }
 
-.icon-success:before {
+.v-icon-success:before {
   content: '\e651';
 }
 
-.icon-warning:before {
+.v-icon-warning:before {
   content: '\e682';
 }
 
-.icon-danger:before {
+.v-icon-danger:before {
   content: '\e657';
 }
 
-.icon-close:before {
+.v-icon-close:before {
   content: '\e659';
 }
 
-.icon-user:before {
+.v-icon-user:before {
   content: '\e605';
 }
 
-.icon-heart:before {
+.v-icon-heart:before {
   content: '\e69d';
 }
 
-.icon-loading:before {
+.v-icon-loading:before {
   content: '\e600';
 }
 
-.icon-loading {
+.v-icon-loading {
   animation: rotating 2s linear infinite;
 }
 

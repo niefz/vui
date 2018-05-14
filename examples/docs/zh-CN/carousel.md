@@ -7,11 +7,11 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col>
-    <v-carousel></v-carousel>
-  </v-col>
-</v-row>
+<Row>
+  <Col>
+    <Carousel></Carousel>
+  </Col>
+</Row>
 ```
 :::
 
@@ -22,9 +22,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VCarousel: Carousel,
+      Row,
+      Col,
+      Carousel,
     },
     methods: {
     },

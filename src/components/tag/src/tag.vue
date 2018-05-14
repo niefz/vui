@@ -14,11 +14,11 @@
       @click.stop="handleChange(value)">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{value}}</template>
-      <v-icon
+      <Icon
         class="v-tag--close"
-        icon="icon-close"
+        icon="v-icon-close"
         @click.stop="handleClose"
-        v-if="closable"></v-icon>
+        v-if="closable"></Icon>
     </span>
   </transition>
 </template>
@@ -29,7 +29,7 @@
     name: 'Tag',
     componentName: 'Tag',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       transitionName: {

@@ -7,25 +7,25 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col>
-    <v-empty description="抱歉，暂无数据！"></v-empty>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col>
-    <v-empty description="抱歉，暂无数据！" src="http://icon.qiantucdn.com/img/searchnew/nores.png"></v-empty>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col>
+<Row>
+  <Col>
+    <Empty description="抱歉，暂无数据！"></Empty>
+  </Col>
+</Row>
+<Row>
+  <Col>
+    <Empty description="抱歉，暂无数据！" src="http://icon.qiantucdn.com/img/searchnew/nores.png"></Empty>
+  </Col>
+</Row>
+<Row>
+  <Col>
     <div class="empty">
-      <v-empty src="http://icon.qiantucdn.com/img/searchnew/nores.png" fill>
+      <Empty src="http://icon.qiantucdn.com/img/searchnew/nores.png" fill>
         抱歉，暂无数据！
-      </v-empty>
+      </Empty>
     </div>
-  </v-col>
-</v-row>
+  </Col>
+</Row>
 ```
 :::
 
@@ -36,9 +36,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VEmpty: Empty,
+      Row,
+      Col,
+      Empty,
     },
     methods: {
     },

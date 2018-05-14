@@ -14,13 +14,13 @@
     :disabled="isDisabled"
     @click="handleClick">
     <template v-if="loading">
-      <v-icon :class="{'prefix-icon': $slots.default}" icon="icon-loading" v-if="loading"></v-icon>
+      <Icon :class="{'prefix-icon': $slots.default}" icon="v-icon-loading" v-if="loading"></Icon>
       <slot></slot>
     </template>
     <template v-else>
-      <v-icon :class="{'prefix-icon': $slots.default}" :icon="prefixIcon" v-if="prefixIcon"></v-icon>
+      <Icon :class="{'prefix-icon': $slots.default}" :icon="prefixIcon" v-if="prefixIcon"></Icon>
       <slot></slot>
-      <v-icon :class="{'suffix-icon': $slots.default}" :icon="suffixIcon" v-if="suffixIcon"></v-icon>
+      <Icon :class="{'suffix-icon': $slots.default}" :icon="suffixIcon" v-if="suffixIcon"></Icon>
     </template>
   </button>
 </template>
@@ -31,7 +31,7 @@
     name: 'Button',
     componentName: 'Button',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       nativeType: {

@@ -9,15 +9,15 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="6">
-    <v-select v-model="select">
-      <v-select-menu>
-        <v-select-menu-option :label="item" :value="item" :key="item" v-for="item in options"></v-select-menu-option>
-      </v-select-menu>
-    </v-select>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="6">
+    <Select v-model="select">
+      <SelectMenu>
+        <SelectMenuOption :label="item" :value="item" :key="item" v-for="item in options"></SelectMenuOption>
+      </SelectMenu>
+    </Select>
+  </Col>
+</Row>
 ```
 :::
 
@@ -31,11 +31,11 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VSelect: Select,
-      VSelectMenu: SelectMenu,
-      VSelectMenuOption: SelectMenuOption,
+      Row,
+      Col,
+      Select,
+      SelectMenu,
+      SelectMenuOption,
     },
     data() {
       return {

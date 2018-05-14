@@ -23,8 +23,8 @@
           </div>
           <div class="v-popover--footer" v-if="footer">
             <slot name="footer">
-              <v-button size="mini" :loading="loading" theme="primary" @click="handleOk">{{okText}}</v-button>
-              <v-button size="mini" @click="handleClose">{{cancelText}}</v-button>
+              <Button size="mini" :loading="loading" theme="primary" @click="handleOk">{{okText}}</Button>
+              <Button size="mini" @click="handleClose">{{cancelText}}</Button>
             </slot>
           </div>
         </div>
@@ -43,7 +43,7 @@
     componentName: 'Popover',
     mixins: [Popper],
     components: {
-      VButton: Button,
+      Button,
     },
     props: {
       placement: {

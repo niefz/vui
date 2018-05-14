@@ -5,28 +5,28 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="12">
-    <v-menu>
+<Row>
+  <Col :span="12">
+    <Menu>
       <template v-for="(nav, index) in navigations">
-        <v-menu-item :index="nav.name" v-if="nav.path">
+        <MenuItem :index="nav.name" v-if="nav.path">
           {{ nav.name }}
-        </v-menu-item>
-        <v-menu-sub :index="nav.name" v-else>
+        </MenuItem>
+        <MenuSub :index="nav.name" v-else>
           <template slot="title">
             <h4>{{ nav.name }}</h4>
           </template>
           <template v-if="nav.child">
-            <v-menu-item
+            <MenuItem
               :index="child.name"
               disabled
               :key="index"
               v-for="(child, index) in nav.child">
               {{ child.name }}
-            </v-menu-item>
+            </MenuItem>
           </template>
           <template v-if="nav.groups">
-            <v-menu-item-group
+            <MenuItemGroup
               :index="group.name"
               :key="index"
               v-for="(group, index) in nav.groups">
@@ -34,29 +34,29 @@
                 <h4>{{ group.name }}</h4>
                 <i class="v-submenu--title-arrow"></i>
               </template>
-              <v-menu-item
+              <MenuItem
                 :index="child.name"
                 :key="index"
                 v-for="(child, index) in group.child">
                 {{ child.name }}
-              </v-menu-item>
-            </v-menu-item-group>
+              </MenuItem>
+            </MenuItemGroup>
           </template>
-        </v-menu-sub>
+        </MenuSub>
       </template>
-    </v-menu>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-menu mode="horizontal" theme="dark" :height="64">
-      <v-menu-item index="index">首页</v-menu-item>
-      <v-menu-item index="design">设计</v-menu-item>
-      <v-menu-item index="changelog">组件</v-menu-item>
-      <v-menu-item index="PRO">PRO</v-menu-item>
-    </v-menu>
-  </v-col>
-</v-row>
+    </Menu>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Menu mode="horizontal" theme="dark" :height="64">
+      <MenuItem index="index">首页</MenuItem>
+      <MenuItem index="design">设计</MenuItem>
+      <MenuItem index="changelog">组件</MenuItem>
+      <MenuItem index="PRO">PRO</MenuItem>
+    </Menu>
+  </Col>
+</Row>
 ```
 :::
 
@@ -71,12 +71,12 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VMenu: Menu,
-      VMenuSub: MenuSub,
-      VMenuItem: MenuItem,
-      VMenuItemGroup: MenuItemGroup,
+      Row,
+      Col,
+      Menu,
+      MenuSub,
+      MenuItem,
+      MenuItemGroup,
     },
     data() {
       return {

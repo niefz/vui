@@ -7,13 +7,13 @@
 :::demo 默认为水平分割线，可在中间加入文字。
 
 ```html
-<v-row>分割线<v-divider mode="vertical"></v-divider>分割线</v-row>
-<v-divider mode="vertical">分割线</v-divider>
-<v-divider mode="vertical" dashed>分割线</v-divider>
-<v-divider dashed></v-divider>
-<v-divider align="left" dashed>分割线</v-divider>
-<v-divider align="center">分割线</v-divider>
-<v-divider align="right">分割线</v-divider>
+<Row>分割线<Divider mode="vertical"></Divider>分割线</Row>
+<Divider mode="vertical">分割线</Divider>
+<Divider mode="vertical" dashed>分割线</Divider>
+<Divider dashed></Divider>
+<Divider align="left" dashed>分割线</Divider>
+<Divider align="center">分割线</Divider>
+<Divider align="right">分割线</Divider>
 ```
 :::
 
@@ -23,8 +23,8 @@
 
   export default {
     components: {
-      VRow: Row,
-      VDivider: Divider,
+      Row,
+      Divider,
     },
   };
 </script>

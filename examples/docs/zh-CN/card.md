@@ -7,9 +7,9 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col>
-    <v-Card>
+<Row>
+  <Col>
+    <Card>
       <header slot="header">
         This is header
       </header>
@@ -19,9 +19,9 @@
       <footer slot="footer">
         This is footer
       </footer>
-    </v-Card>
-  </v-col>
-</v-row>
+    </Card>
+  </Col>
+</Row>
 ```
 :::
 
@@ -32,9 +32,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VCard: Card,
+      Row,
+      Col,
+      Card,
     },
     methods: {
     },

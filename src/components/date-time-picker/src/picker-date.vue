@@ -1,16 +1,16 @@
 <template>
   <div class="v-picker-date">
     <div class="v-picker-date--hd">
-      <v-button
+      <Button
         class="v-picker-date--prev-btn"
         type="text">
-      </v-button>
+      </Button>
       <span class="v-picker-date--hd-label" role="button">2018 年</span>
       <span class="v-picker-date--hd-label" role="button">1 月</span>
-      <v-button
+      <Button
         class="v-picker-date--next-btn"
         type="text">
-      </v-button>
+      </Button>
     </div>
     <div class="v-picker-date--bd">
       <table class="v-picker-date--table" cellspacing="0" cellpadding="0" role="grid">
@@ -251,7 +251,7 @@
     name: 'DatePicker',
     componentName: 'DatePicker',
     components: {
-      VButton: Button,
+      Button,
     },
   };
 </script>

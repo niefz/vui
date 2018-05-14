@@ -7,11 +7,11 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-backtop></v-backtop>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="24">
+    <Backtop></Backtop>
+  </Col>
+</Row>
 ```
 :::
 
@@ -23,10 +23,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
-      VBacktop: Backtop,
+      Row,
+      Col,
+      Backtop,
     },
     methods: {
     },

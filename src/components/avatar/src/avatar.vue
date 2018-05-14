@@ -9,7 +9,7 @@
       <img :src="src" :alt="alt"/>
     </template>
     <template v-else-if="icon">
-      <v-icon :icon="icon"></v-icon>
+      <Icon :icon="icon"></Icon>
     </template>
     <template v-else="$slots.default">
       <em class="v-avatar--inner"><slot></slot></em>
@@ -23,7 +23,7 @@
     name: 'Avatar',
     componentName: 'Avatar',
     components: {
-      VIcon: Icon,
+      Icon,
     },
     props: {
       icon: {

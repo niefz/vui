@@ -7,31 +7,31 @@
 :::demo Alert 组件提供四种主题，由 theme 属性指定，默认值为info。
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-alert message="默认消息提示" description="Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting." show-icon closable></v-avatar>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-alert theme="success" message="成功消息提示" show-icon closable></v-avatar>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-alert theme="warning" message="警告消息提示" show-icon closable></v-avatar>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-alert theme="danger" message="错误消息提示" show-icon closable></v-avatar>
-  </v-col>
-</v-row>
-<v-row>
-  <v-col :span="24">
-    <v-alert theme="danger" message="错误消息提示" close-text="知道了" closable></v-avatar>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="24">
+    <Alert message="默认消息提示" description="Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting.Detailed description and advices about successful copywriting." show-icon closable></Alert>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Alert theme="success" message="成功消息提示" show-icon closable></Alert>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Alert theme="warning" message="警告消息提示" show-icon closable></Alert>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Alert theme="danger" message="错误消息提示" show-icon closable></Alert>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Alert theme="danger" message="错误消息提示" close-text="知道了" closable></Alert>
+  </Col>
+</Row>
 ```
 :::
 
@@ -42,9 +42,9 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VAlert: Alert,
+      Row,
+      Col,
+      Alert,
     },
     methods: {
     },

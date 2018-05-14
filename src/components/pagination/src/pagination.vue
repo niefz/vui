@@ -7,33 +7,33 @@
     ]">
     <div class="v-pagination--total" v-if="showTotal">共 {{total}} 条</div>
     <div class="v-pagination--sizes" v-if="showSizeChanger">
-      <v-select
+      <Select
         :value="pageSize"
         :size="pagerSize"
         @change="handlePageSize">
-        <v-select-menu>
-          <v-select-menu-option
+        <SelectMenu>
+          <SelectMenuOption
             :label="item + ' 条/页'"
             :value="item"
             :key="item"
             v-for="item in pageSizeOptions">
-          </v-select-menu-option>
-        </v-select-menu>
-      </v-select>
+          </SelectMenuOption>
+        </SelectMenu>
+      </Select>
     </div>
-    <v-button
+    <Button
       type="text"
       :size="pagerSize"
       :disabled="disabled || current <= 1"
       @click="handlePrev">
       <template v-if="prevText">{{prevText}}</template>
       <template v-else>
-        <v-icon icon="icon-arrow-left"></v-icon>
+        <Icon icon="v-icon-arrow-left"></Icon>
       </template>
-    </v-button>
+    </Button>
     <template v-if="simple">
       <div class="v-pagination--jumper">
-        <v-input :value="current" :size="pagerSize" @keyup.enter="handlePageChange"></v-input>
+        <Input :value="current" :size="pagerSize" @keyup.enter="handlePageChange"></Input>
       </div>
       / {{pageCount}}
     </template>
@@ -58,9 +58,9 @@
             }
           ]"
           @mouseenter="mouseenter('left')"
-          @mouseleave="quickPrevIconClass = 'icon-more'"
+          @mouseleave="quickPrevIconClass = 'v-icon-more'"
           v-if="showPrevMore">
-          <v-icon :icon="quickPrevIconClass"></v-icon>
+          <Icon :icon="quickPrevIconClass"></Icon>
         </li>
         <li
           class="v-pager--number"
@@ -82,9 +82,9 @@
             }
           ]"
           @mouseenter="mouseenter('right')"
-          @mouseleave="quickNextIconClass = 'icon-more'"
+          @mouseleave="quickNextIconClass = 'v-icon-more'"
           v-if="showNextMore">
-          <v-icon :icon="quickNextIconClass"></v-icon>
+          <Icon :icon="quickNextIconClass"></Icon>
         </li>
         <li
           class="v-pager--number"
@@ -99,19 +99,19 @@
         </li>
       </ul>
     </template>
-    <v-button
+    <Button
       type="text"
       :size="pagerSize"
       :disabled="disabled || current >= pageCount"
       @click="handleNext">
       <template v-if="nextText">{{nextText}}</template>
       <template v-else>
-        <v-icon icon="icon-arrow-right"></v-icon>
+        <Icon icon="v-icon-arrow-right"></Icon>
       </template>
-    </v-button>
+    </Button>
     <div class="v-pagination--jumper" v-if="showJumper">
       跳至
-      <v-input :value="current" :size="pagerSize" @keyup.enter="handlePageChange"></v-input>
+      <Input :value="current" :size="pagerSize" @keyup.enter="handlePageChange"></Input>
       页
     </div>
   </div>
@@ -128,12 +128,12 @@
     name: 'Pagination',
     componentName: 'Pagination',
     components: {
-      VButton: Button,
-      VIcon: Icon,
-      VInput: Input,
-      VSelect: Select,
-      VSelectMenu: SelectMenu,
-      VSelectMenuOption: SelectMenuOption,
+      Button,
+      Icon,
+      Input,
+      Select,
+      SelectMenu,
+      SelectMenuOption,
     },
     props: {
       size: {
@@ -180,8 +180,8 @@
       return {
         showPrevMore: false,
         showNextMore: false,
-        quickNextIconClass: 'icon-more',
-        quickPrevIconClass: 'icon-more',
+        quickNextIconClass: 'v-icon-more',
+        quickPrevIconClass: 'v-icon-more',
         current: this.currentPage,
       };
     },
@@ -233,19 +233,19 @@
     },
     watch: {
       showPrevMore(val) {
-        if (!val) this.quickPrevIconClass = 'icon-more';
+        if (!val) this.quickPrevIconClass = 'v-icon-more';
       },
       showNextMore(val) {
-        if (!val) this.quickNextIconClass = 'icon-more';
+        if (!val) this.quickNextIconClass = 'v-icon-more';
       },
     },
     methods: {
       mouseenter(direction) {
         if (this.disabled) return;
         if (direction === 'left') {
-          this.quickPrevIconClass = 'icon-arrow-d-left';
+          this.quickPrevIconClass = 'v-icon-arrow-d-left';
         } else {
-          this.quickNextIconClass = 'icon-arrow-d-right';
+          this.quickNextIconClass = 'v-icon-arrow-d-right';
         }
       },
       handlePageSize(val) {
@@ -286,9 +286,9 @@
         const pagerCount = this.pagerCount;
         const current = this.current;
         let newPage = Number(event.target.textContent);
-        if (target.className.indexOf('icon-arrow-d-left') > -1) {
+        if (target.className.indexOf('v-icon-arrow-d-left') > -1) {
           newPage = current - (pagerCount - 2);
-        } else if (target.className.indexOf('icon-arrow-d-right') > -1) {
+        } else if (target.className.indexOf('v-icon-arrow-d-right') > -1) {
           newPage = current + (pagerCount - 2);
         }
         if (!isNaN(newPage)) {

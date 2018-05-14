@@ -6,33 +6,33 @@
 
 主要颜色是鲜艳、友好的蓝色，代表技术的专业能力，沉稳、内涵、低调简约，且包容万物。
 
-<v-row>
-  <v-col :span="8">
+<Row>
+  <Col :span="8">
     <div class="color-box primary">Normal<div class="value">#1890FF</div></div>
-  </v-col>
-  <v-col :span="8">
+  </Col>
+  <Col :span="8">
     <div class="color-box light-primary">Hover<div class="value">#40A9FF</div></div>
-  </v-col>
-  <v-col :span="8">
+  </Col>
+  <Col :span="8">
     <div class="color-box dark-primary">Active<div class="value">#096DD9</div></div>
-  </v-col>
-</v-row>
+  </Col>
+</Row>
 
 ## 辅助色
 
 辅助色是具有代表性的颜色，常用于信息提示，比如成功、警告和失败。
 
-<v-row>
-  <v-col :span="8">
+<Row>
+  <Col :span="8">
     <div class="color-box success">Success<div class="value">#52C41A</div></div>
-  </v-col>
-  <v-col :span="8">
+  </Col>
+  <Col :span="8">
     <div class="color-box warning">Warning<div class="value">#FAAD14</div></div>
-  </v-col>
-  <v-col :span="8">
+  </Col>
+  <Col :span="8">
     <div class="color-box danger">Danger<div class="value">#F5222D</div></div>
-  </v-col>
-</v-row>
+  </Col>
+</Row>
 
  ## 中性色
 

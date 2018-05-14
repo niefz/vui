@@ -7,35 +7,35 @@
 :::demo 定义value属性，它接受Number或者String。
 
 ```html
-<v-row>
-  <v-col :span="3">
-    <v-avatar icon="icon-user"></v-avatar>
-  </v-col>
-  <v-col :span="3">
-    <v-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"></v-avatar>
-  </v-col>
-  <v-col :span="3">
-    <v-avatar icon="icon-user" shape="circle"></v-avatar>
-  </v-col>
-  <v-col :span="3">
-    <v-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" shape="circle"></v-avatar>
-  </v-col>
-  <v-col :span="3">
-    <v-badge value="1">
-      <v-avatar icon="icon-user"></v-avatar>
-    </v-badge>
-  </v-col>
-  <v-col :span="3">
-    <v-badge dot>
-      <v-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"></v-avatar>
-    </v-badge>
-  </v-col>
-  <v-col :span="3">
-    <v-badge dot>
-      <v-avatar>USER</v-avatar>
-    </v-badge>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="3">
+    <Avatar icon="v-icon-user"></Avatar>
+  </Col>
+  <Col :span="3">
+    <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"></Avatar>
+  </Col>
+  <Col :span="3">
+    <Avatar icon="v-icon-user" shape="circle"></Avatar>
+  </Col>
+  <Col :span="3">
+    <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" shape="circle"></Avatar>
+  </Col>
+  <Col :span="3">
+    <Badge value="1">
+      <Avatar icon="v-icon-user"></Avatar>
+    </Badge>
+  </Col>
+  <Col :span="3">
+    <Badge dot>
+      <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"></Avatar>
+    </Badge>
+  </Col>
+  <Col :span="3">
+    <Badge dot>
+      <Avatar>USER</Avatar>
+    </Badge>
+  </Col>
+</Row>
 ```
 :::
 
@@ -47,10 +47,10 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VAvatar: Avatar,
-      VBadge: Badge,
+      Row,
+      Col,
+      Avatar,
+      Badge,
     },
     methods: {
     },

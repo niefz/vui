@@ -22,7 +22,7 @@
               </slot>
               <em class="v-modal--header-close" v-show="closable" @click="handleClose">
                 <slot name="close">
-                  <v-icon icon="icon-close"></v-icon>
+                  <Icon icon="v-icon-close"></Icon>
                 </slot>
               </em>
             </slot>
@@ -32,8 +32,8 @@
           </div>
           <div class="v-modal--footer" v-if="footer">
             <slot name="footer">
-              <v-button :loading="loading" theme="primary" @click="handleOk">{{okText}}</v-button>
-              <v-button @click="handleClose">{{cancelText}}</v-button>
+              <Button :loading="loading" theme="primary" @click="handleOk">{{okText}}</Button>
+              <Button @click="handleClose">{{cancelText}}</Button>
             </slot>
           </div>
         </div>
@@ -49,8 +49,8 @@
     name: 'Modal',
     componentName: 'Modal',
     components: {
-      VIcon: Icon,
-      VButton: Button,
+      Icon,
+      Button,
     },
     props: {
       transition: {

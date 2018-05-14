@@ -7,18 +7,18 @@
 :::demo 
 
 ```html
-<v-row>
-  <v-col :span="24">
-    <v-anchor show-ink>
-      <v-anchor-link href="#Basic demo" title="Basic demo"></v-anchor-link>
-      <v-anchor-link href="#Fixed demo" title="Fixed demo"></v-anchor-link>
-      <v-anchor-link href="#API" title="API">
-        <v-anchor-link href="#Anchor Props" title="Anchor Props" disabled></v-anchor-link>
-        <v-anchor-link href="#Link Props" title="Link Props"></v-anchor-link>
-      </v-anchor-link>
-    </v-anchor>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="24">
+    <Anchor show-ink>
+      <AnchorLink href="#Basic demo" title="Basic demo"></AnchorLink>
+      <AnchorLink href="#Fixed demo" title="Fixed demo"></AnchorLink>
+      <AnchorLink href="#API" title="API">
+        <AnchorLink href="#Anchor Props" title="Anchor Props" disabled></AnchorLink>
+        <AnchorLink href="#Link Props" title="Link Props"></AnchorLink>
+      </AnchorLink>
+    </Anchor>
+  </Col>
+</Row>
 ```
 :::
 
@@ -31,11 +31,11 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
-      VAnchor: Anchor,
-      VAnchorLink: AnchorLink,
+      Row,
+      Col,
+      Button,
+      Anchor,
+      AnchorLink,
     },
     data() {
       return {

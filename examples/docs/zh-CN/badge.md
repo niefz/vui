@@ -7,18 +7,18 @@
 :::demo 定义value属性，它接受Number或者String。
 
 ```html
-<v-row>
-  <v-col :span="4">
-    <v-badge :value="20" :max="10">
-      <v-button>标签二</v-button>
-    </v-badge>
-  </v-col>
-  <v-col :span="4">
-    <v-badge :value="20" dot>
-      <v-button>标签二</v-button>
-    </v-badge>
-  </v-col>
-</v-row>
+<Row>
+  <Col :span="4">
+    <Badge :value="20" :max="10">
+      <Button>标签二</Button>
+    </Badge>
+  </Col>
+  <Col :span="4">
+    <Badge :value="20" dot>
+      <Button>标签二</Button>
+    </Badge>
+  </Col>
+</Row>
 ```
 :::
 
@@ -30,10 +30,10 @@
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
-      VButton: Button,
-      VBadge: Badge,
+      Row,
+      Col,
+      Button,
+      Badge,
     },
     methods: {
     },

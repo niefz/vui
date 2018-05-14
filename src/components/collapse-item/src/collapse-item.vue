@@ -16,9 +16,9 @@
       @click="handleHeaderClick"
       @keyup.space.enter.stop="handleEnterClick">
       <slot name="title">{{title}}</slot>
-      <v-icon class="v-collapse--item-header-icon" icon="icon-arrow-right"></v-icon>
+      <Icon class="v-collapse--item-header-icon" icon="v-icon-arrow-right"></Icon>
     </div>
-    <v-collapse-transition>
+    <CollapseTransition>
       <div
         role="panel"
         class="v-collapse--item-content"
@@ -27,7 +27,7 @@
           <slot></slot>
         </div>
       </div>
-    </v-collapse-transition>
+    </CollapseTransition>
   </div>
 </template>
 <script>
@@ -39,8 +39,8 @@
     name: 'CollapseItem',
     componentName: 'CollapseItem',
     components: {
-      VCollapseTransition: CollapseTransition,
-      VIcon: Icon,
+      CollapseTransition,
+      Icon,
     },
     mixins: [Emitter],
     inject: ['collapse'],

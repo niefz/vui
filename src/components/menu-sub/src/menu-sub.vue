@@ -17,11 +17,11 @@
         </h4>
         <i class="v-menu--sub-arrow"></i>
       </div>
-      <v-collapse-transition>
+      <CollapseTransition>
         <ul class="v-menu--sub-menu" v-show="expand">
           <slot></slot>
         </ul>
-      </v-collapse-transition>
+      </CollapseTransition>
     </template>
   </li>
 </template>
@@ -35,7 +35,7 @@
     mixins: [Emitter],
     inject: ['menu'],
     components: {
-      VCollapseTransition: CollapseTransition,
+      CollapseTransition,
     },
     props: {
       index: String,
