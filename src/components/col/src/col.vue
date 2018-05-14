@@ -31,12 +31,13 @@
       md: [Number, Object],
       lg: [Number, Object],
       xl: [Number, Object],
+      order: Number,
     },
     computed: {
       classes() {
         let classes = [];
 
-        ['span', 'offset', 'pull', 'push'].forEach(prop => {
+        ['span', 'order', 'offset', 'pull', 'push'].forEach(prop => {
           if (this[prop]) {
             classes.push(
               prop === 'span' ? `v-col-${this[prop]}` : `v-col-${prop}-${this[prop]}`

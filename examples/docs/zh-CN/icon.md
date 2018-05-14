@@ -43,6 +43,12 @@
   </Col>
 </Row>
 
+## 属性值
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| icon | 图标类名 | string | - | - |
+
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';

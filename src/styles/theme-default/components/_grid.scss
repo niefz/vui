@@ -30,6 +30,9 @@ $grid-columns: 24;
       position: relative;
       left: (1 / $grid-columns * $index * 100) * 1%;
     }
+    .v-col#{$class}-order-#{$index} {
+      order: $index;
+    }
   }
 }
 
@@ -93,7 +96,7 @@ $grid-columns: 24;
  * flex 垂直对齐
  * 顶部对齐
  */
-.v-row--flex-align-start {
+.v-row--flex-align-top {
   align-items: flex-start;
 }
 
@@ -101,7 +104,7 @@ $grid-columns: 24;
  * flex 垂直对齐
  * 居中对齐
  */
-.v-row--flex-align-center {
+.v-row--flex-align-middle {
   align-items: center;
 }
 
@@ -109,7 +112,7 @@ $grid-columns: 24;
  * flex 垂直对齐
  * 底部对齐
  */
-.v-row--flex-align-end {
+.v-row--flex-align-bottom {
   align-items: flex-end;
 }
 

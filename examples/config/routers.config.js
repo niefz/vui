@@ -41,6 +41,13 @@ export default {
       }, 'grid'),
     },
     {
+      path: '/zh-CN/components/layout',
+      name: 'Layout 布局',
+      component: layout => require.ensure([], (require) => {
+        layout(require('../docs/zh-CN/layout.md'));
+      }, 'layout'),
+    },
+    {
       path: '/zh-CN/components/anchor',
       name: 'Anchor 锚点',
       component: anchor => require.ensure([], (require) => {

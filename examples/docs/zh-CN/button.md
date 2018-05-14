@@ -10,9 +10,14 @@
 
 ```html
 <Row>
-  <Button type="button" theme="primary">主要按钮</Button>
-  <Button type="button">次要按钮</Button>
-  <Button type="text">文字按钮</Button>
+  <Col :span="6">
+    <Button type="button" theme="primary">主要按钮</Button>
+    <Button type="button">次要按钮</Button>
+  </Col>
+  <Col :span="12">
+    <Button type="text" theme="primary">主要按钮</Button>
+    <Button type="text">文字按钮</Button>
+  </Col>
 </Row>
 ```
 :::
@@ -151,29 +156,28 @@
 
 ## 属性值
 
-Button Attributes
+Button
 
-| 参数          | 说明            | 类型         | 可选值                                  | 默认值   |
-|----------    |--------         |----------   |-------------                           |-------- |
-| native-type  | 原生 type 属性   | string      | button / submit / reset                | button |  
-| type         | 类型            | string      | button  / text                         | button |
-| shape        | 形状            | string      | radius  / circle                       | radius |
-| theme        | 主题            | string      | default / primary / warning / danger   | default |
-| size         | 尺寸            | string      | large / medium / small / mini          | small |
-| plain        | 是否朴素按钮     | boolean     | —                                      | false |
-| disabled     | 是否禁用状态     | boolean     | —                                      | false |
-| loading      | 是否加载中       | boolean      | —                                     | false |
-| prefix-icon  | 头部图标        | string      |  —                                     |  —  |
-| suffix-icon  | 尾部图标        | string      |  —                                     |  —  |
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| native-type | 原生 type 属性 | string | `button` `submit` `reset` | button |
+| type | 类型 | string | `button` `text` | button |
+| shape | 形状 | string | `radius` `circle` | radius |
+| theme | 主题 | string | `default` `primary` `warning` `danger` | default |
+| size | 尺寸 | string | `large` `medium` `small` `mini` | small |
+| plain | 是否朴素按钮 | boolean | — | false |
+| disabled | 是否禁用状态 | boolean | — | false |
+| loading | 是否加载中 | boolean | — | false |
+| prefix-icon | 头部图标 | string | — | — |
+| suffix-icon | 尾部图标 | string | — | — |
 
-ButtonGroup Attributes
+ButtonGroup
 
-| 参数          | 说明            | 类型         | 可选值                                  | 默认值   |
-|----------    |--------         |----------   |-------------                           |-------- |
-| mode         | 模式            | string      |   horizontal / vertical                | vertical |
-| size         | 尺寸            | string      | large / medium / small / mini          | small   |
-| disabled     | 是否禁用状态     | boolean     | —                                      | false   |
-
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| mode | 模式 | string | `horizontal` `vertical` | vertical |
+| size | 尺寸 | string | `large` `medium` `small` `mini` | small |
+| disabled | 是否禁用 | boolean | — | false |
 
 <script>
   import Row from '@/components/row';

@@ -106,6 +106,8 @@
         background-color: #FAFAFA;
         .hljs {
           display: block;
+          padding: 0;
+          background-color: transparent;
           line-height: 2em;
           color: #2973b7;
           overflow: auto;

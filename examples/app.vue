@@ -203,7 +203,7 @@
       width: 280px;
       border-right: 1px solid $color-divider;
       box-sizing: border-box;
-      .Menu {
+      .v-menu {
         width: calc(100% + 1px);
         height: 100%;
         overflow-y: auto;
@@ -244,14 +244,6 @@
         padding-left: 4px;
         font-size: 14px;
         line-height: 28px;
-        code {
-          display: inline-block;
-          padding: 0 5px;
-          background-color: #F5F5F5;
-          border-radius: 3px;
-          font-size: 12px;
-          line-height: 26px;
-        }
       }
       > ul > li {
         list-style-type: circle;
@@ -265,14 +257,18 @@
         font-size: 14px;
         letter-spacing: .3px;
         line-height: 24px;
-        code {
-          display: inline-block;
-          padding: 0 5px;
-          background-color: #F5F5F5;
-          border-radius: 3px;
-          font-size: 12px;
-          line-height: 26px;
-        }
+      }
+      blockquote {
+        margin: 1em 0;
+        padding-left: .8em;
+        border-left: 4px solid #ebedf0;
+      }
+      code {
+        display: inline-block;
+        padding: 0 5px;
+        background-color: #F5F5F5;
+        border-radius: 3px;
+        line-height: 26px;
       }
       .table {
         width: 100%;
