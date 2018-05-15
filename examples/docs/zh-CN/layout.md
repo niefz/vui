@@ -78,12 +78,6 @@
 
 ## 属性值
 
-Layout
-
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
-|---- |---- |---- |---- |---- |
-| layout | 组件布局，子组件名用逗号分隔 | string | `header` `aside` `content` `footer` | 'header, content, footer' |
-
 Header
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
@@ -94,6 +88,7 @@ Aside
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
+| float | 侧边栏浮动 | string | `left` `right` | left |
 | width | 侧边栏宽度 | string | - | 200px |
 
 Footer

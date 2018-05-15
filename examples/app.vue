@@ -273,11 +273,9 @@
         }
       }
       code {
-        display: inline-block;
-        padding: 0 5px;
+        padding: 3px 5px;
         background-color: #F5F5F5;
         border-radius: 3px;
-        line-height: 26px;
       }
       .table {
         width: 100%;

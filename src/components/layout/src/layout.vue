@@ -7,21 +7,22 @@
   export default {
     name: 'Layout',
     componentName: 'Layout',
-    props: {},
-    data() {
-      return {};
-    },
     computed: {
       style() {
         const style = {};
         let parent = this.$parent;
         if (parent.$options.name === 'Layout') {
-          const aside = parent.$children.find(vnode => vnode.$options.name === 'Aside');
-          if (aside) style.marginLeft = `${aside.width}px`;
+          const aside = parent.$children.find(child => child.$options.name === 'Aside');
+          if (aside) {
+            if (aside.float === 'left') {
+              style.marginLeft = `${aside.width}px`;
+            } else {
+              style.marginRight = `${aside.width}px`;
+            }
+          }
         }
         return style;
       },
     },
-    methods: {},
   };
 </script>

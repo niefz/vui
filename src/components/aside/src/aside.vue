@@ -12,14 +12,18 @@
         type: Number,
         default: 200,
       },
+      float: {
+        type: String,
+        default: 'left',
+      },
     },
     computed: {
       style() {
         const style = {};
+        style.float = this.float;
         style.width = `${this.width}px`;
         return style;
       },
     },
-    methods: {},
   };
 </script>
