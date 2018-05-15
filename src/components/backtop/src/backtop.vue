@@ -9,7 +9,7 @@
     @click.stop="handleBack">
     <slot>
       <div class="v-backtop--inner">
-        <Icon icon="v-icon-arrow-up"></Icon>
+        <Icon icon="v-icon-arrow-up-o"></Icon>
       </div>
     </slot>
   </div>

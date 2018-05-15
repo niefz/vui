@@ -6,7 +6,7 @@
     <Input
       v-model="selected"
       :placeholder="placeholder || '请选择'"
-      suffix-icon="v-icon-arrow-down"
+      suffix-icon="v-icon-arrow-down-o"
       readonly></Input>
       <slot></slot>
   </div>

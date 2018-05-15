@@ -71,12 +71,12 @@
         "name": "Navigation",
         "child": [
           {
-            "name": "Anchor 锚点",
-            "path": "/zh-CN/components/anchor"
-          },
-          {
             "name": "Affix 固钉",
             "path": "/zh-CN/components/affix"
+          },
+          {
+            "name": "Anchor 锚点",
+            "path": "/zh-CN/components/anchor"
           },
           {
             "name": "Breadcrumb 面包屑",

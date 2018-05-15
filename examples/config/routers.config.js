@@ -48,18 +48,18 @@ export default {
       }, 'layout'),
     },
     {
-      path: '/zh-CN/components/anchor',
-      name: 'Anchor 锚点',
-      component: anchor => require.ensure([], (require) => {
-        anchor(require('../docs/zh-CN/anchor.md'));
-      }, 'anchor'),
-    },
-    {
       path: '/zh-CN/components/affix',
       name: 'Affix 固钉',
       component: affix => require.ensure([], (require) => {
         affix(require('../docs/zh-CN/affix.md'));
       }, 'affix'),
+    },
+    {
+      path: '/zh-CN/components/anchor',
+      name: 'Anchor 锚点',
+      component: anchor => require.ensure([], (require) => {
+        anchor(require('../docs/zh-CN/anchor.md'));
+      }, 'anchor'),
     },
     {
       path: '/zh-CN/components/breadcrumb',

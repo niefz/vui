@@ -25,10 +25,10 @@
     </Input>
     <div class="v-input--number-handler">
       <em class="v-input--number-handler-up" :class="{'disabled': increaseDisabled}" @click.stop="handleIncrease">
-        <Icon icon="v-icon-arrow-up"></Icon>
+        <Icon icon="v-icon-arrow-up-o"></Icon>
       </em>
       <em class="v-input--number-handler-down" :class="{'disabled': minusDisabled}" @click.stop="handleMinus">
-        <Icon icon="v-icon-arrow-down"></Icon>
+        <Icon icon="v-icon-arrow-down-o"></Icon>
       </em>
     </div>
   </div>

@@ -7,7 +7,7 @@
         </a>
         <div class="versions">
           <Dropdown trigger="click">
-            <Button suffix-icon="v-icon-arrow-down">1.0.0</Button>
+            <Button suffix-icon="v-icon-arrow-down-o">1.0.0</Button>
             <DropdownMenu slot="dropdown">
               <DropdownMenuItem value="1.0.0">1.0.0</DropdownMenuItem>
             </DropdownMenu>
@@ -158,7 +158,6 @@
     left: 0;
     z-index: 10;
     background-color: $color-primary;
-    box-shadow: 0 2px 5px $color-background;
     box-sizing: border-box;
     color: $color-white;
     transition: all .3s;

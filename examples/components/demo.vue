@@ -14,7 +14,7 @@
         ref="control"
         class="code-control"
         @click="isExpanded = !isExpanded">
-        <i class="v-icon-code"></i>
+        <i class="v-icon-code-o"></i>
       </div>
     </div>
     <div ref="code" class="code">
@@ -144,6 +144,9 @@
       font-weight: 400;
       font-family: "Roboto Mono", Monaco, courier, monospace;
       -webkit-font-smoothing: initial;
+    }
+    & + .demo {
+      margin-top: 10px;
     }
   }
 </style>

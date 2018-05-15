@@ -1,15 +1,19 @@
 # Breadcrumb 面包屑
 
-显示当前页面的路径，快速返回之前的任意页面。
+显示当前页面在系统层级结构中的位置，并能向上返回。
 
-## 基础用法
+## 何时使用
 
-适用广泛的基础用法。
+- 当系统拥有超过两级以上的层级结构时；
+- 当需要告知用户『你在哪里』时；
+- 当需要向上导航的功能时。
 
-:::demo 在`Breadcrumb`中使用`BreadcrumbItem`标签表示从首页开始的每一级。VUI 提供了一个`separator`属性，在`Breadcrumb`标签中设置它来决定分隔符，它只能是字符串，默认为斜杠`/`。
+## 基础示例
+
+:::demo 最基础的用法，通过设置 `to` 属性添加链接。
 
 ```html
-<Breadcrumb separator="/">
+<Breadcrumb>
   <BreadcrumbItem>首页</BreadcrumbItem>
   <BreadcrumbItem :to="{ path: '/zh-CN/components/icon' }">Icon 图标</BreadcrumbItem>
   <BreadcrumbItem>Button 按钮</BreadcrumbItem>
@@ -18,12 +22,12 @@
 ```
 :::
 
-## 图标分隔符
+## 分隔符
 
-:::demo 通过设置 `separator-icon` 可使用相应的 `iconfont` 作为分隔符，注意这将使 `separator` 设置失效
+:::demo 通过设置 `separator-icon` 可使用相应的 `icon` 作为分隔符。
 
 ```html
-<Breadcrumb separator-icon="v-icon-arrow-right">
+<Breadcrumb separator-icon="v-icon-arrow-right-o">
   <BreadcrumbItem>首页</BreadcrumbItem>
   <BreadcrumbItem>Icon 图标</BreadcrumbItem>
   <BreadcrumbItem :to="{ path: '/zh-CN/components/button' }">Button 按钮</BreadcrumbItem>
@@ -32,28 +36,44 @@
 ```
 :::
 
-## 属性值
+## 自定义
 
-Breadcrumb Attributes
+:::demo 可自定义每项的内容，比如带有一个图标。
 
-| 参数             | 说明              | 类型           | 可选值    | 默认值    |
-|----------       |--------------     |----------     |--------  |--------   |
-| separator       | 分隔符             | string        | —        | '/'   |
-| separator-class | 图标分隔符 class    | string        | —        | -        |
+```html
+<Breadcrumb separator-icon="v-icon-arrow-right-o">
+  <BreadcrumbItem><Icon icon="v-icon-home-o"></Icon> 首页</BreadcrumbItem>
+  <BreadcrumbItem>Icon 图标</BreadcrumbItem>
+  <BreadcrumbItem :to="{ path: '/zh-CN/components/button' }">Button 按钮</BreadcrumbItem>
+  <BreadcrumbItem>Grid 栅格</BreadcrumbItem>
+</Breadcrumb>
+```
+:::
 
-BreadcrumbItem Attributes
+## API
 
-| 参数       | 说明          | 类型      | 可选值                           | 默认值  |
-|---------- |-------------- |---------- |--------------------------------  |-------- |
-| to        | 路由跳转对象，同 `vue-router` 的 `to` | string/object | — | — |
-| replace   | 在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录 | boolean | — | false |
+Breadcrumb props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| separator | 文本分隔符 | string | - | \/ |
+| separator-icon | 图标分隔符 | string | - | - |
+
+BreadcrumbItem props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| to | 路由跳转对象，同 `vue-router` 的 `to` | string \/ object | - | - |
+| replace | 路由跳转时，开启 `replace` 将不会向 history 添加新记录 | boolean | - | false |
 
 <script>
+  import Icon from '@/components/icon';
   import Breadcrumb from '@/components/breadcrumb';
   import BreadcrumbItem from '@/components/breadcrumb-item';
 
   export default {
     components: {
+      Icon,
       Breadcrumb,
       BreadcrumbItem,
     },

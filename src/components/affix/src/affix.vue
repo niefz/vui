@@ -69,9 +69,11 @@
                 top: `${top}px`,
                 left: right ? `${windowWidth - right - elWidth}px` : `${left}px` || `${elOffset.left}px`,
               };
+              this.$emit('change', this.isAffix);
             } else if (elOffset.top - top > scrollTop && affix) {
               this.isAffix = false;
               this.style = {};
+              this.$emit('change', this.isAffix);
             }
           } else if (this.offsetType == 'bottom') {
             // Fixed Bottom
@@ -81,12 +83,13 @@
                 bottom: `${bottom}px`,
                 left: `${elOffset.left}px`,
               };
+              this.$emit('change', this.isAffix);
             } else if (elOffset.top + bottom + elHeight < scrollTop + windowHeight && affix) {
               this.isAffix = false;
               this.style = {};
+              this.$emit('change', this.isAffix);
             }
           }
-          this.$emit('change', this.isAffix);
         }
       },
     },

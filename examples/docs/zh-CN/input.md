@@ -7,18 +7,18 @@
 ```html
 <Row :gutter="10">
   <Col :span="12">
-    <Input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix" @keyup.enter="handleSuffix"></Input>
+    <Input v-model="keywords" suffix-icon="v-icon-calendar-o" @suffix-click="handleSuffix" @keyup.enter="handleSuffix"></Input>
   </Col>
   <Col :span="12">
-    <Input prefix-icon="v-icon-calendar" disabled></Input>
+    <Input prefix-icon="v-icon-calendar-o" disabled></Input>
   </Col>
 </Row>
 <Row :gutter="10">
   <Col :span="12">
-    <Input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix"></Input>
+    <Input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar-o" @suffix-click="handleSuffix"></Input>
   </Col>
   <Col :span="12">
-    <Input v-model="keywords" suffix-icon="v-icon-calendar" append=".com" disabled></Input>
+    <Input v-model="keywords" suffix-icon="v-icon-calendar-o" append=".com" disabled></Input>
   </Col>
 </Row>
 <Row :gutter="10">
@@ -28,7 +28,7 @@
     </Input>
   </Col>
   <Col :span="12">
-    <Input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+    <Input v-model="keywords" prepend="Http://" suffix-icon="v-icon-calendar-o" @suffix-click="handleSuffix">
       <template slot="append"><Button>查询</Button></template>
     </Input>
   </Col>
@@ -46,7 +46,7 @@
     </Input>
   </Col>
   <Col :span="12">
-    <Input v-model="keywords" suffix-icon="v-icon-calendar" @suffix-click="handleSuffix">
+    <Input v-model="keywords" suffix-icon="v-icon-calendar-o" @suffix-click="handleSuffix">
       <template slot="prepend">
         <Select v-model="select">
           <SelectMenu>

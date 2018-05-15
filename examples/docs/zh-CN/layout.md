@@ -76,22 +76,22 @@
 ```
 :::
 
-## 属性值
+## API
 
-Header
+Header props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
 | height | 顶部高度 | string | - | 64px |
 
-Aside
+Aside props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
 | float | 侧边栏浮动 | string | `left` `right` | left |
 | width | 侧边栏宽度 | string | - | 200px |
 
-Footer
+Footer props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |

@@ -24,7 +24,7 @@
       <em class="v-notify--close" @click.stop="close" v-if="closable">
         <template v-if="closeText"><i>{{closeText}}</i></template>
         <template v-else>
-          <Icon icon="v-icon-close"></Icon>
+          <Icon icon="v-icon-close-o"></Icon>
         </template>
       </em>
     </div>

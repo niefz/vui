@@ -261,9 +261,9 @@ Flex 布局是基于 24 栅格来定义每一个『盒子』的宽度，但排�
 ```
 :::
 
-## 属性值
+## API
 
-Row
+Row props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
@@ -272,7 +272,7 @@ Row
 | align | flex 布局下的垂直对齐方式 | string | `start` `center` `end` `space-around` `space-between` | start |
 | flex | 是否 flex 布局 | boolean | - | false |
 
-Col
+Col props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |

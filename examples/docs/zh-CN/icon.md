@@ -17,7 +17,7 @@
 
 ```html
 <Row>
-  <Icon icon="v-icon-calendar"></Icon>
+  <Icon icon="v-icon-calendar-o"></Icon>
 </Row>
 ```
 :::
@@ -26,16 +26,16 @@
 
 <Row class="icons">
   <Col :span="4">
-    <Icon icon="v-icon-calendar"></Icon>
-    <p>v-icon-calendar</p>
+    <Icon icon="v-icon-calendar-o"></Icon>
+    <p>v-icon-calendar-o</p>
   </Col>
   <Col :span="4">
-    <Icon icon="v-icon-delete"></Icon>
-    <p>v-icon-delete</p>
+    <Icon icon="v-icon-delete-o"></Icon>
+    <p>v-icon-delete-o</p>
   </Col>
   <Col :span="4">
-    <Icon icon="v-icon-message"></Icon>
-    <p>v-icon-message</p>
+    <Icon icon="v-icon-message-o"></Icon>
+    <p>v-icon-message-o</p>
   </Col>
   <Col :span="4">
     <Icon icon="v-icon-loading"></Icon>
@@ -43,7 +43,9 @@
   </Col>
 </Row>
 
-## 属性值
+## API
+
+Icon props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |

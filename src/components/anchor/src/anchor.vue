@@ -51,8 +51,8 @@
         return {
           position: this.affix ? 'fixed' : 'relative',
           top: this.top && `${this.top}px`,
-          right: this.right ? `${this.right}px` : !this.left && '16px',
-          bottom: this.bottom ? `${this.bottom}px` : !this.top && '16px',
+          right: this.right ? `${this.right}px` : !this.left && 0,
+          bottom: this.bottom ? `${this.bottom}px` : !this.top && 0,
           left: this.left && `${this.left}px`,
         };
       },

@@ -52,12 +52,12 @@
 
 ```html
 <Row>
-  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-user-plus">添加用户</Button>
-  <Button type="button" shape="radius" theme="primary" suffix-icon="v-icon-search">查询</Button>
-  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-user-plus"></Button>
-  <Button type="button" shape="radius" theme="primary" suffix-icon="v-icon-search"></Button>
-  <Button type="button" shape="circle" theme="default" prefix-icon="v-icon-user-plus"></Button>
-  <Button type="button" shape="circle" theme="primary" suffix-icon="v-icon-search"></Button>
+  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-user-plus-o">添加用户</Button>
+  <Button type="button" shape="radius" theme="primary" suffix-icon="v-icon-search-o">查询</Button>
+  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-user-plus-o"></Button>
+  <Button type="button" shape="radius" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  <Button type="button" shape="circle" theme="default" prefix-icon="v-icon-user-plus-o"></Button>
+  <Button type="button" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
 </Row>
 ```
 :::
@@ -90,8 +90,8 @@
     <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-more"></Button>
   </ButtonGroup>
   <ButtonGroup>
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right">下一页</Button>
+    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
+    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
   </ButtonGroup>
 </Row>
 ```
@@ -107,8 +107,8 @@
   <Button type="button" shape="radius" disabled>次要按钮</Button>
   <Button type="text" disabled>文字按钮</Button>
   <ButtonGroup disabled>
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right">下一页</Button>
+    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
+    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
   </ButtonGroup>
 </Row>
 ```
@@ -128,35 +128,35 @@
   <Button type="button" size="mini" shape="radius" theme="primary">操作按钮</Button>
 </Row>
 <Row>
-  <Button type="button" size="large" shape="circle" theme="primary" suffix-icon="v-icon-search"></Button>
-  <Button type="button" size="medium" shape="circle" theme="primary" suffix-icon="v-icon-search"></Button>
-  <Button type="button" size="small" shape="circle" theme="primary" suffix-icon="v-icon-search"></Button>
-  <Button type="button" size="mini" shape="circle" theme="primary" suffix-icon="v-icon-search"></Button>
+  <Button type="button" size="large" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  <Button type="button" size="medium" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  <Button type="button" size="small" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  <Button type="button" size="mini" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
 </Row>
 <Row>
   <ButtonGroup size="large">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right">下一页</Button>
+    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
+    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
   </ButtonGroup>
   <ButtonGroup size="medium">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right">下一页</Button>
+    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
+    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
   </ButtonGroup>
   <ButtonGroup size="small">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right">下一页</Button>
+    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
+    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
   </ButtonGroup>
   <ButtonGroup size="mini">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right">下一页</Button>
+    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
+    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
   </ButtonGroup>
 </Row>
 ```
 :::
 
-## 属性值
+## API
 
-Button
+Button props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
@@ -165,19 +165,19 @@ Button
 | shape | 形状 | string | `radius` `circle` | radius |
 | theme | 主题 | string | `default` `primary` `warning` `danger` | default |
 | size | 尺寸 | string | `large` `medium` `small` `mini` | small |
-| plain | 是否朴素按钮 | boolean | — | false |
-| disabled | 是否禁用状态 | boolean | — | false |
-| loading | 是否加载中 | boolean | — | false |
-| prefix-icon | 头部图标 | string | — | — |
-| suffix-icon | 尾部图标 | string | — | — |
+| plain | 是否朴素按钮 | boolean | - | false |
+| disabled | 是否禁用状态 | boolean | - | false |
+| loading | 是否加载中 | boolean | - | false |
+| prefix-icon | 头部图标 | string | - | - |
+| suffix-icon | 尾部图标 | string | - | - |
 
-ButtonGroup
+ButtonGroup props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
 | mode | 模式 | string | `horizontal` `vertical` | vertical |
 | size | 尺寸 | string | `large` `medium` `small` `mini` | small |
-| disabled | 是否禁用 | boolean | — | false |
+| disabled | 是否禁用 | boolean | - | false |
 
 <script>
   import Row from '@/components/row';

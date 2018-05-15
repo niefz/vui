@@ -10,7 +10,7 @@
 <Row>
   <Col :span="12">
     <Dropdown trigger="hover" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</Button>
+      <Button type="text" suffix-icon="v-icon-arrow-down-o">下拉菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -18,7 +18,7 @@
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
         <DropdownMenuItem value="蚵仔煎" divided>
           <Dropdown placement="right-start" @change="handleChange">
-            <Button type="text" suffix-icon="v-icon-arrow-right">下拉菜单</Button>
+            <Button type="text" suffix-icon="v-icon-arrow-right-o">下拉菜单</Button>
             <DropdownMenu slot="dropdown">
               <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
               <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -33,7 +33,7 @@
   </Col>
   <Col :span="12">
     <Dropdown trigger="click" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down">下拉菜单</Button>
+      <Button type="text" suffix-icon="v-icon-arrow-down-o">下拉菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -41,7 +41,7 @@
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
         <DropdownMenuItem value="蚵仔煎" divided>
           <Dropdown placement="right-start" @change="handleChange">
-            <Button type="text" suffix-icon="v-icon-arrow-right">蚵仔煎</Button>
+            <Button type="text" suffix-icon="v-icon-arrow-right-o">蚵仔煎</Button>
             <DropdownMenu slot="dropdown">
               <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
               <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>

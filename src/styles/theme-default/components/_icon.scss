@@ -17,68 +17,64 @@
   speak: none;
 }
 
-.v-icon-code:before {
+.v-icon-home-o:before {
+  content: '\e69e';
+}
+
+.v-icon-code-o:before {
   content: '\e69f';
 }
 
-.v-icon-user-plus:before {
+.v-icon-user-plus-o:before {
   content: '\e739';
 }
 
-.v-icon-arrow-left:before {
+.v-icon-arrow-left-o:before {
   content: '\e6af';
 }
 
-.v-icon-arrow-d-left:before {
+.v-icon-arrow-d-left-o:before {
   content: '\e724';
 }
 
-.v-icon-arrow-right:before {
+.v-icon-arrow-right-o:before {
   content: '\e6e7';
 }
 
-.v-icon-arrow-d-right:before {
+.v-icon-arrow-d-right-o:before {
   content: '\e726';
 }
 
-.v-icon-arrow-up:before {
+.v-icon-arrow-up-o:before {
   content: '\e713';
 }
 
-.v-icon-arrow-down:before {
+.v-icon-arrow-down-o:before {
   content: '\e678';
 }
 
-.v-icon-search:before {
+.v-icon-search-o:before {
   content: '\e6ed';
 }
 
-.v-icon-check:before {
+.v-icon-check-o:before {
   content: '\e642';
 }
 
-.v-icon-message:before {
+.v-icon-message-o:before {
   content: '\e706';
 }
 
-.v-icon-delete:before {
+.v-icon-delete-o:before {
   content: '\e669';
 }
 
-.v-icon-calendar:before {
+.v-icon-calendar-o:before {
   content: '\e647';
 }
 
 .v-icon-more:before {
   content: '\e67c';
-}
-
-.v-icon-caret-top:before {
-  content: '\e64d';
-}
-
-.v-icon-caret-bottom:before {
-  content: '\e64a';
 }
 
 .v-icon-info:before {
@@ -97,7 +93,7 @@
   content: '\e657';
 }
 
-.v-icon-close:before {
+.v-icon-close-o:before {
   content: '\e659';
 }
 
@@ -105,7 +101,7 @@
   content: '\e605';
 }
 
-.v-icon-heart:before {
+.v-icon-heart-o:before {
   content: '\e69d';
 }
 

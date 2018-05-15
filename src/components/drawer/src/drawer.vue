@@ -21,7 +21,7 @@
               </slot>
               <em class="v-drawer--header-close" v-show="closable" @click="handleClose">
                 <slot name="close">
-                  <Icon icon="v-icon-close"></Icon>
+                  <Icon icon="v-icon-close-o"></Icon>
                 </slot>
               </em>
             </slot>

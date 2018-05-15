@@ -16,7 +16,7 @@
       @click="handleHeaderClick"
       @keyup.space.enter.stop="handleEnterClick">
       <slot name="title">{{title}}</slot>
-      <Icon class="v-collapse--item-header-icon" icon="v-icon-arrow-right"></Icon>
+      <Icon class="v-collapse--item-header-icon" icon="v-icon-arrow-right-o"></Icon>
     </div>
     <CollapseTransition>
       <div

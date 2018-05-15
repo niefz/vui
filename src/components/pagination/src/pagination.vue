@@ -28,7 +28,7 @@
       @click="handlePrev">
       <template v-if="prevText">{{prevText}}</template>
       <template v-else>
-        <Icon icon="v-icon-arrow-left"></Icon>
+        <Icon icon="v-icon-arrow-left-o"></Icon>
       </template>
     </Button>
     <template v-if="simple">
@@ -106,7 +106,7 @@
       @click="handleNext">
       <template v-if="nextText">{{nextText}}</template>
       <template v-else>
-        <Icon icon="v-icon-arrow-right"></Icon>
+        <Icon icon="v-icon-arrow-right-o"></Icon>
       </template>
     </Button>
     <div class="v-pagination--jumper" v-if="showJumper">
