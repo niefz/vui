@@ -23,7 +23,6 @@
         const style = {};
         style.height = `${this.height}px`;
         style.padding = `0 ${this.padding}px`;
-        style.lineHeight = `${this.lineHeight || this.height}px`;
         return style;
       },
     },
