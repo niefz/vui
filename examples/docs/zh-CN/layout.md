@@ -48,20 +48,11 @@
 - `Content`：内容部分，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
 - `Footer`：底部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
 
-> 注意：采用 flex 布局实现，请注意 [浏览器兼容性](http://caniuse.com/#search=flex) 问题。
-
 ## 常见布局
 
 :::demo 典型的页面布局。
 
 ```html
-<Row>
-  <Layout>
-    <Header>Header</Header>
-    <Content>Content</Content>
-    <Footer>Footer</Footer>
-  </Layout>
-</Row>
 <Row>
   <Layout>
     <Header>Header</Header>
@@ -91,7 +82,7 @@ Layout
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| direction | 子元素的排列方向 | string | `horizontal` `vertical` | vertical |
+| layout | 组件布局，子组件名用逗号分隔 | string | `header` `aside` `content` `footer` | 'header, content, footer' |
 
 Header
 
@@ -114,10 +105,10 @@ Footer
 <script>
   import Row from '@/components/row';
   import Layout from '@/components/layout';
-  import Header from '@/components/header';
-  import Aside from '@/components/aside';
-  import Content from '@/components/content';
-  import Footer from '@/components/footer';
+  import Header from 'free-vui/src/components/header';
+  import Aside from 'free-vui/src/components/aside';
+  import Content from 'free-vui/src/components/content';
+  import Footer from 'free-vui/src/components/footer';
 
   export default {
     components: {

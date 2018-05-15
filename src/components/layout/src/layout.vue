@@ -1,5 +1,5 @@
 <template>
-  <section class="v-layout" :class="{ 'is-vertical': isVertical }">
+  <section class="v-layout" :style="style">
     <slot></slot>
   </section>
 </template>
@@ -7,21 +7,19 @@
   export default {
     name: 'Layout',
     componentName: 'Layout',
-    props: {
-      direction: String
+    props: {},
+    data() {
+      return {};
     },
     computed: {
-      isVertical() {
-        if (this.direction === 'vertical') {
-          return true;
-        } else if (this.direction === 'horizontal') {
-          return false;
+      style() {
+        const style = {};
+        let parent = this.$parent;
+        if (parent.$options.name === 'Layout') {
+          const aside = parent.$children.find(vnode => vnode.$options.name === 'Aside');
+          if (aside) style.marginLeft = `${aside.width}px`;
         }
-        return this.$slots && this.$slots.default
-          ? this.$slots.default.some(vnode => {
-            const tag = vnode.componentOptions && vnode.componentOptions.tag;
-            return tag === 'Header' || tag === 'Footer';
-          }) : false;
+        return style;
       },
     },
     methods: {},
