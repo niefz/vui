@@ -125,6 +125,7 @@ Footer
   .v-header {
     background-color: #1890FF;
     color: #FFFFFF;
+    line-height: 64px;
     text-align: center;
   }
   .v-aside {
@@ -144,6 +145,7 @@ Footer
   .v-footer {
     background-color: #1890FF;
     color: #FFFFFF;
+    line-height: 64px;
     text-align: center;
   }
 </style>
