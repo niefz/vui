@@ -41,9 +41,13 @@
         type: Number,
         default: 150,
       },
-      showAfterClick: {
+      hideAfterClick: {
         type: Boolean,
-        default: false,
+        default: true,
+      },
+      appendToBody: {
+        type: Boolean,
+        default: true,
       },
     },
     data() {
@@ -99,7 +103,12 @@
         }
       },
       handleMenuItemClick(value, instance) {
-        if (!this.showAfterClick) this.visible = false;
+        const dropdown = instance.$children.find(child => child.$options.name === 'Dropdown');
+        if (dropdown) {
+          this.visible = true;
+        } else if (this.hideAfterClick) {
+          this.visible = false;
+        }
         this.$emit('change', value, instance);
       },
     },

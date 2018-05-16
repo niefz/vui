@@ -37,16 +37,6 @@
         background-color: $color-primary-alert;
         color: $color-primary-hover;
       }
-      .v-dropdown {
-        margin-right: -20px;
-        margin-left: -20px;
-        padding: 0 20px;
-        &-menu {
-          top: -11px;
-          left: 100%;
-          margin-left: 5px;
-        }
-      }
     }
   }
 }

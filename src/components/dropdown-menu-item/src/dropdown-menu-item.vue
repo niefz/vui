@@ -22,8 +22,8 @@
     mixins: [Emitter],
     props: {
       value: {},
+      divided: Boolean,
       disabled: Boolean,
-      divided: Boolean
     },
     methods: {
       handleClick() {

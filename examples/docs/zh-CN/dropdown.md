@@ -40,7 +40,7 @@
         <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
         <DropdownMenuItem value="蚵仔煎" divided>
-          <Dropdown placement="right-start" @change="handleChange">
+          <Dropdown trigger="click" placement="right-start"  @change="handleChange">
             <Button type="text" suffix-icon="v-icon-arrow-right-o">蚵仔煎</Button>
             <DropdownMenu slot="dropdown">
               <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>

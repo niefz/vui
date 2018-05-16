@@ -20,15 +20,10 @@
     componentName: 'DropdownMenu',
     mixins: [Popper],
     inject: ['dropdown'],
-    props: {
-      appendToBody: {
-        type: Boolean,
-        default: true,
-      },
-    },
     data() {
       return {
         size: this.dropdown.dropdownSize,
+        appendToBody: this.dropdown.appendToBody,
       };
     },
     watch: {
@@ -40,11 +35,11 @@
       },
     },
     created() {
-      this.$on('updatePopper', () => {
-        if (this.showPopper) this.updatePopper();
-      });
       this.$on('visible', (val) => {
         this.showPopper = val;
+      });
+      this.$on('updatePopper', () => {
+        if (this.showPopper) this.updatePopper();
       });
     },
     mounted() {
