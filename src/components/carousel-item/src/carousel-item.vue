@@ -41,11 +41,11 @@
     watch: {
     },
     methods: {
-      moveItem(index, activeIndex, oldIndex) {
+      moveItem(index, currentIndex, prevIndex) {
         const parentWidth = this.$parent.$el.offsetWidth;
         const length = this.$parent.carouselItems.length;
-        this.actived = index === activeIndex;
-        this.translate = parentWidth * (index - activeIndex);
+        this.actived = index === currentIndex;
+        this.translate = parentWidth * (index - currentIndex);
       },
     },
     created() {

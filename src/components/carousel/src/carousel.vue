@@ -1,9 +1,11 @@
 <template>
   <div
     class="v-carousel"
-    :class="[
-      {}
-    ]"
+    :class="{
+      hover: isHover
+    }"
+    @mouseenter.stop="handleMouseEnter"
+    @mouseleave.stop="handleMouseLeave"
   >
     <div 
       class="v-carousel__box"
@@ -31,6 +33,10 @@
       <li
         v-for="(item, index) in carouselItems"
         class="v-carousel__indicators__item"
+        :class="{
+          actived: currentIndex === index
+        }"
+        @click="handleCarouselItemsClick(index)"
       ></li>
     </ul>
   </div>
@@ -46,19 +52,21 @@
     },
     props: {
       height: String,
-      value: {
-        type: Number,
-        default: 0,
-      },
-      disabled: {
+      autoplay: {
         type: Boolean,
-        default: false,
+        default: true
+      },
+      interval: {
+        type: Number,
+        default: 3000
       },
     },
     data() {
       return {
+        isHover: false,
         carouselItems: [],
         currentIndex: -1,
+        timerFunc: null,
       };
     },
     computed: {
@@ -70,6 +78,31 @@
       },
     },
     methods: {
+      handleMouseEnter() {
+        this.isHover = true;
+        this.stop();
+      },
+      handleMouseLeave() {
+        this.isHover = false;
+        this.start();
+      },
+      start() {
+        if(!this.autoplay) return;
+        this.timerFunc = setInterval(this.play, this.interval);
+      },
+      stop() {
+        clearInterval(this.timerFunc);
+      },
+      play() {
+        if (this.currentIndex < this.carouselItems.length - 1) {
+          this.currentIndex++;
+        } else {
+          this.currentIndex = 0;
+        }
+      },
+      handleCarouselItemsClick(index) {
+        this.currentIndex = index;
+      },
       setItemPosition(index) {
         this.carouselItems.forEach((v, i) => {
           v.moveItem(i, this.currentIndex, index);
@@ -104,6 +137,7 @@
     },
     mounted() {
       this.getCarouselItems();
+      this.start();
     },
   };
 </script>
