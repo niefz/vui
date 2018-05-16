@@ -25,10 +25,6 @@
         type: String,
         default: 'hover',
       },
-      size: {
-        type: String,
-        default: 'small',
-      },
       placement: {
         type: String,
         default: 'bottom-start',

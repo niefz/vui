@@ -27,6 +27,7 @@
     },
     methods: {
       handleClick() {
+        if (this.disabled) return;
         this.dispatch('Dropdown', 'menu-item-click', [this.value, this]);
       },
     },

@@ -76,7 +76,7 @@ Affix props
 
 Affix events
 
-| 参数 | 说明 | 返回值 |
+| 事件名 | 说明 | 返回值 |
 |---- |---- |---- |
 | change | 在固定状态发生改变时触发 | true \| false |
 

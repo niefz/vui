@@ -87,14 +87,6 @@
       font-size: 12px;
       line-height: 22px;
       word-break: break-all;
-      code {
-        display: inline-block;
-        padding: 0 5px;
-        background-color: #F5F5F5;
-        border-radius: 3px;
-        font-size: 12px;
-        line-height: 26px;
-      }
     }
     .code {
       height: 0;

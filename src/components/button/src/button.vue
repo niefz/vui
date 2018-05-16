@@ -90,7 +90,7 @@
       },
       buttonSize() {
         const buttonSize = this.size || (this.$VUI || {}).size;
-        return this.isGroup ? this._buttonGroup.size || this.buttonSize : buttonSize;
+        return this.isGroup ? this._buttonGroup.size || buttonSize : buttonSize;
       },
       isDisabled() {
         const buttonDisabled = this.disabled || this.loading;
