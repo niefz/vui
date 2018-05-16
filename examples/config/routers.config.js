@@ -167,6 +167,13 @@ export default {
       }, 'switch'),
     },
     {
+      path: '/zh-CN/components/upload',
+      name: 'Upload 上传',
+      component: upload => require.ensure([], (require) => {
+        upload(require('../docs/zh-CN/upload.md'));
+      }, 'upload'),
+    },
+    {
       path: '/zh-CN/components/avatar',
       name: 'Avatar 头像',
       component: avatar => require.ensure([], (require) => {

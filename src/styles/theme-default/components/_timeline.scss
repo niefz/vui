@@ -15,7 +15,7 @@
     }
     .v-timeline-item__foot{
       position: absolute;
-      left: 6px;
+      left: 10px;
       top: 1em;
       height: 100%;
       border-left: 2px solid $color-divider;
@@ -23,7 +23,7 @@
     .v-timeline-item__content{
       padding: 0 0 0 18px;
       position: relative;
-      top: -6px;
+      top: -8px;
     }
   }
 }
