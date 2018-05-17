@@ -243,7 +243,7 @@
       > h3 {
         font-size: 16px;
       }
-      ul > li, ol > li {
+      > ul > li, > ol > li {
         margin-left: 20px;
         padding-left: 4px;
         font-size: 14px;

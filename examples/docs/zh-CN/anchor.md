@@ -41,7 +41,7 @@ Anchor props
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
 | affix | 固定模式 | boolean | - | true |
-| showInk | 是否显示小圆点 | boolean | - | true |
+| show-ink | 是否显示小圆点 | boolean | - | true |
 | top | 距离窗口顶部距离 | number | - | - |
 | right | 距离窗口右侧距离 | number | - | - |
 | bottom | 距离窗口底部距离 | number | - | - |

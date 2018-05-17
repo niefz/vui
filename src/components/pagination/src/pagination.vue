@@ -146,7 +146,7 @@
       },
       pageSizeOptions: {
         type: Array,
-        default: () => [10, 20, 30, 40, 50, 100],
+        default: () => [10, 20, 30, 40, 50],
       },
       prevText: {
         type: String,
@@ -194,35 +194,36 @@
       },
       pagers() {
         const pagerCount = this.pagerCount > 5 ? this.pagerCount : 5;
+        const halfPagerCount = (pagerCount - 1) / 2;
         const current = Number(this.current);
         const pageCount = Number(this.pageCount);
         let showPrevMore = false;
         let showNextMore = false;
         if (pageCount > pagerCount) {
-          if (current > pagerCount - 3) {
+          if (current > pagerCount - halfPagerCount) {
             showPrevMore = true;
           }
-          if (current < pageCount - 3) {
+          if (current < pageCount - halfPagerCount) {
             showNextMore = true;
           }
         }
         const array = [];
         if (showPrevMore && !showNextMore) {
           const startPage = pageCount - (pagerCount - 2);
-          for (let i = startPage; i < pageCount; i++) {
+          for (let i = startPage; i < pageCount; i += 1) {
             array.push(i);
           }
         } else if (!showPrevMore && showNextMore) {
-          for (let i = 2; i < pagerCount; i++) {
+          for (let i = 2; i < pagerCount; i += 1) {
             array.push(i);
           }
         } else if (showPrevMore && showNextMore) {
           const offset = Math.floor(pagerCount / 2) - 1;
-          for (let i = current - offset; i <= current + offset; i++) {
+          for (let i = current - offset; i <= current + offset; i += 1) {
             array.push(i);
           }
         } else {
-          for (let i = 2; i < pageCount; i++) {
+          for (let i = 2; i < pageCount; i += 1) {
             array.push(i);
           }
         }
@@ -243,9 +244,9 @@
       mouseenter(direction) {
         if (this.disabled) return;
         if (direction === 'left') {
-          this.quickPrevIconClass = 'v-icon-arrow-d-left';
+          this.quickPrevIconClass = 'v-icon-arrow-d-left-o';
         } else {
-          this.quickNextIconClass = 'v-icon-arrow-d-right';
+          this.quickNextIconClass = 'v-icon-arrow-d-right-o';
         }
       },
       handlePageSize(val) {
@@ -286,9 +287,9 @@
         const pagerCount = this.pagerCount;
         const current = this.current;
         let newPage = Number(event.target.textContent);
-        if (target.className.indexOf('v-icon-arrow-d-left') > -1) {
+        if (target.className.indexOf('v-icon-arrow-d-left-o') > -1) {
           newPage = current - (pagerCount - 2);
-        } else if (target.className.indexOf('v-icon-arrow-d-right') > -1) {
+        } else if (target.className.indexOf('v-icon-arrow-d-right-o') > -1) {
           newPage = current + (pagerCount - 2);
         }
         if (!isNaN(newPage)) {
