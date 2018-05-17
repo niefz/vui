@@ -1,7 +1,6 @@
 .v-dropdown {
   position: relative;
   display: inline-block;
-  max-width: 100%;
   &-menu {
     z-index: 100;
     margin: 5px 0;
@@ -37,6 +36,9 @@
         background-color: $color-primary-alert;
         color: $color-primary-hover;
       }
+    }
+    .v-dropdown {
+      padding: 0 20px;
     }
   }
 }

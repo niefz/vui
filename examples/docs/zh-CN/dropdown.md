@@ -64,13 +64,37 @@
 
 ## 对齐方向
 
-:::demo 通过 `placement` 属性，支持事件：`hover` (默认值)、`click`。
+:::demo 通过 `placement` 属性，可选：`top` `top-start` `top-end` `bottom` `bottom-start` `bottom-end` `left` `left-start` `left-end` `right` `right-start` `right-end`，默认 `bottom-start`。
 
 ```html
 <Row>
   <Col :span="6">
+    <Dropdown placement="top-start" @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(上)</Button>
+      <DropdownMenu slot="dropdown">
+        <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+        <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+        <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+        <DropdownMenuItem value="双皮奶">双皮奶</DropdownMenuItem>
+        <DropdownMenuItem value="蚵仔煎">蚵仔煎</DropdownMenuItem>
+      </DropdownMenu>
+    </Dropdown>
+  </Col>
+  <Col :span="6">
+    <Dropdown placement="right-start" @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-arrow-right-o">菜单(右)</Button>
+      <DropdownMenu slot="dropdown">
+        <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+        <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+        <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+        <DropdownMenuItem value="双皮奶">双皮奶</DropdownMenuItem>
+        <DropdownMenuItem value="蚵仔煎">蚵仔煎</DropdownMenuItem>
+      </DropdownMenu>
+    </Dropdown>
+  </Col>
+  <Col :span="6">
     <Dropdown placement="bottom-start" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(左)</Button>
+      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(下)</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -81,20 +105,8 @@
     </Dropdown>
   </Col>
   <Col :span="6">
-    <Dropdown @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(居中)</Button>
-      <DropdownMenu slot="dropdown">
-        <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
-        <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
-        <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
-        <DropdownMenuItem value="双皮奶">双皮奶</DropdownMenuItem>
-        <DropdownMenuItem value="蚵仔煎">蚵仔煎</DropdownMenuItem>
-      </DropdownMenu>
-    </Dropdown>
-  </Col>
-  <Col :span="6">
-    <Dropdown placement="bottom-end" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(右)</Button>
+    <Dropdown placement="left-start" @change="handleChange">
+      <Button type="text" prefix-icon="v-icon-arrow-left-o">菜单(左)</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -110,13 +122,13 @@
 
 ## 禁用与分割线
 
-:::demo 可以禁用整个组件，也可以禁用单个选项，只需配置 `disabled`、`divided` 属性。
+:::demo 禁用、设置分割选项，只需配置 `disabled`、`divided` 属性。
 
 ```html
 <Row>
   <Col :span="6">
     <Dropdown trigger="hover" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o" disabled>hover 触发</Button>
+      <Button type="text" suffix-icon="v-icon-arrow-down-o" disabled>禁用菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -127,14 +139,45 @@
     </Dropdown>
   </Col>
   <Col :span="6">
-    <Dropdown trigger="click" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">click 触发</Button>
+    <Dropdown @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-arrow-down-o">下拉菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
         <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
         <DropdownMenuItem value="蚵仔煎" divided>蚵仔煎</DropdownMenuItem>
+      </DropdownMenu>
+    </Dropdown>
+  </Col>
+</Row>
+```
+:::
+
+## 级联菜单
+
+:::demo 下拉菜单可以进行嵌套实现级联的效果，嵌套时注意设置子集的展开方向 `placement`。
+
+```html
+<Row>
+  <Col :span="6">
+    <Dropdown trigger="click" @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-arrow-down-o">级联菜单</Button>
+      <DropdownMenu slot="dropdown">
+        <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+        <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+        <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+        <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+        <Dropdown placement="right-start" @change="handleChange">
+          <Button type="text" suffix-icon="v-icon-arrow-right-o">蚵仔煎</Button>
+          <DropdownMenu slot="dropdown">
+            <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+            <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+            <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+            <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+            <DropdownMenuItem value="蚵仔煎" divided>蚵仔煎</DropdownMenuItem>
+          </DropdownMenu>
+        </Dropdown>
       </DropdownMenu>
     </Dropdown>
   </Col>
