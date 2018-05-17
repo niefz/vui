@@ -13,14 +13,14 @@
 ```html
 <Row>
   <Col :span="12">
-    <Dropdown trigger="hover" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">下拉菜单</Button>
+    <Dropdown @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-caret-down">下拉菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
         <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
         <DropdownMenuItem value="双皮奶">双皮奶</DropdownMenuItem>
-        <DropdownMenuItem value="蚵仔煎">下拉菜单</DropdownMenuItem>
+        <DropdownMenuItem value="蚵仔煎">蚵仔煎</DropdownMenuItem>
       </DropdownMenu>
     </Dropdown>
   </Col>
@@ -35,8 +35,8 @@
 ```html
 <Row>
   <Col :span="6">
-    <Dropdown trigger="hover" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">hover 触发</Button>
+    <Dropdown @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-caret-down">hover 触发</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -48,7 +48,7 @@
   </Col>
   <Col :span="6">
     <Dropdown trigger="click" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">click 触发</Button>
+      <Button type="text" suffix-icon="v-icon-caret-down">click 触发</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -62,7 +62,7 @@
 ```
 :::
 
-## 对齐方向
+## 菜单位置
 
 :::demo 通过 `placement` 属性，可选：`top` `top-start` `top-end` `bottom` `bottom-start` `bottom-end` `left` `left-start` `left-end` `right` `right-start` `right-end`，默认 `bottom-start`。
 
@@ -70,7 +70,7 @@
 <Row>
   <Col :span="6">
     <Dropdown placement="top-start" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(上)</Button>
+      <Button type="text" suffix-icon="v-icon-caret-down">菜单(上)</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -82,7 +82,7 @@
   </Col>
   <Col :span="6">
     <Dropdown placement="right-start" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-right-o">菜单(右)</Button>
+      <Button type="text" suffix-icon="v-icon-caret-right">菜单(右)</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -94,7 +94,7 @@
   </Col>
   <Col :span="6">
     <Dropdown placement="bottom-start" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">菜单(下)</Button>
+      <Button type="text" suffix-icon="v-icon-caret-down">菜单(下)</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -106,7 +106,7 @@
   </Col>
   <Col :span="6">
     <Dropdown placement="left-start" @change="handleChange">
-      <Button type="text" prefix-icon="v-icon-arrow-left-o">菜单(左)</Button>
+      <Button type="text" prefix-icon="v-icon-caret-left">菜单(左)</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -127,8 +127,8 @@
 ```html
 <Row>
   <Col :span="6">
-    <Dropdown trigger="hover" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o" disabled>禁用菜单</Button>
+    <Dropdown @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-caret-down" disabled>禁用菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -140,7 +140,7 @@
   </Col>
   <Col :span="6">
     <Dropdown @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">下拉菜单</Button>
+      <Button type="text" suffix-icon="v-icon-caret-down">分割菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
@@ -161,15 +161,15 @@
 ```html
 <Row>
   <Col :span="6">
-    <Dropdown trigger="click" @change="handleChange">
-      <Button type="text" suffix-icon="v-icon-arrow-down-o">级联菜单</Button>
+    <Dropdown @change="handleChange">
+      <Button type="text" suffix-icon="v-icon-caret-down">级联菜单</Button>
       <DropdownMenu slot="dropdown">
         <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
         <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
         <Dropdown placement="right-start" @change="handleChange">
-          <Button type="text" suffix-icon="v-icon-arrow-right-o">蚵仔煎</Button>
+          <Button type="text" suffix-icon="v-icon-caret-right">蚵仔煎</Button>
           <DropdownMenu slot="dropdown">
             <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
             <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>

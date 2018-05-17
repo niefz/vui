@@ -60,7 +60,7 @@
       border-color: $color-primary;
     }
     &.disabled, &.disabled:hover {
-      @include make-color($color-disabled-border, transparent, $color-text-disabled);
+      @include make-color($color-border, $color-background, $color-text-disabled);
       cursor: not-allowed;
     }
   }

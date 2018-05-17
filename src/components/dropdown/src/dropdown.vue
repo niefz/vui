@@ -98,12 +98,7 @@
         }
       },
       handleMenuItemClick(value, instance) {
-        const dropdown = instance.$children.find(child => child.$options.name === 'Dropdown');
-        if (dropdown) {
-          this.visible = true;
-        } else if (this.hideAfterClick) {
-          this.visible = false;
-        }
+        this.visible = !this.hideAfterClick;
         this.$emit('change', value, instance);
       },
     },

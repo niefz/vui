@@ -6,8 +6,8 @@
           Free-ui
         </a>
         <div class="versions">
-          <Dropdown trigger="click">
-            <Button suffix-icon="v-icon-arrow-down-o">1.0.0</Button>
+          <Dropdown>
+            <Button suffix-icon="v-icon-caret-down">1.0.0</Button>
             <DropdownMenu slot="dropdown">
               <DropdownMenuItem value="1.0.0">1.0.0</DropdownMenuItem>
             </DropdownMenu>

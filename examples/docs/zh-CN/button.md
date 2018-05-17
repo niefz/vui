@@ -11,8 +11,8 @@
 ```html
 <Row>
   <Col :span="6">
-    <Button type="button" theme="primary">主要按钮</Button>
-    <Button type="button">次要按钮</Button>
+    <Button theme="primary">主要按钮</Button>
+    <Button>次要按钮</Button>
   </Col>
   <Col :span="12">
     <Button type="text" theme="primary">主要按钮</Button>
@@ -30,16 +30,20 @@
 
 ```html
 <Row>
-  <Button type="button" shape="radius" theme="primary">主要按钮</Button>
-  <Button type="button" shape="radius" theme="warning">告警按钮</Button>
-  <Button type="button" shape="radius" theme="danger">危险按钮</Button>
-  <Button type="button" shape="radius" theme="default">默认按钮</Button>
+  <Col :span="24">
+    <Button theme="primary">主要按钮</Button>
+    <Button theme="warning">告警按钮</Button>
+    <Button theme="danger">危险按钮</Button>
+    <Button>默认按钮</Button>
+  </Col>
 </Row>
 <Row>
-  <Button type="button" shape="radius" theme="primary" plain>主要按钮</Button>
-  <Button type="button" shape="radius" theme="warning" plain>告警按钮</Button>
-  <Button type="button" shape="radius" theme="danger" plain>危险按钮</Button>
-  <Button type="button" shape="radius" theme="default" plain>默认按钮</Button>
+  <Col :span="24">
+    <Button theme="primary" plain>主要按钮</Button>
+    <Button theme="warning" plain>告警按钮</Button>
+    <Button theme="danger" plain>危险按钮</Button>
+    <Button plain>默认按钮</Button>
+  </Col>
 </Row>
 ```
 :::
@@ -52,12 +56,14 @@
 
 ```html
 <Row>
-  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-user-plus-o">添加用户</Button>
-  <Button type="button" shape="radius" theme="primary" suffix-icon="v-icon-search-o">查询</Button>
-  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-user-plus-o"></Button>
-  <Button type="button" shape="radius" theme="primary" suffix-icon="v-icon-search-o"></Button>
-  <Button type="button" shape="circle" theme="default" prefix-icon="v-icon-user-plus-o"></Button>
-  <Button type="button" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  <Col :span="24">
+    <Button prefix-icon="v-icon-user-plus-o">添加用户</Button>
+    <Button theme="primary" suffix-icon="v-icon-search-o">查询</Button>
+    <Button prefix-icon="v-icon-user-plus-o"></Button>
+    <Button theme="primary" suffix-icon="v-icon-search-o"></Button>
+    <Button shape="circle" prefix-icon="v-icon-user-plus-o"></Button>
+    <Button shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  </Col>
 </Row>
 ```
 :::
@@ -68,10 +74,12 @@
 
 ```html
 <Row>
-  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-loading" loading>加载中</Button>
-  <Button type="button" shape="radius" theme="primary" prefix-icon="v-icon-loading" loading>加载中</Button>
-  <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-loading" loading></Button>
-  <Button type="button" shape="circle" theme="default" suffix-icon="v-icon-loading" loading></Button>
+  <Col :span="24">
+    <Button prefix-icon="v-icon-loading" loading>加载中</Button>
+    <Button theme="primary" prefix-icon="v-icon-loading" loading>加载中</Button>
+    <Button prefix-icon="v-icon-loading" loading></Button>
+    <Button shape="circle" suffix-icon="v-icon-loading" loading></Button>
+  </Col>
 </Row>
 ```
 :::
@@ -84,15 +92,26 @@
 
 ```html
 <Row>
-  <ButtonGroup>
-    <Button type="button" shape="radius" theme="primary">操作</Button>
-    <Button type="button" shape="radius" theme="default">操作</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-more"></Button>
-  </ButtonGroup>
-  <ButtonGroup>
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
-  </ButtonGroup>
+  <Col :span="12">
+    <ButtonGroup>
+      <Button disabled>最近一周</Button>
+      <Button>最近一个月</Button>
+      <Button>最近三个月</Button>
+      <Dropdown placement="bottom-end" @change="handleChange">
+        <Button suffix-icon="v-icon-more"></Button>
+        <DropdownMenu slot="dropdown">
+          <DropdownMenuItem value="180">最近六个月</DropdownMenuItem>
+          <DropdownMenuItem value="365">最近一年</DropdownMenuItem>
+        </DropdownMenu>
+      </Dropdown>
+    </ButtonGroup>
+  </Col>
+  <Col :span="12">
+    <ButtonGroup>
+      <Button prefix-icon="v-icon-arrow-left-o">上一页</Button>
+      <Button suffix-icon="v-icon-arrow-right-o">下一页</Button>
+    </ButtonGroup>
+  </Col>
 </Row>
 ```
 :::
@@ -103,13 +122,20 @@
 
 ```html
 <Row>
-  <Button type="button" shape="radius" theme="primary" disabled>主要按钮</Button>
-  <Button type="button" shape="radius" disabled>次要按钮</Button>
-  <Button type="text" disabled>文字按钮</Button>
-  <ButtonGroup disabled>
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
-  </ButtonGroup>
+  <Col :span="6">
+    <Button theme="primary" disabled>主要按钮</Button>
+    <Button disabled>次要按钮</Button>
+  </Col>
+  <Col :span="6">
+    <Button type="text" theme="primary" disabled>文字按钮</Button>
+    <Button type="text" disabled>文字按钮</Button>
+  </Col>
+  <Col :span="6">
+    <ButtonGroup disabled>
+      <Button prefix-icon="v-icon-caret-left">上一页</Button>
+      <Button suffix-icon="v-icon-caret-right">下一页</Button>
+    </ButtonGroup>
+  </Col>
 </Row>
 ```
 :::
@@ -122,34 +148,40 @@
 
 ```html
 <Row>
-  <Button type="button" size="large" shape="radius" theme="primary">操作按钮</Button>
-  <Button type="button" size="medium" shape="radius" theme="primary">操作按钮</Button>
-  <Button type="button" size="small" shape="radius" theme="primary">操作按钮</Button>
-  <Button type="button" size="mini" shape="radius" theme="primary">操作按钮</Button>
+  <Col :span="24">
+    <Button size="large" shape="radius" theme="primary">操作按钮</Button>
+    <Button size="medium" shape="radius" theme="primary">操作按钮</Button>
+    <Button size="small" shape="radius" theme="primary">操作按钮</Button>
+    <Button size="mini" shape="radius" theme="primary">操作按钮</Button>
+  </Col>
 </Row>
 <Row>
-  <Button type="button" size="large" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
-  <Button type="button" size="medium" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
-  <Button type="button" size="small" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
-  <Button type="button" size="mini" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  <Col :span="24">
+    <Button size="large" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+    <Button size="medium" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+    <Button size="small" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+    <Button size="mini" shape="circle" theme="primary" suffix-icon="v-icon-search-o"></Button>
+  </Col>
 </Row>
 <Row>
-  <ButtonGroup size="large">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
-  </ButtonGroup>
-  <ButtonGroup size="medium">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
-  </ButtonGroup>
-  <ButtonGroup size="small">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
-  </ButtonGroup>
-  <ButtonGroup size="mini">
-    <Button type="button" shape="radius" theme="default" prefix-icon="v-icon-arrow-left-o">上一页</Button>
-    <Button type="button" shape="radius" theme="default" suffix-icon="v-icon-arrow-right-o">下一页</Button>
-  </ButtonGroup>
+  <Col :span="24">
+    <ButtonGroup size="large">
+      <Button theme="primary" prefix-icon="v-icon-caret-left">上一页</Button>
+      <Button theme="primary" suffix-icon="v-icon-caret-right">下一页</Button>
+    </ButtonGroup>
+    <ButtonGroup size="medium">
+      <Button theme="primary" prefix-icon="v-icon-caret-left">上一页</Button>
+      <Button theme="primary" suffix-icon="v-icon-caret-right">下一页</Button>
+    </ButtonGroup>
+    <ButtonGroup size="small">
+      <Button theme="primary" prefix-icon="v-icon-caret-left">上一页</Button>
+      <Button theme="primary" suffix-icon="v-icon-caret-right">下一页</Button>
+    </ButtonGroup>
+    <ButtonGroup size="mini">
+      <Button theme="primary" prefix-icon="v-icon-caret-left">上一页</Button>
+      <Button theme="primary" suffix-icon="v-icon-caret-right">下一页</Button>
+    </ButtonGroup>
+  </Col>
 </Row>
 ```
 :::
@@ -182,6 +214,9 @@ ButtonGroup props
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
+  import Dropdown from '@/components/dropdown';
+  import DropdownMenu from '@/components/dropdown-menu';
+  import DropdownMenuItem from '@/components/dropdown-menu-item';
   import Button from '@/components/button';
   import ButtonGroup from '@/components/button-group';
 
@@ -189,8 +224,16 @@ ButtonGroup props
     components: {
       Row,
       Col,
+      Dropdown,
+      DropdownMenu,
+      DropdownMenuItem,
       Button,
       ButtonGroup,
+    },
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      },
     },
   };
 </script>
