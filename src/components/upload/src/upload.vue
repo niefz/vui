@@ -6,7 +6,17 @@
         ['disabled']: isDisabled
       }
     ]"
+    @click="handleClick"
   >
+    <slot></slot>
+    <input 
+      class="v-upload__input" 
+      type="file" 
+      ref="input" 
+      :name="name"
+      :multiple="multiple" 
+      :accept="accept"
+    ></input>
   </div>
 </template>
 <script>
@@ -23,6 +33,23 @@
         type: Boolean,
         default: false,
       },
+      type: String,
+      action: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        default: '',
+      },
+      data: Object,
+      headers: Object,
+      multiple: Boolean,
+      onStart: Function,
+      onProgress: Function,
+      onSuccess: Function,
+      onError: Function,
+      accept: String,
     },
     data() {
       return {
@@ -36,6 +63,10 @@
     watch: {
     },
     methods: {
+      handleClick() {
+        if (this.disabled) return;
+        this.$refs['input'].click();
+      },
     },
     created() {
     },
