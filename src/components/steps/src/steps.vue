@@ -26,13 +26,13 @@
         type: String,
         default: 'horizontal',
       },
-      status: {
-        type: String,
-        default: '',
-      },
       current: {
         type: Number,
         default: 1,
+      },
+      status: {
+        type: String,
+        default: '',
       },
     },
     data() {

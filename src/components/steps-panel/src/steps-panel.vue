@@ -13,11 +13,14 @@
     componentName: 'StepsPanel',
     inject: ['steps'],
     props: {
-      name: [String, Number],
+      name: {
+        type: Number,
+        default: 1,
+      },
     },
     computed: {
       active() {
-        return this.steps.current === Number(this.name);
+        return this.steps.current === this.name;
       },
     },
     mounted() {

@@ -72,10 +72,10 @@
       <StepsItem title="待进行" description="这里是该步骤的描述信息"></StepsItem>
       <StepsItem title="待进行" description="这里是该步骤的描述信息"></StepsItem>
       <template slot="content">
-        <StepsPanel name="1">这里是步骤一的描述信息</StepsPanel>
-        <StepsPanel name="2">这里是步骤二的描述信息</StepsPanel>
-        <StepsPanel name="3">这里是步骤三的描述信息</StepsPanel>
-        <StepsPanel name="4">这里是步骤四的描述信息</StepsPanel>
+        <StepsPanel :name="1">这里是步骤一的详细内容</StepsPanel>
+        <StepsPanel :name="2">这里是步骤二的详细内容</StepsPanel>
+        <StepsPanel :name="3">这里是步骤三的详细内容</StepsPanel>
+        <StepsPanel :name="4">这里是步骤四的详细内容</StepsPanel>
       </template>
     </Steps>
   </Col>
@@ -104,6 +104,37 @@
 </Row>
 ```
 :::
+
+## API
+
+Steps props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| mode | 步骤条的方向 | string | `horizontal` `vertical` | horizontal |
+| current | 当前步骤，从 1 开始计数 | number | - | 1 |
+| status | 当前步骤的状态 | string | `wait` `process` `finish` `error` | process |
+
+Steps slot
+
+| 名称 | 说明 |
+|---- |---- |
+| 无 | 步骤导航 |
+| content | 步骤详细内容 |
+
+StepsItem props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| icon | 步骤的图标，可选 | string | - | - |
+| title | 标题 | string | - | - |
+| description | 步骤的详细描述，可选 | string | - | - |
+
+StepsPanel props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| name | 激活与 `current` 相等的步骤内容 | number | - | - |
 
 <script>
   import Row from '@/components/row';
