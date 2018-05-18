@@ -17,7 +17,6 @@
   <Col :span="24">
     <Pagination
       :total="100"
-      @size-change="handleSizeChange"
       @page-change="handlePageChange"></Pagination>
   </Col>
 </Row>
@@ -27,7 +26,7 @@
 
 ## 页码按钮数
 
-:::demo 基本的分页，页数过多时会自动折叠。
+:::demo 通过 `pager-count` 属性可以设置最大页码按钮数。
 
 ```html
 <Row>
@@ -35,7 +34,6 @@
     <Pagination
       :total="100"
       :pager-count="5"
-      @size-change="handleSizeChange"
       @page-change="handlePageChange"></Pagination>
   </Col>
 </Row>
@@ -53,7 +51,6 @@
     <Pagination
       :total="100"
       show-total
-      @size-change="handleSizeChange"
       @page-change="handlePageChange"></Pagination>
   </Col>
 </Row>
@@ -62,7 +59,7 @@
 
 ## 分页大小
 
-:::demo 基本的分页，页数过多时会自动折叠。
+:::demo 改变每页显示条目数。
 
 ```html
 <Row>
@@ -87,7 +84,6 @@
     <Pagination
       :total="100"
       show-jumper
-      @size-change="handleSizeChange"
       @page-change="handlePageChange"></Pagination>
   </Col>
 </Row>
@@ -104,7 +100,6 @@
     <Pagination
       :total="100"
       simple
-      @size-change="handleSizeChange"
       @page-change="handlePageChange"></Pagination>
   </Col>
 </Row>
@@ -121,7 +116,23 @@
     <Pagination
       :total="100"
       minimal
-      @size-change="handleSizeChange"
+      @page-change="handlePageChange"></Pagination>
+  </Col>
+</Row>
+```
+:::
+
+## 翻页文本
+
+:::demo 翻页文本。
+
+```html
+<Row>
+  <Col :span="24">
+    <Pagination
+      :total="100"
+      prev-text="上一页"
+      next-text="下一页"
       @page-change="handlePageChange"></Pagination>
   </Col>
 </Row>
@@ -137,9 +148,7 @@
   <Col :span="24">
     <Pagination
       :total="100"
-      disabled
-      @size-change="handleSizeChange"
-      @page-change="handlePageChange"></Pagination>
+      disabled></Pagination>
   </Col>
 </Row>
 ```

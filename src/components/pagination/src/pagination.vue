@@ -108,8 +108,8 @@
       :disabled="disabled || validCurrentPage >= pageCount"
       @click="handleTurn('next')">
       <slot name="next">
-        <Icon icon="v-icon-caret-right"></Icon>
         <template v-if="nextText">{{nextText}}</template>
+        <Icon icon="v-icon-caret-right"></Icon>
       </slot>
     </Button>
     <div class="v-pagination--jumper" v-if="showJumper">
