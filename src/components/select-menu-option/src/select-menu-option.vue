@@ -43,7 +43,7 @@
     methods: {
       handleClick() {
         if (this.disabled) return;
-        this.dispatch('Select', 'select-option-click', [this.value]);
+        this.dispatch('Select', 'select-option-click', [this.value, this]);
       },
     },
   };

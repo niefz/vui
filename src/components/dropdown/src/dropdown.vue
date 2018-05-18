@@ -78,11 +78,7 @@
       },
       handleClick() {
         if (this.triggerElm.disabled) return;
-        if (this.visible) {
-          this.hide();
-        } else {
-          this.show();
-        }
+        this.visible ? this.hide() : this.show();
       },
       initEvent() {
         const { trigger, show, hide, handleClick } = this;

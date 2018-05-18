@@ -1,14 +1,15 @@
 <template>
   <div
     class="v-select"
-    @click="handleClick"
     v-clickoutside="hide">
     <Input
-      v-model="selected"
-      :placeholder="placeholder || '请选择'"
-      suffix-icon="v-icon-arrow-down-o"
-      readonly></Input>
-      <slot></slot>
+      ref="reference"
+      role="reference"
+      v-model="displayValue"
+      :placeholder="displayPlaceholder"
+      suffix-icon="v-icon-caret-down"
+      readonly/>
+    <slot></slot>
   </div>
 </template>
 <script>
@@ -30,48 +31,88 @@
       };
     },
     props: {
+      value: {},
+      size: {
+        type: String,
+        default: 'small',
+      },
       placeholder: {
         type: String,
         default: '',
       },
-      value: {},
+      placement: {
+        type: String,
+        default: 'bottom-start',
+      },
+      showTimeout: {
+        type: Number,
+        default: 0,
+      },
+      hideTimeout: {
+        type: Number,
+        default: 0,
+      },
+      hideAfterClick: {
+        type: Boolean,
+        default: true,
+      },
+      appendToBody: {
+        type: Boolean,
+        default: true,
+      },
     },
     data() {
       return {
         visible: false,
-        selected: this.value || '',
+        displayValue: this.value || '',
       };
+    },
+    computed: {
+      selectSize() {
+        return this.size || (this.$VUI || {}).size;
+      },
+      displayPlaceholder() {
+        return this.placeholder || '请选择';
+      },
     },
     watch: {
       visible(val) {
         this.broadcast('SelectMenu', 'visible', val);
+        this.$emit('visible-change', val);
       },
     },
     methods: {
       show() {
+        if (this.triggerElm.disabled) return;
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.visible = true;
-        }, 0);
+        }, this.showTimeout);
       },
       hide() {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.visible = false;
-        }, 0);
+        }, this.hideTimeout);
       },
-      handleClick(event) {
-        event.stopPropagation();
+      handleClick() {
+        if (this.triggerElm.disabled) return;
         this.visible ? this.hide() : this.show();
       },
-      handleSelectOptionClick(value) {
-        this.selected = value;
-        this.$emit('change', value);
-        this.hide();
+      initEvent() {
+        const {handleClick} = this;
+        this.triggerElm = this.$refs.reference.$vnode.elm;
+        this.triggerElm.addEventListener('click', handleClick);
+      },
+      handleSelectOptionClick(value, instance) {
+        this.displayValue = instance.label;
+        this.visible = !this.hideAfterClick;
+        this.$emit('change', value, instance);
       },
     },
     mounted() {
       this.$on('select-option-click', this.handleSelectOptionClick);
+      this.initEvent();
     },
   };
 </script>

@@ -24,26 +24,29 @@
     <Button
       type="text"
       :size="pagerSize"
-      :disabled="disabled || current <= 1"
-      @click="handlePrev">
-      <template v-if="prevText">{{prevText}}</template>
-      <template v-else>
-        <Icon icon="v-icon-arrow-left-o"></Icon>
-      </template>
+      :disabled="disabled || validCurrentPage <= 1"
+      @click="handleTurn('prev')">
+      <slot name="prev">
+        <Icon icon="v-icon-caret-left"></Icon>
+        <template v-if="prevText">{{prevText}}</template>
+      </slot>
     </Button>
     <template v-if="simple">
       <div class="v-pagination--jumper">
-        <Input :value="current" :size="pagerSize" @keyup.enter="handlePageChange"></Input>
+        <Input
+          :value="validCurrentPage"
+          :size="pagerSize"
+          @keyup.enter="handleJumper"/>
       </div>
       / {{pageCount}}
     </template>
     <template v-else-if="!minimal">
-      <ul class="v-pager" @click="handlePager">
+      <ul class="v-pager" @click="handlePage">
         <li
           class="v-pager--number"
           :class="[
             {
-              ['active']: current === 1,
+              ['active']: validCurrentPage === 1,
               ['disabled']: disabled,
             }
           ]"
@@ -66,7 +69,7 @@
           class="v-pager--number"
           :class="[
             {
-              ['active']: current === pager,
+              ['active']: validCurrentPage === pager,
               ['disabled']: disabled,
             }
           ]"
@@ -90,7 +93,7 @@
           class="v-pager--number"
           :class="[
             {
-              ['active']: current === pageCount,
+              ['active']: validCurrentPage === pageCount,
               ['disabled']: disabled,
             }
           ]"
@@ -102,16 +105,19 @@
     <Button
       type="text"
       :size="pagerSize"
-      :disabled="disabled || current >= pageCount"
-      @click="handleNext">
-      <template v-if="nextText">{{nextText}}</template>
-      <template v-else>
-        <Icon icon="v-icon-arrow-right-o"></Icon>
-      </template>
+      :disabled="disabled || validCurrentPage >= pageCount"
+      @click="handleTurn('next')">
+      <slot name="next">
+        <Icon icon="v-icon-caret-right"></Icon>
+        <template v-if="nextText">{{nextText}}</template>
+      </slot>
     </Button>
     <div class="v-pagination--jumper" v-if="showJumper">
       跳至
-      <Input :value="current" :size="pagerSize" @keyup.enter="handlePageChange"></Input>
+      <Input
+        :value="validCurrentPage"
+        :size="pagerSize"
+        @keyup.enter="handleJumper"/>
       页
     </div>
   </div>
@@ -182,7 +188,8 @@
         showNextMore: false,
         quickNextIconClass: 'v-icon-more',
         quickPrevIconClass: 'v-icon-more',
-        current: this.currentPage,
+        internalCurrent: this.currentPage,
+        internalPageSize: this.pageSize,
       };
     },
     computed: {
@@ -190,20 +197,20 @@
         return this.size || (this.$VUI || {}).size;
       },
       pageCount() {
-        return Number(Math.ceil(this.total / this.pageSize));
+        return Number(Math.ceil(this.total / this.internalPageSize));
       },
       pagers() {
         const pagerCount = this.pagerCount > 5 ? this.pagerCount : 5;
         const halfPagerCount = (pagerCount - 1) / 2;
-        const current = Number(this.current);
+        const internalCurrent = Number(this.internalCurrent);
         const pageCount = Number(this.pageCount);
         let showPrevMore = false;
         let showNextMore = false;
         if (pageCount > pagerCount) {
-          if (current > pagerCount - halfPagerCount) {
+          if (internalCurrent > pagerCount - halfPagerCount) {
             showPrevMore = true;
           }
-          if (current < pageCount - halfPagerCount) {
+          if (internalCurrent < pageCount - halfPagerCount) {
             showNextMore = true;
           }
         }
@@ -219,7 +226,7 @@
           }
         } else if (showPrevMore && showNextMore) {
           const offset = Math.floor(pagerCount / 2) - 1;
-          for (let i = current - offset; i <= current + offset; i += 1) {
+          for (let i = internalCurrent - offset; i <= internalCurrent + offset; i += 1) {
             array.push(i);
           }
         } else {
@@ -231,6 +238,28 @@
         this.showNextMore = showNextMore;
         return array;
       },
+      validCurrentPage() {
+        let internalCurrent;
+        const current = this.internalCurrent;
+        const havePageCount = typeof this.pageCount === 'number';
+        const currentValue = Number(current);
+        if (!havePageCount) {
+          if (isNaN(currentValue) || currentValue < 1) internalCurrent = 1;
+        } else {
+          if (currentValue < 1) {
+            internalCurrent = 1;
+          } else if (currentValue > this.pageCount) {
+            internalCurrent = this.pageCount;
+          }
+        }
+        if (internalCurrent === undefined && isNaN(currentValue)) {
+          internalCurrent = 1;
+        } else if (internalCurrent === 0) {
+          internalCurrent = 1;
+        }
+
+        return internalCurrent === undefined ? currentValue : internalCurrent;
+      },
     },
     watch: {
       showPrevMore(val) {
@@ -238,6 +267,9 @@
       },
       showNextMore(val) {
         if (!val) this.quickNextIconClass = 'v-icon-more';
+      },
+      internalCurrent() {
+        this.$emit('page-change', this.validCurrentPage);
       },
     },
     methods: {
@@ -251,46 +283,29 @@
       },
       handlePageSize(val) {
         if (this.disabled) return;
+        this.internalPageSize = val;
         this.$emit('size-change', val);
+        this.$emit('update:currentPage', this.validCurrentPage);
       },
-      computedCurrentPage(val) {
-        let currentValue;
-        const havePageCount = typeof this.pageCount === 'number';
-        const value = Number(val);
-        if (!havePageCount) {
-          if (isNaN(value) || value < 1) currentValue = 1;
-        } else {
-          if (value < 1) {
-            currentValue = 1;
-          } else if (value > this.pageCount) {
-            currentValue = this.pageCount;
-          }
-        }
-        if (currentValue === undefined && isNaN(value)) {
-          currentValue = 1;
-        } else if (currentValue === 0) {
-          currentValue = 1;
-        }
-
-        return currentValue === undefined ? value : currentValue;
-      },
-      handlePrev() {
+      handleTurn(direction) {
         if (this.disabled) return;
-        const page = this.current - 1;
-        this.current = this.computedCurrentPage(page);
-        this.$emit('page-change', this.current);
+        if (direction === 'prev') {
+          this.internalCurrent -= 1;
+        } else {
+          this.internalCurrent += 1;
+        }
       },
-      handlePager(event) {
+      handlePage(event) {
         const target = event.target;
         if (this.disabled || target.tagName === 'UL') return;
         const pageCount = this.pageCount;
         const pagerCount = this.pagerCount;
-        const current = this.current;
+        const internalCurrent = this.internalCurrent;
         let newPage = Number(event.target.textContent);
         if (target.className.indexOf('v-icon-arrow-d-left-o') > -1) {
-          newPage = current - (pagerCount - 2);
+          newPage = internalCurrent - (pagerCount - 2);
         } else if (target.className.indexOf('v-icon-arrow-d-right-o') > -1) {
-          newPage = current + (pagerCount - 2);
+          newPage = internalCurrent + (pagerCount - 2);
         }
         if (!isNaN(newPage)) {
           if (newPage < 1) {
@@ -300,21 +315,13 @@
             newPage = pageCount;
           }
         }
-        this.current = newPage;
-        if (newPage === current) return;
-        this.$emit('page-change', newPage);
+        if (newPage === internalCurrent) return;
+        this.internalCurrent = newPage;
       },
-      handleNext() {
-        if (this.disabled) return;
-        const page = this.current + 1;
-        this.current = this.computedCurrentPage(page);
-        this.$emit('page-change', this.current);
-      },
-      handlePageChange(event) {
-        const page = Number(event.target.value);
-        if (isNaN(page)) return;
-        this.current = this.computedCurrentPage(page);
-        this.$emit('page-change', this.current);
+      handleJumper(event) {
+        const currentValue = Number(event.target.value);
+        if (isNaN(currentValue)) return;
+        this.internalCurrent = currentValue;
       },
     },
   };

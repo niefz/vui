@@ -167,6 +167,13 @@ Pagination props
 | minimal | 添加该属性，显示为迷你版翻页 | Boolean | - | false |
 | disabled | 禁用分页 | Boolean | - | false |
 
+Pagination slot
+
+| 名称 | 说明 |
+|---- |---- |
+| prev | 自定义的上一页
+| next | 自定义的下一页
+
 Pagination events
 
 | 事件名 | 说明 | 返回值 |
