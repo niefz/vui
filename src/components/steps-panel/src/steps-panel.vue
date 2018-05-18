@@ -1,6 +1,6 @@
 <template>
   <div
-    class="v-tabs--panel"
+    class="v-steps--panel"
     v-show="active"
     role="tabpanel"
     :aria-hidden="!active">
@@ -9,28 +9,25 @@
 </template>
 <script>
   export default {
-    name: 'TabsPanel',
-    componentName: 'TabsPanel',
-    inject: ['tabs'],
+    name: 'StepsPanel',
+    componentName: 'StepsPanel',
+    inject: ['steps'],
     props: {
-      name: {
-        type: String,
-        default: '',
-      },
+      name: [String, Number],
     },
     computed: {
       active() {
-        return this.tabs.active === this.name;
+        return this.steps.current === Number(this.name);
       },
     },
     mounted() {
-      this.tabs.addPanels(this);
+      this.steps.addPanels(this);
     },
     destroyed() {
       if (this.$el && this.$el.parentNode) {
         this.$el.parentNode.removeChild(this.$el);
       }
-      this.tabs.removePanels(this);
+      this.steps.removePanels(this);
     },
   };
 </script>

@@ -4,7 +4,12 @@
     :class="[
       'v-steps--' + mode,
     ]">
-    <slot></slot>
+    <div class="v-steps--nav">
+      <slot></slot>
+    </div>
+    <div class="v-steps--content" v-if="$slots.content">
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -33,6 +38,7 @@
     data() {
       return {
         steps: [],
+        panels: [],
       };
     },
     methods: {
@@ -46,9 +52,21 @@
           steps.splice(index, 1);
         }
       },
+      addPanels(item) {
+        this.panels.push(item);
+      },
+      removePanels(item) {
+        const panels = this.panels;
+        const index = panels.indexOf(item);
+        if (index > -1) {
+          panels.splice(index, 1);
+        }
+      },
       updateChildProps() {
         this.$children.forEach((child, index) => {
-          child.index = index + 1;
+          if (child.$options.name === 'StepsItem') {
+            child.index = index + 1;
+          }
         });
       },
     },

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 586584 */
-  src: url('//at.alicdn.com/t/font_586584_ienuujnileah5mi.eot');
-  src: url('//at.alicdn.com/t/font_586584_ienuujnileah5mi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_586584_ienuujnileah5mi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_586584_ienuujnileah5mi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_586584_ienuujnileah5mi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_586584_uplwonpmoz4lhaor.eot');
+  src: url('//at.alicdn.com/t/font_586584_uplwonpmoz4lhaor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_586584_uplwonpmoz4lhaor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_586584_uplwonpmoz4lhaor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_586584_uplwonpmoz4lhaor.svg#iconfont') format('svg');
 }
 
 [class*=" v-icon-"],
@@ -15,6 +15,18 @@
   text-transform: none;
   vertical-align: baseline;
   speak: none;
+}
+
+.v-icon-upload-o:before {
+  content: '\e74d';
+}
+
+.v-icon-download-o:before {
+  content: '\e74c';
+}
+
+.v-icon-mail-o:before {
+  content: '\e74b';
 }
 
 .v-icon-caret-up:before {

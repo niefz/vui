@@ -1,6 +1,5 @@
 .v-steps {
   width: 100%;
-  font-size: 0;
   &--item {
     position: relative;
     vertical-align: top;
@@ -20,9 +19,9 @@
         height: 100%;
         border: 1px solid;
         border-radius: 100%;
-        [class^=v-icon-] {
-          font-size: 20px;
-        }
+      }
+      [class^=v-icon-] {
+        font-size: 20px;
       }
     }
     &-content {
@@ -49,6 +48,9 @@
         border-color: $color-primary;
         color: $color-primary;
       }
+      [class^=v-icon-] {
+        color: $color-primary;
+      }
       .v-steps--item-title {
         color: $color-primary;
         &:after {
@@ -68,6 +70,9 @@
         background-color: $color-primary;
         color: $color-white;
       }
+      [class^=v-icon-] {
+        color: $color-primary;
+      }
       .v-steps--item-title {
         &:after {
           background-color: $color-border;
@@ -83,6 +88,9 @@
       }
       .v-steps--icon-inner {
         border-color: $color-border;
+        color: $color-border;
+      }
+      [class^=v-icon-] {
         color: $color-border;
       }
       .v-steps--item-title {
@@ -103,6 +111,9 @@
         border-color: $color-danger;
         color: $color-danger;
       }
+      [class^=v-icon-] {
+        color: $color-danger;
+      }
       .v-steps--item-title {
         color: $color-danger;
         &:after {
@@ -114,10 +125,15 @@
       }
     }
   }
+  &--content {
+    padding: 16px 0;
+  }
 }
 
 .v-steps--horizontal {
-  display: flex;
+  .v-steps--nav {
+    display: flex;
+  }
   .v-steps--item {
     display: inline-block;
     &:not(:last-child) {
