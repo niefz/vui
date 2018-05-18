@@ -72,15 +72,13 @@
       <StepsItem title="待进行" description="这里是该步骤的描述信息"></StepsItem>
       <StepsItem title="待进行" description="这里是该步骤的描述信息"></StepsItem>
       <template slot="content">
-        <StepsPanel name="1">这里是该步骤的描述信息</StepsPanel>
-        <StepsPanel name="2">这里是该步骤的描述信息</StepsPanel>
-        <StepsPanel name="3">这里是该步骤的描述信息</StepsPanel>
-        <StepsPanel name="4">这里是该步骤的描述信息</StepsPanel>
+        <StepsPanel name="1">这里是步骤一的描述信息</StepsPanel>
+        <StepsPanel name="2">这里是步骤二的描述信息</StepsPanel>
+        <StepsPanel name="3">这里是步骤三的描述信息</StepsPanel>
+        <StepsPanel name="4">这里是步骤四的描述信息</StepsPanel>
       </template>
     </Steps>
   </Col>
-</Row>
-<Row>
   <Col :span="24">
     <Button theme="primary" @click="handleClick">{{current >= 4 ? '完成' : '下一步'}}</Button>
     <Button v-if="current > 1" @click="current -= 1">上一步</Button>
