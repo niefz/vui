@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "async-validator": "1.8.1",
+    "axios": "^0.18.0",
     "deepmerge": "2.0.1",
     "popper.js": "1.14.3",
     "throttle-debounce": "1.0.1",

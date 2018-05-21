@@ -10,6 +10,9 @@
 <Row>
   <Upload 
   	action="/api/upload"
+  	:on-start="handleStart"
+  	:on-success="handleSuccess"
+  	:on-error="handleError"
   >
 		<Button theme="primary">上传</Button>
   </Upload>
@@ -33,6 +36,15 @@
       };
     },
     methods: {
+    	handleStart(file) {
+    		console.log('start', file);
+    	},
+    	handleSuccess(file) {
+				console.log('success', file);
+    	},
+    	handleError(file) {
+    		console.log('error', file);
+    	},
     },
   };
 </script>
