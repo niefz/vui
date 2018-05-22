@@ -3,6 +3,26 @@
 		display: none;
 	}
 	.v-upload__list{
-		
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.v-upload__list-item{
+		&:first-child{
+			margin-top: 10px;
+		}
+		margin-top: 5px;
+		font-size: 14px;
+		line-height: 1.8;
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		.v-upload__list-item__del{
+			cursor: pointer;
+			position: absolute;
+			right: 5px;
+			top: 0;
+			line-height: inherit;
+		}
 	}
 }

@@ -9,10 +9,12 @@
 ```html
 <Row>
   <Upload 
-  	action="/api/upload"
+  	action="http://localhost:3010/api/uploads"
   	:on-start="handleStart"
   	:on-success="handleSuccess"
   	:on-error="handleError"
+  	name="tester"
+  	:file-list="fileList"
   >
 		<Button theme="primary">上传</Button>
   </Upload>
@@ -33,6 +35,16 @@
     },
     data() {
       return {
+      	fileList: [
+      		{
+						'status': 3,
+						'name': 'FreeUI.html',
+						'size': 1921,
+						'percent': 100,
+						'raw': {},
+						'uid': 1527001881256.0994
+					}
+      	]
       };
     },
     methods: {

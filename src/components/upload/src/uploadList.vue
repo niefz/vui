@@ -1,5 +1,6 @@
 <template>
   <ul
+    v-if="files.length > 0"
     class="v-upload__list"
     :class="[
       {
@@ -13,10 +14,11 @@
       :class="[
         'v-upload__list-item'
       ]"
+    >
       <a class="v-upload__list-item-label">{{item.name}}</a>
-      <Icon name="close" @click="handleRemove(item)"></Icon>
+      <Icon icon="v-icon-close-o" class="v-upload__list-item__del" @click="handleRemove(item)"></Icon>
       <Progress :percentage="getPercentage(item)"></Progress>
-    ></li>
+    </li>
   </ul>
 </template>
 <script>
@@ -57,7 +59,7 @@
     },
     methods: {
       getPercentage(file) {
-        return parseInt(file.percentage, 10);
+        return file.percent;
       },
       handleRemove(file) {
         this.$emit('remove', file);
