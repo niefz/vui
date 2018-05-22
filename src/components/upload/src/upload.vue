@@ -99,14 +99,14 @@
       },
       handleSuccess(res, file) {
         this.onSuccess(res, file);
-        this.onChange(res, file);
+        // this.onChange(res, file);
       },
       handleProcess(e, file) {
         // this.onProgress(e, file);
       },
       handleError(err, file) {
         this.onError(err, file);
-        this.onChange(file);
+        // this.onChange(file);
       },
       upload(file) {
         this.$refs['input'].value = null;
