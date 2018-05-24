@@ -84,9 +84,35 @@
 ```
 :::
 
+## 附加内容
+
+:::demo 可在页签右边添加附加内容。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs placement="top" @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" value="用户管理"></TabsNav>
+        <TabsNav label="我的工作台" value="我的工作台"></TabsNav>
+      </template>
+      <template slot="extra">
+        <Button>附加操作</Button>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
+  import Button from '@/components/button';
   import Tabs from '@/components/tabs';
   import TabsNav from '@/components/tabs-nav';
   import TabsPanel from '@/components/tabs-panel';
@@ -95,6 +121,7 @@
     components: {
       Row,
       Col,
+      Button,
       Tabs,
       TabsNav,
       TabsPanel,

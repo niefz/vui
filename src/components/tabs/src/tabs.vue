@@ -1,6 +1,9 @@
 <template>
   <div class="v-tabs" :class="placement">
     <div class="v-tabs--header">
+      <div class="v-tabs--header-extra" v-if="$slots.extra">
+        <slot name="extra"></slot>
+      </div>
       <div class="v-tabs--nav-wrapper">
         <div class="v-tabs--nav-scroll">
           <div class="v-tabs--nav">
