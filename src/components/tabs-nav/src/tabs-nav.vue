@@ -9,20 +9,25 @@
     ]"
     role="tab"
     @click="handleClick">
-    {{label}}
+    <Icon :icon="icon" v-if="icon"></Icon>{{label}}
   </div>
 </template>
 <script>
+  import Icon from 'free-vui/src/components/icon';
   import Emitter from 'free-vui/src/mixins/emitter';
 
   export default {
     name: 'TabsNav',
     componentName: 'TabsNav',
+    components: {
+      Icon,
+    },
     mixins: [Emitter],
     inject: ['tabs'],
     props: {
       label: String,
       value: [Object, String, Number],
+      icon: String,
       disabled: Boolean,
     },
     computed: {

@@ -93,6 +93,16 @@
     position: relative;
     height: 100%;
     transition: color .3s cubic-bezier(.645, .045, .355, 1);
+    [class^=v-icon-] {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 14px;
+      line-height: 1;
+      vertical-align: baseline;
+      text-align: center;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+    }
     &.active {
       font-weight: 500;
       color: $color-primary;
