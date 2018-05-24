@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="v-tabs--panel">
+    <div class="v-tabs--body">
       <slot name="content"></slot>
     </div>
   </div>
