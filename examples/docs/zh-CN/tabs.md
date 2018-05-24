@@ -1,6 +1,6 @@
 # Tabs 标签页
 
-选项卡切换组件。
+标签页切换组件。
 
 ## 何时使用
 
@@ -42,8 +42,19 @@
 
 ```html
 <Row>
+  <Col :span="3">
+    <Select v-model="theme">
+      <SelectMenu>
+        <SelectMenuOption label="line" value="line"></SelectMenuOption>
+        <SelectMenuOption label="card" value="card"></SelectMenuOption>
+        <SelectMenuOption label="border-card" value="border-card"></SelectMenuOption>
+      </SelectMenu>
+    </Select>
+  </Col>
+</Row>
+<Row>
   <Col :span="24">
-    <Tabs theme="line" @tab-click="handleClick">
+    <Tabs :theme="theme" @tab-click="handleClick">
       <template slot="nav">
         <TabsNav label="用户管理" name="用户管理"></TabsNav>
         <TabsNav label="配置管理" name="配置管理"></TabsNav>
@@ -68,8 +79,20 @@
 
 ```html
 <Row>
+  <Col :span="3">
+    <Select v-model="size">
+      <SelectMenu>
+        <SelectMenuOption label="large" value="large"></SelectMenuOption>
+        <SelectMenuOption label="medium" value="medium"></SelectMenuOption>
+        <SelectMenuOption label="small" value="small"></SelectMenuOption>
+        <SelectMenuOption label="mini" value="mini"></SelectMenuOption>
+      </SelectMenu>
+    </Select>
+  </Col>
+</Row>
+<Row>
   <Col :span="24">
-    <Tabs theme="line" @tab-click="handleClick">
+    <Tabs :size="size" @tab-click="handleClick">
       <template slot="nav">
         <TabsNav label="用户管理" name="用户管理"></TabsNav>
         <TabsNav label="配置管理" name="配置管理"></TabsNav>
@@ -154,7 +177,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Tabs theme="line" @tab-click="handleClick">
+    <Tabs @tab-click="handleClick">
       <template slot="nav">
         <TabsNav name="我的行程">
           <Icon icon="v-icon-calendar-o"></Icon>我的行程
@@ -177,7 +200,7 @@
 
 ## 附加内容
 
-:::demo 可在页签右边添加附加内容。
+:::demo 可以在页签右边添加附加内容。
 
 ```html
 <Row>
@@ -265,7 +288,7 @@ Tabs props
 | theme | 风格类型 | string | `line` `card` `border-card` | line |
 | size | 大小 | string | `large` `medium` `small` `mini` | small |
 | placement | 页签位置 | string | `top` `right` `bottom` `left` | top |
-| default-active | 初始化选中选项卡的 name | string | - | 第一个选项卡的 name |
+| default-active | 初始化选中标签页的 name | string | - | 第一个标签页的 name |
 | closable | 标签是否可关闭 | boolean | - | false |
 | disabled | 标签是否禁用 | boolean | - | false |
 
@@ -273,17 +296,17 @@ Tabs slot
 
 | 名称 | 说明 |
 |---- |---- |
-| extra | 选项卡附加内容 |
-| nav | 选项卡 |
-| content | 选项卡面板 |
+| extra | 标签页附加内容 |
+| nav | 标签页 |
+| content | 标签页面板 |
 
 TabsNav props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| label | 选项卡的文本 | string | - | - |
-| name | 选项卡的 name | string | - | - |
-| icon | 选项卡的图标 | string | - | - |
+| label | 标签页内容 | string | - | - |
+| name | 标签页的 name | string | - | - |
+| icon | 标签页的图标 | string | - | - |
 | closable | 标签是否可关闭 | boolean | - | false |
 | disabled | 标签是否禁用 | boolean | - | false |
 
@@ -297,7 +320,7 @@ TabsPanel props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| name | 对应选项卡的 name 标识符 | string | - | - |
+| name | 对应标签页的 name 标识符 | string | - | - |
 
 <script>
   import Row from '@/components/row';
@@ -326,18 +349,14 @@ TabsPanel props
     },
     data() {
       return {
-        active: '配置管理',
+        theme: 'line',
+        size: 'small',
         placement: 'top',
       };
     },
-    watch: {
-      placement(val) {
-        console.log(val);
-      },
-    },
     methods: {
       handleClick(val) {
-        this.active = val;
+        console.log(val);
       },
     },
   };

@@ -1,5 +1,11 @@
 <template>
-  <div class="v-tabs" :class="placement">
+  <div
+    class="v-tabs"
+    :class="[
+      'v-tabs--' + theme,
+      'v-tabs--' + size,
+      'v-tabs--placement-' + placement,
+    ]">
     <div class="v-tabs--header">
       <div class="v-tabs--header-extra" v-if="$slots.extra">
         <slot name="extra"></slot>
@@ -13,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="v-tabs--content">
+    <div class="v-tabs--panel">
       <slot name="content"></slot>
     </div>
   </div>
@@ -33,6 +39,14 @@
       };
     },
     props: {
+      theme: {
+        type: String,
+        default: 'line',
+      },
+      size: {
+        type: String,
+        default: 'small',
+      },
       placement: {
         type: String,
         default: 'top',
