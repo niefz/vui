@@ -12,15 +12,209 @@
 
 ## 基础用法
 
-:::demo 默认选中第一项。
+:::demo 默认选中某一项。
 
 ```html
 <Row>
   <Col :span="24">
-    <Tabs placement="top" default-active="配置管理" @tab-click="handleClick">
+    <Tabs default-active="配置管理" @tab-click="handleClick">
       <template slot="nav">
         <TabsNav label="用户管理" name="用户管理"></TabsNav>
         <TabsNav label="配置管理" name="配置管理"></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 主题
+
+:::demo 可以通过 `theme` 设置标签的样式，可选值： `line`、`card`、`border-card`。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs theme="line" @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理"></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 大小
+
+:::demo 大号页签用在页头区域，小号用在弹出框等较狭窄的容器内。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs theme="line" @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理"></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 位置
+
+:::demo 可以通过 `placement` 设置标签的位置，可选值： `top`、`right`、`bottom`、`left`。
+
+```html
+<Row>
+  <Col :span="3">
+    <Select v-model="placement">
+      <SelectMenu>
+        <SelectMenuOption label="top" value="top"></SelectMenuOption>
+        <SelectMenuOption label="right" value="right"></SelectMenuOption>
+        <SelectMenuOption label="left" value="left"></SelectMenuOption>
+      </SelectMenu>
+    </Select>
+  </Col>
+</Row>
+<Row>
+  <Col :span="24">
+    <Tabs :placement="placement" @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 带图标的标签
+
+:::demo 通过 `icon` 属性，指定标签页的图标。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" name="用户管理" icon="v-icon-user"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台" icon="v-icon-user"></TabsNav>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 自定义标签页
+
+:::demo 可以通过 `slot` 来实现自定义标签页的内容。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs theme="line" @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav name="我的行程">
+          <Icon icon="v-icon-calendar-o"></Icon>我的行程
+        </TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+      </template>
+      <template slot="content">
+        <TabsPanel name="我的行程">我的行程</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 附加内容
+
+:::demo 可在页签右边添加附加内容。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+      </template>
+      <template slot="extra">
+        <Button>附加操作</Button>
+      </template>
+      <template slot="content">
+        <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
+        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+      </template>
+    </Tabs>
+  </Col>
+</Row>
+```
+:::
+
+## 动态增减标签页
+
+:::demo 动态增、减标签页。
+
+```html
+<Row>
+  <Col :span="24">
+    <Tabs @tab-click="handleClick">
+      <template slot="nav">
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
         <TabsNav label="角色管理" name="角色管理"></TabsNav>
         <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
       </template>
@@ -43,63 +237,12 @@
 ```html
 <Row>
   <Col :span="24">
-    <Tabs placement="top" @tab-click="handleClick">
+    <Tabs @tab-click="handleClick">
       <template slot="nav">
         <TabsNav label="用户管理" name="用户管理"></TabsNav>
         <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
         <TabsNav label="角色管理" name="角色管理"></TabsNav>
         <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
-      </template>
-      <template slot="content">
-        <TabsPanel name="用户管理">用户管理</TabsPanel>
-        <TabsPanel name="配置管理">配置管理</TabsPanel>
-        <TabsPanel name="角色管理">角色管理</TabsPanel>
-        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
-      </template>
-    </Tabs>
-  </Col>
-</Row>
-```
-:::
-
-## 带图标的标签
-
-:::demo 带图标的标签。
-
-```html
-<Row>
-  <Col :span="24">
-    <Tabs placement="top" @tab-click="handleClick">
-      <template slot="nav">
-        <TabsNav label="用户管理" name="用户管理" icon="v-icon-user"></TabsNav>
-        <TabsNav label="我的工作台" name="我的工作台" icon="v-icon-user"></TabsNav>
-      </template>
-      <template slot="content">
-        <TabsPanel name="用户管理">用户管理</TabsPanel>
-        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
-      </template>
-    </Tabs>
-  </Col>
-</Row>
-```
-:::
-
-## 附加内容
-
-:::demo 可在页签右边添加附加内容。
-
-```html
-<Row>
-  <Col :span="24">
-    <Tabs placement="top" @tab-click="handleClick">
-      <template slot="nav">
-        <TabsNav label="用户管理" name="用户管理"></TabsNav>
-        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
-        <TabsNav label="角色管理" name="角色管理"></TabsNav>
-        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
-      </template>
-      <template slot="extra">
-        <Button>附加操作</Button>
       </template>
       <template slot="content">
         <TabsPanel name="用户管理">用户管理</TabsPanel>
@@ -119,7 +262,7 @@ Tabs props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| theme | 风格类型 | string | `line` ``card` `border-card` | line |
+| theme | 风格类型 | string | `line` `card` `border-card` | line |
 | size | 大小 | string | `large` `medium` `small` `mini` | small |
 | placement | 页签位置 | string | `top` `right` `bottom` `left` | top |
 | default-active | 初始化选中选项卡的 name | string | - | 第一个选项卡的 name |
@@ -144,6 +287,12 @@ TabsNav props
 | closable | 标签是否可关闭 | boolean | - | false |
 | disabled | 标签是否禁用 | boolean | - | false |
 
+TabsNav slot
+
+| 名称 | 说明 |
+|---- |---- |
+| 无 | 标签页内容 |
+
 TabsPanel props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
@@ -153,7 +302,11 @@ TabsPanel props
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
+  import Icon from 'free-vui/src/components/icon';
   import Button from '@/components/button';
+  import Select from '@/components/select';
+  import SelectMenu from '@/components/select-menu';
+  import SelectMenuOption from '@/components/select-menu-option';
   import Tabs from '@/components/tabs';
   import TabsNav from '@/components/tabs-nav';
   import TabsPanel from '@/components/tabs-panel';
@@ -162,7 +315,11 @@ TabsPanel props
     components: {
       Row,
       Col,
+      Icon,
       Button,
+      Select,
+      SelectMenu,
+      SelectMenuOption,
       Tabs,
       TabsNav,
       TabsPanel,
@@ -170,7 +327,13 @@ TabsPanel props
     data() {
       return {
         active: '配置管理',
+        placement: 'top',
       };
+    },
+    watch: {
+      placement(val) {
+        console.log(val);
+      },
     },
     methods: {
       handleClick(val) {

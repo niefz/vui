@@ -9,7 +9,12 @@
     ]"
     role="tab"
     @click="handleClick">
-    <Icon :icon="icon" v-if="icon"></Icon>{{label}}
+    <template v-if="$slots.default">
+      <slot></slot>
+    </template>
+    <template v-else>
+      <Icon :icon="icon" v-if="icon"></Icon>{{label}}
+    </template>
   </div>
 </template>
 <script>

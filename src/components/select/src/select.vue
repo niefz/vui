@@ -105,8 +105,9 @@
         this.triggerElm.addEventListener('click', handleClick);
       },
       handleSelectOptionClick(value, instance) {
-        this.displayValue = instance.label;
         this.visible = !this.hideAfterClick;
+        this.displayValue = instance.label;
+        this.$emit('input', value, instance);
         this.$emit('change', value, instance);
       },
     },
