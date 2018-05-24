@@ -41,6 +41,8 @@
         type: String,
         default: '',
       },
+      closable: Boolean,
+      disabled: Boolean,
     },
     data() {
       return {
@@ -72,17 +74,17 @@
       },
       updateActive() {
         const tabs = this.tabs;
-        const tab = tabs.find(tab => tab.value === this.defaultActive);
+        const tab = tabs.find(tab => tab.name === this.defaultActive);
         if (tab) {
-          this.active = tab.value;
+          this.active = tab.name;
         } else {
-          this.active = tabs[0].value;
+          this.active = tabs[0].name;
         }
       },
       handleItemClick(item, event) {
-        const value = item.value;
-        this.active = value;
-        this.$emit('tab-click', value, event);
+        const name = item.name;
+        this.active = name;
+        this.$emit('tab-click', name, event);
       },
     },
     mounted() {

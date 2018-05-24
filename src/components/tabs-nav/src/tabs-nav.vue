@@ -26,13 +26,14 @@
     inject: ['tabs'],
     props: {
       label: String,
-      value: [Object, String, Number],
+      name: [Object, String, Number],
       icon: String,
+      closable: Boolean,
       disabled: Boolean,
     },
     computed: {
       active() {
-        return this.tabs.active === this.value;
+        return this.tabs.active === this.name;
       },
     },
     methods: {

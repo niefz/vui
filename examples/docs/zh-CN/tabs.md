@@ -19,10 +19,10 @@
   <Col :span="24">
     <Tabs placement="top" default-active="配置管理" @tab-click="handleClick">
       <template slot="nav">
-        <TabsNav label="用户管理" value="用户管理"></TabsNav>
-        <TabsNav label="配置管理" value="配置管理"></TabsNav>
-        <TabsNav label="角色管理" value="角色管理"></TabsNav>
-        <TabsNav label="我的工作台" value="我的工作台"></TabsNav>
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理"></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
       </template>
       <template slot="content">
         <TabsPanel name="用户管理">用户管理</TabsPanel>
@@ -45,10 +45,10 @@
   <Col :span="24">
     <Tabs placement="top" @tab-click="handleClick">
       <template slot="nav">
-        <TabsNav label="用户管理" value="用户管理"></TabsNav>
-        <TabsNav label="配置管理" value="配置管理" disabled></TabsNav>
-        <TabsNav label="角色管理" value="角色管理"></TabsNav>
-        <TabsNav label="我的工作台" value="我的工作台"></TabsNav>
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
       </template>
       <template slot="content">
         <TabsPanel name="用户管理">用户管理</TabsPanel>
@@ -71,8 +71,8 @@
   <Col :span="24">
     <Tabs placement="top" @tab-click="handleClick">
       <template slot="nav">
-        <TabsNav label="用户管理" value="用户管理" icon="v-icon-user"></TabsNav>
-        <TabsNav label="我的工作台" value="我的工作台" icon="v-icon-user"></TabsNav>
+        <TabsNav label="用户管理" name="用户管理" icon="v-icon-user"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台" icon="v-icon-user"></TabsNav>
       </template>
       <template slot="content">
         <TabsPanel name="用户管理">用户管理</TabsPanel>
@@ -93,14 +93,18 @@
   <Col :span="24">
     <Tabs placement="top" @tab-click="handleClick">
       <template slot="nav">
-        <TabsNav label="用户管理" value="用户管理"></TabsNav>
-        <TabsNav label="我的工作台" value="我的工作台"></TabsNav>
+        <TabsNav label="用户管理" name="用户管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
+        <TabsNav label="角色管理" name="角色管理"></TabsNav>
+        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
       </template>
       <template slot="extra">
         <Button>附加操作</Button>
       </template>
       <template slot="content">
         <TabsPanel name="用户管理">用户管理</TabsPanel>
+        <TabsPanel name="配置管理">配置管理</TabsPanel>
+        <TabsPanel name="角色管理">角色管理</TabsPanel>
         <TabsPanel name="我的工作台">我的工作台</TabsPanel>
       </template>
     </Tabs>
@@ -108,6 +112,43 @@
 </Row>
 ```
 :::
+
+## API
+
+Tabs props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| theme | 风格类型 | string | `line` ``card` `border-card` | line |
+| size | 大小 | string | `large` `medium` `small` `mini` | small |
+| placement | 页签位置 | string | `top` `right` `bottom` `left` | top |
+| default-active | 初始化选中选项卡的 name | string | - | 第一个选项卡的 name |
+| closable | 标签是否可关闭 | boolean | - | false |
+| disabled | 标签是否禁用 | boolean | - | false |
+
+Tabs slot
+
+| 名称 | 说明 |
+|---- |---- |
+| extra | 选项卡附加内容 |
+| nav | 选项卡 |
+| content | 选项卡面板 |
+
+TabsNav props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| label | 选项卡的文本 | string | - | - |
+| name | 选项卡的 name | string | - | - |
+| icon | 选项卡的图标 | string | - | - |
+| closable | 标签是否可关闭 | boolean | - | false |
+| disabled | 标签是否禁用 | boolean | - | false |
+
+TabsPanel props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| name | 对应选项卡的 name 标识符 | string | - | - |
 
 <script>
   import Row from '@/components/row';
