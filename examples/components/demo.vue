@@ -64,7 +64,7 @@
     },
   };
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style lang="scss">
   .demo {
     position: relative;
     border: dashed 1px #E8E8E8;
