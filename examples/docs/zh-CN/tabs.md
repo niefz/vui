@@ -234,7 +234,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Tabs @tab-click="handleClick">
+    <Tabs @tab-click="handleClick" closable>
       <template slot="nav">
         <TabsNav label="用户管理" name="用户管理"></TabsNav>
         <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
