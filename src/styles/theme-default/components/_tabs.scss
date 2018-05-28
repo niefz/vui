@@ -13,6 +13,7 @@
     position: relative;
     z-index: 2;
     display: inline-block;
+    font-size: 0;
     transition: transform .3s;
     &-wrapper {
       position: relative;
@@ -35,6 +36,7 @@
     &-item {
       position: relative;
       height: 100%;
+      font-size: 12px;
       transition: color .3s cubic-bezier(.645, .045, .355, 1);
       [class^=v-icon-] {
         display: inline-block;
@@ -128,6 +130,56 @@
     }
     .v-tabs--panel {
       padding: 0 16px;
+    }
+  }
+}
+
+.v-tabs--card {
+  .v-tabs--header {
+    .v-tabs--nav {
+      border: {
+        top: 1px solid $color-border;
+        right: 1px solid $color-border;
+        left: 1px solid $color-border;
+      }
+      &-item {
+        margin: -1px 0 0 -1px;
+        border: {
+          top: 1px solid transparent;
+          bottom: 1px solid transparent;
+          left: 1px solid $color-border;
+        };
+        transition: color .3s cubic-bezier(.645, .045, .355, 1);
+        &:not(:last-child) {
+          border-right: 1px solid $color-border;
+        }
+        &.active {
+          border-bottom-color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.v-tabs--border-card {
+  border: 1px solid $color-border;
+  background-color: $color-white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
+  .v-tabs--header {
+    background-color: $color-background;
+    .v-tabs--nav {
+      &-item {
+        margin: -1px 0 0 -1px;
+        border: 1px solid transparent;
+        transition: all .3s cubic-bezier(.645, .045, .355, 1);
+        &.active {
+          border: {
+            right-color: $color-border;
+            left-color: $color-border;
+          }
+          background-color: $color-white;
+        }
+      }
     }
   }
 }

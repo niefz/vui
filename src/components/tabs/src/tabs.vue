@@ -13,7 +13,7 @@
       <div class="v-tabs--nav-wrapper">
         <div class="v-tabs--nav-scroll">
           <div class="v-tabs--nav">
-            <TabsBar :nav="tabs"></TabsBar>
+            <TabsBar :nav="tabs" v-if="theme === 'line'"></TabsBar>
             <slot name="nav"></slot>
           </div>
         </div>

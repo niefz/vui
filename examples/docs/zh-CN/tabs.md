@@ -57,7 +57,7 @@
     <Tabs :theme="theme" @tab-click="handleClick">
       <template slot="nav">
         <TabsNav label="用户管理" name="用户管理"></TabsNav>
-        <TabsNav label="配置管理" name="配置管理"></TabsNav>
+        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
         <TabsNav label="角色管理" name="角色管理"></TabsNav>
         <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
       </template>
