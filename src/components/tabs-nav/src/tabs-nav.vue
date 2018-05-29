@@ -14,6 +14,9 @@
     </template>
     <template v-else>
       <Icon :icon="icon" v-if="icon"></Icon>{{label}}
+      <span class="v-tabs--nav-close" v-if="isClosable && !disabled">
+        <Icon icon="v-icon-close-o"></Icon>
+      </span>
     </template>
   </div>
 </template>
@@ -39,6 +42,9 @@
     computed: {
       active() {
         return this.tabs.active === this.name;
+      },
+      isClosable() {
+        return this.tabs.closable || this.closable;
       },
     },
     methods: {

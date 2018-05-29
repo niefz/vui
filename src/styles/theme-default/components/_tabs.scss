@@ -37,8 +37,8 @@
       position: relative;
       height: 100%;
       font-size: 12px;
-      transition: color .3s cubic-bezier(.645, .045, .355, 1);
-      [class^=v-icon-] {
+      //transition: color .3s cubic-bezier(.645, .045, .355, 1);
+      > [class^=v-icon-] {
         display: inline-block;
         margin-right: 8px;
         font-size: 14px;
@@ -56,10 +56,25 @@
         font-weight: 500;
         color: $color-primary;
       }
+      &:hover, &.active {
+        .v-tabs--nav-close {
+          width: 14px;
+        }
+      }
       &.disabled {
         color: $color-text-disabled;
         cursor: not-allowed;
       }
+    }
+    &-close {
+      position: absolute;
+      right: 0;
+      width: 0;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 50%;
+      transform-origin: 100% 50%;
+      transition: all .3s cubic-bezier(.645, .045, .355, 1);
     }
   }
   &--body {
@@ -148,7 +163,8 @@
           top: 1px solid transparent;
           bottom: 1px solid transparent;
           left: 1px solid $color-border;
-        };
+        }
+      ;
         transition: color .3s cubic-bezier(.645, .045, .355, 1);
         &:not(:last-child) {
           border-right: 1px solid $color-border;
