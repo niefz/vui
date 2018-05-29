@@ -234,18 +234,15 @@
 ```html
 <Row>
   <Col :span="24">
-    <Tabs @tab-click="handleClick" closable>
+    <Tabs v-model="activeName" @tab-remove="handleTabRemove" @tab-click="handleClick" closable>
       <template slot="nav">
-        <TabsNav label="用户管理" name="用户管理"></TabsNav>
-        <TabsNav label="配置管理" name="配置管理" disabled></TabsNav>
-        <TabsNav label="角色管理" name="角色管理"></TabsNav>
-        <TabsNav label="我的工作台" name="我的工作台"></TabsNav>
+        <TabsNav :label="tab.label" :name="tab.name" :key="tab.name" v-for="tab in tabs"></TabsNav>
+      </template>
+      <template slot="extra">
+        <Button @click="handleIncrease">新增</Button>
       </template>
       <template slot="content">
-        <TabsPanel name="用户管理">用户管理</TabsPanel>
-        <TabsPanel name="配置管理">配置管理</TabsPanel>
-        <TabsPanel name="角色管理">角色管理</TabsPanel>
-        <TabsPanel name="我的工作台">我的工作台</TabsPanel>
+        <TabsPanel :name="tab.name" :key="tab.name" v-for="tab in tabs">{{tab.content}}</TabsPanel>
       </template>
     </Tabs>
   </Col>
@@ -352,11 +349,52 @@ TabsPanel props
         theme: 'line',
         size: 'small',
         placement: 'top',
+        activeName: '',
+        tabs: [
+          {
+            label: '未处理任务',
+            name: '未处理任务',
+            content: '未处理任务',
+          },
+          {
+            label: '已处理任务',
+            name: '已处理任务',
+            content: '已处理任务',
+          },
+          {
+            label: '未处理消息',
+            name: '未处理消息',
+            content: '未处理消息',
+          },
+        ],
       };
     },
     methods: {
       handleClick(val) {
         console.log(val);
+      },
+      handleIncrease() {
+        this.tabs.push({
+          label: '过期消息',
+          name: '过期消息',
+          content: '过期消息',
+        });
+      },
+      handleTabRemove(targetName) {
+        const tabs = this.tabs;
+        let activeName = this.activeName;
+        if (activeName === targetName) {
+          tabs.forEach((tab, index) => {
+            if (tab.name === targetName) {
+              const nextTab = tabs[index + 1] || tabs[index - 1];
+              if (nextTab) {
+                activeName = nextTab.name;
+              }
+            }
+          });
+        }
+        this.activeName = activeName;
+        this.tabs = tabs.filter(tab => tab.name !== targetName);
       },
     },
   };

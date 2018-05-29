@@ -13,7 +13,7 @@
       <div class="v-tabs--nav-wrapper">
         <div class="v-tabs--nav-scroll">
           <div class="v-tabs--nav">
-            <TabsBar :nav="tabs" v-if="theme === 'line'"></TabsBar>
+            <TabsBar :navs="navs" v-if="theme === 'line'"></TabsBar>
             <slot name="nav"></slot>
           </div>
         </div>
@@ -39,6 +39,7 @@
       };
     },
     props: {
+      value: {},
       theme: {
         type: String,
         default: 'line',
@@ -60,20 +61,25 @@
     },
     data() {
       return {
-        tabs: [],
+        navs: [],
         panels: [],
-        active: this.defaultActive,
+        currentName: this.value || this.defaultActive,
       };
     },
-    methods: {
-      addTabs(item) {
-        this.tabs.push(item);
+    watch: {
+      value(value) {
+        this.updateActive(value);
       },
-      removeTabs(item) {
-        const tabs = this.tabs;
-        const index = tabs.indexOf(item);
+    },
+    methods: {
+      addNavs(item) {
+        this.navs.push(item);
+      },
+      removeNavs(item) {
+        const navs = this.navs;
+        const index = navs.indexOf(item);
         if (index > -1) {
-          tabs.splice(index, 1);
+          navs.splice(index, 1);
         }
       },
       addPanels(item) {
@@ -86,22 +92,34 @@
           panels.splice(index, 1);
         }
       },
-      updateActive() {
-        const tabs = this.tabs;
-        const tab = tabs.find(tab => tab.name === this.defaultActive);
-        if (tab) {
-          this.active = tab.name;
+      updateActive(value) {
+        let activeName;
+        const navs = this.navs;
+        const nav = navs.find(tab => tab.name === this.defaultActive);
+        if (value) {
+          activeName = value;
         } else {
-          this.active = tabs[0].name;
+          if (nav) {
+            activeName = nav.name;
+          } else {
+            activeName = navs[0].name;
+          }
         }
+        this.currentName = activeName;
+        this.$emit('input', activeName);
       },
       handleItemClick(item, event) {
-        const name = item.name;
-        this.active = name;
-        this.$emit('tab-click', name, event);
+        const activeName = item.name;
+        this.updateActive(activeName);
+        this.$emit('tab-click', activeName, event);
+      },
+      handleItemRemove(pane, event) {
+        if (pane.disabled) return;
+        this.$emit('tab-remove', pane.name, event);
       },
     },
     mounted() {
+      this.$on('tabs-item-remove', this.handleItemRemove);
       this.$on('tabs-item-click', this.handleItemClick);
       this.$watch('tabs', this.updateActive());
     },

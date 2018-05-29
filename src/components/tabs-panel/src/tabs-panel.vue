@@ -1,9 +1,9 @@
 <template>
   <div
     class="v-tabs--panel"
-    v-show="active"
+    v-show="isActive"
     role="tabpanel"
-    :aria-hidden="!active">
+    :aria-hidden="!isActive">
     <slot></slot>
   </div>
 </template>
@@ -19,8 +19,8 @@
       },
     },
     computed: {
-      active() {
-        return this.tabs.active === this.name;
+      isActive() {
+        return this.tabs.currentName === this.name;
       },
     },
     mounted() {
