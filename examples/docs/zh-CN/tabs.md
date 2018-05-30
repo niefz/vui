@@ -236,7 +236,7 @@
   <Col :span="24">
     <Tabs v-model="activeName" @tab-remove="handleTabRemove" @tab-click="handleClick" closable>
       <template slot="nav">
-        <TabsNav :label="tab.label" :name="tab.name" :key="tab.name" v-for="tab in tabs"></TabsNav>
+        <TabsNav :label="tab.label" :name="tab.name" :disabled="tab.disabled" :key="tab.name" v-for="tab in tabs"></TabsNav>
       </template>
       <template slot="extra">
         <Button @click="handleIncrease">新增</Button>
@@ -350,6 +350,7 @@ TabsPanel props
         size: 'small',
         placement: 'top',
         activeName: '',
+        tabIndex: 0,
         tabs: [
           {
             label: '未处理任务',
@@ -360,6 +361,7 @@ TabsPanel props
             label: '已处理任务',
             name: '已处理任务',
             content: '已处理任务',
+            disabled: true,
           },
           {
             label: '未处理消息',
@@ -374,27 +376,16 @@ TabsPanel props
         console.log(val);
       },
       handleIncrease() {
+        this.tabIndex += 1;
         this.tabs.push({
-          label: '过期消息',
-          name: '过期消息',
-          content: '过期消息',
+          label: `标签${this.tabIndex}`,
+          name: `标签${this.tabIndex}`,
+          content: `Content of 标签${this.tabIndex}`,
         });
+        this.activeName = `标签${this.tabIndex}`;
       },
       handleTabRemove(targetName) {
-        const tabs = this.tabs;
-        let activeName = this.activeName;
-        if (activeName === targetName) {
-          tabs.forEach((tab, index) => {
-            if (tab.name === targetName) {
-              const nextTab = tabs[index + 1] || tabs[index - 1];
-              if (nextTab) {
-                activeName = nextTab.name;
-              }
-            }
-          });
-        }
-        this.activeName = activeName;
-        this.tabs = tabs.filter(tab => tab.name !== targetName);
+        this.tabs = this.tabs.filter(tab => tab.name !== targetName);
       },
     },
   };

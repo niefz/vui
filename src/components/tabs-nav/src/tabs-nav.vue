@@ -14,7 +14,7 @@
     </template>
     <template v-else>
       <Icon :icon="icon" v-if="icon"></Icon>{{label}}
-      <span class="v-tabs--nav-close" @click.stop="handleTabRemove" v-if="isClosable && !disabled">
+      <span class="v-tabs--nav-close" @click="handleTabRemove" v-if="isClosable && !disabled">
         <Icon icon="v-icon-close-o"></Icon>
       </span>
     </template>

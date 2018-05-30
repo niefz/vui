@@ -94,11 +94,11 @@
       },
       updateActive(value) {
         let activeName;
-        const navs = this.navs;
-        const nav = navs.find(tab => tab.name === this.defaultActive);
         if (value) {
           activeName = value;
         } else {
+          const navs = this.navs;
+          const nav = navs.find(tab => tab.name === this.defaultActive);
           if (nav) {
             activeName = nav.name;
           } else {
@@ -113,14 +113,37 @@
         this.updateActive(activeName);
         this.$emit('tab-click', activeName, event);
       },
+      setCurrent(navs, targetName) {
+        navs.forEach((nav, index) => {
+          if (nav.name === targetName) {
+            this.$nextTick(() => {
+              const nextNav = navs[index + 1] || navs[index - 1];
+              if (nextNav) {
+                if (nextNav.disabled) {
+                  this.setCurrent(navs, nextNav.name);
+                } else {
+                  this.updateActive(nextNav.name);
+                }
+              }
+            });
+          }
+        });
+      },
       handleItemRemove(pane, event) {
         if (pane.disabled) return;
+        event.stopPropagation();
+        const navs = this.navs;
+        let activeName = this.currentName;
+        const targetName = pane.name;
+        if (activeName === targetName) {
+          this.setCurrent(navs, targetName);
+        }
         this.$emit('tab-remove', pane.name, event);
       },
     },
     mounted() {
-      this.$on('tabs-item-remove', this.handleItemRemove);
       this.$on('tabs-item-click', this.handleItemClick);
+      this.$on('tabs-item-remove', this.handleItemRemove);
       this.$watch('tabs', this.updateActive());
     },
   };
