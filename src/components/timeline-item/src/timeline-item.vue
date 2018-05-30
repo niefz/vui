@@ -1,10 +1,12 @@
 <template>
   <li class="v-timeline-item">
-    <span 
-      class="v-timeline-item__head"
-      :style="style"
-    >
-    </span>
+    <slot name="itemIcon">
+      <span 
+        class="v-timeline-item__head"
+        :style="style"
+      >
+      </span>
+    </slot>
     <div class="v-timeline-item__content">
       <slot></slot>
     </div>
