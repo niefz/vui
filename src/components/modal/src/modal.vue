@@ -3,13 +3,12 @@
     <transition name="fade-in-linear">
       <div class="v-modal--mask" v-show="visible" @click.self="handleWrapperClick"></div>
     </transition>
-    <transition :name="name">
+    <transition :name="transition">
       <div class="v-modal--wrapper" v-show="visible" @click.self="handleWrapperClick">
         <div
           ref="modal"
           class="v-modal"
           :class="[
-            'v-modal--' + placement,
             {
               ['fullscreen']: fullscreen,
             }
@@ -20,7 +19,7 @@
               <slot name="title">
                 <span class="v-modal--header-title">{{title}}</span>
               </slot>
-              <em class="v-modal--header-close" v-show="closable" @click="handleClose">
+              <em class="v-modal--header-close" v-show="showClose" @click="handleClose">
                 <slot name="close">
                   <Icon icon="v-icon-close-o"></Icon>
                 </slot>
@@ -53,19 +52,31 @@
       Button,
     },
     props: {
+      visible: {
+        type: Boolean,
+        default: true,
+      },
       transition: {
         type: String,
-        default: '',
-      },
-      placement: {
-        type: String,
-        default: 'middle',
+        default: 'modal-fade',
       },
       title: {
         type: String,
+        default: '提示',
+      },
+      top: {
+        type: String,
         default: '',
       },
-      visible: {
+      width: {
+        type: String,
+        default: '50%',
+      },
+      mask: {
+        type: Boolean,
+        default: true,
+      },
+      maskAppendToBody: {
         type: Boolean,
         default: true,
       },
@@ -73,11 +84,7 @@
         type: Boolean,
         default: true,
       },
-      mask: {
-        type: Boolean,
-        default: true,
-      },
-      maskAppendToBody: {
+      showClose: {
         type: Boolean,
         default: true,
       },
@@ -89,20 +96,10 @@
         type: Boolean,
         default: true,
       },
-      closable: {
-        type: Boolean,
-        default: true,
-      },
       footer: {
         type: Boolean,
         default: true,
       },
-      lockScroll: {
-        type: Boolean,
-        default: true,
-      },
-      loading: Boolean,
-      fullscreen: Boolean,
       okText: {
         type: String,
         default: '确定',
@@ -111,8 +108,9 @@
         type: String,
         default: '取消',
       },
-      top: String,
-      width: String,
+      lockScroll: Boolean,
+      fullscreen: Boolean,
+      loading: Boolean,
       beforeClose: Function,
     },
     data() {
@@ -123,40 +121,17 @@
     computed: {
       style() {
         let style = {};
-        style.width = this.width || '50%';
         if (!this.fullscreen) {
-          if (this.placement === 'middle') {
-            if (this.top) {
-              style.top = this.top;
-              style.transform = 'translate(-50%, 0)';
-            } else {
-              style.top = '50%';
-              style.transform = 'translate(-50%, -50%)';
-            }
+          style.width = this.width;
+          if (this.top) {
+            style.top = this.top;
+            style.transform = 'translate(-50%, 0)';
+          } else {
+            style.top = '50%';
+            style.transform = 'translate(-50%, -50%)';
           }
         }
         return style;
-      },
-      name() {
-        let name;
-        switch (this.placement) {
-          case 'top-right':
-            name = 'modal-zoom-top-right';
-            break;
-          case 'top-left':
-            name = 'modal-zoom-top-left';
-            break;
-          case 'bottom-right':
-            name = 'modal-zoom-bottom-right';
-            break;
-          case 'bottom-left':
-            name = 'modal-zoom-bottom-left';
-            break;
-          default:
-            name = 'modal-fade';
-            break;
-        }
-        return this.transition || name;
       },
     },
     watch: {

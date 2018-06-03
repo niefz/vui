@@ -111,7 +111,7 @@
       handleItemClick(item, event) {
         const activeName = item.name;
         this.updateActive(activeName);
-        this.$emit('tab-click', activeName, event);
+        this.$emit('tab-click', this, event);
       },
       setCurrent(navs, targetName) {
         navs.forEach((nav, index) => {

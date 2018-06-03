@@ -289,6 +289,13 @@ Tabs props
 | closable | 标签是否可关闭 | boolean | - | false |
 | disabled | 标签是否禁用 | boolean | - | false |
 
+Tabs events
+
+| 事件名 | 说明 | 返回值 |
+|---- |---- |---- |
+| tab-click | tab 被选中时触发 | 被选中的标签 tab 实例 |
+| tab-remove | tab 被移除时触发 | 被删除的标签的 name |
+
 Tabs slot
 
 | 名称 | 说明 |

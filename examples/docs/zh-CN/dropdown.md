@@ -203,7 +203,7 @@ Dropdown events
 | 事件名 | 说明 | 返回值 |
 |---- |---- |---- |
 | change | 点击菜单项时触发 | DropdownMenuItem 的 value 值 |
-| visible-change | 菜单显示状态改变时触发 | visible |
+| visible-change | 菜单显示状态改变时触发 | true \| false |
 
 Dropdown slot
 
