@@ -9,10 +9,7 @@
           ref="modal"
           class="v-drawer"
           :class="[
-            'v-drawer--' + placement,
-            {
-              ['fullscreen']: fullscreen,
-            }
+            'v-drawer--' + placement
           ]">
           <div class="v-drawer--header">
             <slot name="header">
@@ -56,19 +53,23 @@
         type: String,
         default: '',
       },
-      placement: {
-        type: String,
-        default: 'right',
+      visible: {
+        type: Boolean,
+        default: true,
       },
       title: {
         type: String,
         default: '',
       },
-      visible: {
+      placement: {
+        type: String,
+        default: 'right',
+      },
+      mask: {
         type: Boolean,
         default: true,
       },
-      mask: {
+      showClose: {
         type: Boolean,
         default: true,
       },
@@ -80,20 +81,10 @@
         type: Boolean,
         default: true,
       },
-      closable: {
-        type: Boolean,
-        default: true,
-      },
       footer: {
         type: Boolean,
         default: true,
       },
-      lockScroll: {
-        type: Boolean,
-        default: true,
-      },
-      loading: Boolean,
-      fullscreen: Boolean,
       okText: {
         type: String,
         default: '确定',
@@ -102,6 +93,7 @@
         type: String,
         default: '取消',
       },
+      loading: Boolean,
       beforeClose: Function,
     },
     data() {
