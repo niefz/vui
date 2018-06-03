@@ -90,6 +90,13 @@ export default {
       }, 'pagination'),
     },
     {
+      path: '/zh-CN/components/side-nav',
+      name: 'SideNav 侧导航',
+      component: sideNav => require.ensure([], (require) => {
+        sideNav(require('../docs/zh-CN/side-nav.md'));
+      }, 'sideNav'),
+    },
+    {
       path: '/zh-CN/components/steps',
       name: 'Steps 步骤条',
       component: steps => require.ensure([], (require) => {

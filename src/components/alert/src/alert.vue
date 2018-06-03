@@ -4,14 +4,13 @@
       class="v-alert"
       :class="[
         'v-alert--' + theme,
-        'v-alert--align-' + align,
         {
           ['v-alert--with-icon']: showIcon,
         }
       ]"
       v-show="visible">
       <div class="v-alert--message" :class="{'with-desc': $slots.desc || description}">
-        <Icon :icon="`v-icon-${theme}`" v-if="showIcon"></Icon>
+        <Icon :icon="iconClass" v-if="showIcon"></Icon>
         <span class="v-alert--message-title">
           <slot>{{message}}</slot>
         </span>
@@ -44,10 +43,6 @@
         type: String,
         default: 'info',
       },
-      align: {
-        type: String,
-        default: 'left',
-      },
       message: {
         type: String,
         default: '',
@@ -56,17 +51,26 @@
         type: String,
         default: '',
       },
-      closeText: {
+      icon: {
         type: String,
         default: '',
       },
       showIcon: Boolean,
+      closeText: {
+        type: String,
+        default: '',
+      },
       closable: Boolean,
     },
     data() {
       return {
         visible: true,
       };
+    },
+    computed: {
+      iconClass() {
+        return this.icon || `v-icon-${this.theme}`;
+      },
     },
     methods: {
       handleClose() {

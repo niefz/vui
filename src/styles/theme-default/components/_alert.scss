@@ -8,15 +8,6 @@
   overflow: hidden;
   opacity: 1;
   transition: opacity .3s;
-  &--align-left {
-    text-align: left;
-  }
-  &--align-center {
-    text-align: center;
-  }
-  &--align-right {
-    text-align: right;
-  }
   &--info {
     border-color: $color-primary-disabled;
     background-color: $color-primary-alert;
