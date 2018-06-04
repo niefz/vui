@@ -3,9 +3,11 @@
   display: block;
   width: auto;
   padding: 8px 32px 8px 10px;
-  border: 1px solid;
+  background-color: $color-white;
   border-radius: $border-radius;
+  color: $color-text-primary;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
   transition: opacity .3s, transform .3s, left .3s, right .3s, top .3s, bottom .3s;
   &.right {
     right: 16px;
@@ -13,34 +15,25 @@
   &.left {
     left: 16px;
   }
-  &--align-left {
-    text-align: left;
-  }
-  &--align-center {
-    text-align: center;
-  }
-  &--align-right {
-    text-align: right;
-  }
   &--info {
-    border-color: $color-primary-disabled;
-    background-color: $color-primary-alert;
-    color: $color-primary;
+    > [class^=v-icon-] {
+      color: $color-text-primary;
+    }
   }
   &--success {
-    border-color: $color-success-disabled;
-    background-color: $color-success-alert;
-    color: $color-success;
+    [class^=v-icon-] {
+      color: $color-primary;
+    }
   }
   &--warning {
-    border-color: $color-warning-disabled;
-    background-color: $color-warning-alert;
-    color: $color-warning;
+    [class^=v-icon-] {
+      color: $color-warning;
+    }
   }
-  &--danger {
-    border-color: $color-danger-disabled;
-    background-color: $color-warning-alert;
-    color: $color-danger;
+  &--error {
+    [class^=v-icon-] {
+      color: $color-danger;
+    }
   }
   &--with-icon {
     padding-left: 30px;
@@ -71,6 +64,9 @@
     top: 8px;
     right: 10px;
     cursor: pointer;
+    [class^=v-icon-] {
+      color: $color-text-primary;
+    }
   }
 }
 

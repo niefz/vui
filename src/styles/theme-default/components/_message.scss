@@ -5,40 +5,26 @@
   max-width: 50%;
   min-height: 18px;
   padding: 10px 20px;
-  border: 1px solid;
   border-radius: $border-radius;
   transform: translateX(-50%);
   overflow: hidden;
   opacity: 1;
   transition: opacity .3s, transform .3s;
-  &--align-left {
-    text-align: left;
-  }
-  &--align-center {
-    text-align: center;
-  }
-  &--align-right {
-    text-align: right;
-  }
   &--info {
-    border-color: $color-primary-disabled;
-    background-color: $color-primary-alert;
-    color: $color-primary;
+    background-color: $color-white;
+    color: $color-text-primary;
   }
   &--success {
-    border-color: $color-success-disabled;
-    background-color: $color-success-alert;
-    color: $color-success;
+    background-color: $color-success;
+    color: $color-white;
   }
   &--warning {
-    border-color: $color-warning-disabled;
-    background-color: $color-warning-alert;
-    color: $color-warning;
+    background-color: $color-warning;
+    color: $color-white;
   }
-  &--danger {
-    border-color: $color-danger-disabled;
-    background-color: $color-danger-alert;
-    color: $color-danger;
+  &--error {
+    background-color: $color-danger;
+    color: $color-white;
   }
   &--with-icon {
     padding-left: 30px;

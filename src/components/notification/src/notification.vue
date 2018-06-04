@@ -4,7 +4,6 @@
       class="v-notify"
       :class="[
         'v-notify--' + theme,
-        'v-notify--align-' + align,
         horizontalProperty,
         {
           ['v-notify--with-icon']: showIcon,
@@ -15,7 +14,7 @@
       @mouseleave="startTimer"
       v-show="visible">
       <div class="v-notify--message" :class="{'with-content': content}">
-        <Icon :icon="`v-icon-${theme}`" v-if="showIcon"></Icon>
+        <Icon :icon="iconClass" v-if="showIcon"></Icon>
         <span class="v-notify--message-title" v-html="title"></span>
         <template v-if="content">
           <div class="v-alert--message-content" v-html="content"></div>
@@ -47,7 +46,6 @@
         title: '',
         content: '',
         closeText: '',
-        align: 'left',
         placement: 'top-right',
         offset: 0,
         duration: 3000,
@@ -57,7 +55,7 @@
     },
     computed: {
       iconClass() {
-        return this.customIcon || `v-icon-${this.theme}`;
+        return this.icon || `v-icon-${this.theme}`;
       },
       horizontalProperty() {
         return /-right$/.test(this.placement) ? 'right' : 'left';

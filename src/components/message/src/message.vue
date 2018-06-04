@@ -4,7 +4,6 @@
       class="v-message"
       :class="[
         'v-message--' + theme,
-        'v-message--align-' + align,
         {
           ['v-message--with-icon']: showIcon,
         }
@@ -32,14 +31,13 @@
         closed: false,
         theme: 'info',
         message: '',
-        align: 'left',
         duration: 3000,
         showIcon: true,
       };
     },
     computed: {
       iconClass() {
-        return this.customIcon || `v-icon-${this.theme}`;
+        return this.icon || `v-icon-${this.theme}`;
       },
     },
     watch: {
