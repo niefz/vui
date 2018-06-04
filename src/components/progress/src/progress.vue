@@ -15,6 +15,8 @@
     aria-valuemax="100">
     <div class="v-progress-bar" v-if="shape === 'line'">
       <div class="v-progress-bar--outer" :style="{ height: strokeWidth + 'px' }">
+        <div class="v-progress-bar--exception" :style="{ width: exceptionPercent + '%' }" v-if="exceptionPercent"></div>
+        <div class="v-progress-bar--success" :style="{ width: successPercent + '%' }" v-if="successPercent"></div>
         <div class="v-progress-bar--inner" :style="{ width: percentage + '%' }">
           <div class="v-progress-bar--inner-text" v-if="!hideInfo && textInside">
             <template v-if="$slots.default"><slot></slot></template>
@@ -44,7 +46,7 @@
     </div>
     <div
       class="v-progress-text"
-      :style="{ fontSize: progressTextSize + 'px' }"
+      :style="{ fontSize: textSize + 'px' }"
       v-if="!hideInfo && !textInside">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>
@@ -69,19 +71,25 @@
         default: 'line',
         validator: val => ['line', 'circle', 'dashboard'].indexOf(val) > -1,
       },
-      status: {
-        type: String,
-        default: 'normal',
-      },
-      strokeWidth: {
-        type: Number,
-        default: 6,
-      },
       percentage: {
         type: Number,
         default: 0,
         required: true,
         validator: val => val >= 0 && val <= 100,
+      },
+      successPercent: {
+        type: Number,
+        default: 0,
+        validator: val => val >= 0 && val <= 100,
+      },
+      exceptionPercent: {
+        type: Number,
+        default: 0,
+        validator: val => val >= 0 && val <= 100,
+      },
+      strokeWidth: {
+        type: Number,
+        default: 6,
       },
       width: {
         type: Number,
@@ -91,15 +99,20 @@
         type: String,
         default: '',
       },
-      progressTextSize: {
+      status: {
         type: String,
-        default: '12',
+        default: 'normal',
+        validator: val => ['normal', 'active', 'success', 'exception'].indexOf(val) > -1,
       },
-      hideInfo: {
+      textSize: {
+        type: Number,
+        default: 12,
+      },
+      textInside: {
         type: Boolean,
         default: false,
       },
-      textInside: {
+      hideInfo: {
         type: Boolean,
         default: false,
       },

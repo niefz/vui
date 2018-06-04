@@ -40,25 +40,41 @@
   }
 }
 
-.v-progress-bar--outer {
-  position: relative;
-  background-color: $color-background;
-  border-radius: 100px;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.v-progress-bar--inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: $color-primary;
-  border-radius: 100px;
-  line-height: 1;
-  text-align: right;
-  white-space: nowrap;
-  transition: all .3s cubic-bezier(.08, .82, .17, 1) 0s;
+.v-progress-bar {
+  &--outer {
+    position: relative;
+    background-color: $color-background;
+    border-radius: 100px;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  &--inner {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $color-primary;
+    border-radius: 100px;
+    line-height: 1;
+    text-align: right;
+    white-space: nowrap;
+    transition: all .3s cubic-bezier(.08, .82, .17, 1) 0s;
+  }
+  &--success, &--exception {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 100px;
+  }
+  &--success {
+    background-color: $color-success;
+  }
+  &--exception {
+    background-color: $color-danger;
+  }
 }
 
 .v-progress--hide-info {
