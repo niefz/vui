@@ -154,6 +154,12 @@ Progress props
 | text-inside | 进度条显示文本内置在进度条内（只在 shape="line" 时可用） | boolean | - | false |
 | hide-info | 是否隐藏进度条文本内容 | boolean | - | false |
 
+Progress slot
+
+| 名称 | 说明 |
+|---- |---- |
+| 无 | 进度条文本内容 |
+
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';

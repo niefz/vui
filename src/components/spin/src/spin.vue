@@ -1,5 +1,6 @@
 <template>
   <div class="v-spin">
+    <div class="v-spin--mask" :style="{ backgroundColor: background }"></div>
     <div class="v-spin--inner">
       <template v-if="icon">
         <Icon class="v-spin--inner-icon" :icon="icon"></Icon>
@@ -30,6 +31,7 @@
     props: {
       tip: String,
       icon: String,
+      background: String,
     },
   };
 </script>

@@ -2,7 +2,7 @@
 
 用于标记。
 
-## 基础用法
+## 基本用法
 
 :::demo 定义value属性，它接受Number或者String。
 
