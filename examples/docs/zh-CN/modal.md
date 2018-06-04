@@ -35,9 +35,9 @@
 ```html
 <Row>
   <Col :span="24">
-    <Button @click="visible = true">Open Modal</Button>
+    <Button @click="customVisible = true">Open Modal</Button>
     <Modal
-      :visible.sync="visible"
+      :visible.sync="customVisible"
       title="自定义"
       :loading="loading"
       :before-close="beforeClose"
@@ -61,8 +61,9 @@ Modal props
 | transition | Modal 弹出动效 | string | - | modal-fade |
 | title | 标题 | string | - | 提示 |
 | top | Modal CSS 中的 top 值 | string | - | 0 |
-| width | Modal 的宽度 | string | - | 50% | 
+| width | Modal 的宽度 | string | - | 50% |
 | mask | 是否显示遮罩层 | boolean | - | true |
+| maskClassName | 遮罩层 className | string | - | v-modal--mask |
 | mask-append-to-body | 遮罩层是否插入至 body 元素上，若为 false，则遮罩层会插入至 Modal 的父元素上 | boolean | - | true |
 | modal-append-to-body | Modal 自身是否插入至 body 元素上 | boolean | - | true |
 | show-close | 是否显示关闭按钮 | boolean | - | true |
@@ -109,6 +110,7 @@ Modal slot
     data() {
       return {
         visible: false,
+        customVisible: false,
         loading: false,
         placement: '',
       };

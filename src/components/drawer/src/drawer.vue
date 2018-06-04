@@ -1,7 +1,10 @@
 <template>
   <div class="drawer">
     <transition name="fade-in-linear">
-      <div class="v-drawer--mask" v-show="visible" @click.self="handleWrapperClick"></div>
+      <div
+        :class="maskClassName"
+        v-show="visible && mask"
+        @click.self="handleWrapperClick"></div>
     </transition>
     <transition :name="name">
       <div class="v-drawer--wrapper" v-show="visible" @click.self="handleWrapperClick">
@@ -9,14 +12,18 @@
           ref="modal"
           class="v-drawer"
           :class="[
-            'v-drawer--' + placement
-          ]">
+            'v-drawer--' + placement,
+            {
+              ['fullscreen']: fullscreen,
+            }
+          ]"
+          :style="style">
           <div class="v-drawer--header">
             <slot name="header">
               <slot name="title">
                 <span class="v-drawer--header-title">{{title}}</span>
               </slot>
-              <em class="v-drawer--header-close" v-show="closable" @click="handleClose">
+              <em class="v-drawer--header-close" v-show="showClose" @click="handleClose">
                 <slot name="close">
                   <Icon icon="v-icon-close-o"></Icon>
                 </slot>
@@ -49,17 +56,21 @@
       Button,
     },
     props: {
-      transition: {
-        type: String,
-        default: '',
-      },
       visible: {
         type: Boolean,
         default: true,
       },
+      transition: {
+        type: String,
+        default: '',
+      },
       title: {
         type: String,
         default: '',
+      },
+      width: {
+        type: String,
+        default: 'auto',
       },
       placement: {
         type: String,
@@ -68,6 +79,10 @@
       mask: {
         type: Boolean,
         default: true,
+      },
+      maskClassName: {
+        type: String,
+        default: 'v-drawer--mask',
       },
       showClose: {
         type: Boolean,
@@ -93,6 +108,7 @@
         type: String,
         default: '取消',
       },
+      fullscreen: Boolean,
       loading: Boolean,
       beforeClose: Function,
     },
@@ -121,6 +137,15 @@
             break;
         }
         return this.transition || name;
+      },
+      style() {
+        let style = {};
+        if (!this.fullscreen) {
+          if (['right', 'left'].indexOf(this.placement) > -1) {
+            style.width = this.width;
+          }
+        }
+        return style;
       },
     },
     watch: {

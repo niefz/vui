@@ -1,7 +1,10 @@
 <template>
   <div class="modal">
     <transition name="fade-in-linear">
-      <div class="v-modal--mask" v-show="visible" @click.self="handleWrapperClick"></div>
+      <div
+        :class="maskClassName"
+        v-show="visible && mask"
+        @click.self="handleWrapperClick"></div>
     </transition>
     <transition :name="transition">
       <div class="v-modal--wrapper" v-show="visible" @click.self="handleWrapperClick">
@@ -10,7 +13,7 @@
           class="v-modal"
           :class="[
             {
-              ['fullscreen']: fullscreen,
+              ['fullscreen']: fullscreen
             }
           ]"
           :style="style">
@@ -75,6 +78,10 @@
       mask: {
         type: Boolean,
         default: true,
+      },
+      maskClassName: {
+        type: String,
+        default: 'v-modal--mask',
       },
       maskAppendToBody: {
         type: Boolean,
