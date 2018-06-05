@@ -1,5 +1,5 @@
 <template>
-  <em class="v-anchor--ink-ball" :style="ballStyle" v-show="visible"></em>
+  <em class="v-anchor--ink-ball" :style="style" v-show="visible"></em>
 </template>
 <script>
   export default {
@@ -10,7 +10,7 @@
       links: Array,
     },
     computed: {
-      ballStyle: {
+      style: {
         cache: false,
         get() {
           let style = {};

@@ -50,7 +50,7 @@ const Notification = (options) => {
   return instance.vm;
 };
 
-['info', 'success', 'warning', 'danger'].forEach((theme) => {
+['info', 'success', 'warning', 'error'].forEach((theme) => {
   Notification[theme] = (options) => {
     if (typeof options === 'string') {
       options = {

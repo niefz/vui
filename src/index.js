@@ -14,13 +14,13 @@ import BreadcrumbItem from './components/breadcrumb-item/index.js';
 import Button from './components/button/index.js';
 import ButtonGroup from './components/button-group/index.js';
 // import Calendar from './components/calendar/index.js';
-// import Card from './components/card/index.js';
-// import Carousel from './components/carousel/index.js';
+import Card from './components/card/index.js';
+import Carousel from './components/carousel/index.js';
 // import Cascader from './components/cascader/index.js';
 import Checkbox from './components/checkbox/index.js';
 import CheckboxGroup from './components/checkbox-group/index.js';
 import Col from './components/col/index.js';
-// import Collapse from './components/collapse/index.js';
+import Collapse from './components/collapse/index.js';
 // import DateTimePicker from './components/datetimepicker/index.js';
 import Divider from './components/divider/index.js';
 import DropDown from './components/dropdown/index.js';
@@ -33,8 +33,8 @@ import Exception from './components/exception/index.js';
 import Icon from './components/icon/index.js';
 import Input from './components/input/index.js';
 import InputNumber from './components/input-number/index.js';
-// import Layout from './components/layout/index.js';
-// import LoadingBar from './components/loadingbar/index.js';
+import Layout from './components/layout/index.js';
+import LoadingBar from './components/loadingbar/index.js';
 import Menu from './components/menu/index.js';
 import MenuItem from './components/menu-item/index.js';
 import MenuItemGroup from './components/menu-item-group/index.js';
@@ -42,7 +42,7 @@ import Message from './components/message/index.js';
 import Modal from './components/modal/index.js';
 import Notification from './components/notification/index.js';
 import Pagination from './components/pagination/index.js';
-// import Popover from './components/popover/index.js';
+import Popover from './components/popover/index.js';
 import Progress from './components/progress/index.js';
 import Radio from './components/radio/index.js';
 import RadioGroup from './components/radio-group/index.js';
@@ -61,11 +61,11 @@ import Tabs from './components/tabs/index.js';
 import Tag from './components/tag/index.js';
 import TagGroup from './components/tag-group/index.js';
 import Textarea from './components/textarea/index.js';
-// import TimeLine from './components/timeline/index.js';
-// import Tooltip from './components/tooltip/index.js';
+import TimeLine from './components/timeline/index.js';
+import Tooltip from './components/tooltip/index.js';
 // import Transfer from './components/transfer/index.js';
 // import Tree from './components/tree/index.js';
-// import Upload from './components/upload/index.js';
+import Upload from './components/upload/index.js';
 // import locale from './locale/index.js';
 
 const components = [
@@ -82,12 +82,12 @@ const components = [
   ButtonGroup,
   // Calendar,
   Card,
-  // Carousel,
+  Carousel,
   // Cascader,
   Checkbox,
   CheckboxGroup,
   Col,
-  // Collapse,
+  Collapse,
   // DateTimePicker,
   Divider,
   DropDown,
@@ -100,14 +100,14 @@ const components = [
   Icon,
   Input,
   InputNumber,
-  // Layout,
-  // LoadingBar,
+  Layout,
+  LoadingBar,
   Menu,
   MenuItem,
   MenuItemGroup,
   Modal,
   Pagination,
-  // Popover,
+  Popover,
   Progress,
   Radio,
   RadioGroup,
@@ -126,11 +126,11 @@ const components = [
   Tag,
   TagGroup,
   Textarea,
-  // TimeLine,
-  // Tooltip,
+  TimeLine,
+  Tooltip,
   // Transfer,
   // Tree,
-  // Upload,
+  Upload,
 ];
 
 const install = (Vue, opts = {}) => {
@@ -174,13 +174,13 @@ const exports = {
   Button,
   ButtonGroup,
   // Calendar,
-  // Card,
+  Card,
   Carousel,
   // Cascader,
   Checkbox,
   CheckboxGroup,
   Col,
-  // Collapse,
+  Collapse,
   // DateTimePicker,
   Divider,
   DropDown,
@@ -193,14 +193,14 @@ const exports = {
   Icon,
   Input,
   InputNumber,
-  // Layout,
-  // LoadingBar,
+  Layout,
+  LoadingBar,
   Menu,
   MenuItem,
   MenuItemGroup,
   Modal,
   Pagination,
-  // Popover,
+  Popover,
   Progress,
   Radio,
   RadioGroup,
@@ -219,11 +219,11 @@ const exports = {
   Tag,
   TagGroup,
   Textarea,
-  // TimeLine,
-  // Tooltip,
+  TimeLine,
+  Tooltip,
   // Transfer,
   // Tree,
-  // Upload,
+  Upload,
 };
 
 module.exports.default = module.exports = exports; // eslint-disable-line no-undef

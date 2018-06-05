@@ -1,5 +1,5 @@
 <template>
-  <div class="v-tabs--nav-bar" :style="barStyle"></div>
+  <div class="v-tabs--nav-bar" :style="style"></div>
 </template>
 <script>
   export default {
@@ -10,7 +10,7 @@
       navs: Array,
     },
     computed: {
-      barStyle: {
+      style: {
         cache: false,
         get() {
           let style = {};

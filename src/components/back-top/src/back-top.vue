@@ -6,7 +6,7 @@
         ['show']: backTop,
       }
     ]"
-    :style="styles"
+    :style="style"
     @click.stop="handleBack">
     <slot>
       <div class="v-backtop--inner">
@@ -49,7 +49,7 @@
       };
     },
     computed: {
-      styles() {
+      style() {
         return {
           bottom: `${this.bottom}px`,
           right: `${this.right}px`

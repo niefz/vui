@@ -14,10 +14,10 @@
     aria-valuemin="0"
     aria-valuemax="100">
     <div class="v-progress-bar" v-if="shape === 'line'">
-      <div class="v-progress-bar--outer" :style="{ height: strokeWidth + 'px' }">
-        <div class="v-progress-bar--exception" :style="{ width: exceptionPercent + '%' }" v-if="exceptionPercent"></div>
-        <div class="v-progress-bar--success" :style="{ width: successPercent + '%' }" v-if="successPercent"></div>
-        <div class="v-progress-bar--inner" :style="{ width: percentage + '%' }">
+      <div class="v-progress-bar--outer" :style="{ height: `${strokeWidth}px` }">
+        <div class="v-progress-bar--exception" :style="{ width: `${exceptionPercent}%` }" v-if="exceptionPercent"></div>
+        <div class="v-progress-bar--success" :style="{ width: `${successPercent}%` }" v-if="successPercent"></div>
+        <div class="v-progress-bar--inner" :style="{ width: `${percentage}%` }">
           <div class="v-progress-bar--inner-text" v-if="!hideInfo && textInside">
             <template v-if="$slots.default"><slot></slot></template>
             <template v-else>{{percentage}}%</template>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="v-progress-circle" :style="{ width: width + 'px', height: width + 'px' }" v-else>
+    <div class="v-progress-circle" :style="{ width: `${width}px`, height: `${width}px` }" v-else>
       <svg viewBox="0 0 100 100">
         <path
           class="v-progress-circle--track"
@@ -46,7 +46,7 @@
     </div>
     <div
       class="v-progress-text"
-      :style="{ fontSize: textSize + 'px' }"
+      :style="{ fontSize: `${textSize}px` }"
       v-if="!hideInfo && !textInside">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>

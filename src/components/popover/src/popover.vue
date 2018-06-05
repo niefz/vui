@@ -11,7 +11,7 @@
         :class="[
           'v-popover--placement-' + placement,
         ]"
-        :style="{ width: width + 'px' }"
+        :style="{ width: `${width}px` }"
         v-show="!disabled && showPopper">
         <div class="v-popover--arrow"></div>
         <div class="v-popover--inner">

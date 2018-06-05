@@ -10,7 +10,9 @@
           ['checked']: isChecked,
         }
       ]"
-      :style="{ backgroundColor: color }"
+      :style="{
+        backgroundColor: color
+      }"
       @click.stop="handleChange(value)">
       <template v-if="$slots.default"><slot></slot></template>
       <template v-else>{{value}}</template>
