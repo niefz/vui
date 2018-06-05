@@ -9,9 +9,9 @@
     background-color: $color-divider;
     &-ball {
       position: absolute;
+      left: 0;
       z-index: 2;
       display: block;
-      left: 0;
       content: '';
       width: 4px;
       height: 4px;

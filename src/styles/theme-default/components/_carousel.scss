@@ -43,10 +43,10 @@
 		list-style: none;
 		bottom: 0;
 		left: 50%;
-		transform: translateX(-50%);
+		z-index: 2;
 		margin: 0;
 		padding: 0;
-		z-index: 2;
+		transform: translateX(-50%);
 		.v-carousel__indicators__item{
 			display: inline-block;
 			position: relative;

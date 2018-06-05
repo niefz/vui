@@ -1,0 +1,10 @@
+.v-loading-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2000;
+  &-inner {
+    transition: width .3s linear;
+  }
+}

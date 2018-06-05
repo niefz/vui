@@ -17,7 +17,7 @@ const Notification = (options) => {
 
   if (typeof options === 'string') {
     options = {
-      message: options,
+      notify: options,
     };
   }
 
@@ -54,7 +54,7 @@ const Notification = (options) => {
   Notification[theme] = (options) => {
     if (typeof options === 'string') {
       options = {
-        message: options,
+        notify: options,
       };
     }
 

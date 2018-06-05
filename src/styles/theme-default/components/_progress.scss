@@ -50,9 +50,9 @@
   }
   &--inner {
     position: absolute;
-    z-index: 1;
     top: 0;
     left: 0;
+    z-index: 1;
     height: 100%;
     background-color: $color-primary;
     border-radius: 100px;
@@ -63,9 +63,9 @@
   }
   &--success, &--exception {
     position: absolute;
-    z-index: 2;
     top: 0;
     left: 0;
+    z-index: 2;
     height: 100%;
     border-radius: 100px;
   }

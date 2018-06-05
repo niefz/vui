@@ -70,9 +70,9 @@
 .v-input--inner {
   > em {
     position: absolute;
-    z-index: 3;
     top: 6px;
     bottom: 6px;
+    z-index: 3;
     width: 34px;
     font-size: 14px;
     color: $color-text-disabled;

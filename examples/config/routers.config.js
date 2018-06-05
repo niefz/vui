@@ -1,3 +1,5 @@
+import LoadingBar from "../../src/components/loading-bar/src/loading-bar";
+
 /**
  * Created by niefz on 2018/1/8.
  */
@@ -312,6 +314,13 @@ export default {
       component: progress => require.ensure([], (require) => {
         progress(require('../docs/zh-CN/progress.md'));
       }, 'progress'),
+    },
+    {
+      path: '/zh-CN/components/loading-bar',
+      name: 'LoadingBar 加载进度条',
+      component: LoadingBar => require.ensure([], (require) => {
+        LoadingBar(require('../docs/zh-CN/loading-bar.md'));
+      }, 'loading-bar'),
     },
     {
       path: '/zh-CN/components/spin',
