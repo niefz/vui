@@ -3,21 +3,13 @@
  */
 import Vue from 'vue';
 import Bar from './loading-bar.vue';
+import Message from "../../message/src/message";
 
 let timer;
 let instance;
 const LoadingBarConstructor = Vue.extend(Bar);
 
-const init = ((options) => {
-
-  options = options || {};
-
-  if (typeof options === 'string') {
-    options = {
-      bar: options,
-    };
-  }
-
+const init = (() => {
   instance = new LoadingBarConstructor();
   instance.vm = instance.$mount();
   document.body.appendChild(instance.vm.$el);
