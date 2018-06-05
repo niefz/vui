@@ -54,8 +54,8 @@ export default {
       const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper;
       let reference = this.referenceElm = this.referenceElm || this.reference || this.$refs.reference;
 
-      if (!reference && this.$slots.reference && this.$slots.reference[ 0 ]) {
-        reference = this.referenceElm = this.$slots.reference[ 0 ].elm;
+      if (!reference && this.$slots.reference && this.$slots.reference[0]) {
+        reference = this.referenceElm = this.$slots.reference[0].elm;
       }
 
       if (!popper || !reference) return;
@@ -93,6 +93,6 @@ export default {
     }
   },
   deactivated() {
-    this.$options.beforeDestroy[ 0 ].call(this);
+    this.$options.beforeDestroy[0].call(this);
   },
 };
