@@ -2,9 +2,10 @@
  * Created by niefz on 2018/1/8.
  */
 import Vue from 'vue';
+
 const popperJs = require('popper.js/dist/umd/popper.js');
 const Popper = Vue.prototype.$isServer ? () => {
-  } : popperJs;
+} : popperJs;
 const stop = e => e.stopPropagation();
 
 export default {
@@ -53,8 +54,8 @@ export default {
       const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper;
       let reference = this.referenceElm = this.referenceElm || this.reference || this.$refs.reference;
 
-      if (!reference && this.$slots.reference && this.$slots.reference[0]) {
-        reference = this.referenceElm = this.$slots.reference[0].elm;
+      if (!reference && this.$slots.reference && this.$slots.reference[ 0 ]) {
+        reference = this.referenceElm = this.$slots.reference[ 0 ].elm;
       }
 
       if (!popper || !reference) return;
@@ -81,7 +82,8 @@ export default {
       this.popperJS.destroy();
       this.popperJS = null;
     },
-    destroyPopper() {},
+    destroyPopper() {
+    },
   },
   beforeDestroy() {
     this.doDestroy(true);
@@ -91,6 +93,6 @@ export default {
     }
   },
   deactivated() {
-    this.$options.beforeDestroy[0].call(this);
+    this.$options.beforeDestroy[ 0 ].call(this);
   },
 };
