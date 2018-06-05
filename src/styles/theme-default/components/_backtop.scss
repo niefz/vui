@@ -2,22 +2,21 @@
   position: fixed;
   z-index: 100;
   display: none;
-  right: 100px;
-  bottom: 50px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
   cursor: pointer;
   &.show {
     display: block;
   }
   &--inner {
-    height: 100%;
-    width: 100%;
-    background-color: $color-primary;
-    border-radius: $border-radius;
-    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .45);
+    border-radius: 100%;
+    line-height: 40px;
     color: $color-white;
+    text-align: center;
     overflow: hidden;
+    .v-icon-backtop {
+      font-size: 16px;
+    }
   }
 }

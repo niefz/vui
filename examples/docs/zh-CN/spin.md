@@ -53,6 +53,7 @@ Spin props
 |---- |---- |---- |---- |---- |
 | tip | 加载文案 | string | - | - |
 | icon | 自定义加载图标类名 | string | - | - |
+| background | 遮罩背景色 | string | - | - |
 
 <script>
   import Row from '@/components/row';
