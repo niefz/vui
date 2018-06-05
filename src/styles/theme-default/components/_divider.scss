@@ -2,8 +2,8 @@
   display: table;
   width: 100%;
   height: 1px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   &:before,
   &:after {
     display: table-cell;
@@ -15,8 +15,8 @@
   }
   .v-divider--inner-text {
     display: inline-block;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 
@@ -25,15 +25,15 @@
   position: relative;
   width: 1px;
   height: 1em;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 16px;
+  margin-left: 16px;
   vertical-align: middle;
   border-left: 1px solid $color-divider;
   .v-divider--inner-text {
     display: block;
-    margin: 20px 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin: 16px 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
     letter-spacing: 4px;
     writing-mode: vertical-rl;
     transform: translateX(-50%);
@@ -46,8 +46,8 @@
 
 .v-divider--width-text {
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   background: transparent;
   font-weight: 400;
   font-size: 12px;

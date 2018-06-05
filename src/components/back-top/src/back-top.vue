@@ -20,8 +20,8 @@
   import Icon from 'free-vui/src/components/icon';
 
   export default {
-    name: 'Backtop',
-    componentName: 'Backtop',
+    name: 'BackTop',
+    componentName: 'BackTop',
     components: {
       Icon,
     },

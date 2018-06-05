@@ -15,7 +15,7 @@
 <Row>
   <Col :span="24">
     向下滚动页面，灰色的按钮为默认效果。
-    <Backtop></Backtop>
+    <BackTop></BackTop>
   </Col>
 </Row>
 ```
@@ -29,9 +29,9 @@
 <Row>
   <Col :span="24">
     向下滚动页面，蓝色的按钮为自定义效果。
-    <Backtop :visibility-height="200" :bottom="100">
+    <BackTop :visibility-height="200" :bottom="100">
       <Button theme="primary">返回顶部</Button>
-    </Backtop>
+    </BackTop>
   </Col>
 </Row>
 ```
@@ -54,18 +54,24 @@ BackTop events
 |---- |---- |---- |
 | on-click | 点击按钮时触发 | - |
 
+BackTop slot
+
+| 名称 | 说明 |
+|---- |---- |
+| 无 | 自定义内容 |
+
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
   import Button from '@/components/button';
-  import Backtop from '@/components/backtop';
+  import BackTop from '@/components/back-top';
 
   export default {
     components: {
       Row,
       Col,
       Button,
-      Backtop,
+      BackTop,
     },
     methods: {
     },

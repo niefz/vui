@@ -136,7 +136,7 @@ Alert props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| theme | 警告样式 | string | `info`，`success` `warning` `error` | info |
+| theme | 警告样式 | string | `info` `success` `warning` `error` | info |
 | message | 警告内容 | string | - | - |
 | description | 警告提示的辅助性文字介绍 | string | - | - |
 | icon | 自定义图标，`show-icon` 为 `true` 时有效 | string | - | - |
@@ -156,7 +156,6 @@ Alert slot
 |---- |---- |
 | 无 | 警告内容 |
 | desc | 警告提示的辅助性文字介绍 |
-
 
 <script>
   import Row from '@/components/row';
