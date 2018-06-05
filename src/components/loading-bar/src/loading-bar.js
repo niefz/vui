@@ -8,7 +8,16 @@ let timer;
 let instance;
 const LoadingBarConstructor = Vue.extend(Bar);
 
-const init = (() => {
+const init = ((options) => {
+
+  options = options || {};
+
+  if (typeof options === 'string') {
+    options = {
+      bar: options,
+    };
+  }
+
   instance = new LoadingBarConstructor();
   instance.vm = instance.$mount();
   document.body.appendChild(instance.vm.$el);
