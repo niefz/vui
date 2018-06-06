@@ -44,7 +44,7 @@
                   </MenuItem>
                 </template>
                 <template v-if="nav.groups">
-                  <MenuItemGroup
+                  <MenuGroup
                     :key="index"
                     v-for="(group, index) in nav.groups">
                     <template slot="title">
@@ -56,7 +56,7 @@
                       v-for="(child, index) in group.child">
                       {{ child.name }}
                     </MenuItem>
-                  </MenuItemGroup>
+                  </MenuGroup>
                 </template>
               </MenuSub>
             </template>
@@ -107,8 +107,8 @@
   import Col from '@/components/col';
   import Menu from '@/components/menu';
   import MenuSub from '@/components/menu-sub';
+  import MenuGroup from '@/components/menu-group';
   import MenuItem from '@/components/menu-item';
-  import MenuItemGroup from '@/components/menu-item-group';
   import Button from '@/components/button';
   import Dropdown from '@/components/dropdown';
   import DropdownMenu from '@/components/dropdown-menu';
@@ -122,7 +122,7 @@
       Menu,
       MenuSub,
       MenuItem,
-      MenuItemGroup,
+      MenuGroup,
       Dropdown,
       DropdownMenu,
       DropdownMenuItem,

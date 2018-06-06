@@ -47,7 +47,7 @@
     inject: ['menu'],
     props: {
       index: String,
-      to: String,
+      to: [String, Object],
       href: String,
       target: {
         type: String,
