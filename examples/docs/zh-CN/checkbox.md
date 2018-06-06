@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-:::demo 在 `Checkbox` 元素中定义 `v-model` 绑定变量，单一的 `Checkbox` 中，默认绑定变量的值会是 `Boolean` ，选中为 `true` 。
+:::demo 在 `Checkbox` 元素中定义 `v-model` 绑定变量，单一的 `Checkbox` 中，默认绑定变量的值会是 Boolean ，选中为 true 。
 
 ```html
 <Row>

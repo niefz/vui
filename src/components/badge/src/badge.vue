@@ -1,18 +1,21 @@
 <template>
   <div class="v-badge">
-    <slot></slot>
     <transition name="zoom-in-center">
       <sup
-        class="v-badge--content"
         :class="[
           {
+            ['v-badge--content']: !dot && !status,
+            ['v-badge--dot']: dot,
+            ['v-badge--status-dot']: status,
+            [`v-badge--${status}`]: status,
             ['fixed']: $slots.default,
-            ['dot']: dot,
           }
         ]"
         v-text="content">
       </sup>
     </transition>
+    <slot></slot>
+    {{ text }}
   </div>
 </template>
 <script>
@@ -23,6 +26,8 @@
       value: {},
       max: Number,
       dot: Boolean,
+      status: String,
+      text: String,
     },
     computed: {
       content() {

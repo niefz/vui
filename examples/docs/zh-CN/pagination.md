@@ -162,19 +162,19 @@ Pagination props
 |---- |---- |---- |---- |---- |
 | size | 尺寸 | string | `large` `medium` `small` `mini` | small |
 | align | 对齐方式 | string | `left` `center` `right` | left |
-| page-size-options | 分页大小配置 | Array | - | [10, 20, 30, 40, 50] |
+| page-size-options | 分页大小配置 | array | - | [10, 20, 30, 40, 50] |
 | prev-text | 向上翻页文本 | string | - | 上一页 |
 | next-text | 向下翻页文本 | string | - | 下一页 |
-| pager-count | 页码按钮的显示数量，当总页数超过该值时会折叠 | Number | ≥ 5 的奇数 | 7 |
-| current-page | 当前页码，支持 .sync 修饰符 | Number | - | 1 |
-| page-size | 分页大小 | Number | - | 10 |
-| total | 总数 | Number | - | 0 |
-| show-total | 是否显示总数 | Boolean | - | false |
-| show-size-changer | 是否显示分页大小切换 | Boolean | - | false |
-| show-jumper | 是否显示跳转 | Boolean | - | false |
-| simple | 添加该属性，显示为简单分页 | Boolean | - | false |
-| minimal | 添加该属性，显示为迷你版翻页 | Boolean | - | false |
-| disabled | 禁用分页 | Boolean | - | false |
+| pager-count | 页码按钮的显示数量，当总页数超过该值时会折叠 | number | ≥ 5 的奇数 | 7 |
+| current-page | 当前页码，支持 .sync 修饰符 | number | - | 1 |
+| page-size | 分页大小 | number | - | 10 |
+| total | 总数 | number | - | 0 |
+| show-total | 是否显示总数 | boolean | - | false |
+| show-size-changer | 是否显示分页大小切换 | boolean | - | false |
+| show-jumper | 是否显示跳转 | boolean | - | false |
+| simple | 添加该属性，显示为简单分页 | boolean | - | false |
+| minimal | 添加该属性，显示为迷你版翻页 | boolean | - | false |
+| disabled | 禁用分页 | boolean | - | false |
 
 Pagination slot
 

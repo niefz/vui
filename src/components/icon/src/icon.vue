@@ -1,5 +1,5 @@
 <template>
-  <i :class="icon" @click="handleClick"></i>
+  <i :class="icon" :style="{ fontSize: `${fontSize}px` }" @click="handleClick"></i>
 </template>
 <script>
   export default {
@@ -9,6 +9,10 @@
       icon: {
         type: String,
         default: '',
+      },
+      fontSize: {
+        type: Number,
+        default: 12,
       },
     },
     methods: {

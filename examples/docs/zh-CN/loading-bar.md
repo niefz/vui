@@ -27,10 +27,10 @@ LoadingBar props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| visibility-height | 页面滚动高度达到该值时才显示 | Number | - | 400 |
-| bottom | 距离底部的距离 | Number | - | 30 |
-| right | 距离右部的距离 | Number | - | 30 |
-| duration | 滚动动画持续时间(毫秒) | Number | - | 1000 |
+| visibility-height | 页面滚动高度达到该值时才显示 | number | - | 400 |
+| bottom | 距离底部的距离 | number | - | 30 |
+| right | 距离右部的距离 | number | - | 30 |
+| duration | 滚动动画持续时间(毫秒) | number | - | 1000 |
 
 <script>
   import Row from '@/components/row';

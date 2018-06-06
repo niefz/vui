@@ -216,9 +216,9 @@ DropdownMenuItem props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| value | 唯一标识 | String | - | - |
-| divided | 是否显示分割线 | Boolean | - | false |
-| disabled | 是否禁用该项 | Boolean | - | false |
+| value | 唯一标识 | string | - | - |
+| divided | 是否显示分割线 | boolean | - | false |
+| disabled | 是否禁用该项 | boolean | - | false |
 
 <script>
   import Row from '@/components/row';
