@@ -26,6 +26,14 @@
       Icon,
     },
     props: {
+      size: {
+        type: String,
+        default: 'small',
+      },
+      shape: {
+        type: String,
+        default: 'square',
+      },
       icon: {
         type: String,
         default: '',
@@ -38,15 +46,6 @@
         type: String,
         default: '',
       },
-      size: {
-        type: String,
-        default: 'small',
-      },
-      shape: {
-        type: String,
-        default: 'radius',
-      },
     },
-    computed: {},
   };
 </script>
