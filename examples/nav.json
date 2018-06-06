@@ -105,7 +105,7 @@
         ]
       },
       {
-        "name": "Form",
+        "name": "Data Entry",
         "child": [
           {
             "name": "Cascader 级联选择器",
@@ -189,10 +189,6 @@
             "path": "/zh-CN/components/collapse"
           },
           {
-            "name": "Popover 气泡框",
-            "path": "/zh-CN/components/popover"
-          },
-          {
             "name": "Empty 空提示",
             "path": "/zh-CN/components/empty"
           },
@@ -201,12 +197,8 @@
             "path": "/zh-CN/components/exception"
           },
           {
-            "name": "Tooltip 文字提示",
-            "path": "/zh-CN/components/tooltip"
-          },
-          {
-            "name": "Timeline 时间轴",
-            "path": "/zh-CN/components/timeline"
+            "name": "Popover 气泡框",
+            "path": "/zh-CN/components/popover"
           },
           {
             "name": "Table 表格",
@@ -215,6 +207,14 @@
           {
             "name": "Tag 标签",
             "path": "/zh-CN/components/tag"
+          },
+          {
+            "name": "Timeline 时间轴",
+            "path": "/zh-CN/components/timeline"
+          },
+          {
+            "name": "Tooltip 文字提示",
+            "path": "/zh-CN/components/tooltip"
           },
           {
             "name": "Tree 树形控件",
