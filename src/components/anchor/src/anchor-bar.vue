@@ -18,7 +18,7 @@
           if (!link) return;
           const el = link.$el;
           const offset = el.offsetTop;
-          const transform = `translateY(${offset}px)`;
+          const transform = `translate(50%, ${offset}px)`;
           style.transform = transform;
           style.msTransform = transform;
           style.webkitTransform = transform;

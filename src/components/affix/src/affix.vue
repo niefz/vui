@@ -17,6 +17,7 @@
     name: 'Affix',
     componentName: 'Affix',
     props: {
+      affix: Boolean,
       top: {
         type: Number,
         default: 0
@@ -24,7 +25,6 @@
       right: Number,
       bottom: Number,
       left: Number,
-      affix: Boolean,
     },
     data () {
       return {

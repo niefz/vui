@@ -8,12 +8,12 @@
 
 ## 基本用法
 
-:::demo 通过 `affix` 属性控制固定模式。
+:::demo 最简单的用法。。
 
 ```html
 <Row>
   <Col :span="24">
-    <Anchor :affix="false" show-ink>
+    <Anchor show-ink>
       <AnchorLink href="#Basic demo" title="Basic demo"></AnchorLink>
       <AnchorLink href="#Fixed demo" title="Fixed demo"></AnchorLink>
       <AnchorLink href="#API" title="API">
@@ -21,6 +21,18 @@
         <AnchorLink href="#Link Props" title="Link Props"></AnchorLink>
       </AnchorLink>
     </Anchor>
+  </Col>
+</Row>
+```
+:::
+
+## 静态位置
+
+:::demo 不浮动，状态不随页面滚动变化。。
+
+```html
+<Row>
+  <Col :span="24">
     <Anchor show-ink>
       <AnchorLink href="#Basic demo" title="Basic demo"></AnchorLink>
       <AnchorLink href="#Fixed demo" title="Fixed demo"></AnchorLink>

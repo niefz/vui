@@ -1,5 +1,9 @@
 .v-anchor {
-  z-index: 9;
+  display: inline-block;
+  &.fixed {
+    position: fixed;
+    z-index: 9;
+  }
   &--ink {
     position: absolute;
     top: 0;
@@ -13,11 +17,11 @@
       z-index: 2;
       display: block;
       content: '';
-      width: 4px;
-      height: 4px;
-      margin-top: 13px;
-      margin-bottom: 13px;
-      margin-left: -4px;
+      width: 6px;
+      height: 6px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+      margin-left: -5px;
       border: 2px solid $color-primary;
       background-color: $color-white;
       border-radius: 100%;
