@@ -87,16 +87,12 @@
             "path": "/zh-CN/components/dropdown"
           },
           {
-            "name": "Menu 菜单",
+            "name": "Menu 导航菜单",
             "path": "/zh-CN/components/menu"
           },
           {
             "name": "Pagination 分页",
             "path": "/zh-CN/components/pagination"
-          },
-          {
-            "name": "SideNav 侧导航",
-            "path": "/zh-CN/components/side-nav"
           },
           {
             "name": "Steps 步骤条",

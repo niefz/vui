@@ -79,7 +79,7 @@ export default {
     },
     {
       path: '/zh-CN/components/menu',
-      name: 'Menu 菜单',
+      name: 'Menu 导航菜单',
       component: menu => require.ensure([], (require) => {
         menu(require('../docs/zh-CN/menu.md'));
       }, 'menu'),
@@ -90,13 +90,6 @@ export default {
       component: pagination => require.ensure([], (require) => {
         pagination(require('../docs/zh-CN/pagination.md'));
       }, 'pagination'),
-    },
-    {
-      path: '/zh-CN/components/side-nav',
-      name: 'SideNav 侧导航',
-      component: sideNav => require.ensure([], (require) => {
-        sideNav(require('../docs/zh-CN/side-nav.md'));
-      }, 'sideNav'),
     },
     {
       path: '/zh-CN/components/steps',
