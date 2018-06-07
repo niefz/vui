@@ -13,52 +13,53 @@
       };
     },
     props: {
-      accordion: Boolean,
       value: {
-        type: [Array, String, Number],
+        type: [Array, String],
         default() {
-          return [];
+          () => [];
         },
       },
+      defaultActive: {
+        type: String,
+        default: '',
+      },
+      showArrow: {
+        type: Boolean,
+        default: true,
+      },
+      accordion: Boolean,
     },
     data() {
       return {
-        activeNames: [].concat(this.value),
+        activeNames: null,
       };
     },
-    watch: {
-      value(value) {
-        this.activeNames = [].concat(value);
-      },
-    },
     methods: {
-      setActiveNames(activeNames) {
-        activeNames = [].concat(activeNames);
-        let value = this.accordion ? activeNames[0] : activeNames;
-        this.activeNames = activeNames;
-        this.$emit('input', value);
-        this.$emit('change', value);
+      setCurrentActives(names) {
+        this.activeNames = names;
+        this.$emit('input', names);
       },
       handleItemClick(item) {
+        let activeNames = this.activeNames;
         if (this.accordion) {
-          this.setActiveNames(
-            (this.activeNames[0] || this.activeNames[0] === 0)
-            && this.activeNames[0] === item.name ? '' : item.name
-          );
+          activeNames = activeNames === item.name ? null : item.name;
         } else {
-          let activeNames = this.activeNames.slice(0);
-          let index = activeNames.indexOf(item.name);
+          const index = activeNames.indexOf(item.name);
           if (index > -1) {
             activeNames.splice(index, 1);
           } else {
             activeNames.push(item.name);
           }
-          this.setActiveNames(activeNames);
         }
+        this.setCurrentActives(activeNames);
+        this.$emit('change', activeNames);
       },
     },
     created() {
-      this.$on('item-click', this.handleItemClick);
+      const defaultActive = this.defaultActive || this.value;
+      const activeNames = this.accordion ? defaultActive : [].concat(defaultActive);
+      this.setCurrentActives(activeNames);
+      this.$on('panel-click', this.handleItemClick);
     },
   };
 </script>

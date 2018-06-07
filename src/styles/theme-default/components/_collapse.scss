@@ -1,4 +1,4 @@
-.v-collapse--item {
+.v-collapse--panel {
   &-header {
     height: 40px;
     border-bottom: 1px solid $color-divider;
@@ -13,8 +13,17 @@
       float: right;
       margin-right: 8px;
       line-height: inherit;
-      color: $color-text-primary;
       transition: transform .3s;
+    }
+    &.active {
+      border-bottom-color: transparent;
+      .v-collapse--panel-header-icon {
+        transform: rotate(90deg);
+      }
+    }
+    &.disabled {
+      color: $color-text-disabled;
+      cursor: not-allowed;
     }
   }
   &-content {
@@ -24,16 +33,7 @@
       padding-bottom: 20px;
     }
   }
-  &.active {
-    .v-collapse--item {
-      &-header {
-        border-bottom-color: transparent;
-        &-icon {
-          transform: rotate(90deg);
-        }
-      }
-      &-content {
-      }
-    }
+  .v-collapse--panel {
+    margin: 0 20px;
   }
 }
