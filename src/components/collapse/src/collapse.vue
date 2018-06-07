@@ -1,5 +1,11 @@
 <template>
-  <div class="v-collapse" role="tablist" aria-multiselectable="true">
+  <div
+    role="tablist"
+    class="v-collapse"
+    :class="[
+      `v-collapse--${theme}`
+    ]"
+    aria-multiselectable="true">
     <slot></slot>
   </div>
 </template>
@@ -22,6 +28,10 @@
       defaultActive: {
         type: String,
         default: '',
+      },
+      theme: {
+        type: String,
+        default: 'simple',
       },
       showArrow: {
         type: Boolean,

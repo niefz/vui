@@ -2,7 +2,6 @@
   &-header {
     height: 40px;
     border-bottom: 1px solid $color-divider;
-    background-color: $color-white;
     font-weight: 500;
     line-height: 40px;
     color: $color-title;
@@ -16,7 +15,6 @@
       transition: transform .3s;
     }
     &.active {
-      border-bottom-color: transparent;
       .v-collapse--panel-header-icon {
         transform: rotate(90deg);
       }
@@ -28,12 +26,59 @@
   }
   &-content {
     border-bottom: 1px solid $color-divider;
-    background-color: $color-white;
-    &-inner {
-      padding-bottom: 20px;
+  }
+}
+
+.v-collapse--simple {
+  .v-collapse--panel {
+    &-header.active {
+      border-bottom-color: transparent;
     }
   }
-  .v-collapse--panel {
-    margin: 0 20px;
+  .v-collapse--panel-content-inner {
+    padding-bottom: 16px;
+    .v-collapse {
+      padding: {
+        right: 16px;
+        left: 16px;
+      }
+    }
+  }
+}
+
+.v-collapse--card {
+  border: {
+    top: 1px solid $color-border;
+    right: 1px solid $color-border;
+    left: 1px solid $color-border;
+  }
+  border-radius: $border-radius;
+  .v-collapse--panel-header {
+    padding: {
+      right: 16px;
+      left: 16px;
+    }
+  }
+  .v-collapse--panel-content-inner {
+    padding: 16px;
+  }
+}
+
+.v-collapse--border-card {
+  border: {
+    top: 1px solid $color-border;
+    right: 1px solid $color-border;
+    left: 1px solid $color-border;
+  }
+  border-radius: $border-radius;
+  .v-collapse--panel-header {
+    padding: {
+      right: 16px;
+      left: 16px;
+    }
+    background-color: $color-background;
+  }
+  .v-collapse--panel-content-inner {
+    padding: 16px;
   }
 }
