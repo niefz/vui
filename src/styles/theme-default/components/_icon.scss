@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 586584 */
-  src: url('//at.alicdn.com/t/font_586584_rl2enrfgwm1mj9k9.eot');
-  src: url('//at.alicdn.com/t/font_586584_rl2enrfgwm1mj9k9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_586584_rl2enrfgwm1mj9k9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_586584_rl2enrfgwm1mj9k9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_586584_rl2enrfgwm1mj9k9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_586584_363or7nqhun2ke29.eot');
+  src: url('//at.alicdn.com/t/font_586584_363or7nqhun2ke29.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_586584_363or7nqhun2ke29.woff') format('woff'),
+  url('//at.alicdn.com/t/font_586584_363or7nqhun2ke29.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_586584_363or7nqhun2ke29.svg#iconfont') format('svg');
 }
 
 [class*=" v-icon-"],
@@ -15,6 +15,10 @@
   text-transform: none;
   vertical-align: baseline;
   speak: none;
+}
+
+.v-icon-empty-o:before {
+  content: '\e62b';
 }
 
 .v-icon-backtop:before {
