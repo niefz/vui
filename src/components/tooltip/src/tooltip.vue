@@ -24,7 +24,7 @@
         <div class="v-tooltip--content">
           <div class="v-tooltip--arrow"></div>
           <div class="v-tooltip--inner">
-            <slot name="content">{{content}}</slot>
+            <slot name="content">{{ content }}</slot>
           </div>
         </div>
       </div>
@@ -39,17 +39,17 @@
     componentName: 'Tooltip',
     mixins: [Popper],
     props: {
+      transition: {
+        type: String,
+        default: 'fade-in-linear',
+      },
       placement: {
         type: String,
-        default: 'bottom',
+        default: 'top',
       },
       theme: {
         type: String,
         default: 'dark',
-      },
-      transition: {
-        type: String,
-        default: 'fade-in-linear',
       },
       content: {
         type: String,
@@ -62,10 +62,6 @@
       hideDelay: {
         type: Number,
         default: 300,
-      },
-      manual: {
-        type: Boolean,
-        default: false,
       },
       disabled: {
         type: Boolean,
@@ -80,6 +76,11 @@
         },
       },
     },
+    data() {
+      return {
+        appendToBody: true,
+      };
+    },
     watch: {
       content () {
         this.updatePopper();
@@ -93,14 +94,11 @@
         }, this.openDelay);
       },
       handleClosePopper() {
-        if (this.manual) return;
         if (this.timeout) {
           clearTimeout(this.timeout);
-          if (!this.manual) {
-            this.timeout = setTimeout(() => {
-              this.showPopper = false;
-            }, this.hideDelay);
-          }
+          this.timeout = setTimeout(() => {
+            this.showPopper = false;
+          }, this.hideDelay);
         }
       },
     },

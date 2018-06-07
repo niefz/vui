@@ -16,15 +16,15 @@
         <div class="v-popover--arrow"></div>
         <div class="v-popover--inner">
           <div class="v-popover--title" v-if="title || $slots.title">
-            <slot name="title">{{title}}</slot>
+            <slot name="title">{{ title }}</slot>
           </div>
           <div class="v-popover--content" v-if="content || $slots.content">
             <slot name="content">{{ content }}</slot>
           </div>
           <div class="v-popover--footer" v-if="footer">
             <slot name="footer">
-              <Button size="mini" :loading="loading" theme="primary" @click="handleOk">{{okText}}</Button>
-              <Button size="mini" @click="handleClose">{{cancelText}}</Button>
+              <Button size="mini" :loading="loading" theme="primary" @click="handleOk">{{ okText }}</Button>
+              <Button size="mini" @click="handleClose">{{ cancelText }}</Button>
             </slot>
           </div>
         </div>
@@ -46,13 +46,13 @@
       Button,
     },
     props: {
-      placement: {
-        type: String,
-        default: 'top',
-      },
       transition: {
         type: String,
         default: 'fade-in-linear',
+      },
+      placement: {
+        type: String,
+        default: 'top',
       },
       title: {
         type: String,
@@ -62,9 +62,10 @@
         type: String,
         default: '',
       },
+      width: [String, Number],
       trigger: {
         type: String,
-        default: 'click',
+        default: 'hover',
       },
       openDelay: {
         type: Number,
@@ -74,7 +75,6 @@
         type: Number,
         default: 300,
       },
-      width: {},
       okText: {
         type: String,
         default: '确定',
@@ -87,6 +87,11 @@
       loading: Boolean,
       disabled: Boolean,
       beforeClose: Function,
+    },
+    data() {
+      return {
+        appendToBody: true,
+      };
     },
     watch: {
       showPopper(val) {
@@ -104,10 +109,10 @@
         this.showPopper = false;
       },
       handleFocus() {
-        if (this.trigger !== 'manual') this.showPopper = true;
+        this.showPopper = true;
       },
       handleBlur() {
-        if (this.trigger !== 'manual') this.showPopper = false;
+        this.showPopper = false;
       },
       handleMouseEnter() {
         clearTimeout(this.timer);
@@ -122,7 +127,7 @@
         }, this.hideDelay);
       },
       handleKeydown(e) {
-        if (e.keyCode === 27 && this.trigger !== 'manual') {
+        if (e.keyCode === 27) {
           this.doClose();
         }
       },
@@ -163,49 +168,36 @@
         reference = this.referenceElm = this.$slots.reference[0].elm;
       }
       if (reference) {
-        if (this.trigger !== 'click') {
-          on(reference, 'focusin', () => {
-            this.handleFocus();
-            const instance = reference.__vue__;
-            if (instance && instance.focus) {
-              instance.focus();
-            }
-          });
-          on(popper, 'focusin', this.handleFocus);
-          on(reference, 'focusout', this.handleBlur);
-          on(popper, 'focusout', this.handleBlur);
-        }
-        on(reference, 'keydown', this.handleKeydown);
-      }
-      if (this.trigger === 'click') {
-        on(reference, 'click', this.doToggle);
-        on(document, 'click', this.handleDocumentClick);
-      } else if (this.trigger === 'hover') {
-        on(reference, 'mouseenter', this.handleMouseEnter);
-        on(popper, 'mouseenter', this.handleMouseEnter);
-        on(reference, 'mouseleave', this.handleMouseLeave);
-        on(popper, 'mouseleave', this.handleMouseLeave);
-      } else if (this.trigger === 'focus') {
-        let found = false;
-        if ([].slice.call(reference.children).length) {
-          const children = reference.childNodes;
-          const len = children.length;
-          for (let i = 0; i < len; i++) {
-            if (children[i].nodeName === 'INPUT' || children[i].nodeName === 'TEXTAREA') {
-              on(children[i], 'focusin', this.doShow);
-              on(children[i], 'focusout', this.doClose);
-              found = true;
-              break;
+        if (this.trigger === 'click') {
+          on(reference, 'click', this.doToggle);
+          on(document, 'click', this.handleDocumentClick);
+        } else if (this.trigger === 'hover') {
+          on(reference, 'mouseenter', this.handleMouseEnter);
+          on(popper, 'mouseenter', this.handleMouseEnter);
+          on(reference, 'mouseleave', this.handleMouseLeave);
+          on(popper, 'mouseleave', this.handleMouseLeave);
+        } else if (this.trigger === 'focus') {
+          let found = false;
+          if ([].slice.call(reference.children).length) {
+            const children = reference.childNodes;
+            const len = children.length;
+            for (let i = 0; i < len; i++) {
+              if (children[i].nodeName === 'INPUT' || children[i].nodeName === 'TEXTAREA') {
+                on(children[i], 'focusin', this.doShow);
+                on(children[i], 'focusout', this.doClose);
+                found = true;
+                break;
+              }
             }
           }
-        }
-        if (found) return;
-        if (reference.nodeName === 'INPUT' || reference.nodeName === 'TEXTAREA') {
-          on(reference, 'focusin', this.doShow);
-          on(reference, 'focusout', this.doClose);
-        } else {
-          on(reference, 'mousedown', this.doShow);
-          on(reference, 'mouseup', this.doClose);
+          if (found) return;
+          if (reference.nodeName === 'INPUT' || reference.nodeName === 'TEXTAREA') {
+            on(reference, 'focusin', this.doShow);
+            on(reference, 'focusout', this.doClose);
+          } else {
+            on(reference, 'mousedown', this.doShow);
+            on(reference, 'mouseup', this.doClose);
+          }
         }
       }
     },

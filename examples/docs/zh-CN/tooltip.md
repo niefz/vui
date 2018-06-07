@@ -1,46 +1,102 @@
 # Tooltip 文字提示
 
-常用于展示鼠标 hover 时的提示信息。
+用来代替系统默认的 title 提示，提供一个 `按钮/文字/操作` 的文案解释。
+
+## 何时使用
+
+- 鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。
 
 ## 基本用法
 
-:::demo 使用content属性来决定hover时的提示信息。由placement属性决定展示效果：placement属性值为：方向-对齐位置；四个方向：top、left、right、bottom；三种对齐位置：start, end，默认为空。如placement="left-end"，则提示信息出现在目标元素的左侧，且提示信息的底部与目标元素的底部对齐。
+:::demo 最简单的用法。
 
 ```html
 <Row>
-  <Tooltip theme="dark" content="Top Left 提示文字" placement="top-start">
-    <Button>上左</Button>
-  </Tooltip>
-  <Tooltip theme="dark" content="Top Left 提示文字" placement="top">
-    <Button>上边</Button>
-  </Tooltip>
-  <Tooltip theme="dark" content="Top Left 提示文字" placement="top-end">
-    <Button>上右</Button>
-  </Tooltip>
-</Row>
-<Row>
-  <Tooltip theme="light" content="Top Left 提示文字" placement="bottom-start">
-    <Button>下左</Button>
-  </Tooltip>
-  <Tooltip theme="light" content="Top Left 提示文字" placement="bottom">
-    <Button>下边</Button>
-  </Tooltip>
-  <Tooltip theme="light" content="Top Left 提示文字" placement="bottom-end">
-    <Button>下右</Button>
-  </Tooltip>
+  <Col> 
+    <Tooltip content="这里是提示文字">
+      当鼠标经过这段文字时，会显示一个气泡框
+    </Tooltip>
+  </Col>
 </Row>
 ```
 :::
 
+## 位置
+
+:::demo 组件提供了12个不同的方向显示，具体配置可查看 API。
+
+```html
+<Row>
+  <Col :span="8">
+    <Tooltip placement="top-start" content="这里是提示文字">
+      <Button>Top Start</Button>
+    </Tooltip>
+  </Col>
+  <Col :span="8">
+    <Tooltip placement="bottom" content="这里是提示文字">
+      <Button>Bottom</Button>
+    </Tooltip>
+  </Col>
+  <Col :span="8">
+    <Tooltip placement="right" content="这里是提示文字">
+      <Button>Right</Button>
+    </Tooltip>
+  </Col>
+</Row>
+```
+:::
+
+## 风格
+
+:::demo Tooltip 组件提供了两个不同的主题：`dark` 和 `light`。
+
+```html
+<Row>
+  <Col :span="8">
+    <Tooltip content="这里是提示文字">
+      <Button>Dark</Button>
+    </Tooltip>
+  </Col>
+  <Col :span="8">
+    <Tooltip theme="light" content="这里是提示文字">
+      <Button>Light</Button>
+    </Tooltip>
+  </Col>
+</Row>
+```
+:::
+
+## API
+
+Tooltip props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| transition | 渐变动画 | string | - | fade-in-linear |
+| placement | 出现位置 | string | `top` `top-start` `top-end` `bottom` `bottom-start` `bottom-end` `left` `left-start` `left-end` `right` `right-start` `right-end` | top |
+| theme | 风格 | string | `dark` `light` | dark |
+| content | 显示的内容，也可以通过 slot 传入 DOM | string | - | - |
+| open-delay | 显示延迟，单位为毫秒 | number | - | false |
+| hide-delay | 关闭延迟，单位为毫秒 | number | - | false |
+| disabled | Tooltip 是否可用 | boolean | - | false |
+
+Tooltip slot
+
+| 名称 | 说明 |
+|---- |---- |
+| 无 | 触发 Tooltip 显示的 HTML 元素 |
+| content | 自定义的显示内容 |
 
 <script>
   import Row from '@/components/row';
+  import Col from '@/components/col';
   import Tooltip from '@/components/tooltip';
   import Button from '@/components/button';
 
   export default {
     components: {
       Row,
+      Col,
       Button,
       Tooltip,
     },
