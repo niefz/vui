@@ -3,8 +3,8 @@
     <div class="v-exception--inner">
       <img class="v-exception--inner-img" :src="exceptionImg" :alt="exception">
       <div class="v-exception--inner-content">
-        <h1><slot name="title">{{exception}}</slot></h1>
-        <h2><slot name="desc">{{exceptionTip}}</slot></h2>
+        <h1><slot name="title">{{ exception }}</slot></h1>
+        <h2><slot name="desc">{{ exceptionTip }}</slot></h2>
         <slot></slot>
       </div>
     </div>
@@ -27,9 +27,9 @@
         exceptionImg: this.src,
         exceptionTip: this.description,
         images: {
-          '403': 'https://gw.alipayobjects.com/zos/rmsportal/wZcnGqRDyhPOEYFcZDnb.svg',
-          '404': 'https://gw.alipayobjects.com/zos/rmsportal/KpnpchXsobRgLElEozzI.svg',
-          '500': 'https://gw.alipayobjects.com/zos/rmsportal/RVRUAYdCGeYNBWoKiIwB.svg',
+          '403': require('free-vui/src/images/403.svg'),
+          '404': require('free-vui/src/images/404.svg'),
+          '500': require('free-vui/src/images/500.svg'),
         },
         descriptions: {
           '403': '抱歉，你无权访问该页面',
