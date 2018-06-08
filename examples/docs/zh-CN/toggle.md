@@ -49,7 +49,7 @@
 
 ## 不可用
 
-:::demo Toggle 禁用状态。
+:::demo 禁用状态。
 
 ```html
 <Row>
