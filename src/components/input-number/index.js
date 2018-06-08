@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VInputNumber from './src/input-number.vue';
+import InputNumber from './src/input-number.vue';
 
-VInputNumber.install = (Vue) => {
-  Vue.component(VInputNumber.name, VInputNumber);
+InputNumber.install = (Vue) => {
+  Vue.component(InputNumber.name, InputNumber);
 };
 
-export default VInputNumber;
+export default InputNumber;

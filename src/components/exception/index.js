@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VException from './src/exception.vue';
+import Exception from './src/exception.vue';
 
-VException.install = (Vue) => {
-  Vue.component(VException.name, VException);
+Exception.install = (Vue) => {
+  Vue.component(Exception.name, Exception);
 };
 
-export default VException;
+export default Exception;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTag from './src/tag.vue';
+import Tag from './src/tag.vue';
 
-VTag.install = (Vue) => {
-  Vue.component(VTag.name, VTag);
+Tag.install = (Vue) => {
+  Vue.component(Tag.name, Tag);
 };
 
-export default VTag;
+export default Tag;

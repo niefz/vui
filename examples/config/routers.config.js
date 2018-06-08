@@ -302,10 +302,10 @@ export default {
       }, 'notification'),
     },
     {
-      path: '/zh-CN/components/progress',
-      name: 'Progress 进度条',
-      component: progress => require.ensure([], (require) => {
-        progress(require('../docs/zh-CN/progress.md'));
+      path: '/zh-CN/components/progress-bar',
+      name: 'ProgressBar 进度条',
+      component: ProgressBar => require.ensure([], (require) => {
+        ProgressBar(require('../docs/zh-CN/progress-bar.md'));
       }, 'progress'),
     },
     {

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTabs from './src/tabs.vue';
+import Tabs from './src/tabs.vue';
 
-VTabs.install = (Vue) => {
-  Vue.component(VTabs.name, VTabs);
+Tabs.install = (Vue) => {
+  Vue.component(Tabs.name, Tabs);
 };
 
-export default VTabs;
+export default Tabs;

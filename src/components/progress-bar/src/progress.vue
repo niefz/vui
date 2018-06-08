@@ -60,8 +60,8 @@
   import Icon from 'free-vui/src/components/icon';
 
   export default {
-    name: 'Progress',
-    componentName: 'Progress',
+    name: 'ProgressBar',
+    componentName: 'ProgressBar',
     components: {
       Icon,
     },

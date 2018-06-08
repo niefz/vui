@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCol from './src/col.vue';
+import Col from './src/col.vue';
 
-VCol.install = (Vue) => {
-  Vue.component(VCol.name, VCol);
+Col.install = (Vue) => {
+  Vue.component(Col.name, Col);
 };
 
-export default VCol;
+export default Col;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCalendar from './src/calendar.vue';
+import Calendar from './src/calendar.vue';
 
-VCalendar.install = (Vue) => {
-  Vue.component(VCalendar.name, VCalendar);
+Calendar.install = (Vue) => {
+  Vue.component(Calendar.name, Calendar);
 };
 
-export default VCalendar;
+export default Calendar;

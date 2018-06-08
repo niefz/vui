@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VContent from './src/content.vue';
+import Content from './src/content.vue';
 
-VContent.install = (Vue) => {
-  Vue.component(VContent.name, VContent);
+Content.install = (Vue) => {
+  Vue.component(Content.name, Content);
 };
 
-export default VContent;
+export default Content;

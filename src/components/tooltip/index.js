@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTooltip from './src/tooltip.vue';
+import Tooltip from './src/tooltip.vue';
 
-VTooltip.install = (Vue) => {
-  Vue.component(VTooltip.name, VTooltip);
+Tooltip.install = (Vue) => {
+  Vue.component(Tooltip.name, Tooltip);
 };
 
-export default VTooltip;
+export default Tooltip;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VBadge from './src/badge.vue';
+import Badge from './src/badge.vue';
 
-VBadge.install = (Vue) => {
-  Vue.component(VBadge.name, VBadge);
+Badge.install = (Vue) => {
+  Vue.component(Badge.name, Badge);
 };
 
-export default VBadge;
+export default Badge;

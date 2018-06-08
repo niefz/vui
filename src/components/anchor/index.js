@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAnchor from './src/anchor.vue';
+import Anchor from './src/anchor.vue';
 
-VAnchor.install = (Vue) => {
-  Vue.component(VAnchor.name, VAnchor);
+Anchor.install = (Vue) => {
+  Vue.component(Anchor.name, Anchor);
 };
 
-export default VAnchor;
+export default Anchor;

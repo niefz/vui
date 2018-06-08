@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTransfer from './src/transfer.vue';
+import Transfer from './src/transfer.vue';
 
-VTransfer.install = (Vue) => {
-  Vue.component(VTransfer.name, VTransfer);
+Transfer.install = (Vue) => {
+  Vue.component(Transfer.name, Transfer);
 };
 
-export default VTransfer;
+export default Transfer;

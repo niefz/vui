@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAnchorLink from './src/anchor-link.vue';
+import AnchorLink from './src/anchor-link.vue';
 
-VAnchorLink.install = (Vue) => {
-  Vue.component(VAnchorLink.name, VAnchorLink);
+AnchorLink.install = (Vue) => {
+  Vue.component(AnchorLink.name, AnchorLink);
 };
 
-export default VAnchorLink;
+export default AnchorLink;

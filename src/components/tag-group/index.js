@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTagGroup from './src/tag-group.vue';
+import TagGroup from './src/tag-group.vue';
 
-VTagGroup.install = (Vue) => {
-  Vue.component(VTagGroup.name, VTagGroup);
+TagGroup.install = (Vue) => {
+  Vue.component(TagGroup.name, TagGroup);
 };
 
-export default VTagGroup;
+export default TagGroup;

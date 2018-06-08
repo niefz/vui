@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTextarea from './src/textarea.vue';
+import Textarea from './src/textarea.vue';
 
-VTextarea.install = (Vue) => {
-  Vue.component(VTextarea.name, VTextarea);
+Textarea.install = (Vue) => {
+  Vue.component(Textarea.name, Textarea);
 };
 
-export default VTextarea;
+export default Textarea;

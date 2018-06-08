@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCascader from './src/cascader.vue';
+import Cascader from './src/cascader.vue';
 
-VCascader.install = (Vue) => {
-  Vue.component(VCascader.name, VCascader);
+Cascader.install = (Vue) => {
+  Vue.component(Cascader.name, Cascader);
 };
 
-export default VCascader;
+export default Cascader;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTimeline from './src/timeline.vue';
+import Timeline from './src/timeline.vue';
 
-VTimeline.install = (Vue) => {
-  Vue.component(VTimeline.name, VTimeline);
+Timeline.install = (Vue) => {
+  Vue.component(Timeline.name, Timeline);
 };
 
-export default VTimeline;
+export default Timeline;

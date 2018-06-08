@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VRadioGroup from './src/radio-group.vue';
+import RadioGroup from './src/radio-group.vue';
 
-VRadioGroup.install = (Vue) => {
-  Vue.component(VRadioGroup.name, VRadioGroup);
+RadioGroup.install = (Vue) => {
+  Vue.component(RadioGroup.name, RadioGroup);
 };
 
-export default VRadioGroup;
+export default RadioGroup;

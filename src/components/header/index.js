@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VHeader from './src/header.vue';
+import Header from './src/header.vue';
 
-VHeader.install = (Vue) => {
-  Vue.component(VHeader.name, VHeader);
+Header.install = (Vue) => {
+  Vue.component(Header.name, Header);
 };
 
-export default VHeader;
+export default Header;

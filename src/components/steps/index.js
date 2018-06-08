@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VSteps from './src/steps.vue';
+import Steps from './src/steps.vue';
 
-VSteps.install = (Vue) => {
-  Vue.component(VSteps.name, VSteps);
+Steps.install = (Vue) => {
+  Vue.component(Steps.name, Steps);
 };
 
-export default VSteps;
+export default Steps;

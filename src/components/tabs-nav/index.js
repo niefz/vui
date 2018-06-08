@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTabsNav from './src/tabs-nav.vue';
+import TabsNav from './src/tabs-nav.vue';
 
-VTabsNav.install = (Vue) => {
-  Vue.component(VTabsNav.name, VTabsNav);
+TabsNav.install = (Vue) => {
+  Vue.component(TabsNav.name, TabsNav);
 };
 
-export default VTabsNav;
+export default TabsNav;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VModal from './src/modal.vue';
+import Modal from './src/modal.vue';
 
-VModal.install = (Vue) => {
-  Vue.component(VModal.name, VModal);
+Modal.install = (Vue) => {
+  Vue.component(Modal.name, Modal);
 };
 
-export default VModal;
+export default Modal;

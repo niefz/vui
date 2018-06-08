@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VDivider from './src/divider.vue';
+import Divider from './src/divider.vue';
 
-VDivider.install = (Vue) => {
-  Vue.component(VDivider.name, VDivider);
+Divider.install = (Vue) => {
+  Vue.component(Divider.name, Divider);
 };
 
-export default VDivider;
+export default Divider;

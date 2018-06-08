@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VStepsItem from './src/steps-item.vue';
+import StepsItem from './src/steps-item.vue';
 
-VStepsItem.install = (Vue) => {
-  Vue.component(VStepsItem.name, VStepsItem);
+StepsItem.install = (Vue) => {
+  Vue.component(StepsItem.name, StepsItem);
 };
 
-export default VStepsItem;
+export default StepsItem;

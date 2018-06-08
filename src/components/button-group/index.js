@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VButtonGroup from './src/button-group.vue';
+import ButtonGroup from './src/button-group.vue';
 
-VButtonGroup.install = (Vue) => {
-  Vue.component(VButtonGroup.name, VButtonGroup);
+ButtonGroup.install = (Vue) => {
+  Vue.component(ButtonGroup.name, ButtonGroup);
 };
 
-export default VButtonGroup;
+export default ButtonGroup;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VBreadcrumbItem from './src/breadcrumb-item.vue';
+import BreadcrumbItem from './src/breadcrumb-item.vue';
 
-VBreadcrumbItem.install = (Vue) => {
-  Vue.component(VBreadcrumbItem.name, VBreadcrumbItem);
+BreadcrumbItem.install = (Vue) => {
+  Vue.component(BreadcrumbItem.name, BreadcrumbItem);
 };
 
-export default VBreadcrumbItem;
+export default BreadcrumbItem;

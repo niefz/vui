@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAside from './src/aside.vue';
+import Aside from './src/aside.vue';
 
-VAside.install = (Vue) => {
-  Vue.component(VAside.name, VAside);
+Aside.install = (Vue) => {
+  Vue.component(Aside.name, Aside);
 };
 
-export default VAside;
+export default Aside;

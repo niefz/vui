@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VEmpty from './src/empty.vue';
+import Empty from './src/empty.vue';
 
-VEmpty.install = (Vue) => {
-  Vue.component(VEmpty.name, VEmpty);
+Empty.install = (Vue) => {
+  Vue.component(Empty.name, Empty);
 };
 
-export default VEmpty;
+export default Empty;

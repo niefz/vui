@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VLayout from './src/layout.vue';
+import Layout from './src/layout.vue';
 
-VLayout.install = (Vue) => {
-  Vue.component(VLayout.name, VLayout);
+Layout.install = (Vue) => {
+  Vue.component(Layout.name, Layout);
 };
 
-export default VLayout;
+export default Layout;

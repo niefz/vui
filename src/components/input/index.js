@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VInput from './src/input.vue';
+import Input from './src/input.vue';
 
-VInput.install = (Vue) => {
-  Vue.component(VInput.name, VInput);
+Input.install = (Vue) => {
+  Vue.component(Input.name, Input);
 };
 
-export default VInput;
+export default Input;

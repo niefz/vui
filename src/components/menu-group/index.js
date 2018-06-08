@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VMenuGroup from './src/menu-group.vue';
+import MenuGroup from './src/menu-group.vue';
 
-VMenuGroup.install = (Vue) => {
-  Vue.component(VMenuGroup.name, VMenuGroup);
+MenuGroup.install = (Vue) => {
+  Vue.component(MenuGroup.name, MenuGroup);
 };
 
-export default VMenuGroup;
+export default MenuGroup;

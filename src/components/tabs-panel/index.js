@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTabsPanel from './src/tabs-panel.vue';
+import TabsPanel from './src/tabs-panel.vue';
 
-VTabsPanel.install = (Vue) => {
-  Vue.component(VTabsPanel.name, VTabsPanel);
+TabsPanel.install = (Vue) => {
+  Vue.component(TabsPanel.name, TabsPanel);
 };
 
-export default VTabsPanel;
+export default TabsPanel;

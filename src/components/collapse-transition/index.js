@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCollapseTransition from './src/collapse-transition.vue';
+import CollapseTransition from './src/collapse-transition.vue';
 
-VCollapseTransition.install = (Vue) => {
-  Vue.component(VCollapseTransition.name, VCollapseTransition);
+CollapseTransition.install = (Vue) => {
+  Vue.component(CollapseTransition.name, CollapseTransition);
 };
 
-export default VCollapseTransition;
+export default CollapseTransition;

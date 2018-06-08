@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCard from './src/card.vue';
+import Card from './src/card.vue';
 
-VCard.install = (Vue) => {
-  Vue.component(VCard.name, VCard);
+Card.install = (Vue) => {
+  Vue.component(Card.name, Card);
 };
 
-export default VCard;
+export default Card;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VPopover from './src/popover.vue';
+import Popover from './src/popover.vue';
 
-VPopover.install = (Vue) => {
-  Vue.component(VPopover.name, VPopover);
+Popover.install = (Vue) => {
+  Vue.component(Popover.name, Popover);
 };
 
-export default VPopover;
+export default Popover;

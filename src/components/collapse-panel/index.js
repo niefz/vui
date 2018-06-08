@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCollapsePanel from './src/collapse-panel.vue';
+import CollapsePanel from './src/collapse-panel.vue';
 
-VCollapsePanel.install = (Vue) => {
-  Vue.component(VCollapsePanel.name, VCollapsePanel);
+CollapsePanel.install = (Vue) => {
+  Vue.component(CollapsePanel.name, CollapsePanel);
 };
 
-export default VCollapsePanel;
+export default CollapsePanel;

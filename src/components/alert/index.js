@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAlert from './src/alert.vue';
+import Alert from './src/alert.vue';
 
-VAlert.install = (Vue) => {
-  Vue.component(VAlert.name, VAlert);
+Alert.install = (Vue) => {
+  Vue.component(Alert.name, Alert);
 };
 
-export default VAlert;
+export default Alert;

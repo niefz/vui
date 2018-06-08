@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCheckboxGroup from './src/checkbox-group.vue';
+import CheckboxGroup from './src/checkbox-group.vue';
 
-VCheckboxGroup.install = (Vue) => {
-  Vue.component(VCheckboxGroup.name, VCheckboxGroup);
+CheckboxGroup.install = (Vue) => {
+  Vue.component(CheckboxGroup.name, CheckboxGroup);
 };
 
-export default VCheckboxGroup;
+export default CheckboxGroup;

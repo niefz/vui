@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VMenu from './src/menu.vue';
+import Menu from './src/menu.vue';
 
-VMenu.install = (Vue) => {
-  Vue.component(VMenu.name, VMenu);
+Menu.install = (Vue) => {
+  Vue.component(Menu.name, Menu);
 };
 
-export default VMenu;
+export default Menu;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCollapse from './src/collapse.vue';
+import Collapse from './src/collapse.vue';
 
-VCollapse.install = (Vue) => {
-  Vue.component(VCollapse.name, VCollapse);
+Collapse.install = (Vue) => {
+  Vue.component(Collapse.name, Collapse);
 };
 
-export default VCollapse;
+export default Collapse;

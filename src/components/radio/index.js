@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VRadio from './src/radio.vue';
+import Radio from './src/radio.vue';
 
-VRadio.install = (Vue) => {
-  Vue.component(VRadio.name, VRadio);
+Radio.install = (Vue) => {
+  Vue.component(Radio.name, Radio);
 };
 
-export default VRadio;
+export default Radio;

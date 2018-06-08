@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VDropdown from './src/dropdown.vue';
+import Dropdown from './src/dropdown.vue';
 
-VDropdown.install = (Vue) => {
-  Vue.component(VDropdown.name, VDropdown);
+Dropdown.install = (Vue) => {
+  Vue.component(Dropdown.name, Dropdown);
 };
 
-export default VDropdown;
+export default Dropdown;

@@ -246,8 +246,8 @@
             "path": "/zh-CN/components/notification"
           },
           {
-            "name": "Progress 进度条",
-            "path": "/zh-CN/components/progress"
+            "name": "ProgressBar 进度条",
+            "path": "/zh-CN/components/progress-bar"
           },
           {
             "name": "LoadingBar 加载进度条",

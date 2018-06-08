@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VDrawer from './src/drawer.vue';
+import Drawer from './src/drawer.vue';
 
-VDrawer.install = (Vue) => {
-  Vue.component(VDrawer.name, VDrawer);
+Drawer.install = (Vue) => {
+  Vue.component(Drawer.name, Drawer);
 };
 
-export default VDrawer;
+export default Drawer;

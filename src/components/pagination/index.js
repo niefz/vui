@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VPagination from './src/pagination.vue';
+import Pagination from './src/pagination.vue';
 
-VPagination.install = (Vue) => {
-  Vue.component(VPagination.name, VPagination);
+Pagination.install = (Vue) => {
+  Vue.component(Pagination.name, Pagination);
 };
 
-export default VPagination;
+export default Pagination;

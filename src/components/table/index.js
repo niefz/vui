@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VTable from './src/table.vue';
+import Table from './src/table.vue';
 
-VTable.install = (Vue) => {
-  Vue.component(VTable.name, VTable);
+Table.install = (Vue) => {
+  Vue.component(Table.name, Table);
 };
 
-export default VTable;
+export default Table;

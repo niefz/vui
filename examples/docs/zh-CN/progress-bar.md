@@ -1,4 +1,4 @@
-# Progress 进度条
+# ProgressBar 进度条
 
 用于展示操作进度，告知用户当前状态和预期。
 
@@ -16,12 +16,12 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress :percentage="30"></Progress>
+    <ProgressBar :percentage="30"></ProgressBar>
   </Col>
 </Row>
 <Row>
   <Col :span="24">
-    <Progress :percentage="75"></Progress>
+    <ProgressBar :percentage="75"></ProgressBar>
   </Col>
 </Row>
 ```
@@ -34,12 +34,12 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress :stroke-width="16" :percentage="30" text-inside></Progress>
+    <ProgressBar :stroke-width="16" :percentage="30" text-inside></ProgressBar>
   </Col>
 </Row>
 <Row>
   <Col :span="24">
-    <Progress :stroke-width="16" :percentage="75" text-inside></Progress>
+    <ProgressBar :stroke-width="16" :percentage="75" text-inside></ProgressBar>
   </Col>
 </Row>
 ```
@@ -52,7 +52,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress shape="circle" :percentage="50"></Progress>
+    <ProgressBar shape="circle" :percentage="50"></ProgressBar>
   </Col>
 </Row>
 ```
@@ -65,7 +65,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress shape="dashboard" :percentage="75"></Progress>
+    <ProgressBar shape="dashboard" :percentage="75"></ProgressBar>
   </Col>
 </Row>
 ```
@@ -78,7 +78,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress :percentage="75" :success-percent="30"></Progress>
+    <ProgressBar :percentage="75" :success-percent="30"></ProgressBar>
   </Col>
 </Row>
 ```
@@ -91,17 +91,17 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress :percentage="50" status="active"></Progress>
+    <ProgressBar :percentage="50" status="active"></ProgressBar>
   </Col>
 </Row>
 <Row>
   <Col :span="24">
-    <Progress :percentage="100" status="exception" icon="v-icon-error"></Progress>
+    <ProgressBar :percentage="100" status="exception" icon="v-icon-error"></ProgressBar>
   </Col>
 </Row>
 <Row>
   <Col :span="24">
-    <Progress :percentage="100" status="success" icon="v-icon-success"></Progress>
+    <ProgressBar :percentage="100" status="success" icon="v-icon-success"></ProgressBar>
   </Col>
 </Row>
 ```
@@ -114,7 +114,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress :percentage="50" hide-info></Progress>
+    <ProgressBar :percentage="50" hide-info></ProgressBar>
   </Col>
 </Row>
 ```
@@ -127,12 +127,12 @@
 ```html
 <Row>
   <Col :span="24">
-    <Progress :percentage="50">50 Days</Progress>
+    <ProgressBar :percentage="50">50 Days</ProgressBar>
   </Col>
 </Row>
 <Row>
   <Col :span="24">
-    <Progress shape="circle" :percentage="75" :text-size="20">75 Days</Progress>
+    <ProgressBar shape="circle" :percentage="75" :text-size="20">75 Days</ProgressBar>
   </Col>
 </Row>
 ```
@@ -140,7 +140,7 @@
 
 ## API
 
-Progress props
+ProgressBar props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
@@ -154,7 +154,7 @@ Progress props
 | text-inside | 进度条显示文本内置在进度条内（只在 shape="line" 时可用） | boolean | - | false |
 | hide-info | 是否隐藏进度条文本内容 | boolean | - | false |
 
-Progress slot
+ProgressBar slot
 
 | 名称 | 说明 |
 |---- |---- |
@@ -163,13 +163,13 @@ Progress slot
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Progress from '@/components/Progress';
+  import ProgressBar from '@/components/progress-bar';
 
   export default {
     components: {
       Row,
       Col,
-      Progress,
+      ProgressBar,
     },
   };
 </script>

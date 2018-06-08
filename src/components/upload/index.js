@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VUpload from './src/upload.vue';
+import Upload from './src/upload.vue';
 
-VUpload.install = (Vue) => {
-  Vue.component(VUpload.name, VUpload);
+Upload.install = (Vue) => {
+  Vue.component(Upload.name, Upload);
 };
 
-export default VUpload;
+export default Upload;

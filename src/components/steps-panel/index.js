@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VStepsPanel from './src/steps-panel.vue';
+import StepsPanel from './src/steps-panel.vue';
 
-VStepsPanel.install = (Vue) => {
-  Vue.component(VStepsPanel.name, VStepsPanel);
+StepsPanel.install = (Vue) => {
+  Vue.component(StepsPanel.name, StepsPanel);
 };
 
-export default VStepsPanel;
+export default StepsPanel;

@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VBackTop from './src/back-top.vue';
+import BackTop from './src/back-top.vue';
 
-VBackTop.install = (Vue) => {
-  Vue.component(VBackTop.name, VBackTop);
+BackTop.install = (Vue) => {
+  Vue.component(BackTop.name, BackTop);
 };
 
-export default VBackTop;
+export default BackTop;

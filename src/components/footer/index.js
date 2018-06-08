@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VFooter from './src/footer.vue';
+import Footer from './src/footer.vue';
 
-VFooter.install = (Vue) => {
-  Vue.component(VFooter.name, VFooter);
+Footer.install = (Vue) => {
+  Vue.component(Footer.name, Footer);
 };
 
-export default VFooter;
+export default Footer;

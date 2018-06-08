@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VRow from './src/row.vue';
+import Row from './src/row.vue';
 
-VRow.install = (Vue) => {
-  Vue.component(VRow.name, VRow);
+Row.install = (Vue) => {
+  Vue.component(Row.name, Row);
 };
 
-export default VRow;
+export default Row;

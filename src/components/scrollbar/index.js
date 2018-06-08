@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VScrollbar from './src/scrollbar.vue';
+import Scrollbar from './src/scrollbar.vue';
 
-VScrollbar.install = (Vue) => {
-  Vue.component(VScrollbar.name, VScrollbar);
+Scrollbar.install = (Vue) => {
+  Vue.component(Scrollbar.name, Scrollbar);
 };
 
-export default VScrollbar;
+export default Scrollbar;

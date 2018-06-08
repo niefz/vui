@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VCarouselItem from './src/carousel-item.vue';
+import CarouselItem from './src/carousel-item.vue';
 
-VCarouselItem.install = (Vue) => {
-  Vue.component(VCarouselItem.name, VCarouselItem);
+CarouselItem.install = (Vue) => {
+  Vue.component(CarouselItem.name, CarouselItem);
 };
 
-export default VCarouselItem;
+export default CarouselItem;

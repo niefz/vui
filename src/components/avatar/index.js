@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAvatar from './src/avatar.vue';
+import Avatar from './src/avatar.vue';
 
-VAvatar.install = (Vue) => {
-  Vue.component(VAvatar.name, VAvatar);
+Avatar.install = (Vue) => {
+  Vue.component(Avatar.name, Avatar);
 };
 
-export default VAvatar;
+export default Avatar;

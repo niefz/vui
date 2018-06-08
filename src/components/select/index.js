@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VSelect from './src/select.vue';
+import Select from './src/select.vue';
 
-VSelect.install = (Vue) => {
-  Vue.component(VSelect.name, VSelect);
+Select.install = (Vue) => {
+  Vue.component(Select.name, Select);
 };
 
-export default VSelect;
+export default Select;

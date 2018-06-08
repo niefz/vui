@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VMenuSub from './src/menu-sub.vue';
+import MenuSub from './src/menu-sub.vue';
 
-VMenuSub.install = (Vue) => {
-  Vue.component(VMenuSub.name, VMenuSub);
+MenuSub.install = (Vue) => {
+  Vue.component(MenuSub.name, MenuSub);
 };
 
-export default VMenuSub;
+export default MenuSub;

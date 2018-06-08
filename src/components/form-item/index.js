@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VFormItem from './src/form-item.vue';
+import FormItem from './src/form-item.vue';
 
-VFormItem.install = (Vue) => {
-  Vue.component(VFormItem.name, VFormItem);
+FormItem.install = (Vue) => {
+  Vue.component(FormItem.name, FormItem);
 };
 
-export default VFormItem;
+export default FormItem;

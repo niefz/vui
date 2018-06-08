@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VAffix from './src/affix.vue';
+import Affix from './src/affix.vue';
 
-VAffix.install = (Vue) => {
-  Vue.component(VAffix.name, VAffix);
+Affix.install = (Vue) => {
+  Vue.component(Affix.name, Affix);
 };
 
-export default VAffix;
+export default Affix;

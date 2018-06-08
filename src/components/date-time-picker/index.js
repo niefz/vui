@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VDateTimePicker from './src/picker.vue';
+import DateTimePicker from './src/picker.vue';
 
-VDateTimePicker.install = (Vue) => {
-  Vue.component(VDateTimePicker.name, VDateTimePicker);
+DateTimePicker.install = (Vue) => {
+  Vue.component(DateTimePicker.name, DateTimePicker);
 };
 
-export default VDateTimePicker;
+export default DateTimePicker;

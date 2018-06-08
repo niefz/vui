@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VSelectMenu from './src/select-menu.vue';
+import SelectMenu from './src/select-menu.vue';
 
-VSelectMenu.install = (Vue) => {
-  Vue.component(VSelectMenu.name, VSelectMenu);
+SelectMenu.install = (Vue) => {
+  Vue.component(SelectMenu.name, SelectMenu);
 };
 
-export default VSelectMenu;
+export default SelectMenu;

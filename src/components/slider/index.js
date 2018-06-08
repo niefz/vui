@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VSlider from './src/slider.vue';
+import Slider from './src/slider.vue';
 
-VSlider.install = (Vue) => {
-  Vue.component(VSlider.name, VSlider);
+Slider.install = (Vue) => {
+  Vue.component(Slider.name, Slider);
 };
 
-export default VSlider;
+export default Slider;

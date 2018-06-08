@@ -1,10 +1,10 @@
 /**
  * Created by niefz on 2018/1/8.
  */
-import VMenuItem from './src/menu-item.vue';
+import MenuItem from './src/menu-item.vue';
 
-VMenuItem.install = (Vue) => {
-  Vue.component(VMenuItem.name, VMenuItem);
+MenuItem.install = (Vue) => {
+  Vue.component(MenuItem.name, MenuItem);
 };
 
-export default VMenuItem;
+export default MenuItem;

@@ -192,8 +192,8 @@ Free-ui 受到 5 音阶以及自然律的启发定义了 10 个不同尺寸的�
 
   export default {
     components: {
-      VRow: Row,
-      VCol: Col,
+      Row,
+      Col,
     },
   };
 </script>
