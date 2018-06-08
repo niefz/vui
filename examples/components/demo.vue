@@ -65,13 +65,15 @@
   };
 </script>
 <style lang="scss">
+  @import "../../src/styles/index.scss";
+
   .demo {
     position: relative;
-    border: dashed 1px #E8E8E8;
+    border: dashed 1px $color-divider;
     border-radius: 3px;
     transition: .3s;
     &.hover {
-      border-color: #1890FF;
+      border-color: $color-primary;
     }
     .source {
       position: relative;
@@ -81,12 +83,12 @@
       position: relative;
       min-height: 67px;
       padding: 20px;
-      border-top: dashed 1px #E8E8E8;
-      background-color: #FFFFFF;
-      box-sizing: border-box;
+      border-top: dashed 1px $color-divider;
+      background-color: $color-white;
       font-size: 12px;
       line-height: 22px;
       word-break: break-all;
+      box-sizing: border-box;
     }
     .code {
       height: 0;
@@ -94,23 +96,23 @@
       transition: height .3s;
       .highlight {
         padding: 20px;
-        border-top: dashed 1px #E8E8E8;
-        background-color: #FAFAFA;
+        border-top: dashed 1px $color-divider;
+        background-color: $color-thead-background;
         .hljs {
           display: block;
           padding: 0;
           background-color: transparent;
           line-height: 2em;
-          color: #2973b7;
+          color: $color-primary;
           overflow: auto;
           .hljs-name {
-            color: #2973b7;
+            color: $color-danger;
           }
           .hljs-attr {
-            color: #2973b7;
+            color: $color-success;
           }
           .hljs-string {
-            color: #42b983;
+            color: $color-warning;
           }
         }
       }
@@ -128,8 +130,8 @@
         line-height: 26px;
       }
       &:hover {
-        color: #1890FF;
-        background-color: #FAFAFA;
+        background-color: $color-thead-background;
+        color: $color-primary;
       }
     }
     code {

@@ -265,16 +265,14 @@
       blockquote {
         margin: 1em 0;
         padding-left: .8em;
-        border-left: 4px solid #D9D9D9;
+        border-left: 4px solid $color-border;
         font-size: 14px;
         a {
-          color: #1890FF;
+          color: $color-primary;
         }
       }
       code {
-        padding: 3px 5px;
-        background-color: #F5F5F5;
-        border-radius: 3px;
+        border-radius: $border-radius;
       }
       .table {
         width: 100%;
@@ -282,15 +280,9 @@
         font-size: 14px;
         border-collapse: collapse;
         overflow: auto;
-        th {
-          padding: 10px;
-          border: 1px solid $color-border;
-          background-color: $color-thead-background;
-          text-align: left;
-        }
-        td {
-          padding: 10px;
-          border: 1px solid $color-border;
+        th, td {
+          padding: 16px 10px;
+          border-bottom: 1px dashed $color-divider;
           text-align: left;
         }
       }
