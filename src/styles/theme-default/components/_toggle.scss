@@ -2,8 +2,9 @@ $switch-height: 20px;
 
 .v-switch {
   position: relative;
-  display: block;
+  display: inline-block;
   height: $switch-height;
+  line-height: $switch-height;
   .v-switch--inner {
     position: relative;
     display: inline-block;
@@ -25,10 +26,22 @@ $switch-height: 20px;
       border-radius: $switch-height;
       transition: all .3s ease;
     }
+    &-on, &-off {
+      position: absolute;
+      line-height: inherit;
+      color: $color-white;
+    }
+    &-on {
+      left: 6px;
+    }
+    &-off {
+      right: 6px;
+    }
     &-input {
       position: absolute;
       width: 100%;
       height: 100%;
+      line-height: inherit;
       visibility: hidden;
     }
   }

@@ -162,11 +162,11 @@ export default {
       }, 'slider'),
     },
     {
-      path: '/zh-CN/components/switch',
-      name: 'Switch 开关',
-      component: switcher => require.ensure([], (require) => {
-        switcher(require('../docs/zh-CN/switch.md'));
-      }, 'switch'),
+      path: '/zh-CN/components/toggle',
+      name: 'Toggle 开关',
+      component: toggle => require.ensure([], (require) => {
+        toggle(require('../docs/zh-CN/toggle.md'));
+      }, 'toggle'),
     },
     {
       path: '/zh-CN/components/upload',

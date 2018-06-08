@@ -8,13 +8,13 @@
     name: 'Aside',
     componentName: 'Aside',
     props: {
-      width: {
-        type: Number,
-        default: 200,
-      },
       float: {
         type: String,
         default: 'left',
+      },
+      width: {
+        type: Number,
+        default: 200,
       },
     },
     computed: {

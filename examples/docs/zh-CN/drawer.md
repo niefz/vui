@@ -117,9 +117,9 @@ Drawer slot
       };
     },
     methods: {
-      beforeClose(callback) {
+      beforeClose(done) {
         console.log('before-close');
-        callback();
+        done();
       },
       openDrawer(placement) {
         this.placementVisible = true;

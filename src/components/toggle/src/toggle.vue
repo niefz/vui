@@ -4,43 +4,51 @@
     :class="[
       {
         ['disabled']: isDisabled,
-        ['checked']: checked
+        ['checked']: isChecked
       }
     ]"
-    :style="style">
+    :style="style"
+    @click="handleClick">
     <label class="v-switch--inner">
+      <template v-if="isChecked">
+        <em class="v-switch--inner-on">
+          <slot name="on"></slot>
+        </em>
+      </template>
       <input
         ref="input"
         class="v-switch--inner-input"
         type="checkbox"
         :name="name"
-        :disabled="isDisabled"
-        @change="handleChange">
+        @change.stop="handleChange"
+        :disabled="isDisabled">
+      <template v-if="!isChecked">
+        <em class="v-switch--inner-off">
+          <slot name="off"></slot>
+        </em>
+      </template>
     </label>
   </div>
 </template>
 <script>
   export default {
-    name: 'Switch',
-    componentName: 'Switch',
+    name: 'Toggle',
+    componentName: 'Toggle',
     props: {
-      width: {
-        type: Number,
-        default: 40
-      },
       value: {
         type: [Boolean, String, Number],
-        default: false
-      },
-      disabled: {
-        type: Boolean,
         default: false
       },
       name: {
         type: String,
         default: ''
       },
-      beforeSwitch: Function,
+      width: {
+        type: Number,
+        default: 40
+      },
+      beforeToggle: Function,
+      disabled: Boolean,
     },
     data() {
       return {};
@@ -51,33 +59,27 @@
         style.width = `${this.width}px`;
         return style;
       },
-      checked () {
+      isChecked() {
         return this.value;
       },
-      isDisabled () {
+      isDisabled() {
         return this.disabled;
       },
-    },
-    watch: {
-      value(val) {
-        this.$emit('change', val);
-      }
     },
     methods: {
       change() {
         this.$emit('input', this.$refs.input.checked);
       },
       handleChange() {
-        if (typeof this.beforeSwitch === 'function') {
-          this.beforeSwitch(this.change);
+        if (typeof this.beforeToggle === 'function') {
+          this.beforeToggle(this.change);
         } else {
           this.change();
         }
       },
-    },
-    created() {
-    },
-    mounted() {
+      handleClick() {
+        this.$emit('change', this.$refs.input.checked);
+      },
     },
   };
 </script>

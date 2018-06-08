@@ -148,8 +148,8 @@
             "path": "/zh-CN/components/slider"
           },
           {
-            "name": "Switch 开关",
-            "path": "/zh-CN/components/switch"
+            "name": "Toggle 开关",
+            "path": "/zh-CN/components/toggle"
           },
           {
             "name": "Transfer 穿梭框",
