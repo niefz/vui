@@ -20,6 +20,7 @@
   export default {
     name: 'Select',
     componentName: 'Select',
+    inheritAttrs: false,
     directives: { Clickoutside },
     mixins: [Emitter],
     components: {

@@ -50,6 +50,7 @@
   export default {
     name: 'Modal',
     componentName: 'Modal',
+    inheritAttrs: false,
     components: {
       Icon,
       Button,

@@ -14,6 +14,7 @@
   export default {
     name: 'MenuItemGroup',
     componentName: 'MenuItemGroup',
+    inheritAttrs: false,
     inject: ['menu'],
     computed: {
       style() {

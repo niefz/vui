@@ -17,6 +17,7 @@
   export default {
     name: 'TimelineItem',
     componentName: 'TimelineItem',
+    inheritAttrs: false,
     props: {
       color: {
         type: String

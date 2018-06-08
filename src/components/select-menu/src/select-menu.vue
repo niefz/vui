@@ -18,6 +18,7 @@
   export default {
     name: 'SelectMenu',
     componentName: 'SelectMenu',
+    inheritAttrs: false,
     mixins: [Popper],
     inject: ['select'],
     data() {

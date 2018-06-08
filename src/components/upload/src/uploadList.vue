@@ -28,6 +28,7 @@
   export default {
     name: 'UploadList',
     componentName: 'UploadList',
+    inheritAttrs: false,
     components: {
       Icon,
       Progress,

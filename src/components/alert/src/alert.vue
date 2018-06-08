@@ -35,6 +35,7 @@
   export default {
     name: 'Alert',
     componentName: 'Alert',
+    inheritAttrs: false,
     components: {
       Icon,
     },

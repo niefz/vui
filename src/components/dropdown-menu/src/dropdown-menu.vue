@@ -18,6 +18,7 @@
   export default {
     name: 'DropdownMenu',
     componentName: 'DropdownMenu',
+    inheritAttrs: false,
     mixins: [Popper],
     inject: ['dropdown'],
     data() {

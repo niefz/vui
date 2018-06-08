@@ -32,6 +32,7 @@
   export default {
     name: 'MenuSub',
     componentName: 'MenuSub',
+    inheritAttrs: false,
     mixins: [Emitter],
     inject: ['menu'],
     components: {

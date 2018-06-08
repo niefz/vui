@@ -34,6 +34,7 @@
   export default {
     name: 'Toggle',
     componentName: 'Toggle',
+    inheritAttrs: false,
     props: {
       value: {
         type: [Boolean, String, Number],

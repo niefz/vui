@@ -30,6 +30,7 @@
   export default {
     name: 'Tabs',
     componentName: 'Tabs',
+    inheritAttrs: false,
     components: {
       TabsBar,
     },

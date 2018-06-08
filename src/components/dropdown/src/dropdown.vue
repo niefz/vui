@@ -13,6 +13,7 @@
   export default {
     name: 'Dropdown',
     componentName: 'Dropdown',
+    inheritAttrs: false,
     directives: { Clickoutside },
     mixins: [Emitter],
     provide() {

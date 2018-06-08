@@ -43,6 +43,7 @@
   export default {
     name: 'MenuItem',
     componentName: 'MenuItem',
+    inheritAttrs: false,
     mixins: [Emitter],
     inject: ['menu'],
     props: {

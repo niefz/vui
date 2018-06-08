@@ -16,6 +16,7 @@
   export default {
     name: 'Affix',
     componentName: 'Affix',
+    inheritAttrs: false,
     props: {
       affix: Boolean,
       top: {

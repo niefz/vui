@@ -15,6 +15,7 @@
   export default {
     name: 'Menu',
     componentName: 'Menu',
+    inheritAttrs: false,
     mixins: [Emitter],
     provide() {
       return {

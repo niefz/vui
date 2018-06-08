@@ -27,6 +27,7 @@
   export default {
     name: 'Empty',
     componentName: 'Empty',
+    inheritAttrs: false,
     components: {
       Icon,
     },

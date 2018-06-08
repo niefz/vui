@@ -5,6 +5,7 @@
   export default {
     name: 'TabsBar',
     componentName: 'TabsBar',
+    inheritAttrs: false,
     inject: ['tabs'],
     props: {
       navs: Array,

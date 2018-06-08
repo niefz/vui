@@ -47,6 +47,7 @@
   export default {
     name: 'Carousel',
     componentName: 'Carousel',
+    inheritAttrs: false,
     components: {
       Icon,
     },

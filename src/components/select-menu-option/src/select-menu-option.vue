@@ -19,6 +19,7 @@
   export default {
     name: 'SelectMenuOption',
     componentName: 'SelectMenuOption',
+    inheritAttrs: false,
     mixins: [Emitter],
     inject: ['select'],
     props: {

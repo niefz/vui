@@ -20,6 +20,7 @@
   export default {
     name: 'Anchor',
     componentName: 'Anchor',
+    inheritAttrs: false,
     components: {
       AnchorBar,
     },

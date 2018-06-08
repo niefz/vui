@@ -22,6 +22,7 @@
   export default {
     name: 'AnchorLink',
     componentName: 'AnchorLink',
+    inheritAttrs: false,
     mixins: [Emitter],
     inject: ['anchor'],
     props: {

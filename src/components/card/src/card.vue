@@ -19,6 +19,7 @@
   export default {
     name: 'Card',
     componentName: 'Card',
+    inheritAttrs: false,
     props: {
       header: {
         type: String,

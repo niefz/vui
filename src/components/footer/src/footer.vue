@@ -7,6 +7,7 @@
   export default {
     name: 'Footer',
     componentName: 'Footer',
+    inheritAttrs: false,
     props: {
       height: {
         type: Number,

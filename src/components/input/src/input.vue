@@ -61,6 +61,7 @@
   export default {
     name: 'Input',
     componentName: 'Input',
+    inheritAttrs: false,
     components: {
       Icon,
     },

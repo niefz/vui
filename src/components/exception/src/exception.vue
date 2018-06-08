@@ -14,6 +14,7 @@
   export default {
     name: 'Exception',
     componentName: 'Exception',
+    inheritAttrs: false,
     props: {
       exception: {
         type: String,

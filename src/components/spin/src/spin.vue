@@ -25,6 +25,7 @@
   export default {
     name: 'Spin',
     componentName: 'Spin',
+    inheritAttrs: false,
     components: {
       Icon,
     },

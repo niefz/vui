@@ -19,6 +19,7 @@
   export default {
     name: 'DropdownMenuItem',
     componentName: 'DropdownMenuItem',
+    inheritAttrs: false,
     mixins: [Emitter],
     props: {
       value: {},

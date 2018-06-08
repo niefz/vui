@@ -27,6 +27,7 @@
   export default {
     name: 'TabsNav',
     componentName: 'TabsNav',
+    inheritAttrs: false,
     components: {
       Icon,
     },

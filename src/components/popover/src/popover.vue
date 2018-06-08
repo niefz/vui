@@ -41,6 +41,7 @@
   export default {
     name: 'Popover',
     componentName: 'Popover',
+    inheritAttrs: false,
     mixins: [Popper],
     components: {
       Button,

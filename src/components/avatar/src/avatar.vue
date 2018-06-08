@@ -22,6 +22,7 @@
   export default {
     name: 'Avatar',
     componentName: 'Avatar',
+    inheritAttrs: false,
     components: {
       Icon,
     },

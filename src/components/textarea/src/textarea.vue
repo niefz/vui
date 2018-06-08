@@ -25,6 +25,7 @@
   export default {
     name: 'Textarea',
     componentName: 'Textarea',
+    inheritAttrs: false,
     components: {
       VIcon: Icon,
     },

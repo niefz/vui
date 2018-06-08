@@ -62,6 +62,7 @@
   export default {
     name: 'ProgressBar',
     componentName: 'ProgressBar',
+    inheritAttrs: false,
     components: {
       Icon,
     },

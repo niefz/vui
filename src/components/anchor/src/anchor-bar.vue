@@ -5,6 +5,7 @@
   export default {
     name: 'AnchorBar',
     componentName: 'AnchorBar',
+    inheritAttrs: false,
     inject: ['anchor'],
     props: {
       links: Array,

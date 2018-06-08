@@ -17,6 +17,7 @@
   export default {
     name: 'CarouselItem',
     componentName: 'CarouselItem',
+    inheritAttrs: false,
     components: {
       Icon,
     },

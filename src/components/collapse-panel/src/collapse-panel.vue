@@ -41,6 +41,7 @@
   export default {
     name: 'CollapseItem',
     componentName: 'CollapseItem',
+    inheritAttrs: false,
     components: {
       CollapseTransition,
       Icon,

@@ -7,6 +7,7 @@
   export default {
     name: 'TagGroup',
     componentName: 'TagGroup',
+    inheritAttrs: false,
     props: {
       value: [String, Array],
       multiple: Boolean,

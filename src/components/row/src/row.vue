@@ -9,6 +9,7 @@
   export default {
     name: 'Row',
     componentName: 'Row',
+    inheritAttrs: false,
     props: {
       gutter: {
         type: Number,

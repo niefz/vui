@@ -133,6 +133,7 @@
   export default {
     name: 'Pagination',
     componentName: 'Pagination',
+    inheritAttrs: false,
     components: {
       Button,
       Icon,

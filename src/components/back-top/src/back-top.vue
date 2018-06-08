@@ -22,6 +22,7 @@
   export default {
     name: 'BackTop',
     componentName: 'BackTop',
+    inheritAttrs: false,
     components: {
       Icon,
     },

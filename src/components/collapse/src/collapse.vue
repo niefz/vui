@@ -13,6 +13,7 @@
   export default {
     name: 'Collapse',
     componentName: 'Collapse',
+    inheritAttrs: false,
     provide() {
       return {
         collapse: this,

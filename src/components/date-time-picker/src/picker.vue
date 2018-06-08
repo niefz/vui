@@ -62,6 +62,7 @@
   export default {
     name: 'DateTimePicker',
     componentName: 'DateTimePicker',
+    inheritAttrs: false,
     directives: { Clickoutside },
     mixins: [Emitter, NewPopper],
     components: {

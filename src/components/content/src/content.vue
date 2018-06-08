@@ -7,6 +7,7 @@
   export default {
     name: 'Content',
     componentName: 'Content',
+    inheritAttrs: false,
     computed: {
       style() {
         const style = {};

@@ -22,6 +22,7 @@
   export default {
     name: 'Slider',
     componentName: 'Slider',
+    inheritAttrs: false,
     props: {
       value: {
         type: Number,

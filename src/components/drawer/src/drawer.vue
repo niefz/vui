@@ -51,6 +51,7 @@
   export default {
     name: 'Drawer',
     componentName: 'Drawer',
+    inheritAttrs: false,
     components: {
       Icon,
       Button,

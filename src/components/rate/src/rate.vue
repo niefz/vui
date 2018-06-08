@@ -28,6 +28,7 @@
   export default {
     name: 'Rate',
     componentName: 'Rate',
+    inheritAttrs: false,
     components: {
       Icon,
     },

@@ -15,6 +15,7 @@
   export default {
     name: 'CollapseTransition',
     componentName: 'CollapseTransition',
+    inheritAttrs: false,
     methods: {
       beforeEnter(el) {
         addClass(el, 'collapse-transition');

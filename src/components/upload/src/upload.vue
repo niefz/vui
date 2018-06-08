@@ -30,6 +30,7 @@
   export default {
     name: 'Upload',
     componentName: 'Upload',
+    inheritAttrs: false,
     components: {
       Icon,
       UploadList,

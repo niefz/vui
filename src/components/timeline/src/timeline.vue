@@ -7,6 +7,7 @@
   export default {
     name: 'Timeline',
     componentName: 'Timeline',
+    inheritAttrs: false,
     props: {
     },
     data() {

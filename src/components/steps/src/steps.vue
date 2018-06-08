@@ -16,6 +16,7 @@
   export default {
     name: 'Steps',
     componentName: 'Steps',
+    inheritAttrs: false,
     provide() {
       return {
         steps: this,

@@ -42,6 +42,7 @@
   export default {
     name: 'StepsItem',
     componentName: 'StepsItem',
+    inheritAttrs: false,
     components: {
       Icon,
     },

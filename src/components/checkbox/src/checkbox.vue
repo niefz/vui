@@ -37,6 +37,7 @@
   export default {
     name: 'Checkbox',
     componentName: 'Checkbox',
+    inheritAttrs: false,
     mixins: [Emitter],
     model: {
       prop: 'vmodel',

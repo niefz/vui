@@ -11,6 +11,7 @@
   export default {
     name: 'StepsPanel',
     componentName: 'StepsPanel',
+    inheritAttrs: false,
     inject: ['steps'],
     props: {
       name: {

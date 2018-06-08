@@ -35,6 +35,7 @@
   export default {
     name: 'Notification',
     componentName: 'Notification',
+    inheritAttrs: false,
     components: {
       Icon,
     },

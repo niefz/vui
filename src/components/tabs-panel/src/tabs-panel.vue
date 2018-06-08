@@ -11,6 +11,7 @@
   export default {
     name: 'TabsPanel',
     componentName: 'TabsPanel',
+    inheritAttrs: false,
     inject: ['tabs'],
     props: {
       name: {

@@ -40,6 +40,7 @@
   export default {
     name: 'InputNumber',
     componentName: 'InputNumber',
+    inheritAttrs: false,
     components: {
       Input,
       Icon,

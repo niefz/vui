@@ -32,6 +32,7 @@
   export default {
     name: 'Tag',
     componentName: 'Tag',
+    inheritAttrs: false,
     mixins: [Emitter],
     components: {
       Icon,

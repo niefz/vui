@@ -30,6 +30,7 @@
   export default {
     name: 'Button',
     componentName: 'Button',
+    inheritAttrs: false,
     components: {
       Icon,
     },

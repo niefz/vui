@@ -7,6 +7,7 @@
   export default {
     name: 'Aside',
     componentName: 'Aside',
+    inheritAttrs: false,
     props: {
       float: {
         type: String,
