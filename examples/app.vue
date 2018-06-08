@@ -272,6 +272,8 @@
         }
       }
       code {
+        padding: 2px;
+        background-color: $color-background;
         border-radius: $border-radius;
       }
       .table {
