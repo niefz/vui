@@ -10,12 +10,9 @@
   </div>
 </template>
 <script>
-  import Emitter from 'free-vui/src/mixins/emitter';
-
   export default {
     name: 'CheckboxGroup',
     componentName: 'CheckboxGroup',
-    mixins: [Emitter],
     props: {
       value: {
         type: Array,

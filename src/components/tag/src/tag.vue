@@ -6,16 +6,17 @@
         'v-tag--' + theme,
         'v-tag--' + tagSize,
         {
-          ['v-tag--custom']: color,
+          ['v-tag--custom']: borderColor || backgroundColor,
           ['checked']: isChecked,
         }
       ]"
       :style="{
-        backgroundColor: color
+        borderColor: borderColor,
+        backgroundColor: backgroundColor
       }"
       @click.stop="handleChange(value)">
       <template v-if="$slots.default"><slot></slot></template>
-      <template v-else>{{value}}</template>
+      <template v-else>{{ value }}</template>
       <Icon
         class="v-tag--close"
         icon="v-icon-close-o"
@@ -25,11 +26,13 @@
   </transition>
 </template>
 <script>
+  import Emitter from 'free-vui/src/mixins/emitter';
   import Icon from 'free-vui/src/components/icon';
 
   export default {
     name: 'Tag',
     componentName: 'Tag',
+    mixins: [Emitter],
     components: {
       Icon,
     },
@@ -47,7 +50,11 @@
         type: String,
         default: 'small',
       },
-      color: {
+      borderColor: {
+        type: String,
+        default: '',
+      },
+      backgroundColor: {
         type: String,
         default: '',
       },
@@ -57,23 +64,26 @@
       },
     },
     computed: {
-      tagSize() {
-        return this.size || (this.$VUI || {}).size;
-      },
-      parent() {
+      isGroup() {
         let parent = this.$parent;
-
-        if (parent && parent.$options.componentName !== 'TagGroup') {
-          parent = parent.$parent;
+        if (parent) {
+          if (parent.$options.componentName !== 'TagGroup') {
+            parent = parent.$parent;
+          } else {
+            this._tagGroup = parent;
+            return true;
+          }
         }
-
-        return parent;
+        return false;
       },
       model() {
-        return this.parent && this.parent.value;
+        return this.isGroup ? this._tagGroup.value : this.value;
       },
       multiple() {
-        return this.parent && this.parent.multiple;
+        return this.isGroup && this._tagGroup.multiple;
+      },
+      tagSize() {
+        return this.size || (this.$VUI || {}).size;
       },
       isChecked() {
         if (this.multiple) {
@@ -84,20 +94,22 @@
     },
     methods: {
       handleClose(event) {
-        this.$emit('close', event);
+        this.$emit('close', this.value, event);
       },
       handleChange(val) {
-        if (this.multiple) {
-          const model = this.model;
-          const index = model.findIndex(item => item === val);
-          if (index > -1) {
-            model.splice(index, 1);
+        if (this.isGroup) {
+          let model = this.model;
+          if (this.multiple) {
+            const index = model.findIndex(item => item === val);
+            if (index > -1) {
+              model.splice(index, 1);
+            } else {
+              model.push(val);
+            }
           } else {
-            model.push(val);
+            model = val;
           }
-          this.$emit('change', model);
-        } else {
-          this.$emit('change', val);
+          this.dispatch('TagGroup', 'input', [model]);
         }
       },
     },

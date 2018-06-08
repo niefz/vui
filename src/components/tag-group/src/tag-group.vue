@@ -7,15 +7,9 @@
   export default {
     name: 'TagGroup',
     componentName: 'TagGroup',
-    model: {
-      prop: 'value',
-    },
     props: {
       value: [String, Array],
-      multiple: {
-        type: Boolean,
-        default: false,
-      },
+      multiple: Boolean,
     },
   };
 </script>

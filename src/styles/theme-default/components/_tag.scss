@@ -1,6 +1,6 @@
 /* mixin */
 @mixin make-color($border-color, $background-color, $color) {
-  border: 1px solid $border-color;
+  border-color: $border-color;
   background-color: $background-color;
   color: $color;
 }
@@ -14,9 +14,10 @@
 .v-tag {
   display: inline-block;
   padding: 0 10px;
+  border: 1px solid;
   white-space: nowrap;
   border-radius: $border-radius;
-  .v-tag--close {
+  &--close {
     position: relative;
     right: -5px;
     width: 16px;
