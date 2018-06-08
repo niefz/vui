@@ -44,7 +44,7 @@
       width="200"
       trigger="focus"
       content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-      <input slot="reference" placeholder="Focus 激活"/>
+      <Input slot="reference" placeholder="Focus 激活"/>
     </Popover>
   </Col>
   <Col :span="8">
@@ -175,5 +175,3 @@ Popover slot
     },
   };
 </script>
-<style lang="scss" scoped>
-</style>

@@ -1,22 +1,16 @@
 .v-popover {
   display: inline-block;
-  &--popper {
-
-  }
   &--arrow {
     position: absolute;
     display: block;
-    width: 4px;
-    height: 4px;
     border: {
       style: solid;
       color: transparent;
     }
-    background: $color-white;
+    background-color: $color-white;
   }
   &--inner {
     background-color: $color-white;
-    background-clip: padding-box;
     border-radius: $border-radius;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
   }
@@ -41,9 +35,9 @@
 .v-popover--placement-top,
 .v-popover--placement-top-start,
 .v-popover--placement-top-end {
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   .v-popover--arrow {
-    bottom: 6px;
+    bottom: 5px;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
   }
 }
@@ -51,9 +45,9 @@
 .v-popover--placement-right,
 .v-popover--placement-right-start,
 .v-popover--placement-right-end {
-  padding-left: 10px;
+  padding-left: 8px;
   .v-popover--arrow {
-    left: 6px;
+    left: 5px;
     box-shadow: -3px 3px 7px rgba(0, 0, 0, .07);
   }
 }
@@ -61,9 +55,9 @@
 .v-popover--placement-bottom,
 .v-popover--placement-bottom-start,
 .v-popover--placement-bottom-end {
-  padding-top: 10px;
+  padding-top: 8px;
   .v-popover--arrow {
-    top: 6px;
+    top: 5px;
     box-shadow: -2px -2px 4px rgba(0, 0, 0, .07);
   }
 }
@@ -71,9 +65,9 @@
 .v-popover--placement-left,
 .v-popover--placement-left-start,
 .v-popover--placement-left-end {
-  padding-right: 10px;
+  padding-right: 8px;
   .v-popover--arrow {
-    right: 6px;
+    right: 5px;
     box-shadow: 3px -3px 7px rgba(0, 0, 0, .07);
   }
 }
