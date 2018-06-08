@@ -67,7 +67,7 @@ Divider slot
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Divider from '@/components/Divider';
+  import Divider from '@/components/divider';
 
   export default {
     components: {
