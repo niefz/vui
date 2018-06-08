@@ -1,7 +1,7 @@
 <template>
   <ul
     v-if="files.length > 0"
-    class="v-upload__list"
+    class="v-upload--list"
     :class="[
       {
         ['disabled']: isDisabled
@@ -12,26 +12,26 @@
       v-for="(item, index) in files"
       :key="index"
       :class="[
-        'v-upload__list-item'
+        'v-upload--list-item'
       ]"
     >
-      <a class="v-upload__list-item-label">{{item.name}}</a>
-      <Icon icon="v-icon-close-o" class="v-upload__list-item__del" @click="handleRemove(item)"></Icon>
+      <a class="v-upload--list-item-label">{{item.name}}</a>
+      <Icon icon="v-icon-close-o" class="v-upload--list-item--del" @click="handleRemove(item)"></Icon>
       <Progress :percentage="getPercentage(item)"></Progress>
     </li>
   </ul>
 </template>
 <script>
+  import Progress from 'free-vui/src/components/progress-bar';
   import Icon from 'free-vui/src/components/icon';
-  import Progress from '@/components/Progress';
 
   export default {
     name: 'UploadList',
     componentName: 'UploadList',
     inheritAttrs: false,
     components: {
-      Icon,
       Progress,
+      Icon,
     },
     props: {
       disabled: {

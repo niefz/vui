@@ -1,13 +1,13 @@
 .v-upload{
-	.v-upload__input{
+	.v-upload--input{
 		display: none;
 	}
-	.v-upload__list{
+	.v-upload--list{
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
-	.v-upload__list-item{
+	.v-upload--list-item{
 		&:first-child{
 			margin-top: 10px;
 		}
@@ -17,7 +17,7 @@
 		position: relative;
 		box-sizing: border-box;
 		width: 100%;
-		.v-upload__list-item__del{
+		.v-upload--list-item--del{
 			cursor: pointer;
 			position: absolute;
 			right: 5px;

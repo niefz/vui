@@ -8,31 +8,31 @@
     @mouseleave.stop="handleMouseLeave"
   >
     <div 
-      class="v-carousel__box"
+      class="v-carousel--box"
       :style="{
         height: height
       }"
     >
       <button
         type="button"
-        class="v-carousel__arrow v-carousel__arrow--left"
+        class="v-carousel--arrow v-carousel--arrow--left"
         @click="back"
       >
         <Icon icon="v-icon-left"></Icon>
       </button>
       <button
         type="button"
-        class="v-carousel__arrow v-carousel__arrow--right"
+        class="v-carousel--arrow v-carousel--arrow--right"
         @click="forward"
       >
         <Icon icon="v-icon-right"></Icon>
       </button>
       <slot></slot>
     </div>
-    <ul class="v-carousel__indicators">
+    <ul class="v-carousel--indicators">
       <li
         v-for="(item, index) in carouselItems"
-        class="v-carousel__indicators__item"
+        class="v-carousel--indicators--item"
         :class="{
           actived: currentIndex === index
         }"

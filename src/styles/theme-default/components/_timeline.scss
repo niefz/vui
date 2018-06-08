@@ -5,7 +5,7 @@
     list-style: none;
     position: relative;
     padding: 0 0 20px;
-    .v-timeline-item__head{
+    .v-timeline-item--head{
       position: absolute;
       width: 10px;
       height: 10px;
@@ -14,14 +14,14 @@
       border-radius: 100px;
       border: 2px solid $color-primary;
     }
-    .v-timeline-item__foot{
+    .v-timeline-item--foot{
       position: absolute;
       left: 10px;
       top: 1em;
       height: 100%;
       border-left: 2px solid $color-divider;
     }
-    .v-timeline-item__content{
+    .v-timeline-item--content{
       padding: 0 0 0 18px;
       position: relative;
       top: -8px;

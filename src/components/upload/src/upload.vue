@@ -10,22 +10,21 @@
     <div @click="handleClick">
       <slot></slot>
       <input
-        class="v-upload__input" 
+        class="v-upload--input"
         type="file" 
         ref="input" 
         :name="name"
         :multiple="multiple" 
         :accept="accept"
-        @change="handleChange"
-      ></input>
+        @change="handleChange"/>
     </div>
     <UploadList :files="getUploadList" :disabled="isDisabled" @remove="handleRemove"></UploadList>
   </div>
 </template>
 <script>
-  import httpRequest from './httpRequest.js';
   import Icon from 'free-vui/src/components/icon';
-  import UploadList from 'free-vui/src/components/upload/src/uploadList';
+  import UploadList from './upload-list.vue';
+  import httpRequest from './httpRequest.js';
 
   export default {
     name: 'Upload',

@@ -6,16 +6,16 @@
 	color: #303133;
 	transition: .3s;
 	box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-	.v-card__header, .v-card__footer{
+	.v-card--header, .v-card--footer{
 		padding: 18px 20px;
 	}
-	.v-card__header{
+	.v-card--header{
 		border-bottom: 1px solid $color-border;
 	}
-	.v-card__footer{
+	.v-card--footer{
 		border-top: 1px solid $color-border;
 	}
-	.v-card__body{
+	.v-card--body{
 		padding: 20px;
 	}
 }

@@ -9,7 +9,7 @@
   >
     <span
       v-for="item in points"
-      class="v-rate__item"
+      class="v-rate--item"
       :style="{
         fontSize: '20px',
         color: currentValue === 0 ? colors[0] : (item <= currentValue ? colors[2] : colors[1])

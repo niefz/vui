@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="v-carousel__item"
+    class="v-carousel--item"
     :class="{
       actived: actived
     }"

@@ -1,6 +1,6 @@
 .v-slider{
 	position: relative;
-	.v-slider__bar{
+	.v-slider--bar{
 		width: 100%;
 		height: 6px;
 		margin: 15px 0;
@@ -9,11 +9,11 @@
 			cursor: pointer;
 		}
 	}
-	.v-slider__process{
+	.v-slider--process{
 		background-color: $color-primary;
 		height: 100%;
 	}
-	.v-slider__button{
+	.v-slider--button{
 		height: 15px;
 		width: 15px;
 		position: absolute;

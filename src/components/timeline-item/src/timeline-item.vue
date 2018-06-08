@@ -2,15 +2,15 @@
   <li class="v-timeline-item">
     <slot name="itemIcon">
       <span 
-        class="v-timeline-item__head"
+        class="v-timeline-item--head"
         :style="style"
       >
       </span>
     </slot>
-    <div class="v-timeline-item__content">
+    <div class="v-timeline-item--content">
       <slot></slot>
     </div>
-    <span class="v-timeline-item__foot"></span>
+    <span class="v-timeline-item--foot"></span>
   </li>
 </template>
 <script>

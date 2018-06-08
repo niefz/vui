@@ -1,14 +1,14 @@
 <template>
   <div class="v-card">
-    <div class="v-card__header" v-if="$slots.header || header">
+    <div class="v-card--header" v-if="$slots.header || header">
       <slot name="header">
         {{header}}
       </slot>
     </div>
-    <div class="v-card__body">
+    <div class="v-card--body">
       <slot></slot>
     </div>
-    <div class="v-card__footer" v-if="$slots.footer || footer">
+    <div class="v-card--footer" v-if="$slots.footer || footer">
       <slot name="footer">
         {{footer}}
       </slot>

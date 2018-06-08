@@ -1,16 +1,16 @@
 <template>
   <div class="v-slider">
     <div 
-      class="v-slider__bar"
+      class="v-slider--bar"
       @click="handleSliderClick"
       ref="sliderBar"
     >
-      <div class="v-slider__process" :style="
+      <div class="v-slider--process" :style="
         {
           width: calWidth
         }
       "></div>
-      <span class="v-slider__button" :style="
+      <span class="v-slider--button" :style="
         {
           left: calWidth
         }

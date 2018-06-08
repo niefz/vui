@@ -1,9 +1,9 @@
 .v-carousel{
 	position: relative;
 	overflow: hidden;
-	.v-carousel__box{
+	.v-carousel--box{
 		position: relative;
-		.v-carousel__arrow{
+		.v-carousel--arrow{
 			border: none;
 			outline: none;
 			padding: 0;
@@ -21,14 +21,14 @@
 			text-align: center;
 			font-size: 12px;
 		}
-		.v-carousel__arrow--left{
+		.v-carousel--arrow--left{
 			left: 14px;
 		}
-		.v-carousel__arrow--right{
+		.v-carousel--arrow--right{
 			right: 14px;
 		}
 	}
-	.v-carousel__item{
+	.v-carousel--item{
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -38,7 +38,7 @@
 		overflow: hidden;
 		transition: .3s;
 	}
-	.v-carousel__indicators{
+	.v-carousel--indicators{
 		position: absolute;
 		list-style: none;
 		bottom: 0;
@@ -47,7 +47,7 @@
 		margin: 0;
 		padding: 0;
 		transform: translateX(-50%);
-		.v-carousel__indicators__item{
+		.v-carousel--indicators--item{
 			display: inline-block;
 			position: relative;
 			background-color: transparent;
