@@ -8,10 +8,8 @@
   &:after {
     display: table-cell;
     position: relative;
-    top: 50%;
     content: '';
     border-top: 1px solid $color-divider;
-    transform: translateY(50%);
   }
   .v-divider--inner-text {
     display: inline-block;
@@ -23,6 +21,7 @@
 .v-divider--vertical {
   display: inline-block;
   position: relative;
+  top: -2px;
   width: 1px;
   height: 1em;
   margin-right: 16px;
@@ -54,6 +53,10 @@
   color: $color-text-primary;
   text-align: center;
   white-space: nowrap;
+  &:before, &:after {
+    top: 50%;
+    transform: translateY(50%);
+  }
   &.left {
     &:before {
       width: 5%;
