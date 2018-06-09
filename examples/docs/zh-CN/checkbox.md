@@ -148,6 +148,12 @@ CheckboxGroup props
 | mode | 布局 | string | `vertical` `horizontal` | - |
 | disabled | 是否禁用 | boolean | - | false|
 
+Checkbox events
+
+| 事件名 | 说明 | 返回值 |
+|---- |---- |---- |
+| change | 绑定值变化时触发的事件 | 更新后的值 |
+
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
