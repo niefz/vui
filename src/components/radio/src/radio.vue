@@ -1,5 +1,6 @@
 <template>
   <label
+    role="radio"
     class="v-radio"
     :class="[
       'v-radio--' + radioSize,
@@ -9,10 +10,9 @@
         ['disabled']: isDisabled,
       }
     ]"
-    role="radio"
     :aria-checked="isChecked"
     :aria-disabled="isDisabled"
-    @keydown.space.stop.prevent="model = label"
+    @keydown.space.stop.prevent="model = isDisabled ? model : value"
     :tabindex="tabIndex">
     <span
       class="v-radio--input">
@@ -45,28 +45,16 @@
       prop: 'vmodel',
     },
     props: {
+      vmodel: {},
       size: {
         type: String,
         default: 'small',
       },
-      label: {
-        type: String,
-        default: '',
-      },
-      name: {
-        type: String,
-        default: '',
-      },
-      value: {},
-      vmodel: {},
-      disabled: {
-        type: Boolean,
-        default: false,
-      },
-      border: {
-        type: Boolean,
-        default: false,
-      },
+      name: String,
+      label: String,
+      value: [String, Number],
+      border: Boolean,
+      disabled: Boolean,
     },
     computed: {
       isGroup() {

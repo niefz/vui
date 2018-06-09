@@ -127,7 +127,7 @@ Checkbox props
 | size | 尺寸大小 | string | `mini` `small` `medium` `large` | small |
 | name | 对应的原生 name 属性 | string | - | - |
 | label | 显示的标签 | number | - | - |
-| value | 选中状态的值 | string \/ number \/ boolean | - | - |
+| value | 选中状态的值 | string \/ number | - | - |
 | border | 是否显示边框 | boolean | - | false|
 | indeterminate | 设置 indeterminate 状态，只负责样式控制 | boolean | - | false|
 | disabled | 是否禁用 | boolean | - | false|
@@ -148,7 +148,7 @@ CheckboxGroup props
 | mode | 布局 | string | `vertical` `horizontal` | - |
 | disabled | 是否禁用 | boolean | - | false|
 
-Checkbox events
+CheckboxGroup events
 
 | 事件名 | 说明 | 返回值 |
 |---- |---- |---- |

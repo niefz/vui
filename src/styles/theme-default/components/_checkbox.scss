@@ -108,33 +108,25 @@
 }
 
 .v-checkbox--mini {
-  &.bordered {
-    height: 28px;
-    padding: 3px 15px 3px 10px;
-    font-size: 12px;
-  }
+  height: 28px;
+  padding: 3px 15px 3px 10px;
+  font-size: 12px;
 }
 
 .v-checkbox--small {
-  &.bordered {
-    height: 32px;
-    padding: 5px 15px 5px 10px;
-    font-size: 12px;
-  }
+  height: 32px;
+  padding: 5px 15px 5px 10px;
+  font-size: 12px;
 }
 
 .v-checkbox--medium {
-  &.bordered {
-    height: 36px;
-    padding: 7px 20px 7px 10px;
-    font-size: 14px;
-  }
+  height: 36px;
+  padding: 7px 20px 7px 10px;
+  font-size: 14px;
 }
 
 .v-checkbox--large {
-  &.bordered {
-    height: 40px;
-    padding: 9px 20px 9px 10px;
-    font-size: 14px;
-  }
+  height: 40px;
+  padding: 9px 20px 9px 10px;
+  font-size: 14px;
 }

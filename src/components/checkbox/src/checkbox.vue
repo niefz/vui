@@ -43,32 +43,17 @@
       prop: 'vmodel',
     },
     props: {
+      vmodel: {},
       size: {
         type: String,
         default: 'small',
       },
-      name: {
-        type: String,
-        default: '',
-      },
-      label: {
-        type: String,
-        default: '',
-      },
-      value: {},
-      vmodel: {},
-      indeterminate: {
-        type: Boolean,
-        default: false,
-      },
-      border: {
-        type: Boolean,
-        default: false,
-      },
-      disabled: {
-        type: Boolean,
-        default: false,
-      },
+      name: String,
+      label: String,
+      value: [String, Number],
+      indeterminate: Boolean,
+      border: Boolean,
+      disabled: Boolean,
     },
     data() {
       return {

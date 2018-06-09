@@ -47,7 +47,7 @@
   &--label {
     display: inline-block;
     position: relative;
-    padding-left: 2px;
+    padding-left: 5px;
     font-weight: 500;
     font-size: inherit;
     line-height: inherit;
@@ -95,33 +95,45 @@
 }
 
 .v-radio--mini {
+  height: 28px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
   &.bordered {
-    height: 28px;
-    padding: 3px 15px 3px 10px;
-    font-size: 12px;
+    padding-right: 15px;
+    padding-left: 10px;
   }
 }
 
 .v-radio--small {
+  height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
   &.bordered {
-    height: 32px;
-    padding: 5px 15px 5px 10px;
-    font-size: 12px;
+    padding-right: 15px;
+    padding-left: 10px;
   }
 }
 
 .v-radio--medium {
+  height: 36px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 14px;
   &.bordered {
-    height: 36px;
-    padding: 7px 20px 7px 10px;
-    font-size: 14px;
+    padding-right: 20px;
+    padding-left: 10px;
   }
 }
 
 .v-radio--large {
+  height: 40px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 14px;
   &.bordered {
-    height: 40px;
-    padding: 9px 20px 9px 10px;
-    font-size: 14px;
+    padding-right: 20px;
+    padding-left: 10px;
   }
 }
