@@ -1,10 +1,10 @@
 <template>
   <div
+    role="group"
     class="v-checkbox-group"
     :class="[
       'v-checkbox-group--' + mode,
     ]"
-    role="group"
     aria-label="checkbox-group">
     <slot></slot>
   </div>
@@ -19,15 +19,15 @@
         type: Array,
         default: () => [],
       },
+      size: {
+        type: String,
+        default: 'small',
+      },
       min: Number,
       max: Number,
       mode: {
         type: String,
         default: 'horizontal',
-      },
-      size: {
-        type: String,
-        default: 'small',
       },
       disabled: {
         type: Boolean,

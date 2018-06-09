@@ -33,7 +33,7 @@
         border-style: solid;
         border-color: transparent $color-white $color-white transparent;
         transform: rotate(45deg) scaleY(0);
-        transition: transform .3s cubic-bezier(.71, -.46, .88, .6) .3s;
+        transition: transform .15s cubic-bezier(.71, -.46, .88, .6) .05s;
         transform-origin: center;
       }
     }
@@ -50,7 +50,7 @@
   &--label {
     display: inline-block;
     position: relative;
-    padding-left: 2px;
+    padding-left: 6px;
     font-weight: 500;
     font-size: inherit;
     line-height: inherit;
