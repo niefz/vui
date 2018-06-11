@@ -7,7 +7,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Timeline pending="pending...">
+    <Timeline pending="pending..." :reverse="reverse">
       <TimelineItem>
         first floor
       </TimelineItem>
@@ -23,6 +23,9 @@
       </TimelineItem>
     </Timeline>
   </Col>
+  <Col :span="24">
+    <Button theme="primary" @click="toggleReverse">Toggle Reverse</Button>
+  </Col>
 </Row>
 ```
 :::
@@ -32,6 +35,7 @@
   import Col from '@/components/col';
   import Timeline from '@/components/timeline';
   import TimelineItem from '@/components/timeline-item';
+  import Button from '@/components/button';
 
   export default {
     components: {
@@ -39,12 +43,17 @@
       Col,
       Timeline,
       TimelineItem,
+      Button,
     },
     data() {
       return {
+        reverse: false,
       };
     },
     methods: {
+      toggleReverse() {
+        this.reverse = !this.reverse;
+      },
     },
   };
 </script>

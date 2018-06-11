@@ -3,14 +3,17 @@
     class="v-timeline" 
     :class="[
       {
-        ['pending']: isPending
+        ['pending']: isPending,
+        ['reverse']: isReverse
       }
-  ]">
-    <slot></slot>
+    ]"
+  >
+    <slot v-if="!isReverse"></slot>
     <TimelineItem v-if="isPending">
       {{this.pending}}
-      <Icon icon="v-icon-loading" slot="itemIcon" class="default-icon"></Icon>
+      <Icon icon="v-icon-loading" slot="itemIcon" class="v-timeline-icon"></Icon>
     </TimelineItem>
+    <slot v-if="isReverse"></slot>
   </ul>
 </template>
 <script>
@@ -28,6 +31,10 @@
       pending: {
         type: String,
       },
+      reverse: {
+        type: Boolean,
+        default: false
+      }
     },
     data() {
       return {};
@@ -35,6 +42,9 @@
     computed: {
       isPending() {
         return !!this.pending;
+      },
+      isReverse() {
+        return this.reverse;
       },
     },
     watch: {

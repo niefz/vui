@@ -33,7 +33,7 @@
       top: -8px;
     }
   }
-  .default-icon{
+  .v-timeline-icon{
     position: absolute;
     left: 5px;
     top: -5px;
@@ -44,4 +44,17 @@
       border-left: 2px dashed $color-divider;
     }
   }
+  &.pending.reverse .v-timeline-item{
+    &:nth-last-child(2){
+      .v-timeline-item--foot{
+        border-left: 2px solid $color-divider;
+      }
+    }
+    &:first-child{
+      .v-timeline-item--foot{
+        border-left: 2px dashed $color-divider;
+      }
+    }
+  }
+  
 }
