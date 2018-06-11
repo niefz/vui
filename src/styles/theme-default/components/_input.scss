@@ -3,34 +3,32 @@
   display: inline-block;
   width: 100%;
   border-radius: $border-radius;
-  &--mini {
-    height: 28px;
-    font-size: 12px;
-    line-height: 16px;
-  }
-  &--small {
-    height: 32px;
-    font-size: 12px;
-    line-height: 20px;
-  }
-  &--medium {
-    height: 36px;
-    font-size: 14px;
-    line-height: 24px;
-  }
-  &--large {
-    height: 40px;
-    font-size: 16px;
-    line-height: 28px;
-  }
   &--inner {
     position: relative;
     display: block;
     height: 100%;
+    > em {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      z-index: 3;
+      width: 34px;
+      font-size: 14px;
+      color: $color-text-disabled;
+      text-align: center;
+      cursor: pointer;
+    }
+    &-prefix {
+      left: 0;
+    }
+    &-suffix {
+      right: 0;
+    }
     input {
       position: relative;
       width: 100%;
       height: 100%;
+      padding: 5px 10px;
       border: 1px solid $color-border;
       background-color: transparent;
       border-radius: $border-radius;
@@ -43,6 +41,16 @@
       &:disabled {
         background-color: $color-background;
       }
+    }
+  }
+  &--prefix {
+    input {
+      padding-left: 34px;
+    }
+  }
+  &--suffix {
+    input {
+      padding-right: 34px;
     }
   }
   &.error {
@@ -60,62 +68,26 @@
   }
 }
 
-.v-input {
-  input {
-    padding: 5px 10px;
-  }
-}
-
-
-.v-input--inner {
-  > em {
-    position: absolute;
-    top: 6px;
-    bottom: 6px;
-    z-index: 3;
-    width: 34px;
-    font-size: 14px;
-    color: $color-text-disabled;
-    text-align: center;
-    cursor: pointer;
-  }
-  &-prefix {
-    left: 0;
-  }
-  &-suffix {
-    right: 0;
-  }
-}
-
-.v-input--prefix {
-  input {
-    padding-left: 34px;
-  }
-}
-
-.v-input--suffix {
-  input {
-    padding-right: 34px;
-  }
-}
-
 .v-input--group {
-  display: inline-table;
-  .v-input--inner {
-    width: calc(100% + 1px);
-  }
+  position: relative;
+  display: table;
+  width: 100%;
+  border-collapse: separate;
   &-prepend, &-append {
     position: relative;
     display: table-cell;
+    white-space: nowrap;
     vertical-align: middle;
   }
   &.prepend {
+    .v-input--inner {
+      width: calc(100% + 1px);
+    }
     .v-input--group-prepend {
-      width: 1px;
+      width: 1%;
       padding: 0 10px;
       border-top-left-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
-      white-space: nowrap;
       border: {
         top: 1px solid $color-border;
         bottom: 1px solid $color-border;
@@ -124,12 +96,14 @@
     }
   }
   &.append {
+    .v-input--inner {
+      width: calc(100% + 1px);
+    }
     .v-input--group-append {
-      width: 1px;
+      width: 1%;
       padding: 0 20px;
       border-top-right-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
-      white-space: nowrap;
       border: {
         top: 1px solid $color-border;
         right: 1px solid $color-border;
@@ -158,14 +132,14 @@
 }
 
 .slot-prepend {
-  .v-btn {
+  [class^=v-btn] {
     position: relative;
     z-index: 1;
     min-width: 100%;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .v-select {
+  [class^=v-select] {
     input {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -174,17 +148,41 @@
 }
 
 .slot-append {
-  .v-btn {
+  [class^=v-btn] {
     position: relative;
     z-index: 1;
     min-width: 100%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .v-select {
+  [class^=v-select] {
     input {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
   }
+}
+
+.v-input--mini {
+  height: 28px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.v-input--small {
+  height: 32px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.v-input--medium {
+  height: 36px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.v-input--large {
+  height: 40px;
+  font-size: 16px;
+  line-height: 28px;
 }

@@ -1,10 +1,10 @@
 <template>
   <div
-    class="v-input"
     :class="[
-      'v-input--' + inputSize,
       {
-        ['v-input--group']: $slots.prepend || $slots.append || prepend || append,
+        ['v-input']: !prepend && !$slots.prepend && !append && !$slots.append,
+        ['v-input--group']: prepend || $slots.prepend || append || $slots.append,
+        ['v-input--' + inputSize]: inputSize,
         ['prepend']: prepend,
         ['slot-prepend']: $slots.prepend,
         ['append']: append,
