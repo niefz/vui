@@ -17,14 +17,31 @@
     .v-timeline-item--foot{
       position: absolute;
       left: 10px;
-      top: 1em;
+      bottom: 0;
       height: 100%;
       border-left: 2px solid $color-divider;
+      z-index: -1;
+    }
+    &:last-child{
+      .v-timeline-item--foot{
+        display: none;
+      }
     }
     .v-timeline-item--content{
       padding: 0 0 0 18px;
       position: relative;
       top: -8px;
+    }
+  }
+  .default-icon{
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    color: $color-primary;
+  }
+  &.pending .v-timeline-item:nth-last-child(2){
+    .v-timeline-item--foot{
+      border-left: 2px dashed $color-divider;
     }
   }
 }

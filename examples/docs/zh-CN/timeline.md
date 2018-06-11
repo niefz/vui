@@ -7,7 +7,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Timeline>
+    <Timeline pending="pending...">
       <TimelineItem>
         first floor
       </TimelineItem>
@@ -15,7 +15,11 @@
         second floor
       </TimelineItem>
       <TimelineItem>
-        third floor
+        <p>third floor</p>
+        <p>let me show you something.</p>
+      </TimelineItem>
+      <TimelineItem>
+        <p>test floor</p>
       </TimelineItem>
     </Timeline>
   </Col>
