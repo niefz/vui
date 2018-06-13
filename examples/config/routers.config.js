@@ -169,6 +169,13 @@ export default {
       }, 'toggle'),
     },
     {
+      path: '/zh-CN/components/transfer',
+      name: 'Transfer 穿梭框',
+      component: transfer => require.ensure([], (require) => {
+        transfer(require('../docs/zh-CN/transfer.md'));
+      }, 'transfer'),
+    },
+    {
       path: '/zh-CN/components/upload',
       name: 'Upload 上传',
       component: upload => require.ensure([], (require) => {
