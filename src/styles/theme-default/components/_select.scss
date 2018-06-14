@@ -1,7 +1,13 @@
 .v-select {
   position: relative;
-  display: inline-block;
-  width: 100%;
+  display: block;
+  &--inner {
+    height: 100%;
+    padding: 0 32px 0 10px;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+  }
   &--menu {
     z-index: 100;
     margin: 5px 0;
@@ -39,4 +45,28 @@
       }
     }
   }
+}
+
+.v-select--mini {
+  height: 28px;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+.v-select--small {
+  height: 32px;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.v-select--medium {
+  height: 36px;
+  font-size: 14px;
+  line-height: 34px;
+}
+
+.v-select--large {
+  height: 40px;
+  font-size: 16px;
+  line-height: 38px;
 }

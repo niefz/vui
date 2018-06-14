@@ -1,21 +1,30 @@
 <template>
   <div
     class="v-select"
+    :class="[
+      {
+        ['v-select--' + selectSize]: selectSize,
+        ['error']: error,
+        ['disabled']: disabled,
+      }
+    ]"
     v-clickoutside="hide">
-    <Input
+    <div
       ref="reference"
       role="reference"
-      v-model="displayValue"
-      :placeholder="displayPlaceholder"
-      suffix-icon="v-icon-caret-down"
-      readonly/>
+      class="v-select--inner">
+      {{ displayValue || displayPlaceholder }}
+      <em class="v-input--inner-fix-icon suffix">
+        <Icon icon="v-icon-caret-down"></Icon>
+      </em>
+    </div>
     <slot></slot>
   </div>
 </template>
 <script>
   import Clickoutside from 'free-vui/src/directives/clickoutside';
   import Emitter from 'free-vui/src/mixins/emitter';
-  import Input from 'free-vui/src/components/input';
+  import Icon from 'free-vui/src/components/icon';
 
   export default {
     name: 'Select',
@@ -24,7 +33,7 @@
     directives: { Clickoutside },
     mixins: [Emitter],
     components: {
-      Input,
+      Icon,
     },
     provide() {
       return {
@@ -60,6 +69,22 @@
       appendToBody: {
         type: Boolean,
         default: true,
+      },
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      error: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      clearable: {
+        type: Boolean,
+        default: false
       },
     },
     data() {
@@ -102,7 +127,7 @@
       },
       initEvent() {
         const {handleClick} = this;
-        this.triggerElm = this.$refs.reference.$vnode.elm;
+        this.triggerElm = this.$refs.reference;
         this.triggerElm.addEventListener('click', handleClick);
       },
       handleSelectOptionClick(value, instance) {
