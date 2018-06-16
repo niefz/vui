@@ -31,10 +31,10 @@
       <input
         class="v-input--inner-input"
         type="text"
-        :value="value"
+        v-bind="$attrs"
         :placeholder="placeholder"
         :autocomplete="autocomplete"
-        :readonly="readonly"
+        :value="value"
         :disabled="disabled"
         @keyup="handleKeyup"
         @input="handleInput">
@@ -63,38 +63,19 @@
       Icon,
     },
     props: {
+      value: [String, Number],
       size: {
         type: String,
         default: 'small',
       },
-      value: [String, Number],
-      placeholder: {
-        type: String,
-        default: '',
-      },
+      prepend: String,
+      prefixIcon: String,
+      suffixIcon: String,
+      append: String,
+      placeholder: String,
       autocomplete: {
         type: String,
         default: 'off',
-      },
-      prepend: {
-        type: String,
-        default: '',
-      },
-      prefixIcon: {
-        type: String,
-        default: '',
-      },
-      suffixIcon: {
-        type: String,
-        default: '',
-      },
-      append: {
-        type: String,
-        default: '',
-      },
-      readonly: {
-        type: Boolean,
-        default: false
       },
       error: {
         type: Boolean,
@@ -129,6 +110,9 @@
       },
       handleSuffixIcon() {
         this.$emit('suffix-click');
+      },
+      handleClear(event) {
+        this.$emit('clear', event);
       },
     },
   };
