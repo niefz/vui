@@ -13,23 +13,25 @@
         height: height
       }"
     >
-      <button
-        type="button"
-        class="v-carousel--arrow v-carousel--arrow--left"
-        @click="back"
-      >
-        <Icon icon="v-icon-left"></Icon>
-      </button>
-      <button
-        type="button"
-        class="v-carousel--arrow v-carousel--arrow--right"
-        @click="forward"
-      >
-        <Icon icon="v-icon-right"></Icon>
-      </button>
+      <template v-if="arrows">
+        <button
+          type="button"
+          class="v-carousel--arrow v-carousel--arrow--left"
+          @click="back"
+        >
+          <Icon icon="v-icon-left"></Icon>
+        </button>
+        <button
+          type="button"
+          class="v-carousel--arrow v-carousel--arrow--right"
+          @click="forward"
+        >
+          <Icon icon="v-icon-right"></Icon>
+        </button>
+      </template>
       <slot></slot>
     </div>
-    <ul class="v-carousel--indicators">
+    <ul v-if="indicators" class="v-carousel--indicators">
       <li
         v-for="(item, index) in carouselItems"
         class="v-carousel--indicators--item"
@@ -61,6 +63,14 @@
         type: Number,
         default: 3000
       },
+      indicators: {
+        type: Boolean,
+        default: true
+      },
+      arrows: {
+        type: Boolean,
+        default: true
+      }
     },
     data() {
       return {
