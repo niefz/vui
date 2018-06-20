@@ -9,6 +9,11 @@
 			cursor: pointer;
 		}
 	}
+	&.disabled {
+		.v-slider--bar:hover{
+			cursor: default;
+		}
+	}
 	.v-slider--process{
 		background-color: $color-primary;
 		height: 100%;

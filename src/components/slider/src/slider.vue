@@ -1,20 +1,24 @@
 <template>
-  <div class="v-slider">
+  <div 
+    class="v-slider"
+    :class="{
+      disabled: isDisabled
+    }"
+  >
     <div 
       class="v-slider--bar"
+      :style="barBackGroundStyle"
       @click="handleSliderClick"
       ref="sliderBar"
     >
-      <div class="v-slider--process" :style="
-        {
-          width: calWidth
-        }
-      "></div>
-      <span class="v-slider--button" :style="
-        {
-          left: calWidth
-        }
-      "></span>
+      <div class="v-slider--process" :style="[
+        { width: calWidth },
+        barColorStyle
+      ]"></div>
+      <span class="v-slider--button" :style="[
+        { left: calWidth },
+        barButtonStyle
+      ]"></span>
     </div>
   </div>
 </template>
@@ -32,6 +36,10 @@
         type: Boolean,
         default: false
       },
+      barColor: String,
+      barBackgroundColor: String,
+      buttonBorderColor: String,
+      buttonColor: String,
     },
     data() {
       return {
@@ -41,6 +49,28 @@
     computed: {
       isDisabled () {
         return this.disabled;
+      },
+      barBackGroundStyle() {
+        const style = {};
+        if (this.barBackgroundColor) {
+          style['background-color'] = this.barBackgroundColor;
+        }
+        return style;
+      },
+      barColorStyle () {
+        return this.barColor ? { 'background-color': this.barColor } : null;
+      },
+      barButtonStyle () {
+        const style = {};
+        if (this.buttonBorderColor) {
+          style['border'] = `1px solid ${this.buttonBorderColor}`;
+        } else if (this.barColor) {
+          style['border'] = `1px solid ${this.barColor}`;
+        }
+        if (this.buttonColor) {
+          style['background-color'] = this.buttonColor;
+        }
+        return style;
       },
     },
     watch: {
@@ -53,6 +83,7 @@
         this.$emit('input', val);
       },
       handleSliderClick(e) {
+        if (this.disabled) return;
         const sliderBarOffset = this.$refs['sliderBar'].getBoundingClientRect().left;
         const sliderWidth = this.$refs['sliderBar'].clientWidth;
         const number = (e.clientX - sliderBarOffset) * 100 / sliderWidth;
