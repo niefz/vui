@@ -6,15 +6,28 @@
       }
     ]"
   >
+    <TransferPanel
+      v-bind="$props"
+      :data="beforeData"
+    ></TransferPanel>
+    <div class="v-transfer--middle">
+      
+    </div>
+    <TransferPanel
+      v-bind="$props"
+      :data="beforeData"
+    ></TransferPanel>
   </div>
 </template>
 <script>
   import Icon from '@/components/icon';
+  import TransferPanel from '@/components/transfer/src/transfer-panel';
   export default {
     name: 'Transfer',
     componentName: 'Transfer',
     components: {
       Icon,
+      TransferPanel
     },
     inheritAttrs: false,
     props: {
@@ -23,6 +36,9 @@
       return {};
     },
     computed: {
+      beforeData() {
+        return [];
+      }
     },
     watch: {
     },
