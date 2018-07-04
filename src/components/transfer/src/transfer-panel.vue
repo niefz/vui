@@ -7,10 +7,15 @@
     ]"
   >
   <div class="v-transfer--panel--header">
-  	<Checkbox v-model="isAllChecked" @change="handleAllCheckedChange">{{ headerTitle }} {{ allCheckedSummary }}</Checkbox>
+  	<Checkbox 
+  		v-model="isAllChecked"
+  		@change="handleAllCheckedChange"
+  	>
+  		{{ title }} {{ allCheckedSummary }}
+  	</Checkbox>
   </div>
   <div class="v-transfer--panel--body">
-  	<CheckboxGroup v-model="isChecked">
+  	<CheckboxGroup v-model="isChecked" mode="vertical" class="v-transfer--panel--body--list">
       <Checkbox v-for="item, index in filteredCheckboxData" :key="index" :label="item[label]"></Checkbox>
     </CheckboxGroup>
   </div>
@@ -39,6 +44,7 @@
     			return [];
     		}
     	},
+    	title: String,
     	label: {
     		type: String,
     		default: 'label'
@@ -61,6 +67,10 @@
     			const label = item[this.label] || item[this.key].toString();
           return label.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
     		})
+    	},
+    	allCheckedSummary() {},
+    	isIndeterminate() {
+    		return this.isChecked.length !== this.filteredCheckboxData.length;
     	},
     },
     watch: {

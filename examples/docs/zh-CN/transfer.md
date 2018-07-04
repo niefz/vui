@@ -7,7 +7,7 @@
 ```html
 <Row>
   <Col :span="24">
-    <Transfer></Transfer>
+    <Transfer v-model="values" :data="data" :titles="titles"></Transfer>
   </Col>
 </Row>
 ```
@@ -26,6 +26,26 @@
     },
     data() {
       return {
+      	titles: ['left-panel', 'right-panel'],
+      	values: [3, 5],
+      	data: [{
+      		key: 1,
+      		label: 'my-options-1'
+      	}, {
+      		key: 2,
+      		label: 'my-options-2'
+      	}, {
+      		key: 3,
+      		label: 'my-options-3',
+      		disabled: true
+      	}, {
+      		key: 4,
+      		label: 'my-options-4',
+      		disabled: true
+      	}, {
+      		key: 5,
+      		label: 'my-options-5'
+      	}]
       };
     },
     methods: {

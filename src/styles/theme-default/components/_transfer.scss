@@ -1,5 +1,45 @@
 .v-transfer{
 	.v-transfer--panel{
-	
+		border: 1px solid $color-border;
+		border-radius: 4px;
+		overflow: hidden;
+		background: $color-white;
+		display: inline-block;
+		vertical-align: middle;
+		width: 200px;
+		max-height: 100%;
+		box-sizing: border-box;
+		position: relative;
+		.v-transfer--panel--header{
+			height: 40px;
+			line-height: 40px;
+			background: $color-thead-background;
+			border-bottom: 1px solid $color-border;
+			margin: 0;
+			padding-left: 15px;
+			box-sizing: border-box;
+			color: $color-black;
+		}
+		.v-transfer--panel--body{
+
+		}
+		.v-transfer--panel--body--list{
+			margin: 0;
+			padding: 6px 0;
+			list-style: none;
+			height: 246px;
+			overflow: auto;
+			box-sizing: border-box;
+		}
+		.v-transfer--panel--footer{
+
+		}
+	}
+	.v-transfer--middle{
+		display: inline-block;
+		.v-btn--button{
+			display: block;
+			margin: 0 5px 5px;
+		}
 	}
 }
