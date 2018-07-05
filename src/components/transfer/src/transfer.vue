@@ -10,15 +10,19 @@
       v-bind="$props"
       :data="sourceData"
       :title="titles[0]"
+      :default-checked="leftDefaultChecked"
+      @checked-change="handleSourceCheckedChange"
     ></TransferPanel>
     <div class="v-transfer--middle">
-      <Button shape="circle" prefix-icon="v-icon-user-plus-o" @click="moveLeft"></Button>
       <Button shape="circle" prefix-icon="v-icon-user-plus-o" @click="moveRight"></Button>
+      <Button shape="circle" prefix-icon="v-icon-user-plus-o" @click="moveLeft"></Button>
     </div>
     <TransferPanel
       v-bind="$props"
       :data="targetData"
       :title="titles[1]"
+      :default-checked="rightDefaultChecked"
+      @checked-change="handleTargetCheckedChange"
     ></TransferPanel>
   </div>
 </template>
@@ -64,9 +68,24 @@
           };
         }
       },
+      leftDefaultChecked: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      rightDefaultChecked: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
     },
     data() {
-      return {};
+      return {
+        sourceChecked: [],
+        targetChecked: [],
+      };
     },
     computed: {
       sourceData() {
@@ -79,8 +98,40 @@
     watch: {
     },
     methods: {
-      moveLeft() {},
-      moveRight() {},
+      moveLeft() {
+        let currentValue = this.value.slice();
+        this.targetChecked.forEach(item => {
+          const index = currentValue.indexOf(item);
+          if (index > -1) {
+            currentValue.splice(index, 1);
+          }
+        });
+        this.$emit('input', currentValue);
+        this.$emit('change', currentValue, 'left', this.targetChecked);
+      },
+      moveRight() {
+        let currentValue = this.value.slice();
+        const itemsToBeMoved = [];
+        const key = this.props.key;
+        this.data.forEach(item => {
+          const itemKey = item[key];
+          if (
+            this.sourceChecked.indexOf(itemKey) > -1 &&
+            this.value.indexOf(itemKey) === -1
+          ) {
+            itemsToBeMoved.push(itemKey);
+          }
+        });
+        currentValue = currentValue.concat(itemsToBeMoved);
+        this.$emit('input', currentValue);
+        this.$emit('change', currentValue, 'right', this.sourceChecked);
+      },
+      handleSourceCheckedChange(val) {
+        this.sourceChecked = val;
+      },
+      handleTargetCheckedChange(val) {
+        this.targetChecked = val;
+      },
     },
     created() {
     },

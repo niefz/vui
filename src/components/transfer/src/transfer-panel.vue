@@ -9,14 +9,21 @@
   <div class="v-transfer--panel--header">
   	<Checkbox 
   		v-model="isAllChecked"
+  		:indeterminate="isIndeterminate"
   		@change="handleAllCheckedChange"
   	>
   		{{ title }} {{ allCheckedSummary }}
   	</Checkbox>
   </div>
   <div class="v-transfer--panel--body">
-  	<CheckboxGroup v-model="isChecked" mode="vertical" class="v-transfer--panel--body--list">
-      <Checkbox v-for="item, index in filteredCheckboxData" :key="index" :label="item[label]"></Checkbox>
+  	<CheckboxGroup v-model="checkedData" mode="vertical" class="v-transfer--panel--body--list">
+      <Checkbox 
+      	v-for="item, index in filteredCheckboxData" 
+      	:key="index" 
+      	:label="item[label]"
+      	:value="item[key]"
+      	:disabled="item[isDisabled]"
+      ></Checkbox>
     </CheckboxGroup>
   </div>
   <div class="v-transfer--panel--footer">
@@ -45,38 +52,58 @@
     		}
     	},
     	title: String,
-    	label: {
-    		type: String,
-    		default: 'label'
-    	},
-    	key: {
-    		type: String,
-    		default: 'key'
-    	}
+    	props: Object,
+    	defaultChecked: Array,
     },
     data() {
       return {
       	isAllChecked: false,
-      	isChecked: false,
+      	checkedData: [],
       	query: ''
       };
     },
     computed: {
+    	label() {
+    		return this.props.label || 'label';
+    	},
+    	key() {
+    		return this.props.key || 'key';
+    	},
+    	isDisabled() {
+    		return this.props.disabled || 'disabled';
+    	},
+    	checkableData() {
+        return this.filteredCheckboxData.filter(item => !item[this.isDisabled]);
+      },
     	filteredCheckboxData() {
     		return this.data.filter(item => {
     			const label = item[this.label] || item[this.key].toString();
           return label.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
     		})
     	},
-    	allCheckedSummary() {},
+    	allCheckedSummary() {
+    		const checkedDataLength = this.checkedData.length;
+    		const dataLength = this.data.length;
+    		return `${checkedDataLength}/${dataLength}`;
+    	},
     	isIndeterminate() {
-    		return this.isChecked.length !== this.filteredCheckboxData.length;
+    		return this.checkedData.length > 0 && this.checkedData.length < this.checkableData.length;
     	},
     },
     watch: {
+    	checkedData (val) {
+    		this.updateAllChecked();
+    		this.$emit('checked-change', val);
+    	},
     },
     methods: {
+    	updateAllChecked() {
+    		const checkableDataKeys = this.checkableData.map(item => item[this.key]);
+        this.isAllChecked = checkableDataKeys.length > 0 &&
+          checkableDataKeys.every(item => this.checkedData.indexOf(item) > -1);
+    	},
     	handleAllCheckedChange(value) {
+    		this.checkedData = value ? this.checkableData.map(item => item[this.key]) : [];
     	},
     },
     created() {
