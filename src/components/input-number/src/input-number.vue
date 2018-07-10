@@ -4,16 +4,8 @@
       :size="size"
       :value="currentValue"
       :placeholder="placeholder"
-      :autocomplete="autocomplete"
-      :prepend="prepend"
-      :prefix-icon="prefixIcon"
-      :suffix-icon="suffixIcon"
-      :append="append"
-      :readonly="readonly"
       :error="isError"
       :disabled="disabled"
-      @prefix-click="handlePrefixIcon"
-      @suffix-click="handleSuffixIcon"
       @keyup="handleKeyup"
       @input="handleInput">
       <template slot="prepend" v-if="$slots.prepend">
@@ -46,49 +38,24 @@
       Icon,
     },
     props: {
+      value: {},
       size: {
         type: String,
         default: 'small',
       },
-      value: {},
-      placeholder: {
-        type: String,
-        default: '',
-      },
-      autocomplete: {
-        type: String,
-        default: 'off',
-      },
-      prepend: {
-        type: String,
-        default: '',
-      },
-      prefixIcon: {
-        type: String,
-        default: '',
-      },
-      suffixIcon: {
-        type: String,
-        default: '',
-      },
-      append: {
-        type: String,
-        default: '',
-      },
-      readonly: {
-        type: Boolean,
-        default: false
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
+      placeholder: String,
+      max: Number,
+      min: Number,
+      precision: Number,
       step: {
         type: Number,
         default: 1,
       },
-      max: Number,
-      min: Number,
+      formatter: Function,
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
     data() {
       return {

@@ -1,20 +1,83 @@
 # Input 数字输入框
 
-基本用法。
+通过鼠标或键盘，输入范围内的数值。
 
-:::demo 
+## 何时使用
+
+- 当需要获取标准数值时。
+
+## 基本用法
+
+:::demo 数字输入框。
 
 ```html
-<Row :gutter="10">
-  <Col :span="12">
-    <InputNumber v-model="keywords" :min="1" :max="10"></InputNumber>
-  </Col>
-  <Col :span="12">
-    <InputNumber :min="1" :max="10"></InputNumber>
+<Row>
+  <Col :span="6">
+    <InputNumber v-model="number" :min="1" :max="10"></InputNumber>
   </Col>
 </Row>
 ```
 :::
+
+## 格式化展示
+
+:::demo 通过 `formatter` 格式化数字，以展示具有具体含义的数据。
+
+```html
+<Row>
+  <Col :span="6">
+    <InputNumber v-model="number" :min="1" :max="10"></InputNumber>
+  </Col>
+</Row>
+```
+:::
+
+## 小数
+
+:::demo 和原生的数字输入框一样，value 的精度由 `step` 的小数位数决定。
+
+```html
+<Row>
+  <Col :span="6">
+    <InputNumber v-model="number" :min="1" :max="10"></InputNumber>
+  </Col>
+</Row>
+```
+:::
+
+## 不可用
+
+:::demo 禁用状态。
+
+```html
+<Row>
+  <Col :span="6">
+    <InputNumber v-model="number" disabled=""></InputNumber>
+  </Col>
+</Row>
+```
+:::
+
+## API
+
+InputNumber props
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+|---- |---- |---- |---- |---- |
+| size | 尺寸 | string | `large` `medium` `small` `mini` | small |
+| placeholder | 输入框占位文本 | sting | - | - |
+| max | 最大值 | number | - | - |
+| min | 最小值 | number | - | - |
+| precision | 数值精度 | number | - | - |
+| step | 每次改变步数，可以为小数 | number | - | 1 |
+| formatter | 指定输入框展示值的格式 | (value: number \| string) => string | - | - |
+| disabled | 是否禁用 | boolean | - | false |
+
+InputNumber events
+
+| 事件名 | 说明 | 返回值 |
+|---- |---- |---- |
+| change | 变化回调 | (value: number \| string) |
     
 <script>
   import Row from '@/components/row';
@@ -29,9 +92,7 @@
     },
     data() {
       return {
-        keywords: 1,
-        select: '上海',
-        options: ['上海', '北京', '广州', '深圳'],
+        number: 1,
       };
     },
     methods: {
