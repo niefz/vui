@@ -59,7 +59,7 @@
       isGroup() {
         let parent = this.$parent;
         if (parent) {
-          if (parent.$options.componentName !== 'RadioGroup') {
+          if (parent.$options.name !== 'RadioGroup') {
             parent = parent.$parent;
           } else {
             this._radioGroup = parent;

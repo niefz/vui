@@ -64,10 +64,10 @@
         let style = {};
         let indent = this.menu.indent;
         let parent = this.$parent;
-        while (parent && parent.$options.componentName !== 'Menu') {
-          if (parent.$options.componentName === 'MenuSub') {
+        while (parent && parent.$options.name !== 'Menu') {
+          if (parent.$options.name === 'MenuSub') {
             indent += 20;
-          } else if (parent.$options.componentName === 'MenuItemGroup') {
+          } else if (parent.$options.name === 'MenuItemGroup') {
             indent += 20;
           }
           parent = parent.$parent;

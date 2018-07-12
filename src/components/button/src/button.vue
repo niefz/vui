@@ -79,7 +79,7 @@
       isGroup() {
         let parent = this.$parent;
         if (parent) {
-          if (parent.$options.componentName !== 'ButtonGroup') {
+          if (parent.$options.name !== 'ButtonGroup') {
             parent = parent.$parent;
           } else {
             this._buttonGroup = parent;

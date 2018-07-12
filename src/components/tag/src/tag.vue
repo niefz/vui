@@ -67,7 +67,7 @@
       isGroup() {
         let parent = this.$parent;
         if (parent) {
-          if (parent.$options.componentName !== 'TagGroup') {
+          if (parent.$options.name !== 'TagGroup') {
             parent = parent.$parent;
           } else {
             this._tagGroup = parent;

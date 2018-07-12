@@ -63,7 +63,7 @@
       isGroup() {
         let parent = this.$parent;
         if (parent) {
-          if (parent.$options.componentName !== 'CheckboxGroup') {
+          if (parent.$options.name !== 'CheckboxGroup') {
             parent = parent.$parent;
           } else {
             this._checkboxGroup = parent;

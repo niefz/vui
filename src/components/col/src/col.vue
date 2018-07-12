@@ -63,7 +63,7 @@
       parent() {
         let parent = this.$parent;
 
-        if (parent && parent.$options.componentName !== 'Row') {
+        if (parent && parent.$options.name !== 'Row') {
           parent = parent.$parent;
         }
 
