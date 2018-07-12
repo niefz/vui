@@ -13,14 +13,14 @@
   export default {
     name: 'Dropdown',
     componentName: 'Dropdown',
-    inheritAttrs: false,
-    directives: { Clickoutside },
-    mixins: [Emitter],
     provide() {
       return {
         dropdown: this,
       };
     },
+    directives: { Clickoutside },
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       trigger: {
         type: String,

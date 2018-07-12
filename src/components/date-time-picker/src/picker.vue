@@ -62,15 +62,15 @@
   export default {
     name: 'DateTimePicker',
     componentName: 'DateTimePicker',
-    inheritAttrs: false,
-    directives: { Clickoutside },
-    mixins: [Emitter, NewPopper],
     components: {
       Icon,
       Input,
       PickerDate,
       PickerTime,
     },
+    directives: { Clickoutside },
+    mixins: [Emitter, NewPopper],
+    inheritAttrs: false,
     props: {
       placement: {
         type: String,

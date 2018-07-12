@@ -29,17 +29,17 @@
   export default {
     name: 'Select',
     componentName: 'Select',
-    inheritAttrs: false,
-    directives: { Clickoutside },
-    mixins: [Emitter],
-    components: {
-      Icon,
-    },
     provide() {
       return {
         select: this,
       };
     },
+    components: {
+      Icon,
+    },
+    directives: { Clickoutside },
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       value: {},
       size: {
