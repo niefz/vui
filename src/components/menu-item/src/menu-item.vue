@@ -82,7 +82,7 @@
     },
     beforeDestroy() {
       this.menu.removeMenuItem(this);
-    }
+    },
     methods: {
       handleClick() {
         if (this.href || this.disabled)  return;
