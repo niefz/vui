@@ -17,10 +17,9 @@
 
   export default {
     name: 'SelectMenu',
-    componentName: 'SelectMenu',
-    inheritAttrs: false,
-    mixins: [Popper],
     inject: ['select'],
+    mixins: [Popper],
+    inheritAttrs: false,
     data() {
       return {
         size: this.select.selectSize,

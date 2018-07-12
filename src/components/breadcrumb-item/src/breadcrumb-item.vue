@@ -13,12 +13,11 @@
 
   export default {
     name: 'BreadcrumbItem',
-    componentName: 'BreadcrumbItem',
-    inheritAttrs: false,
     inject: ['breadcrumb'],
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       to: {},
       replace: Boolean,

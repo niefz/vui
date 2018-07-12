@@ -35,9 +35,9 @@
   import Icon from '@/components/icon';
   import CheckboxGroup from '@/components/checkbox-group';
   import Checkbox from '@/components/checkbox';
+
   export default {
     name: 'TransferPanel',
-    componentName: 'TransferPanel',
     components: {
       Icon,
       Checkbox,
@@ -96,6 +96,10 @@
     		this.$emit('checked-change', val);
     	},
     },
+    created() {
+    },
+    mounted() {
+    },
     methods: {
     	updateAllChecked() {
     		const checkableDataKeys = this.checkableData.map(item => item[this.key]);
@@ -105,10 +109,6 @@
     	handleAllCheckedChange(value) {
     		this.checkedData = value ? this.checkableData.map(item => item[this.key]) : [];
     	},
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

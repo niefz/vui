@@ -40,14 +40,13 @@
 
   export default {
     name: 'CollapseItem',
-    componentName: 'CollapseItem',
-    inheritAttrs: false,
+    inject: ['collapse'],
     components: {
       CollapseTransition,
       Icon,
     },
     mixins: [Emitter],
-    inject: ['collapse'],
+    inheritAttrs: false,
     props: {
       title: String,
       name: {

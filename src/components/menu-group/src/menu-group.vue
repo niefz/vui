@@ -13,9 +13,8 @@
 <script>
   export default {
     name: 'MenuItemGroup',
-    componentName: 'MenuItemGroup',
-    inheritAttrs: false,
     inject: ['menu'],
+    inheritAttrs: false,
     computed: {
       style() {
         const height = this.menu.height;

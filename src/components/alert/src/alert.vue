@@ -34,11 +34,10 @@
 
   export default {
     name: 'Alert',
-    componentName: 'Alert',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       theme: {
         type: String,

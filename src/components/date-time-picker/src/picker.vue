@@ -61,7 +61,6 @@
 
   export default {
     name: 'DateTimePicker',
-    componentName: 'DateTimePicker',
     components: {
       Icon,
       Input,

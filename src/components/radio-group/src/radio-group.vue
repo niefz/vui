@@ -11,7 +11,6 @@
 <script>
   export default {
     name: 'RadioGroup',
-    componentName: 'RadioGroup',
     inheritAttrs: false,
     props: {
       value: {},

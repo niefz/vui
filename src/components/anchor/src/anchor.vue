@@ -19,16 +19,15 @@
 
   export default {
     name: 'Anchor',
-    componentName: 'Anchor',
-    inheritAttrs: false,
-    components: {
-      AnchorBar,
-    },
     provide() {
       return {
         anchor: this,
       };
     },
+    components: {
+      AnchorBar,
+    },
+    inheritAttrs: false,
     props: {
       defaultActive: {
         type: String,
@@ -60,6 +59,18 @@
         }
         return type;
       },
+    },
+    mounted() {
+      this.$on('anchor-item-click', this.handleItemClick);
+      this.$watch('links', this.updateActive());
+      this.elOffset = getOffset(this.$el);
+      if (this.affix) this.handleScroll();
+      on(window, 'scroll', this.handleScroll);
+      on(window, 'resize', this.handleScroll);
+    },
+    beforeDestroy () {
+      off(window, 'scroll', this.handleScroll);
+      off(window, 'resize', this.handleScroll);
     },
     methods: {
       handleScroll () {
@@ -131,18 +142,6 @@
       handleItemClick(item) {
         this.active = item.href;
       },
-    },
-    mounted() {
-      this.$on('anchor-item-click', this.handleItemClick);
-      this.$watch('links', this.updateActive());
-      this.elOffset = getOffset(this.$el);
-      if (this.affix) this.handleScroll();
-      on(window, 'scroll', this.handleScroll);
-      on(window, 'resize', this.handleScroll);
-    },
-    beforeDestroy () {
-      off(window, 'scroll', this.handleScroll);
-      off(window, 'resize', this.handleScroll);
     },
   };
 </script>

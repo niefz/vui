@@ -29,11 +29,10 @@
 
   export default {
     name: 'Button',
-    componentName: 'Button',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       nativeType: {
         type: String,

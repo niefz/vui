@@ -57,11 +57,10 @@
 
   export default {
     name: 'Input',
-    componentName: 'Input',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       value: [String, Number],
       size: {

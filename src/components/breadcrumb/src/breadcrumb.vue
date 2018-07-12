@@ -9,13 +9,12 @@
 <script>
   export default {
     name: 'Breadcrumb',
-    componentName: 'Breadcrumb',
-    inheritAttrs: false,
     provide() {
       return {
         breadcrumb: this,
       };
     },
+    inheritAttrs: false,
     props: {
       separator: {
         type: String,

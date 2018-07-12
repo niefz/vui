@@ -14,14 +14,13 @@
 
   export default {
     name: 'Menu',
-    componentName: 'Menu',
-    inheritAttrs: false,
-    mixins: [Emitter],
     provide() {
       return {
         menu: this,
       };
     },
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       mode: {
         type: String,
@@ -60,6 +59,10 @@
         this.updateActive();
       },
     },
+    mounted() {
+      this.$on('menu-item-click', this.handleItemClick);
+      this.$watch('items', this.updateActive);
+    },
     methods: {
       addMenuItem(item) {
         this.$set(this.items, item.index, item);
@@ -82,10 +85,6 @@
       handleItemClick(item) {
         this.active = item.index;
       },
-    },
-    mounted() {
-      this.$on('menu-item-click', this.handleItemClick);
-      this.$watch('items', this.updateActive);
     },
   };
 </script>

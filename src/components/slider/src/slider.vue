@@ -25,7 +25,6 @@
 <script>
   export default {
     name: 'Slider',
-    componentName: 'Slider',
     inheritAttrs: false,
     props: {
       value: {
@@ -78,6 +77,10 @@
         this.$emit('change', val);
       }
     },
+    created() {
+    },
+    mounted() {
+    },
     methods: {
       change(val) {
         this.$emit('input', val);
@@ -93,10 +96,6 @@
         this.calWidth = percent + '%';
         this.change(percent);
       },
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

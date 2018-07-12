@@ -249,10 +249,9 @@
 
   export default {
     name: 'DatePicker',
-    componentName: 'DatePicker',
-    inheritAttrs: false,
     components: {
       Button,
     },
+    inheritAttrs: false,
   };
 </script>

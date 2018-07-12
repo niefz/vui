@@ -28,12 +28,11 @@
 
   export default {
     name: 'Upload',
-    componentName: 'Upload',
-    inheritAttrs: false,
     components: {
       Icon,
       UploadList,
     },
+    inheritAttrs: false,
     props: {
       disabled: {
         type: Boolean,
@@ -95,6 +94,10 @@
           });
         }
       },
+    },
+    created() {
+    },
+    mounted() {
     },
     methods: {
       delItemByUid(uid) {
@@ -187,10 +190,6 @@
         };
         this.httpRequest(options);
       },
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

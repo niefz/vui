@@ -40,12 +40,11 @@
 
   export default {
     name: 'Popover',
-    componentName: 'Popover',
-    inheritAttrs: false,
-    mixins: [Popper],
     components: {
       Button,
     },
+    mixins: [Popper],
+    inheritAttrs: false,
     props: {
       transition: {
         type: String,
@@ -98,6 +97,38 @@
       showPopper(val) {
         val ? this.$emit('show') : this.$emit('hide');
       },
+    },
+    mounted() {
+      const popper = this.popper || this.$refs.popper;
+      let reference = this.referenceElm = this.reference || this.$refs.reference;
+      if (!reference && this.$slots.reference && this.$slots.reference[0]) {
+        reference = this.referenceElm = this.$slots.reference[0].elm;
+      }
+      if (reference) {
+        if (this.trigger === 'click') {
+          on(reference, 'click', this.doToggle);
+          on(document, 'click', this.handleDocumentClick);
+        } else if (this.trigger === 'hover') {
+          on(reference, 'mouseenter', this.handleMouseEnter);
+          on(popper, 'mouseenter', this.handleMouseEnter);
+          on(reference, 'mouseleave', this.handleMouseLeave);
+          on(popper, 'mouseleave', this.handleMouseLeave);
+        } else if (this.trigger === 'focus') {
+          on(reference, 'focusin', this.doShow);
+          on(reference, 'focusout', this.doClose);
+        }
+      }
+    },
+    destroyed() {
+      const reference = this.reference;
+      off(reference, 'click', this.doToggle);
+      off(reference, 'mouseup', this.doClose);
+      off(reference, 'mousedown', this.doShow);
+      off(reference, 'focusin', this.doShow);
+      off(reference, 'focusout', this.doClose);
+      off(reference, 'mouseleave', this.handleMouseLeave);
+      off(reference, 'mouseenter', this.handleMouseEnter);
+      off(document, 'click', this.handleDocumentClick);
     },
     methods: {
       doToggle() {
@@ -161,38 +192,6 @@
           this.doClose();
         }
       },
-    },
-    mounted() {
-      const popper = this.popper || this.$refs.popper;
-      let reference = this.referenceElm = this.reference || this.$refs.reference;
-      if (!reference && this.$slots.reference && this.$slots.reference[0]) {
-        reference = this.referenceElm = this.$slots.reference[0].elm;
-      }
-      if (reference) {
-        if (this.trigger === 'click') {
-          on(reference, 'click', this.doToggle);
-          on(document, 'click', this.handleDocumentClick);
-        } else if (this.trigger === 'hover') {
-          on(reference, 'mouseenter', this.handleMouseEnter);
-          on(popper, 'mouseenter', this.handleMouseEnter);
-          on(reference, 'mouseleave', this.handleMouseLeave);
-          on(popper, 'mouseleave', this.handleMouseLeave);
-        } else if (this.trigger === 'focus') {
-          on(reference, 'focusin', this.doShow);
-          on(reference, 'focusout', this.doClose);
-        }
-      }
-    },
-    destroyed() {
-      const reference = this.reference;
-      off(reference, 'click', this.doToggle);
-      off(reference, 'mouseup', this.doClose);
-      off(reference, 'mousedown', this.doShow);
-      off(reference, 'focusin', this.doShow);
-      off(reference, 'focusout', this.doClose);
-      off(reference, 'mouseleave', this.handleMouseLeave);
-      off(reference, 'mouseenter', this.handleMouseEnter);
-      off(document, 'click', this.handleDocumentClick);
     },
   };
 </script>

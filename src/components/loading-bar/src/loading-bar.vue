@@ -8,7 +8,6 @@
 <script>
   export default {
     name: 'LoadingBar',
-    componentName: 'LoadingBar',
     inheritAttrs: false,
     props: {
       height: {

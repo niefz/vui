@@ -6,7 +6,6 @@
 <script>
   export default {
     name: 'Header',
-    componentName: 'Header',
     inheritAttrs: false,
     props: {
       height: {

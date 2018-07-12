@@ -29,8 +29,6 @@
 
   export default {
     name: 'Tabs',
-    componentName: 'Tabs',
-    inheritAttrs: false,
     components: {
       TabsBar,
     },
@@ -39,6 +37,7 @@
         tabs: this,
       };
     },
+    inheritAttrs: false,
     props: {
       value: {},
       theme: {
@@ -71,6 +70,11 @@
       value(value) {
         this.updateActive(value);
       },
+    },
+    mounted() {
+      this.$on('tabs-item-click', this.handleItemClick);
+      this.$on('tabs-item-remove', this.handleItemRemove);
+      this.$watch('tabs', this.updateActive());
     },
     methods: {
       addNavs(item) {
@@ -141,11 +145,6 @@
         }
         this.$emit('tab-remove', pane.name, event);
       },
-    },
-    mounted() {
-      this.$on('tabs-item-click', this.handleItemClick);
-      this.$on('tabs-item-remove', this.handleItemRemove);
-      this.$watch('tabs', this.updateActive());
     },
   };
 </script>

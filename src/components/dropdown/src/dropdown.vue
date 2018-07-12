@@ -12,7 +12,6 @@
 
   export default {
     name: 'Dropdown',
-    componentName: 'Dropdown',
     provide() {
       return {
         dropdown: this,
@@ -63,6 +62,10 @@
         this.$emit('visible-change', val);
       },
     },
+    mounted() {
+      this.$on('menu-item-click', this.handleMenuItemClick);
+      this.initEvent();
+    },
     methods: {
       show() {
         if (this.triggerElm.disabled) return;
@@ -98,10 +101,6 @@
         this.visible = !this.hideAfterClick;
         this.$emit('change', value, instance);
       },
-    },
-    mounted() {
-      this.$on('menu-item-click', this.handleMenuItemClick);
-      this.initEvent();
     },
   };
 </script>

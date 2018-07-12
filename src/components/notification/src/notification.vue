@@ -34,11 +34,10 @@
 
   export default {
     name: 'Notification',
-    componentName: 'Notification',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     data() {
       return {
         visible: false,
@@ -78,6 +77,13 @@
         }
       }
     },
+    mounted() {
+      this.startTimer();
+      document.addEventListener('keydown', this.keydown);
+    },
+    beforeDestroy() {
+      document.removeEventListener('keydown', this.keydown);
+    },
     methods: {
       destroyElement() {
         this.$el.removeEventListener('transitionend', this.destroyElement);
@@ -114,13 +120,6 @@
           }
         }
       },
-    },
-    mounted() {
-      this.startTimer();
-      document.addEventListener('keydown', this.keydown);
-    },
-    beforeDestroy() {
-      document.removeEventListener('keydown', this.keydown);
     },
   };
 </script>

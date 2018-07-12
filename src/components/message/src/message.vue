@@ -21,11 +21,10 @@
 
   export default {
     name: 'Message',
-    componentName: 'Message',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     data() {
       return {
         visible: false,
@@ -48,6 +47,13 @@
           this.$el.addEventListener('transitionend', this.destroyElement);
         }
       }
+    },
+    mounted() {
+      this.startTimer();
+      document.addEventListener('keydown', this.keydown);
+    },
+    beforeDestroy() {
+      document.removeEventListener('keydown', this.keydown);
     },
     methods: {
       destroyElement() {
@@ -80,13 +86,6 @@
           }
         }
       },
-    },
-    mounted() {
-      this.startTimer();
-      document.addEventListener('keydown', this.keydown);
-    },
-    beforeDestroy() {
-      document.removeEventListener('keydown', this.keydown);
     },
   };
 </script>

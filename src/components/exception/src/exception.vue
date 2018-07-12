@@ -13,7 +13,6 @@
 <script>
   export default {
     name: 'Exception',
-    componentName: 'Exception',
     inheritAttrs: false,
     props: {
       exception: {
@@ -39,6 +38,10 @@
         },
       };
     },
+    created() {
+      this.initImage(this.exception);
+      this.initDescription(this.exception);
+    },
     methods: {
       initImage(exception) {
         if (this.src) return;
@@ -48,10 +51,6 @@
         if (this.description) return;
         this.exceptionTip = this.descriptions[exception];
       },
-    },
-    created() {
-      this.initImage(this.exception);
-      this.initDescription(this.exception);
     },
   };
 </script>

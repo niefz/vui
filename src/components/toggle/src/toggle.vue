@@ -33,7 +33,6 @@
 <script>
   export default {
     name: 'Toggle',
-    componentName: 'Toggle',
     inheritAttrs: false,
     props: {
       value: {

@@ -18,7 +18,6 @@
 <script>
   export default {
     name: 'Card',
-    componentName: 'Card',
     inheritAttrs: false,
     props: {
       header: {
@@ -33,10 +32,10 @@
     },
     computed: {},
     watch: {},
-    methods: {},
     created() {
     },
     mounted() {
     },
+    methods: {},
   };
 </script>

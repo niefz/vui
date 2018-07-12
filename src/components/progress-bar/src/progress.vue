@@ -61,11 +61,10 @@
 
   export default {
     name: 'ProgressBar',
-    componentName: 'ProgressBar',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       shape: {
         type: String,

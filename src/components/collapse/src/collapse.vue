@@ -12,13 +12,12 @@
 <script>
   export default {
     name: 'Collapse',
-    componentName: 'Collapse',
-    inheritAttrs: false,
     provide() {
       return {
         collapse: this,
       };
     },
+    inheritAttrs: false,
     props: {
       value: {
         type: [Array, String],
@@ -45,6 +44,12 @@
         activeNames: null,
       };
     },
+    created() {
+      const defaultActive = this.defaultActive || this.value;
+      const activeNames = this.accordion ? defaultActive : [].concat(defaultActive);
+      this.setCurrentActives(activeNames);
+      this.$on('panel-click', this.handleItemClick);
+    },
     methods: {
       setCurrentActives(names) {
         this.activeNames = names;
@@ -65,12 +70,6 @@
         this.setCurrentActives(activeNames);
         this.$emit('change', activeNames);
       },
-    },
-    created() {
-      const defaultActive = this.defaultActive || this.value;
-      const activeNames = this.accordion ? defaultActive : [].concat(defaultActive);
-      this.setCurrentActives(activeNames);
-      this.$on('panel-click', this.handleItemClick);
     },
   };
 </script>

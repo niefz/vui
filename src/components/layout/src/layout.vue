@@ -6,7 +6,6 @@
 <script>
   export default {
     name: 'Layout',
-    componentName: 'Layout',
     inheritAttrs: false,
     computed: {
       style() {

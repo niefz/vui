@@ -31,12 +31,11 @@
 
   export default {
     name: 'Tag',
-    componentName: 'Tag',
-    inheritAttrs: false,
-    mixins: [Emitter],
     components: {
       Icon,
     },
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       transitionName: {
         type: String,

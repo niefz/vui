@@ -58,7 +58,6 @@
 <script>
   export default {
     name: 'TimePicker',
-    componentName: 'TimePicker',
     inheritAttrs: false,
     props: {
       date: {

@@ -15,13 +15,12 @@
 <script>
   export default {
     name: 'Steps',
-    componentName: 'Steps',
-    inheritAttrs: false,
     provide() {
       return {
         steps: this,
       };
     },
+    inheritAttrs: false,
     props: {
       mode: {
         type: String,
@@ -41,6 +40,9 @@
         steps: [],
         panels: [],
       };
+    },
+    mounted() {
+      this.$watch('steps', this.updateChildProps());
     },
     methods: {
       addSteps(item) {
@@ -70,9 +72,6 @@
           }
         });
       },
-    },
-    mounted() {
-      this.$watch('steps', this.updateChildProps());
     },
   };
 </script>

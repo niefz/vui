@@ -10,9 +10,8 @@
 <script>
   export default {
     name: 'TabsPanel',
-    componentName: 'TabsPanel',
-    inheritAttrs: false,
     inject: ['tabs'],
+    inheritAttrs: false,
     props: {
       name: {
         type: String,

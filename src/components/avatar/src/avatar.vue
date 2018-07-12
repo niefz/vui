@@ -21,11 +21,10 @@
 
   export default {
     name: 'Avatar',
-    componentName: 'Avatar',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       size: {
         type: String,

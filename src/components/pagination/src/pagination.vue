@@ -132,8 +132,6 @@
 
   export default {
     name: 'Pagination',
-    componentName: 'Pagination',
-    inheritAttrs: false,
     components: {
       Button,
       Icon,
@@ -142,6 +140,7 @@
       SelectMenu,
       SelectMenuOption,
     },
+    inheritAttrs: false,
     props: {
       size: {
         type: String,

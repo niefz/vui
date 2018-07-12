@@ -50,12 +50,11 @@
 
   export default {
     name: 'Drawer',
-    componentName: 'Drawer',
-    inheritAttrs: false,
     components: {
       Icon,
       Button,
     },
+    inheritAttrs: false,
     props: {
       visible: {
         type: Boolean,
@@ -163,6 +162,21 @@
         }
       }
     },
+    mounted() {
+      if (this.visible) {
+        this.open();
+        document.body.appendChild(this.$el);
+      }
+      document.addEventListener('keydown', this.handleEsc);
+    },
+    beforeDestroy () {
+      document.removeEventListener('keydown', this.handleEsc);
+    },
+    destroyed() {
+      if (this.$el && this.$el.parentNode) {
+        this.$el.parentNode.removeChild(this.$el);
+      }
+    },
     methods: {
       /**
        * ok
@@ -208,21 +222,6 @@
       handleWrapperClick() {
         if (this.closeOnClickMask) this.handleClose();
       },
-    },
-    mounted() {
-      if (this.visible) {
-        this.open();
-        document.body.appendChild(this.$el);
-      }
-      document.addEventListener('keydown', this.handleEsc);
-    },
-    beforeDestroy () {
-      document.removeEventListener('keydown', this.handleEsc);
-    },
-    destroyed() {
-      if (this.$el && this.$el.parentNode) {
-        this.$el.parentNode.removeChild(this.$el);
-      }
     },
   };
 </script>

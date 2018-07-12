@@ -12,7 +12,6 @@
 <script>
   export default {
     name: 'CheckboxGroup',
-    componentName: 'CheckboxGroup',
     inheritAttrs: false,
     props: {
       value: {

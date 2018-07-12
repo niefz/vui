@@ -36,9 +36,8 @@
 
   export default {
     name: 'Tooltip',
-    componentName: 'Tooltip',
-    inheritAttrs: false,
     mixins: [Popper],
+    inheritAttrs: false,
     props: {
       transition: {
         type: String,

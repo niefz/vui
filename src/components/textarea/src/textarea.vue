@@ -24,11 +24,10 @@
 
   export default {
     name: 'Textarea',
-    componentName: 'Textarea',
-    inheritAttrs: false,
     components: {
       VIcon: Icon,
     },
+    inheritAttrs: false,
     model: {
       prop: 'value',
     },

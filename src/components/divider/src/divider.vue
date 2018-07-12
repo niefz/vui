@@ -14,7 +14,6 @@
 <script>
   export default {
     name: 'Divider',
-    componentName: 'Divider',
     inheritAttrs: false,
     props: {
       mode: {

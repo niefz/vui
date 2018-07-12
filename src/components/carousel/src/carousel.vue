@@ -48,11 +48,10 @@
 
   export default {
     name: 'Carousel',
-    componentName: 'Carousel',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       height: String,
       autoplay: {
@@ -87,6 +86,12 @@
         this.setItemPosition(curVal);
         this.$emit('change', curVal, preVal);
       },
+    },
+    created() {
+    },
+    mounted() {
+      this.getCarouselItems();
+      this.start();
     },
     methods: {
       handleMouseEnter() {
@@ -143,12 +148,6 @@
       back() {
         this.setCurrentIndex(this.currentIndex - 1);
       },
-    },
-    created() {
-    },
-    mounted() {
-      this.getCarouselItems();
-      this.start();
     },
   };
 </script>

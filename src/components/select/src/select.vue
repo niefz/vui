@@ -28,14 +28,13 @@
 
   export default {
     name: 'Select',
-    componentName: 'Select',
+    components: {
+      Icon,
+    },
     provide() {
       return {
         select: this,
       };
-    },
-    components: {
-      Icon,
     },
     directives: { Clickoutside },
     mixins: [Emitter],
@@ -107,6 +106,10 @@
         this.$emit('visible-change', val);
       },
     },
+    mounted() {
+      this.$on('select-option-click', this.handleSelectOptionClick);
+      this.initEvent();
+    },
     methods: {
       show() {
         if (this.triggerElm.disabled) return;
@@ -136,10 +139,6 @@
         this.$emit('input', value, instance);
         this.$emit('change', value, instance);
       },
-    },
-    mounted() {
-      this.$on('select-option-click', this.handleSelectOptionClick);
-      this.initEvent();
     },
   };
 </script>

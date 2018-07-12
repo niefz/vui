@@ -16,11 +16,10 @@
 
   export default {
     name: 'CarouselItem',
-    componentName: 'CarouselItem',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       value: {
         type: Number,
@@ -41,6 +40,10 @@
     },
     watch: {
     },
+    created() {
+    },
+    mounted() {
+    },
     methods: {
       moveItem(index, currentIndex, prevIndex) {
         const parentWidth = this.$parent.$el.offsetWidth;
@@ -48,10 +51,6 @@
         this.actived = index === currentIndex;
         this.translate = parentWidth * (index - currentIndex);
       },
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

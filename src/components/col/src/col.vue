@@ -8,7 +8,6 @@
 <script>
   export default {
     name: 'Col',
-    componentName: 'Col',
     inheritAttrs: false,
     props: {
       span: {

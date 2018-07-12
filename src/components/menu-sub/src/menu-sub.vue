@@ -31,13 +31,12 @@
 
   export default {
     name: 'MenuSub',
-    componentName: 'MenuSub',
-    inheritAttrs: false,
-    mixins: [Emitter],
     inject: ['menu'],
     components: {
       CollapseTransition,
     },
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       index: String,
       disabled: Boolean,
@@ -69,16 +68,16 @@
         this.expand = val.indexOf(this.index) > -1;
       },
     },
-    methods: {
-      handleToggle() {
-        this.expand = !this.expand;
-      },
-    },
     created() {
       this.menu.addMenuSub(this);
     },
     beforeDestroy() {
       this.menu.removeMenuSub(this);
+    },
+    methods: {
+      handleToggle() {
+        this.expand = !this.expand;
+      },
     },
   };
 </script>

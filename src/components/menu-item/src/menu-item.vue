@@ -42,10 +42,9 @@
 
   export default {
     name: 'MenuItem',
-    componentName: 'MenuItem',
-    inheritAttrs: false,
-    mixins: [Emitter],
     inject: ['menu'],
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       index: String,
       to: [String, Object],
@@ -78,6 +77,12 @@
         return style;
       },
     },
+    created() {
+      this.menu.addMenuItem(this);
+    },
+    beforeDestroy() {
+      this.menu.removeMenuItem(this);
+    }
     methods: {
       handleClick() {
         if (this.href || this.disabled)  return;
@@ -85,11 +90,5 @@
         this.$emit('click', this);
       },
     },
-    created() {
-      this.menu.addMenuItem(this);
-    },
-    beforeDestroy() {
-      this.menu.removeMenuItem(this);
-    }
   };
 </script>

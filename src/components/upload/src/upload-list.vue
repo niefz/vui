@@ -27,12 +27,11 @@
 
   export default {
     name: 'UploadList',
-    componentName: 'UploadList',
-    inheritAttrs: false,
     components: {
       Progress,
       Icon,
     },
+    inheritAttrs: false,
     props: {
       disabled: {
         type: Boolean,
@@ -58,6 +57,10 @@
     },
     watch: {
     },
+    created() {
+    },
+    mounted() {
+    },
     methods: {
       getPercentage(file) {
         return file.percent;
@@ -65,10 +68,6 @@
       handleRemove(file) {
         this.$emit('remove', file);
       },
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

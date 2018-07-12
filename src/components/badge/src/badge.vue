@@ -21,7 +21,6 @@
 <script>
   export default {
     name: 'Badge',
-    componentName: 'Badge',
     inheritAttrs: false,
     props: {
       value: {},

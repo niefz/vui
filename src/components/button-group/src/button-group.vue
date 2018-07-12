@@ -10,7 +10,6 @@
 <script>
   export default {
     name: 'ButtonGroup',
-    componentName: 'ButtonGroup',
     inheritAttrs: false,
     props: {
       mode: {

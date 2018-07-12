@@ -6,7 +6,6 @@
 <script>
   export default {
     name: 'Content',
-    componentName: 'Content',
     inheritAttrs: false,
     computed: {
       style() {

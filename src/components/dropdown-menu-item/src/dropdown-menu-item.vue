@@ -18,9 +18,8 @@
 
   export default {
     name: 'DropdownMenuItem',
-    componentName: 'DropdownMenuItem',
-    inheritAttrs: false,
     mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       value: {},
       divided: Boolean,

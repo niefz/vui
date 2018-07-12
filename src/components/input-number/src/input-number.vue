@@ -31,12 +31,11 @@
 
   export default {
     name: 'InputNumber',
-    componentName: 'InputNumber',
-    inheritAttrs: false,
     components: {
       Input,
       Icon,
     },
+    inheritAttrs: false,
     props: {
       value: {},
       size: {

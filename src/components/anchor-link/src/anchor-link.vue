@@ -21,10 +21,9 @@
 
   export default {
     name: 'AnchorLink',
-    componentName: 'AnchorLink',
-    inheritAttrs: false,
-    mixins: [Emitter],
     inject: ['anchor'],
+    mixins: [Emitter],
+    inheritAttrs: false,
     props: {
       href: String,
       title: String,
@@ -35,12 +34,6 @@
         return this.anchor.active === this.href;
       },
     },
-    methods: {
-      handleClick(event) {
-        if (this.disabled)  return;
-        this.dispatch('Anchor', 'anchor-item-click', [this, event]);
-      },
-    },
     mounted() {
       this.anchor.addLinks(this);
     },
@@ -49,6 +42,12 @@
         this.$el.parentNode.removeChild(this.$el);
       }
       this.anchor.removeLinks(this);
+    },
+    methods: {
+      handleClick(event) {
+        if (this.disabled)  return;
+        this.dispatch('Anchor', 'anchor-item-click', [this, event]);
+      },
     },
   };
 </script>

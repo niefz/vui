@@ -26,11 +26,10 @@
 
   export default {
     name: 'Empty',
-    componentName: 'Empty',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       src: String,
       icon: String,

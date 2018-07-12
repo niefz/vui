@@ -30,9 +30,9 @@
   import Icon from '@/components/icon';
   import Button from '@/components/button';
   import TransferPanel from '@/components/transfer/src/transfer-panel';
+
   export default {
     name: 'Transfer',
-    componentName: 'Transfer',
     components: {
       Icon,
       Button,
@@ -97,6 +97,10 @@
     },
     watch: {
     },
+    created() {
+    },
+    mounted() {
+    },
     methods: {
       moveLeft() {
         let currentValue = this.value.slice();
@@ -132,10 +136,6 @@
       handleTargetCheckedChange(val) {
         this.targetChecked = val;
       },
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

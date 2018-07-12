@@ -26,13 +26,12 @@
 
   export default {
     name: 'TabsNav',
-    componentName: 'TabsNav',
-    inheritAttrs: false,
+    inject: ['tabs'],
     components: {
       Icon,
     },
     mixins: [Emitter],
-    inject: ['tabs'],
+    inheritAttrs: false,
     props: {
       label: String,
       name: [Object, String, Number],
@@ -48,15 +47,6 @@
         return this.tabs.closable || this.closable;
       },
     },
-    methods: {
-      handleClick(event) {
-        if (this.disabled)  return;
-        this.dispatch('Tabs', 'tabs-item-click', [this, event]);
-      },
-      handleTabRemove(event) {
-        this.dispatch('Tabs', 'tabs-item-remove', [this, event]);
-      },
-    },
     mounted() {
       this.tabs.addNavs(this);
     },
@@ -65,6 +55,15 @@
         this.$el.parentNode.removeChild(this.$el);
       }
       this.tabs.removeNavs(this);
+    },
+    methods: {
+      handleClick(event) {
+        if (this.disabled)  return;
+        this.dispatch('Tabs', 'tabs-item-click', [this, event]);
+      },
+      handleTabRemove(event) {
+        this.dispatch('Tabs', 'tabs-item-remove', [this, event]);
+      },
     },
   };
 </script>

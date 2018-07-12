@@ -24,11 +24,10 @@
 
   export default {
     name: 'Spin',
-    componentName: 'Spin',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       tip: String,
       icon: String,

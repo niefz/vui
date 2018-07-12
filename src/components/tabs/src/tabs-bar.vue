@@ -4,9 +4,8 @@
 <script>
   export default {
     name: 'TabsBar',
-    componentName: 'TabsBar',
-    inheritAttrs: false,
     inject: ['tabs'],
+    inheritAttrs: false,
     props: {
       navs: Array,
     },

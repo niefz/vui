@@ -41,12 +41,11 @@
 
   export default {
     name: 'StepsItem',
-    componentName: 'StepsItem',
-    inheritAttrs: false,
+    inject: ['steps'],
     components: {
       Icon,
     },
-    inject: ['steps'],
+    inheritAttrs: false,
     props: {
       icon: {
         type: String,

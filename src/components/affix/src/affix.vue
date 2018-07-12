@@ -15,7 +15,6 @@
 
   export default {
     name: 'Affix',
-    componentName: 'Affix',
     inheritAttrs: false,
     props: {
       affix: Boolean,
@@ -41,6 +40,16 @@
         }
         return type;
       },
+    },
+    mounted () {
+      this.elOffset = getOffset(this.$el);
+      if (this.affix) this.handleScroll();
+      on(window, 'scroll', this.handleScroll);
+      on(window, 'resize', this.handleScroll);
+    },
+    beforeDestroy () {
+      off(window, 'scroll', this.handleScroll);
+      off(window, 'resize', this.handleScroll);
     },
     methods: {
       handleScroll () {
@@ -93,16 +102,6 @@
           }
         }
       },
-    },
-    mounted () {
-      this.elOffset = getOffset(this.$el);
-      if (this.affix) this.handleScroll();
-      on(window, 'scroll', this.handleScroll);
-      on(window, 'resize', this.handleScroll);
-    },
-    beforeDestroy () {
-      off(window, 'scroll', this.handleScroll);
-      off(window, 'resize', this.handleScroll);
     },
   };
 </script>

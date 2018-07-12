@@ -4,7 +4,6 @@
 <script>
   export default {
     name: 'Icon',
-    componentName: 'Icon',
     inheritAttrs: false,
     props: {
       icon: {

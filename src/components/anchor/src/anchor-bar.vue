@@ -4,9 +4,8 @@
 <script>
   export default {
     name: 'AnchorBar',
-    componentName: 'AnchorBar',
-    inheritAttrs: false,
     inject: ['anchor'],
+    inheritAttrs: false,
     props: {
       links: Array,
     },

@@ -19,9 +19,9 @@
 <script>
   import TimelineItem from '@/components/timeline-item';
   import Icon from '@/components/icon';
+
   export default {
     name: 'Timeline',
-    componentName: 'Timeline',
     components: {
       TimelineItem,
       Icon,
@@ -49,11 +49,11 @@
     },
     watch: {
     },
-    methods: {
-    },
     created() {
     },
     mounted() {
+    },
+    methods: {
     },
   };
 </script>

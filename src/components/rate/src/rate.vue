@@ -27,11 +27,10 @@
 
   export default {
     name: 'Rate',
-    componentName: 'Rate',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       value: {
         type: Number,
@@ -75,16 +74,16 @@
         this.currentValue = val;
       },
     },
+    created() {
+    },
+    mounted() {
+    },
     methods: {
       setValue(val) {
         if (this.isDisabled) return;
         this.$emit('input', val);
         this.$emit('change', val);
       },
-    },
-    created() {
-    },
-    mounted() {
     },
   };
 </script>

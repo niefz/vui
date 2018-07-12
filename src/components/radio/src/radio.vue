@@ -38,9 +38,8 @@
 
   export default {
     name: 'Radio',
-    componentName: 'Radio',
-    inheritAttrs: false,
     mixins: [Emitter],
+    inheritAttrs: false,
     model: {
       prop: 'vmodel',
     },

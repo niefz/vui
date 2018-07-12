@@ -21,11 +21,10 @@
 
   export default {
     name: 'BackTop',
-    componentName: 'BackTop',
-    inheritAttrs: false,
     components: {
       Icon,
     },
+    inheritAttrs: false,
     props: {
       visibilityHeight: {
         type: Number,
@@ -57,6 +56,14 @@
         };
       },
     },
+    mounted() {
+      window.addEventListener('scroll', this.handleScroll, false);
+      window.addEventListener('resize', this.handleScroll, false);
+    },
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.handleScroll, false);
+      window.removeEventListener('resize', this.handleScroll, false);
+    },
     methods: {
       handleScroll() {
         this.backTop = window.pageYOffset >= this.visibilityHeight;
@@ -66,14 +73,6 @@
         scrollTop(window, sTop, 0, this.duration);
         this.$emit('on-click');
       }
-    },
-    mounted() {
-      window.addEventListener('scroll', this.handleScroll, false);
-      window.addEventListener('resize', this.handleScroll, false);
-    },
-    beforeDestroy() {
-      window.removeEventListener('scroll', this.handleScroll, false);
-      window.removeEventListener('resize', this.handleScroll, false);
     },
   };
 </script>

@@ -16,7 +16,6 @@
 <script>
   export default {
     name: 'TimelineItem',
-    componentName: 'TimelineItem',
     inheritAttrs: false,
     props: {
       color: {
@@ -35,11 +34,11 @@
     },
     watch: {
     },
-    methods: {
-    },
     created() {
     },
     mounted() {
+    },
+    methods: {
     },
   };
 </script>

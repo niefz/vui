@@ -10,9 +10,8 @@
 <script>
   export default {
     name: 'StepsPanel',
-    componentName: 'StepsPanel',
-    inheritAttrs: false,
     inject: ['steps'],
+    inheritAttrs: false,
     props: {
       name: {
         type: Number,
