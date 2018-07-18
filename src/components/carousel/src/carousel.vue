@@ -82,9 +82,11 @@
     computed: {
     },
     watch: {
-      currentIndex(curVal, preVal) {
-        this.setItemPosition(curVal);
-        this.$emit('change', curVal, preVal);
+      currentIndex: {
+        handler(curVal, preVal) {
+          this.setItemPosition(curVal);
+          this.$emit('change', curVal, preVal);
+        },
       },
     },
     created() {

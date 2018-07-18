@@ -41,12 +41,14 @@
       },
     },
     watch: {
-      closed(val) {
-        if (val) {
-          this.visible = false;
-          this.$el.addEventListener('transitionend', this.destroyElement);
-        }
-      }
+      closed: {
+        handler(val) {
+          if (val) {
+            this.visible = false;
+            this.$el.addEventListener('transitionend', this.destroyElement);
+          }
+        },
+      },
     },
     mounted() {
       this.startTimer();

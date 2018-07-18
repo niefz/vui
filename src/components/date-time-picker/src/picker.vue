@@ -144,16 +144,18 @@
       },
     },
     watch: {
-      pickerVisible(val) {
-        if (this.readonly || this.pickerDisabled) return;
-        if (val) {
-          this.showPicker();
-        } else {
-          this.hidePicker();
-          this.emitChange(this.value);
-          this.dispatch('ElFormItem', 'el.form.blur');
-          this.$emit('blur', this);
-          this.blur();
+      pickerVisible: {
+        handler(val) {
+          if (this.readonly || this.pickerDisabled) return;
+          if (val) {
+            this.showPicker();
+          } else {
+            this.hidePicker();
+            this.emitChange(this.value);
+            this.dispatch('ElFormItem', 'el.form.blur');
+            this.$emit('blur', this);
+            this.blur();
+          }
         }
       },
     },

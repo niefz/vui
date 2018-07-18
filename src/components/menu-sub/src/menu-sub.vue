@@ -64,8 +64,10 @@
       },
     },
     watch: {
-      'menu.defaultOpens'(val) {
-        this.expand = val.indexOf(this.index) > -1;
+      'menu.defaultOpens': {
+        handler(val) {
+          this.expand = val.indexOf(this.index) > -1;
+        },
       },
     },
     created() {

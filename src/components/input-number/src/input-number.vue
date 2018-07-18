@@ -1,28 +1,29 @@
 <template>
   <div class="v-input--number">
     <Input
-      :size="size"
-      :value="currentValue"
+      :size="inputSize"
+      :value="currentInputValue"
       :placeholder="placeholder"
       :error="isError"
       :disabled="disabled"
-      @keyup="handleKeyup"
       @input="handleInput">
-      <template slot="prepend" v-if="$slots.prepend">
-        <slot name="prepend"></slot>
-      </template>
-      <template slot="append" v-if="$slots.append">
-        <slot name="append"></slot>
-      </template>
+    <template slot="prepend" v-if="$slots.prepend">
+      <slot name="prepend"></slot>
+    </template>
+    <template slot="append" v-if="$slots.append">
+      <slot name="append"></slot>
+    </template>
     </Input>
-    <div class="v-input--number-handler">
-      <em class="v-input--number-handler-up" :class="{'disabled': increaseDisabled}" @click.stop="handleIncrease">
-        <Icon icon="v-icon-arrow-up-o"></Icon>
-      </em>
-      <em class="v-input--number-handler-down" :class="{'disabled': minusDisabled}" @click.stop="handleMinus">
-        <Icon icon="v-icon-arrow-down-o"></Icon>
-      </em>
-    </div>
+    <template v-if="!disabled">
+      <div class="v-input--number-handler">
+        <em class="v-input--number-handler-up" :class="{ 'disabled': increaseDisabled }" @click.stop="handleIncrease">
+          <Icon icon="v-icon-arrow-up-o"></Icon>
+        </em>
+        <em class="v-input--number-handler-down" :class="{ 'disabled': minusDisabled }" @click.stop="handleMinus">
+          <Icon icon="v-icon-arrow-down-o"></Icon>
+        </em>
+      </div>
+    </template>
   </div>
 </template>
 <script>
@@ -42,15 +43,27 @@
         type: String,
         default: 'small',
       },
-      placeholder: String,
-      max: Number,
-      min: Number,
-      precision: Number,
+      placeholder: {
+        type: String,
+      },
+      max: {
+        type: Number,
+        default: Infinity
+      },
+      min: {
+        type: Number,
+        default: -Infinity
+      },
+      precision: {
+        type: Number,
+      },
       step: {
         type: Number,
         default: 1,
       },
-      formatter: Function,
+      formatter: {
+        type: Function,
+      },
       disabled: {
         type: Boolean,
         default: false,
@@ -62,8 +75,19 @@
       };
     },
     watch: {
-      value (val) {
-        this.currentValue = val;
+      value: {
+        immediate: true,
+        handler(val) {
+          const { precision } = this;
+          let newVal = val ? Number(val) : val;
+          if (newVal) {
+            if (precision) {
+              newVal = this.toPrecision(newVal, precision);
+            }
+          }
+          this.currentValue = newVal;
+          this.$emit('input', newVal);
+        },
       },
     },
     computed: {
@@ -77,43 +101,68 @@
         return Number(this.currentValue) <= this.min;
       },
       isError() {
-        return (this.max && this.currentValue > this.max) || (this.min && this.currentValue < this.min);
+        const { max, min, currentValue } = this;
+        return (String(max) && currentValue > max) || (String(min) && currentValue < min);
+      },
+      currentInputValue() {
+        const { precision, currentValue } = this;
+        if (precision) {
+          return currentValue.toFixed(precision);
+        }
+        return currentValue;
       },
     },
     methods: {
       setCurrentValue(val) {
-        this.currentValue = val;
-        this.$emit('input', val);
-        this.$emit('change', val);
+        const { precision } = this;
+        if (val && !isNaN(precision)) val = this.toPrecision(val, precision);
+        this.$nextTick(() => {
+          this.currentValue = val;
+          this.$emit('input', val);
+          this.$emit('change', val);
+        });
       },
-      handleKeyup(event) {
-        this.$emit('keyup', event);
+      /**
+       * 数值精度
+       * @param num
+       * @param precision
+       * @returns {number}
+       */
+      toPrecision(num, precision) {
+        return parseFloat(Number(num).toFixed(precision));
       },
+      /**
+       * input
+       * @param event
+       */
       handleInput(event) {
         let val = event.target.value.trim();
+        if (this.parser) {
+          val = this.parser(val);
+        }
         if (event.type == 'input' && val.match(/^[-]?\.?$|\.$/)) return;
         let value = Number(val);
         if (!isNaN(value)) {
           this.currentValue = value;
         } else {
-          event.target.value = this.currentValue || '';
+          event.target.value = this.currentValue;
         }
       },
-      handlePrefixIcon() {
-        this.$emit('prefix-click');
-      },
+      /**
+       * increase
+       */
       handleIncrease() {
         if (this.increaseDisabled) return;
-        const value = (this.currentValue || 0) + this.step;
-        this.setCurrentValue(value);
+        const { currentValue, step } = this;
+        this.setCurrentValue(currentValue + step);
       },
+      /**
+       * minus
+       */
       handleMinus() {
         if (this.minusDisabled) return;
-        const value = (this.currentValue || 0) - this.step;
-        this.setCurrentValue(value);
-      },
-      handleSuffixIcon() {
-        this.$emit('suffix-click');
+        const { currentValue, step } = this;
+        this.setCurrentValue(currentValue - step);
       },
     },
   };

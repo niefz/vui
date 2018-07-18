@@ -262,14 +262,20 @@
       },
     },
     watch: {
-      showPrevMore(val) {
-        if (!val) this.quickPrevIconClass = 'v-icon-more';
+      showPrevMore: {
+        handler(val) {
+          if (!val) this.quickPrevIconClass = 'v-icon-more';
+        },
       },
-      showNextMore(val) {
-        if (!val) this.quickNextIconClass = 'v-icon-more';
+      showNextMore: {
+        handler(val) {
+          if (!val) this.quickNextIconClass = 'v-icon-more';
+        },
       },
-      internalCurrent() {
-        this.$emit('page-change', this.validCurrentPage);
+      internalCurrent: {
+        handler() {
+          this.$emit('page-change', this.validCurrentPage);
+        },
       },
     },
     methods: {

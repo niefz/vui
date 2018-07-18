@@ -94,8 +94,10 @@
       };
     },
     watch: {
-      showPopper(val) {
-        val ? this.$emit('show') : this.$emit('hide');
+      showPopper: {
+        handler(val) {
+          val ? this.$emit('show') : this.$emit('hide');
+        },
       },
     },
     mounted() {

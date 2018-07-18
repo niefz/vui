@@ -73,9 +73,11 @@
       },
     },
     watch: {
-      value(val) {
-        this.$emit('change', val);
-      }
+      value: {
+        handler(val) {
+          this.$emit('change', val);
+        },
+      },
     },
     created() {
     },

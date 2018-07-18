@@ -39,7 +39,7 @@
 ```html
 <Row>
   <Col :span="6">
-    <InputNumber v-model="number" :min="1" :max="10"></InputNumber>
+    <InputNumber v-model="number" :min="0" :max="10" :step="0.1" :precision="2"></InputNumber>
   </Col>
 </Row>
 ```

@@ -82,8 +82,10 @@
       };
     },
     watch: {
-      content () {
-        this.updatePopper();
+      content: {
+        handler() {
+          this.updatePopper();
+        },
       },
     },
     methods: {

@@ -70,8 +70,10 @@
       },
     },
     watch: {
-      value(val) {
-        this.currentValue = val;
+      value: {
+        handler(val) {
+          this.currentValue = val;
+        },
       },
     },
     created() {

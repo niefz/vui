@@ -101,9 +101,11 @@
       },
     },
     watch: {
-      visible(val) {
-        this.broadcast('SelectMenu', 'visible', val);
-        this.$emit('visible-change', val);
+      visible: {
+        handler(val) {
+          this.broadcast('SelectMenu', 'visible', val);
+          this.$emit('visible-change', val);
+        },
       },
     },
     mounted() {

@@ -55,8 +55,10 @@
       };
     },
     watch: {
-      defaultActive() {
-        this.updateActive();
+      defaultActive: {
+        handler() {
+          this.updateActive();
+        },
       },
     },
     mounted() {

@@ -67,8 +67,10 @@
       };
     },
     watch: {
-      value(value) {
-        this.updateActive(value);
+      value: {
+        handler(value) {
+          this.updateActive(value);
+        },
       },
     },
     mounted() {

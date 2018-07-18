@@ -57,9 +57,11 @@
       },
     },
     watch: {
-      visible(val) {
-        this.broadcast('DropdownMenu', 'visible', val);
-        this.$emit('visible-change', val);
+      visible: {
+        handler(val) {
+          this.broadcast('DropdownMenu', 'visible', val);
+          this.$emit('visible-change', val);
+        },
       },
     },
     mounted() {

@@ -149,18 +149,20 @@
       },
     },
     watch: {
-      visible(val) {
-        if (val) {
-          this.closed = false;
-          this.$emit('open');
-          this.$nextTick(() => {
-            this.$refs.modal.scrollTop = 0;
-          });
-          document.body.appendChild(this.$el);
-        } else {
-          if (!this.closed) this.$emit('close');
-        }
-      }
+      visible: {
+        handler(val) {
+          if (val) {
+            this.closed = false;
+            this.$emit('open');
+            this.$nextTick(() => {
+              this.$refs.modal.scrollTop = 0;
+            });
+            document.body.appendChild(this.$el);
+          } else {
+            if (!this.closed) this.$emit('close');
+          }
+        },
+      },
     },
     mounted() {
       if (this.visible) {
