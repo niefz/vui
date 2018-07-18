@@ -33,8 +33,8 @@
       },
       reverse: {
         type: Boolean,
-        default: false
-      }
+        default: false,
+      },
     },
     data() {
       return {};

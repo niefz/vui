@@ -22,8 +22,12 @@
         type: String,
         default: 'small',
       },
-      min: Number,
-      max: Number,
+      min: {
+        type: Number,
+      },
+      max: {
+        type: Number,
+      },
       mode: {
         type: String,
         default: 'horizontal',

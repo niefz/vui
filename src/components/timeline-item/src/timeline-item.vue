@@ -19,7 +19,7 @@
     inheritAttrs: false,
     props: {
       color: {
-        type: String
+        type: String,
       },
     },
     data() {

@@ -56,13 +56,13 @@
       },
       title: {
         type: String,
-        default: '',
       },
       content: {
         type: String,
-        default: '',
       },
-      width: [String, Number],
+      width: {
+        type: [String, Number],
+      },
       trigger: {
         type: String,
         default: 'hover',
@@ -83,10 +83,18 @@
         type: String,
         default: '取消',
       },
-      footer: Boolean,
-      loading: Boolean,
-      disabled: Boolean,
-      beforeClose: Function,
+      footer: {
+        type: Boolean,
+      },
+      loading: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
+      beforeClose: {
+        type: Function,
+      },
     },
     data() {
       return {

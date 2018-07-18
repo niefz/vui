@@ -62,11 +62,9 @@
       },
       transition: {
         type: String,
-        default: '',
       },
       title: {
         type: String,
-        default: '',
       },
       width: {
         type: String,
@@ -108,9 +106,15 @@
         type: String,
         default: '取消',
       },
-      fullscreen: Boolean,
-      loading: Boolean,
-      beforeClose: Function,
+      fullscreen: {
+        type: Boolean,
+      },
+      loading: {
+        type: Boolean,
+      },
+      beforeClose: {
+        type: Function,
+      },
     },
     data() {
       return {

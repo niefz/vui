@@ -49,11 +49,17 @@
         type: Array,
         default() {
           return [];
-        }
+        },
       },
-      title: String,
-      props: Object,
-      defaultChecked: Array,
+      title: {
+        type: String,
+      },
+      props: {
+        type: Object,
+      },
+      defaultChecked: {
+        type: Array,
+      },
     },
     data() {
       return {

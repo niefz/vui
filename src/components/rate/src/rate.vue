@@ -38,7 +38,7 @@
       },
       icon: {
         type: String,
-        default: 'v-icon-heart',
+        default: 'v-icon-heart-o',
       },
       points: {
         type: Number,
@@ -55,7 +55,7 @@
       colors: {
         type: Array,
         default () {
-          return ['#999', '#666', '#1890ff']
+          return ['#999999', '#666666', '#1890ff']
         },
       },
     },

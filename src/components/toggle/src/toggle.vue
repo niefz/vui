@@ -37,18 +37,21 @@
     props: {
       value: {
         type: [Boolean, String, Number],
-        default: false
+        default: false,
       },
       name: {
         type: String,
-        default: ''
       },
       width: {
         type: Number,
-        default: 40
+        default: 40,
       },
-      beforeToggle: Function,
-      disabled: Boolean,
+      beforeToggle: {
+        type: Function,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     data() {
       return {};

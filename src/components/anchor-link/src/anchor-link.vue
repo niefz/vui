@@ -25,9 +25,15 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
-      href: String,
-      title: String,
-      disabled: Boolean,
+      href: {
+        type: String,
+      },
+      title: {
+        type: String,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     computed: {
       active() {

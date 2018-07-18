@@ -22,8 +22,12 @@
     inheritAttrs: false,
     props: {
       value: {},
-      divided: Boolean,
-      disabled: Boolean,
+      divided: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     methods: {
       handleClick() {

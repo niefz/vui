@@ -8,7 +8,6 @@
     props: {
       icon: {
         type: String,
-        default: '',
       },
       fontSize: {
         type: Number,

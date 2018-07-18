@@ -7,7 +7,9 @@
     inject: ['anchor'],
     inheritAttrs: false,
     props: {
-      links: Array,
+      links: {
+        type: Array,
+      },
     },
     computed: {
       style: {

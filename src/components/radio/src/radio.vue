@@ -49,11 +49,21 @@
         type: String,
         default: 'small',
       },
-      name: String,
-      label: String,
-      value: [String, Number],
-      border: Boolean,
-      disabled: Boolean,
+      name: {
+        type: String,
+      },
+      label: {
+        type: String,
+      },
+      value: {
+        type: [String, Number],
+      },
+      border: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     computed: {
       isGroup() {

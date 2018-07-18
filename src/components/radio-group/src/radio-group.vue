@@ -22,7 +22,9 @@
         type: String,
         default: 'small',
       },
-      disabled: Boolean,
+      disabled: {
+        type: Boolean,
+      },
     },
     computed: {
       radioGroupSize() {

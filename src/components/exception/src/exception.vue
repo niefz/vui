@@ -19,8 +19,12 @@
         type: String,
         default: '404',
       },
-      src: String,
-      description: String,
+      src: {
+        type: String,
+      },
+      description: {
+        type: String,
+      },
     },
     data() {
       return {

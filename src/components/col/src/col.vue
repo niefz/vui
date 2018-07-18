@@ -26,12 +26,24 @@
         type: Number,
         default: 0,
       },
-      xs: [Number, Object],
-      sm: [Number, Object],
-      md: [Number, Object],
-      lg: [Number, Object],
-      xl: [Number, Object],
-      order: Number,
+      xs: {
+        type: [Number, Object],
+      },
+      sm: {
+        type: [Number, Object],
+      },
+      md: {
+        type: [Number, Object],
+      },
+      lg: {
+        type: [Number, Object],
+      },
+      xl: {
+        type: [Number, Object],
+      },
+      order: {
+        type: Number,
+      },
     },
     computed: {
       classes() {

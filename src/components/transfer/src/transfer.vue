@@ -50,13 +50,13 @@
         type: Array,
         default() {
           return [];
-        }
+        },
       },
       data: {
         type: Array,
         default() {
           return [];
-        }
+        },
       },
       props: {
         type: Object,
@@ -64,21 +64,21 @@
           return {
             label: 'label',
             key: 'key',
-            disabled: 'disabled'
+            disabled: 'disabled',
           };
-        }
+        },
       },
       leftDefaultChecked: {
         type: Array,
         default() {
           return [];
-        }
+        },
       },
       rightDefaultChecked: {
         type: Array,
         default() {
           return [];
-        }
+        },
       },
     },
     data() {

@@ -20,7 +20,9 @@
     inheritAttrs: false,
     props: {
       to: {},
-      replace: Boolean,
+      replace: {
+        type: Boolean,
+      },
     },
     data() {
       return {

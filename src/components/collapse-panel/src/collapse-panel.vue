@@ -48,14 +48,18 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
-      title: String,
+      title: {
+        type: String,
+      },
       name: {
         type: String,
         default() {
           return this._uid;
         },
       },
-      disabled: Boolean,
+      disabled: {
+        type: Boolean,
+      },
     },
     computed: {
       isActive() {

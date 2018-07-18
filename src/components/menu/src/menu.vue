@@ -40,11 +40,9 @@
       },
       defaultActive: {
         type: String,
-        default: ''
       },
       defaultOpens: {
         type: String,
-        default: ''
       },
     },
     data() {

@@ -47,12 +47,24 @@
         type: String,
         default: 'small',
       },
-      name: String,
-      label: String,
-      value: [String, Number],
-      indeterminate: Boolean,
-      border: Boolean,
-      disabled: Boolean,
+      name: {
+        type: String,
+      },
+      label: {
+        type: String,
+      },
+      value: {
+        type: [String, Number],
+      },
+      indeterminate: {
+        type: Boolean,
+      },
+      border: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     data() {
       return {

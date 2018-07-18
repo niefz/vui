@@ -8,8 +8,12 @@
     name: 'TagGroup',
     inheritAttrs: false,
     props: {
-      value: [String, Array],
-      multiple: Boolean,
+      value: {
+        type: [String, Array],
+      },
+      multiple: {
+        type: Boolean,
+      },
     },
   };
 </script>

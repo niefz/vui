@@ -53,7 +53,6 @@
       },
       content: {
         type: String,
-        default: '',
       },
       openDelay: {
         type: Number,
@@ -68,6 +67,7 @@
         default: false,
       },
       popperOptions: {
+        type: Object,
         default() {
           return {
             boundariesPadding: 10,

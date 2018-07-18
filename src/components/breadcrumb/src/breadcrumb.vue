@@ -22,7 +22,6 @@
       },
       separatorIcon: {
         type: String,
-        default: '',
       },
     },
   };

@@ -97,7 +97,6 @@
       },
       icon: {
         type: String,
-        default: '',
       },
       status: {
         type: String,

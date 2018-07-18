@@ -32,13 +32,12 @@
       prop: 'value',
     },
     props: {
+      value: {
+        type: String,
+      },
       size: {
         type: String,
         default: 'small',
-      },
-      value: {
-        type: String,
-        default: '',
       },
       rows: {
         type: Number,
@@ -50,7 +49,6 @@
       },
       placeholder: {
         type: String,
-        default: '',
       },
       autocomplete: {
         type: String,
@@ -58,15 +56,15 @@
       },
       readonly: {
         type: Boolean,
-        default: false
+        default: false,
       },
       disabled: {
         type: Boolean,
-        default: false
+        default: false,
       },
       clearable: {
         type: Boolean,
-        default: false
+        default: false,
       },
     },
     data() {

@@ -33,11 +33,21 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
-      label: String,
-      name: [Object, String, Number],
-      icon: String,
-      closable: Boolean,
-      disabled: Boolean,
+      label: {
+        type: String,
+      },
+      name: {
+        type: [Object, String, Number],
+      },
+      icon: {
+        type: String,
+      },
+      closable: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     computed: {
       isActive() {

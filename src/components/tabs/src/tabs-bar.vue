@@ -7,7 +7,9 @@
     inject: ['tabs'],
     inheritAttrs: false,
     props: {
-      navs: Array,
+      navs: {
+        type: Array,
+      },
     },
     computed: {
       style: {

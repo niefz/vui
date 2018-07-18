@@ -32,7 +32,6 @@
       },
       status: {
         type: String,
-        default: '',
       },
     },
     data() {

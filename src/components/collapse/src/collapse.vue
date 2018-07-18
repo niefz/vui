@@ -27,7 +27,6 @@
       },
       defaultActive: {
         type: String,
-        default: '',
       },
       theme: {
         type: String,
@@ -37,7 +36,9 @@
         type: Boolean,
         default: true,
       },
-      accordion: Boolean,
+      accordion: {
+        type: Boolean,
+      },
     },
     data() {
       return {

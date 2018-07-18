@@ -24,10 +24,18 @@
     inheritAttrs: false,
     props: {
       value: {},
-      max: Number,
-      dot: Boolean,
-      status: String,
-      text: String,
+      max: {
+        type: Number,
+      },
+      dot: {
+        type: Boolean,
+      },
+      status: {
+        type: String,
+      },
+      text: {
+        type: String,
+      },
     },
     computed: {
       content() {

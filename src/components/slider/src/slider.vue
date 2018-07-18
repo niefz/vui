@@ -35,10 +35,18 @@
         type: Boolean,
         default: false
       },
-      barColor: String,
-      barBackgroundColor: String,
-      buttonBorderColor: String,
-      buttonColor: String,
+      barColor: {
+        type: String,
+      },
+      barBackgroundColor: {
+        type: String,
+      },
+      buttonBorderColor: {
+        type: String,
+      },
+      buttonColor: {
+        type: String,
+      },
     },
     data() {
       return {

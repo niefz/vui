@@ -37,11 +37,13 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
+      value: {
+        type: [String, Object],
+      },
       transitionName: {
         type: String,
         default: 'zoom-in-center',
       },
-      value: [String, Object],
       theme: {
         type: String,
         default: 'default',
@@ -52,11 +54,9 @@
       },
       borderColor: {
         type: String,
-        default: '',
       },
       backgroundColor: {
         type: String,
-        default: '',
       },
       closable: {
         type: Boolean,

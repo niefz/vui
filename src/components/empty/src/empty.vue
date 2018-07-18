@@ -31,11 +31,21 @@
     },
     inheritAttrs: false,
     props: {
-      src: String,
-      icon: String,
-      fontSize: Number,
-      description: String,
-      fill: Boolean,
+      src: {
+        type: String,
+      },
+      icon: {
+        type: String,
+      },
+      fontSize: {
+        type: Number,
+      },
+      description: {
+        type: String,
+      },
+      fill: {
+        type: Boolean,
+      },
     },
   };
 </script>

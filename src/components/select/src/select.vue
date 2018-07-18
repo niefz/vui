@@ -47,7 +47,6 @@
       },
       placeholder: {
         type: String,
-        default: '',
       },
       placement: {
         type: String,

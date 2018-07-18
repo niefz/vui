@@ -45,22 +45,22 @@
       },
       message: {
         type: String,
-        default: '',
       },
       description: {
         type: String,
-        default: '',
       },
       icon: {
         type: String,
-        default: '',
       },
-      showIcon: Boolean,
+      showIcon: {
+        type: Boolean,
+      },
       closeText: {
         type: String,
-        default: '',
       },
-      closable: Boolean,
+      closable: {
+        type: Boolean,
+      },
     },
     data() {
       return {

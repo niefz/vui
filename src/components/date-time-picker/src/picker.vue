@@ -71,6 +71,7 @@
     mixins: [Emitter, NewPopper],
     inheritAttrs: false,
     props: {
+      value: {},
       placement: {
         type: String,
         default: 'top-start',
@@ -89,16 +90,13 @@
       },
       placeholder: {
         type: String,
-        default: '',
       },
-      value: {},
       autocomplete: {
         type: String,
         default: 'off',
       },
       prefixIcon: {
         type: String,
-        default: '',
       },
       suffixIcon: {
         type: String,
@@ -116,8 +114,12 @@
         type: Boolean,
         default: false
       },
-      ranged: Boolean,
-      pickerOptions: {},
+      ranged: {
+        type: Boolean,
+      },
+      pickerOptions: {
+        type: Object,
+      },
     },
     data() {
       return {

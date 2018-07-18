@@ -11,10 +11,10 @@
       <slot></slot>
       <input
         class="v-upload--input"
-        type="file" 
-        ref="input" 
+        type="file"
+        ref="input"
         :name="name"
-        :multiple="multiple" 
+        :multiple="multiple"
         :accept="accept"
         @change="handleChange"/>
     </div>
@@ -38,14 +38,15 @@
         type: Boolean,
         default: false,
       },
-      type: String,
+      type: {
+        type: String,
+      },
       action: {
         type: String,
         required: true,
       },
       name: {
         type: String,
-        default: '',
       },
       autoUpload: {
         type: Boolean,
@@ -57,18 +58,36 @@
           return [];
         },
       },
-      data: Object,
-      headers: Object,
-      multiple: Boolean,
-      onStart: Function,
-      onProgress: Function,
-      onSuccess: Function,
-      onError: Function,
-      onChange: Function,
-      accept: String,
+      data: {
+        type: Object,
+      },
+      headers: {
+        type: Object,
+      },
+      multiple: {
+        type: Boolean,
+      },
+      onStart: {
+        type: Function,
+      },
+      onProgress: {
+        type: Function,
+      },
+      onSuccess: {
+        type: Function,
+      },
+      onError: {
+        type: Function,
+      },
+      onChange: {
+        type: Function,
+      },
+      accept: {
+        type: String,
+      },
       httpRequest: {
         type: Function,
-        default: httpRequest
+        default: httpRequest,
       },
     },
     data() {
@@ -102,7 +121,7 @@
     methods: {
       delItemByUid(uid) {
         this.uploadList.forEach((item, index) => {
-          if(item.uid === uid) {
+          if (item.uid === uid) {
             this.uploadList.splice(index, 1);
           }
         });
@@ -117,7 +136,7 @@
       },
       handleChange(e) {
         const files = e.target.files;
-        if(!files) return;
+        if (!files) return;
         this.getFiles(files);
       },
       getFiles(files) {
@@ -126,7 +145,7 @@
 
         resultFiles.forEach(file => {
           this.handleStart(file);
-          if(this.autoUpload) {
+          if (this.autoUpload) {
             this.upload(file);
           }
         })

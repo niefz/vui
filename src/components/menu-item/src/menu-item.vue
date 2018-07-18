@@ -46,14 +46,22 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
-      index: String,
-      to: [String, Object],
-      href: String,
+      index: {
+        type: String,
+      },
+      to: {
+        type: [String, Object],
+      },
+      href: {
+        type: String,
+      },
       target: {
         type: String,
         default: '_blank',
       },
-      disabled: Boolean,
+      disabled: {
+        type: Boolean,
+      },
     },
     computed: {
       active() {

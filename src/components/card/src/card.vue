@@ -2,7 +2,7 @@
   <div class="v-card">
     <div class="v-card--header" v-if="$slots.header || header">
       <slot name="header">
-        {{header}}
+        {{ header }}
       </slot>
     </div>
     <div class="v-card--body">
@@ -10,7 +10,7 @@
     </div>
     <div class="v-card--footer" v-if="$slots.footer || footer">
       <slot name="footer">
-        {{footer}}
+        {{ footer }}
       </slot>
     </div>
   </div>

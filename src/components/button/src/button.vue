@@ -56,11 +56,9 @@
       },
       prefixIcon: {
         type: String,
-        default: '',
       },
       suffixIcon: {
         type: String,
-        default: '',
       },
       plain: {
         type: Boolean,

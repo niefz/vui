@@ -29,9 +29,15 @@
     },
     inheritAttrs: false,
     props: {
-      tip: String,
-      icon: String,
-      background: String,
+      tip: {
+        type: String,
+      },
+      icon: {
+        type: String,
+      },
+      background: {
+        type: String,
+      },
     },
   };
 </script>

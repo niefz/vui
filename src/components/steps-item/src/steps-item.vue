@@ -49,15 +49,12 @@
     props: {
       icon: {
         type: String,
-        default: '',
       },
       title: {
         type: String,
-        default: '',
       },
       description: {
         type: String,
-        default: '',
       },
     },
     data() {

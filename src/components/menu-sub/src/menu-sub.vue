@@ -38,8 +38,12 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
-      index: String,
-      disabled: Boolean,
+      index: {
+        type: String,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     data() {
       return {

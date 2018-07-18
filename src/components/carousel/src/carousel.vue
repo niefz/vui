@@ -53,23 +53,25 @@
     },
     inheritAttrs: false,
     props: {
-      height: String,
+      height: {
+        type: String,
+      },
       autoplay: {
         type: Boolean,
-        default: true
+        default: true,
       },
       interval: {
         type: Number,
-        default: 3000
+        default: 3000,
       },
       indicators: {
         type: Boolean,
-        default: true
+        default: true,
       },
       arrows: {
         type: Boolean,
-        default: true
-      }
+        default: true,
+      },
     },
     data() {
       return {

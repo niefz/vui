@@ -43,20 +43,22 @@
           return [];
         },
       },
-      onRemove: Function,
-      onPreview: Function,
+      onRemove: {
+        type: Function,
+      },
+      onPreview: {
+        type: Function,
+      },
     },
     data() {
-      return {
-      };
+      return {};
     },
     computed: {
       isDisabled() {
         return this.disabled;
       },
     },
-    watch: {
-    },
+    watch: {},
     created() {
     },
     mounted() {

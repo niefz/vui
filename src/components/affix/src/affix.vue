@@ -17,14 +17,22 @@
     name: 'Affix',
     inheritAttrs: false,
     props: {
-      affix: Boolean,
+      affix: {
+        type: Boolean,
+      },
       top: {
         type: Number,
         default: 0
       },
-      right: Number,
-      bottom: Number,
-      left: Number,
+      right: {
+        type: Number,
+      },
+      bottom: {
+        type: Number,
+      },
+      left: {
+        type: Number,
+      },
     },
     data () {
       return {

@@ -156,11 +156,9 @@
       },
       prevText: {
         type: String,
-        default: '',
       },
       nextText: {
         type: String,
-        default: '',
       },
       pagerCount: {
         type: Number,
@@ -172,15 +170,29 @@
       },
       pageSize: {
         type: Number,
-        default: 10
+        default: 10,
       },
-      total: Number,
-      showTotal: Boolean,
-      showSizeChanger: Boolean,
-      showJumper: Boolean,
-      simple: Boolean,
-      minimal: Boolean,
-      disabled: Boolean,
+      total: {
+        type: Number,
+      },
+      showTotal: {
+        type: Boolean,
+      },
+      showSizeChanger: {
+        type: Boolean,
+      },
+      showJumper: {
+        type: Boolean,
+      },
+      simple: {
+        type: Boolean,
+      },
+      minimal: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     data() {
       return {

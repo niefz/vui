@@ -54,10 +54,13 @@
       },
       defaultActive: {
         type: String,
-        default: '',
       },
-      closable: Boolean,
-      disabled: Boolean,
+      closable: {
+        type: Boolean,
+      },
+      disabled: {
+        type: Boolean,
+      },
     },
     data() {
       return {

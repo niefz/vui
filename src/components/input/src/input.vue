@@ -62,31 +62,43 @@
     },
     inheritAttrs: false,
     props: {
-      value: [String, Number],
+      value: {
+        type: [String, Number],
+      },
       size: {
         type: String,
         default: 'small',
       },
-      prepend: String,
-      prefixIcon: String,
-      suffixIcon: String,
-      append: String,
-      placeholder: String,
+      prepend: {
+        type: String,
+      },
+      prefixIcon: {
+        type: String,
+      },
+      suffixIcon: {
+        type: String,
+      },
+      append: {
+        type: String,
+      },
+      placeholder: {
+        type: String,
+      },
       autocomplete: {
         type: String,
         default: 'off',
       },
       clearable: {
         type: Boolean,
-        default: false
+        default: false,
       },
       error: {
         type: Boolean,
-        default: false
+        default: false,
       },
       disabled: {
         type: Boolean,
-        default: false
+        default: false,
       },
     },
     data() {

@@ -69,7 +69,6 @@
       },
       top: {
         type: String,
-        default: '',
       },
       width: {
         type: String,
@@ -115,10 +114,18 @@
         type: String,
         default: '取消',
       },
-      lockScroll: Boolean,
-      fullscreen: Boolean,
-      loading: Boolean,
-      beforeClose: Function,
+      lockScroll: {
+        type: Boolean,
+      },
+      fullscreen: {
+        type: Boolean,
+      },
+      loading: {
+        type: Boolean,
+      },
+      beforeClose: {
+        type: Function,
+      },
     },
     data() {
       return {

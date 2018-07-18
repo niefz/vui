@@ -22,7 +22,9 @@
     mixins: [Emitter],
     inheritAttrs: false,
     props: {
-      label: [String, Number],
+      label: {
+        type: [String, Number],
+      },
       value: {
         required: true
       },
