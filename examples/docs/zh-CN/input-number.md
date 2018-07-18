@@ -26,7 +26,11 @@
 ```html
 <Row>
   <Col :span="6">
-    <InputNumber v-model="number" :min="1" :max="10"></InputNumber>
+    <InputNumber
+      v-model="number"
+      :formatter="value => `$ ${value}`.replace(/B(?=(d{3})+(?!d))/g, ',')"
+      :parser="value => value.replace(/$s?|(,*)/g, '')">
+    </InputNumber>
   </Col>
 </Row>
 ```
@@ -39,7 +43,13 @@
 ```html
 <Row>
   <Col :span="6">
-    <InputNumber v-model="number" :min="0" :max="10" :step="0.1" :precision="2"></InputNumber>
+    <InputNumber
+      v-model="float"
+      :min="0"
+      :max="10"
+      :step="0.1"
+      :precision="2">
+    </InputNumber>
   </Col>
 </Row>
 ```
@@ -93,6 +103,7 @@ InputNumber events
     data() {
       return {
         number: 1,
+        float: 1,
       };
     },
     methods: {

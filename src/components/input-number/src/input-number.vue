@@ -64,6 +64,9 @@
       formatter: {
         type: Function,
       },
+      parser: {
+        type: Function,
+      },
       disabled: {
         type: Boolean,
         default: false,
@@ -105,11 +108,15 @@
         return (String(max) && currentValue > max) || (String(min) && currentValue < min);
       },
       currentInputValue() {
-        const { precision, currentValue } = this;
+        const { currentValue, precision, formatter } = this;
+        let currentInputValue = currentValue;
         if (precision) {
-          return currentValue.toFixed(precision);
+          currentInputValue = currentValue.toFixed(precision);
         }
-        return currentValue;
+        if (formatter) {
+          currentInputValue = formatter(currentInputValue);
+        }
+        return currentInputValue;
       },
     },
     methods: {
@@ -137,13 +144,14 @@
        */
       handleInput(event) {
         let val = event.target.value.trim();
-        if (this.parser) {
-          val = this.parser(val);
+        let { parser } = this;
+        if (parser) {
+          val = parser(val);
         }
         if (event.type == 'input' && val.match(/^[-]?\.?$|\.$/)) return;
-        let value = Number(val);
-        if (!isNaN(value)) {
-          this.currentValue = value;
+        val = Number(val);
+        if (!isNaN(val)) {
+          this.currentValue = val;
         } else {
           event.target.value = this.currentValue;
         }
