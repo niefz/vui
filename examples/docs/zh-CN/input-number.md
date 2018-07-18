@@ -24,12 +24,19 @@
 :::demo 通过 `formatter` 格式化数字，以展示具有具体含义的数据。
 
 ```html
-<Row>
+<Row :gutter="30">
   <Col :span="6">
     <InputNumber
       v-model="number"
       :formatter="value => `$ ${value}`.replace(/B(?=(d{3})+(?!d))/g, ',')"
       :parser="value => value.replace(/\$\s?|(,*)/g, '')">
+    </InputNumber>
+  </Col>
+  <Col :span="6">
+    <InputNumber
+      v-model="number"
+      :formatter="value => `${value} %`"
+      :parser="value => value.replace(' %', '')">
     </InputNumber>
   </Col>
 </Row>
