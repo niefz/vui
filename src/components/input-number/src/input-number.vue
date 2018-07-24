@@ -144,16 +144,30 @@
        */
       handleInput(event) {
         let val = event.target.value.trim();
-        let { parser } = this;
+        let { parser, formatter, precision } = this;
         if (parser) {
           val = parser(val);
         }
-        if (event.type == 'input' && val.match(/^[-]?\.?$|\.$/)) return;
-        val = Number(val);
-        if (!isNaN(val)) {
-          this.currentValue = val;
+        if (val) {
+          if (event.type === 'input' && val.match(/^[-]?\.?$|\.$/)) return;
+          val = Number(val);
+          if (!isNaN(val)) {
+            this.currentValue = val;
+          } else {
+            if (!isNaN(precision)) {
+              val = this.currentValue.toFixed(precision);
+            } else {
+              if (formatter) {
+                val = formatter(this.currentValue);
+              } else {
+                val = this.currentValue;
+              }
+            }
+            event.target.value = val;
+          }
         } else {
-          event.target.value = this.currentValue;
+          val = formatter(val);
+          event.target.value = val;
         }
       },
       /**

@@ -28,7 +28,7 @@
   <Col :span="6">
     <InputNumber
       v-model="number"
-      :formatter="value => `$ ${value}`.replace(/B(?=(d{3})+(?!d))/g, ',')"
+      :formatter="value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
       :parser="value => value.replace(/\$\s?|(,*)/g, '')">
     </InputNumber>
   </Col>
@@ -36,7 +36,7 @@
     <InputNumber
       v-model="number"
       :formatter="value => `${value} %`"
-      :parser="value => value.replace(' %', '')">
+      :parser="value => value.replace(' %', ' ')">
     </InputNumber>
   </Col>
 </Row>
