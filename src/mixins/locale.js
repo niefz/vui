@@ -8,5 +8,5 @@ export default {
     t(...args) {
       return t.apply(this, args);
     }
-  }
+  },
 };

@@ -9,29 +9,23 @@ let instance;
 const instances = [];
 const MessageConstructor = Vue.extend(Msg);
 
-const Message = (options) => {
-
+const Message = (opts) => {
   if (Vue.prototype.$isServer) return;
-
-  options = options || {};
-
+  let options = opts || {};
   if (typeof options === 'string') {
     options = {
       message: options,
     };
   }
-
-  const id = 'message-' + index++;
+  index += 1;
+  const id = `message-${index}`;
   const userOnClose = options.onClose;
-
   options.onClose = () => {
     Message.close(id, userOnClose);
   };
-
   instance = new MessageConstructor({
     data: options,
   });
-
   instance.id = id;
   instance.vm = instance.$mount();
   document.body.appendChild(instance.vm.$el);
@@ -43,21 +37,19 @@ const Message = (options) => {
 };
 
 ['info', 'success', 'warning', 'error'].forEach((theme) => {
-  Message[theme] = (options) => {
-    if (typeof options === 'string') {
+  Message[theme] = (opts) => {
+    let options = opts || {};
+    if (typeof opts === 'string') {
       options = {
         message: options,
       };
     }
-
-    options.theme = theme;
-
     return Message(options);
   };
 });
 
 Message.close = (id, userOnClose) => {
-  for (let i = 0, len = instances.length; i < len; i++) {
+  for (let i = 0, len = instances.length; i < len; i += 1) {
     if (instances[i] && (id === instances[i].id)) {
       if (typeof userOnClose === 'function') {
         userOnClose(instances[i]);
@@ -68,7 +60,7 @@ Message.close = (id, userOnClose) => {
 };
 
 Message.closeAll = () => {
-  for (let i = instances.length - 1; i >= 0; i--) {
+  for (let i = instances.length - 1; i >= 0; i -= 1) {
     instances[i].close();
   }
 };

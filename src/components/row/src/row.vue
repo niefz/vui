@@ -1,9 +1,9 @@
 <template>
- 	<div
-		:class="classes"
-		:style="style">
-		<slot></slot>
-	</div>
+  <div
+    :class="classes"
+    :style="style">
+    <slot></slot>
+  </div>
 </template>
 <script>
   export default {
@@ -36,12 +36,12 @@
 
           ['align', 'justify'].forEach(prop => {
             if (this[prop]) {
-            classes.push(`v-row--flex-${prop}-${this[prop]}`);
+              classes.push(`v-row--flex-${prop}-${this[prop]}`);
             }
           });
-				} else {
+        } else {
           classes.push('v-row');
-				}
+        }
 
         return classes;
       },

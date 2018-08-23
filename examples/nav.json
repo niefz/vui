@@ -173,10 +173,6 @@
             "path": "/zh-CN/components/badge"
           },
           {
-            "name": "Calendar 日历",
-            "path": "/zh-CN/components/calendar"
-          },
-          {
             "name": "Card 卡片",
             "path": "/zh-CN/components/card"
           },
@@ -201,10 +197,6 @@
             "path": "/zh-CN/components/popover"
           },
           {
-            "name": "Table 表格",
-            "path": "/zh-CN/components/table"
-          },
-          {
             "name": "Tag 标签",
             "path": "/zh-CN/components/tag"
           },
@@ -215,10 +207,6 @@
           {
             "name": "Tooltip 文字提示",
             "path": "/zh-CN/components/tooltip"
-          },
-          {
-            "name": "Tree 树形控件",
-            "path": "/zh-CN/components/tree"
           }
         ]
       },

@@ -3,20 +3,21 @@
  */
 import Vue from 'vue';
 import Bar from './loading-bar.vue';
-import Message from "../../message/src/message";
 
 let timer;
 let instance;
 const LoadingBarConstructor = Vue.extend(Bar);
 
-const init = (() => {
+const init = () => {
   instance = new LoadingBarConstructor();
   instance.vm = instance.$mount();
   document.body.appendChild(instance.vm.$el);
   instance.vm.visible = true;
   instance.dom = instance.vm.$el;
   return instance.vm;
-})();
+};
+
+init();
 
 const update = (options) => {
   instance.update(options);
@@ -43,30 +44,30 @@ const clearTimer = () => {
 };
 
 const LoadingBar = {
-  update(percent) {
+  update(per) {
     clearTimer();
     update({
       visible: true,
-      percent: percent,
+      percent: per,
       status: 'success',
     });
   },
   start() {
     if (timer) return;
-    let percent = 0;
+    let per = 0;
     update({
       visible: true,
-      percent: percent,
+      percent: per,
       status: 'success',
     });
     timer = setInterval(() => {
-      percent += Math.floor(Math.random() * 3 + 5);
-      if (percent > 95) {
+      per += Math.floor(Math.random() * 3 + 5);
+      if (per > 95) {
         clearTimer();
       }
       update({
         visible: true,
-        percent: percent,
+        percent: per,
         status: 'success',
       });
     }, 200);
@@ -90,7 +91,7 @@ const LoadingBar = {
     hide();
   },
   config(options) {
-    if ('height' in height) {
+    if ('height' in options) {
       instance.height = options.height;
     }
     if ('status' in options) {

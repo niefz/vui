@@ -9,38 +9,31 @@ let instance;
 const instances = [];
 const NotificationConstructor = Vue.extend(Notify);
 
-const Notification = (options) => {
-
+const Notification = (opts) => {
   if (Vue.prototype.$isServer) return;
-
-  options = options || {};
-
+  let options = opts || {};
   if (typeof options === 'string') {
     options = {
       title: options,
     };
   }
-
-  const id = 'notify-' + index++;
+  index += 1;
+  const id = `notify-${index}`;
   const userOnClose = options.onClose;
   const placement = options.placement || 'top-right';
   let offset = options.offset || 0;
-
   options.onClose = () => {
     Notification.close(id, userOnClose);
   };
-
   instance = new NotificationConstructor({
     data: options,
   });
-
   instance.id = id;
   instance.vm = instance.$mount();
   document.body.appendChild(instance.vm.$el);
   instance.vm.visible = true;
   instance.dom = instance.vm.$el;
   instance.dom.style.zIndex = '10001';
-
   instances.filter(item => item.placement === placement).forEach((item) => {
     offset += item.$el.offsetHeight + 16;
   });
@@ -51,21 +44,19 @@ const Notification = (options) => {
 };
 
 ['info', 'success', 'warning', 'error'].forEach((theme) => {
-  Notification[theme] = (options) => {
-    if (typeof options === 'string') {
+  Notification[theme] = (opts) => {
+    let options = opts || {};
+    if (typeof opts === 'string') {
       options = {
         title: options,
       };
     }
-
-    options.theme = theme;
-
     return Notification(options);
   };
 });
 
 Notification.close = (id, userOnClose) => {
-  for (let i = 0, len = instances.length; i < len; i++) {
+  for (let i = 0, len = instances.length; i < len; i += 1) {
     if (instances[i] && (id === instances[i].id)) {
       if (typeof userOnClose === 'function') {
         userOnClose(instances[i]);
@@ -76,7 +67,7 @@ Notification.close = (id, userOnClose) => {
 };
 
 Notification.closeAll = () => {
-  for (let i = instances.length - 1; i >= 0; i--) {
+  for (let i = instances.length - 1; i >= 0; i -= 1) {
     instances[i].close();
   }
 };

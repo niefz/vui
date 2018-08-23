@@ -4,8 +4,8 @@
 import Vue from 'vue';
 
 const popperJs = require('popper.js/dist/umd/popper.js');
-const Popper = Vue.prototype.$isServer ? () => {
-} : popperJs;
+
+const Popper = Vue.prototype.$isServer ? {} : popperJs;
 const stop = e => e.stopPropagation();
 
 export default {
@@ -39,28 +39,40 @@ export default {
         this.$emit('input', val);
       },
     },
-    showPopper(val) {
-      val ? this.updatePopper() : this.destroyPopper();
-      this.$emit('input', val);
+    showPopper: {
+      handler(val) {
+        if (val) {
+          this.updatePopper();
+        } else {
+          this.destroyPopper();
+        }
+        this.$emit('input', val);
+      },
     },
   },
   methods: {
     createPopper() {
       if (this.$isServer) return;
+
       this.currentPlacement = this.currentPlacement || this.placement;
+
       if (!/^(top|right|bottom|left)(-start|-end)?$/g.test(this.currentPlacement)) return;
 
+      this.popperElm = this.popperElm || this.popper || this.$refs.popper;
+      this.referenceElm = this.referenceElm || this.reference || this.$refs.reference;
+
       const options = this.popperOptions;
-      const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper;
-      let reference = this.referenceElm = this.referenceElm || this.reference || this.$refs.reference;
+      const popper = this.popperElm;
+      let reference = this.referenceElm;
 
       if (!reference && this.$slots.reference && this.$slots.reference[0]) {
-        reference = this.referenceElm = this.$slots.reference[0].elm;
+        this.referenceElm = this.$slots.reference[0].elm;
+        reference = this.referenceElm;
       }
 
       if (!popper || !reference) return;
       if (this.appendToBody) document.body.appendChild(this.popperElm);
-      if (this.popperJS && this.popperJS.hasOwnProperty('destroy')) this.popperJS.destroy();
+      if (this.popperJS && Object.prototype.hasOwnProperty.call(this.popperJS, 'destroy')) this.popperJS.destroy();
 
       options.placement = this.currentPlacement;
 
@@ -69,21 +81,26 @@ export default {
         this.$emit('created', this);
         this.$nextTick(this.updatePopper);
       };
+
       if (typeof options.onUpdate === 'function') {
         this.popperJS.onUpdate(options.onUpdate);
       }
+
       this.popperElm.addEventListener('click', stop);
     },
     updatePopper() {
-      this.popperJS ? this.popperJS.update() : this.createPopper();
+      if (this.popperJS) {
+        this.popperJS.update();
+      } else {
+        this.createPopper();
+      }
     },
     doDestroy(forceDestroy) {
       if (!this.popperJS || (this.showPopper && !forceDestroy)) return;
       this.popperJS.destroy();
       this.popperJS = null;
     },
-    destroyPopper() {
-    },
+    destroyPopper() {},
   },
   beforeDestroy() {
     this.doDestroy(true);

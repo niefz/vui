@@ -100,10 +100,10 @@ Footer props
 <script>
   import Row from '@/components/row';
   import Layout from '@/components/layout';
-  import Header from 'free-vui/src/components/header';
-  import Aside from 'free-vui/src/components/aside';
-  import Content from 'free-vui/src/components/content';
-  import Footer from 'free-vui/src/components/footer';
+  import Header from '@/components/header';
+  import Aside from '@/components/aside';
+  import Content from '@/components/content';
+  import Footer from '@/components/footer';
 
   export default {
     components: {

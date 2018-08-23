@@ -5,9 +5,7 @@ import Vue from 'vue';
 
 const isServer = Vue.prototype.$isServer;
 
-const trim = (string) => {
-  return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
-};
+const trim = string => (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 
 export const on = (() => {
   if (!isServer && document.addEventListener) {
@@ -16,13 +14,12 @@ export const on = (() => {
         element.addEventListener(event, handler, false);
       }
     };
-  } else {
-    return (element, event, handler) => {
-      if (element && event && handler) {
-        element.attachEvent('on' + event, handler);
-      }
-    };
   }
+  return (element, event, handler) => {
+    if (element && event && handler) {
+      element.attachEvent(`on${event}`, handler);
+    }
+  };
 })();
 
 export const off = (() => {
@@ -32,13 +29,12 @@ export const off = (() => {
         element.removeEventListener(event, handler, false);
       }
     };
-  } else {
-    return (element, event, handler) => {
-      if (element && event) {
-        element.detachEvent('on' + event, handler);
-      }
-    };
   }
+  return (element, event, handler) => {
+    if (element && event) {
+      element.detachEvent(`on${event}`, handler);
+    }
+  };
 })();
 
 export const getScroll = (target, top) => {
@@ -69,24 +65,23 @@ export const hasClass = (el, cls) => {
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
   if (el.classList) {
     return el.classList.contains(cls);
-  } else {
-    return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
   }
+  return (` ${el.className} `).indexOf(` ${cls} `) > -1;
 };
 
 export const addClass = (el, cls) => {
   if (!el) return;
   let curClass = el.className;
-  let classes = (cls || '').split(' ');
+  const classes = (cls || '').split(' ');
 
-  for (let i = 0, j = classes.length; i < j; i++) {
-    let clsName = classes[i];
-    if (!clsName) continue;
+  for (let i = 0, j = classes.length; i < j; i += 1) {
+    const clsName = classes[i];
+    if (!clsName) return;
 
     if (el.classList) {
       el.classList.add(clsName);
     } else if (!hasClass(el, clsName)) {
-      curClass += ' ' + clsName;
+      curClass += ` ${clsName}`;
     }
   }
   if (!el.classList) {
@@ -96,17 +91,17 @@ export const addClass = (el, cls) => {
 
 export const removeClass = (el, cls) => {
   if (!el || !cls) return;
-  let classes = cls.split(' ');
-  let curClass = ' ' + el.className + ' ';
+  const classes = cls.split(' ');
+  let curClass = ` ${el.className} `;
 
-  for (let i = 0, j = classes.length; i < j; i++) {
-    let clsName = classes[i];
-    if (!clsName) continue;
+  for (let i = 0, j = classes.length; i < j; i += 1) {
+    const clsName = classes[i];
+    if (!clsName) return;
 
     if (el.classList) {
       el.classList.remove(clsName);
     } else if (hasClass(el, clsName)) {
-      curClass = curClass.replace(' ' + clsName + ' ', ' ');
+      curClass = curClass.replace(` ${clsName} `, ' ');
     }
   }
   if (!el.classList) {

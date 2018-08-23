@@ -329,7 +329,7 @@ TabsPanel props
 <script>
   import Row from '@/components/row';
   import Col from '@/components/col';
-  import Icon from 'free-vui/src/components/icon';
+  import Icon from '@/components/icon';
   import Button from '@/components/button';
   import Select from '@/components/select';
   import SelectMenu from '@/components/select-menu';
