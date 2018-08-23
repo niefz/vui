@@ -65,7 +65,7 @@ Flex 布局是基于 24 栅格来定义每一个『盒子』的宽度，但排�
 
 ## 区块间隔
   
-:::demo 栅格常常需要和间隔进行配合，你可以使用 `Row` 的 `gutter` 属性，我们推荐使用 `(16+8n)px` 作为栅格间隔（n 是自然数）。
+:::demo 栅格常常需要和间隔进行配合，你可以使用 `Row` 的 `gutter` 属性，我们推荐使用 `(16+8n)px` 作为栅格间隔（n 是自然数）。如果要支持响应式，可以写成 { xs: 8, sm: 16, md: 24, lg: 32 }。
 
 ```html
 <Row :gutter="16">
@@ -119,7 +119,7 @@ Flex 布局是基于 24 栅格来定义每一个『盒子』的宽度，但排�
 
 ## Flex 布局
   
-:::demo 设定 `flex` 属性，可以关闭、启用 flex 布局，其子元素根据不同的 `justify` 值 `start`、`center`、`end`、`space-between`、`space-around` 来定义其子元素的排版方式。
+:::demo 设定 `flex` 属性，可以关闭、启用 flex 布局。其子元素根据不同的 `justify` 值 `start`、`center`、`end`、`space-between`、`space-around` 来呈现水平排版方式。
 
 ```html
 <Row justify="start" flex>
@@ -169,7 +169,7 @@ Flex 布局是基于 24 栅格来定义每一个『盒子』的宽度，但排�
 
 ## Flex 对齐
   
-:::demo Flex 子元素垂直对齐，`align` 的值值：`top`、`middle`、`bottom`。
+:::demo Flex 子元素垂直对齐方式，`align` 的值：`top`、`middle`、`bottom`。
 
 ```html
 <Row justify="center" align="top" flex>
@@ -241,7 +241,7 @@ Flex 布局是基于 24 栅格来定义每一个『盒子』的宽度，但排�
 
 ## 响应式布局
   
-:::demo 参照 Bootstrap 的 [响应式设计](http://getbootstrap.com/css/#grid-media-queries)，预设了五个响应尺寸：`xs`、`sm`、`md`、`lg` 和 `xl`。
+:::demo 参照 Bootstrap 的 [响应式设计](http://getbootstrap.com/css/#grid-media-queries)，预设六个响应尺寸：`xs`、`sm`、`md`、`lg`、`xl` 和 `xxl`。
 
 ```html
 <Row>
@@ -276,16 +276,17 @@ Col props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| span | 占位格数 | number | - | 24 |
-| offset | 左侧的间隔格数，间隔内不可以有栅格 | number | - | 0 |
-| pull | 向左移动格数 | number | - | 0 |
-| push | 向右移动格数 | number | - | 0 |
-| xs | <576px 响应式栅格 | number|object | - | - |
-| sm | ≥576px 响应式栅格 | number|object | - | - |
-| md | ≥768px 响应式栅格 | number|object | - | - |
-| lg | ≥992px 响应式栅格 | number|object | - | - |
-| xl | ≥1200px 响应式栅格 | number|object | - | - |
-| order | 栅格顺序，flex 布局模式下有效 | number | - | 0 |
+| span | 栅格占位格数 | number | - | 24 |
+| offset | 栅格左侧的间隔格数，间隔内不可以有栅格 | number | - | 0 |
+| pull | 栅格向左移动格数 | number | - | 0 |
+| push | 栅格向右移动格数 | number | - | 0 |
+| order | 栅格顺序，`flex` 布局模式下有效 | number | - | 0 |
+| xs | <576px 响应式栅格 | number \| object | - | - |
+| sm | ≥576px 响应式栅格 | number \| object | - | - |
+| md | ≥768px 响应式栅格 | number \| object | - | - |
+| lg | ≥992px 响应式栅格 | number \| object | - | - |
+| xl | ≥1200px 响应式栅格 | number \| object | - | - |
+| xxl | ≥1600px 响应式栅格 | number \| object | - | - |
     
 <script>
   import Row from '@/components/row';
@@ -302,19 +303,22 @@ Col props
 .h100 {
   height: 100px;
 }
+a {
+  color: #1890ff;
+}
 .v-row, .v-row--flex {
   [class^=v-col-] {
     margin-top: 8px;
     margin-bottom: 8px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     .gutter-box {
       padding: 16px 0;
-      background-color: #40A9FF;
+      background-color: #40a9ff;
     }
     &:nth-child(odd) {
       .gutter-box {
-        background-color: #1890FF;
+        background-color: #1890ff;
       }
     }
   }

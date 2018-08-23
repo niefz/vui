@@ -21,18 +21,15 @@ module.exports = {
       },
       render: (tokens, idx) => {
         const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
-
         if (tokens[idx].nesting === 1) {
           const source = tokens[idx + 1].content;
           const description = (m && m.length > 1) ? m[1] : '';
           const descriptionHTML = description ? md.render(description) : '';
-
           return `<demo>
-                          <template slot="source">${source}</template>
-                          ${descriptionHTML}
-                          <template slot="highlight">`;
+                    <template slot="source">${source}</template>
+                    <template>${descriptionHTML}</template>
+                    <template slot="highlight">`;
         }
-
         return '</template></demo>\n';
       }
     }],
@@ -43,9 +40,7 @@ module.exports = {
     MarkdownIt.renderer.rules.table_open = () => {
       return '<table class="table">'
     };
-
     MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
-
     return source;
   }
 };
