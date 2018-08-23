@@ -29,11 +29,9 @@
     },
     computed: {
       classes() {
-        let classes = [];
-
+        const classes = [];
         if (this.flex) {
           classes.push('v-row--flex');
-
           ['align', 'justify'].forEach(prop => {
             if (this[prop]) {
               classes.push(`v-row--flex-${prop}-${this[prop]}`);
@@ -42,17 +40,14 @@
         } else {
           classes.push('v-row');
         }
-
         return classes;
       },
       style() {
         const style = {};
-
         if (this.gutter) {
           style.marginLeft = `-${this.gutter / 2}px`;
           style.marginRight = style.marginLeft;
         }
-
         return style;
       },
     },

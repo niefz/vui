@@ -268,9 +268,9 @@ Row props
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
 | gutter | 栅格间隔 | number | - | 0 |
+| flex | 是否 flex 布局 | boolean | - | false |
 | justify | flex 布局下的水平排列方式 | string | `top` `middle` `bottom` | top |
 | align | flex 布局下的垂直对齐方式 | string | `start` `center` `end` `space-around` `space-between` | start |
-| flex | 是否 flex 布局 | boolean | - | false |
 
 Col props
 

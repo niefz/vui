@@ -47,8 +47,7 @@
     },
     computed: {
       classes() {
-        let classes = [];
-
+        const classes = [];
         ['span', 'order', 'offset', 'pull', 'push'].forEach(prop => {
           if (this[prop]) {
             classes.push(
@@ -56,7 +55,6 @@
             );
           }
         });
-
         ['xs', 'sm', 'md', 'lg', 'xl'].forEach(size => {
           if (typeof this[size] === 'number') {
             classes.push(`v-col-${size}-${this[size]}`);
@@ -69,29 +67,24 @@
             });
           }
         });
-
         return classes;
       },
       parent() {
         let parent = this.$parent;
-
-        if (parent && parent.$options.name !== 'Row') {
-          parent = parent.$parent;
+        if (parent && parent.$options.name === 'Row') {
+          return parent;
         }
-
-        return parent;
+        return null;
       },
       gutter() {
         return this.parent ? this.parent.gutter : 0;
       },
       style() {
         const style = {};
-
         if (this.gutter) {
           style.paddingLeft = `${this.gutter / 2}px`;
           style.paddingRight = style.paddingLeft;
         }
-
         return style;
       },
     },
