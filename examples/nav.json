@@ -42,19 +42,6 @@
     "index": "/zh-CN/components",
     "groups": [
       {
-        "name": "Basic",
-        "child": [
-          {
-            "name": "Button 按钮",
-            "path": "/zh-CN/components/button"
-          },
-          {
-            "name": "Icon 图标",
-            "path": "/zh-CN/components/icon"
-          }
-        ]
-      },
-      {
         "name": "Layout",
         "child": [
           {
@@ -64,6 +51,19 @@
           {
             "name": "Layout 页面布局",
             "path": "/zh-CN/components/layout"
+          }
+        ]
+      },
+      {
+        "name": "Basic",
+        "child": [
+          {
+            "name": "Button 按钮",
+            "path": "/zh-CN/components/button"
+          },
+          {
+            "name": "Icon 图标",
+            "path": "/zh-CN/components/icon"
           }
         ]
       },
