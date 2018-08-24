@@ -1,5 +1,7 @@
 <template>
-  <main class="v-content" :style="style">
+  <main
+    class="v-content"
+    :style="style">
     <slot></slot>
   </main>
 </template>

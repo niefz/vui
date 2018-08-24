@@ -168,16 +168,18 @@
         <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
         <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
-        <Dropdown placement="right-start" @change="handleChange">
-          <Button type="text" suffix-icon="v-icon-caret-right">蚵仔煎</Button>
-          <DropdownMenu slot="dropdown">
-            <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
-            <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
-            <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
-            <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
-            <DropdownMenuItem value="蚵仔煎" divided>蚵仔煎</DropdownMenuItem>
-          </DropdownMenu>
-        </Dropdown>
+        <DropdownMenuItem>
+          <Dropdown :append-to-body="false" placement="right-start" @change="handleChange">
+            <Button type="text" suffix-icon="v-icon-caret-right">蚵仔煎</Button>
+            <DropdownMenu slot="dropdown">
+              <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>
+              <DropdownMenuItem value="狮子头">狮子头</DropdownMenuItem>
+              <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
+              <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
+              <DropdownMenuItem value="蚵仔煎" divided>蚵仔煎</DropdownMenuItem>
+            </DropdownMenu>
+          </Dropdown>
+        </DropdownMenuItem>
       </DropdownMenu>
     </Dropdown>
   </Col>

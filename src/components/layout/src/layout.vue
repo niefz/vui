@@ -1,5 +1,7 @@
 <template>
-  <section class="v-layout" :style="style">
+  <section
+    class="v-layout"
+    :style="style">
     <slot></slot>
   </section>
 </template>

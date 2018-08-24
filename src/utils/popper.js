@@ -14,7 +14,7 @@ export default {
     reference: {},
     popperOptions: {
       type: Object,
-      default() {
+      default: () => {
         return {
           modifiers: {
             computeStyle: {
@@ -43,12 +43,20 @@ export default {
       handler(val) {
         if (val) {
           this.updatePopper();
-        } else {
-          this.destroyPopper();
         }
         this.$emit('input', val);
       },
     },
+  },
+  beforeDestroy() {
+    this.doDestroy(true);
+    if (this.popperElm && this.popperElm.parentNode === document.body) {
+      this.popperElm.removeEventListener('click', stop);
+      document.body.removeChild(this.popperElm);
+    }
+  },
+  deactivated() {
+    this.$options.beforeDestroy[0].call(this);
   },
   methods: {
     createPopper() {
@@ -100,16 +108,5 @@ export default {
       this.popperJS.destroy();
       this.popperJS = null;
     },
-    destroyPopper() {},
-  },
-  beforeDestroy() {
-    this.doDestroy(true);
-    if (this.popperElm && this.popperElm.parentNode === document.body) {
-      this.popperElm.removeEventListener('click', stop);
-      document.body.removeChild(this.popperElm);
-    }
-  },
-  deactivated() {
-    this.$options.beforeDestroy[0].call(this);
   },
 };

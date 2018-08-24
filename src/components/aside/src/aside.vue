@@ -1,5 +1,7 @@
 <template>
-  <aside class="v-aside" :style="style">
+  <aside
+    class="v-aside"
+    :style="style">
     <slot></slot>
   </aside>
 </template>

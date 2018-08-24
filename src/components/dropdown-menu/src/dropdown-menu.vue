@@ -40,7 +40,7 @@
       });
     },
     mounted() {
-      this.$parent.popperElm = this.popperElm = this.$el;
+      this.popperElm = this.$el;
       this.referenceElm = this.$parent.$el;
     },
   };

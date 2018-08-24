@@ -65,7 +65,7 @@
 </Row>
 <Row>
   <Layout>
-    <Aside>Aside</Aside>
+    <Aside :style="{ height: '248px', overflow: 'auto' }">Aside</Aside>
     <Layout>
       <Header>Header</Header>
       <Content>Content</Content>
@@ -78,24 +78,12 @@
 
 ## API
 
-Header props
-
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
-|---- |---- |---- |---- |---- |
-| height | 顶部高度 | string | - | 64px |
-
 Aside props
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |---- |---- |---- |---- |---- |
-| float | 侧边栏浮动 | string | `left` `right` | left |
+| float | 侧边栏浮动 | string | `left`、`right` | left |
 | width | 侧边栏宽度 | string | - | 200px |
-
-Footer props
-
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
-|---- |---- |---- |---- |---- |
-| height | 底部高度 | string | - | 64px |
 
 <script>
   import Row from '@/components/row';
@@ -118,29 +106,31 @@ Footer props
 </script>
 <style>
   .v-header {
+    height: 64px;
     background-color: #1890FF;
-    color: #FFFFFF;
     line-height: 64px;
+    color: #FFFFFF;
     text-align: center;
   }
   .v-aside {
-    min-height: 120px;
+    height: auto;
     background-color: #40A9FF;
     line-height: 120px;
     color: #FFFFFF;
     text-align: center;
   }
   .v-content {
-    min-height: 120px;
+    height: 120px;
     background-color: #096DD9;
     line-height: 120px;
     color: #FFFFFF;
     text-align: center;
   }
   .v-footer {
+    height: 64px;
     background-color: #1890FF;
-    color: #FFFFFF;
     line-height: 64px;
+    color: #FFFFFF;
     text-align: center;
   }
 </style>
