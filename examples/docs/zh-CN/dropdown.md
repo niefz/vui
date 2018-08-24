@@ -169,7 +169,7 @@
         <DropdownMenuItem value="螺蛳粉">螺蛳粉</DropdownMenuItem>
         <DropdownMenuItem value="双皮奶" disabled>双皮奶</DropdownMenuItem>
         <DropdownMenuItem>
-          <Dropdown :append-to-body="false" placement="right-start" @change="handleChange">
+          <Dropdown :append-to-body="false" placement="right" @change="handleChange">
             <Button type="text" suffix-icon="v-icon-caret-right">蚵仔煎</Button>
             <DropdownMenu slot="dropdown">
               <DropdownMenuItem value="黄金糕">黄金糕</DropdownMenuItem>

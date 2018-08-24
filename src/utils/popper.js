@@ -87,7 +87,9 @@ export default {
       this.popperJS = new Popper(reference, popper, options);
       this.popperJS.onCreate = () => {
         this.$emit('created', this);
-        this.$nextTick(this.updatePopper);
+        this.$nextTick(() => {
+          this.updatePopper();
+        });
       };
 
       if (typeof options.onUpdate === 'function') {
